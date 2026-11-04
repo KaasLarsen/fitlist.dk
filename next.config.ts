@@ -12,6 +12,8 @@ const nextConfig: NextConfig = {
   images: {
     remotePatterns: [
       { protocol: "https", hostname: "cdn.shopify.com", pathname: "/**" },
+      { protocol: "https", hostname: "www.apuls.dk", pathname: "/**" },
+      { protocol: "https", hostname: "apuls.dk", pathname: "/**" },
       {
         protocol: "https",
         hostname: "www.billig-fitness.dk",

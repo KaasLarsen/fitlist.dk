@@ -17,6 +17,12 @@ export type PartnerAdsFeed = {
 
 export const PARTNER_ADS_FEEDS: readonly PartnerAdsFeed[] = [
   {
+    id: "apuls",
+    bannerId: "46187",
+    feedId: "637",
+    merchant: "Apuls.dk",
+  },
+  {
     id: "billig-fitness",
     bannerId: "90815",
     feedId: "2352",
