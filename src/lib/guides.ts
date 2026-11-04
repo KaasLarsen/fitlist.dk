@@ -114,6 +114,7 @@ export function getProductAffiliate(product: GuideProduct) {
 const FEATURED_GUIDE_SLUGS = [
   "ultimative-home-gym-budget-2026",
   "bedste-stoejsvage-traeningsmaskiner-lejlighed-2026",
+  "bedste-foldbare-kompakte-traeningsmaskiner-2026",
   "bedste-smartcykel-2026",
   "bedste-gaabaand-2026",
   "bedste-airbike-2026",
@@ -417,12 +418,266 @@ export const guides: Guide[] = [
       },
     ],
     relatedSlugs: [
+      "bedste-foldbare-kompakte-traeningsmaskiner-2026",
       "bedste-gaabaand-2026",
       "bedste-motionscykel-2026",
       "bedste-spinningcykel-2026",
       "bedste-romaskine-2026",
       "bedste-loebebaand-2026",
       "bedste-airbike-2026",
+    ],
+  },
+  {
+    slug: "bedste-foldbare-kompakte-traeningsmaskiner-2026",
+    title: "Bedste foldbare & kompakte træningsmaskiner (2026)",
+    excerpt:
+      "Træn stort, bo småt: foldbare og kompakte træningsmaskiner til den lille bolig — gåbånd under sofaen, romaskine på højkant, kompakt crosstrainer og foldbar bænk med live priser.",
+    metaDescription:
+      "Find de bedste foldbare og kompakte træningsmaskiner til små lejligheder i 2026. Guide til folded dimensions, hjul og vertikal opbevaring — plus gåbånd, romaskine, crosstrainer og foldbar bænk med live partnerpriser.",
+    categorySlug: "loebebaand",
+    intentSlug: "foldbar",
+    recommendationsHeading: "Kompakte anbefalinger efter maskintype",
+    publishedAt: "2026-11-04",
+    updatedAt: "2026-11-04",
+    intro:
+      "Du behøver ikke et dedikeret fitnessrum på 20 kvadratmeter for at komme i topform derhjemme. Moderne træningsmaskiner behøver ikke at stå og samle støv midt i stuen. Med det rette kompakte og foldbare udstyr kan dit home gym pakkes væk på under to minutter, når du får gæster — eller når stuen bare skal være en stue igen. Denne guide handler om plads: folded dimensions, vægt og hjul, vertikal opbevaring — og fire konkrete anbefalinger, der faktisk kan gemmes væk i en lille bolig.",
+    criteria: [
+      {
+        title: "Tjek folded dimensions — ikke kun opstillet mål",
+        description:
+          "Mange glemmer at måle, hvor høj (eller tyk) maskinen er, efter den er klappet sammen. Kan den reelt rulle under sofaen eller sengen, eller er den for tyk? Shop-mål i “brug” siger intet om opbevaring. Prioritér folded height/depth i produktteksten, før du trykker køb.",
+      },
+      {
+        title: "Vægt og transporthjul er afgørende",
+        description:
+          "En foldbar maskine er værdiløs, hvis den vejer 60 kg og ikke har hjul. Det skal være nemt for én person at vippe og rulle den væk. Tjek greb, hjulplacering og om du realistisk orker at flytte den hver gang — ellers bliver den stående midt i rummet.",
+      },
+      {
+        title: "Vertikal opbevaring er en overset genvej",
+        description:
+          "Hvis udstyret ikke kan være under sengen, kan det så stilles lodret op ad væggen eller gemmes bag et gardin? Romaskiner, der rejses på højkant, og gåbånd, der skydes ind under møbler, er de to klassiske løsninger i små lejligheder.",
+      },
+    ],
+    products: [
+      {
+        id: "ascendic-essential-walking-pad-plads",
+        name: "Ascendic Essential Walking Pad",
+        badge: "Under sofaen",
+        summary:
+          "Det ultimative kompromis til lejligheden eller det lille kontor. Med sit ultra-flade design kan Ascendic Essential Walking Pad skubbes direkte under de fleste sofaer eller senge, når arbejdsdagen eller filmen er slut. Fylder minimalt i højden, vejer utrolig lidt og leveres med fjernbetjening — perfekt til skridt uden et kæmpe skrummel af et løbebånd. Aktuelt stærkt nedsat hos partner.",
+        pros: [
+          "Ultra-fladt footprint — under sofa/seng hos mange",
+          "Lav vægt, nem at vippe og rulle for én person",
+          "Gangtempo uden løbebåndets gulvplads",
+          "Fjernbetjening til daglig brug under desk/TV",
+        ],
+        cons: [
+          "Ikke til løb eller intervaller",
+          "Kræver stadig plads i længden under brug",
+          "Tjek sofaens frihøjde, før du regner med “under”",
+        ],
+        specs: [
+          { label: "Type", value: "Gåbånd / walking pad" },
+          { label: "Brand", value: "Ascendic" },
+          { label: "Opbevaring", value: "Under sofa / seng" },
+          { label: "Segment", value: "Kompakt cardio" },
+          { label: "Partner", value: "Ascendic.dk" },
+        ],
+        feedProductId: "Ascendic.dk:56388648173912",
+      },
+      {
+        id: "masterfit-170-rower-plads",
+        name: "Masterfit 170 Rower",
+        badge: "Lodret opbevaring",
+        summary:
+          "Romaskiner er kendt for at være meget lange, hvilket skræmmer mange med mindre stuer. Masterfit 170 Rower løser det elegant ved at være fuldstændig foldbar: løsner du splitten, vippes skinnen lodret op. Den optager under det halve af gulvpladsen og kan stå i et hjørne eller et skab. Helkropstræning uden at ofre stuen — aktuelt stærkt nedsat hos partner.",
+        pros: [
+          "Foldes/rejses lodret — halverer footprint",
+          "Helkrop uden løbebåndets længde i brug",
+          "Magnetmodstand — praktisk i lejlighed",
+          "Skarp pris i foldbar romaskine-segmentet",
+        ],
+        cons: [
+          "Brugslængde kræver stadig plads under pas",
+          "Tjek skinnelængde til din højde",
+          "Lodret stuvning kræver lidt loftshøjde og greb",
+        ],
+        specs: [
+          { label: "Type", value: "Romaskine" },
+          { label: "Brand", value: "Masterfit" },
+          { label: "Opbevaring", value: "Lodret / fold" },
+          { label: "Modstand", value: "Magnet" },
+          { label: "Partner", value: "Træningspartner" },
+        ],
+        feedProductId: "Træningspartner:01904a5eaad7714fb5635179812010a9",
+      },
+      {
+        id: "odin-c200-crosstrainer-plads",
+        name: "Odin C200 Crosstrainer",
+        badge: "Kompakt til hjørnet",
+        summary:
+          "Crosstrainere er traditionelt de mest pladskrævende maskiner, fordi arme og pedaler svinger bredt ud. Odin C200 er designet som en kompakt model til hjemmebrug: kortere, mere komprimeret ramme, der kan stå i hjørnet af soveværelse eller stue uden at dominere hele rummet — samtidig med effektiv kredsløbstræning. Aktuelt stærkt nedsat hos partner.",
+        pros: [
+          "Komprimeret ramme til små rum",
+          "Kan bo i et hjørne uden fuld “gym-zone”",
+          "Ledvenlig cardio uden løbestød",
+          "Skarp indgang til crosstrainer-segmentet",
+        ],
+        cons: [
+          "Foldes typisk ikke fladt som et gåbånd",
+          "Arme/pedaler kræver stadig svingplads i brug",
+          "Mål dybde + loft med arme i top, før køb",
+        ],
+        specs: [
+          { label: "Type", value: "Crosstrainer" },
+          { label: "Brand", value: "Odin" },
+          { label: "Opbevaring", value: "Hjørne / kompakt footprint" },
+          { label: "Segment", value: "Budget / hjemme" },
+          { label: "Partner", value: "Apuls.dk" },
+        ],
+        feedProductId: "Apuls.dk:12748",
+      },
+      {
+        id: "odin-multi-fold-plads",
+        name: "Odin Multi Justerbar og Foldbar Træningsbænk",
+        badge: "Foldbar bænk",
+        summary:
+          "Vil du træne med håndvægte, er bænken uundværlig — men en fastmonteret bænk midt i rummet er irriterende. Odin Multi er justerbar, og benene kan klappes ind under sædet. Når den er foldet fladt, fylder den kun omkring 15–20 cm i højden og kan skubbes ind under sengen ved siden af dit gåbånd. Styrke uden rod.",
+        pros: [
+          "Folder fladt — under seng/sofa hos mange",
+          "Justerbar til flere øvelser",
+          "Lav indgangspris til styrke i stuen",
+          "Matcher gåbånd-setup i samme bolig",
+        ],
+        cons: [
+          "Mindre stabil end tunge midrange-bænke",
+          "Ikke ideel til meget tunge løft",
+          "Kræver stadig gulvplads under selve træningen",
+        ],
+        specs: [
+          { label: "Type", value: "Justerbar / foldbar bænk" },
+          { label: "Brand", value: "Odin" },
+          { label: "Opbevaring", value: "Fladt under seng" },
+          { label: "Segment", value: "Budget / plads" },
+          { label: "Partner", value: "Apuls.dk" },
+        ],
+        feedProductId: "Apuls.dk:15421",
+      },
+    ],
+    howToChoose:
+      "Vil du have skridt der kan gemmes under møbler? Ascendic Essential Walking Pad. Vil du have helkrop og kunne rejse maskinen lodret? Masterfit 170 Rower. Vil du have kredsløb i et hjørne uden at ofre hele stuen? Odin C200. Vil du have håndvægte uden en fast bænk midt i rummet? Odin Multi foldbar. Mål folded dimensions og frihøjde under sofa/seng, før du køber — og shop via “Se pris” for live partnerpriser.",
+    learningSections: [
+      {
+        heading: "Træningsmaskiner til små lejligheder: Hvad fylder mindst?",
+        paragraphs: [
+          "I en lille lejlighed er “mindst plads” ikke kun maskinens længde i brug — det er footprint efter træning. Et gåbånd/walking pad vinder typisk, fordi det er lavt og kan skydes under sofa eller seng. En foldbar romaskine kommer tæt på, når den rejses lodret. Crosstrainere fylder mere permanent, medmindre du vælger en kompakt hjemmemodel som C200-klassen. Fast bænk midt i rummet er ofte den største “støj” i indretningen — foldbar bænk løser det.",
+          "Brug tabellen som grov tommelfingerregel, før du sammenligner priser. Mål altid dit eget under-sofa-rum og loftshøjde.",
+        ],
+        comparison: {
+          caption: "Maskintype × plads i lille bolig (tommelfingerregel)",
+          columns: ["I brug", "Efter fold / stuvning", "Bedst til"],
+          rows: [
+            {
+              label: "Gåbånd (walking pad)",
+              cells: [
+                "Lav, men kræver længde",
+                "Under sofa/seng (hvis frihøjde passer)",
+                "Skridt + kontor/TV",
+              ],
+            },
+            {
+              label: "Foldbar romaskine",
+              cells: [
+                "Lang skinne",
+                "Lodret — smalt footprint",
+                "Helkrop + hjørne/skab",
+              ],
+            },
+            {
+              label: "Kompakt crosstrainer",
+              cells: [
+                "Bredde + armsving",
+                "Står typisk fremme (kompakt ramme)",
+                "Cardio i et hjørne",
+              ],
+            },
+            {
+              label: "Foldbar træningsbænk",
+              cells: [
+                "Kræver gulv + håndvægte",
+                "Fladt under seng (~15–20 cm)",
+                "Styrke uden rod",
+              ],
+            },
+          ],
+        },
+      },
+      {
+        heading: "Gåbånd og romaskiner der kan gemmes væk",
+        paragraphs: [
+          "Gåbånd og foldbare romaskiner er de to kategorier, der oftest redder den lille stue. Walking pads er bygget til at være flade: lav profil, let vægt, ofte hjul eller nem tip. Tjek folded height — ikke kun “kompakt” i overskriften. Romaskiner skal du vurdere på to mål: brugslængde (ofte 2+ meter) og opbevaringsfodaftryk, når skinnen står lodret.",
+          "Ascendic Essential er vores pick, når under-sofa er målet. Masterfit 170 er picket, når du vil have roning uden at lade en lang skinne bo permanent i rummet. Kombinér gerne med underlagsmåtte, der også kan rulles sammen — så forsvinder hele setuppet, når gæsterne kommer.",
+        ],
+      },
+      {
+        heading: "Sådan folder du dit udstyr sammen på under 2 minutter",
+        paragraphs: [
+          "Rutinen er det, der gør foldbart udstyr værdifuldt — ikke kun hængslet. Gåbånd: stop, tip den ene ende, rul under sofaen (eller skub fladt ind). Romaskine: løsn split/lås, vip skinnen op, rul eller skub til hjørne. Bænk: klap ben ind under sæde, løft fladt ind under seng. Crosstrainer: den “foldes” sjældent fladt — her er strategien et fast hjørne og ryddeplads omkring armsvinget.",
+          "Øv flowet én gang, når maskinen er ny. Hvis det tager mere end et par minutter, eller kræver to personer, bliver den stående. Vælg modeller med greb og hjul, der matcher din styrke og gulvtype (tæppe vs. hårdt gulv).",
+        ],
+      },
+      {
+        heading: "Kompakt fitnesstræning uden et dedikeret træningsrum",
+        paragraphs: [
+          "Et home gym i en lille bolig er et system: én cardio-maskine der kan gemmes væk, plus styrke der kan foldes (bænk + håndvægte/elastikker). Du behøver ikke rack, smith og airbike i samme etværelses. Prioritér det, du bruger tre gange om ugen — og opbevaring før “nice to have”-features på skærmen.",
+          "Vil du dykke dybere i støj (naboer), budget-pakker eller enkeltkategorier, så gå videre til vores guides om støjsvage maskiner til lejlighed, home gym på budget, gåbånd, romaskine, crosstrainer og justerbar bænk. Her er fokus kun ét: at stuen kan blive en stue igen.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "Hvilke træningsmaskiner fylder mindst i en lille lejlighed?",
+        answer:
+          "Gåbånd/walking pads fylder typisk mindst efter brug, hvis de kan under sofa eller seng. Foldbare romaskiner, der rejses lodret, er næstbedst. Kompakte crosstrainere og foldbare bænke følger efter — afhængigt af om de skal stå fremme eller kunne pakkes helt væk.",
+      },
+      {
+        question: "Hvad skal jeg tjekke, før jeg køber foldbart udstyr?",
+        answer:
+          "Folded dimensions (ikke kun opstillet mål), vægt, om der er transporthjul, og om én person kan vippe/rulle den. Mål frihøjde under sofa/seng og loftshøjde til vertikal stuvning.",
+      },
+      {
+        question: "Kan et gåbånd virkelig være under sofaen?",
+        answer:
+          "Ofte ja — hvis sofaen har nok frihøjde, og båndet er et fladt walking pad. Mål både maskinens folded height og mellemrummet under sofa/seng. Ascendic Essential er vores anbefaling i den kategori.",
+      },
+      {
+        question: "Hvordan gemmer jeg en romaskine væk?",
+        answer:
+          "Vælg en model, der kan foldes eller rejses lodret (som Masterfit 170). Løsn låsen, vip skinnen op, og stil den i et hjørne eller skab. Tjek greb/hjul, så du faktisk orker det efter hvert pas.",
+      },
+      {
+        question: "Er crosstrainer et dårligt valg i små rum?",
+        answer:
+          "Ikke nødvendigvis — men klassiske store modeller dominerer rummet. Vælg en kompakt hjemmemodel (fx Odin C200), mål armsving og dybde, og planlæg et fast hjørne. Den foldes sjældent fladt som et gåbånd.",
+      },
+      {
+        question: "Hvilken foldbar træningsbænk skal jeg vælge?",
+        answer:
+          "En justerbar bænk, hvor benene klappes ind under sædet, så den ligger fladt (ca. 15–20 cm). Odin Multi justerbar/foldbar er vores plads-pick. Til meget tunge løft prioriteres stabilitet over fold — se også vores bænk-guide.",
+      },
+      {
+        question: "Hvordan ser jeg aktuelle priser?",
+        answer:
+          "Klik “Se pris” på anbefalingerne for live partnerpriser. Du kan også browse Løbebånd → Foldbart og de øvrige maskinkategorier for flere kompakte tilbud.",
+      },
+    ],
+    relatedSlugs: [
+      "bedste-stoejsvage-traeningsmaskiner-lejlighed-2026",
+      "bedste-gaabaand-2026",
+      "bedste-romaskine-2026",
+      "bedste-crosstrainer-2026",
+      "bedste-justerbar-traeningsbaenk-2026",
+      "ultimative-home-gym-budget-2026",
     ],
   },
   {
@@ -3567,6 +3822,7 @@ export const guides: Guide[] = [
       },
     ],
     relatedSlugs: [
+      "bedste-foldbare-kompakte-traeningsmaskiner-2026",
       "bedste-gaabaand-2026",
       "bedste-styrkemaskiner-2026",
       "bedste-multistation-2026",
