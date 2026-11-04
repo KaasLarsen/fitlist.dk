@@ -8,7 +8,10 @@ import {
 } from "@/lib/categories";
 import { getProductsByCategory } from "@/lib/feeds/catalog";
 import type { MachineCategorySlug } from "@/lib/feeds/types";
-import { getGuidesByCategory } from "@/lib/guides";
+import {
+  getGuideByCategoryAndIntent,
+  getGuidesByCategory,
+} from "@/lib/guides";
 
 export const revalidate = 21600;
 
@@ -42,6 +45,9 @@ export default async function MaskineCategoryPage({
 
   const activeIntent = category.intents.find((i) => i.slug === intentSlug);
   const guides = getGuidesByCategory(category.slug);
+  const intentGuide = activeIntent
+    ? getGuideByCategoryAndIntent(category.slug, activeIntent.slug)
+    : undefined;
 
   const products = await getProductsByCategory(
     category.slug as MachineCategorySlug,
@@ -101,9 +107,20 @@ export default async function MaskineCategoryPage({
             })}
           </ul>
           {activeIntent ? (
-            <p className="mt-5 max-w-xl text-sm text-muted">
-              {activeIntent.description}
-            </p>
+            <div className="mt-5 max-w-xl space-y-3">
+              <p className="text-sm text-muted">{activeIntent.description}</p>
+              {intentGuide ? (
+                <p className="text-sm text-foreground/90">
+                  <span className="text-muted">Købsguide: </span>
+                  <Link
+                    href={`/guides/${intentGuide.slug}`}
+                    className="font-display uppercase tracking-wide text-accent transition-colors hover:text-accent-dim"
+                  >
+                    {intentGuide.title} →
+                  </Link>
+                </p>
+              ) : null}
+            </div>
           ) : null}
         </section>
 
@@ -139,13 +156,25 @@ export default async function MaskineCategoryPage({
             </p>
           ) : (
             <ul className="mt-6 divide-y divide-border">
-              {guides.map((guide) => (
+              {[
+                ...guides.filter((g) => g.slug === intentGuide?.slug),
+                ...guides.filter((g) => g.slug !== intentGuide?.slug),
+              ].map((guide) => (
                 <li key={guide.slug}>
                   <Link
                     href={`/guides/${guide.slug}`}
                     className="group block py-8"
                   >
-                    <h3 className="font-display text-xl font-medium uppercase tracking-wide text-foreground transition-colors group-hover:text-accent">
+                    {intentGuide?.slug === guide.slug ? (
+                      <p className="font-display text-xs font-medium uppercase tracking-[0.16em] text-accent">
+                        Matcher dit filter
+                      </p>
+                    ) : null}
+                    <h3
+                      className={`font-display text-xl font-medium uppercase tracking-wide text-foreground transition-colors group-hover:text-accent ${
+                        intentGuide?.slug === guide.slug ? "mt-1" : ""
+                      }`}
+                    >
                       {guide.title}
                     </h3>
                     <p className="mt-2 text-sm text-muted">{guide.excerpt}</p>

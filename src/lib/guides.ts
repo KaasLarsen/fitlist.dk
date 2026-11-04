@@ -82,8 +82,31 @@ export function getProductAffiliate(product: GuideProduct) {
   return getAffiliate(product.affiliateId);
 }
 
+/** Featured homepage-rækkefølge (gåbånd og spinning først blandt intents). */
+const FEATURED_GUIDE_SLUGS = [
+  "bedste-gaabaand-2026",
+  "bedste-spinningcykel-2026",
+  "bedste-loebebaand-2026",
+  "bedste-motionscykel-2026",
+] as const;
+
+export function getFeaturedGuides(): Guide[] {
+  return FEATURED_GUIDE_SLUGS.map((slug) => getGuide(slug)).filter(
+    (g): g is Guide => Boolean(g),
+  );
+}
+
+export function getGuideByCategoryAndIntent(
+  categorySlug: string,
+  intentSlug: string,
+): Guide | undefined {
+  return guides.find(
+    (g) => g.categorySlug === categorySlug && g.intentSlug === intentSlug,
+  );
+}
+
 /**
- * Kategori-guides (5 maskintyper) + intent-guides (fx gåbånd).
+ * Kategori-guides (5 maskintyper) + intent-guides (gåbånd, spinning).
  * Anbefalinger kobles til Partner-Ads via feedProductId (live pris + CTA).
  */
 export const guides: Guide[] = [
@@ -1013,7 +1036,7 @@ export const guides: Guide[] = [
       {
         question: "Hvilken motionscykel er bedst til hjemmet?",
         answer:
-          "Til allround: Titan Life Athlete B56. Til budget: B35. Til spinning: Titan LIFE S11. Til premium langtidscykling: Tunturi Signature E50.",
+          "Til allround: Titan Life Athlete B56. Til budget: B35. Til spinning: se vores dedikerede guide Bedste spinningcykel 2026 (Titan LIFE S-serien). Til premium langtidscykling: Tunturi Signature E50.",
       },
       {
         question: "Er motionscykel bedre end løbebånd?",
@@ -1023,7 +1046,7 @@ export const guides: Guide[] = [
       {
         question: "Hvad er forskellen på kondicykel og spinningcykel?",
         answer:
-          "Kondicykel er typisk mere komfortabel og støjsvag til længere pas. Spinning har tungere svinghjul og mere aggressiv position til intervaller og hold-agtig træning.",
+          "Kondicykel er typisk mere komfortabel og støjsvag til længere pas. Spinning har tungere svinghjul og mere aggressiv position til intervaller og hold-agtig træning. Går du specifikt efter spinning, læs Bedste spinningcykel 2026.",
       },
       {
         question: "Kan jeg træne i lejlighed uden at genere naboer?",
@@ -1047,9 +1070,247 @@ export const guides: Guide[] = [
       },
     ],
     relatedSlugs: [
+      "bedste-spinningcykel-2026",
       "bedste-crosstrainer-2026",
       "bedste-loebebaand-2026",
-      "bedste-romaskine-2026",
+    ],
+  },
+  {
+    slug: "bedste-spinningcykel-2026",
+    title: "Bedste spinningcykel 2026",
+    excerpt:
+      "Spin bike til hjemmet: svinghjul, saddel, støj og fire Titan LIFE-anbefalinger med aktuelle priser.",
+    metaDescription:
+      "Find den bedste spinningcykel til hjemmet i 2026. Guide til svinghjul, pasform og støj — plus fire Titan LIFE spin bikes med live priser fra danske partnere.",
+    categorySlug: "motionscykel",
+    intentSlug: "spinning",
+    publishedAt: "2026-11-04",
+    updatedAt: "2026-11-04",
+    intro:
+      "En spinningcykel (spin bike) er bygget til intervaller, sved og den aggressive hold-følelse — ikke til at sidde oprejst og se nyheder i en time. Tungt svinghjul, sporty position og direkte feedback. Denne guide er til dig, der ved (eller tror), at du vil spinne hjemme: hvad der betyder noget, fire konkrete Titan LIFE-modeller med shop-links, og hvornår du i stedet skal vælge en almindelig kondicykel.",
+    criteria: [
+      {
+        title: "Spinning vs. kondicykel",
+        description:
+          "Spinning: mere svinghjul, mere sporty saddel/styr, bedre til HIIT og hold-agtige pas. Kondicykel: mere komfort, ofte støjsvagere, bedre til lange zone-2-pas. Køb spinning, hvis du vil træne hårdt og “cykelagtigt”. Køb kondicykel, hvis komfort og stilhed er hovedsagen.",
+      },
+      {
+        title: "Svinghjul og modstand",
+        description:
+          "Tungere svinghjul giver typisk mere jævn, realistisk følelse. Magnetisk modstand er støjsvag og præcis. Tjek, at du kan justere fint nok til både opvarmning og all-out — ikke kun “let / hård”.",
+      },
+      {
+        title: "Pasform: saddel, styr og justering",
+        description:
+          "Spinning-sadler er hårde. Det er normalt — men justerbar saddel (højde + frem/tilbage) og styr er ikke til forhandling. Forkert pasform = droppet vane. Budgetér evt. til bedre saddel eller cykelshorts.",
+      },
+      {
+        title: "Stabilitet og footprint",
+        description:
+          "En spinningcykel skal stå stille, når du rejser dig i pedalerne. Tjek vægt, fodaftryk og om den “vandrer” på laminat. Brug måtte. Mål plads til at stige af uden at ramme væggen.",
+      },
+      {
+        title: "Støj i lejlighed",
+        description:
+          "Spinning er ofte mere vibration end en magnetkondicykel — især ved stående sprint. Måtte, gulvtype og tidspunkt på dagen betyder mere end marketing. Har du naboer under dig, vær ærlig omkring forventningerne.",
+      },
+      {
+        title: "Computer og motivation",
+        description:
+          "Tid, RPM/kadence og modstand er nok. Store skærme er nice-to-have. Mange spinner bedst til musik eller apps på telefonen — prioriter maskinen under dig før displayet.",
+      },
+      {
+        title: "Budget i Titan LIFE S-serien",
+        description:
+          "S11 er skarp indgang. S62/S72 er det søde midtpunkt til jævnlig brug. S96 er premium i samme familie. Opgrader linjen, når vanen er beviselig — ikke på dag ét “fordi holdcykling er sejt”.",
+      },
+    ],
+    products: [
+      {
+        id: "titan-s72",
+        name: "Titan LIFE Spinning Cykel S72",
+        badge: "Bedst samlet",
+        summary:
+          "Det stærkeste allround-valg i S-serien til hjemmet: nok cykel til intervaller flere gange om ugen uden at hoppe direkte i S96-prisen.",
+        pros: [
+          "Solid mid/øvre mid i Titan LIFE-serien",
+          "God til jævnlig spinning hjemme",
+          "Klar anbefaling til de fleste “jeg vil spinne”-købere",
+          "Fri fragt hos partner",
+        ],
+        cons: [
+          "Dyrere end S11/S62",
+          "Hårdere saddel end kondicykel",
+          "Fylder — mål pladsen",
+        ],
+        specs: [
+          { label: "Type", value: "Spinningcykel" },
+          { label: "Brand", value: "Titan LIFE" },
+          { label: "Serie", value: "S72" },
+          { label: "Segment", value: "Allround" },
+          { label: "Partner", value: "HomeX.dk" },
+        ],
+        feedProductId: "HomeX.dk:2807",
+      },
+      {
+        id: "titan-s11",
+        name: "Titan LIFE Spinning Cykel S11",
+        badge: "Bedste billige",
+        summary:
+          "Prisbevidst indgang til spin bike. Fin til at teste, om spinning-hjemme er dig — uden stor investering.",
+        pros: [
+          "Lavest pris i S-serien her",
+          "God til at bygge vanen",
+          "Spinning-orienteret fra start",
+          "Fri fragt hos partner",
+        ],
+        cons: [
+          "Færre “premium”-detaljer end S72/S96",
+          "Opgrader, hvis du spinner hårdt flere gange om ugen",
+          "Pasform kræver stadig justeringstid",
+        ],
+        specs: [
+          { label: "Type", value: "Spinningcykel" },
+          { label: "Brand", value: "Titan LIFE" },
+          { label: "Serie", value: "S11" },
+          { label: "Segment", value: "Budget" },
+          { label: "Partner", value: "HomeX.dk" },
+        ],
+        feedProductId: "HomeX.dk:2805",
+      },
+      {
+        id: "titan-s62",
+        name: "Titan LIFE Spinning Cykel S62",
+        badge: "Bedste midrange",
+        summary:
+          "Et skridt op fra S11, når du ved, at cyklen bliver brugt. God balance mellem pris og daglig spin-kvalitet.",
+        pros: [
+          "Bedre end ren entry til hyppig brug",
+          "Logisk midrange i serien",
+          "Skarp pris ift. S72",
+          "Fri fragt hos partner",
+        ],
+        cons: [
+          "Ikke det absolutte allround-topvalg (det er S72)",
+          "Stadig spinning-sadel — tilvænning kræves",
+          "Tjek støj/vibration i din bolig",
+        ],
+        specs: [
+          { label: "Type", value: "Spinningcykel" },
+          { label: "Brand", value: "Titan LIFE" },
+          { label: "Serie", value: "S62" },
+          { label: "Segment", value: "Midrange" },
+          { label: "Partner", value: "HomeX.dk" },
+        ],
+        feedProductId: "HomeX.dk:2806",
+      },
+      {
+        id: "titan-s96",
+        name: "Titan LIFE Spinning Cykel S96",
+        badge: "Bedste premium",
+        summary:
+          "Når spinning er din primære cardio, og du vil have toppen af Titan LIFE S-linjen til hjemmet. Mere cykel til dem, der allerede spinner ofte.",
+        pros: [
+          "Premium i samme produktfamilie",
+          "Til dig med høj træningsfrekvens",
+          "Klar opgradering fra S11/S62",
+          "Fri fragt hos partner",
+        ],
+        cons: [
+          "Højere pris",
+          "Overkill, hvis du spinner sjældent",
+          "Kondicykel kan stadig være bedre til rolige pas",
+        ],
+        specs: [
+          { label: "Type", value: "Spinningcykel" },
+          { label: "Brand", value: "Titan LIFE" },
+          { label: "Serie", value: "S96" },
+          { label: "Segment", value: "Premium" },
+          { label: "Partner", value: "HomeX.dk" },
+        ],
+        feedProductId: "HomeX.dk:3294",
+      },
+    ],
+    howToChoose:
+      "Usikker på spinning? Start S11. Træner du 3+ gange om ugen? S62 eller S72 (S72 er vores allround). All-in på spin hjemme? S96. Vil du egentlig bare have skånsom, stille cardio? Stop — vælg en kondicykel i Bedste motionscykel 2026 i stedet. Shop via “Se pris”, eller filtrér Motionscykel → Spinning.",
+    learningSections: [
+      {
+        heading: "Hvad en spinningcykel er (og ikke er)",
+        paragraphs: [
+          "En spin bike efterligner holdcykling: tungt svinghjul, frempunkts-lignende position, mulighed for at rejse dig i pedalerne. Det er træningsværktøj — ikke en “komfortsofa på hjul”.",
+          "Forvent hårdere saddel og mere intens sved end på en oprejst kondicykel. Det er meningen. Det er også grunden til, at mange køber forkert type første gang.",
+        ],
+      },
+      {
+        heading: "Spinning vs. kondicykel derhjemme",
+        paragraphs: [
+          "Vælg spinning til intervaller, kalorieforbrænding på kort tid og hold-følelse. Vælg kondicykel til lange, stille pas og knæ-/sadelkomfort over tid.",
+          "Har du begge behov, start med den vane, du mangler mest — eller vælg kondicykel først, hvis støj i lejlighed er kritisk.",
+        ],
+      },
+      {
+        heading: "Sadel og de første to uger",
+        paragraphs: [
+          "Ømhed er normalt. Juster højde, så knæet har let bøjning i bunden. Brug shorts med pude eller en bedre saddel, hvis det stopper dig efter 10 minutter.",
+          "Giv det 8–10 sessioner, før du dømmer cyklen. Mange “dårlige cykler” er bare ujusterede cykler.",
+        ],
+      },
+      {
+        heading: "Støj, gulv og naboer",
+        paragraphs: [
+          "Brug måtte. Undgå at hoppe i pedalerne. Stående sprint sender vibration gennem etagen. Aften-HIIT i lejlighed er ofte en dårlig cocktail — planlæg tidspunkter.",
+          "Hvis støj er dealbreakeren, er en magnetkondicykel ærligere end en “stille” spin bike-claim.",
+        ],
+      },
+      {
+        heading: "Typiske fejl ved køb",
+        paragraphs: [
+          "At købe spinning, fordi det ser pro ud — og egentlig ville have komfort. At ignorere justering. At skippe måtte. At købe S96 før vanen er der.",
+          "Omvendt: at blive på en vaklende entry-cykel, når du spinner fem gange om ugen. Opgrader S-linjen, når udstyret begrænser dig.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "Hvilken spinningcykel er bedst til hjemmet?",
+        answer:
+          "Til allround: Titan LIFE S72. Til budget: S11. Til midrange: S62. Til premium i samme serie: S96. Alle fire er live hos vores partnere med aktuelle priser via “Se pris”.",
+      },
+      {
+        question: "Er spinningcykel godt for begyndere?",
+        answer:
+          "Ja, hvis du starter roligt, justerer pasform og accepterer sadlen. Er dit mål rolige gåture på cykel uden sved, er kondicykel ofte bedre første køb.",
+      },
+      {
+        question: "Hvor tungt skal svinghjulet være?",
+        answer:
+          "Tungere er ofte mere jævnt, men tal alene sælger. Kør efter stabilitet, justering og din træningsstil — ikke kun kg i marketing.",
+      },
+      {
+        question: "Kan jeg have spinningcykel i lejlighed?",
+        answer:
+          "Ja, med måtte og hensyn til vibration. Forvent mere støj/vibration end en magnetkondicykel, især ved stående arbejde.",
+      },
+      {
+        question: "Skal jeg købe cykelshorts?",
+        answer:
+          "Mange bliver gladere af det. Det er en billig opgradering sammenlignet med at skifte cykel. Prøv shorts, før du opgraderer hele maskinen pga. saddelømhed.",
+      },
+      {
+        question: "Spinning eller crosstrainer?",
+        answer:
+          "Spinning til cykel-specifik intensitet. Crosstrainer til skånsom helkrop stående. Forskellige jobs — vælg efter den træning, du faktisk laver.",
+      },
+      {
+        question: "Hvordan ser jeg flere spinning-tilbud?",
+        answer:
+          "Klik “Se pris” på anbefalingerne, eller gå til Motionscykel og filtrér på Spinning. Priser opdateres via partnerfeeds.",
+      },
+    ],
+    relatedSlugs: [
+      "bedste-motionscykel-2026",
+      "bedste-crosstrainer-2026",
+      "bedste-loebebaand-2026",
     ],
   },
   {
