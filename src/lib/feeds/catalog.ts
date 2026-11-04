@@ -48,6 +48,14 @@ function sortOffers(a: FeedProduct, b: FeedProduct): number {
   return a.title.localeCompare(b.title, "da");
 }
 
+/** Opslag af et enkelt feed-produkt via stabilt id (`merchant:produktid`). */
+export async function getFeedProductById(
+  id: string,
+): Promise<FeedProduct | undefined> {
+  const catalog = await getMachineCatalog();
+  return catalog.find((p) => p.id === id);
+}
+
 export async function getProductsByCategory(
   categorySlug: MachineCategorySlug,
   opts?: { intentSlug?: string; limit?: number; inStockOnly?: boolean },

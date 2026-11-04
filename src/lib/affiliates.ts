@@ -6,8 +6,8 @@ export type AffiliateLink = {
 };
 
 /**
- * Partner-/affiliate-links.
- * Wire produktets `affiliateId` i lib/guides.ts, når URL’erne er klar.
+ * Valgfri manuelle affiliate-URL’er (fallback).
+ * Primær shop-CTA i guides bruger `feedProductId` → Partner-Ads-kataloget.
  *
  * Eksempel:
  * { id: "loebebaand-virtufit-tr500i", partner: "Partner", label: "Se pris", url: "https://..." }

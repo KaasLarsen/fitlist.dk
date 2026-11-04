@@ -6,7 +6,8 @@ import { getAllGuides } from "@/lib/guides";
 export const metadata: Metadata = {
   title: "Guides",
   description:
-    "Købsguides til løbebånd, romaskiner, cykler og andre træningsmaskiner til hjemmet.",
+    "Lange købsguides til løbebånd, romaskiner og motionscykler — kriterier, anbefalinger og live priser fra danske partnere.",
+  alternates: { canonical: "https://fitlist.dk/guides" },
 };
 
 export default function GuidesPage() {
@@ -22,8 +23,8 @@ export default function GuidesPage() {
           Købsguides
         </h1>
         <p className="mt-4 max-w-xl text-muted">
-          Kriterier først, anbefalinger bagefter. Vi hjælper dig med at vælge
-          den rigtige maskine til hjemmet.
+          Detaljerede købsguides med klare anbefalinger, valg-kriterier og ét
+          klik videre til aktuelle priser hos vores partnere.
         </p>
 
         <ul className="mt-16 divide-y divide-border border-t border-border">

@@ -21,24 +21,31 @@ npm run dev
 | Fil | Formål |
 |-----|--------|
 | `src/lib/categories.ts` | Maskinkategorier + intents (foldbar, billig, støj, plads) |
-| `src/lib/guides.ts` | Guides (TOC-klar struktur: kriterier, produkter, specs, CTA) |
-| `src/lib/affiliates.ts` | Kuraterede partner-URL’er til guide-CTA’er |
+| `src/lib/guides.ts` | Guides (TOC, kriterier, produkter, FAQ, CTA) |
+| `src/lib/affiliates.ts` | Valgfri manuelle partner-URL’er (fallback) |
 | `src/lib/feeds/` | Partner-Ads feed-sync → live tilbud på `/maskiner/[slug]` |
 
 Cron: `vercel.json` → `/api/cron/revalidate-feeds` hver 6. time. Sæt `CRON_SECRET` i Vercel.
 
-### Guide-skelet (kondition-inspireret)
+### Guide-skelet
 
 1. Intro  
-2. Produkt-TOC (når produkter findes)  
-3. Valg-kriterier  
-4. Rangerede modeller med fordele/ulemper + specs + affiliate-CTA  
+2. TOC (sektioner + produkter)  
+3. Rangerede modeller med fordele/ulemper + specs + **live Se pris** via `feedProductId`  
+4. Valg-kriterier  
 5. Opsummering / hvordan vælger du  
-6. Læringsafsnit + relaterede guides  
+6. Læringsafsnit + FAQ + relaterede tilbud/guides  
 
-### Første guides
+### Shop-CTA via feed
+
+Sæt `GuideProduct.feedProductId` til `FeedProduct.id` (fx `HomeX.dk:3179`).  
+Ved render slås produktet op i kataloget → live pris, billede og tracked URL.  
+Mangler produktet i feedet, falder UI tilbage til kategorisiden `/maskiner/[slug]`.
+
+### Aktuelle guides
 
 - `/guides/bedste-loebebaand-2026`
 - `/guides/bedste-romaskine-2026`
+- `/guides/bedste-motionscykel-2026`
 
-Kuraterede produktanbefalinger i guides er separate fra live feed-tilbud.
+Kuraterede produktanbefalinger i guides er separate fra “Relaterede tilbud” (top feed-hits i samme kategori).

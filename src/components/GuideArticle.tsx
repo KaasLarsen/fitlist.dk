@@ -1,21 +1,45 @@
+import Image from "next/image";
 import Link from "next/link";
 import { ProductOfferList } from "@/components/ProductOfferList";
 import { getCategory } from "@/lib/categories";
-import { getProductsByCategory } from "@/lib/feeds/catalog";
-import type { MachineCategorySlug } from "@/lib/feeds/types";
+import {
+  formatPriceDkk,
+  getFeedProductById,
+  getProductsByCategory,
+} from "@/lib/feeds/catalog";
+import type { FeedProduct, MachineCategorySlug } from "@/lib/feeds/types";
 import {
   getProductAffiliate,
   getRelatedGuides,
   type Guide,
+  type GuideProduct,
 } from "@/lib/guides";
+
+async function resolveGuideOffers(
+  products: GuideProduct[],
+): Promise<Map<string, FeedProduct | undefined>> {
+  const entries = await Promise.all(
+    products.map(async (product) => {
+      if (!product.feedProductId) return [product.id, undefined] as const;
+      const offer = await getFeedProductById(product.feedProductId);
+      return [product.id, offer] as const;
+    }),
+  );
+  return new Map(entries);
+}
 
 export async function GuideArticle({ guide }: { guide: Guide }) {
   const category = getCategory(guide.categorySlug);
   const related = getRelatedGuides(guide);
-  const relatedOffers = await getProductsByCategory(
-    guide.categorySlug as MachineCategorySlug,
-    { limit: 3, inStockOnly: true },
-  );
+  const [relatedOffers, offerMap] = await Promise.all([
+    getProductsByCategory(guide.categorySlug as MachineCategorySlug, {
+      limit: 3,
+      inStockOnly: true,
+    }),
+    resolveGuideOffers(guide.products),
+  ]);
+
+  const categoryHref = category ? `/maskiner/${category.slug}` : "/maskiner";
 
   return (
     <article className="noise hero-glow flex flex-1 flex-col">
@@ -23,7 +47,7 @@ export async function GuideArticle({ guide }: { guide: Guide }) {
         <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-sm">
           {category ? (
             <Link
-              href={`/maskiner/${category.slug}`}
+              href={categoryHref}
               className="font-display font-medium uppercase tracking-[0.2em] text-accent transition-colors hover:text-accent-dim"
             >
               {category.name}
@@ -52,62 +76,106 @@ export async function GuideArticle({ guide }: { guide: Guide }) {
           {guide.intro}
         </p>
 
-        {guide.products.length > 0 ? (
-          <nav aria-label="Produkter i guiden" className="mt-12 border-t border-border pt-8">
-            <p className="font-display text-sm font-medium uppercase tracking-[0.16em] text-muted">
-              I denne test
-            </p>
-            <ol className="mt-4 space-y-2">
-              {guide.products.map((product, i) => (
-                <li key={product.id}>
-                  <a
-                    href={`#produkt-${product.id}`}
-                    className="text-foreground/90 transition-colors hover:text-accent"
-                  >
-                    <span className="text-muted">{i + 1}.</span> {product.name}
-                    {product.badge ? (
-                      <span className="ml-2 text-sm text-accent">
-                        ({product.badge})
-                      </span>
-                    ) : null}
-                  </a>
-                </li>
-              ))}
-            </ol>
-          </nav>
-        ) : null}
-
-        <section className="mt-14">
-          <h2 className="font-display text-2xl font-semibold uppercase tracking-wide text-foreground">
-            Sådan vælger du
-          </h2>
-          <ul className="mt-6 space-y-6">
-            {guide.criteria.map((criterion) => (
-              <li key={criterion.title} className="border-l-2 border-accent/40 pl-5">
-                <h3 className="font-display text-lg font-medium uppercase tracking-wide text-foreground">
-                  {criterion.title}
-                </h3>
-                <p className="mt-2 text-muted leading-relaxed">
-                  {criterion.description}
-                </p>
+        <nav
+          aria-label="Indhold i guiden"
+          className="mt-12 border-t border-border pt-8"
+        >
+          <p className="font-display text-sm font-medium uppercase tracking-[0.16em] text-muted">
+            I denne guide
+          </p>
+          <ul className="mt-4 space-y-2 text-foreground/90">
+            {guide.products.length > 0 ? (
+              <li>
+                <a
+                  href="#anbefalinger"
+                  className="transition-colors hover:text-accent"
+                >
+                  Anbefalede modeller
+                </a>
               </li>
-            ))}
+            ) : null}
+            <li>
+              <a
+                href="#saadan-vaelger-du"
+                className="transition-colors hover:text-accent"
+              >
+                Sådan vælger du
+              </a>
+            </li>
+            <li>
+              <a
+                href="#opsummering"
+                className="transition-colors hover:text-accent"
+              >
+                Kort opsummering
+              </a>
+            </li>
+            {guide.faqs.length > 0 ? (
+              <li>
+                <a href="#faq" className="transition-colors hover:text-accent">
+                  Ofte stillede spørgsmål
+                </a>
+              </li>
+            ) : null}
+            <li>
+              <a
+                href="#tilbud"
+                className="transition-colors hover:text-accent"
+              >
+                Relaterede tilbud
+              </a>
+            </li>
           </ul>
-        </section>
 
-        <section className="mt-14">
+          {guide.products.length > 0 ? (
+            <div className="mt-8">
+              <p className="font-display text-sm font-medium uppercase tracking-[0.16em] text-muted">
+                I denne test
+              </p>
+              <ol className="mt-4 space-y-2">
+                {guide.products.map((product, i) => (
+                  <li key={product.id}>
+                    <a
+                      href={`#produkt-${product.id}`}
+                      className="text-foreground/90 transition-colors hover:text-accent"
+                    >
+                      <span className="text-muted">{i + 1}.</span> {product.name}
+                      {product.badge ? (
+                        <span className="ml-2 text-sm text-accent">
+                          ({product.badge})
+                        </span>
+                      ) : null}
+                    </a>
+                  </li>
+                ))}
+              </ol>
+            </div>
+          ) : null}
+        </nav>
+
+        <section id="anbefalinger" className="mt-14 scroll-mt-28">
           <h2 className="font-display text-2xl font-semibold uppercase tracking-wide text-foreground">
             Anbefalede modeller
           </h2>
           {guide.products.length === 0 ? (
             <p className="mt-4 text-muted leading-relaxed">
               Konkret rangering og købslinks lander her, så snart partneraftalerne
-              er på plads. Kriterierne ovenfor er dem, vi vurderer efter.
+              er på plads. Kriterierne nedenfor er dem, vi vurderer efter.
             </p>
           ) : (
             <div className="mt-8 space-y-14">
               {guide.products.map((product) => {
+                const offer = offerMap.get(product.id);
                 const affiliate = getProductAffiliate(product);
+                const shopHref = offer?.url ?? affiliate?.url;
+                const shopLabel = offer
+                  ? `Se pris hos ${offer.merchant}`
+                  : affiliate?.label;
+                const hasDiscount =
+                  offer?.oldPrice != null &&
+                  offer.price != null &&
+                  offer.oldPrice > offer.price;
+
                 return (
                   <div
                     key={product.id}
@@ -125,6 +193,45 @@ export async function GuideArticle({ guide }: { guide: Guide }) {
                     <p className="mt-3 text-muted leading-relaxed">
                       {product.summary}
                     </p>
+
+                    {offer ? (
+                      <div className="mt-6 flex flex-col gap-4 sm:flex-row sm:items-center sm:gap-6">
+                        <div className="relative h-36 w-full shrink-0 overflow-hidden border border-border bg-surface sm:h-28 sm:w-36">
+                          {offer.image ? (
+                            <Image
+                              src={offer.image}
+                              alt=""
+                              fill
+                              sizes="(max-width: 640px) 100vw, 144px"
+                              className="object-contain p-2"
+                              unoptimized
+                            />
+                          ) : (
+                            <div className="flex h-full items-center justify-center font-display text-xs uppercase tracking-[0.14em] text-muted">
+                              Intet billede
+                            </div>
+                          )}
+                        </div>
+                        <div className="min-w-0">
+                          <p className="font-display text-xs uppercase tracking-[0.14em] text-muted">
+                            {offer.merchant}
+                            {!offer.inStock ? (
+                              <span className="ml-2 text-muted/80">
+                                · Ikke på lager
+                              </span>
+                            ) : null}
+                          </p>
+                          <p className="mt-2 font-display text-2xl font-semibold tabular-nums text-foreground">
+                            {formatPriceDkk(offer.price)}
+                            {hasDiscount ? (
+                              <span className="ml-3 text-base font-normal text-muted line-through">
+                                {formatPriceDkk(offer.oldPrice)}
+                              </span>
+                            ) : null}
+                          </p>
+                        </div>
+                      </div>
+                    ) : null}
 
                     <div className="mt-6 grid gap-6 sm:grid-cols-2">
                       <div>
@@ -152,7 +259,10 @@ export async function GuideArticle({ guide }: { guide: Guide }) {
                     {product.specs.length > 0 ? (
                       <dl className="mt-6 grid gap-2 border-t border-border pt-6 text-sm sm:grid-cols-2">
                         {product.specs.map((spec) => (
-                          <div key={spec.label} className="flex justify-between gap-4">
+                          <div
+                            key={spec.label}
+                            className="flex justify-between gap-4"
+                          >
                             <dt className="text-muted">{spec.label}</dt>
                             <dd className="text-right text-foreground">
                               {spec.value}
@@ -162,16 +272,23 @@ export async function GuideArticle({ guide }: { guide: Guide }) {
                       </dl>
                     ) : null}
 
-                    {affiliate ? (
+                    {shopHref && shopLabel ? (
                       <a
-                        href={affiliate.url}
+                        href={shopHref}
                         target="_blank"
                         rel="noopener noreferrer sponsored"
                         className="mt-8 inline-flex items-center bg-accent px-5 py-3 font-display text-sm font-semibold uppercase tracking-[0.12em] text-accent-fg transition-colors hover:bg-accent-dim"
                       >
-                        {affiliate.label}
+                        {shopLabel}
                       </a>
-                    ) : null}
+                    ) : (
+                      <Link
+                        href={categoryHref}
+                        className="mt-8 inline-flex items-center border border-border px-5 py-3 font-display text-sm font-semibold uppercase tracking-[0.12em] text-accent transition-colors hover:border-accent hover:text-accent-dim"
+                      >
+                        Se tilbud i kategorien →
+                      </Link>
+                    )}
                   </div>
                 );
               })}
@@ -179,7 +296,49 @@ export async function GuideArticle({ guide }: { guide: Guide }) {
           )}
         </section>
 
-        <section className="mt-14 border-t border-border pt-10">
+        {category ? (
+          <aside className="mt-12 border border-border bg-surface/40 px-5 py-6 sm:px-6">
+            <p className="font-display text-sm font-medium uppercase tracking-[0.16em] text-muted">
+              Klar til at shoppe?
+            </p>
+            <p className="mt-2 text-sm text-foreground/90 leading-relaxed">
+              Se flere aktuelle tilbud på {category.name.toLowerCase()} hos vores
+              partnere — priser opdateres løbende.
+            </p>
+            <Link
+              href={categoryHref}
+              className="mt-4 inline-flex font-display text-sm font-semibold uppercase tracking-[0.14em] text-accent transition-colors hover:text-accent-dim"
+            >
+              Se alle {category.name.toLowerCase()} →
+            </Link>
+          </aside>
+        ) : null}
+
+        <section id="saadan-vaelger-du" className="mt-14 scroll-mt-28">
+          <h2 className="font-display text-2xl font-semibold uppercase tracking-wide text-foreground">
+            Sådan vælger du
+          </h2>
+          <ul className="mt-6 space-y-6">
+            {guide.criteria.map((criterion) => (
+              <li
+                key={criterion.title}
+                className="border-l-2 border-accent/40 pl-5"
+              >
+                <h3 className="font-display text-lg font-medium uppercase tracking-wide text-foreground">
+                  {criterion.title}
+                </h3>
+                <p className="mt-2 text-muted leading-relaxed">
+                  {criterion.description}
+                </p>
+              </li>
+            ))}
+          </ul>
+        </section>
+
+        <section
+          id="opsummering"
+          className="mt-14 scroll-mt-28 border-t border-border pt-10"
+        >
           <h2 className="font-display text-2xl font-semibold uppercase tracking-wide text-foreground">
             Kort opsummering
           </h2>
@@ -191,28 +350,67 @@ export async function GuideArticle({ guide }: { guide: Guide }) {
             <h2 className="font-display text-2xl font-semibold uppercase tracking-wide text-foreground">
               {section.heading}
             </h2>
-            <p className="mt-4 text-muted leading-relaxed">{section.body}</p>
+            <div className="mt-4 space-y-4">
+              {section.paragraphs.map((paragraph) => (
+                <p key={paragraph.slice(0, 48)} className="text-muted leading-relaxed">
+                  {paragraph}
+                </p>
+              ))}
+            </div>
           </section>
         ))}
 
-        {relatedOffers.length > 0 ? (
-          <aside className="mt-14 border-t border-border pt-10">
-            <div className="flex flex-col gap-2 sm:flex-row sm:items-baseline sm:justify-between">
-              <p className="font-display text-sm font-medium uppercase tracking-[0.16em] text-muted">
-                Relaterede tilbud
-              </p>
+        {guide.faqs.length > 0 ? (
+          <section id="faq" className="mt-14 scroll-mt-28 border-t border-border pt-10">
+            <h2 className="font-display text-2xl font-semibold uppercase tracking-wide text-foreground">
+              Ofte stillede spørgsmål
+            </h2>
+            <dl className="mt-8 space-y-8">
+              {guide.faqs.map((faq) => (
+                <div key={faq.question}>
+                  <dt className="font-display text-lg font-medium uppercase tracking-wide text-foreground">
+                    {faq.question}
+                  </dt>
+                  <dd className="mt-2 text-muted leading-relaxed">{faq.answer}</dd>
+                </div>
+              ))}
+            </dl>
+          </section>
+        ) : null}
+
+        <aside
+          id="tilbud"
+          className="mt-14 scroll-mt-28 border-t border-border pt-10"
+        >
+          <div className="flex flex-col gap-2 sm:flex-row sm:items-baseline sm:justify-between">
+            <p className="font-display text-sm font-medium uppercase tracking-[0.16em] text-muted">
+              Relaterede tilbud
+            </p>
+            {category ? (
+              <Link
+                href={categoryHref}
+                className="font-display text-xs uppercase tracking-[0.14em] text-accent transition-colors hover:text-accent-dim"
+              >
+                Se alle {category.name.toLowerCase()} →
+              </Link>
+            ) : null}
+          </div>
+          {relatedOffers.length > 0 ? (
+            <ProductOfferList products={relatedOffers} compact />
+          ) : (
+            <p className="mt-4 text-sm text-muted">
+              Ingen aktuelle tilbud i feedet lige nu.{" "}
               {category ? (
                 <Link
-                  href={`/maskiner/${category.slug}`}
-                  className="font-display text-xs uppercase tracking-[0.14em] text-accent transition-colors hover:text-accent-dim"
+                  href={categoryHref}
+                  className="text-accent underline-offset-2 hover:underline"
                 >
-                  Se alle {category.name.toLowerCase()} →
+                  Se kategorien alligevel →
                 </Link>
               ) : null}
-            </div>
-            <ProductOfferList products={relatedOffers} compact />
-          </aside>
-        ) : null}
+            </p>
+          )}
+        </aside>
 
         {related.length > 0 ? (
           <aside className="mt-14 border-t border-border pt-10">
