@@ -12,18 +12,28 @@ export function Footer() {
             Hjælperen til træningsmaskiner til hjemmet.
           </p>
         </div>
-        <nav className="flex gap-6 text-sm text-muted">
+        <nav className="flex flex-wrap gap-x-6 gap-y-2 text-sm text-muted">
+          <Link href="/maskiner" className="transition-colors hover:text-foreground">
+            Maskiner
+          </Link>
           <Link href="/guides" className="transition-colors hover:text-foreground">
             Guides
           </Link>
           <Link href="/om" className="transition-colors hover:text-foreground">
             Om
           </Link>
+          <Link
+            href="/saadan-tjener-vi-penge"
+            className="transition-colors hover:text-foreground"
+          >
+            Sådan tjener vi penge
+          </Link>
         </nav>
       </div>
       <div className="border-t border-border">
         <p className="mx-auto max-w-6xl px-5 py-4 text-xs text-muted sm:px-8">
-          © {new Date().getFullYear()} Fitlist.dk
+          © {new Date().getFullYear()} Fitlist.dk · Siden indeholder
+          affiliate-links
         </p>
       </div>
     </footer>

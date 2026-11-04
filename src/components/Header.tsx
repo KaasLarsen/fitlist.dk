@@ -1,6 +1,7 @@
 import Link from "next/link";
 
 const nav = [
+  { href: "/maskiner", label: "Maskiner" },
   { href: "/guides", label: "Guides" },
   { href: "/om", label: "Om" },
 ];
@@ -15,7 +16,7 @@ export function Header() {
         >
           Fitlist
         </Link>
-        <nav className="flex items-center gap-6 sm:gap-8">
+        <nav className="flex items-center gap-5 sm:gap-8">
           {nav.map((item) => (
             <Link
               key={item.href}

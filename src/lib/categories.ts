@@ -1,0 +1,172 @@
+export type MachineIntent = {
+  slug: string;
+  label: string;
+  description: string;
+};
+
+export type MachineCategory = {
+  slug: string;
+  name: string;
+  shortName: string;
+  description: string;
+  intents: MachineIntent[];
+};
+
+/** Fælles intents der går på tværs af maskintyper */
+export const sharedIntents: MachineIntent[] = [
+  {
+    slug: "foldbar",
+    label: "Foldbar",
+    description: "Til dig der skal kunne pakke maskinen væk efter træning.",
+  },
+  {
+    slug: "billig",
+    label: "Billig",
+    description: "God værdi uden at gå på kompromis med det vigtigste.",
+  },
+  {
+    slug: "stoejsvag",
+    label: "Støjsvag",
+    description: "Til lejlighed, aftentræning og hensyn til naboer.",
+  },
+  {
+    slug: "plads",
+    label: "Begrænset plads",
+    description: "Kompakte valg når kvadratmeterne er få.",
+  },
+];
+
+/**
+ * Maskine-først IA — kun hjemmetræningsmaskiner.
+ * Intent-undersider: /maskiner/[slug]?intent=… eller fremtidige /maskiner/[slug]/[intent]
+ */
+export const categories: MachineCategory[] = [
+  {
+    slug: "loebebaand",
+    name: "Løbebånd",
+    shortName: "Løbebånd",
+    description:
+      "Kondition, gåbånd og løb hjemme — fra foldbare modeller til seriøse baner.",
+    intents: [
+      {
+        slug: "foldbar",
+        label: "Foldbart",
+        description: "Sammenklappelige løbebånd til små hjem.",
+      },
+      {
+        slug: "gaabaand",
+        label: "Gåbånd",
+        description: "Lavere hastighed, ofte under skrivebordet.",
+      },
+      {
+        slug: "billig",
+        label: "Billigt",
+        description: "De bedste valg i den lavere prisklasse.",
+      },
+    ],
+  },
+  {
+    slug: "motionscykel",
+    name: "Motionscykel",
+    shortName: "Cykler",
+    description:
+      "Kondicykel, spinning og airbike — skånsom cardio til alle niveauer.",
+    intents: [
+      {
+        slug: "spinning",
+        label: "Spinning",
+        description: "Indoor bike med tungt svinghjul og intensitet.",
+      },
+      {
+        slug: "stoejsvag",
+        label: "Støjsvag",
+        description: "Magnetmodstand og rolige aftenspas.",
+      },
+      {
+        slug: "billig",
+        label: "Billig",
+        description: "Solide cykler uden unødvendig elektronik.",
+      },
+    ],
+  },
+  {
+    slug: "romaskine",
+    name: "Romaskine",
+    shortName: "Romaskiner",
+    description:
+      "Helkropstræning med lav led-belastning — luft, vand eller magnet.",
+    intents: [
+      {
+        slug: "foldbar",
+        label: "Foldbar",
+        description: "Modeller der kan rejses eller klappes sammen.",
+      },
+      {
+        slug: "stoejsvag",
+        label: "Støjsvag",
+        description: "Magnetmodstand til stille hjemmetræning.",
+      },
+      {
+        slug: "plads",
+        label: "Kompakt",
+        description: "Når skinne-længde og opbevaring er afgørende.",
+      },
+    ],
+  },
+  {
+    slug: "crosstrainer",
+    name: "Crosstrainer",
+    shortName: "Crosstrainere",
+    description:
+      "Ledvenlig helkropscardio med flydende bevægelse — godt til restitution og vægttab.",
+    intents: [
+      {
+        slug: "plads",
+        label: "Kompakt",
+        description: "Mindre footprint til lejlighed og små rum.",
+      },
+      {
+        slug: "stoejsvag",
+        label: "Støjsvag",
+        description: "Magnetiske systemer uden larmende remme.",
+      },
+      {
+        slug: "billig",
+        label: "Billig",
+        description: "Bedste crosstrainere under den høje prisklasse.",
+      },
+    ],
+  },
+  {
+    slug: "styrkemaskiner",
+    name: "Styrkemaskiner",
+    shortName: "Styrke",
+    description:
+      "Multigym, smith, bænk og cable — opbyg styrke uden center-abonnement.",
+    intents: [
+      {
+        slug: "plads",
+        label: "Kompakt",
+        description: "Setup der passer i et ekstra værelse.",
+      },
+      {
+        slug: "billig",
+        label: "Billig",
+        description: "Mest træning for pengene til hjemmegymmet.",
+      },
+      {
+        slug: "begynder",
+        label: "Begynder",
+        description: "Trygge maskiner når du starter styrketræning hjemme.",
+      },
+    ],
+  },
+];
+
+export function getCategory(slug: string): MachineCategory | undefined {
+  return categories.find((c) => c.slug === slug);
+}
+
+export function getAllCategories(): MachineCategory[] {
+  return categories;
+}

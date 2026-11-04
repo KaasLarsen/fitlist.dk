@@ -6,7 +6,11 @@ export type AffiliateLink = {
 };
 
 /**
- * Partner-/affiliate-links. Udfyld når partneraftaler er på plads.
+ * Partner-/affiliate-links.
+ * Wire produktets `affiliateId` i lib/guides.ts, når URL’erne er klar.
+ *
+ * Eksempel:
+ * { id: "loebebaand-virtufit-tr500i", partner: "Partner", label: "Se pris", url: "https://..." }
  */
 export const affiliates: AffiliateLink[] = [];
 

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Om Fitlist",
@@ -22,10 +23,25 @@ export default function OmPage() {
             så du hurtigt finder det rigtige udstyr.
           </p>
           <p>
-            Siden er under opbygning. Guides og partnerlinks kommer løbende —
-            hold øje her, når indholdet går live.
+            Fokus er smalt med vilje: løbebånd, cykler, romaskiner, crosstrainere
+            og styrkemaskiner — ikke hele fitness-universet. Færre, skarpere
+            guides, der opdateres.
+          </p>
+          <p>
+            Siden er under opbygning. Produktanbefalinger og partnerlinks kommer
+            løbende.
           </p>
         </div>
+
+        <p className="mt-10 text-sm text-muted">
+          Læs hvordan indholdet finansieres:{" "}
+          <Link
+            href="/saadan-tjener-vi-penge"
+            className="text-accent transition-colors hover:text-accent-dim"
+          >
+            Sådan tjener vi penge →
+          </Link>
+        </p>
       </div>
     </div>
   );

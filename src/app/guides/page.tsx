@@ -1,10 +1,12 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { getCategory } from "@/lib/categories";
 import { getAllGuides } from "@/lib/guides";
 
 export const metadata: Metadata = {
   title: "Guides",
-  description: "Guides til træningsmaskiner til hjemmet — kommer snart.",
+  description:
+    "Købsguides til løbebånd, romaskiner, cykler og andre træningsmaskiner til hjemmet.",
 };
 
 export default function GuidesPage() {
@@ -17,26 +19,17 @@ export default function GuidesPage() {
           Guides
         </p>
         <h1 className="mt-3 font-display text-4xl font-semibold uppercase tracking-wide text-foreground sm:text-5xl">
-          Kommer snart
+          Købsguides
         </h1>
         <p className="mt-4 max-w-xl text-muted">
-          Vi bygger guides til løbebånd, cykler, romaskiner og mere. Indhold
-          dukker op her, når det er klar.
+          Kriterier først, anbefalinger bagefter. Vi hjælper dig med at vælge
+          den rigtige maskine til hjemmet.
         </p>
 
-        {guides.length === 0 ? (
-          <div className="mt-16 border-t border-border pt-10">
-            <p className="text-sm text-muted">Ingen guides endnu.</p>
-            <Link
-              href="/"
-              className="mt-6 inline-flex font-display text-sm font-semibold uppercase tracking-[0.14em] text-accent transition-colors hover:text-accent-dim"
-            >
-              Til forsiden
-            </Link>
-          </div>
-        ) : (
-          <ul className="mt-16 divide-y divide-border border-t border-border">
-            {guides.map((guide) => (
+        <ul className="mt-16 divide-y divide-border border-t border-border">
+          {guides.map((guide) => {
+            const category = getCategory(guide.categorySlug);
+            return (
               <li key={guide.slug}>
                 <Link
                   href={`/guides/${guide.slug}`}
@@ -44,7 +37,7 @@ export default function GuidesPage() {
                 >
                   <div>
                     <p className="text-xs uppercase tracking-[0.16em] text-muted">
-                      {guide.category}
+                      {category?.name ?? guide.categorySlug}
                     </p>
                     <h2 className="mt-1 font-display text-2xl font-medium uppercase tracking-wide text-foreground transition-colors group-hover:text-accent">
                       {guide.title}
@@ -58,9 +51,16 @@ export default function GuidesPage() {
                   </span>
                 </Link>
               </li>
-            ))}
-          </ul>
-        )}
+            );
+          })}
+        </ul>
+
+        <Link
+          href="/maskiner"
+          className="mt-10 inline-flex font-display text-sm font-semibold uppercase tracking-[0.14em] text-accent transition-colors hover:text-accent-dim"
+        >
+          Se maskinkategorier →
+        </Link>
       </div>
     </div>
   );
