@@ -9,6 +9,8 @@ export type MachineCategory = {
   name: string;
   shortName: string;
   description: string;
+  /** Cover-billede under public/ */
+  image: string;
   intents: MachineIntent[];
 };
 
@@ -47,6 +49,7 @@ export const categories: MachineCategory[] = [
     shortName: "Løbebånd",
     description:
       "Kondition, gåbånd og løb hjemme — fra foldbare modeller til seriøse baner.",
+    image: "/images/categories/loebebaand.webp",
     intents: [
       {
         slug: "foldbar",
@@ -71,6 +74,7 @@ export const categories: MachineCategory[] = [
     shortName: "Cykler",
     description:
       "Kondicykel, spinning og airbike — skånsom cardio til alle niveauer.",
+    image: "/images/categories/motionscykel.webp",
     intents: [
       {
         slug: "spinning",
@@ -95,6 +99,7 @@ export const categories: MachineCategory[] = [
     shortName: "Romaskiner",
     description:
       "Helkropstræning med lav led-belastning — luft, vand eller magnet.",
+    image: "/images/categories/romaskine.webp",
     intents: [
       {
         slug: "foldbar",
@@ -119,6 +124,7 @@ export const categories: MachineCategory[] = [
     shortName: "Crosstrainere",
     description:
       "Ledvenlig helkropscardio med flydende bevægelse — godt til restitution og vægttab.",
+    image: "/images/categories/crosstrainer.webp",
     intents: [
       {
         slug: "plads",
@@ -143,6 +149,7 @@ export const categories: MachineCategory[] = [
     shortName: "Styrke",
     description:
       "Multigym, smith, bænk og cable — opbyg styrke uden center-abonnement.",
+    image: "/images/categories/styrkemaskiner.webp",
     intents: [
       {
         slug: "plads",

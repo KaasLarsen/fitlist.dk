@@ -97,3 +97,111 @@ export function formatPriceDkk(price: number | null): string {
     maximumFractionDigits: 0,
   }).format(price);
 }
+
+/** Rabat i procent (0–100), eller null hvis ingen gyldig rabat. */
+export function discountPercent(product: FeedProduct): number | null {
+  if (
+    product.oldPrice == null ||
+    product.price == null ||
+    !Number.isFinite(product.oldPrice) ||
+    !Number.isFinite(product.price) ||
+    product.oldPrice <= product.price
+  ) {
+    return null;
+  }
+  return Math.round(
+    ((product.oldPrice - product.price) / product.oldPrice) * 100,
+  );
+}
+
+/** Simpel dato-seedet PRNG (mulberry32) — samme rækkefølge hele dagen. */
+function mulberry32(seed: number): () => number {
+  return () => {
+    let t = (seed += 0x6d2b79f5);
+    t = Math.imul(t ^ (t >>> 15), t | 1);
+    t ^= t + Math.imul(t ^ (t >>> 7), t | 61);
+    return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+  };
+}
+
+function dateSeedCopenhagen(date = new Date()): number {
+  const parts = new Intl.DateTimeFormat("en-CA", {
+    timeZone: "Europe/Copenhagen",
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+  }).formatToParts(date);
+  const y = parts.find((p) => p.type === "year")?.value ?? "0";
+  const m = parts.find((p) => p.type === "month")?.value ?? "0";
+  const d = parts.find((p) => p.type === "day")?.value ?? "0";
+  // YYYYMMDD as integer
+  return Number(`${y}${m}${d}`);
+}
+
+function shuffleSeeded<T>(items: T[], seed: number): T[] {
+  const arr = [...items];
+  const rand = mulberry32(seed);
+  for (let i = arr.length - 1; i > 0; i--) {
+    const j = Math.floor(rand() * (i + 1));
+    [arr[i], arr[j]] = [arr[j], arr[i]];
+  }
+  return arr;
+}
+
+/**
+ * Dagens tilbud: på lager, med billede og rabat.
+ * Sorteret efter størst rabat, derefter dato-seedet mix blandt topkandidater
+ * så udvalget er stabilt hele dagen og skifter ved midnat (Europe/Copenhagen).
+ */
+export async function getDailyDeals(opts?: {
+  limit?: number;
+}): Promise<FeedProduct[]> {
+  const limit = opts?.limit ?? 8;
+  const catalog = await getMachineCatalog();
+
+  const discounted = catalog
+    .filter(
+      (p) =>
+        p.inStock &&
+        Boolean(p.image) &&
+        p.categorySlug != null &&
+        discountPercent(p) != null,
+    )
+    .sort((a, b) => {
+      const da = discountPercent(a)!;
+      const db = discountPercent(b)!;
+      if (db !== da) return db - da;
+      return a.title.localeCompare(b.title, "da");
+    });
+
+  if (discounted.length === 0) return [];
+
+  // Tag top-pool (største rabatter), så mix blandt dem for variation pr. dag
+  const poolSize = Math.min(Math.max(limit * 3, limit), discounted.length);
+  const pool = discounted.slice(0, poolSize);
+  const seeded = shuffleSeeded(pool, dateSeedCopenhagen());
+
+  // Diversificér merchants lidt: undgå at samme merchant fylder alt
+  const picked: FeedProduct[] = [];
+  const merchantCount = new Map<string, number>();
+  for (const p of seeded) {
+    if (picked.length >= limit) break;
+    const count = merchantCount.get(p.merchant) ?? 0;
+    if (count >= 3 && picked.length + (limit - picked.length) > 1) {
+      // tillad flere senere hvis vi mangler
+      continue;
+    }
+    picked.push(p);
+    merchantCount.set(p.merchant, count + 1);
+  }
+
+  // Fyld op hvis merchant-cap var for streng
+  if (picked.length < limit) {
+    for (const p of seeded) {
+      if (picked.length >= limit) break;
+      if (!picked.some((x) => x.id === p.id)) picked.push(p);
+    }
+  }
+
+  return picked;
+}
