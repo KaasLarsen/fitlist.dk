@@ -23,6 +23,12 @@ export const PARTNER_ADS_FEEDS: readonly PartnerAdsFeed[] = [
     merchant: "Apuls.dk",
   },
   {
+    id: "ascendic",
+    bannerId: "94094",
+    feedId: "2506",
+    merchant: "Ascendic.dk",
+  },
+  {
     id: "billig-fitness",
     bannerId: "90815",
     feedId: "2352",
