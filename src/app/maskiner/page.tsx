@@ -30,15 +30,15 @@ export default function MaskinerPage() {
           {categories.map((category) => {
             const guideCount = getGuidesByCategory(category.slug).length;
             return (
-              <li key={category.slug} className="py-8">
-                <div className="flex flex-col gap-2 sm:flex-row sm:items-baseline sm:justify-between">
-                  <h2 className="font-display text-2xl font-medium uppercase tracking-wide text-foreground sm:text-3xl">
-                    <Link
-                      href={`/maskiner/${category.slug}`}
-                      className="transition-colors hover:text-accent"
-                    >
-                      {category.name}
-                    </Link>
+              <li key={category.slug} className="group relative py-8">
+                <Link
+                  href={`/maskiner/${category.slug}`}
+                  className="absolute inset-0"
+                  aria-label={category.name}
+                />
+                <div className="pointer-events-none relative z-10 flex flex-col gap-2 sm:flex-row sm:items-baseline sm:justify-between">
+                  <h2 className="font-display text-2xl font-medium uppercase tracking-wide text-foreground transition-colors group-hover:text-accent sm:text-3xl">
+                    {category.name}
                   </h2>
                   <span className="font-display text-xs uppercase tracking-[0.16em] text-muted">
                     {guideCount > 0
@@ -46,16 +46,16 @@ export default function MaskinerPage() {
                       : "Guides kommer"}
                   </span>
                 </div>
-                <p className="mt-2 max-w-2xl text-sm text-muted">
+                <p className="pointer-events-none relative z-10 mt-2 max-w-2xl text-sm text-muted">
                   {category.description}
                 </p>
-                <p className="mt-3 text-xs uppercase tracking-[0.14em] text-accent/80">
+                <p className="pointer-events-none relative z-10 mt-3 text-xs uppercase tracking-[0.14em] text-accent/80">
                   {category.intents.map((intent, index) => (
                     <span key={intent.slug}>
                       {index > 0 ? " · " : null}
                       <Link
                         href={`/maskiner/${category.slug}?intent=${intent.slug}`}
-                        className="transition-colors hover:text-accent hover:underline focus-visible:text-accent focus-visible:underline focus-visible:outline-none"
+                        className="pointer-events-auto inline-block py-1 transition-colors hover:text-accent hover:underline focus-visible:text-accent focus-visible:underline focus-visible:outline-none"
                       >
                         {intent.label}
                       </Link>

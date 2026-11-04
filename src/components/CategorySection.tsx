@@ -41,19 +41,16 @@ export function CategorySection() {
                   />
                 </Link>
                 <div className="pointer-events-none absolute inset-x-0 bottom-0 p-5 sm:p-6">
-                  <Link
-                    href={`/maskiner/${category.slug}`}
-                    className="pointer-events-auto font-display text-xl font-medium uppercase tracking-wide text-white sm:text-2xl"
-                  >
+                  <p className="font-display text-xl font-medium uppercase tracking-wide text-white sm:text-2xl">
                     {category.shortName}
-                  </Link>
-                  <p className="pointer-events-auto mt-1.5 text-sm text-white/70">
+                  </p>
+                  <p className="mt-1.5 text-sm text-white/70">
                     {category.intents.map((intent, index) => (
                       <span key={intent.slug}>
                         {index > 0 ? " · " : null}
                         <Link
                           href={`/maskiner/${category.slug}?intent=${intent.slug}`}
-                          className="transition-colors hover:text-white hover:underline focus-visible:text-white focus-visible:underline focus-visible:outline-none"
+                          className="pointer-events-auto inline-block py-1 transition-colors hover:text-white hover:underline focus-visible:text-white focus-visible:underline focus-visible:outline-none"
                         >
                           {intent.label}
                         </Link>
