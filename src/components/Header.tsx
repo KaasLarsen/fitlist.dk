@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { HeaderSearch } from "@/components/HeaderSearch";
 
 const nav = [
   { href: "/#dagens-tilbud", label: "Tilbud" },
@@ -27,21 +28,24 @@ export function Header() {
         >
           Fitlist
         </Link>
-        <nav className="flex items-center gap-4 sm:gap-8">
-          {nav.map((item) => (
-            <Link
-              key={item.href}
-              href={item.href}
-              className={`text-sm font-medium tracking-wide transition-colors ${
-                onDarkHero
-                  ? "text-white/75 drop-shadow-sm hover:text-white"
-                  : "text-muted hover:text-foreground"
-              }`}
-            >
-              {item.label}
-            </Link>
-          ))}
-        </nav>
+        <div className="flex items-center gap-3 sm:gap-6">
+          <nav className="flex items-center gap-4 sm:gap-8">
+            {nav.map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                className={`text-sm font-medium tracking-wide transition-colors ${
+                  onDarkHero
+                    ? "text-white/75 drop-shadow-sm hover:text-white"
+                    : "text-muted hover:text-foreground"
+                }`}
+              >
+                {item.label}
+              </Link>
+            ))}
+          </nav>
+          <HeaderSearch onDarkHero={onDarkHero} />
+        </div>
       </div>
     </header>
   );
