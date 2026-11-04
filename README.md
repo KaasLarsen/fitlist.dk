@@ -47,5 +47,7 @@ Mangler produktet i feedet, falder UI tilbage til kategorisiden `/maskiner/[slug
 - `/guides/bedste-loebebaand-2026`
 - `/guides/bedste-romaskine-2026`
 - `/guides/bedste-motionscykel-2026`
+- `/guides/bedste-crosstrainer-2026`
+- `/guides/bedste-styrkemaskiner-2026`
 
 Kuraterede produktanbefalinger i guides er separate fra “Relaterede tilbud” (top feed-hits i samme kategori).

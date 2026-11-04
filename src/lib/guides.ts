@@ -81,7 +81,7 @@ export function getProductAffiliate(product: GuideProduct) {
 }
 
 /**
- * Top 3 SEO-guides: løbebånd, romaskine, motionscykel.
+ * Kategori-guides (alle 5 maskintyper).
  * Anbefalinger kobles til Partner-Ads via feedProductId (live pris + CTA).
  */
 export const guides: Guide[] = [
@@ -324,7 +324,11 @@ export const guides: Guide[] = [
           "Ja, vi kan få provision via affiliate-links. Det påvirker ikke prisen for dig. Vi vælger anbefalinger ud fra brug og kriterier — ikke kun provision. Læs mere under “Sådan tjener vi penge”.",
       },
     ],
-    relatedSlugs: ["bedste-romaskine-2026", "bedste-motionscykel-2026"],
+    relatedSlugs: [
+      "bedste-crosstrainer-2026",
+      "bedste-motionscykel-2026",
+      "bedste-romaskine-2026",
+    ],
   },
   {
     slug: "bedste-romaskine-2026",
@@ -553,7 +557,11 @@ export const guides: Guide[] = [
           "Hver anbefaling har en “Se pris”-knap, der går til partnerens produkt med live feed-pris. Lager og pris kan ændre sig i løbet af dagen.",
       },
     ],
-    relatedSlugs: ["bedste-loebebaand-2026", "bedste-motionscykel-2026"],
+    relatedSlugs: [
+      "bedste-loebebaand-2026",
+      "bedste-styrkemaskiner-2026",
+      "bedste-motionscykel-2026",
+    ],
   },
   {
     slug: "bedste-motionscykel-2026",
@@ -789,6 +797,483 @@ export const guides: Guide[] = [
           "Klik “Se pris” på en anbefaling, eller se flere tilbud under Motionscykel. Du handler hos partneren; Fitlist kan få provision uden merpris for dig.",
       },
     ],
-    relatedSlugs: ["bedste-loebebaand-2026", "bedste-romaskine-2026"],
+    relatedSlugs: [
+      "bedste-crosstrainer-2026",
+      "bedste-loebebaand-2026",
+      "bedste-romaskine-2026",
+    ],
+  },
+  {
+    slug: "bedste-crosstrainer-2026",
+    title: "Bedste crosstrainer 2026",
+    excerpt:
+      "Skånsom helkropscardio hjemme: sådan vælger du crosstrainer — plus fire anbefalinger med aktuelle priser.",
+    metaDescription:
+      "Find den bedste crosstrainer til hjemmet i 2026. Guide til skridtlængde, flywheel, støj og budget — plus fire anbefalede modeller med live priser fra danske partnere.",
+    categorySlug: "crosstrainer",
+    publishedAt: "2026-11-04",
+    updatedAt: "2026-11-04",
+    intro:
+      "En crosstrainer (elliptisk træner) giver kondition med lav stødbelastning — knæ og ankler belastes mindre end på løbebånd, mens arme og core også er med. Det er derfor mange vælger den som “allround cardio” i lejlighed og hus. Her får du valg-kriterierne, fire konkrete modeller med shop-links til vores partnere, og svar på de typiske spørgsmål om plads, støj og om crosstrainer overhovedet er dig.",
+    criteria: [
+      {
+        title: "Skridtlængde og højde",
+        description:
+          "For kort skridtlængde føles unaturligt for høje brugere og begrænser intensiteten. Tjek angivet stride length og maks. brugerhøjde. Prøv gerne i butik, eller vælg modeller med generøs skridtlængde, hvis du er over ca. 180 cm.",
+      },
+      {
+        title: "Flywheel og modstand",
+        description:
+          "Tungere svinghjul giver typisk mere jævn, “gym-agtig” følelse. Magnetisk modstand er støjsvag og nem at justere. Antal niveauer betyder mindre end, at progressionen føles jævn under belastning — ikke kun på displayet.",
+      },
+      {
+        title: "Stabilitet og indstigning",
+        description:
+          "En vaklende ramme dræber motivationen. Tjek vægt, fodpladernes størrelse og om indstigningen er lav nok til dig (vigtigt for knæ og ældre brugere). “Lav indstigning” er et reelt plus i hjemmet — ikke kun marketing.",
+      },
+      {
+        title: "Støj og naboer",
+        description:
+          "Gode magnet-crosstrainere er blandt de mere lejlighedsvenlige maskiner, men pedaler og arme kan stadig klikke. Brug måtte, stil maskinen i vater, og undgå at “trampe” i pedalerne om aftenen.",
+      },
+      {
+        title: "Plads og footprint",
+        description:
+          "Crosstrainere er ofte høje og brede. Mål både dybde, bredde og loftshøjde med arme i top. En 2-i-1-model kan spare plads, men tjek altid om kompromiset i stabilitet er acceptabelt for dig.",
+      },
+      {
+        title: "Computer og motivation",
+        description:
+          "Tid, distance, modstand og puls er nok for de fleste. Programmer hjælper begyndere. Store skærme driver prisen op — prioriter skridtlængde og stabilitet før touchscreen.",
+      },
+      {
+        title: "Budget vs. brug",
+        description:
+          "Til 1–2 rolige pas om ugen er entry fint. Træner du ofte og vil have jævn følelse, så gå midrange (C56-klassen) eller premium (Tunturi). Undgå at betale premium kun for skaffevare-status uden klar levering.",
+      },
+    ],
+    products: [
+      {
+        id: "titan-c56",
+        name: "Titan Life Crosstrainer C56",
+        badge: "Bedst samlet",
+        summary:
+          "Solid allround-crosstrainer til hjemmet, når du vil have stabilitet og jævn træning uden at hoppe direkte i premium-Tunturi. God balance mellem pris og daglig brugbarhed.",
+        pros: [
+          "Stabil Titan Life midrange",
+          "God til jævnlig helkropscardio",
+          "Klar anbefaling til de fleste hjem",
+          "Fri fragt hos partner",
+        ],
+        cons: [
+          "Fylder mere end en cykel",
+          "Ikke det billigste i kategorien",
+          "Høje brugere bør tjekke skridtlængde",
+        ],
+        specs: [
+          { label: "Type", value: "Crosstrainer" },
+          { label: "Brand", value: "Titan Life" },
+          { label: "Segment", value: "Midrange" },
+          { label: "Partner", value: "HomeX.dk" },
+        ],
+        feedProductId: "HomeX.dk:3176",
+      },
+      {
+        id: "titan-c35",
+        name: "Titan Life C35 Crosstrainer",
+        badge: "Bedste billige",
+        summary:
+          "Prisvenlig indgang med lav indstigning — til dig, der vil i gang med skånsom cardio uden stor investering. Fin starter, når vanen skal bygges først.",
+        pros: [
+          "Lav indgangspris",
+          "Lav indstigning — nemmere at komme på",
+          "Stabil entry til hjemmet",
+          "Fri fragt hos partner",
+        ],
+        cons: [
+          "Færre “premium”-detaljer end C56/C60",
+          "Ikke ideel som eneste maskine til hård interval hvert pas",
+          "Tjek skridtlængde hvis du er høj",
+        ],
+        specs: [
+          { label: "Type", value: "Crosstrainer" },
+          { label: "Brand", value: "Titan Life" },
+          { label: "Segment", value: "Budget" },
+          { label: "Feature", value: "Lav indstigning" },
+          { label: "Partner", value: "HomeX.dk" },
+        ],
+        feedProductId: "HomeX.dk:2792",
+      },
+      {
+        id: "crosstrainer-2i1",
+        name: "Crosstrainer billig (2 i 1)",
+        badge: "Bedste 2-i-1",
+        summary:
+          "Når plads og pris vejer tungt, og du vil have en kompakt 2-i-1-løsning. Kompromis på “ren” gym-følelse — gevinst på footprint og budget.",
+        pros: [
+          "Skarp pris",
+          "2-i-1-fleksibilitet",
+          "Relevant i små hjem",
+          "Nem indgang til elliptisk træning",
+        ],
+        cons: [
+          "Mindre stabilitet end dedikerede midrange-modeller",
+          "Færre finjusteringer",
+          "Opgrader, når vanen er beviselig",
+        ],
+        specs: [
+          { label: "Type", value: "2-i-1 crosstrainer" },
+          { label: "Segment", value: "Budget / kompakt" },
+          { label: "Partner", value: "Billig-fitness.dk" },
+        ],
+        feedProductId: "Billig-fitness.dk:42506598514859",
+      },
+      {
+        id: "tunturi-c60",
+        name: "Tunturi C60 Signature Crosstrainer",
+        badge: "Bedste premium",
+        summary:
+          "Når crosstraineren er din primære cardio i årevis, og du vil op i Tunturi-kvalitet. Mere maskine, mere jævn følelse — til dig, der allerede ved, at elliptisk træning virker.",
+        pros: [
+          "Premium Tunturi Signature-linje",
+          "Kraftig kvalitets-crosstrainer",
+          "Bedre til hyppig, langvarig brug",
+          "Fri fragt hos partner",
+        ],
+        cons: [
+          "Markant højere pris",
+          "Overkill, hvis du træner sjældent",
+          "Kræver plads og et fast “hjem” til maskinen",
+        ],
+        specs: [
+          { label: "Type", value: "Crosstrainer" },
+          { label: "Brand", value: "Tunturi" },
+          { label: "Segment", value: "Premium" },
+          { label: "Partner", value: "HomeX.dk" },
+        ],
+        feedProductId: "HomeX.dk:3249",
+      },
+    ],
+    howToChoose:
+      "Usikker og budgetbevidst? Start med Titan Life C35 (lav indstigning) eller 2-i-1, hvis pladsen er trang. Træner du flere gange om ugen? C56 er det sikre allround-valg. Er maskinen din hovedcardio i flere år? Tunturi C60. Prioritér skridtlængde og stabilitet før skærm. Shop via “Se pris” for aktuelle partnerpriser — vi undgår bevidst dyre skaffevare-modeller i top-anbefalingerne.",
+    learningSections: [
+      {
+        heading: "Crosstrainer vs. løbebånd og cykel",
+        paragraphs: [
+          "Crosstraineren belaster led mindre end løbebånd og aktiverer arme mere end en ren kondicykel. Løbebåndet vinder på løbespecifik kondition. Cyklen vinder ofte på støj og saddelkomfort til lange zone-2-pas.",
+          "Vælg crosstrainer, hvis du vil have skånsom helkropscardio og har plads i højden. Har du knæproblemer ved løb, er elliptisk træning ofte et af de bedste hjemmevalg.",
+        ],
+      },
+      {
+        heading: "Hvad betyder skridtlængde?",
+        paragraphs: [
+          "Skridtlængden er, hvor langt pedalerne bevæger sig i hvert “skridt”. For kort længde giver en hakkende, unaturlig bevægelse — især for høje brugere.",
+          "Producenter opgiver ikke altid tallet tydeligt. Brug maks. brugerhøjde som pejlemærke, læs anmeldelser, og vælg midrange/premium, hvis du er høj og træner ofte.",
+        ],
+      },
+      {
+        heading: "2-i-1 vs. dedikeret crosstrainer",
+        paragraphs: [
+          "2-i-1-modeller sparer plads og penge, men kompromitterer ofte stabilitet og jævnhed. Dedikerede maskiner som C56/C60 føles mere som træning i et center.",
+          "Køb 2-i-1 for at teste vanen. Opgrader til dedikeret, når du ved, at du bruger den tre gange om ugen — ikke omvendt.",
+        ],
+      },
+      {
+        heading: "Støj, gulv og opstilling",
+        paragraphs: [
+          "Stil maskinen i vater, brug måtte, og efterspænd bolte efter de første uger. Meget “støj” er egentlig løse samlinger eller ujævnt gulv.",
+          "Armenes bevægelse kan slå ind i vægge eller møbler — mål footprint med arme i yderposition, ikke kun maskinens fodaftryk på papiret.",
+        ],
+      },
+      {
+        heading: "Typiske fejl ved køb",
+        paragraphs: [
+          "At købe efter den største skærm. At ignorere skridtlængde. At købe en kæmpe premium-skaffevare med uklar levering. At undervurdere højden i rummet.",
+          "Omvendt: at blive på en vaklende budgetmodel i årevis, selvom du træner fire gange om ugen. Opgrader, når udstyret begrænser dig.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "Hvilken crosstrainer er bedst til hjemmet?",
+        answer:
+          "Til allround: Titan Life C56. Til budget: C35. Til plads/pris: 2-i-1. Til premium: Tunturi C60 Signature. Match altid til skridtlængde og hvor ofte du træner.",
+      },
+      {
+        question: "Er crosstrainer godt for knæene?",
+        answer:
+          "Ofte ja — lav stødbelastning sammenlignet med løb. Start med lav modstand, og stop hvis noget gør ondt. Individuelle skader varierer; spørg evt. en fagperson.",
+      },
+      {
+        question: "Hvor meget plads kræver en crosstrainer?",
+        answer:
+          "Mere end mange tror — især i højden og med arme i bevægelse. Mål dybde, bredde og loft, og læg plads til at stige af sikkert.",
+      },
+      {
+        question: "Crosstrainer eller motionscykel?",
+        answer:
+          "Crosstrainer for mere overkrop og stående bevægelse. Cykel for sadlekomfort, ofte lavere støj og mindre footprint i højden. Vælg den, du realistisk bruger.",
+      },
+      {
+        question: "Skal jeg købe en dyr crosstrainer som begynder?",
+        answer:
+          "Nej. Byg vanen på C35 eller 2-i-1 først. Gå C56/C60, når du ved, at elliptisk træning er din grej.",
+      },
+      {
+        question: "Hvorfor anbefaler I ikke de dyreste MAXXUS-modeller?",
+        answer:
+          "Flere premium-modeller i feedet er skaffevare med høj pris og usikker levering. Vi prioriterer modeller, du typisk kan købe og få hjem nu via vores partnere.",
+      },
+      {
+        question: "Hvordan ser jeg aktuelle priser?",
+        answer:
+          "Hver anbefaling har “Se pris” med live feed-pris hos partneren. Lager og pris kan ændre sig — klik igennem for det aktuelle tilbud.",
+      },
+    ],
+    relatedSlugs: [
+      "bedste-loebebaand-2026",
+      "bedste-motionscykel-2026",
+      "bedste-romaskine-2026",
+    ],
+  },
+  {
+    slug: "bedste-styrkemaskiner-2026",
+    title: "Bedste styrkemaskiner 2026",
+    excerpt:
+      "Sådan bygger du hjemmegym: bænk, rack og sæt — plus fire konkrete anbefalinger med aktuelle priser. Tilbehør er bevidst filtreret fra.",
+    metaDescription:
+      "Find de bedste styrkemaskiner til hjemmet i 2026. Guide til bænk, squat rack og hjemmetræningssæt — plus fire anbefalinger med live priser fra danske partnere.",
+    categorySlug: "styrkemaskiner",
+    publishedAt: "2026-11-04",
+    updatedAt: "2026-11-04",
+    intro:
+      "Styrketræning hjemme behøver ikke et fuldt center: en solid bænk, et sikkert rack og vægte dækker 80 % af det, de fleste har brug for. Markedet er dog fyldt med tilbehør (benlås, curlpult, små add-ons), der ser vigtige ud — men ikke skal være dit første køb. Denne guide hjælper dig med at starte rigtigt, med fire konkrete anbefalinger og shop-links til vores partnere. Vi anbefaler bevidst kerneudstyr — ikke smårtilbehør.",
+    criteria: [
+      {
+        title: "Mål: styrke, hypertrofi eller “bare komme i gang”?",
+        description:
+          "Skal du kunne squat/bænkpresse tungt med sikkerhed, eller vil du have en simpel bænk til press og rows? Dit mål styrer, om du starter med en flad bænk eller et komplet sæt med rack. Køb ikke et power rack til et behov, der er “to håndvægte i stuen”.",
+      },
+      {
+        title: "Plads, loftshøjde og gulv",
+        description:
+          "Racks kræver loftshøjde til pull-ups og stangen i top. Gulvet skal kunne bære vægt og eventuelle drop (helst ikke over kære naboers soveværelse). Mål rummet, inden du forelsker dig i et halvt center.",
+      },
+      {
+        title: "Bænk først — eller sæt?",
+        description:
+          "En god flad/multibænk er den mest alsidige single-piece start. Et komplet hjemmetræningssæt (bænk + rack + vægte) sparer research, hvis du vil have “klar på dag ét”. Tilbehør som benlås købes senere — det er ikke din flaskehals.",
+      },
+      {
+        title: "Sikkerhed: spotter, pins og stabilitet",
+        description:
+          "Træner du alene med frivægte, er safety pins / half-rack / power rack vigtigere end en ekstra curl-pult. Tjek vægtkapacitet, om bænken vipper, og om racket står solidt på dit underlag.",
+      },
+      {
+        title: "Progression: kan du vokse i udstyret?",
+        description:
+          "Billige bænke kan være fine i starten. Når du løfter tungere, bliver stabilitet og rack-geometri afgørende. Vælg udstyr, der ikke er forældet efter tre måneder med konsistent træning.",
+      },
+      {
+        title: "Hvad du ikke behøver først",
+        description:
+          "Curlpult, special-benlås, loftmonteret kabel kun til én øvelse, og “nice-to-have” add-ons. Få først: bænk, noget at presse/squatte sikkert i, og vægte. Filtrer støj fra feedet — mange SKUs er tilbehør, ikke maskiner.",
+      },
+      {
+        title: "Budget og rækkefølge",
+        description:
+          "Budget under et par tusind: start med solid bænk. Midrange: multibænk eller half-rack. Vil du undgå at købe tre gange? Et komplet sæt kan være billigere end stykvis fejl. Læg fragt og måtter ind i budgettet.",
+      },
+    ],
+    products: [
+      {
+        id: "hjemmesaet-90kg",
+        name: "Hjemmetræningssæt med bænk, squat rack og ca. 90 kg vægte",
+        badge: "Bedst samlet",
+        summary:
+          "Klar-til-brug hjemmegym: bænk, racket og vægte i én pakke. Bedste allround-valg, når du vil træne tungere end “kun kropsvægt” uden at samle indkøbslisten selv.",
+        pros: [
+          "Komplet startpakke (bænk + rack + vægte)",
+          "Spar research og mismatch mellem dele",
+          "God til at komme i gang med frivægte hjemme",
+          "Klart bedste “én beslutning”-køb",
+        ],
+        cons: [
+          "Kræver mere plads end en enkelt bænk",
+          "Tjek loftshøjde til rack/pull-up",
+          "Vægtplader og stang-standarder skal matches fremover",
+        ],
+        specs: [
+          { label: "Type", value: "Hjemmetræningssæt" },
+          { label: "Inkluderet", value: "Bænk + squat rack + ~90 kg" },
+          { label: "Segment", value: "Allround start" },
+          { label: "Partner", value: "Billig-fitness.dk" },
+        ],
+        feedProductId: "Billig-fitness.dk:56967640383874",
+      },
+      {
+        id: "flad-baenk-plus",
+        name: "Flad træningsbænk Plus 300kg",
+        badge: "Bedste billige",
+        summary:
+          "Solid flad bænk med høj vægtkapacitet — den mest fornuftige single-piece start, når budgettet er stramt, og du allerede har håndvægte eller planlægger rack senere.",
+        pros: [
+          "Lav indgangspris",
+          "Høj angivet kapacitet (300 kg)",
+          "Alsidig til press, rows og step-ups",
+          "Nem at kombinere med rack senere",
+        ],
+        cons: [
+          "Kun flad — ingen skrå uden multibænk",
+          "Ingen rack/sikkerhed alene",
+          "Du mangler stadig vægte/stang",
+        ],
+        specs: [
+          { label: "Type", value: "Flad træningsbænk" },
+          { label: "Kapacitet", value: "Op til 300 kg (angivet)" },
+          { label: "Segment", value: "Budget / kerne" },
+          { label: "Partner", value: "FITNESSFREE.DK" },
+        ],
+        feedProductId: "FITNESSFREE.DK:150",
+      },
+      {
+        id: "semi-pro-half-rack",
+        name: "Semi-Pro Squat half-rack med pull-up og dip",
+        badge: "Bedste rack",
+        summary:
+          "Når sikker squat/bænk og pull-ups er målet. Half-rack med pull-up og dip giver alvorlig hjemmetræning — til dig, der er vokset ud over “kun bænk”.",
+        pros: [
+          "Sikkerhed til squat/bænk alene",
+          "Pull-up og dip indbygget",
+          "Semi-pro niveau til hjemmet",
+          "Skalerbar base til seriøs styrke",
+        ],
+        cons: [
+          "Kræver plads og loftshøjde",
+          "Dyrere end en bænk alene",
+          "Vægte og bænk købes typisk separat",
+        ],
+        specs: [
+          { label: "Type", value: "Half-rack / squat rack" },
+          { label: "Extras", value: "Pull-up + dip" },
+          { label: "Segment", value: "Semi-pro" },
+          { label: "Partner", value: "Billig-fitness.dk" },
+        ],
+        feedProductId: "Billig-fitness.dk:54911517294978",
+      },
+      {
+        id: "multibaenk",
+        name: "Multibænk",
+        badge: "Bedste multibænk",
+        summary:
+          "Justerbar multibænk til flere vinkler og øvelser — det logiske opgraderingsvalg, når flad bænk ikke længere dækker incline press, support og variation.",
+        pros: [
+          "Flere træningsvinkler",
+          "Høj alsidighed pr. kvadratmeter",
+          "Bedre end ren flad bænk til variation",
+          "God midrange uden fuldt rack",
+        ],
+        cons: [
+          "Dyrere end simpel flad bænk",
+          "Erstatter ikke et rack til tunge squats",
+          "Tjek låsemekanik og stabilitet ved max hældning",
+        ],
+        specs: [
+          { label: "Type", value: "Multibænk" },
+          { label: "Brug", value: "Flere vinkler / øvelser" },
+          { label: "Segment", value: "Midrange bænk" },
+          { label: "Partner", value: "Billig-fitness.dk" },
+        ],
+        feedProductId: "Billig-fitness.dk:55212816957826",
+      },
+    ],
+    howToChoose:
+      "Vil du bare i gang billigt? Flad bænk Plus. Vil du have ét køb der dækker bænk + rack + vægte? Hjemmetræningssættet. Træner du allerede tungt og mangler sikkerhed? Semi-Pro half-rack. Mangler du vinkler på bænken? Multibænk. Ignorer tilbehør, indtil kernen er på plads. Brug “Se pris” for live partnerpriser, og se flere tilbud under Styrkemaskiner.",
+    learningSections: [
+      {
+        heading: "Bænk, rack eller komplet sæt?",
+        paragraphs: [
+          "Bænk = maksimal alsidighed for pengene, hvis du har håndvægte. Rack = sikkerhed og squat/bænk med stang. Komplet sæt = mindst friktion, mest pladsbehov på dag ét.",
+          "De fleste fortryder ikke en god bænk. Mange fortryder at købe ti små tilbehør, før de har et sted at presse tungt og sikkert.",
+        ],
+      },
+      {
+        heading: "Hvorfor vi filtrerer tilbehør fra anbefalingerne",
+        paragraphs: [
+          "Partner-feeds indeholder mange SKUs: benlås, curlpult, små add-ons. De kan være fine senere — men de er ikke “bedste styrkemaskine 2026” for en, der bygger hjemmegym.",
+          "Fitlists anbefalinger her er kerneudstyr. Tilbehør finder du evt. under kategorien, når du ved, hvilken øvelse du mangler.",
+        ],
+      },
+      {
+        heading: "Sikkerhed når du træner alene",
+        paragraphs: [
+          "Uden spotter: brug safety pins, half-rack eller hold dig til vægte, du kan dumpe sikkert. Ego-løft hjemme uden sikkerhed er den dyreste fejl.",
+          "Lær teknik med lette vægte. Film dig selv. En dyr rack redder dig ikke, hvis du sætter pins forkert.",
+        ],
+      },
+      {
+        heading: "Plads og naboer",
+        paragraphs: [
+          "Vægtdrop gennem etageadskillelse er en klassiker. Brug måtter, kontroller sænkninger, og vær realistisk i lejlighed — håndvægte og kontrollerede reps slår “garage-gym-drømmen” midt om natten.",
+          "Mål loftshøjde til pull-ups og stangens top. Et rack, der ikke kan stå, hvor du bor, er ikke et tilbud — det er affaldsplads.",
+        ],
+      },
+      {
+        heading: "Styrke + cardio derhjemme",
+        paragraphs: [
+          "Mange kombinerer rack/bænk med romaskine eller cykel. Styrke bygger kroppen; cardio holder konditionen. Du behøver ikke begge på dag ét — men det er derfor vi krydslinker guides.",
+          "Prioritér den vane, du mangler mest. Mangler du styrke? Start her. Mangler du at få pulsen op uden knæsmerter? Se crosstrainer eller cykel.",
+        ],
+      },
+      {
+        heading: "Typiske fejl ved køb",
+        paragraphs: [
+          "At købe curlpult før bænk. At købe rack uden at måle loftet. At købe det billigste vippe-bord. At samle et sæt med inkompatible vægtstandarder.",
+          "Omvendt: at vente på det “perfekte” center i tre år. En flad bænk og konsistens slår et tomt gæsteværelse.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "Hvilken styrkemaskine er bedst til hjemmet?",
+        answer:
+          "Til allround start: hjemmetræningssæt med bænk, rack og vægte. Til budget: flad træningsbænk. Til seriøs squat/bænk: Semi-Pro half-rack. Til variation uden rack: multibænk.",
+      },
+      {
+        question: "Skal jeg starte med bænk eller rack?",
+        answer:
+          "Har du håndvægte og lidt plads: bænk først. Vil du squat/bænke med stang alene: rack (eller komplet sæt). De fleste begyndere får mest ud af bænk eller sæt — ikke tilbehør.",
+      },
+      {
+        question: "Kan jeg styrketræne i lejlighed?",
+        answer:
+          "Ja, med kontrolleret teknik, måtter og hensyn til støj. Undgå at dumpe vægte. Håndvægte og kabel/lettere setup kan være mere nabovenligt end tung barbell-drop.",
+      },
+      {
+        question: "Hvad med multigym / kabelstation?",
+        answer:
+          "Multigym kan være fint, hvis du vil have guidede bevægelser. Mange får mere progression for pengene med bænk + frivægte + rack. Vælg ud fra plads og præference — ikke kun “ser ud som et center”.",
+      },
+      {
+        question: "Hvorfor er der ingen benlås i anbefalingerne?",
+        answer:
+          "Fordi det er tilbehør. Det løser ikke dit kernebehov for at presse, squatte og bygge en vane. Køb det, når bænken er på plads, og du ved, at du mangler netop den funktion.",
+      },
+      {
+        question: "Hvor meget plads skal jeg bruge?",
+        answer:
+          "En bænk fylder lidt; et rack fylder som et lille møbel og kræver loft. Komplette sæt kræver et dedikeret hjørne. Mål før køb — især højde til pull-up.",
+      },
+      {
+        question: "Hvordan køber jeg via Fitlist?",
+        answer:
+          "Klik “Se pris” på en anbefaling, eller browse flere tilbud under Styrkemaskiner. Du handler hos partneren; Fitlist kan få provision uden merpris for dig.",
+      },
+    ],
+    relatedSlugs: [
+      "bedste-romaskine-2026",
+      "bedste-loebebaand-2026",
+      "bedste-crosstrainer-2026",
+    ],
   },
 ];
