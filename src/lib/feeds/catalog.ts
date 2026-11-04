@@ -48,12 +48,26 @@ function sortOffers(a: FeedProduct, b: FeedProduct): number {
   return a.title.localeCompare(b.title, "da");
 }
 
-/** Opslag af et enkelt feed-produkt via stabilt id (`merchant:produktid`). */
+/**
+ * Opslag af et enkelt feed-produkt via stabilt id (`merchant:produktid`).
+ * Finder først i maskinekataloget; falder tilbage til den rå merchant-feed,
+ * så guides kan linke accessories (fx underlagsmåtter) uden at de dukker op
+ * på /maskiner.
+ */
 export async function getFeedProductById(
   id: string,
 ): Promise<FeedProduct | undefined> {
   const catalog = await getMachineCatalog();
-  return catalog.find((p) => p.id === id);
+  const fromCatalog = catalog.find((p) => p.id === id);
+  if (fromCatalog) return fromCatalog;
+
+  const merchant = id.split(":")[0];
+  if (!merchant) return undefined;
+  const feed = PARTNER_ADS_FEEDS.find((f) => f.merchant === merchant);
+  if (!feed) return undefined;
+
+  const raw = await getCachedFeedProducts(feed);
+  return raw.find((p) => p.id === id);
 }
 
 export async function getProductsByCategory(

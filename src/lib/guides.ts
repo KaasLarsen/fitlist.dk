@@ -98,6 +98,7 @@ export function getProductAffiliate(product: GuideProduct) {
 
 /** Featured homepage-rækkefølge (intent-guides + kernemaskiner). */
 const FEATURED_GUIDE_SLUGS = [
+  "bedste-stoejsvage-traeningsmaskiner-lejlighed-2026",
   "bedste-smartcykel-2026",
   "bedste-gaabaand-2026",
   "bedste-airbike-2026",
@@ -128,6 +129,287 @@ export function getGuideByCategoryAndIntent(
  * Anbefalinger kobles til Partner-Ads via feedProductId (live pris + CTA).
  */
 export const guides: Guide[] = [
+  {
+    slug: "bedste-stoejsvage-traeningsmaskiner-lejlighed-2026",
+    title: "Bedste støjsvage træningsmaskiner til lejligheden (2026)",
+    excerpt:
+      "Træningsmaskine til lejlighed uden sure naboer: hvad der faktisk larmer, hvilken teknologi du skal vælge — og konkrete anbefalinger til støjsvagt gåbånd, motionscykel og romaskine.",
+    metaDescription:
+      "Find den bedste støjsvage træningsmaskine til lejlighed i 2026. Guide til at undgå støj fra hjemmetræning — plus støjsvagt gåbånd, motionscykel der ikke larmer, magnet-romaskine og underlagsmåtte med live priser.",
+    categorySlug: "motionscykel",
+    publishedAt: "2026-11-04",
+    updatedAt: "2026-11-04",
+    intro:
+      "Ingen fitnessmaskine er 100 % lydløs — det er myten, shops gerne sælger dig. Men forskellen mellem teknologierne er enorm. I en lejlighed er støj og vibration den absolut største barriere for at trykke “køb”: frygten for underboen, partneren der ikke kan høre fjernsynet, eller den pinlige “rumlen” gennem etageadskillelsen. Denne guide skærer igennem marketing. Du får de to støjtyper forklaret, hvilken modstandsteknologi du skal vælge (og undgå), og konkrete anbefalinger til gåbånd, motionscykel og romaskine — plus det underlag, der ofte redder hele setuppet.",
+    criteria: [
+      {
+        title: "Elektromagnetisk / magnetmodstand — det mest støjsvage",
+        description:
+          "Magnetiske systemer rører ikke fysisk ved svinghjulet. Det er stort set lydløst og findes på de bedste motionscykler, spinningcykler med remtræk og magnet-romaskiner. Til lejlighed og aftentræning er det førstevalg, når du vil undgå støj fra hjemmetræning.",
+      },
+      {
+        title: "Vandmodstand — acceptabelt i de fleste lejligheder",
+        description:
+          "Vandromaskiner giver en konstant, organisk “skvulpen”. Det høres i rummet, men forplanter sig sjældent som hård strukturel støj til underboen. Vælg vand, hvis du elsker følelsen — og accepter, at det ikke er “stille” i stuen.",
+      },
+      {
+        title: "Luftmodstand — undgå i mindre lejligheder",
+        description:
+          "Airbikes (Assault-style) og luft-romaskiner fungerer som en kæmpe ventilator. Luftbåren støj er høj, og det er et dårligt match til etagebyggeri og sen aften. Gå efter magnet i stedet, medmindre du har hus/værksted og naboer langt væk.",
+      },
+      {
+        title: "Remtræk frem for kæde",
+        description:
+          "Kædetræk kan rasle. Remtræk + magnetmodstand er kombinationen, der gør, at en moderne spinningcykel eller romaskine næsten ikke høres — selv midt om natten, hvis du træner fornuftigt.",
+      },
+      {
+        title: "Gåbånd frem for sprint-løbebånd",
+        description:
+          "Selv med støjsvag motor larmer skoenes stød mod pladen voldsomt nedenunder. Walking pads med max omkring 6 km/t minimerer vibrationerne totalt sammenlignet med et løbende sprint-bånd. Skal du kunne løbe intervaller, kræver det måtte, timing og realisme over for naboerne.",
+      },
+      {
+        title: "Underlag er ikke valgfrit",
+        description:
+          "En tyk træningsmåtte eller gulvbeskyttelse absorberer vibrationer, der ellers går lige i etageadskillelsen. Uden måtte kan selv en “stille” maskine blive et problem. Planlæg underlag ind i budgettet fra start.",
+      },
+    ],
+    products: [
+      {
+        id: "ascendic-essential-walking-pad",
+        name: "Ascendic Essential Walking Pad",
+        badge: "Bedst til lejlighed (gå)",
+        summary:
+          "Gåbånd er den realistiske vej til cardio i lejlighed, når du frygter støj fra et rigtigt løbebånd. Ascendic Essential Walking Pad kører i gangtempo (typisk op til ca. 6 km/t), så skridtene — og vibrationerne — forbliver milde. Et støjsvagt gåbånd til lejlighed, når målet er skridt og zone 2, ikke sprint.",
+        pros: [
+          "Lav hastighed = markant mindre strukturel støj end løbebånd",
+          "Kompakt footprint til små hjem",
+          "God indgang til daglig gang hjemme",
+          "Direkte svar på “støjsvagt løbebånd / gåbånd lejlighed”",
+        ],
+        cons: [
+          "Ikke til løb eller intervaller",
+          "Motor- og båndsus findes stadig — brug måtte",
+          "Kræver disciplin omkring tempo om aftenen",
+        ],
+        specs: [
+          { label: "Type", value: "Gåbånd / walking pad" },
+          { label: "Brand", value: "Ascendic" },
+          { label: "Brug", value: "Lejlighed / gang" },
+          { label: "Segment", value: "Støjsvag cardio" },
+          { label: "Partner", value: "Ascendic.dk" },
+        ],
+        feedProductId: "Ascendic.dk:56388648173912",
+      },
+      {
+        id: "titan-s72-stille",
+        name: "Titan LIFE Spinning Cykel S72",
+        badge: "Stillest (cykel)",
+        summary:
+          "Motionscykler er den nemmeste kategori i lejlighed: remtræk og magnetisk modstand betyder, at en high-end spinningcykel som Titan LIFE S72 typisk høres overhovedet ikke — selv ved aftentræning. Det er svaret på “motionscykel der ikke larmer”, når du vil have rigtig træning uden airbike-larm.",
+        pros: [
+          "Magnet/spinning-setup bygget til hjemmet",
+          "Remtræk uden kæderaslen",
+          "Allround Titan LIFE S72 — allerede stærkt i vores spinning-guide",
+          "Fri fragt hos partner",
+        ],
+        cons: [
+          "Stående sprint kan stadig give vibration i gulvet",
+          "Hårdere position end en komfort-kondicykel",
+          "Fylder mere end et gåbånd, der kan gemmes væk",
+        ],
+        specs: [
+          { label: "Type", value: "Spinningcykel" },
+          { label: "Brand", value: "Titan LIFE" },
+          { label: "Modstand", value: "Magnet / rem" },
+          { label: "Segment", value: "Allround spin" },
+          { label: "Partner", value: "HomeX.dk" },
+        ],
+        feedProductId: "HomeX.dk:2807",
+      },
+      {
+        id: "masterfit-170-rower",
+        name: "Masterfit 170 Rower",
+        badge: "Kompakt & stille (roning)",
+        summary:
+          "Romaskine med magnetmodstand er den mest kompakte helkropsløsning til lejlighed — især når den kan rejses lodret efter brug. Masterfit 170 Rower er et støjsvagt alternativ til kæde- og luftromaskiner: mindre “rumlen” end mange entry-modeller, og uden ventilator-lyden fra Concept2-style luft.",
+        pros: [
+          "Magnetmodstand — langt stillere end luft",
+          "Helkrop uden løbestød i gulvet",
+          "Kompakt, når den foldes/rejses",
+          "Skarp pris i romaskine-segmentet",
+        ],
+        cons: [
+          "Sædet på skinnen kan stadig give let strukturel lyd — brug måtte",
+          "Ikke den “ægte” vand- eller luftfølelse",
+          "Tjek skinnelængde til din højde",
+        ],
+        specs: [
+          { label: "Type", value: "Romaskine" },
+          { label: "Brand", value: "Masterfit" },
+          { label: "Modstand", value: "Magnet" },
+          { label: "Segment", value: "Budget / stille" },
+          { label: "Partner", value: "Træningspartner" },
+        ],
+        feedProductId: "Træningspartner:01904a5eaad7714fb5635179812010a9",
+      },
+      {
+        id: "titan-floor-guard-mat",
+        name: "Titan Life Floor Guard Mat",
+        badge: "Obligatorisk underlag",
+        summary:
+          "Brugere, der søger støjsvag træningsmaskine til lejlighed, køber næsten altid også beskyttelse. En gulvmåtte til crosstrainer/motionscykel som Titan Life Floor Guard Mat tager vibrationer, beskytter laminat og er det billigste “upgrade”, der faktisk mærkes nedenunder.",
+        pros: [
+          "Dæmper strukturel støj til etageadskillelsen",
+          "Beskytter gulv mod slid og sved",
+          "Passende format til cykel / lignende footprint",
+          "Nem ekstra affiliate-gevinst, der også hjælper naboerne",
+        ],
+        cons: [
+          "Ikke tyk nok alene til tungt løb på fuldt løbebånd",
+          "Skal matches til maskinens længde/bredde",
+          "Gummimåtter kan lugte lidt de første dage",
+        ],
+        specs: [
+          { label: "Type", value: "Gulvbeskyttelsesmåtte" },
+          { label: "Brand", value: "Titan Life" },
+          { label: "Brug", value: "Cykel / crosstrainer" },
+          { label: "Partner", value: "HomeX.dk" },
+        ],
+        feedProductId: "HomeX.dk:3187",
+      },
+      {
+        id: "walking-pad-gulvmaatte",
+        name: "Gulvbeskyttelsesmåtte til walking pad",
+        badge: "Tilbehør til gåbånd",
+        summary:
+          "Til Ascendic Essential og andre gåbånd: en dedikeret underlagsmåtte (ca. walking pad-format) er obligatorisk i lejlighed. Den fanger motorvibration og skridt, før de når betonen — og beskytter gulvet under daglig gang.",
+        pros: [
+          "Match til walking pad-footprint",
+          "Absorberer skridt og motorvibration",
+          "Beskytter gulv ved daglig brug",
+          "Lav merpris ift. maskinen",
+        ],
+        cons: [
+          "Ekstra led i ordren — glem den ikke",
+          "Tynde måtter hjælper mindre end tykkere gummi/skum",
+          "Skal ligge plant, så båndet ikke “vandrer”",
+        ],
+        specs: [
+          { label: "Type", value: "Underlagsmåtte" },
+          { label: "Brug", value: "Gåbånd / walking pad" },
+          { label: "Partner", value: "Billig-fitness.dk" },
+        ],
+        feedProductId: "Billig-fitness.dk:55961226051970",
+      },
+    ],
+    howToChoose:
+      "Vil du have den stilleste “rigtige” træning? Vælg Titan LIFE S72 (eller en anden rem+magnet-cykel). Vil du have skridt uden løbestød? Ascendic Essential Walking Pad + underlagsmåtte. Vil du have helkrop og kunne pakke væk? Masterfit 170 Rower. Køb altid måtte. Undgå airbike og luft-romaskine i mindre lejligheder. Shop via “Se pris” for live partnerpriser — eller gå videre til vores dedikerede guides for gåbånd, motionscykel og romaskine.",
+    learningSections: [
+      {
+        heading: "Myten om den lydløse maskine — og de to støj-syndere",
+        paragraphs: [
+          "“Silent”, “whisper quiet” og “lejlighedsvenlig” er marketing. I praksis findes der to slags støj, og de kræver forskellige løsninger. Luftbåren støj er det, du hører i rummet: motoren der spinder, remmen, luften i en airbike, skvulpen i en vandtank. Strukturel støj er vibrationer, der forplanter sig ned i gulvet — dump fra løb, hjulets rullende bevægelse, sædet på en romaskineskinne.",
+          "Underboen klager oftest over strukturel støj. Partneren i sofaen klager oftest over luftbåren støj. En god træningsmaskine til lejlighed skal tackle begge dele: stille teknologi (magnet/rem, gå i stedet for løb) plus måtte og fornuftig træningstid.",
+        ],
+      },
+      {
+        heading: "Hvilken maskintype er stillest?",
+        paragraphs: [
+          "Magnetisk motions-/spinningcykel vinder typisk på luftbåren støj. Gåbånd vinder over løbebånd på strukturel støj, fordi tempoet er lavt. Magnet-romaskine er midt imellem: stille motorisk, men sædet kan rumle. Airbike og sprint på løbebånd er bundskraberne i etagebyggeri.",
+          "Tabellen nedenfor er en grov lejligheds-score — ikke et lab-mål. Brug den til at fravælge de værste kombinationer, før du sammenligner priser.",
+        ],
+        comparison: {
+          caption: "Maskintype × støj i lejlighed (tommelfingerregel)",
+          columns: ["Luftbåren støj", "Strukturel støj / vibration", "Lejligheds montering"],
+          rows: [
+            {
+              label: "Magnetcykel (rem)",
+              cells: ["Meget lav", "Lav (højere ved stående sprint)", "Bedste allround"],
+            },
+            {
+              label: "Gåbånd (walking pad)",
+              cells: ["Lav–middel", "Lav ved gangtempo", "Stærkt til cardio uden løb"],
+            },
+            {
+              label: "Magnet-romaskine",
+              cells: ["Lav", "Lav–middel (sæde/skinne)", "God hvis den kan rejses"],
+            },
+            {
+              label: "Vand-romaskine",
+              cells: ["Middel (skvulpen)", "Lav–middel", "OK — accepter lyd i rummet"],
+            },
+            {
+              label: "Løbebånd (løb)",
+              cells: ["Middel", "Høj", "Svært — måtte + timing"],
+            },
+            {
+              label: "Airbike / luft-romaskine",
+              cells: ["Høj", "Middel", "Undgå i små lejligheder"],
+            },
+          ],
+        },
+      },
+      {
+        heading: "Det uundværlige tilbehør: måtte og vibrationsdæmpere",
+        paragraphs: [
+          "En tyk underlagsmåtte — gummi, Floor Guard eller puslespilsbrikker i hårdt skum — er obligatorisk, hvis du vil undgå støj fra hjemmetræning i etagebyggeri. Den absorberer vibrationer, maskinen sender direkte ned i etageadskillelsen, og den beskytter gulvet mod sved og slid.",
+          "Små gummifødder / vibrationsdæmpere (ofte solgt til vaskemaskiner eller fitnessudstyr) kan tage de sidste rystelser under cykelben eller romaskine. Kombinér: måtte under hele footprint + dæmpere, hvor maskinen prikker gulvet. Det er den billigste forsikring mod sure underboer.",
+        ],
+      },
+      {
+        heading: "Aftenpas i etagebyggeri",
+        paragraphs: [
+          "Teknologi slår ikke timing. Selv en stille cykel kan irritere, hvis du hopper i pedalerne kl. 22.30. Hold gåbånd i gangtempo, undgå stående sprint på spin bike sent, og drop airbike-intervaller helt, hvis væggene er tynde.",
+          "Fortæl gerne naboerne, at du har investeret i støjsvag opsætning — og hold dig til de timer, I aftaler. Den sociale kontrakt betyder ofte mere end endnu en “silent”-påstand i produktteksten.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "Kan man have en træningsmaskine i lejlighed?",
+        answer:
+          "Ja — hvis du vælger teknologi efter støj, ikke kun efter træningseffekt. Magnetcykel, magnet-romaskine og gåbånd er de sikreste valg. Læg måtte under, undgå airbike/luft-romaskine, og vær realistisk med løb på fuldt løbebånd.",
+      },
+      {
+        question: "Hvilket støjsvagt løbebånd eller gåbånd egner sig til lejlighed?",
+        answer:
+          "Prioritér gåbånd (walking pad) frem for store løbebånd. Lavere hastighed giver langt mindre strukturel støj. Ascendic Essential Walking Pad er vores lejlighedspick i denne guide — kombineret med underlagsmåtte. Skal du kunne løbe, læs Bedste løbebånd 2026 og planlæg dæmpning + træningstid.",
+      },
+      {
+        question: "Hvilken motionscykel larmer ikke?",
+        answer:
+          "Cykler med remtræk og magnetmodstand er blandt de støjsvageste maskiner overhovedet. Titan LIFE S72 er vores anbefaling her. Undgå airbikes, hvis målet er en motionscykel der ikke larmer i lejlighed.",
+      },
+      {
+        question: "Hvordan undgår jeg støj fra hjemmetræning?",
+        answer:
+          "Vælg magnet/rem frem for luft og kæde, gå i stedet for at løbe, når det er muligt, brug tyk måtte (og evt. vibrationsdæmpere), og træne hårde pas i dagtimerne. Det er den praktiske opskrift på at undgå støj fra hjemmetræning.",
+      },
+      {
+        question: "Er romaskine eller cykel bedst til støj i lejlighed?",
+        answer:
+          "Cykel vinder typisk på stilhed. Magnet-romaskine er tæt på og giver mere helkrop — men sædet på skinnen kan rumle. Begge slår airbike og løb. Vælg efter træningsmål, når støjniveauet er “godt nok” for begge.",
+      },
+      {
+        question: "Skal jeg købe underlagsmåtte?",
+        answer:
+          "Ja, i lejlighed næsten altid. Måtten beskytter gulv og dæmper vibration. Vi anbefaler Titan Life Floor Guard Mat til cykel-footprint og en dedikeret walking pad-måtte til gåbånd — se anbefalingerne ovenfor med aktuelle priser.",
+      },
+      {
+        question: "Hvordan ser jeg aktuelle priser?",
+        answer:
+          "Klik “Se pris” på anbefalingerne for live partnerpriser. Du kan også browse Motionscykel, Løbebånd → Gåbånd og Romaskine → Støjsvag for flere tilbud.",
+      },
+    ],
+    relatedSlugs: [
+      "bedste-gaabaand-2026",
+      "bedste-motionscykel-2026",
+      "bedste-spinningcykel-2026",
+      "bedste-romaskine-2026",
+      "bedste-loebebaand-2026",
+      "bedste-airbike-2026",
+    ],
+  },
   {
     slug: "bedste-gaabaand-2026",
     title: "Bedste gåbånd 2026",
