@@ -8,10 +8,10 @@ export function Hero() {
         className="pointer-events-none absolute inset-y-0 right-0 w-[55%] max-w-3xl opacity-40"
         style={{
           background:
-            "linear-gradient(105deg, transparent 0%, rgba(200,245,49,0.03) 40%, transparent 70%), repeating-linear-gradient(-18deg, transparent, transparent 48px, rgba(200,245,49,0.04) 48px, rgba(200,245,49,0.04) 49px)",
+            "linear-gradient(105deg, transparent 0%, rgba(22,163,74,0.04) 40%, transparent 70%), repeating-linear-gradient(-18deg, transparent, transparent 48px, rgba(22,163,74,0.05) 48px, rgba(22,163,74,0.05) 49px)",
         }}
       />
-      <div className="relative z-10 mx-auto w-full max-w-6xl px-5 pb-20 pt-28 sm:px-8 sm:pb-28 sm:pt-32">
+      <div className="relative z-10 mx-auto w-full max-w-6xl px-5 pb-24 pt-28 sm:px-8 sm:pb-32 sm:pt-32">
         <p className="animate-fade-up font-display text-5xl font-semibold uppercase tracking-[0.08em] text-accent sm:text-7xl md:text-8xl">
           Fitlist
         </p>

@@ -1,14 +1,14 @@
 @import "tailwindcss";
 
 :root {
-  --background: #070807;
-  --foreground: #f2f4f0;
-  --muted: #9aa39a;
-  --surface: #101411;
-  --border: #1c241e;
-  --accent: #c8f531;
-  --accent-dim: #9bc41a;
-  --accent-fg: #0a0d08;
+  --background: #f8fafc;
+  --foreground: #1e293b;
+  --muted: #64748b;
+  --surface: #ffffff;
+  --border: #e2e8f0;
+  --accent: #16a34a;
+  --accent-dim: #15803d;
+  --accent-fg: #ffffff;
 }
 
 @theme inline {
@@ -52,7 +52,7 @@ body {
   pointer-events: none;
   position: absolute;
   inset: 0;
-  opacity: 0.045;
+  opacity: 0.02;
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
   background-size: 180px 180px;
   z-index: 1;
@@ -60,9 +60,9 @@ body {
 
 .hero-glow {
   background:
-    radial-gradient(ellipse 80% 55% at 70% 20%, rgba(200, 245, 49, 0.12), transparent 55%),
-    radial-gradient(ellipse 60% 50% at 15% 80%, rgba(200, 245, 49, 0.05), transparent 50%),
-    linear-gradient(165deg, #0a0e0a 0%, #070807 45%, #050605 100%);
+    radial-gradient(ellipse 80% 55% at 70% 20%, rgba(22, 163, 74, 0.08), transparent 55%),
+    radial-gradient(ellipse 60% 50% at 15% 80%, rgba(22, 163, 74, 0.04), transparent 50%),
+    linear-gradient(165deg, #ffffff 0%, #f8fafc 45%, #f1f5f9 100%);
 }
 
 @keyframes fade-up {

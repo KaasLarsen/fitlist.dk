@@ -53,7 +53,7 @@ export default async function MaskineCategoryPage({
 
   return (
     <div className="noise hero-glow flex flex-1 flex-col">
-      <div className="relative z-10 mx-auto w-full max-w-6xl px-5 pb-24 pt-28 sm:px-8 sm:pt-32">
+      <div className="relative z-10 mx-auto w-full max-w-6xl px-5 pb-28 pt-28 sm:px-8 sm:pb-32 sm:pt-32">
         <Link
           href="/maskiner"
           className="font-display text-sm font-medium uppercase tracking-[0.2em] text-accent transition-colors hover:text-accent-dim"
@@ -143,7 +143,7 @@ export default async function MaskineCategoryPage({
                 <li key={guide.slug}>
                   <Link
                     href={`/guides/${guide.slug}`}
-                    className="group block py-6"
+                    className="group block py-8"
                   >
                     <h3 className="font-display text-xl font-medium uppercase tracking-wide text-foreground transition-colors group-hover:text-accent">
                       {guide.title}

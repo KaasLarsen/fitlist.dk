@@ -17,6 +17,27 @@ function normalize(s: string): string {
     .replace(/å/g, "aa");
 }
 
+/**
+ * Accessories / non-machines — substring matches so Danish compounds
+ * (silikoneolie, beskyttelsesmaatte, tilbehoerspakke) are caught.
+ * Applied before category rules.
+ */
+const ACCESSORY_EXCLUDES: RegExp[] = [
+  /silikone/,
+  /olie/,
+  /maatte/,
+  /\bmatte?\b/,
+  /floor\s*guard/,
+  /underlag/,
+  /tilbehoer/,
+  /reservedel/,
+  /garanti/,
+  /warranty/,
+  /pedaltraener/,
+  /bevaegelses?traener/,
+  /mini\s*motionscykel/,
+];
+
 /** Word-boundary helpers — Danish compound words often lack spaces. */
 const CATEGORY_RULES: CategoryRule[] = [
   {
@@ -30,15 +51,6 @@ const CATEGORY_RULES: CategoryRule[] = [
       /\bwalkingpad\b/,
       /\btreadmill\b/,
       /\bunderdesk\b/,
-      /\bworkwalk\b/,
-    ],
-    exclude: [
-      /\bolie\b/,
-      /\bsilikone\b/,
-      /\bmatte?\b/,
-      /\breservedel\b/,
-      /\btilbehoer\b/,
-      /\btilbehør\b/,
     ],
   },
   {
@@ -89,8 +101,6 @@ const CATEGORY_RULES: CategoryRule[] = [
       /\bmaal\b/,
       /\bmål\b/,
       /\bnet\s+til\b/,
-      /\bpedaltraener\b/,
-      /\bpedaltræner\b/,
     ],
   },
   {
@@ -142,8 +152,7 @@ const INTENT_RULES: { slug: string; test: (hay: string, price: number | null) =>
         /\bgåbånd\b/.test(hay) ||
         /\bwalking\s*pad\b/.test(hay) ||
         /\bwalkingpad\b/.test(hay) ||
-        /\bunderdesk\b/.test(hay) ||
-        /\bworkwalk\b/.test(hay),
+        /\bunderdesk\b/.test(hay),
     },
     {
       slug: "stoejsvag",
@@ -192,6 +201,10 @@ function haystack(p: FeedProduct): string {
   return normalize(`${p.title} ${p.category} ${p.brand}`);
 }
 
+function isAccessory(combined: string): boolean {
+  return ACCESSORY_EXCLUDES.some((re) => re.test(combined));
+}
+
 export function classifyProduct(
   product: FeedProduct,
 ): FeedProduct | null {
@@ -199,6 +212,8 @@ export function classifyProduct(
   // Also keep a lightly normalized raw for æ/ø/å patterns in regexes that use Danish chars
   const hayRaw = `${product.title} ${product.category} ${product.brand}`.toLowerCase();
   const combined = `${hay} ${hayRaw}`;
+
+  if (isAccessory(combined)) return null;
 
   let matched: MachineCategorySlug | undefined;
   for (const rule of CATEGORY_RULES) {

@@ -3,7 +3,7 @@ import Link from "next/link";
 export default function CategoryNotFound() {
   return (
     <div className="noise hero-glow flex flex-1 flex-col">
-      <div className="relative z-10 mx-auto w-full max-w-6xl px-5 pb-24 pt-28 sm:px-8 sm:pt-32">
+      <div className="relative z-10 mx-auto w-full max-w-6xl px-5 pb-28 pt-28 sm:px-8 sm:pb-32 sm:pt-32">
         <h1 className="font-display text-4xl font-semibold uppercase tracking-wide text-foreground">
           Kategori ikke fundet
         </h1>

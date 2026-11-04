@@ -15,8 +15,8 @@ export function ProductOfferCard({ product, compact = false }: Props) {
     product.oldPrice > product.price;
 
   return (
-    <article className="flex flex-col gap-4 border-t border-border py-6 sm:flex-row sm:items-center sm:gap-6">
-      <div className="relative h-28 w-full shrink-0 overflow-hidden bg-foreground/5 sm:h-24 sm:w-32">
+    <article className="flex flex-col gap-4 border-t border-border py-8 sm:flex-row sm:items-center sm:gap-6">
+      <div className="relative h-28 w-full shrink-0 overflow-hidden border border-border bg-surface sm:h-24 sm:w-32">
         {product.image ? (
           <Image
             src={product.image}

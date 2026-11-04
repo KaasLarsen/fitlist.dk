@@ -6,7 +6,7 @@ export function CategorySection() {
 
   return (
     <section className="border-t border-border bg-background">
-      <div className="mx-auto w-full max-w-6xl px-5 py-20 sm:px-8 sm:py-28">
+      <div className="mx-auto w-full max-w-6xl px-5 py-24 sm:px-8 sm:py-32">
         <p className="font-display text-sm font-medium uppercase tracking-[0.2em] text-accent">
           Maskiner
         </p>
@@ -18,12 +18,12 @@ export function CategorySection() {
           plads, støj og budget.
         </p>
 
-        <ul className="mt-12 divide-y divide-border border-t border-border">
+        <ul className="mt-14 divide-y divide-border border-t border-border">
           {categories.map((category) => (
             <li key={category.slug}>
               <Link
                 href={`/maskiner/${category.slug}`}
-                className="group flex flex-col gap-1 py-6 sm:flex-row sm:items-baseline sm:justify-between"
+                className="group flex flex-col gap-1 py-8 sm:flex-row sm:items-baseline sm:justify-between"
               >
                 <span className="font-display text-xl font-medium uppercase tracking-wide text-foreground transition-colors group-hover:text-accent sm:text-2xl">
                   {category.shortName}
