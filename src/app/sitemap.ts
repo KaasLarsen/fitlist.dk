@@ -33,6 +33,24 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly",
       priority: 0.3,
     },
+    {
+      url: `${SITE}/kontakt`,
+      lastModified: now,
+      changeFrequency: "monthly",
+      priority: 0.3,
+    },
+    {
+      url: `${SITE}/privatlivspolitik`,
+      lastModified: now,
+      changeFrequency: "monthly",
+      priority: 0.2,
+    },
+    {
+      url: `${SITE}/cookies`,
+      lastModified: now,
+      changeFrequency: "monthly",
+      priority: 0.2,
+    },
   ];
 
   const guideRoutes: MetadataRoute.Sitemap = getAllGuides().map((guide) => ({

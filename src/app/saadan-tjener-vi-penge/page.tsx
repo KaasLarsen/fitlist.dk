@@ -68,9 +68,19 @@ export default function MonetizationPage() {
         </section>
 
         <p className="mt-12 text-sm text-muted">
-          Spørgsmål? Skriv til os via{" "}
-          <Link href="/om" className="text-foreground underline-offset-2 hover:underline">
-            Om Fitlist
+          Spørgsmål? Skriv til{" "}
+          <a
+            href="mailto:info@fitlist.dk"
+            className="text-foreground underline-offset-2 hover:underline"
+          >
+            info@fitlist.dk
+          </a>{" "}
+          eller se{" "}
+          <Link
+            href="/kontakt"
+            className="text-foreground underline-offset-2 hover:underline"
+          >
+            kontaktsiden
           </Link>
           .
         </p>

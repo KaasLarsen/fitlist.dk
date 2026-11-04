@@ -42,6 +42,15 @@ export default function OmPage() {
             Sådan tjener vi penge →
           </Link>
         </p>
+        <p className="mt-4 text-sm text-muted">
+          Kontakt:{" "}
+          <Link
+            href="/kontakt"
+            className="text-accent transition-colors hover:text-accent-dim"
+          >
+            info@fitlist.dk
+          </Link>
+        </p>
       </div>
     </div>
   );

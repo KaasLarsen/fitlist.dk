@@ -31,10 +31,23 @@ export function Footer() {
         </nav>
       </div>
       <div className="border-t border-border">
-        <p className="mx-auto max-w-6xl px-5 py-4 text-xs text-muted sm:px-8">
-          © {new Date().getFullYear()} Fitlist.dk · Siden indeholder
-          affiliate-links
-        </p>
+        <div className="mx-auto flex max-w-6xl flex-col gap-3 px-5 py-4 text-xs text-muted sm:flex-row sm:items-center sm:justify-between sm:px-8">
+          <p>© {new Date().getFullYear()} Fitlist.dk · Siden indeholder affiliate-links</p>
+          <nav className="flex flex-wrap gap-x-4 gap-y-1">
+            <Link
+              href="/privatlivspolitik"
+              className="transition-colors hover:text-foreground"
+            >
+              Privatlivspolitik
+            </Link>
+            <Link href="/cookies" className="transition-colors hover:text-foreground">
+              Cookies
+            </Link>
+            <Link href="/kontakt" className="transition-colors hover:text-foreground">
+              Kontakt
+            </Link>
+          </nav>
+        </div>
       </div>
     </footer>
   );
