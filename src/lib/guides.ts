@@ -43,6 +43,8 @@ export type Guide = {
   metaDescription: string;
   /** Matcher MachineCategory.slug */
   categorySlug: string;
+  /** Valgfri intent til “Relaterede tilbud” (fx gaabaand) */
+  intentSlug?: string;
   publishedAt: string;
   updatedAt: string;
   intro: string;
@@ -81,10 +83,257 @@ export function getProductAffiliate(product: GuideProduct) {
 }
 
 /**
- * Kategori-guides (alle 5 maskintyper).
+ * Kategori-guides (5 maskintyper) + intent-guides (fx gåbånd).
  * Anbefalinger kobles til Partner-Ads via feedProductId (live pris + CTA).
  */
 export const guides: Guide[] = [
+  {
+    slug: "bedste-gaabaand-2026",
+    title: "Bedste gåbånd 2026",
+    excerpt:
+      "Walking pad til kontor og hjem: støj, stigning, fold og fire anbefalinger med aktuelle priser — til dig der går, ikke sprinter.",
+    metaDescription:
+      "Find det bedste gåbånd (walking pad) i 2026. Guide til under-desk brug, støj, stigning og fold — plus fire anbefalede modeller med live priser fra danske webshops.",
+    categorySlug: "loebebaand",
+    intentSlug: "gaabaand",
+    publishedAt: "2026-11-04",
+    updatedAt: "2026-11-04",
+    intro:
+      "Gåbånd — også kaldet walking pad — er eksploderet som hjemme- og kontorcardio: du går, mens du svarer mails, ser serier eller holder møder stående. Det er ikke et mini-løbebånd til intervaller. Det er et lavt, kompakt bånd bygget til gang, plads og hverdag. Denne guide er skrevet til den søgning: hvad der faktisk betyder noget (højde under skrivebord, støj til naboer, stigning i stedet for fart), fire konkrete modeller med shop-links, og klare svar på, hvornår du i stedet skal have et rigtigt løbebånd.",
+    criteria: [
+      {
+        title: "Gang — ikke løb",
+        description:
+          "Max-hastighed på gåbånd ligger typisk i gang-/hurtiggang-zonen. Køber du et walking pad for at “løbe dig i form med sprint”, bliver du skuffet. Match produktet til 80 % af din brug: hverdagsgang, zone 2 og skridt under arbejde. Skal du kunne løbe? Se vores løbebånd-guide i stedet.",
+      },
+      {
+        title: "Under skrivebordet: frihøjde og bredde",
+        description:
+          "Mål højden fra gulv til underside af bordplade med stoleben og kabler i tankerne. Gåbånd er lave — men tastaturarme, skuffer og crossbars dræber pasformen. Tjek også bredden: for smalle pads giver usikker gang, især hvis du samtidig skriver.",
+      },
+      {
+        title: "Støj i lejlighed og open office",
+        description:
+          "Motorstøj, båndets “sus” og skridt gennem gulvet er tre forskellige ting. Til lejlighed: prioriter støjsvage modeller, brug måtte, og hold tempoet nede om aftenen. Til kontor: tænk også på kolleger — et brummende bånd i et stille rum er en social fejl.",
+      },
+      {
+        title: "Stigning slår fart til intensitet",
+        description:
+          "Når topfarten er begrænset, er hældning (incline) din ven: mere belastning på baller og baglår uden at skulle “løbe” på et gangbånd. 10–16 % er allerede nyttigt; ekstrem 40 % er niche til kort bjerggang — ikke et must til desk walking.",
+      },
+      {
+        title: "Fold, vægt og hverdagsrutine",
+        description:
+          "Det bedste gåbånd er det, du faktisk trækker frem. Foldbart + hjul slår en “bedre” model, der står i skabet. Tjek vægt, greb og om den foldede pakke passer under sofa eller seng.",
+      },
+      {
+        title: "Motor, dæk og holdbarhed til daglig gang",
+        description:
+          "Du behøver ikke løbebånds-HK, men daglig brug (fx 5–10.000 skridt) slider stadig. Kig efter stabilt dæk, anstændig motor til gang, og realistiske anmeldelser om levetid — ikke kun peak-HK i produktteksten.",
+      },
+      {
+        title: "Budget: start smart, opgrader bevidst",
+        description:
+          "Entry-gåbånd er fine til at bygge vanen. Betal ekstra for stigning, foldkvalitet eller støjsvaghed, når du ved, at du går hver dag. Undgå at købe “3-i-1 løbebånd” hvis du aldrig vil løbe — du betaler for features, du ikke bruger.",
+      },
+    ],
+    products: [
+      {
+        id: "titan-walking-w10",
+        name: "TITAN LIFE Walking W10",
+        badge: "Bedst samlet",
+        summary:
+          "Dedikeret walking pad til kontor og hjem — vores allround-valg, når du vil have et seriøst gåbånd uden at blande løbebånds-features ind. Klar anbefaling til daglig gang.",
+        pros: [
+          "Lavet til gang / walking pad-brug",
+          "Stærkt match til kontor og hjem",
+          "Titan LIFE med fri fragt hos partner",
+          "Bedre “færdig” følelse end ren no-name entry",
+        ],
+        cons: [
+          "Dyrere end WorkWalk Classic",
+          "Ikke et løbebånd til intervaller",
+          "Tjek frihøjde under dit specifikke skrivebord",
+        ],
+        specs: [
+          { label: "Type", value: "Gåbånd / walking pad" },
+          { label: "Brand", value: "Titan LIFE" },
+          { label: "Brug", value: "Kontor + hjem" },
+          { label: "Segment", value: "Allround" },
+          { label: "Partner", value: "HomeX.dk" },
+        ],
+        feedProductId: "HomeX.dk:3182",
+      },
+      {
+        id: "workwalk-classic-gaa",
+        name: "WorkWalk Classic Gåbånd",
+        badge: "Bedste billige",
+        summary:
+          "Skarp indgang til walking pad-vanen. Kompakt, prisbevidst og fin til skridt under arbejde, når du ikke behøver avanceret stigning endnu.",
+        pros: [
+          "Lav indgangspris",
+          "Kompakt footprint",
+          "God til at teste desk walking",
+          "Let at prioritere, hvis budgettet er stramt",
+        ],
+        cons: [
+          "Færre features end pads med høj stigning",
+          "Ikke bygget til løb",
+          "Opgrader, når vanen er daglig og du mangler intensitet",
+        ],
+        specs: [
+          { label: "Type", value: "Gåbånd" },
+          { label: "Brand", value: "WorkWalk" },
+          { label: "Segment", value: "Budget" },
+          { label: "Partner", value: "WorkWalk" },
+        ],
+        feedProductId: "WorkWalk:52614816366935",
+      },
+      {
+        id: "walkingpad-15-stigning",
+        name: "Walkingpad med 15% stigning",
+        badge: "Bedste med stigning",
+        summary:
+          "Når du vil have mere træning ud af gang uden at hæve farten — 15 % hældning, vibration og fokus på støjsvag motor. God til dem, der allerede går dagligt og mangler intensitet.",
+        pros: [
+          "15 % stigning til højere intensitet",
+          "Støjsvag motor i fokus",
+          "Mere “træning” end fladt entry-pad",
+          "Relevant når desk walking er blevet vane",
+        ],
+        cons: [
+          "Dyrere end Classic",
+          "Flere features = mere at sætte sig ind i",
+          "Overkill til ren “gå mens du svarer mails”",
+        ],
+        specs: [
+          { label: "Type", value: "Walking pad" },
+          { label: "Feature", value: "15 % stigning + vibration" },
+          { label: "Segment", value: "Mid / intensitet" },
+          { label: "Partner", value: "Billig-fitness.dk" },
+        ],
+        feedProductId: "Billig-fitness.dk:56828077179266",
+      },
+      {
+        id: "foldbar-40-stigning",
+        name: "Foldbart Walkingpad med op til 40% stigning",
+        badge: "Bedste foldbare + bjerg",
+        summary:
+          "Foldbart pad til dig, der skal kunne pakke væk — og vil have mulighed for stejl hældning til korte, hårde gangpas. Maksimal fleksibilitet i små hjem.",
+        pros: [
+          "Foldbart til små boliger",
+          "Ekstrem stigning til bjerggang",
+          "Høj intensitet uden løb",
+          "God “to-i-en”: opbevaring + træning",
+        ],
+        cons: [
+          "40 % er niche — de fleste bruger langt mindre",
+          "Tjek stabilitet ved høj hældning",
+          "Dyrere end basale gåbånd",
+        ],
+        specs: [
+          { label: "Type", value: "Foldbart walking pad" },
+          { label: "Feature", value: "Op til 40 % stigning" },
+          { label: "Segment", value: "Foldbar / intensitet" },
+          { label: "Partner", value: "Billig-fitness.dk" },
+        ],
+        feedProductId: "Billig-fitness.dk:56856250057090",
+      },
+    ],
+    howToChoose:
+      "Ren desk walking på budget? WorkWalk Classic. Vil du have et dedikeret allround-gåbånd til kontor/hjem? Titan LIFE Walking W10. Går du allerede hver dag og mangler intensitet? Pad med 15 % stigning. Skal det væk efter brug og vil du kunne gå “bjerg”? Foldbart med høj stigning. Skal du kunne løbe? Stop — gå til Bedste løbebånd 2026 i stedet. Shop via “Se pris” for live partnerpriser, eller se flere under Løbebånd → Gåbånd.",
+    learningSections: [
+      {
+        heading: "Hvorfor gåbånd er så stort lige nu",
+        paragraphs: [
+          "Flere timer stillesiddende, hybridarbejde og fokus på daglige skridt har gjort walking pads til et af de hurtigst voksende hjemmefitness-produkter. Barriererne er lave: lille footprint, lavere pris end fulde løbebånd, og du kan bruge det midt i arbejdsdagen.",
+          "Hype betyder også mange lookalikes. Denne guide skærer ind til brug: kontor, lejlighed, stigning og fold — ikke til “løb 14 km/t på et mini-bånd”.",
+        ],
+      },
+      {
+        heading: "Gåbånd vs. løbebånd",
+        paragraphs: [
+          "Gåbånd: lavt, kompakt, ganghastighed, ofte under skrivebord. Løbebånd: højere, længere dæk, stærkere motor, bygget til løb. De deler kategori i shops — men ikke formål.",
+          "Tommelfingerregel: hvis du aldrig løber på det, køb gåbånd. Hvis du vil kunne løbe intervaller hjemme, køb løbebånd. Et “3-i-1” midt imellem kan virke, men er ofte et kompromis på begge dele.",
+        ],
+      },
+      {
+        heading: "Desk walking der faktisk virker",
+        paragraphs: [
+          "Start langsomt (2–3 km/t), hæv skærmen til øjenhøjde, og hold sessions korte første uge, så skinneben og hofter vænner sig. Mange dropper vanen, fordi de går for stærkt fra dag ét, mens de skriver.",
+          "Kombiner med stående pauser og almindelige gåture. Walking pad er et værktøj til mere bevægelse — ikke en erstatning for al anden sund fornuft.",
+        ],
+      },
+      {
+        heading: "Støj, måtte og naboer",
+        paragraphs: [
+          "En god måtte beskytter gulv og dæmper. Undgå hæl-tramp. Aftenbrug i etagebyggeri: lavere hastighed slår ethvert “ultra silent”-claim.",
+          "På kontoret: test lydniveauet, før du booker “walking meeting” i et stille zone-område. Kollegers accept er en del af produktvalget.",
+        ],
+      },
+      {
+        heading: "Stigning: den undervurderede feature",
+        paragraphs: [
+          "Uden høj fart er incline den reneste måde at øge intensiteten på. Selv 5–10 % mærkes. 15 % er solidt til træning. 40 % er kortvarig bjergstimulation — fedt at have, sjældent hverdag.",
+          "Prioritér jævn, sikker justering af hældning over det højeste tal i annoncen.",
+        ],
+      },
+      {
+        heading: "Typiske fejl ved køb af gåbånd",
+        paragraphs: [
+          "At købe et walking pad for at løbe. At glemme bordets frihøjde. At undervurdere støj. At købe det billigste uden plan for opbevaring — så det bliver stående i vejen og skaber dårlig samvittighed.",
+          "Omvendt: at vente på det “perfekte” pad i seks måneder. Et simpelt Classic + vanen slår et tomt hjørne.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "Hvilket gåbånd er bedst i 2026?",
+        answer:
+          "Til allround kontor/hjem: TITAN LIFE Walking W10. Til budget: WorkWalk Classic. Til mere intensitet: walking pad med 15 % stigning. Til fold + stejl hældning: foldbart pad med op til 40 % stigning.",
+      },
+      {
+        question: "Hvad er forskellen på gåbånd og walking pad?",
+        answer:
+          "I praksis det samme: et lavt bånd til gang. “Gåbånd” er det danske begreb; “walking pad” bruges ofte i produktnavne. Fokusér på specs og brug — ikke ordet på æsken.",
+      },
+      {
+        question: "Kan man løbe på et gåbånd?",
+        answer:
+          "De fleste walking pads er ikke bygget til løb. Max-hastighed og dæk er til gang. Vil du løbe hjemme, vælg et klassisk løbebånd — se vores guide til bedste løbebånd 2026.",
+      },
+      {
+        question: "Er gåbånd godt under skrivebordet?",
+        answer:
+          "Ja, det er en af hovedårsagerne til boomet. Mål frihøjde, start langsomt, og juster skærm/tastatur. Ikke alle borde egner sig — en crossbar midt under pladen kan spærre.",
+      },
+      {
+        question: "Hvilket gåbånd er mest støjsvagt?",
+        answer:
+          "Kig efter modeller med støjsvag motor i beskrivelsen, brug måtte, og hold hastigheden nede. Reelle brugeroplevelser om støj betyder mere end marketing. I lejlighed er adfærd (tempo, tidspunkt) mindst halvdelen af løsningen.",
+      },
+      {
+        question: "Skal jeg vælge gåbånd med stigning?",
+        answer:
+          "Hvis du går meget og mangler intensitet uden at hæve farten: ja. Til ren desk walking på lav hastighed er fladt eller let hældning nok. Stigning er en smart opgradering, når vanen sidder.",
+      },
+      {
+        question: "Hvor meget koster et godt gåbånd?",
+        answer:
+          "Entry ligger typisk omkring de lavere tusinder (fx WorkWalk Classic). Allround og modeller med stigning/fold ligger højere. Tjek “Se pris” for aktuelle partnerpriser — de ændrer sig.",
+      },
+      {
+        question: "Gåbånd eller crosstrainer til skånsom cardio?",
+        answer:
+          "Gåbånd vinder til skridt og desk walking. Crosstrainer vinder til stående helkropscardio med arme. Forskellige jobs — vælg efter hverdagen, ikke kun “cardio”.",
+      },
+    ],
+    relatedSlugs: [
+      "bedste-loebebaand-2026",
+      "bedste-motionscykel-2026",
+      "bedste-crosstrainer-2026",
+    ],
+  },
   {
     slug: "bedste-loebebaand-2026",
     title: "Bedste løbebånd 2026",
@@ -291,7 +540,7 @@ export const guides: Guide[] = [
       {
         question: "Er et gåbånd godt nok, eller skal jeg have et rigtigt løbebånd?",
         answer:
-          "Hvis du primært går — også under skrivebordet — er et gåbånd ofte det rigtige valg. Skal du kunne løbe intervaller, vælg et klassisk løbebånd med højere hastighed og længere flade.",
+          "Hvis du primært går — også under skrivebordet — er et gåbånd ofte det rigtige valg. Se vores dedikerede guide Bedste gåbånd 2026 for walking pads. Skal du kunne løbe intervaller, vælg et klassisk løbebånd med højere hastighed og længere flade.",
       },
       {
         question: "Hvor meget plads skal jeg regne med?",
@@ -325,9 +574,9 @@ export const guides: Guide[] = [
       },
     ],
     relatedSlugs: [
+      "bedste-gaabaand-2026",
       "bedste-crosstrainer-2026",
       "bedste-motionscykel-2026",
-      "bedste-romaskine-2026",
     ],
   },
   {

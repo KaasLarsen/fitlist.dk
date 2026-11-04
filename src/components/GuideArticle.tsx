@@ -33,13 +33,18 @@ export async function GuideArticle({ guide }: { guide: Guide }) {
   const related = getRelatedGuides(guide);
   const [relatedOffers, offerMap] = await Promise.all([
     getProductsByCategory(guide.categorySlug as MachineCategorySlug, {
+      intentSlug: guide.intentSlug,
       limit: 3,
       inStockOnly: true,
     }),
     resolveGuideOffers(guide.products),
   ]);
 
-  const categoryHref = category ? `/maskiner/${category.slug}` : "/maskiner";
+  const categoryHref = category
+    ? guide.intentSlug
+      ? `/maskiner/${category.slug}?intent=${guide.intentSlug}`
+      : `/maskiner/${category.slug}`
+    : "/maskiner";
 
   return (
     <article className="noise hero-glow flex flex-1 flex-col">

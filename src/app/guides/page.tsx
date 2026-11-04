@@ -6,7 +6,7 @@ import { getAllGuides } from "@/lib/guides";
 export const metadata: Metadata = {
   title: "Guides",
   description:
-    "Lange købsguides til løbebånd, romaskiner, motionscykler, crosstrainere og styrkemaskiner — kriterier, anbefalinger og live priser fra danske partnere.",
+    "Lange købsguides til gåbånd, løbebånd, romaskiner, motionscykler, crosstrainere og styrkemaskiner — kriterier, anbefalinger og live priser fra danske partnere.",
   alternates: { canonical: "https://fitlist.dk/guides" },
 };
 

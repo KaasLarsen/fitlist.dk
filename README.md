@@ -44,6 +44,7 @@ Mangler produktet i feedet, falder UI tilbage til kategorisiden `/maskiner/[slug
 
 ### Aktuelle guides
 
+- `/guides/bedste-gaabaand-2026` (intent: walking pad / gåbånd)
 - `/guides/bedste-loebebaand-2026`
 - `/guides/bedste-romaskine-2026`
 - `/guides/bedste-motionscykel-2026`
