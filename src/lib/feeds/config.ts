@@ -29,6 +29,12 @@ export const PARTNER_ADS_FEEDS: readonly PartnerAdsFeed[] = [
     merchant: "CBL-Fitness.dk",
   },
   {
+    id: "fitnessengros",
+    bannerId: "89036",
+    feedId: "2245",
+    merchant: "Fitnessengros.dk",
+  },
+  {
     id: "fitnessfree",
     bannerId: "118836",
     feedId: "4509",
