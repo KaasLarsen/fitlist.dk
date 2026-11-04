@@ -21,8 +21,8 @@ export function FeaturedGuidesSection({ guides }: Props) {
               Købsguides
             </h2>
             <p className="mt-4 max-w-lg text-muted">
-              Detaljerede guides med anbefalinger og live priser — fra smartcykler
-              og gåbånd til airbike, multistation og træningsbænk.
+              Detaljerede guides med anbefalinger og live priser — fra begynder-
+              must-haves og kabeltårn til gåbånd, budget-pakker og styrke.
             </p>
           </div>
           <Link
@@ -57,7 +57,11 @@ export function FeaturedGuidesSection({ guides }: Props) {
                                 ? " · Multistation"
                                 : guide.intentSlug === "traeningsbaenk"
                                   ? " · Træningsbænk"
-                                  : ""}
+                                  : guide.intentSlug === "kabeltaarn"
+                                    ? " · Kabeltårn"
+                                    : guide.intentSlug === "begynder"
+                                      ? " · Begynder"
+                                      : ""}
                     </p>
                     <h3 className="mt-1 font-display text-2xl font-medium uppercase tracking-wide text-foreground transition-colors group-hover:text-accent">
                       {guide.title}

@@ -18,28 +18,24 @@ function normalize(s: string): string {
 }
 
 /**
- * Accessories / non-machines — substring matches so Danish compounds
- * (silikoneolie, beskyttelsesmaatte, tilbehoerspakke) are caught.
- * Applied before category rules.
+ * Non-catalog noise — spare parts, oil, warranties, mini trainers.
+ * Training mats / dumbbells / bands are classified as tilbehoer instead.
  */
-const ACCESSORY_EXCLUDES: RegExp[] = [
+const HARD_EXCLUDES: RegExp[] = [
   /silikone/,
   /olie/,
-  /maatte/,
-  /\bmatte?\b/,
-  /floor\s*guard/,
-  /underlag/,
-  /tilbehoer/,
   /reservedel/,
   /garanti/,
   /warranty/,
   /pedaltraener/,
   /bevaegelses?traener/,
   /mini\s*motionscykel/,
+  /tilbehoerspakke/,
+  /komplet\s+tilbehoer/,
 ];
 
-/** Word-boundary helpers — Danish compound words often lack spaces. */
-const CATEGORY_RULES: CategoryRule[] = [
+/** Machine categories — matched before tilbehoer. */
+const MACHINE_RULES: CategoryRule[] = [
   {
     slug: "loebebaand",
     include: [
@@ -69,6 +65,9 @@ const CATEGORY_RULES: CategoryRule[] = [
       /\bnet\s+til\b/,
       /\bchin\s*up\b/,
       /\bpulldown\b/,
+      /\bovertraek\b/,
+      /\bovertræk\b/,
+      /\bcover\b/,
     ],
   },
   {
@@ -115,7 +114,10 @@ const CATEGORY_RULES: CategoryRule[] = [
       /\bpower\s*rack\b/,
       /\bsquat\s*rack\b/,
       /\bsquatrack\b/,
-      /\bcable\s*(?:cross|machine|station)?\b/,
+      /\bcable\s*(?:cross|machine|station|tower)?\b/,
+      /\bkabeltaarn\b/,
+      /\bkabeltårn\b/,
+      /\bkabelstation\b/,
       /\btraekstation\b/,
       /\btrækstation\b/,
       /\btraeningsbaenk\b/,
@@ -128,9 +130,12 @@ const CATEGORY_RULES: CategoryRule[] = [
       /\bbenpres\b/,
       /\bhack\s*squat\b/,
       /\bpower\s*station\b/,
+      /\bpull[\s-]*up\s*bar\b/,
+      /\bchin[\s-]*up\s*bar\b/,
+      /\bpullup\s*bar\b/,
     ],
     exclude: [
-      /\bkabel\b(?!\s*(?:cross|machine|station))/,
+      /\bkabel\b(?!\s*(?:cross|machine|station|taarn|tårn))/,
       /\bparacord\b/,
       /\busb\b/,
       /\bshorts\b/,
@@ -139,6 +144,85 @@ const CATEGORY_RULES: CategoryRule[] = [
     ],
   },
 ];
+
+/**
+ * True accessory signals — when present, skip machine rules even if the
+ * title mentions “walking pad” / “motionscykel” (common on floor mats).
+ */
+const ACCESSORY_PRIORITY: RegExp[] = [
+  /maatte/,
+  /matte/,
+  /floor\s*guard/,
+  /underlag/,
+  /gulvbeskytt/,
+  /puslespil/,
+  /\bpuzzle\b/,
+  /gummigulv/,
+  /fitnessgulv/,
+  /elastik/,
+  /resistance\s*band/,
+  /booty\s*band/,
+  /power\s*band/,
+  /\btrx\b/,
+  /slyngetraener/,
+  /slyngetræner/,
+  /suspension\s*trainer/,
+  /\bhaandvaegt/,
+  /\bhåndvægt/,
+  /\bdumbbell/,
+  /\bkettlebell/,
+  /overtraek\s*(?:til|til\s+roma|til\s+loebe|til\s+cykel)/,
+  /overtræk\s*(?:til|til\s+roma|til\s+løbe|til\s+cykel)/,
+];
+
+/** Must-haves / accessories — only if no machine rule matched (or accessory-priority). */
+const TILBEHOER_RULE: CategoryRule = {
+  slug: "tilbehoer",
+  include: [
+    /\bhaandvaegt/,
+    /\bhåndvægt/,
+    /\bdumbbell/,
+    /\bkettlebell/,
+    /\bjusterbar(?:e)?\s*(?:haand|hånd)?vaegt/,
+    /\bjusterbar(?:e)?\s*(?:haand|hånd)?vægt/,
+    /maatte/,
+    /matte/,
+    /yogamaatte/,
+    /yogamåtte/,
+    /floor\s*guard/,
+    /underlag/,
+    /gulvbeskytt/,
+    /puslespil/,
+    /\bpuzzle\b/,
+    /gummigulv/,
+    /fitnessgulv/,
+    /elastik/,
+    /resistance\s*band/,
+    /booty\s*band/,
+    /power\s*band/,
+    /\btrx\b/,
+    /slyngetraener/,
+    /slyngetræner/,
+    /suspension\s*trainer/,
+    /overtraek\s*(?:til|roma|loebe|cykel|maskine)/,
+    /overtræk\s*(?:til|roma|løbe|cykel|maskine)/,
+    /(?:roma|loebe|cykel|maskine|rower|treadmill).{0,24}(?:overtraek|overtræk|cover)/,
+    /(?:overtraek|overtræk|cover).{0,24}(?:roma|loebe|cykel|maskine|rower|treadmill)/,
+  ],
+  exclude: [
+    /\bsilikone/,
+    /\bolie\b/,
+    /\breservedel/,
+    /\bgaranti/,
+    /\bwarranty/,
+    /\bvest\b/,
+    /\bshorts?\b/,
+    /\btaske\b/,
+    /\bsko\b/,
+    /\bsadel\b/,
+    /\bbind\b/,
+  ],
+};
 
 const INTENT_RULES: { slug: string; test: (hay: string, price: number | null) => boolean }[] =
   [
@@ -174,7 +258,10 @@ const INTENT_RULES: { slug: string; test: (hay: string, price: number | null) =>
         /\bkompakt\b/.test(hay) ||
         /\bpladsbespar/.test(hay) ||
         /\bsmall\s*footprint\b/.test(hay) ||
-        /\bcompact\b/.test(hay),
+        /\bcompact\b/.test(hay) ||
+        /\bvaegmonter/.test(hay) ||
+        /\bvægmonter/.test(hay) ||
+        /\bwall[\s-]*mount/.test(hay),
     },
     {
       slug: "spinning",
@@ -234,6 +321,8 @@ const INTENT_RULES: { slug: string; test: (hay: string, price: number | null) =>
           /\bpull\s*up\s*bar\b/.test(hay) ||
           /\bloebebaand\b/.test(hay) ||
           /\bgaabaand\b/.test(hay) ||
+          /\bkabeltaarn\b/.test(hay) ||
+          /\bkabeltårn\b/.test(hay) ||
           ((/\btraeningsbaenk\b/.test(hay) ||
             /\bweight\s*bench\b/.test(hay) ||
             /\bjusterbaenk\b/.test(hay)) &&
@@ -292,6 +381,80 @@ const INTENT_RULES: { slug: string; test: (hay: string, price: number | null) =>
       },
     },
     {
+      slug: "kabeltaarn",
+      test: (hay) => {
+        if (
+          /\bmultistation\b/.test(hay) ||
+          /\bmultigym\b/.test(hay) ||
+          /\bsmith\b/.test(hay) ||
+          (/\bhome\s*gym\b/.test(hay) &&
+            !/\bvaegmonter|vægmonter|wall[\s-]*mount|\btil\s+vaeg|\btil\s+væg/.test(
+              hay,
+            ))
+        ) {
+          return false;
+        }
+        const wallish =
+          /\bvaegmonter/.test(hay) ||
+          /\bvægmonter/.test(hay) ||
+          /\bwall[\s-]*mount/.test(hay) ||
+          /\btil\s+vaeg\b/.test(hay) ||
+          /\btil\s+væg\b/.test(hay);
+        const cableish =
+          /\bcable\b/.test(hay) ||
+          /\bkabel\b/.test(hay) ||
+          /\btraekstation\b/.test(hay) ||
+          /\btrækstation\b/.test(hay) ||
+          /\bpulley\b/.test(hay) ||
+          /\bfunctional\s*trainer\b/.test(hay);
+        return (
+          /\bkabeltaarn\b/.test(hay) ||
+          /\bkabeltårn\b/.test(hay) ||
+          /\bkabeltraektaarn\b/.test(hay) ||
+          /\bkabeltræktårn\b/.test(hay) ||
+          /\bcable\s*tower\b/.test(hay) ||
+          (wallish && cableish)
+        );
+      },
+    },
+    {
+      slug: "haandvaegte",
+      test: (hay) =>
+        /\bhaandvaegt/.test(hay) ||
+        /\bhåndvægt/.test(hay) ||
+        /\bdumbbell/.test(hay) ||
+        /\bkettlebell/.test(hay),
+    },
+    {
+      slug: "gulvmaatter",
+      test: (hay) =>
+        /maatte/.test(hay) ||
+        /matte/.test(hay) ||
+        /floor\s*guard/.test(hay) ||
+        /underlag/.test(hay) ||
+        /gulvbeskytt/.test(hay) ||
+        /puslespil/.test(hay) ||
+        /\bpuzzle\b/.test(hay) ||
+        /gummigulv/.test(hay) ||
+        /fitnessgulv/.test(hay),
+    },
+    {
+      slug: "elastikker",
+      test: (hay) =>
+        /elastik/.test(hay) ||
+        /resistance\s*band/.test(hay) ||
+        /booty\s*band/.test(hay) ||
+        /power\s*band/.test(hay),
+    },
+    {
+      slug: "slyngetraener",
+      test: (hay) =>
+        /\btrx\b/.test(hay) ||
+        /slyngetraener/.test(hay) ||
+        /slyngetræner/.test(hay) ||
+        /suspension\s*trainer/.test(hay),
+    },
+    {
       slug: "begynder",
       test: (hay) =>
         /\bbegynder\b/.test(hay) ||
@@ -314,8 +477,17 @@ function haystack(p: FeedProduct): string {
   return normalize(`${p.title} ${p.category} ${p.brand}`);
 }
 
-function isAccessory(combined: string): boolean {
-  return ACCESSORY_EXCLUDES.some((re) => re.test(combined));
+function isHardExcluded(combined: string): boolean {
+  return HARD_EXCLUDES.some((re) => re.test(combined));
+}
+
+function matchRule(
+  rule: CategoryRule,
+  combined: string,
+): boolean {
+  const excluded = rule.exclude?.some((re) => re.test(combined));
+  if (excluded) return false;
+  return rule.include.some((re) => re.test(combined));
 }
 
 export function classifyProduct(
@@ -326,16 +498,22 @@ export function classifyProduct(
   const hayRaw = `${product.title} ${product.category} ${product.brand}`.toLowerCase();
   const combined = `${hay} ${hayRaw}`;
 
-  if (isAccessory(combined)) return null;
+  if (isHardExcluded(combined)) return null;
+
+  const accessoryPriority = ACCESSORY_PRIORITY.some((re) => re.test(combined));
 
   let matched: MachineCategorySlug | undefined;
-  for (const rule of CATEGORY_RULES) {
-    const excluded = rule.exclude?.some((re) => re.test(combined));
-    if (excluded) continue;
-    if (rule.include.some((re) => re.test(combined))) {
-      matched = rule.slug;
-      break;
+  if (!accessoryPriority) {
+    for (const rule of MACHINE_RULES) {
+      if (matchRule(rule, combined)) {
+        matched = rule.slug;
+        break;
+      }
     }
+  }
+
+  if (!matched && matchRule(TILBEHOER_RULE, combined)) {
+    matched = "tilbehoer";
   }
 
   if (!matched) return null;
@@ -345,10 +523,26 @@ export function classifyProduct(
   ).map((r) => r.slug);
 
   // gaabaand only meaningful for løbebånd
-  const filteredIntents =
+  let filteredIntents =
     matched === "loebebaand"
       ? intentSlugs
       : intentSlugs.filter((s) => s !== "gaabaand");
+
+  // Accessory intents only on tilbehoer
+  if (matched !== "tilbehoer") {
+    filteredIntents = filteredIntents.filter(
+      (s) =>
+        s !== "haandvaegte" &&
+        s !== "gulvmaatter" &&
+        s !== "elastikker" &&
+        s !== "slyngetraener",
+    );
+  }
+
+  // kabeltaarn only on styrkemaskiner
+  if (matched !== "styrkemaskiner") {
+    filteredIntents = filteredIntents.filter((s) => s !== "kabeltaarn");
+  }
 
   return {
     ...product,

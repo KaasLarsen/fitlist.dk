@@ -6,7 +6,7 @@ import { getGuidesByCategory } from "@/lib/guides";
 export const metadata: Metadata = {
   title: "Træningsmaskiner",
   description:
-    "Løbebånd, motionscykel, romaskine, crosstrainer og styrkemaskiner til hjemmet — vælg efter type og behov.",
+    "Løbebånd, motionscykel, romaskine, crosstrainer, styrkemaskiner og Must-haves til hjemmet — vælg efter type og behov.",
 };
 
 export default function MaskinerPage() {
@@ -22,8 +22,8 @@ export default function MaskinerPage() {
           Træningsmaskiner til hjemmet
         </h1>
         <p className="mt-4 max-w-xl text-muted">
-          Vælg maskintype — og zoom ind på foldbar, billig, støjsvag eller
-          begrænset plads.
+          Vælg maskintype eller Must-haves — og zoom ind på foldbar, billig,
+          støjsvag, kabeltårn eller begynder-udstyr.
         </p>
 
         <ul className="mt-16 divide-y divide-border border-t border-border">

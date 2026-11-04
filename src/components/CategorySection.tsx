@@ -15,20 +15,13 @@ export function CategorySection() {
           Vælg efter type og behov
         </h2>
         <p className="mt-4 max-w-lg text-muted">
-          Løbebånd, gåbånd, cykel, romaskine, crosstrainer eller styrke — og
-          filtrér på plads, støj og budget.
+          Løbebånd, cykel, romaskine, crosstrainer, styrke eller Must-haves — og
+          filtrér på plads, støj, kabeltårn og budget.
         </p>
 
         <ul className="mt-12 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {categories.map((category) => (
-            <li
-              key={category.slug}
-              className={
-                category.slug === "styrkemaskiner"
-                  ? "sm:col-span-2 lg:col-span-1"
-                  : undefined
-              }
-            >
+            <li key={category.slug}>
               <div className="group relative aspect-[16/10] overflow-hidden border border-border bg-surface">
                 <Link
                   href={`/maskiner/${category.slug}`}

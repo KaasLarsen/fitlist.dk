@@ -39,7 +39,7 @@ export const sharedIntents: MachineIntent[] = [
 ];
 
 /**
- * Maskine-først IA — kun hjemmetræningsmaskiner.
+ * Maskiner + Must-haves (tilbehør).
  * Intent-undersider: /maskiner/[slug]?intent=… eller fremtidige /maskiner/[slug]/[intent]
  */
 export const categories: MachineCategory[] = [
@@ -186,6 +186,47 @@ export const categories: MachineCategory[] = [
         slug: "begynder",
         label: "Begynder",
         description: "Trygge maskiner når du starter styrketræning hjemme.",
+      },
+      {
+        slug: "kabeltaarn",
+        label: "Kabeltårn",
+        description:
+          "Vægmonteret cable — typisk kun 15–20 cm fra væggen.",
+      },
+    ],
+  },
+  {
+    slug: "tilbehoer",
+    name: "Must-haves",
+    shortName: "Tilbehør",
+    description:
+      "Håndvægte, underlagsmåtter, elastikker og slyngetræner — det lille tilbehør, der følger med ethvert maskinkøb.",
+    image: "/images/categories/tilbehoer.webp",
+    intents: [
+      {
+        slug: "haandvaegte",
+        label: "Håndvægte",
+        description: "Justerbare og faste håndvægte til hjemmestyrke.",
+      },
+      {
+        slug: "gulvmaatter",
+        label: "Gulvmåtter",
+        description: "Underlag der beskytter gulv og dæmper vibration.",
+      },
+      {
+        slug: "elastikker",
+        label: "Elastikker",
+        description: "Booty bands, power bands og elastiksæt.",
+      },
+      {
+        slug: "slyngetraener",
+        label: "Slyngetræner",
+        description: "TRX-alternativer og suspension trainers.",
+      },
+      {
+        slug: "begynder",
+        label: "Begynder",
+        description: "De simple ting, der er nok de første 90 dage.",
       },
     ],
   },

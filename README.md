@@ -20,7 +20,7 @@ npm run dev
 
 | Fil | Formål |
 |-----|--------|
-| `src/lib/categories.ts` | Maskinkategorier + intents (foldbar, billig, støj, plads) |
+| `src/lib/categories.ts` | Maskinkategorier + Must-haves + intents |
 | `src/lib/guides.ts` | Guides (TOC, kriterier, produkter, FAQ, CTA) |
 | `src/lib/affiliates.ts` | Valgfri manuelle partner-URL’er (fallback) |
 | `src/lib/feeds/` | Partner-Ads feed-sync → live tilbud på `/maskiner/[slug]` |
@@ -44,6 +44,9 @@ Mangler produktet i feedet, falder UI tilbage til kategorisiden `/maskiner/[slug
 
 ### Aktuelle guides
 
+- `/guides/hjemmetraening-for-begyndere-foerste-90-dage` (Must-haves / begynder)
+- `/guides/bedste-vaegmonteret-kabeltaarn-2026` (intent: kabeltårn)
+- `/guides/ultimative-udendoers-home-gym-2026`
 - `/guides/bedste-gaabaand-2026` (intent: walking pad / gåbånd)
 - `/guides/bedste-foldbare-kompakte-traeningsmaskiner-2026` (intent: foldbar / plads)
 - `/guides/bedste-stoejsvage-traeningsmaskiner-lejlighed-2026`

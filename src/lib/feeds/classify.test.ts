@@ -21,21 +21,11 @@ function product(
   };
 }
 
-describe("classifyProduct — accessories excluded", () => {
+describe("classifyProduct — hard excludes", () => {
   it("drops silikoneolie mentioning walking pad", () => {
     const r = classifyProduct(
       product({
         title: "Silikoneolie til løbebånd / walking pad 60 ml",
-        brand: "Wohlstand",
-      }),
-    );
-    assert.equal(r, null);
-  });
-
-  it("drops gulvbeskyttelsesmåtte with walking pad in title", () => {
-    const r = classifyProduct(
-      product({
-        title: "Gulvbeskyttelsesmåtte (walking pad underlag) (200 x 90 x 0,6 cm)",
         brand: "Wohlstand",
       }),
     );
@@ -75,16 +65,6 @@ describe("classifyProduct — accessories excluded", () => {
     assert.equal(r, null);
   });
 
-  it("drops floor guard mat mentioning motionscykel", () => {
-    const r = classifyProduct(
-      product({
-        title:
-          "Titan Life Floor Guard Mat - Til crosstrainer/motionscykel - 155 (L) x 65 (B) x 0,6 (T)",
-      }),
-    );
-    assert.equal(r, null);
-  });
-
   it("drops mini motionscykel / bevægelsestræner", () => {
     assert.equal(
       classifyProduct(
@@ -99,12 +79,78 @@ describe("classifyProduct — accessories excluded", () => {
       null,
     );
   });
+});
 
-  it("drops beskyttelsesmåtte with WorkWalk brand", () => {
+describe("classifyProduct — tilbehoer (must-haves)", () => {
+  it("classifies gulvbeskyttelsesmåtte as tilbehoer + gulvmaatter", () => {
+    const r = classifyProduct(
+      product({
+        title: "Gulvbeskyttelsesmåtte (walking pad underlag) (200 x 90 x 0,6 cm)",
+        brand: "Wohlstand",
+      }),
+    );
+    assert.ok(r);
+    assert.equal(r!.categorySlug, "tilbehoer");
+    assert.ok(r!.intentSlugs?.includes("gulvmaatter"));
+  });
+
+  it("classifies floor guard mat as tilbehoer", () => {
+    const r = classifyProduct(
+      product({
+        title:
+          "Titan Life Floor Guard Mat - Til crosstrainer/motionscykel - 155 (L) x 65 (B) x 0,6 (T)",
+      }),
+    );
+    assert.ok(r);
+    assert.equal(r!.categorySlug, "tilbehoer");
+    assert.ok(r!.intentSlugs?.includes("gulvmaatter"));
+  });
+
+  it("classifies beskyttelsesmåtte as tilbehoer", () => {
     const r = classifyProduct(
       product({ title: "Beskyttelsesmåtte", brand: "WorkWalk" }),
     );
-    assert.equal(r, null);
+    assert.ok(r);
+    assert.equal(r!.categorySlug, "tilbehoer");
+  });
+
+  it("classifies justerbare håndvægte as tilbehoer + haandvaegte", () => {
+    const r = classifyProduct(
+      product({
+        title: "Odin Justerbar Håndvægt 20 kg (2×10 kg)",
+        brand: "Odin",
+        price: 1499,
+      }),
+    );
+    assert.ok(r);
+    assert.equal(r!.categorySlug, "tilbehoer");
+    assert.ok(r!.intentSlugs?.includes("haandvaegte"));
+  });
+
+  it("classifies elastiksæt as tilbehoer + elastikker", () => {
+    const r = classifyProduct(
+      product({
+        title: "Ascendic Elastik træningssæt (med håndtag)",
+        brand: "Ascendic",
+        price: 149,
+      }),
+    );
+    assert.ok(r);
+    assert.equal(r!.categorySlug, "tilbehoer");
+    assert.ok(r!.intentSlugs?.includes("elastikker"));
+  });
+
+  it("classifies slyngetræner as tilbehoer + slyngetraener", () => {
+    const r = classifyProduct(
+      product({
+        title: "Odin Suspension Trainer / Slyngetræner",
+        brand: "Odin",
+        price: 399,
+      }),
+    );
+    assert.ok(r);
+    assert.equal(r!.categorySlug, "tilbehoer");
+    assert.ok(r!.intentSlugs?.includes("slyngetraener"));
   });
 });
 
@@ -262,5 +308,31 @@ describe("classifyProduct — real machines kept", () => {
     assert.ok(r);
     assert.equal(r!.categorySlug, "styrkemaskiner");
     assert.ok(r!.intentSlugs?.includes("traeningsbaenk"));
+  });
+
+  it("classifies vægmonteret kabeltårn as styrkemaskiner + kabeltaarn", () => {
+    const r = classifyProduct(
+      product({
+        title: "Odin Vægmonteret Kabeltårn Single",
+        brand: "Odin",
+        price: 3999,
+      }),
+    );
+    assert.ok(r);
+    assert.equal(r!.categorySlug, "styrkemaskiner");
+    assert.ok(r!.intentSlugs?.includes("kabeltaarn"));
+    assert.ok(!r!.intentSlugs?.includes("multistation"));
+  });
+
+  it("keeps cable cross machine as styrkemaskiner not tilbehoer", () => {
+    const r = classifyProduct(
+      product({
+        title: "Titanium Fitness Cable Cross Machine",
+        brand: "Titanium Fitness",
+        price: 8999,
+      }),
+    );
+    assert.ok(r);
+    assert.equal(r!.categorySlug, "styrkemaskiner");
   });
 });

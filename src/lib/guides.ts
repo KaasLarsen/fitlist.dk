@@ -112,15 +112,15 @@ export function getProductAffiliate(product: GuideProduct) {
 
 /** Featured homepage-rækkefølge (intent-guides + kernemaskiner). */
 const FEATURED_GUIDE_SLUGS = [
+  "hjemmetraening-for-begyndere-foerste-90-dage",
+  "bedste-vaegmonteret-kabeltaarn-2026",
+  "ultimative-udendoers-home-gym-2026",
   "ultimative-home-gym-budget-2026",
   "bedste-stoejsvage-traeningsmaskiner-lejlighed-2026",
   "bedste-foldbare-kompakte-traeningsmaskiner-2026",
-  "bedste-smartcykel-2026",
   "bedste-gaabaand-2026",
-  "bedste-airbike-2026",
   "bedste-multistation-2026",
   "bedste-justerbar-traeningsbaenk-2026",
-  "bedste-spinningcykel-2026",
   "bedste-loebebaand-2026",
 ] as const;
 
@@ -140,8 +140,8 @@ export function getGuideByCategoryAndIntent(
 }
 
 /**
- * Kategori-guides (5 maskintyper) + intent-guides
- * (gåbånd, spinning, smart/Zwift, airbike, multistation, træningsbænk).
+ * Kategori-guides + intent-guides (gåbånd, spinning, smart/Zwift, airbike,
+ * multistation, træningsbænk, kabeltårn, begynder/must-haves).
  * Anbefalinger kobles til Partner-Ads via feedProductId (live pris + CTA).
  */
 export const guides: Guide[] = [
@@ -418,6 +418,7 @@ export const guides: Guide[] = [
       },
     ],
     relatedSlugs: [
+      "hjemmetraening-for-begyndere-foerste-90-dage",
       "bedste-foldbare-kompakte-traeningsmaskiner-2026",
       "bedste-gaabaand-2026",
       "bedste-motionscykel-2026",
@@ -2868,6 +2869,8 @@ export const guides: Guide[] = [
     relatedSlugs: [
       "bedste-multistation-2026",
       "bedste-justerbar-traeningsbaenk-2026",
+      "bedste-vaegmonteret-kabeltaarn-2026",
+      "ultimative-udendoers-home-gym-2026",
       "bedste-romaskine-2026",
     ],
   },
@@ -3332,6 +3335,7 @@ export const guides: Guide[] = [
     relatedSlugs: [
       "bedste-justerbar-traeningsbaenk-2026",
       "bedste-styrkemaskiner-2026",
+      "bedste-vaegmonteret-kabeltaarn-2026",
       "bedste-airbike-2026",
     ],
   },
@@ -3822,11 +3826,674 @@ export const guides: Guide[] = [
       },
     ],
     relatedSlugs: [
+      "hjemmetraening-for-begyndere-foerste-90-dage",
       "bedste-foldbare-kompakte-traeningsmaskiner-2026",
       "bedste-gaabaand-2026",
       "bedste-styrkemaskiner-2026",
       "bedste-multistation-2026",
       "bedste-justerbar-traeningsbaenk-2026",
+    ],
+  },
+  {
+    slug: "ultimative-udendoers-home-gym-2026",
+    title: "Det ultimative udendørs home gym (2026)",
+    excerpt:
+      "Træningsudstyr til haven og den overdækkede terrasse: squat rack, pull-up bar, fitnessgulv — og ærlig snak om dansk vejr.",
+    metaDescription:
+      "Udendørs home gym 2026: vælg galvaniseret/robust rack, vægmonteret pull-up og vejrbestandigt fitnessgulv til have og terrasse. Live priser fra danske partnere.",
+    categorySlug: "styrkemaskiner",
+    recommendationsHeading: "Anbefalet udendørs setup",
+    publishedAt: "2026-11-04",
+    updatedAt: "2026-11-04",
+    intro:
+      "Flere rykker træningen ud i haven eller på en overdækket terrasse for at spare plads inde. Det kræver udstyr, der tåler fugt, temperaturudsving og — ærligt — det danske vejr. Denne guide prioriterer robust stål, vægmonterede pull-up bars og tykt fitnessgulv, og den er ærlig om, hvornår du skal have tag over hovedet, før du køber dyrt grej.",
+    criteria: [
+      {
+        title: "Overdækket før “fuldt udendørs”",
+        description:
+          "Åben have uden tag = rust, UV og våde greb. En carport, overdækket terrasse eller læskærm forlænger levetiden markant. Planlæg placering før køb — ikke omvendt.",
+      },
+      {
+        title: "Stål, finish og bolte",
+        description:
+          "Prioritér tykt stål, pulverlak eller galvaniserede bolte/beslag. Undgå tynd “legetøjs”-lak, der skaller i frost. Efterspænd bolte efter de første uger ude.",
+      },
+      {
+        title: "Gulv der dræner og beskytter",
+        description:
+          "Puslespils-/gummi-fitnessgulv beskytter terrassebrædder og fliser, giver greb i vådt vejr og gør drop mindre ødelæggende. Undgå at sætte rack direkte på træ.",
+      },
+      {
+        title: "Væg- og fundamentstyrke",
+        description:
+          "Pull-up bars og racks skal i bæredygtig mur, stolpe eller jordfundament — ikke kun i tynd facade. Tjek monteringsvejledning og brug kemiske ankre i beton.",
+      },
+      {
+        title: "Romaskine og elektronik ude?",
+        description:
+          "Elektronik, skærme og magnetsystemer hører under tag. Skal en romaskine stå ude, kræver det vandtæt overtræk + tørt underlag — og realistiske forventninger til levetid.",
+      },
+    ],
+    products: [
+      {
+        id: "odin-semi-pro-squat-rack",
+        name: "Odin Semi Pro Squat Rack",
+        badge: "Kernen i udendørs-gymmet",
+        summary:
+          "Et kompakt half-rack til squat, bænk og pull-ups. Under overdækket terrasse eller carport er det det mest “rigtige” styrkesetup, du kan stille uden at bygge et center. Kombinér med fitnessgulv og regelmæssig aftørring efter regnvejr.",
+        pros: [
+          "Seriøs squat/bænk uden fuld multistation",
+          "Pull-up mulighed i samme footprint",
+          "Passer i carport/overdækket zone",
+          "God partnerpris i danske feeds",
+        ],
+        cons: [
+          "Ikke bygget som “have-legestativ” — kræver tag/læ",
+          "Skal stå plant og boltes/stabiliseres korrekt",
+          "Rustrisiko hvis det står permanent i åben regn",
+        ],
+        specs: [
+          { label: "Type", value: "Half-rack / squat rack" },
+          { label: "Placering", value: "Overdækket terrasse / carport" },
+          { label: "Brand", value: "Odin" },
+        ],
+        feedProductId: "Apuls.dk:6873",
+      },
+      {
+        id: "odin-elite-heavy-pull-up",
+        name: "Odin Elite Heavy Pull Up Bar",
+        badge: "Vægmonteret pull-up",
+        summary:
+          "Når du vil have pull-ups uden et helt rack: en tung vægbar til solid mur. Ideel på ydervæg under udhæng — fylder minimalt, når du ikke træner. Kræver korrekt montage i bæredygtigt underlag.",
+        pros: [
+          "Minimal footprint",
+          "Tung konstruktion til voksne brugere",
+          "Hurtig at kombinere med elastik/slynge",
+          "Billigere indgang end fuldt rack",
+        ],
+        cons: [
+          "Kun så stærk som væggen den sidder i",
+          "Ingen squat/bænk — kun træk/hæng",
+          "Udendørs: tør af efter regn, tjek bolte",
+        ],
+        specs: [
+          { label: "Type", value: "Vægmonteret pull-up bar" },
+          { label: "Brand", value: "Odin" },
+          { label: "Brug", value: "Pull-ups / hangs / elastik" },
+        ],
+        feedProductId: "Apuls.dk:7011",
+      },
+      {
+        id: "odin-floor-guards-udendoers",
+        name: "Odin Floor Guards Fitnessgulv (8 stk.)",
+        badge: "Underlag til terrasse",
+        summary:
+          "Puslespils-fitnessgulv (ca. 2,9 m² i 8-pak) er det praktiske “must” under rack eller vægtzonen ude. Det beskytter fliser/træ, giver greb, og kan skilles ad hvis sæsonen skifter. Start her — udvid med flere fliser efter behov.",
+        pros: [
+          "Beskytter terrasse og dæmper stød",
+          "Kan udvides flise for flise",
+          "Bedre greb end bar træ/klinker i fugt",
+          "Lav pris ift. skader på gulv",
+        ],
+        cons: [
+          "Ikke frost-/UV-udødeligt i årevis uden læ",
+          "Kan samle vand i samlinger — vælg drænende underlag",
+          "Skal ligge plant, så racket ikke “rokker”",
+        ],
+        specs: [
+          { label: "Type", value: "Fitnessgulv / puslespilsfliser" },
+          { label: "Pakke", value: "8 stk. (~2,88 m²)" },
+          { label: "Brand", value: "Odin" },
+        ],
+        feedProductId: "Apuls.dk:5084",
+      },
+      {
+        id: "odin-slyngetraener-udendoers",
+        name: "Odin Slyngetræner",
+        badge: "Mobil styrke uden jern",
+        summary:
+          "Slyngetræneren er genial på terrassen: spænd i pull-up bar, bjælke eller solidt anker, træne core og overkrop, og pak den væk når det regner. Det er den billigste måde at gøre et udendørs hjørne til funktionel træning.",
+        pros: [
+          "Fylder intet mellem sessioner",
+          "Virker med egen kropsvægt",
+          "Nem at tage ind i vådt vejr",
+          "Passer til begyndere og øvede",
+        ],
+        cons: [
+          "Ankerpunktet er det kritiske sikkerhedspunkt",
+          "Ingen tung progressiv overload som med stang",
+          "Stropper skal tørres og ikke ligge i vand",
+        ],
+        specs: [
+          { label: "Type", value: "Suspension trainer" },
+          { label: "Brand", value: "Odin" },
+          { label: "Brug", value: "Core / overkrop / rejse" },
+        ],
+        feedProductId: "Apuls.dk:9021",
+      },
+    ],
+    howToChoose:
+      "Har du carport/overdækket terrasse og vil squat/bænke? Start med Odin Semi Pro + fitnessgulv. Kun væg og begrænset plads? Elite Heavy Pull Up + slyngetræner. Åben have uden tag? Prioritér læ først — eller hold dig til mobil slynge/elastik, indtil du har overdækning. Shop via “Se pris” for live partnerpriser.",
+    learningSections: [
+      {
+        heading: "Dansk vejr vs. træningsudstyr",
+        paragraphs: [
+          "Fugt, saltluft nær kysten og frost-tø-cyklusser æder lak og lejer. Det, der sælges som “udendørs fitness”, er ofte legeplads-stål — ikke det samme som et hjemme-rack fra fitnessbutikkerne. Derfor anbefaler vi overdækket placering som default for squat racks og kabeludstyr.",
+          "Gør det til vane: aftør metal efter regn, smør bevægelige dele efter producentens vejledning, og tjek bolte hver sæson. Det er billigere end at udskifte et rustent rack.",
+        ],
+      },
+      {
+        heading: "Galvanisering, pulverlak og “god nok” finish",
+        paragraphs: [
+          "Ægte varmgalvanisering er guld til åben himmel — men mange hjemme-racks er pulverlakeret stål. Under tag holder det fint i årevis. I åben have skal du være mere kritisk: kig efter rustbeskyttede bolte, undgå steder med stående vand, og overvej overtræk når grejet ikke bruges.",
+          "Pull-up bars til nedgravning findes i legeplads-/park-segmentet; i Partner-Ads-feedsene er vægmonterede og rack-baserede bars langt mere tilgængelige til hjemmebrug. Vælg den løsning, der matcher din mur eller dit rack — ikke en fantasy om at støbe beton i baghaven, medmindre du faktisk vil det.",
+        ],
+      },
+      {
+        heading: "Romaskine og cardio ude",
+        paragraphs: [
+          "En romaskine under åben himmel er en dårlig idé: skinner, sædehjul og elektronik hader vand. Under tag kan det fungere — gerne med underlag og et overtræk, når den ikke bruges. Prioritér styrke-setup ude, og lad cardio blive inde, hvis vejret er ustabilt.",
+          "Se også vores romaskine- og budget-guides, hvis du vil kombinere inde-cardio med ude-styrke.",
+        ],
+        comparison: {
+          caption: "Hvad hører under tag?",
+          rowHeaderLabel: "Udstyr",
+          columns: ["Åben have", "Overdækket", "Indendørs"],
+          rows: [
+            {
+              label: "Squat rack",
+              cells: ["Kun med seriøs rustbeskyttelse", "Ja — sweet spot", "Ja"],
+            },
+            {
+              label: "Væg-pull-up",
+              cells: ["Risikabelt (fugt i mur)", "Ja", "Ja"],
+            },
+            {
+              label: "Fitnessgulv",
+              cells: ["Ja (kort sæson)", "Ja", "Ja"],
+            },
+            {
+              label: "Romaskine/elektronik",
+              cells: ["Nej", "Kun med cover + tørt gulv", "Ja"],
+            },
+          ],
+        },
+      },
+    ],
+    faqs: [
+      {
+        question: "Kan jeg stille et squat rack i haven?",
+        answer:
+          "Ja, hvis du har overdækning eller accepterer kortere levetid og mere vedligehold. Under carport/terrasse-tag er det realistisk for de fleste. I åben mark uden læ bør du prioritere rustbeskyttelse og overtræk — eller vente med rack-købet.",
+      },
+      {
+        question: "Hvilket underlag skal jeg bruge udendørs?",
+        answer:
+          "Gummi-/puslespils-fitnessgulv som Odin Floor Guards. Det beskytter underlaget, giver greb og kan udvides. Undgå at sætte tungt grej direkte på træterrasse.",
+      },
+      {
+        question: "Er vægmonteret pull-up bar sikker ude?",
+        answer:
+          "Kun hvis væggen er bæredygtig (beton/tegl med korrekte ankre), og monteringen følger vejledningen. Træfacader og hule gipsvægge er ikke nok. Tjek bolte sæsonmæssigt.",
+      },
+      {
+        question: "Skal jeg købe vandtæt overtræk til romaskine?",
+        answer:
+          "Hvis den overhovedet står et sted med fugt: ja. Men overtræk erstatter ikke tag. Bedste løsning er indendørs eller tør overdækket zone.",
+      },
+      {
+        question: "Hvad er det billigste udendørs setup?",
+        answer:
+          "Pull-up bar eller slyngetræner + fitnessgulv. Det giver træk, core og mobilitet uden at investere i et rack, før du ved, at du faktisk træner ude.",
+      },
+    ],
+    relatedSlugs: [
+      "ultimative-home-gym-budget-2026",
+      "bedste-styrkemaskiner-2026",
+      "bedste-multistation-2026",
+      "hjemmetraening-for-begyndere-foerste-90-dage",
+    ],
+  },
+  {
+    slug: "bedste-vaegmonteret-kabeltaarn-2026",
+    title: "Bedste kabeltårn til vægmontering (2026)",
+    excerpt:
+      "Det pladsbesparende alternativ til store cable stations: vægmonteret trækstation og kompakte kabeltårne, der kun rager ca. 15–20 cm ud.",
+    metaDescription:
+      "Bedste vægmonterede kabeltårn 2026: enkel vs. dobbelt wire, vægtstak vs. plate load, og krav til væggen (beton vs. gips). Live priser fra danske partnere.",
+    categorySlug: "styrkemaskiner",
+    intentSlug: "kabeltaarn",
+    recommendationsHeading: "Anbefalede kabeltårne",
+    publishedAt: "2026-11-04",
+    updatedAt: "2026-11-04",
+    intro:
+      "Et stort kabeltårn midt i stuen æder kvadratmeter. Et vægmonteret kabeltårn eller en kompakt trækstation rager typisk kun omkring 15–20 cm ud fra væggen, når den ikke er i brug — og det er en af de mest populære opgraderinger, når folk har trænet hjemme et par måneder. Her får du forskellen på enkel vs. dobbelt wire, vægtstak vs. skiver, og hvad din væg faktisk skal kunne holde til.",
+    criteria: [
+      {
+        title: "Væggens styrke først",
+        description:
+          "Beton og massive tegl med kemiske ankre: ja. Gips på forskalling: kun med forstærkning til stolper/rem — ellers nej. Spørg en fagperson, hvis du er i tvivl. Et kabeltårn uden solid væg er farligt.",
+      },
+      {
+        title: "Enkel vs. dobbelt wire",
+        description:
+          "Enkel wire/pulley dækker rows, presses, curls og core for de fleste. Dobbelt (dual) giver flere samtidige vinkler og “functional trainer”-følelse — dyrere og kræver mere væg/plads.",
+      },
+      {
+        title: "Vægtstak vs. plate load",
+        description:
+          "Vægtstak: hurtigt skift, begyndervenligt, fast loft. Plate load (PL): du sætter egne skiver på — billigere maskine, mere rod, mere progression. Har du allerede skiver, er PL smart.",
+      },
+      {
+        title: "Udveksling og følelse",
+        description:
+          "1:1 og 1:2 føles forskelligt. Tjek produktspec: nogle “lette” stakke trækker hårdere i grebet end tallene antyder. Prøv i butik, hvis du kan.",
+      },
+      {
+        title: "Footprint og svingplads",
+        description:
+          "Mål ikke kun dybden fra væggen — mål også armens udslag, bænk foran tårnet og døråbninger. Et “tyndt” tårn kan stadig kræve 1,5–2 m fri zone foran.",
+      },
+    ],
+    products: [
+      {
+        id: "odin-valhalla-kabeltaarn-71",
+        name: "Odin Valhalla Kabeltårn 71 kg",
+        badge: "Bedst samlet til hjemmet",
+        summary:
+          "Kompakt kabeltårn med 71 kg vægtstak — sweet spot for de fleste, der vil have lat pulldown, rows og kabeløvelser uden en kæmpe dual-station. Hurtige vægtskift, minimal indlæringskurve, og en pris der stadig er hjemme-venlig.",
+        pros: [
+          "Vægtstak — nem progression i hverdagen",
+          "Kompakt ift. fulde cable cross-stationer",
+          "Dækker de vigtigste træk-/pres-øvelser",
+          "Stærk Odin/Valhalla-tilgængelighed i DK-feeds",
+        ],
+        cons: [
+          "71 kg er loft for meget stærke brugere",
+          "Ikke en fuld dual functional trainer",
+          "Kræver stadig plads foran til bevægelse",
+        ],
+        specs: [
+          { label: "Type", value: "Kabeltårn med vægtstak" },
+          { label: "Stak", value: "71 kg" },
+          { label: "Brand", value: "Odin Valhalla" },
+        ],
+        feedProductId: "Apuls.dk:15959",
+      },
+      {
+        id: "odin-valhalla-kabeltaarn-pl",
+        name: "Odin Valhalla Kabeltårn PL",
+        badge: "Bedst til plate load",
+        summary:
+          "Samme Valhalla-idé, men plate load: du sætter egne vægtskiver på. Billigere indgang, hvis du allerede har skiver — og intet kunstigt loft fra en lille stak. Til dig, der vil spare på maskinen og bruge jernet, du har.",
+        pros: [
+          "Ingen stak-loft — progression med egne skiver",
+          "Ofte lavere maskinpris end stak-version",
+          "God match til garage-gym med olympiske skiver",
+          "Samme kompakte tårn-format",
+        ],
+        cons: [
+          "Skiftevægt er langsommere end stiftpin i stak",
+          "Kræver skiver + mere rod på gulvet",
+          "Ikke det mest begyndervenlige flow",
+        ],
+        specs: [
+          { label: "Type", value: "Kabeltårn plate load" },
+          { label: "Belastning", value: "Egne vægtskiver" },
+          { label: "Brand", value: "Odin Valhalla" },
+        ],
+        feedProductId: "Apuls.dk:15961",
+      },
+      {
+        id: "home-traekstation-vaeg-2",
+        name: "Home Trækstation 2.0 til væg",
+        badge: "Bedste vægmonterede budget",
+        summary:
+          "Egentlig vægmontering til dem, der vil have trækstation uden gulvtårn midt i rummet. Ca. den kategori, folk søger, når de siger “15–20 cm fra væggen”. Ideal som første kabel-opgradering i lejlighed eller lille værelse — forudsat væggen kan bære det.",
+        pros: [
+          "Designet til væg — sparer gulvplads",
+          "Lavere pris end fulde Valhalla-tårne",
+          "Hurtig vej til lat/row-mønstre hjemme",
+          "God “første cable”-oplevelse",
+        ],
+        cons: [
+          "Afhænger 100 % af korrekt vægmontage",
+          "Mindre alsidighed end dual pulley",
+          "Tjek maks-belastning ift. din styrke",
+        ],
+        specs: [
+          { label: "Type", value: "Vægmonteret trækstation" },
+          { label: "Montering", value: "Væg" },
+          { label: "Segment", value: "Home / budget" },
+        ],
+        feedProductId: "Billig-fitness.dk:42551447290027",
+      },
+      {
+        id: "getrxd-wall-mounted-pulley",
+        name: "GetRX'd Functional Trainer Single Pulley (wall mounted)",
+        badge: "Premium vægmontering",
+        summary:
+          "Når du vil have en rigtig wall-mounted single pulley / functional trainer-følelse — ikke et kompromis. Dyrere, men bygget til væg og seriøs brug. Til dig, der ved, at kabelarbejde er en fast del af træningen, og som har væggen (og budgettet) til det.",
+        pros: [
+          "Egentlig wall-mounted functional trainer",
+          "Seriøs build til hyppig brug",
+          "Pladsbesparende vs. gulv-cross",
+          "Klar opgradering fra budget-trækstation",
+        ],
+        cons: [
+          "Markant højere pris",
+          "Overkill for absolutte begyndere",
+          "Kræver professionel-agtig montage",
+        ],
+        specs: [
+          { label: "Type", value: "Wall-mounted single pulley" },
+          { label: "Brand", value: "GetRX'd" },
+          { label: "Segment", value: "Premium / garage" },
+        ],
+        feedProductId: "Fitnessengros.dk:FT-SC-2000-SLIM",
+      },
+    ],
+    howToChoose:
+      "Usikker væg eller første cable-køb? Home Trækstation 2.0 til væg — men verificér underlaget. Vil du have stak og “tænd og træn”? Valhalla 71 kg. Har du skiver i forvejen? Valhalla PL. Vil du investere i en rigtig wall-mounted pulley? GetRX'd. Shop via “Se pris”.",
+    learningSections: [
+      {
+        heading: "Hvorfor vægmontering slår gulvtårn i små hjem",
+        paragraphs: [
+          "Et gulvtårn eller dual cable cross kræver dybde, sideplads og ofte et dedikeret rum. Vægmontering skubber maskinen ind mod væggen, så midten af rummet kan være stue igen. Det er derfor “kabeltårn væg” er blevet en standard-opgradering efter de første måneder med bænk og håndvægte.",
+          "Tradeoff: du kan ikke flytte den hver weekend, og væggen bliver en del af produktet. Mål to gange, bor én gang.",
+        ],
+      },
+      {
+        heading: "Enkel vs. dobbelt wire",
+        paragraphs: [
+          "Enkel pulley/tårn: én kabelbane ad gangen. Det dækker 80 % af hjemmebehovet — lat pulldown, seated row, face pulls, curls, triceps, pallof. Dobbelt wire (dual) lader dig arbejde spejlvendt eller med to arme i uafhængige baner; det er fedt til functional training, men fylder og koster mere.",
+          "De fleste, der kommer fra håndvægte, bliver glade for enkel. Køb dual, når du savner den — ikke fordi brochure-billedet ser cool ud.",
+        ],
+        comparison: {
+          caption: "Kabeltyper til hjemmet",
+          rowHeaderLabel: "Type",
+          columns: ["Plads", "Pris", "Bedst til"],
+          rows: [
+            {
+              label: "Væg-trækstation",
+              cells: ["Minimal dybde", "Lav–middel", "Første cable-opgradering"],
+            },
+            {
+              label: "Kompakt kabeltårn (stak)",
+              cells: ["Lille footprint", "Middel", "Daglig styrke uden center"],
+            },
+            {
+              label: "Plate load-tårn",
+              cells: ["Lille footprint", "Lav maskinpris", "Dig med skiver i forvejen"],
+            },
+            {
+              label: "Dual / functional",
+              cells: ["Mere zone foran", "Høj", "Variation og to-armsarbejde"],
+            },
+          ],
+        },
+      },
+      {
+        heading: "Beton vs. gips: sådan tænker du væggen",
+        paragraphs: [
+          "Beton og massive mursten: kemiske ankre / korrekt dilateringsbolt efter vægt og moment. Gipsplader alene: ikke nok til et kabeltårn. Enten finder du stolperne og forstærker med krydsfiner/rem bagpå, eller du vælger et gulvtårn i stedet.",
+          "Hvis du bor til leje: spørg udlejer, før du borer. Et hul i den forkerte væg er dyrere end et ekstra fitnessmedlemskab.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "Hvad er forskellen på kabeltårn og multistation?",
+        answer:
+          "En multistation kombinerer ofte flere maskinøvelser (pres, lår, cable) i én stor ramme. Et kabeltårn/trækstation fokuserer på kabelbanen — mere fleksibelt, typisk smallere. Se også vores multistation-guide, hvis du vil have “det hele” i ét.",
+      },
+      {
+        question: "Kan jeg montere kabeltårn i gipsvæg?",
+        answer:
+          "Kun med forstærkning til bæring (stolper/rem) eller slet ikke. Gips alene er usikkert. Ved tvivl: vælg gulvstående tårn, eller få en håndværker til at vurdere væggen.",
+      },
+      {
+        question: "Vægtstak eller plate load?",
+        answer:
+          "Vægtstak til simpelhed og hurtige skift. Plate load, hvis du har skiver og vil undgå stak-loft. Valhalla 71 kg vs. Valhalla PL er præcis det valg.",
+      },
+      {
+        question: "Hvor meget plads skal jeg bruge foran tårnet?",
+        answer:
+          "Typisk 1,5–2 meter fri zone til rows, presses og bænk. Mål den længste øvelse, du vil lave — ikke kun maskinens dybde.",
+      },
+      {
+        question: "Er vægmonteret cable støjsvag nok til lejlighed?",
+        answer:
+          "Selve kablet er ofte stille; vægtskiver/stak og bolte i væggen kan give strukturel lyd. Brug fornuftig vægt, undgå at smække stakken, og overvej underlag under fødderne.",
+      },
+    ],
+    relatedSlugs: [
+      "bedste-multistation-2026",
+      "bedste-styrkemaskiner-2026",
+      "bedste-foldbare-kompakte-traeningsmaskiner-2026",
+      "ultimative-home-gym-budget-2026",
+    ],
+  },
+  {
+    slug: "hjemmetraening-for-begyndere-foerste-90-dage",
+    title: "Hjemmetræning for begyndere: Det skal du bruge de første 90 dage",
+    excerpt:
+      "Start med tre simple ting — ikke en maskine til 15.000 kr. Sådan bygger du vanen de første tre måneder.",
+    metaDescription:
+      "Hjemmetræning for begyndere: de 3 must-haves til de første 90 dage (justerbare håndvægte, elastikker, måtte). Undgå dyre fejl — live priser.",
+    categorySlug: "tilbehoer",
+    intentSlug: "begynder",
+    recommendationsHeading: "De 3 ting du skal starte med",
+    publishedAt: "2026-11-04",
+    updatedAt: "2026-11-04",
+    intro:
+      "Du er motiveret — måske efter nytår, en pause eller en ny bolig — og bange for at købe det forkerte. Godt. De fleste begynderfejl handler ikke om at vælge den “forkerte” maskine, men om at købe for stort, for tidligt. De første 90 dage handler om vane, ikke om at indrette et center. Her er de tre ting, der faktisk rækker — og hvornår du først skal kigge på dyrere grej.",
+    criteria: [
+      {
+        title: "Vane før gear",
+        description:
+          "Udstyr, du ikke bruger tre gange om ugen, er dyrt uanset prisen. Start med det, du kan sætte frem på 30 sekunder og rydde væk igen.",
+      },
+      {
+        title: "Tre værktøjer slår én dyr maskine",
+        description:
+          "Justerbare håndvægte, elastikker og en måtte dækker styrke, mobilitet og gulvarbejde. En maskine til 15.000 kr. dækker én bevægelse — og fylder stuen.",
+      },
+      {
+        title: "Progression uden skam",
+        description:
+          "Tungere håndvægt, strammere elastik, flere reps. Du behøver ikke et kabeltårn for at blive stærkere de første måneder.",
+      },
+      {
+        title: "Plads og naboer",
+        description:
+          "Måtte beskytter gulv og dæmper. Elastik og håndvægte larmer langt mindre end løbebånd og airbike. Perfekt til lejlighed.",
+      },
+      {
+        title: "Opgrader bevidst efter 90 dage",
+        description:
+          "Når vanen sidder, ved du hvad du mangler: cardio? bænk? kabel? Først da giver budget-pakker og maskinguides mening.",
+      },
+    ],
+    products: [
+      {
+        id: "odin-justerbare-haandvaegte-20",
+        name: "Odin Justerbar Håndvægt 20 kg (2×10 kg)",
+        badge: "Must-have #1",
+        summary:
+          "Det absolut vigtigste styrkeværktøj til hjemmet. Ét sæt erstatter en hel række faste håndvægte: drej/skift vægt i stedet for at eje 10 par. Til begyndere er 2×10 kg (samlet 20 kg-sæt) en fornuftig start — opgrader senere til tungere justerbare, når du er klar.",
+        pros: [
+          "Minimal plads vs. faste håndvægte",
+          "Nem progression uge for uge",
+          "Dækker press, row, squat-varianter, lunges",
+          "God kommission-til-nytte balance i must-haves",
+        ],
+        cons: [
+          "Dial/skift tager sekunder ift. at gribe et fast par",
+          "20 kg-sæt bliver “for let” for nogle inden for et år",
+          "Kvalitet varierer — undgå de billigste no-name",
+        ],
+        specs: [
+          { label: "Type", value: "Justerbare håndvægte" },
+          { label: "Sæt", value: "2×10 kg" },
+          { label: "Brand", value: "Odin" },
+        ],
+        feedProductId: "Apuls.dk:9007",
+      },
+      {
+        id: "ascendic-elastik-saet",
+        name: "Elastik træningssæt (med håndtag)",
+        badge: "Must-have #2",
+        summary:
+          "Fylder intet, koster lidt, og kan bruges til over 100 øvelser: opvarmning, pull-aparts, glute work, rejsetræning. Perfekt til at fylde “hullerne”, håndvægtene ikke dækker — og til sommerhus/hotel.",
+        pros: [
+          "Under 200 kr.-klassen",
+          "Ideel til opvarmning og genoptræning",
+          "Rejsevenlig",
+          "Skalerbar med flere styrker",
+        ],
+        cons: [
+          "Har et loft for tung styrke",
+          "Kan knække over tid — udskift billigt",
+          "Kræver et solidt anker til nogle øvelser",
+        ],
+        specs: [
+          { label: "Type", value: "Elastiksæt med håndtag" },
+          { label: "Partner", value: "Ascendic.dk" },
+          { label: "Brug", value: "Styrke / mobilitet / rejse" },
+        ],
+        feedProductId: "Ascendic.dk:43590874824938",
+      },
+      {
+        id: "odin-yogamaatte-begynder",
+        name: "Odin Yogamåtte 0,4 cm",
+        badge: "Must-have #3",
+        summary:
+          "Gulvarbejde, core, mobilitet — og et underlag der skåner knæ og gulv. Det er også den nemmeste “add-on”, når du senere køber en maskine: samme logik som puslespils-gulvmåtter under cykel og gåbånd.",
+        pros: [
+          "Beskytter gulv og led",
+          "Signalerer “nu træner jeg” — vanetrigger",
+          "Billig forsikring mod ridser",
+          "Kan rulles væk på 5 sekunder",
+        ],
+        cons: [
+          "Tynd yogamåtte er ikke nok under tungt løbebånd",
+          "Kan glide på nogle gulve — vælg greb",
+          "Slid efter sved/brug — billig at erstatte",
+        ],
+        specs: [
+          { label: "Type", value: "Yogamåtte / underlag" },
+          { label: "Tykkelse", value: "0,4 cm" },
+          { label: "Brand", value: "Odin" },
+        ],
+        feedProductId: "Apuls.dk:5086",
+      },
+      {
+        id: "odin-slyngetraener-naeste-skridt",
+        name: "Odin Slyngetræner",
+        badge: "Næste skridt (valgfri)",
+        summary:
+          "Når de tre basics sidder, og du vil have mere core og overkrop uden maskiner: en slyngetræner over døren eller i loftet. Det er stadig “must-have-territorie” — ikke et 15.000 kr.-køb — og appellerer til dig, der hader store jernmaskiner.",
+        pros: [
+          "Egen kropsvægt = skalerbart",
+          "Funktionel core og træk",
+          "Kan gemmes i en skuffe",
+          "TRX-alternativ til hjemmepris",
+        ],
+        cons: [
+          "Døranker kræver solid dørkarm",
+          "Ikke erstatning for tung underkrop med vægt",
+          "Teknik betyder mere end på maskiner",
+        ],
+        specs: [
+          { label: "Type", value: "Suspension trainer" },
+          { label: "Brand", value: "Odin" },
+          { label: "Niveau", value: "Efter 4–8 uger" },
+        ],
+        feedProductId: "Apuls.dk:9021",
+      },
+    ],
+    howToChoose:
+      "Køb håndvægte + elastik + måtte først. Brug dem 90 dage. Mangler du cardio? Se gåbånd/motionscykel. Mangler du bænk? Se justerbar bænk. Mangler du kabel? Se vægmonteret kabeltårn. Shop must-haves via “Se pris” — og lad være med at “færdiggøre” gymmet på dag 1.",
+    learningSections: [
+      {
+        heading: "Hvorfor ikke en maskine til 15.000 kr.?",
+        paragraphs: [
+          "Fordi motivation topper før vanen. En dyr maskine midt i stuen bliver et møbel med skyldfølelse, hvis du kun bruger den i januar. Tre små redskaber sænker barren for at starte en session — og det er det, der skaber resultater de første 90 dage.",
+          "Maskiner er fantastiske *efter*, du ved hvad du savner. Ikke før.",
+        ],
+      },
+      {
+        heading: "Sådan kan 90 dage se ud",
+        paragraphs: [
+          "Uge 1–4: lær baseløft med håndvægte (squat til boks, hip hinge, floor press, row) + daglig gåtur. Uge 5–8: tilføj elastik-opvarmning og tungere sæt. Uge 9–12: vurder ærligt — mangler du kondition, bænk, pull-ups eller kabel? Først da åbner du vores øvrige guides.",
+          "To til fire sessioner om ugen á 30–45 minutter slår ét hero-pas, der aldrig sker.",
+        ],
+        comparison: {
+          caption: "De første 90 dage vs. “fuldt gym”",
+          rowHeaderLabel: "Fokus",
+          columns: ["Dag 1–90", "Efter vanen"],
+          rows: [
+            {
+              label: "Udstyr",
+              cells: ["Håndvægte + elastik + måtte", "Maskine/bænk/cable efter behov"],
+            },
+            {
+              label: "Mål",
+              cells: ["Møde op 3×/uge", "Progression + specifikke mål"],
+            },
+            {
+              label: "Budget",
+              cells: ["Typisk under 1.500–2.500 kr.", "Valgfrit — se budget-pakker"],
+            },
+            {
+              label: "Risiko",
+              cells: ["Lav (kan sælges/gemmes)", "Høj hvis vanen mangler"],
+            },
+          ],
+        },
+      },
+      {
+        heading: "Must-haves på Fitlist",
+        paragraphs: [
+          "Justerbare håndvægte, puslespils-/underlagsmåtter, elastikker og slyngetræner er samlet under kategorien Must-haves. Det er “småtingene”, der følger med ethvert senere maskinkøb — og de små affiliate-ordrer, der faktisk hjælper dig til at træne.",
+          "Når du er klar til næste niveau, så kig på Det ultimative home gym på et budget, støjsvage maskiner til lejlighed, eller et vægmonteret kabeltårn.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "Hvad skal jeg købe som absolut nybegynder?",
+        answer:
+          "Justerbare håndvægte, et elastiksæt og en måtte. Det er nok til styrke, mobilitet og vane. Vent med maskiner, til du har trænet konsekvent i et par måneder.",
+      },
+      {
+        question: "Kan jeg bygge muskler uden maskiner?",
+        answer:
+          "Ja — især som begynder. Progressive håndvægte og god teknik giver masser af stimulus. Maskiner bliver relevante, når du vil have specifikke mønstre eller tungere belastning mere behageligt.",
+      },
+      {
+        question: "Hvornår skal jeg købe en træningsbænk?",
+        answer:
+          "Når floor press og gulvøvelser begrænser dig, eller du vil have incline. Ofte efter 60–90 dage — se vores guide til justerbar træningsbænk.",
+      },
+      {
+        question: "Hvad med løbebånd eller cykel?",
+        answer:
+          "Cardio er fint — men kun hvis du ved, du vil bruge det. Gåture udenfor er gratis de første 90 dage. Ellers se gåbånd/motionscykel, når vanen sidder.",
+      },
+      {
+        question: "Er slyngetræner nødvendigt fra start?",
+        answer:
+          "Nej. Det er et stærkt “næste skridt”, ikke et krav på dag 1. Håndvægte + elastik + måtte kommer først.",
+      },
+    ],
+    relatedSlugs: [
+      "ultimative-home-gym-budget-2026",
+      "bedste-stoejsvage-traeningsmaskiner-lejlighed-2026",
+      "bedste-justerbar-traeningsbaenk-2026",
+      "bedste-vaegmonteret-kabeltaarn-2026",
     ],
   },
 ];
