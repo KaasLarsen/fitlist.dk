@@ -82,12 +82,14 @@ export function getProductAffiliate(product: GuideProduct) {
   return getAffiliate(product.affiliateId);
 }
 
-/** Featured homepage-rækkefølge (gåbånd og spinning først blandt intents). */
+/** Featured homepage-rækkefølge (intent-guides + kernemaskiner). */
 const FEATURED_GUIDE_SLUGS = [
   "bedste-gaabaand-2026",
+  "bedste-airbike-2026",
+  "bedste-multistation-2026",
+  "bedste-justerbar-traeningsbaenk-2026",
   "bedste-spinningcykel-2026",
   "bedste-loebebaand-2026",
-  "bedste-motionscykel-2026",
 ] as const;
 
 export function getFeaturedGuides(): Guide[] {
@@ -106,7 +108,8 @@ export function getGuideByCategoryAndIntent(
 }
 
 /**
- * Kategori-guides (5 maskintyper) + intent-guides (gåbånd, spinning).
+ * Kategori-guides (5 maskintyper) + intent-guides
+ * (gåbånd, spinning, airbike, multistation, træningsbænk).
  * Anbefalinger kobles til Partner-Ads via feedProductId (live pris + CTA).
  */
 export const guides: Guide[] = [
@@ -613,12 +616,12 @@ export const guides: Guide[] = [
     publishedAt: "2026-11-04",
     updatedAt: "2026-11-04",
     intro:
-      "En romaskine træner ben, ryg, core og arme i samme bevægelse — med lav stødbelastning. Det er derfor mange kalder den den mest komplette enkeltmaskine til hjemmet. Her får du valg-kriterierne på plads, fire konkrete modeller med shop-links, og praktiske svar om støj, teknik og plads, inden du køber.",
+      "En romaskine træner ben, ryg, core og arme i samme bevægelse — med lav stødbelastning. Det er derfor mange kalder den den mest komplette enkeltmaskine til hjemmet. Her får du valg-kriterierne på plads (især luft vs. vand vs. magnet og om maskinen kan rejses på højkant), fire konkrete modeller med shop-links, og praktiske svar om støj, teknik og plads, inden du køber.",
     criteria: [
       {
         title: "Modstandstype",
         description:
-          "Luft giver realistisk følelse og stiger med intensitet — men kan fylde lydmæssigt. Vand lyder autentisk og “bådlignende”. Magnet er ofte støjsvagest og nem at justere præcist. Hydraulik er kompakt, men føles mindre som ægte roning. Vælg efter støj, følelse og budget — ikke kun efter, hvad der ser flot ud.",
+          "Luft giver realistisk følelse og stiger med intensitet — men kan fylde lydmæssigt. Vand lyder autentisk og “bådlignende” og er favoritten, når du vil have stemning uden ren vifte-lyd. Magnet er ofte støjsvagest og nem at justere præcist. Hydraulik er kompakt, men føles mindre som ægte roning. Vælg efter støj, følelse og budget — ikke kun efter, hvad der ser flot ud.",
       },
       {
         title: "Skinnelængde og brugerhøjde",
@@ -631,9 +634,9 @@ export const guides: Guide[] = [
           "Luft- og vandmodstand kan fylde mere i en lejlighed. Magnet er typisk bedst til aftentræning. Husk også mekanisk klik fra sæde og håndtag — og at gulvets konstruktion forstærker vibration.",
       },
       {
-        title: "Fold og footprint",
+        title: "Fold, højkant og footprint",
         description:
-          "Mange romaskiner kan rejses vertikalt eller foldes. Mål både brugslængde (ofte 2+ meter) og opbevaringsmål. En “foldbar” model, der stadig fylder en hel væg, er ikke en løsning i et lille værelse.",
+          "Mange romaskiner kan rejses på højkant eller foldes, så de fylder et smalt “fodaftryk” mod væggen efter træning. Mål både brugslængde (ofte 2+ meter) og opbevaringsmål — og tjek hjul/greb, så du faktisk orker at rejse den. En “foldbar” model uden reel vertikal opbevaring er ikke en løsning i et lille værelse.",
       },
       {
         title: "Stabilitet og build",
@@ -670,7 +673,7 @@ export const guides: Guide[] = [
           "Tjek støjniveau ift. din bolig",
         ],
         specs: [
-          { label: "Type", value: "Romaskine" },
+          { label: "Modstand", value: "Magnet (typisk)" },
           { label: "Brand", value: "Reebok" },
           { label: "Segment", value: "Mid/øvre mid" },
           { label: "Partner", value: "HomeX.dk" },
@@ -682,7 +685,7 @@ export const guides: Guide[] = [
         name: "Titan LIFE Rower R10",
         badge: "Bedste billige",
         summary:
-          "Prisvenlig indgang til roning hjemme. Til dig, der vil prøve disciplinen eller træne lettere uden at investere i midrange fra dag ét.",
+          "Prisvenlig magnet-indgang til roning hjemme. Til dig, der vil prøve disciplinen eller træne lettere uden at investere i midrange fra dag ét — og ofte med mulighed for at pakke maskinen væk efter brug.",
         pros: [
           "Lav indgangspris",
           "Fin til begyndere og let brug",
@@ -695,7 +698,7 @@ export const guides: Guide[] = [
           "Høje brugere bør tjekke skinnelængde",
         ],
         specs: [
-          { label: "Type", value: "Romaskine" },
+          { label: "Modstand", value: "Magnet" },
           { label: "Brand", value: "Titan LIFE" },
           { label: "Segment", value: "Budget" },
           { label: "Partner", value: "HomeX.dk" },
@@ -703,29 +706,29 @@ export const guides: Guide[] = [
         feedProductId: "HomeX.dk:2801",
       },
       {
-        id: "titan-r65",
-        name: "Titan LIFE Rower R65",
-        badge: "Bedste midrange",
+        id: "odin-r1800-vand",
+        name: "Odin R1800 Vandromaskine",
+        badge: "Bedste vandmodstand",
         summary:
-          "Et skridt op fra entry, når du ved, at romaskinen bliver stående — og brugt. Bedre balance mellem pris og daglig træningskvalitet.",
+          "Til dig, der vil have den ægte, bådlignende lyd og jævne vandmodstand — uden at gå all-in på en dyr træ-Fluid Rower. Stemning og følelse, der motiverer mange mere end ren magnet.",
         pros: [
-          "Bedre build end ren entry",
-          "God til 3+ sessioner om ugen",
-          "Solid midrange-pris",
-          "Fri fragt hos partner",
+          "Autentisk vandlyd og jævn trækfølelse",
+          "Klar differentiering fra magnet-entry",
+          "God midrange-pris for vandmodstand",
+          "Helkropspas der føles “rigtige”",
         ],
         cons: [
-          "Dyrere end R10",
-          "Stadig ikke luft/pro-følelse",
-          "Pladsbehov som øvrige romaskiner",
+          "Mere lyd end magnet — tænk på naboer",
+          "Kræver opmærksomhed på vandniveau/vedligehold",
+          "Fylder i brug — mål skinnen",
         ],
         specs: [
-          { label: "Type", value: "Romaskine" },
-          { label: "Brand", value: "Titan LIFE" },
+          { label: "Modstand", value: "Vand" },
+          { label: "Brand", value: "Odin" },
           { label: "Segment", value: "Midrange" },
-          { label: "Partner", value: "HomeX.dk" },
+          { label: "Partner", value: "Apuls.dk" },
         ],
-        feedProductId: "HomeX.dk:2798",
+        feedProductId: "Apuls.dk:15386",
       },
       {
         id: "airrow",
@@ -745,7 +748,7 @@ export const guides: Guide[] = [
           "Kræver plads og accept af “vifte”-lyd",
         ],
         specs: [
-          { label: "Type", value: "Luftmodstand" },
+          { label: "Modstand", value: "Luft" },
           { label: "Brand", value: "Gorilla Sports / AirRow" },
           { label: "Segment", value: "Øvre mid" },
           { label: "Partner", value: "Billig-fitness.dk" },
@@ -754,7 +757,7 @@ export const guides: Guide[] = [
       },
     ],
     howToChoose:
-      "Usikker på roning? Start billigt med Titan LIFE R10 og lær teknikken. Ved du, at maskinen skal bruges ofte? Gå til R65 eller Reebok ZJET. Vil du have luftens følelse og accepterer mere lyd? AirRow. Bekræft skinnelængde til din højde, mål brugslængde i rummet, og vælg magnet, hvis støj er kritisk. Shop via “Se pris” for aktuelle partnerpriser.",
+      "Usikker på roning? Start billigt med Titan LIFE R10 (magnet) og lær teknikken. Vil du have den ægte vand-stemning? Odin R1800. Vil du have luftens følelse og accepterer mere lyd? AirRow. Ved du, at maskinen skal bruges ofte og vil have et kendt midrange-valg? Reebok ZJET. Bekræft skinnelængde til din højde, mål brugslængde, og tjek om den kan rejses på højkant, hvis pladsen er trang. Shop via “Se pris” for aktuelle partnerpriser.",
     learningSections: [
       {
         heading: "Romaskine vs. løbebånd og cykel",
@@ -766,8 +769,8 @@ export const guides: Guide[] = [
       {
         heading: "Luft, vand eller magnet?",
         paragraphs: [
-          "Luft: realistisk, selvsvalende intensitet, mere lyd. Vand: stemning og jævn følelse, vedligehold af vandniveau. Magnet: stille, præcis, ofte billigere — men mindre “båd”.",
-          "Der findes ikke én rigtig type. Der findes den type, der matcher din bolig og din motivation. Mange bliver glade for magnet i lejlighed og luft i hus med træningsrum.",
+          "Luft: realistisk, selvsvalende intensitet, mere “vifte”-lyd. Vand: stemning, jævn følelse og den karakteristiske splash — favorit for mange, der vil have den ægte oplevelse hjemme. Magnet: stille, præcis, ofte billigere — men mindre “båd”.",
+          "Der findes ikke én rigtig type. Der findes den type, der matcher din bolig og din motivation. Mange bliver glade for magnet i lejlighed, vand i hus med træningsrum, og luft når de jagter Watt-tal.",
         ],
       },
       {
@@ -778,16 +781,16 @@ export const guides: Guide[] = [
         ],
       },
       {
-        heading: "Plads: den skjulte dealbreaker",
+        heading: "Plads: fold, højkant og den skjulte dealbreaker",
         paragraphs: [
-          "I brug er romaskiner lange. Mål fra væg til væg, og husk plads bag dig til fuldt benspark. Tjek om maskinen kan stilles vertikalt, og om hjulene virker på dit gulv.",
-          "Hvis du ikke har længden, er en motionscykel eller et foldbart løbebånd ofte et mere ærligt valg end at presse en romaskine ind i et hjørne.",
+          "I brug er romaskiner lange. Mål fra væg til væg, og husk plads bag dig til fuldt benspark. Det afgørende for små hjem er ofte, om maskinen kan rejses på højkant eller foldes, så den står smalt mod væggen — og om hjulene virker på dit gulv.",
+          "Hvis du ikke har længden i brug, er en motionscykel, airbike eller et foldbart løbebånd ofte et mere ærligt valg end at presse en romaskine ind i et hjørne.",
         ],
       },
       {
         heading: "Typiske fejl ved køb",
         paragraphs: [
-          "At købe efter skærm. At glemme brugerhøjde. At undervurdere støj fra luftmodstand. At købe pro-kommercielt udstyr til et soveværelse.",
+          "At købe efter skærm. At glemme brugerhøjde. At undervurdere støj fra luft- og vandmodstand. At købe pro-kommercielt udstyr til et soveværelse.",
           "Omvendt: at blive på det billigste entry-år efter år, selvom du ror fire gange om ugen. Opgrader, når vanen er beviselig — ikke før.",
         ],
       },
@@ -796,7 +799,7 @@ export const guides: Guide[] = [
       {
         question: "Hvilken romaskine er bedst til hjemmet?",
         answer:
-          "Til allround anbefaler vi Reebok ZJET. Til budget: Titan LIFE R10. Til hyppig brug i midrange: R65. Til luftmodstand: AirRow. Match altid til støj og skinnelængde.",
+          "Til allround anbefaler vi Reebok ZJET. Til budget: Titan LIFE R10. Til vandmodstand: Odin R1800. Til luftmodstand: AirRow. Match altid til støj, skinnelængde og om den kan rejses på højkant.",
       },
       {
         question: "Er romaskine godt for begyndere?",
@@ -811,7 +814,7 @@ export const guides: Guide[] = [
       {
         question: "Hvor meget plads kræver en romaskine?",
         answer:
-          "Ofte over to meter i brugslængde plus plads omkring. Tjek produktmål og om den kan opbevares vertikalt. Mål rummet, før du køber.",
+          "Ofte over to meter i brugslængde plus plads omkring. Tjek produktmål og om den kan opbevares vertikalt / på højkant. Mål rummet, før du køber.",
       },
       {
         question: "Kan jeg tabe mig på romaskine?",
@@ -819,9 +822,9 @@ export const guides: Guide[] = [
           "Ja, hvis intensitet og kost hænger sammen. Romaskinen er effektiv, fordi den bruger store muskelgrupper. Konsistens slår enkeltstående hårde pas.",
       },
       {
-        question: "Luftmodstand eller magnet — hvad skal jeg vælge?",
+        question: "Luft, vand eller magnet — hvad skal jeg vælge?",
         answer:
-          "Luft for følelse og selvskalerende modstand. Magnet for stilhed og præcis justering. Har du naboer under dig, start med magnet, medmindre du ved, at du vil have luft.",
+          "Luft for selvskalerende intensitet. Vand for autentisk lyd og jævn følelse. Magnet for stilhed og præcis justering. Har du naboer under dig, start med magnet, medmindre du ved, at du vil have vand eller luft.",
       },
       {
         question: "Hvordan ser jeg aktuelle priser?",
@@ -831,8 +834,8 @@ export const guides: Guide[] = [
     ],
     relatedSlugs: [
       "bedste-loebebaand-2026",
-      "bedste-styrkemaskiner-2026",
-      "bedste-motionscykel-2026",
+      "bedste-airbike-2026",
+      "bedste-crosstrainer-2026",
     ],
   },
   {
@@ -1000,7 +1003,7 @@ export const guides: Guide[] = [
         heading: "Hvornår airbike giver mening",
         paragraphs: [
           "Airbikes træner arme og ben samtidigt og er brutalt ærlige i intensitet. De er fantastiske til korte, hårde pas — og mindre oplagte som eneste “rolige aften-cardio”, hvis støj og sved er et issue.",
-          "Har du allerede styrketræning og vil have en kondi-finisher, kan airbike være spot on. Til rolige zone-2-pas er en magnetkondicykel ofte mere behagelig.",
+          "Har du allerede styrketræning og vil have en kondi-finisher, kan airbike være spot on. Til rolige zone-2-pas er en magnetkondicykel ofte mere behagelig. Går du specifikt efter airbike/Assault Bike, læs vores dedikerede guide Bedste Airbike 2026.",
         ],
       },
       {
@@ -1049,9 +1052,14 @@ export const guides: Guide[] = [
           "Kondicykel er typisk mere komfortabel og støjsvag til længere pas. Spinning har tungere svinghjul og mere aggressiv position til intervaller og hold-agtig træning. Går du specifikt efter spinning, læs Bedste spinningcykel 2026.",
       },
       {
+        question: "Hvad med airbike / Assault Bike?",
+        answer:
+          "Airbike er vindmodstand og HIIT — arme + ben, høj intensitet, mere støj. Det er ikke en erstatning for en stille kondicykel. Se Bedste Airbike 2026 for anbefalinger og støj-forventninger.",
+      },
+      {
         question: "Kan jeg træne i lejlighed uden at genere naboer?",
         answer:
-          "Ja — magnetiske kondicykler er blandt de bedste valg. Brug måtte, undgå at hoppe i pedalerne, og vælg kvalitet, der ikke “klaprer”.",
+          "Ja — magnetiske kondicykler er blandt de bedste valg. Brug måtte, undgå at hoppe i pedalerne, og vælg kvalitet, der ikke “klaprer”. Airbikes er typisk et dårligere lejlighedsvalg.",
       },
       {
         question: "Hvor vigtig er sadlen?",
@@ -1070,9 +1078,9 @@ export const guides: Guide[] = [
       },
     ],
     relatedSlugs: [
+      "bedste-airbike-2026",
       "bedste-spinningcykel-2026",
       "bedste-crosstrainer-2026",
-      "bedste-loebebaand-2026",
     ],
   },
   {
@@ -1317,15 +1325,20 @@ export const guides: Guide[] = [
     slug: "bedste-crosstrainer-2026",
     title: "Bedste crosstrainer 2026",
     excerpt:
-      "Skånsom helkropscardio hjemme: sådan vælger du crosstrainer — plus fire anbefalinger med aktuelle priser.",
+      "Skånsom helkropscardio hjemme: baghjul vs. forhjul, skridtlængde og fire anbefalinger med aktuelle priser.",
     metaDescription:
-      "Find den bedste crosstrainer til hjemmet i 2026. Guide til skridtlængde, flywheel, støj og budget — plus fire anbefalede modeller med live priser fra danske partnere.",
+      "Find den bedste crosstrainer til hjemmet i 2026. Guide til baghjul vs. forhjul, skridtlængde, støj og budget — plus fire anbefalede modeller med live priser.",
     categorySlug: "crosstrainer",
     publishedAt: "2026-11-04",
     updatedAt: "2026-11-04",
     intro:
-      "En crosstrainer (elliptisk træner) giver kondition med lav stødbelastning — knæ og ankler belastes mindre end på løbebånd, mens arme og core også er med. Det er derfor mange vælger den som “allround cardio” i lejlighed og hus. Her får du valg-kriterierne, fire konkrete modeller med shop-links til vores partnere, og svar på de typiske spørgsmål om plads, støj og om crosstrainer overhovedet er dig.",
+      "En crosstrainer (elliptisk træner) giver kondition med lav stødbelastning — knæ og ankler belastes mindre end på løbebånd, mens arme og core også er med. Det er derfor mange vælger den som “allround cardio” i lejlighed og hus. Her får du valg-kriterierne (især baghjulstrukket vs. forhjulstrukket og skridtlængde), fire konkrete modeller med shop-links til vores partnere, og svar på de typiske spørgsmål om plads, støj og om crosstrainer overhovedet er dig.",
     criteria: [
+      {
+        title: "Baghjul vs. forhjul",
+        description:
+          "Baghjulstrukket (svinghjulet bag dig) er typisk billigere, fylder mindre i dybden og dominerer hjemmemarkedet — fin til de fleste. Forhjulstrukket (svinghjul foran) giver ofte en længere, mere glidende tråd og føles mere “center-agtig”, hvilket mange oplever som skånsommere for knæene — men maskinen er ofte dyrere og mere pladskrævende. Vælg forhjul, hvis knækomfort og tråd er hovedsagen; baghjul, hvis pris og footprint vinder.",
+      },
       {
         title: "Skridtlængde og højde",
         description:
@@ -1349,12 +1362,7 @@ export const guides: Guide[] = [
       {
         title: "Plads og footprint",
         description:
-          "Crosstrainere er ofte høje og brede. Mål både dybde, bredde og loftshøjde med arme i top. En 2-i-1-model kan spare plads, men tjek altid om kompromiset i stabilitet er acceptabelt for dig.",
-      },
-      {
-        title: "Computer og motivation",
-        description:
-          "Tid, distance, modstand og puls er nok for de fleste. Programmer hjælper begyndere. Store skærme driver prisen op — prioriter skridtlængde og stabilitet før touchscreen.",
+          "Crosstrainere er ofte høje og brede. Baghjulstrukne modeller er typisk mere kompakte i dybden end forhjulstrukne. Mål dybde, bredde og loftshøjde med arme i top. En 2-i-1-model kan spare plads, men tjek kompromiset i stabilitet.",
       },
       {
         title: "Budget vs. brug",
@@ -1381,7 +1389,7 @@ export const guides: Guide[] = [
           "Høje brugere bør tjekke skridtlængde",
         ],
         specs: [
-          { label: "Type", value: "Crosstrainer" },
+          { label: "Drive", value: "Baghjul (typisk hjemme)" },
           { label: "Brand", value: "Titan Life" },
           { label: "Segment", value: "Midrange" },
           { label: "Partner", value: "HomeX.dk" },
@@ -1393,7 +1401,7 @@ export const guides: Guide[] = [
         name: "Titan Life C35 Crosstrainer",
         badge: "Bedste billige",
         summary:
-          "Prisvenlig indgang med lav indstigning — til dig, der vil i gang med skånsom cardio uden stor investering. Fin starter, når vanen skal bygges først.",
+          "Prisvenlig baghjulstrukket indgang med lav indstigning — til dig, der vil i gang med skånsom cardio uden stor investering. Fin starter, når vanen skal bygges først.",
         pros: [
           "Lav indgangspris",
           "Lav indstigning — nemmere at komme på",
@@ -1406,7 +1414,7 @@ export const guides: Guide[] = [
           "Tjek skridtlængde hvis du er høj",
         ],
         specs: [
-          { label: "Type", value: "Crosstrainer" },
+          { label: "Drive", value: "Baghjul (typisk)" },
           { label: "Brand", value: "Titan Life" },
           { label: "Segment", value: "Budget" },
           { label: "Feature", value: "Lav indstigning" },
@@ -1432,8 +1440,8 @@ export const guides: Guide[] = [
           "Opgrader, når vanen er beviselig",
         ],
         specs: [
-          { label: "Type", value: "2-i-1 crosstrainer" },
-          { label: "Segment", value: "Budget / kompakt" },
+          { label: "Type", value: "2-i-1 / kompakt" },
+          { label: "Segment", value: "Budget / plads" },
           { label: "Partner", value: "Billig-fitness.dk" },
         ],
         feedProductId: "Billig-fitness.dk:42506598514859",
@@ -1456,7 +1464,7 @@ export const guides: Guide[] = [
           "Kræver plads og et fast “hjem” til maskinen",
         ],
         specs: [
-          { label: "Type", value: "Crosstrainer" },
+          { label: "Drive", value: "Baghjul / premium build" },
           { label: "Brand", value: "Tunturi" },
           { label: "Segment", value: "Premium" },
           { label: "Partner", value: "HomeX.dk" },
@@ -1465,7 +1473,7 @@ export const guides: Guide[] = [
       },
     ],
     howToChoose:
-      "Usikker og budgetbevidst? Start med Titan Life C35 (lav indstigning) eller 2-i-1, hvis pladsen er trang. Træner du flere gange om ugen? C56 er det sikre allround-valg. Er maskinen din hovedcardio i flere år? Tunturi C60. Prioritér skridtlængde og stabilitet før skærm. Shop via “Se pris” for aktuelle partnerpriser — vi undgår bevidst dyre skaffevare-modeller i top-anbefalingerne.",
+      "Usikker og budgetbevidst? Start med Titan Life C35 (lav indstigning) eller 2-i-1, hvis pladsen er trang — begge er typisk baghjulstrukne og fylder mindre. Træner du flere gange om ugen? C56 er det sikre allround-valg. Er maskinen din hovedcardio i flere år? Tunturi C60. Prioritér skridtlængde og stabilitet før skærm. Shop via “Se pris” for aktuelle partnerpriser — vi undgår bevidst dyre skaffevare-modeller i top-anbefalingerne.",
     learningSections: [
       {
         heading: "Crosstrainer vs. løbebånd og cykel",
@@ -1475,9 +1483,16 @@ export const guides: Guide[] = [
         ],
       },
       {
+        heading: "Baghjulstrukket vs. forhjulstrukket",
+        paragraphs: [
+          "Baghjulstrukket: svinghjulet sidder bag dig. Det er den mest almindelige hjemme-type — billigere, kortere footprint i dybden og nemmere at få ind ad døren. Forhjulstrukket: svinghjulet sidder foran. Bevægelsen er ofte længere og mere glidende; mange oplever den som mere skånsom for knæene og tættere på center-maskiner.",
+          "De fleste danske hjemmemodeller i vores anbefalinger er baghjulstrukne — det matcher pris og plads for de fleste. Gå bevidst efter forhjul, hvis du har prøvet begge og ved, at den glidende tråd er det, der får dig til at træne.",
+        ],
+      },
+      {
         heading: "Hvad betyder skridtlængde?",
         paragraphs: [
-          "Skridtlængden er, hvor langt pedalerne bevæger sig i hvert “skridt”. For kort længde giver en hakkende, unaturlig bevægelse — især for høje brugere.",
+          "Skridtlængden er, hvor langt pedalerne bevæger sig i hvert “skridt”. For kort længde giver en hakkende, unaturlig bevægelse — især for høje brugere. Forhjulstrukne maskiner har ofte generøs skridtlængde, men det er ikke en garanti — tjek altid tallet eller maks. brugerhøjde.",
           "Producenter opgiver ikke altid tallet tydeligt. Brug maks. brugerhøjde som pejlemærke, læs anmeldelser, og vælg midrange/premium, hvis du er høj og træner ofte.",
         ],
       },
@@ -1498,7 +1513,7 @@ export const guides: Guide[] = [
       {
         heading: "Typiske fejl ved køb",
         paragraphs: [
-          "At købe efter den største skærm. At ignorere skridtlængde. At købe en kæmpe premium-skaffevare med uklar levering. At undervurdere højden i rummet.",
+          "At købe efter den største skærm. At ignorere skridtlængde og drive-type. At købe en kæmpe premium-skaffevare med uklar levering. At undervurdere højden i rummet.",
           "Omvendt: at blive på en vaklende budgetmodel i årevis, selvom du træner fire gange om ugen. Opgrader, når udstyret begrænser dig.",
         ],
       },
@@ -1507,17 +1522,22 @@ export const guides: Guide[] = [
       {
         question: "Hvilken crosstrainer er bedst til hjemmet?",
         answer:
-          "Til allround: Titan Life C56. Til budget: C35. Til plads/pris: 2-i-1. Til premium: Tunturi C60 Signature. Match altid til skridtlængde og hvor ofte du træner.",
+          "Til allround: Titan Life C56. Til budget: C35. Til plads/pris: 2-i-1. Til premium: Tunturi C60 Signature. Match altid til skridtlængde, drive-type og hvor ofte du træner.",
+      },
+      {
+        question: "Baghjul eller forhjul — hvad skal jeg vælge?",
+        answer:
+          "Baghjul er typisk billigere og fylder mindre — fine til de fleste hjem. Forhjul giver ofte en mere glidende tråd og kan føles skånsommere for knæene, men koster mere plads og penge. Vælg ud fra knækomfort og budget — ikke marketing.",
       },
       {
         question: "Er crosstrainer godt for knæene?",
         answer:
-          "Ofte ja — lav stødbelastning sammenlignet med løb. Start med lav modstand, og stop hvis noget gør ondt. Individuelle skader varierer; spørg evt. en fagperson.",
+          "Ofte ja — lav stødbelastning sammenlignet med løb. Forhjulstrukne modeller opleves af mange som ekstra glidende. Start med lav modstand, og stop hvis noget gør ondt.",
       },
       {
         question: "Hvor meget plads kræver en crosstrainer?",
         answer:
-          "Mere end mange tror — især i højden og med arme i bevægelse. Mål dybde, bredde og loft, og læg plads til at stige af sikkert.",
+          "Mere end mange tror — især i højden og med arme i bevægelse. Baghjulstrukne er ofte mere kompakte i dybden. Mål dybde, bredde og loft, og læg plads til at stige af sikkert.",
       },
       {
         question: "Crosstrainer eller motionscykel?",
@@ -1530,11 +1550,6 @@ export const guides: Guide[] = [
           "Nej. Byg vanen på C35 eller 2-i-1 først. Gå C56/C60, når du ved, at elliptisk træning er din grej.",
       },
       {
-        question: "Hvorfor anbefaler I ikke de dyreste MAXXUS-modeller?",
-        answer:
-          "Flere premium-modeller i feedet er skaffevare med høj pris og usikker levering. Vi prioriterer modeller, du typisk kan købe og få hjem nu via vores partnere.",
-      },
-      {
         question: "Hvordan ser jeg aktuelle priser?",
         answer:
           "Hver anbefaling har “Se pris” med live feed-pris hos partneren. Lager og pris kan ændre sig — klik igennem for det aktuelle tilbud.",
@@ -1542,7 +1557,7 @@ export const guides: Guide[] = [
     ],
     relatedSlugs: [
       "bedste-loebebaand-2026",
-      "bedste-motionscykel-2026",
+      "bedste-airbike-2026",
       "bedste-romaskine-2026",
     ],
   },
@@ -1762,7 +1777,12 @@ export const guides: Guide[] = [
       {
         question: "Hvad med multigym / kabelstation?",
         answer:
-          "Multigym kan være fint, hvis du vil have guidede bevægelser. Mange får mere progression for pengene med bænk + frivægte + rack. Vælg ud fra plads og præference — ikke kun “ser ud som et center”.",
+          "Multigym og vægtstak-multistationer (fx Odin Valhalla) er fint, hvis du vil have guidede bevægelser uden at læsse skiver. Se Bedste multistation / Home Gym 2026 for vægtstak, loftshøjde og antal øvelser. Mange får også mere progression for pengene med bænk + frivægte + rack.",
+      },
+      {
+        question: "Hvilken justerbar træningsbænk skal jeg købe?",
+        answer:
+          "Se vores dedikerede guide Bedste justerbare træningsbænk 2026 — der dækker max belastning, stabilitet, transporthjul og decline. Denne styrke-guide holder fokus på bænk + rack + sæt som startpakke.",
       },
       {
         question: "Hvorfor er der ingen benlås i anbefalingerne?",
@@ -1772,7 +1792,7 @@ export const guides: Guide[] = [
       {
         question: "Hvor meget plads skal jeg bruge?",
         answer:
-          "En bænk fylder lidt; et rack fylder som et lille møbel og kræver loft. Komplette sæt kræver et dedikeret hjørne. Mål før køb — især højde til pull-up.",
+          "En bænk fylder lidt; et rack fylder som et lille møbel og kræver loft. Komplette sæt kræver et dedikeret hjørne. Multistationer kræver ofte mere loftshøjde end du tror — mål før køb.",
       },
       {
         question: "Hvordan køber jeg via Fitlist?",
@@ -1781,9 +1801,701 @@ export const guides: Guide[] = [
       },
     ],
     relatedSlugs: [
+      "bedste-multistation-2026",
+      "bedste-justerbar-traeningsbaenk-2026",
       "bedste-romaskine-2026",
-      "bedste-loebebaand-2026",
-      "bedste-crosstrainer-2026",
+    ],
+  },
+  {
+    slug: "bedste-airbike-2026",
+    title: "Bedste Airbike 2026",
+    excerpt:
+      "Assault-style airbike til HIIT: vindmodstand, støj og fire anbefalinger med aktuelle priser — til korte, intensive intervaller.",
+    metaDescription:
+      "Find den bedste airbike (Assault Bike) til hjemmet i 2026. Guide til vindmodstand, støj og HIIT — plus fire anbefalede modeller med live priser fra danske partnere.",
+    categorySlug: "motionscykel",
+    intentSlug: "airbike",
+    publishedAt: "2026-11-04",
+    updatedAt: "2026-11-04",
+    intro:
+      "En airbike (Assault Bike-typen) er ikke en stille kondicykel. Den bruger vindmodstand: jo hårdere du træder og trækker i armene, jo hårdere bliver det — arme og ben samtidigt. Det gør den genial til korte, intensive intervaller (HIIT) og CrossFit-agtige finishers, og mindre oplagt til rolige aftenpas i en lejlighed. Her får du valg-kriterierne, fire konkrete modeller med shop-links, og ærlig snak om støj, før du køber.",
+    criteria: [
+      {
+        title: "Vindmodstand og intensitet",
+        description:
+          "Luft/vindmodstand skalerer med din indsats — der er ingen “snyde” let gear, når du all-outer. Det er præcis derfor airbikes er brutalt ærlige og effektive til HIIT. Forvent høj puls hurtigt; planlæg korte intervaller, ikke time-lange zone-2-pas som på en magnetkondicykel.",
+      },
+      {
+        title: "Støj — den vigtigste dealbreaker",
+        description:
+          "Airbikes larmer. Viften, remmen og din egen intensitet fylder mere end en magnetcykel eller de fleste spinningcykler. I lejlighed med naboer under dig er det ofte et nej — medmindre du træner midt på dagen og accepterer kommentarer. I hus/træningsrum er det sjældent et problem.",
+      },
+      {
+        title: "HIIT vs. daglig cardio",
+        description:
+          "Airbike excellerer i 10–20 minutters intervaller, EMOM og “finisher efter styrke”. Til lange, rolige pas er en kondicykel eller crosstrainer mere behagelig. Køb airbike, fordi du vil have intensitet — ikke fordi den ser sejt ud på Instagram.",
+      },
+      {
+        title: "Stabilitet og build",
+        description:
+          "Når du trækker hårdt i armene, skal rammen stå stille. Tjek vægt, fodaftryk og om cyklen “vandrer” på laminat. Brug måtte. Billige modeller kan vibrere mere; Assault-klassikere og solid midrange føles mere som center-udstyr.",
+      },
+      {
+        title: "Sæde, greb og justering",
+        description:
+          "Airbike-sadler er ofte hårde, og grebene er til både træk og skub. Justerbar saddelhøjde er et must. Forvent mere overkropsarbejde end på en kondicykel — det er meningen.",
+      },
+      {
+        title: "Computer og motivation",
+        description:
+          "Tid, kalorier/watt og intervaller er nok. Store underholdningsskærme er nice-to-have. Mange bruger telefonen til timer/WOD. Prioritér blæser, ramme og sadlejustering før display.",
+      },
+      {
+        title: "Budget: Odin vs. Assault vs. premium",
+        description:
+          "Odin A800/A1000 giver airbike-følelse til skarpere pris. Assault Fitness er referencen for mange CrossFit-miljøer. Premium (Beast, Elite, pro-HIIT) betaler du for build og holdbarhed ved daglig hård brug — ikke for “flere funktioner”.",
+      },
+    ],
+    products: [
+      {
+        id: "odin-a1000",
+        name: "Odin A1000 Airbike",
+        badge: "Bedst samlet",
+        summary:
+          "Det stærkeste allround-valg til hjemme-HIIT, når du vil have ægte vindmodstand uden at hoppe direkte i Assault-priser. God balance mellem intensitet, build og dansk tilgængelighed.",
+        pros: [
+          "Solid midrange airbike til hjemmet",
+          "Vindmodstand til ægte intervaller",
+          "Bedre end entry til jævnlig hård brug",
+          "Nem at finde hos dansk partner",
+        ],
+        cons: [
+          "Støjer — ikke lejligheds-first",
+          "Dyrere end A800",
+          "Ikke Assault-“center”-status",
+        ],
+        specs: [
+          { label: "Type", value: "Airbike / vindmodstand" },
+          { label: "Brand", value: "Odin" },
+          { label: "Segment", value: "Midrange" },
+          { label: "Partner", value: "Apuls.dk" },
+        ],
+        feedProductId: "Apuls.dk:12006",
+      },
+      {
+        id: "odin-a800",
+        name: "Odin A800 Airbike",
+        badge: "Bedste billige",
+        summary:
+          "Prisvenlig indgang til airbike-universet. Til dig, der vil teste HIIT med arme+ben, før du investerer i Assault-niveau — eller kun træner intervaller 1–2 gange om ugen.",
+        pros: [
+          "Laveste seriøse airbike-indgang i vores picks",
+          "Fuld vindmodstand-oplevelse",
+          "Fin til at afprøve vanen",
+          "Skarp pris hos partner",
+        ],
+        cons: [
+          "Mindre raffineret end A1000/Assault",
+          "Stadig støjende",
+          "Opgrader, hvis du træner hårdt flere gange ugentligt",
+        ],
+        specs: [
+          { label: "Type", value: "Airbike / vindmodstand" },
+          { label: "Brand", value: "Odin" },
+          { label: "Segment", value: "Budget / entry" },
+          { label: "Partner", value: "Apuls.dk" },
+        ],
+        feedProductId: "Apuls.dk:15467",
+      },
+      {
+        id: "assaultbike-classic",
+        name: "Assault Fitness AssaultBike Classic",
+        badge: "Bedste Assault",
+        summary:
+          "Referencen for mange CrossFit- og HIIT-brugere. Når du vil have den klassiske Assault-følelse og et brand, der matcher bokse og WOD’er — ikke bare “en airbike”.",
+        pros: [
+          "Assault-DNA og genkendelig træningsfølelse",
+          "Bygget til hårde intervaller",
+          "Stærkt valg til seriøs HIIT hjemme",
+          "Klar differentiering fra budget-airbikes",
+        ],
+        cons: [
+          "Højere pris end Odin",
+          "Larmer — forvent “vifte + intensitet”",
+          "Overkill, hvis du kun vil have stille cardio",
+        ],
+        specs: [
+          { label: "Type", value: "Assault Bike" },
+          { label: "Brand", value: "Assault Fitness" },
+          { label: "Segment", value: "Øvre mid" },
+          { label: "Partner", value: "Fitnessengros.dk" },
+        ],
+        feedProductId: "Fitnessengros.dk:LCASSAIRBIKE",
+      },
+      {
+        id: "sportop-beast",
+        name: "Sportop Airbike The Beast",
+        badge: "Bedste premium",
+        summary:
+          "Når airbiken er din primære kondi-finisher, og du vil op i tungere, mere “beast”-agtig build. Til dig, der allerede ved, at vindmodstand er din grej.",
+        pros: [
+          "Premium airbike-positionering",
+          "Lavet til hård, gentagen intervalbrug",
+          "Tydeligt step op fra entry",
+          "God til dedikeret træningsrum",
+        ],
+        cons: [
+          "Markant dyrere",
+          "Stadig ikke stille",
+          "Unødvendig, hvis du træner airbike sjældent",
+        ],
+        specs: [
+          { label: "Type", value: "Airbike" },
+          { label: "Brand", value: "Sportop" },
+          { label: "Segment", value: "Premium" },
+          { label: "Partner", value: "Fitnessgruppen.dk" },
+        ],
+        feedProductId: "Fitnessgruppen.dk:144",
+      },
+    ],
+    howToChoose:
+      "Usikker og budgetbevidst? Start med Odin A800. Træner du HIIT flere gange om ugen? A1000 er det sikre allround-valg. Vil du have Assault-referencen? AssaultBike Classic. Er airbiken din hoved-finisher i årevis? The Beast eller tilsvarende premium. Har du naboer under dig? Overvej i stedet kondicykel eller spinning — airbike er ærligt støjende. Shop via “Se pris” for live partnerpriser.",
+    learningSections: [
+      {
+        heading: "Hvorfor airbike er genial til HIIT",
+        paragraphs: [
+          "Korte intervaller (fx 20/10, 30/30 eller 60 sek. all-out) rammer både ben og overkrop. Der er næsten ingen “skjult gearing” — din indsats er modstanden. Det gør sessioner korte, hårde og målbare.",
+          "Efter styrke er 5–10 minutter på airbike en effektiv finisher. Som eneste rolige cardio-maskine i en lejlighed er den sjældent det bedste køb.",
+        ],
+      },
+      {
+        heading: "Støj: forventninger før køb",
+        paragraphs: [
+          "Regn med vifte-lyd, der stiger med intensitet, plus mekanik og din egen vejrtrækning. En måtte hjælper på vibration, men fjerner ikke blæserlyden.",
+          "Træn midt på dagen, hvis du bor tæt. I kælder/garage/træningsrum er støj typisk acceptabelt. Køb aldrig airbike “fordi den ligner CrossFit”, hvis støj er et hard no.",
+        ],
+      },
+      {
+        heading: "Airbike vs. kondicykel og spinning",
+        paragraphs: [
+          "Kondicykel: støjsvag, komfortabel, zone-2. Spinning: tungt svinghjul, sporty position, hold-agtig intensitet uden samme armtræk. Airbike: vind + arme + ben — maksimal HIIT-tæthed.",
+          "Har du brug for alle tre? Sjældent. De fleste vælger én primær cykeltype. Læs også Bedste motionscykel 2026 og Bedste spinningcykel 2026, hvis du er i tvivl.",
+        ],
+      },
+      {
+        heading: "Opstilling og plads",
+        paragraphs: [
+          "Airbikes har et bredere “arbejdsområde” foran dig pga. armene. Mål footprint og plads til at stige af. Stil den i vater, brug måtte, og efterspænd bolte efter de første uger.",
+          "Sæt den ikke op ad en tynd skillevæg, hvis vibration er et issue — gulvtype betyder mere end marketing om “stabilitet”.",
+        ],
+      },
+      {
+        heading: "Typiske fejl ved køb",
+        paragraphs: [
+          "At købe airbike til stille aften-cardio. At undervurdere støj. At købe den dyreste Assault “fordi boksen har den”, når A1000 havde været nok. At glemme sadlejustering.",
+          "Omvendt: at blive på en vaklende budget-airbike, mens du laver WOD’er fire gange om ugen. Opgrader, når build begrænser dig.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "Hvilken airbike er bedst til hjemmet?",
+        answer:
+          "Til allround: Odin A1000. Til budget: Odin A800. Til Assault-referencen: AssaultBike Classic. Til premium: Sportop The Beast. Match altid til støjtolerance og hvor hårdt du træner.",
+      },
+      {
+        question: "Er airbike det samme som Assault Bike?",
+        answer:
+          "Assault Bike er et brand/produktnavn inden for airbike-kategorien (vindmodstand med arme+ben). Mange siger “Assault” om hele typen — ligesom “fridge” for køleskab. Funktionelt er det samme disciplin.",
+      },
+      {
+        question: "Hvor meget larmer en airbike?",
+        answer:
+          "Markant mere end en magnetkondicykel. Viften er den primære lydkilde og stiger med intensitet. I lejlighed er det ofte for meget; i hus/træningsrum er det typisk acceptabelt.",
+      },
+      {
+        question: "Kan jeg bruge airbike til zone-2?",
+        answer:
+          "Teknisk ja, men de fleste synes det er mindre behageligt end kondicykel eller crosstrainer. Airbike skinner i korte, hårde blokke.",
+      },
+      {
+        question: "Airbike eller spinning til HIIT?",
+        answer:
+          "Airbike, hvis du vil have arme med og maksimal “ærlig” intensitet. Spinning, hvis du vil have cykelagtig position og tungt svinghjul uden samme vifte-støj. Se også Bedste spinningcykel 2026.",
+      },
+      {
+        question: "Skal begyndere købe airbike?",
+        answer:
+          "Kun hvis de elsker intervaller og accepterer støj. Ellers bygg vane på kondicykel/spinning først — airbike er motiverende, men også hård og larmende fra dag ét.",
+      },
+      {
+        question: "Hvordan ser jeg aktuelle priser?",
+        answer:
+          "Hver anbefaling har “Se pris” med live feed-pris hos partneren. Filtrer også Motionscykel → Airbike for flere tilbud.",
+      },
+    ],
+    relatedSlugs: [
+      "bedste-motionscykel-2026",
+      "bedste-spinningcykel-2026",
+      "bedste-romaskine-2026",
+    ],
+  },
+  {
+    slug: "bedste-multistation-2026",
+    title: "Bedste multistation / Home Gym 2026",
+    excerpt:
+      "Vægtstak, loftshøjde og øvelsesantal: sådan vælger du home gym / multistation — plus fire anbefalinger med aktuelle priser.",
+    metaDescription:
+      "Find den bedste multistation / home gym til hjemmet i 2026. Guide til vægtstak (67 vs. 145 kg), loftshøjde og øvelser — plus fire anbefalinger med live priser.",
+    categorySlug: "styrkemaskiner",
+    intentSlug: "multistation",
+    publishedAt: "2026-11-04",
+    updatedAt: "2026-11-04",
+    intro:
+      "En multistation (home gym) samler kabeløvelser, lat pulldown, brystpres og ofte benarbejde i én maskine med vægtstak — uden at du skal læsse skiver til hver øvelse. Det er overvældende første gang: kabler, stakke, Smith-racks og navne som Valhalla og Ragnarok. Denne guide skærer det ned til det, der betyder noget: stakkens størrelse, loftshøjde (især i kældre), og hvor mange øvelser du realistisk får. Fire konkrete modeller med shop-links følger med.",
+    criteria: [
+      {
+        title: "Vægtstakkens størrelse",
+        description:
+          "67 kg er fint til begyndere og mange isolation/cable-øvelser — men stærkere brugere vokser fra det på presses og rows. 100 kg er sweet spot for de fleste hjem. 144–145 kg (ofte på Smith-/Ragnarok-stationer) giver længere levetid, før stakken er “for let”. Køb ikke 145 kg “fordi mere er bedre”, hvis loftet eller budgettet ikke følger med.",
+      },
+      {
+        title: "Loftshøjde og kælder",
+        description:
+          "Multistationer er høje. Lat-baren skal kunne trækkes uden at ramme loftet, og nogle Smith-racks kræver 220+ cm. Mål dit loft i kælder/loftsværelse, før du forelsker dig i en 145 kg-station. Lavt loft = vælg lavere station eller frivægte + bænk i stedet.",
+      },
+      {
+        title: "Antal øvelser vs. reel brug",
+        description:
+          "Marketing siger “50+ øvelser”. Du skal bruge 8–12 godt. Tjek at de vigtige er dækket: lat pulldown, row, brystpres/pec, overhead, leg extension/curl eller press, og evt. cable flyes. En Smith-multistation tilføjer guidede squat/bænk — dyrere, men bredere.",
+      },
+      {
+        title: "Vægtstak vs. plate load",
+        description:
+          "Vægtstak: hurtigt skift, begyndervenligt, ingen skiver. Plate load: du bruger egne vægtskiver — billigere maskine, mere rod, mere progression uden loft på stakken. Vælg stak for simpelhed; plate load hvis du allerede har skiver og vil spare.",
+      },
+      {
+        title: "Footprint og opstilling",
+        description:
+          "Disse maskiner fylder som et stort møbel. Mål bredde/dybde, døråbninger og om den skal skilles ad ind. Læg plads til at træde væk fra kablerne. En “hjørne-home gym” kræver stadig luft omkring sig.",
+      },
+      {
+        title: "Build, kabler og sikkerhed",
+        description:
+          "Tjek remskiver, kabelkvalitet og om stakken kører uden at sætte sig fast. Bolte skal efterspændes. Til Smith: sikkerhedskroge og stop er ikke til forhandling, hvis du træner alene.",
+      },
+      {
+        title: "Budget: Valhalla 67 → Smith 145",
+        description:
+          "Start ofte på Valhalla 67/100 kg, hvis du vil have home gym-følelse uden center-pris. Gå Smith/Ragnarok 144–145 kg, når du vil have guidet barbell + tungere stak. Titan LIFE Home Gym er et stærkt alternativ i midten.",
+      },
+    ],
+    products: [
+      {
+        id: "odin-valhalla-100",
+        name: "Odin Valhalla Home Gym Multistation 100 kg",
+        badge: "Bedst samlet",
+        summary:
+          "Sweet spot for de fleste hjem: 100 kg vægtstak, bred øvelsespalette og Odin Valhalla-platformen uden at hoppe helt op i Smith 145 kg. Det valg, vi peaker til “én maskine, mange øvelser”.",
+        pros: [
+          "100 kg stak — holder længere end 67 kg",
+          "Klassisk home gym-setup",
+          "God balance pris/øvelser/plads",
+          "Nem at finde hos dansk partner",
+        ],
+        cons: [
+          "Kræver loftshøjde — mål før køb",
+          "Fylder som et stort møbel",
+          "Ikke Smith-funktion",
+        ],
+        specs: [
+          { label: "Vægtstak", value: "100 kg" },
+          { label: "Brand", value: "Odin Valhalla" },
+          { label: "Type", value: "Home gym / multistation" },
+          { label: "Partner", value: "Apuls.dk" },
+        ],
+        feedProductId: "Apuls.dk:15327",
+      },
+      {
+        id: "odin-valhalla-67",
+        name: "Odin Valhalla Home Gym Multistation 67 kg",
+        badge: "Bedste billige",
+        summary:
+          "Den skarpeste indgang til Valhalla-universet. 67 kg er nok til at lære kabler og opbygge vane — og ærligt nok til mange isolation-øvelser. Opgrader stak/station, når du vokser fra den.",
+        pros: [
+          "Laveste Valhalla-multistation-pris",
+          "Samme øvelsesidé som større søskende",
+          "Fin til begyndere og let/moderat brug",
+          "Hurtigt skift uden skiver",
+        ],
+        cons: [
+          "67 kg bliver begrænsende på presses/rows for stærke",
+          "Stadig høj — tjek loft",
+          "Du kan vokse fra den på 6–18 måneder",
+        ],
+        specs: [
+          { label: "Vægtstak", value: "67 kg" },
+          { label: "Brand", value: "Odin Valhalla" },
+          { label: "Type", value: "Home gym / multistation" },
+          { label: "Partner", value: "Apuls.dk" },
+        ],
+        feedProductId: "Apuls.dk:15325",
+      },
+      {
+        id: "titan-homegym-ii",
+        name: "TITAN LIFE Home Gym II (75 kg)",
+        badge: "Bedste midrange-alternativ",
+        summary:
+          "Når du vil have home gym med vægtstak, men ikke nødvendigvis Odin-navnet. 75 kg, fri fragt hos partner og et solidt “én station”-valg til jævnlig brug.",
+        pros: [
+          "75 kg stak — midt mellem 67 og 100",
+          "TITAN LIFE med fri fragt",
+          "Klar home gym uden Smith-kompleksitet",
+          "God til kabel-fokuseret træning",
+        ],
+        cons: [
+          "Stadig loft- og pladskrævende",
+          "Ikke 100+ kg til tung progression",
+          "Tjek øvelsesliste vs. dine mål",
+        ],
+        specs: [
+          { label: "Vægtstak", value: "75 kg" },
+          { label: "Brand", value: "TITAN LIFE" },
+          { label: "Type", value: "Home gym" },
+          { label: "Partner", value: "HomeX.dk" },
+        ],
+        feedProductId: "HomeX.dk:2759",
+      },
+      {
+        id: "odin-ragnarok-smith-144",
+        name: "Odin Ragnarok Smith Rack Multistation 144 kg",
+        badge: "Bedste Smith / tung stak",
+        summary:
+          "Når du vil have multistation + Smith-rack og en stak der rækker: 144 kg. Til dig, der træner seriøst hjemme og har loftshøjden (og budgettet) til det.",
+        pros: [
+          "144 kg vægtstak — lang levetid",
+          "Smith + kabel i én station",
+          "Bredere øvelsesfrihed end ren home gym",
+          "Odin Ragnarok-platform",
+        ],
+        cons: [
+          "Dyr og tung at få på plads",
+          "Kræver mere loft og gulvplads",
+          "Overkill for rene begyndere",
+        ],
+        specs: [
+          { label: "Vægtstak", value: "144 kg" },
+          { label: "Brand", value: "Odin Ragnarok" },
+          { label: "Type", value: "Smith rack multistation" },
+          { label: "Partner", value: "Apuls.dk" },
+        ],
+        feedProductId: "Apuls.dk:15331",
+      },
+    ],
+    howToChoose:
+      "Begynder eller usikker? Valhalla 67 kg. Vil du have stakken til at holde i flere år uden Smith? Valhalla 100 kg. Vil du have TITAN-alternativ midt imellem? Home Gym II 75 kg. Vil have Smith + tung stak og har loft? Ragnarok 144 kg. Mål altid loftshøjde i kælderen først — det er den hyppigste dealbreaker. Shop via “Se pris”.",
+    learningSections: [
+      {
+        heading: "67 kg vs. 100 kg vs. 145 kg",
+        paragraphs: [
+          "67 kg: lær bevægelserne, byg vane, hold budgettet. 100 kg: det valg de fleste ikke fortryder. 144–145 kg: til tungere presses/rows og længere tid før stakken er maxed — ofte koblet til Smith-stationer.",
+          "Stakstørrelse er ikke ego. Det er “hvor længe før jeg skal skifte maskine”. Opgrader hellere stak end at købe ti tilbehørsstykker.",
+        ],
+      },
+      {
+        heading: "Loftshøjde i kælder og loftsværelse",
+        paragraphs: [
+          "Lat pulldown kræver plads over hovedet. Smith-skinner og høje tårne spiser centimetre. Mål fra gulv til loft, og tjek producentens højde — ikke kun “det ligner det passer”.",
+          "Er loftet lavt, er frivægte + justerbar bænk + et lavere rack ofte klogere end at presse en 145 kg-station ind under rør og bjælker.",
+        ],
+      },
+      {
+        heading: "Multistation vs. bænk og rack",
+        paragraphs: [
+          "Multistation: guidede kabler, hurtige skift, mindre teknikkrav. Bænk + rack: mere atletisk frihed, billigere progression med skiver, mere plads til “rigtig” squat/bænk.",
+          "Mange ender med begge over tid. Start med det, du faktisk vil bruge tre gange om ugen. Se også Bedste styrkemaskiner 2026 og Bedste justerbare træningsbænk 2026.",
+        ],
+      },
+      {
+        heading: "Hvad “antal øvelser” egentlig betyder",
+        paragraphs: [
+          "50 øvelser i brochuren er variationer af de samme mønstre. Prioritér kvalitet på pull, press, hinge/squat-mønstre og core — ikke at du kan lave den 37. cable twist.",
+          "En station, du mestrer, slår en station med 20 attachments, du aldrig monterer.",
+        ],
+      },
+      {
+        heading: "Typiske fejl ved køb",
+        paragraphs: [
+          "At ignorere loftshøjde. At købe 67 kg og blive frustreret efter et halvt år uden plan. At købe Smith 145 kg til et lille soveværelse. At glemme gulvets bæreevne og dørbredde ved levering.",
+          "Omvendt: at droppe home gym helt, selvom du hader at læsse skiver — så er vægtstak netop pointen.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "Hvilken multistation er bedst til hjemmet?",
+        answer:
+          "Til allround: Odin Valhalla 100 kg. Til budget: Valhalla 67 kg. Til TITAN-alternativ: Home Gym II 75 kg. Til Smith + tung stak: Ragnarok 144 kg. Match til loftshøjde og styrkeniveau.",
+      },
+      {
+        question: "Er 67 kg vægtstak nok?",
+        answer:
+          "Til begyndere og mange kabeløvelser: ja. Til tung brystpres/row for erfarne: ofte nej inden for et år. Planlæg 100 kg, hvis budgettet tillader det.",
+      },
+      {
+        question: "Hvor højt loft skal jeg have?",
+        answer:
+          "Tjek altid produktets højde. Tommelfinger: mål dit loft og sammenlign centimetervis — især i kælder. Smith-stationer kræver typisk mere end simple home gyms.",
+      },
+      {
+        question: "Multistation eller smith rack?",
+        answer:
+          "Ren home gym til kabler og guidede maskinøvelser. Smith-multistation, når du også vil squat/bænke guidet med stang. Smith koster mere plads og penge.",
+      },
+      {
+        question: "Kan jeg stille den i en lejlighed?",
+        answer:
+          "Pladsmæssigt måske — støj- og nabomæssigt er kabler finere end droppede frivægte, men maskinen fylder. Mål rummet ærligt.",
+      },
+      {
+        question: "Hvordan ser jeg aktuelle priser?",
+        answer:
+          "Klik “Se pris” på anbefalingerne, eller filtrér Styrkemaskiner → Multistation for flere tilbud med live priser.",
+      },
+    ],
+    relatedSlugs: [
+      "bedste-justerbar-traeningsbaenk-2026",
+      "bedste-styrkemaskiner-2026",
+      "bedste-airbike-2026",
+    ],
+  },
+  {
+    slug: "bedste-justerbar-traeningsbaenk-2026",
+    title: "Bedste justerbare træningsbænk 2026",
+    excerpt:
+      "Max belastning, stabilitet, hjul og decline: sådan vælger du træningsbænk — plus fire anbefalinger med aktuelle priser.",
+    metaDescription:
+      "Find den bedste justerbare træningsbænk til hjemmet i 2026. Guide til max belastning, stabilitet, transporthjul og decline — plus fire anbefalinger med live priser.",
+    categorySlug: "styrkemaskiner",
+    intentSlug: "traeningsbaenk",
+    publishedAt: "2026-11-04",
+    updatedAt: "2026-11-04",
+    intro:
+      "Træningsbænken er fundamentet i næsten ethvert styrkerum: bænkpres, skulderpres, rows, hip thrust og mere. En dårlig bænk vipper, knirker eller mangler den vinkel, du faktisk bruger. Her får du fokus på max belastning (dig + vægte), stabilitet, om den har hjul til at flytte, og om decline (negativ hældning) er nødvendigt — plus fire konkrete modeller med shop-links.",
+    criteria: [
+      {
+        title: "Max belastning (bruger + vægte)",
+        description:
+          "Tjek den angivne max belastning — det er dig + stang/håndvægte. 250–300 kg er et solidt hjemmeniveau til de fleste. Går du tung bænkpres, vælg højere rating og bredere fodaftryk. Undervurder ikke dynamisk belastning, når du sætter stangen.",
+      },
+      {
+        title: "Stabilitet og fodaftryk",
+        description:
+          "Bænken må ikke vaje sideværts under pres. Brede ben, ordentlige endestykker og gulvkontakt slår “let og foldbar” til tunge løft. Test (eller læs) om den gynge, når du presser skævt.",
+      },
+      {
+        title: "Justerbarhed: flat, incline, decline",
+        description:
+          "Flat dækker meget. Incline (positiv) er guld til øvre bryst og skuldre. Decline (negativ) er nice-to-have for nedre bryst og variation — ikke et must for begyndere. Multibænke/6-i-1 giver flere vinkler; simple justerbare er ofte mere stabile kilo for kilo.",
+      },
+      {
+        title: "Transporthjul og fold",
+        description:
+          "Hjul og foldbarhed er afgørende i stuen: træk bænken frem, træne, væk igen. Til dedikeret træningsrum er faste, tunge bænke ofte bedre. Køb ikke fold, hvis det betyder, at bænken vipper under 100 kg bænkpres.",
+      },
+      {
+        title: "Polstring og længde",
+        description:
+          "For kort pude = dårlig skulderstøtte. For blød = ustabilt pres. Høje brugere skal tjekke længde. Nakkestøtte og vinkelinddeling (mange trin) gør hverdagen lettere.",
+      },
+      {
+        title: "Kompatibilitet med rack og stativ",
+        description:
+          "Skal bænken ind i et squat rack / half-rack? Mål bredde. Skal den kun til håndvægte? Så er en kompakt justerbar ofte nok. Se også Bedste styrkemaskiner 2026 for rack-setup.",
+      },
+      {
+        title: "Budget vs. “for evigt”-bænk",
+        description:
+          "Entry (Odin Basic/Multi) bygger vanen. Valhalla/Atlet/6-i-1, når du træner ofte og vil have flere vinkler. Premium med hjul og høj belastning, når bænken er centerpiece i et fast rum.",
+      },
+    ],
+    products: [
+      {
+        id: "odin-valhalla-baenk",
+        name: "Odin Valhalla Justerbar Træningsbænk",
+        badge: "Bedst samlet",
+        summary:
+          "Justerbar Valhalla-bænk til dig, der vil have et solidt allround-fundament uden at gå all-in på 6-i-1-kompleksitet. God balance mellem stabilitet, vinkler og pris til jævnlig styrketræning.",
+        pros: [
+          "Justerbar til flere presse-vinkler",
+          "Valhalla-linje — matcher øvrigt Odin-setup",
+          "Solid midrange til hjemmet",
+          "Bedre end ren entry til tungere brug",
+        ],
+        cons: [
+          "Dyrere end Basic-modeller",
+          "Tjek om decline indgår i din variant",
+          "Fylder mere end en flad bænk",
+        ],
+        specs: [
+          { label: "Type", value: "Justerbar bænk" },
+          { label: "Brand", value: "Odin Valhalla" },
+          { label: "Segment", value: "Midrange" },
+          { label: "Partner", value: "Apuls.dk" },
+        ],
+        feedProductId: "Apuls.dk:16031",
+      },
+      {
+        id: "odin-multi-fold",
+        name: "Odin Multi Justerbar og Foldbar Træningsbænk",
+        badge: "Bedste billige",
+        summary:
+          "Prisvenlig justerbar bænk med fold — til dig, der træner i stuen og skal kunne pakke væk. Fin starter, når vanen skal bygges før en tung “for evigt”-bænk.",
+        pros: [
+          "Lav indgangspris",
+          "Justerbar + foldbar",
+          "God til håndvægte og let/moderat bænkpres",
+          "Nem at gemme væk",
+        ],
+        cons: [
+          "Mindre stabil end tunge midrange-bænke",
+          "Ikke ideel til meget tunge løft",
+          "Opgrader, når du presser seriøst",
+        ],
+        specs: [
+          { label: "Type", value: "Justerbar / foldbar" },
+          { label: "Brand", value: "Odin" },
+          { label: "Segment", value: "Budget" },
+          { label: "Partner", value: "Apuls.dk" },
+        ],
+        feedProductId: "Apuls.dk:15421",
+      },
+      {
+        id: "flad-hjul",
+        name: "Træningsbænk Flad — sammenklappelig med hjul",
+        badge: "Bedste med hjul",
+        summary:
+          "Når flytbarhed er hovedsagen: flad bænk med hjul og sammenklap, så du kan trække den frem til bænkpres og væk igen. Kompromis på justerbare vinkler — gevinst på logistik.",
+        pros: [
+          "Transporthjul — nem at flytte",
+          "Sammenklappelig til små hjem",
+          "Flad bænk til klassisk bænkpres",
+          "Skarp praktisk pris",
+        ],
+        cons: [
+          "Ingen incline/decline",
+          "Flad only — mindre alsidig",
+          "Tjek max belastning til dine løft",
+        ],
+        specs: [
+          { label: "Type", value: "Flad / fold / hjul" },
+          { label: "Feature", value: "Transporthjul" },
+          { label: "Segment", value: "Praktisk / kompakt" },
+          { label: "Partner", value: "Billig-fitness.dk" },
+        ],
+        feedProductId: "Billig-fitness.dk:54955596120450",
+      },
+      {
+        id: "odin-6in1",
+        name: "Odin Multi 6-in-1 Justerbar Træningsbænk / Hyperextension",
+        badge: "Bedste alsidige / decline-agtig",
+        summary:
+          "Når du vil have flere stationer i én bænk — inkl. hyperextension og flere vinkler. Til dig, der vil dække mave/ryg/press uden at købe tre separate bænke. Tjek decline/negative vinkler i specifikationen.",
+        pros: [
+          "6-i-1-alsidighed",
+          "Hyperextension indbygget",
+          "Flere vinkler end simpel flat/incline",
+          "God til variation i hjemmegymmet",
+        ],
+        cons: [
+          "Mere kompleks — flere led at vedligeholde",
+          "Kan føles mindre “ren” end en tung utility bench",
+          "Dyrere end simple justerbare",
+        ],
+        specs: [
+          { label: "Type", value: "6-i-1 multibænk" },
+          { label: "Brand", value: "Odin" },
+          { label: "Segment", value: "Alsidig midrange" },
+          { label: "Partner", value: "Apuls.dk" },
+        ],
+        feedProductId: "Apuls.dk:15814",
+      },
+    ],
+    howToChoose:
+      "Træner du i stuen og skal pakke væk? Odin Multi foldbar eller flad bænk med hjul. Vil du have et solidt justerbart allround-valg? Valhalla. Vil du have max variation (mave/ryg/flere vinkler)? 6-i-1. Prioritér max belastning og stabilitet før ekstra vinkler, du aldrig bruger. Decline er et plus — ikke et krav — for de fleste. Shop via “Se pris”.",
+    learningSections: [
+      {
+        heading: "Hvorfor bænken er fundamentet",
+        paragraphs: [
+          "Uden en stabil bænk bliver bænkpres, skulderpres og mange håndvægtsøvelser værre — teknisk og motivationsmæssigt. Det er ofte det første rigtige “gym-møbel”, der får stuen til at føles som træning.",
+          "Køb bænken før de fleste attachments. Benlås og curlpult er tilbehør; bænken er infrastruktur.",
+        ],
+      },
+      {
+        heading: "Max belastning uden marketing-spin",
+        paragraphs: [
+          "Tal på æsken er statiske ratings. Din kropsvægt + stang + skiver skal lande komfortabelt under max. Har du margin, gynge bænken mindre, og du træner tryggere alene.",
+          "Foldbare letvægtsbænke kan have fine tal på papiret, men smalt fodaftryk — stabilitet i praksis slår speclistal.",
+        ],
+      },
+      {
+        heading: "Har du brug for decline?",
+        paragraphs: [
+          "Decline (negativ hældning) rammer nedre bryst og kan bruges til visse maveøvelser. De fleste begyndere får mere ud af flat + incline. Køb decline, når du savner den — ikke fordi listen over vinkler er længere.",
+          "En 6-i-1 eller dedikeret negativ/mavebænk dækker behovet, hvis du ved, at du bruger det.",
+        ],
+      },
+      {
+        heading: "Hjul, fold og gulv",
+        paragraphs: [
+          "Hjul er guld på trægulv og i små hjem. Fold sparer plads, men tjek låsemekanismer. Brug måtte under bænken for gulv og støj.",
+          "I et dedikeret rum: vælg tung og stabil. I en stue: vælg flytbar — ellers bliver bænken et tørrestativ.",
+        ],
+      },
+      {
+        heading: "Typiske fejl ved køb",
+        paragraphs: [
+          "At købe den billigste foldbare til tung bænkpres. At ignorere bredde ift. rack. At jage decline/6-i-1 før stabil flat/incline. At glemme længde, hvis du er høj.",
+          "Omvendt: at beholde en vaklende bænk i årevis, mens du jagter PR. Opgrader, når udstyret er begrænsningen.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "Hvilken træningsbænk er bedst til hjemmet?",
+        answer:
+          "Til allround justerbar: Odin Valhalla. Til budget/fold: Odin Multi justerbar foldbar. Til flytbarhed: flad bænk med hjul. Til max alsidighed: Odin 6-i-1. Match til belastning og om bænken skal gemmes væk.",
+      },
+      {
+        question: "Hvad betyder max belastning?",
+        answer:
+          "Den samlede vægt bænken er rated til — typisk dig + vægte. Vælg med margin til dine tungeste sæt, og prioritér stabilitet i praksis.",
+      },
+      {
+        question: "Skal min bænk have decline?",
+        answer:
+          "Nej, ikke som begynder. Flat + incline dækker det meste. Decline er relevant, når du specifikt vil have negativ hældning til bryst/mave.",
+      },
+      {
+        question: "Justerbar eller flad bænk?",
+        answer:
+          "Justerbar, hvis du vil have incline og variation. Flad, hvis du primært bænkpresser og vil have max stabilitet/pris — evt. med hjul til flytning.",
+      },
+      {
+        question: "Kan jeg bruge bænken i et rack?",
+        answer:
+          "Ja, hvis bredden passer mellem uprights. Mål rack og bænk før køb — især ved half-racks og Smith-stationer.",
+      },
+      {
+        question: "Hvordan ser jeg aktuelle priser?",
+        answer:
+          "Klik “Se pris” på anbefalingerne, eller filtrér Styrkemaskiner → Træningsbænk for flere tilbud.",
+      },
+    ],
+    relatedSlugs: [
+      "bedste-styrkemaskiner-2026",
+      "bedste-multistation-2026",
+      "bedste-romaskine-2026",
     ],
   },
 ];

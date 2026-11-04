@@ -21,8 +21,8 @@ export function FeaturedGuidesSection({ guides }: Props) {
               Købsguides
             </h2>
             <p className="mt-4 max-w-lg text-muted">
-              Detaljerede guides med anbefalinger og live priser — start med
-              gåbånd og spinning, hvis det er din søgning.
+              Detaljerede guides med anbefalinger og live priser — fra gåbånd og
+              airbike til multistation og træningsbænk.
             </p>
           </div>
           <Link
@@ -49,7 +49,13 @@ export function FeaturedGuidesSection({ guides }: Props) {
                         ? " · Gåbånd"
                         : guide.intentSlug === "spinning"
                           ? " · Spinning"
-                          : ""}
+                          : guide.intentSlug === "airbike"
+                            ? " · Airbike"
+                            : guide.intentSlug === "multistation"
+                              ? " · Multistation"
+                              : guide.intentSlug === "traeningsbaenk"
+                                ? " · Træningsbænk"
+                                : ""}
                     </p>
                     <h3 className="mt-1 font-display text-2xl font-medium uppercase tracking-wide text-foreground transition-colors group-hover:text-accent">
                       {guide.title}

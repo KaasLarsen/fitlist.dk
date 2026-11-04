@@ -82,6 +82,11 @@ export const categories: MachineCategory[] = [
         description: "Indoor bike med tungt svinghjul og intensitet.",
       },
       {
+        slug: "airbike",
+        label: "Airbike",
+        description: "Assault-style bike med vindmodstand til HIIT.",
+      },
+      {
         slug: "stoejsvag",
         label: "Støjsvag",
         description: "Magnetmodstand og rolige aftenspas.",
@@ -151,6 +156,16 @@ export const categories: MachineCategory[] = [
       "Multigym, smith, bænk og cable — opbyg styrke uden center-abonnement.",
     image: "/images/categories/styrkemaskiner.webp",
     intents: [
+      {
+        slug: "multistation",
+        label: "Multistation",
+        description: "Home gym og kabelstationer med vægtstak.",
+      },
+      {
+        slug: "traeningsbaenk",
+        label: "Træningsbænk",
+        description: "Flade og justerbare bænke til styrkerummet.",
+      },
       {
         slug: "plads",
         label: "Kompakt",

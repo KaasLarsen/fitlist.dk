@@ -158,4 +158,68 @@ describe("classifyProduct — real machines kept", () => {
     assert.ok(r!.intentSlugs?.includes("gaabaand"));
     assert.ok(r!.intentSlugs?.includes("foldbar"));
   });
+
+  it("classifies AssaultBike without airbike keyword as motionscykel + airbike", () => {
+    const r = classifyProduct(
+      product({
+        title: "Assault Fitness AssaultBike Pro X",
+        brand: "Assault Fitness",
+        price: 8999,
+      }),
+    );
+    assert.ok(r);
+    assert.equal(r!.categorySlug, "motionscykel");
+    assert.ok(r!.intentSlugs?.includes("airbike"));
+  });
+
+  it("classifies airbike as motionscykel + airbike", () => {
+    const r = classifyProduct(
+      product({
+        title: "Odin A800 Airbike",
+        brand: "Odin",
+        price: 4999,
+      }),
+    );
+    assert.ok(r);
+    assert.equal(r!.categorySlug, "motionscykel");
+    assert.ok(r!.intentSlugs?.includes("airbike"));
+  });
+
+  it("classifies multistation / home gym as styrkemaskiner + multistation", () => {
+    const r = classifyProduct(
+      product({
+        title: "Odin Valhalla Home Gym Multistation 145 kg",
+        brand: "Odin",
+        price: 12999,
+      }),
+    );
+    assert.ok(r);
+    assert.equal(r!.categorySlug, "styrkemaskiner");
+    assert.ok(r!.intentSlugs?.includes("multistation"));
+  });
+
+  it("classifies Multistation-only title as styrkemaskiner", () => {
+    const r = classifyProduct(
+      product({
+        title: "Multistation 100kg vægtstak",
+        price: 7999,
+      }),
+    );
+    assert.ok(r);
+    assert.equal(r!.categorySlug, "styrkemaskiner");
+    assert.ok(r!.intentSlugs?.includes("multistation"));
+  });
+
+  it("classifies justerbar træningsbænk as styrkemaskiner + traeningsbaenk", () => {
+    const r = classifyProduct(
+      product({
+        title: "TITAN LIFE BENCH 500 Justerbar træningsbænk",
+        brand: "Titan Life",
+        price: 1999,
+      }),
+    );
+    assert.ok(r);
+    assert.equal(r!.categorySlug, "styrkemaskiner");
+    assert.ok(r!.intentSlugs?.includes("traeningsbaenk"));
+  });
 });

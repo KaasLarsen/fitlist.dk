@@ -81,6 +81,7 @@ const CATEGORY_RULES: CategoryRule[] = [
       /\bexercise\s*bike\b/,
       /\bair\s*bike\b/,
       /\bairbike\b/,
+      /\bassault(?:\s*)?bike\b/,
       /\bspinbike\b/,
     ],
     exclude: [
@@ -107,9 +108,10 @@ const CATEGORY_RULES: CategoryRule[] = [
     slug: "styrkemaskiner",
     include: [
       /\bmultigym\b/,
+      /\bmultistation\b/,
       /\bhomegym\b/,
       /\bhome\s*gym\b/,
-      /\bsmith(?:\s*maskine|\s*machine)?\b/,
+      /\bsmith(?:\s*maskine|\s*machine|\s*rack)?\b/,
       /\bpower\s*rack\b/,
       /\bsquat\s*rack\b/,
       /\bsquatrack\b/,
@@ -120,6 +122,9 @@ const CATEGORY_RULES: CategoryRule[] = [
       /\btræningsbænk\b/,
       /\bfitness\s*baenk\b/,
       /\bfitness\s*bænk\b/,
+      /\bjusterbar(?:e)?\s*baenk\b/,
+      /\bjusterbaenk\b/,
+      /\bmultibaenk\b/,
       /\bbenpres\b/,
       /\bhack\s*squat\b/,
       /\bpower\s*station\b/,
@@ -177,6 +182,88 @@ const INTENT_RULES: { slug: string; test: (hay: string, price: number | null) =>
         /\bspinning\b/.test(hay) ||
         /\bspinbike\b/.test(hay) ||
         /\bindoor\s*bike\b/.test(hay),
+    },
+    {
+      slug: "airbike",
+      test: (hay) =>
+        /\bairbike\b/.test(hay) ||
+        /\bair\s*bike\b/.test(hay) ||
+        /\bassault(?:\s*)?bike\b/.test(hay),
+    },
+    {
+      slug: "multistation",
+      test: (hay) => {
+        // Undgå tilbehør og rene bænke, der blot nævner "home gym"
+        if (
+          /\bhaandvaegt\b/.test(hay) ||
+          /\bhåndvægt\b/.test(hay) ||
+          /\bdumbbell\b/.test(hay) ||
+          /\bvaegtskive\b/.test(hay) ||
+          /\bvægtskive\b/.test(hay) ||
+          /\bvaegtsaet\b/.test(hay) ||
+          /\bvægtsæt\b/.test(hay) ||
+          /\bdisc\b/.test(hay) ||
+          /\bbumper\b/.test(hay) ||
+          /\bchin\s*up\b/.test(hay) ||
+          /\bpull\s*up\s*bar\b/.test(hay) ||
+          /\bloebebaand\b/.test(hay) ||
+          /\bgaabaand\b/.test(hay) ||
+          ((/\btraeningsbaenk\b/.test(hay) ||
+            /\bweight\s*bench\b/.test(hay) ||
+            /\bjusterbaenk\b/.test(hay)) &&
+            !/\bmultistation\b/.test(hay) &&
+            !/\bmultigym\b/.test(hay) &&
+            !/\bsmith\b/.test(hay) &&
+            !/\bhomegym\b/.test(hay) &&
+            !/\bhome\s*gym\b/.test(hay))
+        ) {
+          return false;
+        }
+        return (
+          /\bmultistation\b/.test(hay) ||
+          /\bmultigym\b/.test(hay) ||
+          /\bhomegym\b/.test(hay) ||
+          /\bhome\s*gym\b/.test(hay) ||
+          /\bsmith(?:\s*maskine|\s*machine|\s*rack)\b/.test(hay) ||
+          /\bvaegtstak\b/.test(hay) ||
+          /\bvægtstak\b/.test(hay) ||
+          /\bcable\s*(?:cross|machine|station)\b/.test(hay) ||
+          /\bpower\s*station\b/.test(hay)
+        );
+      },
+    },
+    {
+      slug: "traeningsbaenk",
+      test: (hay) => {
+        // Tilbehør der nævner bænk i titlen (benlås, curlpult, trækstation til bænk)
+        if (
+          /\bbenlaas\b/.test(hay) ||
+          /\bbenlås\b/.test(hay) ||
+          /\bcurlpult\b/.test(hay) ||
+          /\bvaegophaeng\b/.test(hay) ||
+          /\bvægophæng\b/.test(hay) ||
+          /\btil\s+(?:home|semi\s*pro|multibaenk)/.test(hay) ||
+          /\btraekstation\b/.test(hay) ||
+          /\btrækstation\b/.test(hay) ||
+          /\bbentraener\b/.test(hay) ||
+          /\bbentræner\b/.test(hay)
+        ) {
+          return false;
+        }
+        return (
+          /\btraeningsbaenk\b/.test(hay) ||
+          /\btræningsbænk\b/.test(hay) ||
+          /\bfitness\s*baenk\b/.test(hay) ||
+          /\bfitness\s*bænk\b/.test(hay) ||
+          /\bjusterbar(?:e)?\s*baenk\b/.test(hay) ||
+          /\bjusterbaenk\b/.test(hay) ||
+          /\bmultibaenk\b/.test(hay) ||
+          /\bweight\s*bench\b/.test(hay) ||
+          /\bworkout\s*bench\b/.test(hay) ||
+          /\bmavebaenk\b/.test(hay) ||
+          /\bmavebænk\b/.test(hay)
+        );
+      },
     },
     {
       slug: "begynder",
