@@ -25,9 +25,23 @@ export type GuideProduct = {
   affiliateId?: string;
 };
 
+export type GuideComparisonRow = {
+  /** Første kolonne (rækkelabel), fx app-navn */
+  label: string;
+  cells: string[];
+};
+
+export type GuideComparison = {
+  caption?: string;
+  columns: string[];
+  rows: GuideComparisonRow[];
+};
+
 export type GuideSection = {
   heading: string;
   paragraphs: string[];
+  /** Valgfri sammenligningstabel under afsnittet */
+  comparison?: GuideComparison;
 };
 
 export type GuideFaq = {
@@ -84,6 +98,7 @@ export function getProductAffiliate(product: GuideProduct) {
 
 /** Featured homepage-rækkefølge (intent-guides + kernemaskiner). */
 const FEATURED_GUIDE_SLUGS = [
+  "bedste-smartcykel-2026",
   "bedste-gaabaand-2026",
   "bedste-airbike-2026",
   "bedste-multistation-2026",
@@ -109,7 +124,7 @@ export function getGuideByCategoryAndIntent(
 
 /**
  * Kategori-guides (5 maskintyper) + intent-guides
- * (gåbånd, spinning, airbike, multistation, træningsbænk).
+ * (gåbånd, spinning, smart/Zwift, airbike, multistation, træningsbænk).
  * Anbefalinger kobles til Partner-Ads via feedProductId (live pris + CTA).
  */
 export const guides: Guide[] = [
@@ -1052,6 +1067,11 @@ export const guides: Guide[] = [
           "Kondicykel er typisk mere komfortabel og støjsvag til længere pas. Spinning har tungere svinghjul og mere aggressiv position til intervaller og hold-agtig træning. Går du specifikt efter spinning, læs Bedste spinningcykel 2026.",
       },
       {
+        question: "Hvad med smartcykel / Zwift?",
+        answer:
+          "Vil du have Bluetooth, app-styret modstand og Zwift/Kinomap, er det en anden købsbeslutning end en klassisk kondicykel. Se Bedste smartcykler 2026 og Bedste cykel til Zwift 2026.",
+      },
+      {
         question: "Hvad med airbike / Assault Bike?",
         answer:
           "Airbike er vindmodstand og HIIT — arme + ben, høj intensitet, mere støj. Det er ikke en erstatning for en stille kondicykel. Se Bedste Airbike 2026 for anbefalinger og støj-forventninger.",
@@ -1078,6 +1098,8 @@ export const guides: Guide[] = [
       },
     ],
     relatedSlugs: [
+      "bedste-smartcykel-2026",
+      "bedste-cykel-til-zwift-2026",
       "bedste-airbike-2026",
       "bedste-spinningcykel-2026",
       "bedste-crosstrainer-2026",
@@ -1247,6 +1269,7 @@ export const guides: Guide[] = [
         paragraphs: [
           "En spin bike efterligner holdcykling: tungt svinghjul, frempunkts-lignende position, mulighed for at rejse dig i pedalerne. Det er træningsværktøj — ikke en “komfortsofa på hjul”.",
           "Forvent hårdere saddel og mere intens sved end på en oprejst kondicykel. Det er meningen. Det er også grunden til, at mange køber forkert type første gang.",
+          "Vil du koble spinning til Zwift, Kinomap eller andre apps (Bluetooth/modstand), så læs Bedste smartcykler 2026 — det er en anden indkøbsliste end “bare” S-serien.",
         ],
       },
       {
@@ -1290,6 +1313,11 @@ export const guides: Guide[] = [
           "Ja, hvis du starter roligt, justerer pasform og accepterer sadlen. Er dit mål rolige gåture på cykel uden sved, er kondicykel ofte bedre første køb.",
       },
       {
+        question: "Skal min spinningcykel kunne Zwift?",
+        answer:
+          "Kun hvis du faktisk vil bruge Zwift eller lignende. Ellers betaler du for elektronik, du ikke åbner. Vil du have app-styring, se Bedste cykel til Zwift 2026.",
+      },
+      {
         question: "Hvor tungt skal svinghjulet være?",
         answer:
           "Tungere er ofte mere jævnt, men tal alene sælger. Kør efter stabilitet, justering og din træningsstil — ikke kun kg i marketing.",
@@ -1316,9 +1344,494 @@ export const guides: Guide[] = [
       },
     ],
     relatedSlugs: [
+      "bedste-smartcykel-2026",
+      "bedste-cykel-til-zwift-2026",
       "bedste-motionscykel-2026",
       "bedste-crosstrainer-2026",
       "bedste-loebebaand-2026",
+    ],
+  },
+  {
+    slug: "bedste-smartcykel-2026",
+    title: "Bedste smartcykler & interaktive motionscykler 2026",
+    excerpt:
+      "Smart bike med Bluetooth, watt og app-styring: Zwift, Peloton-typen og budget-smart — plus fire modeller med live priser.",
+    metaDescription:
+      "Find den bedste smartcykel til hjemmet i 2026. Guide til Bluetooth, watt, Zwift og apps — plus fire anbefalede interaktive motionscykler med live priser.",
+    categorySlug: "motionscykel",
+    intentSlug: "smart",
+    publishedAt: "2026-11-04",
+    updatedAt: "2026-11-04",
+    intro:
+      "En smart motionscykel har indbygget Bluetooth (ofte også ANT+) og elektronik, der kan tale med en app. Magien er simpel: når du kører op ad en virtuel bakke i Zwift eller Kinomap, kan cyklen justere modstanden — og sende dine watt-tal tilbage, så træningen føles og måles som rigtig cykling. Denne guide forklarer, hvad “smart” egentlig betyder, de tre brugertyper (Peloton-typen, Zwift-nørden og budget-smart), hvad du skal kigge efter, og fire konkrete modeller du kan købe via vores danske partnere lige nu.",
+    criteria: [
+      {
+        title: "Indbygget skærm vs. tablet-holder",
+        description:
+          "Stor skærm (Peloton-stilen) er plug-and-play med instruktører og hold — men låser dig ofte til ét abonnement. Tablet-holder + din egen iPad giver frihed til Zwift, Rouvy, Kinomap og YouTube. Vælg skærm, hvis motivation er hold og musik. Vælg holder, hvis du vil skifte app uden at skifte cykel.",
+      },
+      {
+        title: "Watt-præcision og Bluetooth/ANT+",
+        description:
+          "Til Zwift-løb og struktureret træning betyder watt noget. Tjek, om cyklen sender power og kadence stabilt over Bluetooth FTMS (og evt. ANT+). “Bluetooth til app” er ikke det samme som præcis watt — læs specifikationerne, og vælg modeller der eksplicit nævner Zwift/Kinomap, hvis det er dit mål.",
+      },
+      {
+        title: "Modstand: svinghjul vs. elektromagnetisk",
+        description:
+          "Mange budget-smart spin bikes har tungt svinghjul + magnet, hvor appen eller computeren styrer niveauet. Dedikerede racercykler (Wahoo KICKR BIKE, Tacx NEO Bike) bruger motor-/elektromagnetisk modstand med finere bakkefølelse. Til hjemmet er en god Zwift-kompatibel spin bike ofte nok — medmindre du jagter landevejs-realisme.",
+      },
+      {
+        title: "Geometri og justering",
+        description:
+          "Kan sadlen og styret indstilles, så flere i husstanden kan dele cyklen? Reach, saddelhøjde og (på premium) krankarmslængde afgør, om den føles som “din” cykel eller et kompromis. Prøv pasform, eller mål grundigt og brug returret.",
+      },
+      {
+        title: "Fysisk feedback (tilt)",
+        description:
+          "Nogle high-end cykler tipper fysisk op/ned med landskabet. Det er nice-to-have — ikke must-have. Start med stabil Bluetooth, tablet-holder og ærlig watt, før du betaler ekstra for tilt.",
+      },
+      {
+        title: "App-økosystem og abonnement",
+        description:
+          "Regn abonnement med i prisen: Zwift ca. 150 kr./md., Peloton ofte omkring det dobbelte, Rouvy lidt lavere. En “billig” cykel + dyrt abonnement kan koste mere over to år end en dyrere cykel uden lock-in.",
+      },
+      {
+        title: "Støj, plads og lejlighed",
+        description:
+          "Smart ændrer ikke fysikken: stående sprint + svinghjul vibrerer. Brug måtte, og vær ærlig om naboer. Kondicykel med Bluetooth kan være støjsvagere end spin til zone-2 med podcast.",
+      },
+    ],
+    products: [
+      {
+        id: "odin-s1000-zwift",
+        name: "Odin S1000 Spinningcykel (Kinomap & Zwift)",
+        badge: "Bedst samlet",
+        summary:
+          "Den stærkeste allround smart spin bike i vores test blandt modeller med live partnerpris: eksplicit Zwift- og Kinomap-kompatibilitet, seriøs svinghjul-følelse og tablet-frihed uden Peloton-lock-in.",
+        pros: [
+          "Zwift- og Kinomap-klar",
+          "Spinning-geometri til intervaller",
+          "Frihed til at skifte app",
+          "God balance mellem pris og “smart”-features",
+        ],
+        cons: [
+          "Ikke samme bakke-realisme som Wahoo/Tacx-racercykler",
+          "Kræver egen tablet/skærm og typisk app-abonnement",
+        ],
+        specs: [
+          { label: "Type", value: "Smart spinningcykel" },
+          { label: "Apps", value: "Zwift, Kinomap" },
+          { label: "Skærm", value: "Brug egen tablet" },
+        ],
+        feedProductId: "Apuls.dk:15043",
+      },
+      {
+        id: "reebok-i-bike-zwift",
+        name: "Reebok i-Bike Spinningcykel (Zwift & Kinomap)",
+        badge: "Bedste budget-smart",
+        summary:
+          "Interaktiv træning uden 20.000+ kr. Reebok i-Bike er indgangen til Zwift/Kinomap-kompatibel spinning — ideel, hvis du vil teste “smart” før du opgraderer.",
+        pros: [
+          "Laveste entry blandt vores Zwift-anbefalinger",
+          "Zwift- og Kinomap-kompatibel",
+          "Kendt mærke til hjemmetræning",
+        ],
+        cons: [
+          "Mindre “pro” følelse end S1000 / BH Xcalibur",
+          "Watt og finish matcher ikke premium-racercykler",
+        ],
+        specs: [
+          { label: "Type", value: "Budget smart spin bike" },
+          { label: "Apps", value: "Zwift, Kinomap" },
+          { label: "Skærm", value: "Brug egen tablet" },
+        ],
+        feedProductId: "Apuls.dk:15655",
+      },
+      {
+        id: "odin-s900-zwift",
+        name: "Odin S900 Spinningcykel (Kinomap & Zwift)",
+        badge: "Bedst allround spin+app",
+        summary:
+          "Lillebror til S1000 med samme app-vinkel. Stærkt valg, hvis du vil have Zwift-kompatibilitet og solid spinning uden at gå helt til toppen af Odin-linjen.",
+        pros: [
+          "Zwift- og Kinomap-klar",
+          "Ofte lidt billigere end S1000",
+          "God til hold-agtige pas + app",
+        ],
+        cons: [
+          "S1000 er det stærkere “all-in”-valg i samme familie",
+          "Stadig vibration i lejlighed ved stående arbejde",
+        ],
+        specs: [
+          { label: "Type", value: "Smart spinningcykel" },
+          { label: "Apps", value: "Zwift, Kinomap" },
+          { label: "Skærm", value: "Brug egen tablet" },
+        ],
+        feedProductId: "Apuls.dk:15029",
+      },
+      {
+        id: "bh-xcalibur-smart",
+        name: "BH Fitness Xcalibur Smart Bike",
+        badge: "Bedste premium i feed",
+        summary:
+          "Når du vil have magnetisk modstand, Bluetooth til Zwift/Kinomap/Exercycle og en mere “smart bike”-profil end en ren budget-spin. Dyreste anbefaling her — men stadig købbar via partner.",
+        pros: [
+          "Eksplicit smart bike med Bluetooth",
+          "Zwift, Kinomap og Exercycle Connect",
+          "Magnetisk modstand til støjsvagere træning",
+        ],
+        cons: [
+          "Markant dyrere end Odin/Reebok",
+          "Ikke Peloton-skærm / ikke Wahoo-tilt",
+        ],
+        specs: [
+          { label: "Type", value: "Smart indoor bike" },
+          { label: "Modstand", value: "Magnetisk" },
+          { label: "Apps", value: "Zwift, Kinomap, Exercycle" },
+        ],
+        feedProductId: "Fitnessengros.dk:BHH9340S",
+      },
+    ],
+    howToChoose:
+      "Vil du have interaktiv træning uden at låse dig til ét studium? Start med Odin S1000 (eller S900, hvis budgettet er strammere). Ren pris først? Reebok i-Bike. Vil du op i mere “smart bike”-premium med magnet/Bluetooth? BH Xcalibur. Jagter du Peloton-hold eller Wahoo/Tacx-landeveisrealisme, så læs afsnittene om brugertyper — de modeller er referencepunkter, men vores shop-links er på det, vi faktisk kan spore via partnere. Til Zwift i dybden: se Bedste cykel til Zwift 2026.",
+    learningSections: [
+      {
+        heading: "Hvad gør en cykel “smart”?",
+        paragraphs: [
+          "Definitionen: En smart motionscykel har trådløs forbindelse (Bluetooth og/eller ANT+) og kan synkronisere træningsdata — typisk watt, kadence og puls — med en app. På de bedre modeller kan appen også styre modstanden, så en virtuel bakke faktisk føles som en bakke.",
+          "Det er forskellen på “cykel med display” og “cykel der spiller med i Zwift”. En computer der kun viser tid og kalorier er ikke smart i den forstand, denne guide handler om.",
+        ],
+      },
+      {
+        heading: "De 3 hovedkategorier af smart bikes",
+        paragraphs: [
+          "A. Peloton-typen (alt-i-én med stor skærm): Til dig, der vil have instruktører, musik, hold og plug-and-play i stuen. Reference: Peloton Bike / Bike+, Technogym Bike, Bowflex VeloCore. Du betaler for oplevelsen — og ofte et abonnement, der er bundet til skærmen.",
+          "B. Zwift-nørden (dedikerede indendørs racercykler): Til cykelryttere og triatleter, der vil have landevejsfølelse uden at spænde landvejs-cyklen på en hometrainer hver dag. Reference: Wahoo KICKR BIKE, Tacx NEO Bike Plus, Wattbike Atom. Her er geometri, watt og (på toppen) tilt i fokus.",
+          "C. Budget-smart (egen tablet/iPad): Til dig, der vil have det interaktive uden 20.000+ kr. Du køber en cykel uden stor skærm, sætter en tablet i holderen og forbinder via Bluetooth. Reference i markedet: Schwinn IC8, Keiser M3i — og i vores danske partnerfeeds modeller som Odin S900/S1000 og Reebok i-Bike, der eksplicit nævner Zwift og Kinomap.",
+        ],
+      },
+      {
+        heading: "Bedste cykel til Zwift",
+        paragraphs: [
+          "Til Zwift er tablet-holder + stabil Bluetooth (gerne FTMS) + ærlig watt vigtigere end en indbygget underholdningsskærm. Du vil typisk undgå lukkede økosystemer, hvor modstand og indhold er låst.",
+          "Blandt modellerne med live pris hos vores partnere er Odin S1000 vores primære anbefaling til Zwift, med Reebok i-Bike som budgetvalg og BH Xcalibur som premium-smart. Går du i dybden på watt, kompatibilitet og race-setup, så læs vores dedikerede guide Bedste cykel til Zwift 2026.",
+        ],
+      },
+      {
+        heading: "Zwift-alternativ til hjemmet",
+        paragraphs: [
+          "Zwift er gaming og communities. Vil du hellere køre på video af Alpe d’Huez og Mallorca, er Rouvy det realistiske alternativ. Vil du have hold, coaches og høj musik, er Peloton (eller lignende studio-apps) svaret — ofte med egen cykel/skærm. Kinomap sidder midt imellem og er populært på mange europæiske hjemmecykler.",
+          "Du behøver ikke vælge app før cykel, hvis cyklen er “åben” (Bluetooth + tablet). Vælg cykel der kan følge med flere apps, så du kan skifte, når motivationen skifter.",
+        ],
+      },
+      {
+        heading: "App-overblik: Zwift, Peloton, Rouvy og Technogym Live",
+        paragraphs: [
+          "Du kan ikke snakke smartcykler uden softwaren. Her er et direkte overblik over de platforme, folk oftest sammenligner — priser er estimater og kan ændre sig.",
+        ],
+        comparison: {
+          caption: "Estimerede månedspriser — tjek altid aktuelt abonnement",
+          columns: [
+            "Primære fokus",
+            "Atmosfære",
+            "Månedlig pris (est.)",
+            "Bedste cykel-match",
+          ],
+          rows: [
+            {
+              label: "Zwift",
+              cells: [
+                "Gaming & e-sport",
+                "Virtuel 3D-verden (avatars, løb, clubs)",
+                "~150 kr.",
+                "Odin, Reebok, BH — ref: Wahoo/Tacx",
+              ],
+            },
+            {
+              label: "Peloton",
+              cells: [
+                "Motivation & hold",
+                "Live/on-demand studio med coaches og musik",
+                "~300 kr.",
+                "Peloton Bike / Bike+",
+              ],
+            },
+            {
+              label: "Rouvy",
+              cells: [
+                "Realistiske ruter",
+                "AR/video af rigtige veje (Alpe d’Huez, Mallorca…)",
+                "~120 kr.",
+                "Åbne smart bikes (Wahoo, Tacx, Wattbike…)",
+              ],
+            },
+            {
+              label: "Technogym Live",
+              cells: [
+                "Premium wellness",
+                "Luksus-indhold, guidede sessions, underholdning",
+                "Varierer",
+                "Technogym Bike",
+              ],
+            },
+          ],
+        },
+      },
+      {
+        heading: "Smartcykel vs. almindelig spinningcykel",
+        paragraphs: [
+          "En klassisk spinningcykel kan være fantastisk til HIIT uden nogensinde at se Zwift. Smart tilføjer forbindelsen: data ud, modstand ind. Hvis du aldrig åbner en træningsapp, betaler du for elektronik, du ikke bruger — køb i stedet en solid spin bike (se Bedste spinningcykel 2026).",
+          "Omvendt: hvis motivationen er verdener, løb og bakker på skærmen, er en “dum” cykel uden Bluetooth frustrerende. Køb smart nok til appen — ikke mere.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "Hvad er en smartcykel?",
+        answer:
+          "En motions-/spinningcykel med trådløs forbindelse (typisk Bluetooth), der kan sende watt/kadence til en app — og gerne lade appen styre modstanden, så virtuelle bakker føles ægte.",
+      },
+      {
+        question: "Bluetooth eller ANT+ — hvad skal jeg vælge?",
+        answer:
+          "Bluetooth dækker de fleste telefoner/tablets og Zwift på TV/Apple TV-setups. ANT+ er populært blandt cykelcomputere og ældre sensornicher. Mange premium-enheder har begge. Til tablet + Zwift er stabil Bluetooth FTMS det vigtigste.",
+      },
+      {
+        question: "Kan jeg bruge min egen iPad?",
+        answer:
+          "Ja — det er hele pointen med budget-smart og de fleste Zwift-cykler. Tjek at cyklen har en ordentlig holder, og at appen understøtter din cykel/protokol.",
+      },
+      {
+        question: "Er Peloton noget uden abonnement?",
+        answer:
+          "Du kan typisk træne manuelt, men mister det, du købte cyklen for: hold, coaches og bibliotek. Regn abonnement med, hvis du overvejer Peloton-typen.",
+      },
+      {
+        question: "Hvornår er hometrainer + rigtig cykel bedre?",
+        answer:
+          "Hvis du allerede har en race-/landevejscykel og vil have den mest realistiske watt og pasform, er en god smart hometrainer (fx Wahoo/Tacx-økosystemet) ofte klogere end en dedikeret indoor racer — især hvis du også cykler udenfor. Dedikeret smart bike vinder på bekvemmelighed: ingen daglig montering.",
+      },
+      {
+        question: "Hvilken smartcykel er bedst til hjemmet lige nu?",
+        answer:
+          "Blandt modeller med live partnerpris: Odin S1000 som allround, Reebok i-Bike som budget, BH Xcalibur som premium-smart. Peloton/Wahoo/Tacx er vigtige referencepunkter i markedet, men shop-CTA’erne her følger det, vi kan spore via Partner-Ads.",
+      },
+      {
+        question: "Hvordan ser jeg flere smart-/Zwift-tilbud?",
+        answer:
+          "Klik “Se pris” på anbefalingerne, eller gå til Motionscykel og filtrér på Smart / Zwift. Priser opdateres via partnerfeeds.",
+      },
+    ],
+    relatedSlugs: [
+      "bedste-cykel-til-zwift-2026",
+      "bedste-spinningcykel-2026",
+      "bedste-motionscykel-2026",
+      "bedste-airbike-2026",
+    ],
+  },
+  {
+    slug: "bedste-cykel-til-zwift-2026",
+    title: "Bedste cykel til Zwift 2026",
+    excerpt:
+      "Zwift hjemme uden hometrainer-ballade: Bluetooth, watt og fire Zwift-kompatible cykler med aktuelle priser.",
+    metaDescription:
+      "Find den bedste cykel til Zwift i 2026. Guide til Bluetooth, watt og tablet-setup — plus fire Zwift-kompatible motionscykler med live priser fra danske partnere.",
+    categorySlug: "motionscykel",
+    publishedAt: "2026-11-04",
+    updatedAt: "2026-11-04",
+    intro:
+      "“Bedste cykel til Zwift” er en af de søgninger, der afgør, om du ender med en frustrerende spin bike uden signal — eller en cykel der faktisk spiller med i Watopia. Du behøver ikke en Wahoo KICKR BIKE til at komme i gang, men du skal have Bluetooth (gerne FTMS), en ordentlig tablet-holder og en model, der eksplicit lover Zwift-kompatibilitet. Her får du kriterierne, fire konkrete cykler med shop-links, og hvornår du i stedet skal kigge på hometrainer + din egen racercykel.",
+    criteria: [
+      {
+        title: "Eksplicit Zwift-kompatibilitet",
+        description:
+          "Prioritér cykler, der nævner Zwift (og gerne Kinomap) i produktteksten. “Har Bluetooth” er et svagt signal — det kan være til en ejer-app uden power til Zwift.",
+      },
+      {
+        title: "Watt og kadence til races",
+        description:
+          "I Zwift-løb er stabile watt vigtigere end blinkende displays. Tjek power-angivelser, og vær skeptisk over for urealistisk lave priser med “pro watt”. Til seriøs racing er dedikerede smart trainers/racercykler (Wahoo, Tacx, Wattbike) reference — vores anbefalinger her er det bedste, vi kan pege på via danske partnerfeeds.",
+      },
+      {
+        title: "Tablet-holder og skærm-setup",
+        description:
+          "Zwift kører bedst på iPad, TV via Apple TV/gaming-PC, eller stor skærm. Cyklen skal have en stabil holder, så du ikke stirrer ned i en telefon mellem styret. Planlæg kabler/strøm, før cyklen står midt i stuen.",
+      },
+      {
+        title: "Modstand der kan følge bakker",
+        description:
+          "Jo tættere cyklen er på app-styret/elektronisk modstand, jo bedre bakkefølelse. Mange spin bikes kombinerer svinghjul med styret magnetniveau. Det er godt nok til de fleste — ikke identisk med NEO/KICKR.",
+      },
+      {
+        title: "Pasform til lange Zwift-pas",
+        description:
+          "Zwift-ture kan vare 45–90 minutter. Saddel, reach og mulighed for at rejse dig i bakker betyder mere end RGB-lys på computeren. Budgetér evt. til bedre saddel.",
+      },
+      {
+        title: "Støj når du “sprinter” i spillet",
+        description:
+          "Zwift frister til stående accelerations. Det er dér, lejligheden klager. Måtte, tidspunkt og realistiske forventninger — samme regler som spinning.",
+      },
+    ],
+    products: [
+      {
+        id: "zwift-odin-s1000",
+        name: "Odin S1000 Spinningcykel (Kinomap & Zwift)",
+        badge: "Bedst til Zwift",
+        summary:
+          "Vores førstevalg blandt Zwift-kompatible cykler med live pris: tydelig Zwift/Kinomap-vinkel og nok cykel til både zone-2 og intervaller i spillet.",
+        pros: [
+          "Zwift nævnt eksplicit",
+          "Solid spinning-base til bakker og sprint",
+          "Frihed til egen skærm/tablet",
+        ],
+        cons: [
+          "Ikke KICKR/NEO-niveau af bakke-simulation",
+          "Kræver Zwift-abonnement + egen enhed",
+        ],
+        specs: [
+          { label: "Type", value: "Zwift-kompatibel spin bike" },
+          { label: "Apps", value: "Zwift, Kinomap" },
+          { label: "Setup", value: "Tablet / ekstern skærm" },
+        ],
+        feedProductId: "Apuls.dk:15043",
+      },
+      {
+        id: "zwift-reebok-i-bike",
+        name: "Reebok i-Bike Spinningcykel (Zwift & Kinomap)",
+        badge: "Bedste billige Zwift-cykel",
+        summary:
+          "Vil du ind i Zwift uden at brænde budgettet af på en racercykel? i-Bike er det skarpeste billige udgangspunkt i vores feed.",
+        pros: [
+          "Lav entry-pris til Zwift-kompatibilitet",
+          "Kinomap med i samme pakke",
+          "Fin til at teste, om Zwift er dig",
+        ],
+        cons: [
+          "Opgrader, hvis du kører mange races om ugen",
+          "Mindre premium finish end Odin S1000 / BH",
+        ],
+        specs: [
+          { label: "Type", value: "Budget Zwift spin bike" },
+          { label: "Apps", value: "Zwift, Kinomap" },
+          { label: "Setup", value: "Tablet / ekstern skærm" },
+        ],
+        feedProductId: "Apuls.dk:15655",
+      },
+      {
+        id: "zwift-odin-s900",
+        name: "Odin S900 Spinningcykel (Kinomap & Zwift)",
+        badge: "Bedste mellemklasse",
+        summary:
+          "Når S1000 er lige i overkanten, men du stadig vil have Odin-familiens Zwift/Kinomap-fokus. Stærkt midtervalg til jævnlig brug.",
+        pros: [
+          "Zwift- og Kinomap-klar",
+          "Ofte skarpere pris end S1000",
+          "God til 3–5 pas om ugen",
+        ],
+        cons: [
+          "S1000 er det stærkere “Zwift first”-valg",
+          "Stadig spin-vibration i lejlighed",
+        ],
+        specs: [
+          { label: "Type", value: "Zwift-kompatibel spin bike" },
+          { label: "Apps", value: "Zwift, Kinomap" },
+          { label: "Setup", value: "Tablet / ekstern skærm" },
+        ],
+        feedProductId: "Apuls.dk:15029",
+      },
+      {
+        id: "zwift-bh-xcalibur",
+        name: "BH Fitness Xcalibur Smart Bike",
+        badge: "Bedste premium Zwift-bike i feed",
+        summary:
+          "Smart bike med magnetisk modstand og Bluetooth til Zwift, Kinomap og Exercycle Connect — når du vil op i en mere “connected” maskine end budget-spin.",
+        pros: [
+          "Bluetooth til Zwift/Kinomap",
+          "Magnetisk modstand",
+          "Tydelig smart bike-positionering",
+        ],
+        cons: [
+          "Dyrere end Odin/Reebok",
+          "Stadig ikke Wahoo KICKR BIKE / Tacx NEO Bike",
+        ],
+        specs: [
+          { label: "Type", value: "Smart indoor bike" },
+          { label: "Modstand", value: "Magnetisk" },
+          { label: "Apps", value: "Zwift, Kinomap, Exercycle" },
+        ],
+        feedProductId: "Fitnessengros.dk:BHH9340S",
+      },
+    ],
+    howToChoose:
+      "Zwift først? Odin S1000. Budget først? Reebok i-Bike. Mellemklasse? Odin S900. Premium i det, vi kan linke til? BH Xcalibur. Kører du allerede race udenfor og vil have maksimal watt-realisme, så overvej smart hometrainer til din egen cykel — eller en dedikeret Wahoo/Tacx-bike, når den lander hos en partner. For hele smart-landskabet (Peloton-typen, apps, købsparametre): Bedste smartcykler 2026.",
+    learningSections: [
+      {
+        heading: "Hvad kræver Zwift af din cykel?",
+        paragraphs: [
+          "Zwift skal kunne læse din kadence og dine watt (eller estimere power) og helst styre modstanden, når vejen stiger. Det kræver en kompatibel trainer/cykel — ikke bare en YouTube-video på en tablet over styret.",
+          "Derfor er “Zwift” i produkttitlen et stærkere købssignal end generisk “fitness-app”.",
+        ],
+      },
+      {
+        heading: "Zwift-alternativ til hjemmet",
+        paragraphs: [
+          "Hvis 3D-verdenen ikke er dig: Rouvy til video-realisme, Kinomap til ruter/apps på mange EU-cykler, eller studio-apps (Peloton m.fl.) til hold. En åben Bluetooth-cykel lader dig skifte platform uden at skifte maskine.",
+          "Se også app-tabellen i Bedste smartcykler & interaktive motionscykler 2026.",
+        ],
+      },
+      {
+        heading: "Smart hometrainer vs. dedikeret Zwift-cykel",
+        paragraphs: [
+          "Hometrainer + din racercykel: bedste pasform og ofte bedste watt, hvis du allerede ejer cyklen. Dedikeret indoor bike: hurtigere “sæt dig og kør”, ingen sved på karbonrammen, flere kan dele maskinen.",
+          "Vælg hometrainer, hvis landevej er din identitet. Vælg dedikeret cykel, hvis Zwift er vanen, og bekvemmelighed vinder.",
+        ],
+      },
+      {
+        heading: "Typiske Zwift-fejl før køb",
+        paragraphs: [
+          "At købe en billig spin bike uden Bluetooth og tro, at en telefon-holder gør den “smart”. At glemme abonnement og tablet i budgettet. At ignorere støj, når du rejser dig i et race.",
+          "Omvendt: at vente på den ultimative Wahoo/Tacx-cykel i årevis, mens en Odin/Reebok kunne have bygget vanen i morgen.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "Hvilken cykel er bedst til Zwift?",
+        answer:
+          "Blandt vores partnerudvalg: Odin S1000. Til budget: Reebok i-Bike. Til premium-smart i feed: BH Xcalibur. Dedikerede racercykler fra Wahoo/Tacx er markedsreferencer til maksimal realisme.",
+      },
+      {
+        question: "Kan jeg køre Zwift på en almindelig spinningcykel?",
+        answer:
+          "Kun hvis den kan sende de rigtige data (og helst modstand) til Zwift. Ellers er det bare spinning med Zwift på en skærm ved siden af — uden bakke-styring.",
+      },
+      {
+        question: "Skal jeg bruge computer, iPad eller Apple TV?",
+        answer:
+          "Alle tre kan virke. iPad er populært på holderen. Gaming-PC/Mac giver ofte den glatteste grafik. Apple TV er praktisk til storskærm. Tjek Zwifts aktuelle enhedskrav.",
+      },
+      {
+        question: "Hvad koster Zwift oveni cyklen?",
+        answer:
+          "Regn ca. 150 kr. om måneden for Zwift (est.), plus evt. tablet, hvis du ikke har en. Det er en del af den reelle pris for “smart”.",
+      },
+      {
+        question: "Er der et godt Zwift-alternativ?",
+        answer:
+          "Rouvy til realistiske video-ruter, Kinomap på mange hjemmecykler, studio-apps til hold. Vælg efter atmosfære — ikke kun efter, hvad vennerne kører.",
+      },
+      {
+        question: "Hvordan køber jeg via Fitlist?",
+        answer:
+          "Klik “Se pris” på en anbefaling, eller filtrér Motionscykel → Smart / Zwift. Du handler hos partneren; Fitlist kan få provision uden merpris for dig.",
+      },
+    ],
+    relatedSlugs: [
+      "bedste-smartcykel-2026",
+      "bedste-spinningcykel-2026",
+      "bedste-motionscykel-2026",
+      "bedste-airbike-2026",
     ],
   },
   {
@@ -2035,6 +2548,7 @@ export const guides: Guide[] = [
       },
     ],
     relatedSlugs: [
+      "bedste-smartcykel-2026",
       "bedste-motionscykel-2026",
       "bedste-spinningcykel-2026",
       "bedste-romaskine-2026",

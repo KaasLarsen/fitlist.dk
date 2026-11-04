@@ -362,6 +362,56 @@ export async function GuideArticle({ guide }: { guide: Guide }) {
                 </p>
               ))}
             </div>
+            {section.comparison ? (
+              <div className="mt-6 -mx-5 overflow-x-auto px-5 sm:mx-0 sm:px-0">
+                {section.comparison.caption ? (
+                  <p className="mb-3 font-display text-xs uppercase tracking-[0.14em] text-muted">
+                    {section.comparison.caption}
+                  </p>
+                ) : null}
+                <table className="w-full min-w-[36rem] border-collapse text-left text-sm">
+                  <thead>
+                    <tr className="border-b border-border">
+                      <th
+                        scope="col"
+                        className="py-3 pr-4 font-display text-xs font-medium uppercase tracking-[0.14em] text-muted"
+                      >
+                        App / platform
+                      </th>
+                      {section.comparison.columns.map((col) => (
+                        <th
+                          key={col}
+                          scope="col"
+                          className="py-3 pr-4 font-display text-xs font-medium uppercase tracking-[0.14em] text-muted last:pr-0"
+                        >
+                          {col}
+                        </th>
+                      ))}
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {section.comparison.rows.map((row) => (
+                      <tr key={row.label} className="border-b border-border/70">
+                        <th
+                          scope="row"
+                          className="py-3 pr-4 align-top font-display text-sm font-medium uppercase tracking-wide text-foreground"
+                        >
+                          {row.label}
+                        </th>
+                        {row.cells.map((cell, i) => (
+                          <td
+                            key={`${row.label}-${i}`}
+                            className="py-3 pr-4 align-top text-muted last:pr-0"
+                          >
+                            {cell}
+                          </td>
+                        ))}
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            ) : null}
           </section>
         ))}
 

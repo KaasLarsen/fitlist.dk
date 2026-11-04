@@ -45,6 +45,8 @@ Mangler produktet i feedet, falder UI tilbage til kategorisiden `/maskiner/[slug
 ### Aktuelle guides
 
 - `/guides/bedste-gaabaand-2026` (intent: walking pad / gåbånd)
+- `/guides/bedste-smartcykel-2026` (intent: smart / Zwift)
+- `/guides/bedste-cykel-til-zwift-2026`
 - `/guides/bedste-spinningcykel-2026` (intent: spinning)
 - `/guides/bedste-airbike-2026` (intent: airbike)
 - `/guides/bedste-loebebaand-2026`

@@ -146,6 +146,47 @@ describe("classifyProduct — real machines kept", () => {
     assert.ok(r!.intentSlugs?.includes("spinning"));
   });
 
+  it("classifies Zwift/Kinomap spinningcykel as motionscykel + smart", () => {
+    const r = classifyProduct(
+      product({
+        title: "Odin S1000 Spinningcykel - Kinomap & Zwift Bike",
+        brand: "Odin",
+        price: 6999,
+      }),
+    );
+    assert.ok(r);
+    assert.equal(r!.categorySlug, "motionscykel");
+    assert.ok(r!.intentSlugs?.includes("smart"));
+  });
+
+  it("classifies Bluetooth motionscykel as smart", () => {
+    const r = classifyProduct(
+      product({
+        title: "Odin B800 Bluetooth Motionscykel",
+        brand: "Odin",
+        price: 4999,
+      }),
+    );
+    assert.ok(r);
+    assert.equal(r!.categorySlug, "motionscykel");
+    assert.ok(r!.intentSlugs?.includes("smart"));
+  });
+
+  it("does not tag pulse belt as smart even with Bluetooth", () => {
+    const r = classifyProduct(
+      product({
+        title: "VirtuFit Universelt Bluetooth Pulsmålerbælte",
+        brand: "VirtuFit",
+        category: "Spinningcykel",
+        price: 360,
+      }),
+    );
+    // Category may match via feed category text; smart intent must stay off
+    if (r) {
+      assert.ok(!r.intentSlugs?.includes("smart"));
+    }
+  });
+
   it("classifies walking pad as loebebaand + gaabaand", () => {
     const r = classifyProduct(
       product({

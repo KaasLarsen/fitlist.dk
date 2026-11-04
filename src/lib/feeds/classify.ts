@@ -184,6 +184,32 @@ const INTENT_RULES: { slug: string; test: (hay: string, price: number | null) =>
         /\bindoor\s*bike\b/.test(hay),
     },
     {
+      slug: "smart",
+      test: (hay) => {
+        // Undgå pulsbælter og andet tilbehør, der kun nævner Bluetooth
+        if (
+          /\bpulsm[aå]ler/.test(hay) ||
+          /\bheart\s*rate\s*(?:belt|monitor|strap)\b/.test(hay) ||
+          (/\bbælte\b/.test(hay) && !/\b(cykel|bike|spinning)/.test(hay))
+        ) {
+          return false;
+        }
+        return (
+          /\bzwift\b/.test(hay) ||
+          /\bkinomap\b/.test(hay) ||
+          /\bsmart\s*bike\b/.test(hay) ||
+          /\bftms\b/.test(hay) ||
+          /\bexercycle\b/.test(hay) ||
+          /\bant\+/.test(hay) ||
+          /\binteraktiv\b/.test(hay) ||
+          (/\bbluetooth\b/.test(hay) &&
+            /\b(motionscykel|kondicykel|spinning|indoor\s*bike|exercise\s*bike|smart\s*bike)\b/.test(
+              hay,
+            ))
+        );
+      },
+    },
+    {
       slug: "airbike",
       test: (hay) =>
         /\bairbike\b/.test(hay) ||

@@ -73,13 +73,19 @@ export const categories: MachineCategory[] = [
     name: "Motionscykel",
     shortName: "Cykler",
     description:
-      "Kondicykel, spinning og airbike — skånsom cardio til alle niveauer.",
+      "Kondicykel, spinning, smart/Zwift og airbike — skånsom cardio til alle niveauer.",
     image: "/images/categories/motionscykel.webp",
     intents: [
       {
         slug: "spinning",
         label: "Spinning",
         description: "Indoor bike med tungt svinghjul og intensitet.",
+      },
+      {
+        slug: "smart",
+        label: "Smart / Zwift",
+        description:
+          "Bluetooth/app-styret modstand og interaktiv træning (Zwift, Kinomap m.fl.).",
       },
       {
         slug: "airbike",
