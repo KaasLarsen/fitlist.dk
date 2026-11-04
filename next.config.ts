@@ -20,6 +20,11 @@ const nextConfig: NextConfig = {
         pathname: "/**",
       },
       { protocol: "https", hostname: "billig-fitness.dk", pathname: "/**" },
+      {
+        protocol: "https",
+        hostname: "billigsport24.b-cdn.net",
+        pathname: "/**",
+      },
       { protocol: "https", hostname: "www.workwalk.dk", pathname: "/**" },
       { protocol: "https", hostname: "workwalk.dk", pathname: "/**" },
       { protocol: "https", hostname: "www.homex.dk", pathname: "/**" },
@@ -37,6 +42,16 @@ const nextConfig: NextConfig = {
       },
       { protocol: "https", hostname: "www.jtsport.dk", pathname: "/**" },
       { protocol: "https", hostname: "jtsport.dk", pathname: "/**" },
+      {
+        protocol: "https",
+        hostname: "www.traeningspartner.dk",
+        pathname: "/**",
+      },
+      {
+        protocol: "https",
+        hostname: "traeningspartner.dk",
+        pathname: "/**",
+      },
       {
         protocol: "https",
         hostname: "www.partner-ads.com",

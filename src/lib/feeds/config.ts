@@ -35,6 +35,12 @@ export const PARTNER_ADS_FEEDS: readonly PartnerAdsFeed[] = [
     merchant: "Billig-fitness.dk",
   },
   {
+    id: "billigsport24",
+    bannerId: "16532",
+    feedId: "13",
+    merchant: "Billigsport24.dk",
+  },
+  {
     id: "cbl-fitness",
     bannerId: "87318",
     feedId: "2171",
@@ -69,6 +75,36 @@ export const PARTNER_ADS_FEEDS: readonly PartnerAdsFeed[] = [
     bannerId: "117077",
     feedId: "4333",
     merchant: "JT Sport",
+  },
+  {
+    id: "kinetik",
+    bannerId: "107033",
+    feedId: "3362",
+    merchant: "KINETIK",
+  },
+  {
+    id: "mysports",
+    bannerId: "112544",
+    feedId: "3845",
+    merchant: "MySports",
+  },
+  {
+    id: "sportgym",
+    bannerId: "116571",
+    feedId: "4275",
+    merchant: "SportGym",
+  },
+  {
+    id: "tpf-gear",
+    bannerId: "108823",
+    feedId: "3515",
+    merchant: "TPF GEAR",
+  },
+  {
+    id: "traeningspartner",
+    bannerId: "67325",
+    feedId: "1378",
+    merchant: "Træningspartner",
   },
   {
     id: "workwalk",
