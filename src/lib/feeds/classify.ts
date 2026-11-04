@@ -28,8 +28,11 @@ const HARD_EXCLUDES: RegExp[] = [
   /garanti/,
   /warranty/,
   /pedaltraener/,
+  /pedal\s*trainer/,
+  /circulation\s*trainer/,
   /bevaegelses?traener/,
   /mini\s*motionscykel/,
+  /mini[\s-]*bike/,
   /tilbehoerspakke/,
   /komplet\s+tilbehoer/,
 ];
@@ -75,6 +78,8 @@ const MACHINE_RULES: CategoryRule[] = [
     include: [
       /\bmotionscykel\b/,
       /\bkondicykel\b/,
+      /\bsiddecykel\b/,
+      /\brecumbent\b/,
       /\bspinning(?:cykel|bike)?\b/,
       /\bindoor\s*bike\b/,
       /\bexercise\s*bike\b/,
@@ -89,6 +94,7 @@ const MACHINE_RULES: CategoryRule[] = [
       /\bshorts\b/,
       /\bgymball\b/,
       /\bbold\b/,
+      /\beasy\s*rider\b/,
     ],
   },
   {
@@ -262,6 +268,14 @@ const INTENT_RULES: { slug: string; test: (hay: string, price: number | null) =>
         /\bvaegmonter/.test(hay) ||
         /\bvægmonter/.test(hay) ||
         /\bwall[\s-]*mount/.test(hay),
+    },
+    {
+      slug: "siddecykel",
+      test: (hay) =>
+        /\bsiddecykel\b/.test(hay) ||
+        /\brecumbent\b/.test(hay) ||
+        (/\bryglaen\b/.test(hay) &&
+          /\b(motionscykel|kondicykel|cykel|bike)\b/.test(hay)),
     },
     {
       slug: "spinning",

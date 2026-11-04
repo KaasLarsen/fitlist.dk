@@ -77,6 +77,12 @@ export const categories: MachineCategory[] = [
     image: "/images/categories/motionscykel.webp",
     intents: [
       {
+        slug: "siddecykel",
+        label: "Siddecykel",
+        description:
+          "Recumbent med ryglæn og lav indstigning — skånsomt for ryg og led.",
+      },
+      {
         slug: "spinning",
         label: "Spinning",
         description: "Indoor bike med tungt svinghjul og intensitet.",

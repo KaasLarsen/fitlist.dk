@@ -45,23 +45,27 @@ export function FeaturedGuidesSection({ guides }: Props) {
                   <div>
                     <p className="text-xs uppercase tracking-[0.16em] text-muted">
                       {category?.name ?? guide.categorySlug}
-                      {guide.intentSlug === "gaabaand"
-                        ? " · Gåbånd"
-                        : guide.intentSlug === "spinning"
-                          ? " · Spinning"
-                          : guide.intentSlug === "smart"
-                            ? " · Smart / Zwift"
-                            : guide.intentSlug === "airbike"
-                              ? " · Airbike"
-                              : guide.intentSlug === "multistation"
-                                ? " · Multistation"
-                                : guide.intentSlug === "traeningsbaenk"
-                                  ? " · Træningsbænk"
-                                  : guide.intentSlug === "kabeltaarn"
-                                    ? " · Kabeltårn"
-                                    : guide.intentSlug === "begynder"
-                                      ? " · Begynder"
-                                      : ""}
+                      {guide.slug === "gaabaand-til-kontoret-2026"
+                        ? " · Kontor / under-desk"
+                        : guide.intentSlug === "gaabaand"
+                          ? " · Gåbånd"
+                          : guide.intentSlug === "siddecykel"
+                            ? " · Senior / siddecykel"
+                            : guide.intentSlug === "spinning"
+                              ? " · Spinning"
+                              : guide.intentSlug === "smart"
+                                ? " · Smart / Zwift"
+                                : guide.intentSlug === "airbike"
+                                  ? " · Airbike"
+                                  : guide.intentSlug === "multistation"
+                                    ? " · Multistation"
+                                    : guide.intentSlug === "traeningsbaenk"
+                                      ? " · Træningsbænk"
+                                      : guide.intentSlug === "kabeltaarn"
+                                        ? " · Kabeltårn"
+                                        : guide.intentSlug === "begynder"
+                                          ? " · Begynder"
+                                          : ""}
                     </p>
                     <h3 className="mt-1 font-display text-2xl font-medium uppercase tracking-wide text-foreground transition-colors group-hover:text-accent">
                       {guide.title}

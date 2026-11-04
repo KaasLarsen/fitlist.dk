@@ -112,6 +112,8 @@ export function getProductAffiliate(product: GuideProduct) {
 
 /** Featured homepage-rækkefølge (intent-guides + kernemaskiner). */
 const FEATURED_GUIDE_SLUGS = [
+  "gaabaand-til-kontoret-2026",
+  "bedste-traeningsudstyr-til-seniorer-2026",
   "hjemmetraening-for-begyndere-foerste-90-dage",
   "bedste-vaegmonteret-kabeltaarn-2026",
   "ultimative-udendoers-home-gym-2026",
@@ -120,8 +122,6 @@ const FEATURED_GUIDE_SLUGS = [
   "bedste-foldbare-kompakte-traeningsmaskiner-2026",
   "bedste-gaabaand-2026",
   "bedste-multistation-2026",
-  "bedste-justerbar-traeningsbaenk-2026",
-  "bedste-loebebaand-2026",
 ] as const;
 
 export function getFeaturedGuides(): Guide[] {
@@ -140,8 +140,9 @@ export function getGuideByCategoryAndIntent(
 }
 
 /**
- * Kategori-guides + intent-guides (gåbånd, spinning, smart/Zwift, airbike,
- * multistation, træningsbænk, kabeltårn, begynder/must-haves).
+ * Kategori-guides + intent-guides (gåbånd, kontor/under-desk, siddecykel/senior,
+ * spinning, smart/Zwift, airbike, multistation, træningsbænk, kabeltårn,
+ * begynder/must-haves).
  * Anbefalinger kobles til Partner-Ads via feedProductId (live pris + CTA).
  */
 export const guides: Guide[] = [
@@ -923,6 +924,7 @@ export const guides: Guide[] = [
       },
     ],
     relatedSlugs: [
+      "gaabaand-til-kontoret-2026",
       "bedste-loebebaand-2026",
       "bedste-motionscykel-2026",
       "bedste-crosstrainer-2026",
@@ -1651,6 +1653,7 @@ export const guides: Guide[] = [
       },
     ],
     relatedSlugs: [
+      "bedste-traeningsudstyr-til-seniorer-2026",
       "bedste-smartcykel-2026",
       "bedste-cykel-til-zwift-2026",
       "bedste-airbike-2026",
@@ -2622,6 +2625,7 @@ export const guides: Guide[] = [
       },
     ],
     relatedSlugs: [
+      "bedste-traeningsudstyr-til-seniorer-2026",
       "bedste-loebebaand-2026",
       "bedste-airbike-2026",
       "bedste-romaskine-2026",
@@ -4494,6 +4498,491 @@ export const guides: Guide[] = [
       "bedste-stoejsvage-traeningsmaskiner-lejlighed-2026",
       "bedste-justerbar-traeningsbaenk-2026",
       "bedste-vaegmonteret-kabeltaarn-2026",
+      "gaabaand-til-kontoret-2026",
+      "bedste-traeningsudstyr-til-seniorer-2026",
+    ],
+  },
+  {
+    slug: "gaabaand-til-kontoret-2026",
+    title: "Gåbånd til kontoret: Bedste under-desk walking pads (2026)",
+    excerpt:
+      "Walking pad under hæve-sænkebordet: støj til Zoom/Teams, gå-tempo mens du skriver, fjernbetjening og modeller der kan rulles væk efter fyraften.",
+    metaDescription:
+      "Bedste gåbånd til kontoret 2026. Under-desk walking pads til vidensarbejde: støjsvag motor til møder, 1,5–2,5 km/t skrivetempo, fjernbetjening/app og kompakte modeller — live priser.",
+    categorySlug: "loebebaand",
+    recommendationsHeading: "Anbefalede under-desk gåbånd",
+    publishedAt: "2026-11-04",
+    updatedAt: "2026-11-04",
+    intro:
+      "Denne guide handler ikke om marathon eller sveddryppende intervaller. Den er skrevet til dig, der sidder foran skærmen hele dagen — kodere, konsulenter, gamere og alle på hjemmekontor — og vil bekæmpe stillesiddende arbejde, mens du svarer mails, skriver eller er på onlinemøde. Et under-desk gåbånd (walking pad) er et lavt bånd uden frontkonsol, der passer under et hæve-sænkebord. Specifikationerne, der tæller her, er andre end på et klassisk løbebånd: mikrofonstøj, jævn motor i lave tempi, styring uden at bøje dig, og om maskinen kan rulles væk, når kontoret igen bliver stue.",
+    criteria: [
+      {
+        title: "Det “magiske” støjniveau (mikrofonen)",
+        description:
+          "På kontoret er naboen ofte din Teams-/Zoom-/Discord-mikrofon. Motorbrum og hæl-tramp opsamles nemt. Prioritér støjsvag motor, bløde skridt (ikke løbesko med hård sål), og test med headset på — ikke kun “hvordan det lyder i rummet”. En måtte dæmper vibration til gulvet og hjælper ofte mere end marketing-claims om dB.",
+      },
+      {
+        title: "Maks-hastighed og det rette gå-tempo",
+        description:
+          "Du behøver sjældent mere end ca. 6 km/t. Mens du skriver på tastatur, er 1,5–2,5 km/t det realistiske “arbejdstempo”. Båndet skal have en jævn, præcis motor i de helt lave zoner — mange billige pads hakker eller “tøffer” under 2 km/t. Hurtiggang er til pauser; mødet kræver roligt tempo.",
+      },
+      {
+        title: "Fjernbetjening vs. app-styring",
+        description:
+          "Der er ingen konsol foran dig under et hæve-sænkebord. Hastighed og nødstop skal sitte i hånden (fjernbetjening) eller på telefonen (app). Tjek batteri i remote, rækkevidde, og at du kan stoppe lynhurtigt midt i et opkald. App er nice-to-have; fysisk knap er tryggere i møder.",
+      },
+      {
+        title: "Højde under bordet",
+        description:
+          "Mål frihøjde fra gulv til underside af bordplade med skuffer, kabler og crossbars i tankerne. Et pad uden håndtag vinder til under-desk. Modeller med stang/gelænder er fine til standup-gang ved siden af bordet — men spærrer ofte under pladen.",
+      },
+      {
+        title: "Vægt, hjul og “stue efter fyraften”",
+        description:
+          "Hjemmekontoret skal ofte fungere som gæsteværelse. Tjek egenvægt, greb og transporthjul. Et pad, der kan skydes under sofaen eller rulles lodret bag et skab, bliver brugt. Et tungt “pro”-bånd uden hjul bliver stående i vejen — og så dør vanen.",
+      },
+      {
+        title: "Holdbarhed til hele arbejdsdage",
+        description:
+          "Desk walking er mange korte pas eller flere timer i lav intensitet. Kig efter stabilt dæk, anstændig motor til gang, og realistisk maks. brugervægt. Premium-pads er bygget til daglig kontorbrug; budget-pads er fine til at bygge vanen — opgrader, når du går hver dag.",
+      },
+    ],
+    products: [
+      {
+        id: "gymstick-walking-pad-pro-kontor",
+        name: "Gymstick Walking Pad Pro",
+        badge: "Premium / pro kontor",
+        summary:
+          "Når du vil have et mere seriøst under-desk-setup til lange arbejdsdage: slankt, sammenfoldeligt walking pad i den tungere ende af hjemmemarkedet. LifeSpan TR1200-klassen (dedikeret kontor-pro) er sjælden i danske affiliate-feeds — Gymstick Pro er vores nærmeste premium-pick til daglig desk walking med fokus på opbevaring og flytbarhed.",
+        pros: [
+          "Pro-orienteret walking pad (ikke “lege-løbebånd”)",
+          "Sammenfoldeligt og nemt at flytte til TV/skab",
+          "God til dedikeret hjemmekontor-brug",
+          "Tydeligt skridt op fra entry-pads",
+        ],
+        cons: [
+          "Dyrere end Ascendic/WorkWalk",
+          "Ikke en kommerciel LifeSpan TR-serie",
+          "Tjek frihøjde og vægt ift. dit gulv/lejlighed",
+        ],
+        specs: [
+          { label: "Type", value: "Walking pad / gåbånd" },
+          { label: "Brand", value: "Gymstick" },
+          { label: "Segment", value: "Premium hjemmekontor" },
+          { label: "Partner", value: "Apuls.dk" },
+        ],
+        feedProductId: "Apuls.dk:12656",
+      },
+      {
+        id: "titan-w10-kontor",
+        name: "TITAN LIFE Walking W10",
+        badge: "Bedst samlet til kontor",
+        summary:
+          "Dedikeret gåbånd, der i partnerteksten rammer kontor og hjem direkte. Vores allround-valg, når du vil have et færdigt under-desk-redskab uden at betale premium-Pro-pris — og uden at blande løbebånds-features ind.",
+        pros: [
+          "Markedsført til kontor + hjem",
+          "Klar allround til daglig desk walking",
+          "Fri fragt hos partner",
+          "Bedre “færdig” følelse end ren no-name entry",
+        ],
+        cons: [
+          "Dyrere end Ascendic Essential",
+          "Ikke et løbebånd til intervaller",
+          "Mål stadig frihøjde under dit bord",
+        ],
+        specs: [
+          { label: "Type", value: "Gåbånd / walking pad" },
+          { label: "Brand", value: "Titan LIFE" },
+          { label: "Brug", value: "Kontor + hjem" },
+          { label: "Partner", value: "HomeX.dk" },
+        ],
+        feedProductId: "HomeX.dk:3182",
+      },
+      {
+        id: "xiaomi-a1-pro-kontor",
+        name: "Xiaomi WalkingPad A1 Pro",
+        badge: "Bedst styring (app + remote)",
+        summary:
+          "Kompakt, foldbart gåbånd med hastighed fra helt lavt tempo — styret automatisk, via fjernbetjening eller app. Ideelt, når du vil justere tempo midt i et møde uden at bøje dig under bordet. Foldes sammen efter brug.",
+        pros: [
+          "Fjernbetjening + app-styring",
+          "Meget lav start-hastighed til skrivetempo",
+          "Foldbart til små hjemmekontorer",
+          "Stærkt match til “under desk + møder”",
+        ],
+        cons: [
+          "App er ekstra lag — lær nødstop på remote først",
+          "Ikke Titan/Gymstick “pro”-følelse",
+          "Tjek lager og levering hos partner",
+        ],
+        specs: [
+          { label: "Type", value: "Foldbart walking pad" },
+          { label: "Styring", value: "Remote + app" },
+          { label: "Brand", value: "Xiaomi" },
+          { label: "Partner", value: "Fitnessgruppen.dk" },
+        ],
+        feedProductId: "Fitnessgruppen.dk:1919",
+      },
+      {
+        id: "ascendic-essential-kontor",
+        name: "Ascendic Essential Walking Pad",
+        badge: "Budget- og pladsvinderen",
+        summary:
+          "Ultra-lavt pad uden håndtag — designet til at sidde under et hæve-sænkebord. Den nemmeste indgang til desk walking, når du vil gemme båndet under sofaen efter fyraften. Perfekt “Top Sport-agtig” kompaktprofil: lav højde, lav pris, fokus på skridt mens du arbejder.",
+        pros: [
+          "Lavt footprint under desk",
+          "Skarp pris til at bygge vanen",
+          "Ingen stang der spærrer under bordet",
+          "Nem at skubbe væk efter arbejde",
+        ],
+        cons: [
+          "Færre “pro”-features end Gymstick/W10",
+          "Ikke til løb",
+          "Opgrader, når du går mange timer dagligt",
+        ],
+        specs: [
+          { label: "Type", value: "Under-desk walking pad" },
+          { label: "Brand", value: "Ascendic" },
+          { label: "Segment", value: "Budget / kompakt" },
+          { label: "Partner", value: "Ascendic.dk" },
+        ],
+        feedProductId: "Ascendic.dk:56388648173912",
+      },
+    ],
+    howToChoose:
+      "Dedikeret hjemmekontor og mange timer? Gymstick Walking Pad Pro eller Titan W10. Skal tempo justeres midt i Zoom uden at bøje dig? Xiaomi A1 Pro. Lille plads og vil bare i gang under hæve-sænkebordet? Ascendic Essential. Skal du kunne løbe? Stop — se Bedste løbebånd 2026. Vil du have bredere walking pad-guide (stigning, fold, allround)? Se Bedste gåbånd 2026. Shop via “Se pris” for live partnerpriser.",
+    learningSections: [
+      {
+        heading: "Hvorfor under-desk er en anden disciplin",
+        paragraphs: [
+          "Et klassisk gåbånd-guide spørger: stigning, fold, allround. Kontor-guiden spørger: kan mikrofonen leve med det, kan du skrive ved 2 km/t, og kan du stoppe uden at kravle? Formålet er NEAT (non-exercise activity) — flere skridt i arbejdsdagen — ikke zone-5-intervaller.",
+          "Hvis du primært vil “træne” på båndet efter arbejde, er stigning og højere tempo mere relevante — så er den generelle gåbånd-guide bedre. Her optimerer vi til mails, kode og møder.",
+        ],
+      },
+      {
+        heading: "Støj, der faktisk rammer et opkald",
+        paragraphs: [
+          "Der er tre lag: (1) motorens brum, (2) båndets sus, (3) skridt gennem gulv/bordstel. Headset med god støjreduktion hjælper — men kollegaer hører stadig, hvis du tramper. Gå blødt, sænk tempoet i præsentationer, og overvej måtte selv på stille kontorgulve.",
+          "Open office: aftal “walking meetings” i zoner, hvor det er socialt acceptabelt. Hjemmekontor: test et 10-minutters mock-call, før du lover dig selv 4 timer om dagen.",
+        ],
+      },
+      {
+        heading: "Skrivetempo: 1,5–2,5 km/t",
+        paragraphs: [
+          "De fleste begynder for stærkt, mister præcision på tastaturet og dropper vanen. Start 1,5–2 km/t i 20–30 minutter, hæv skærm til øjenhøjde, og hold albuer afslappede. Hurtigere gang er til pauser mellem deep work — ikke til at skrive PR-beskrivelser.",
+          "Max omkring 6 km/t er typisk nok til et kontor-pad. Betal ikke ekstra for “løbe-hastighed”, du aldrig bruger under bordet.",
+        ],
+        comparison: {
+          caption: "Kontor-gåbånd vs. trænings-gåbånd",
+          rowHeaderLabel: "Fokus",
+          columns: ["Under-desk kontor", "Træning / allround"],
+          rows: [
+            {
+              label: "Tempo",
+              cells: ["1,5–2,5 km/t (skriv)", "3–6 km/t + evt. stigning"],
+            },
+            {
+              label: "Styring",
+              cells: ["Remote/app kritiske", "Konsol/stang ok"],
+            },
+            {
+              label: "Støjmål",
+              cells: ["Mikrofon + kolleger", "Naboer / lejlighed"],
+            },
+            {
+              label: "Opbevaring",
+              cells: ["Væk efter fyraften", "Ofte stående fremme"],
+            },
+          ],
+        },
+      },
+      {
+        heading: "Typiske fejl på hjemmekontoret",
+        paragraphs: [
+          "At købe pad med højt gelænder til under-desk. At glemme bordets crossbar. At gå for stærkt i møder. At undervurdere vægt uden hjul. At forvente LifeSpan-kommerciel holdbarhed til entry-pris.",
+          "Omvendt: at vente på det “perfekte” pro-pad i et år. Ascendic Essential + vanen slår et tomt hjørne under hæve-sænkebordet.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "Hvilket gåbånd er bedst under skrivebordet i 2026?",
+        answer:
+          "Til allround kontor: TITAN LIFE Walking W10. Til premium hjemmekontor: Gymstick Walking Pad Pro. Til styring midt i møder: Xiaomi WalkingPad A1 Pro. Til budget og minimal højde: Ascendic Essential.",
+      },
+      {
+        question: "Hvor hurtigt skal man gå, mens man arbejder?",
+        answer:
+          "De fleste skriver bedst ved 1,5–2,5 km/t. Højere tempo er fint i pauser. Du behøver typisk ikke mere end ca. 6 km/t på et kontor-pad.",
+      },
+      {
+        question: "Larmer et walking pad i Zoom eller Teams?",
+        answer:
+          "Det kan det — især motorbrum og hæl-tramp. Vælg støjsvag model, gå blødt, brug måtte, og test med dit headset. Sænk tempoet under præsentationer.",
+      },
+      {
+        question: "Skal jeg vælge fjernbetjening eller app?",
+        answer:
+          "Fjernbetjening først — fysisk nødstop midt i et opkald. App er praktisk til finjustering. Xiaomi A1 Pro giver begge dele.",
+      },
+      {
+        question: "Kan jeg gemme gåbåndet væk efter arbejde?",
+        answer:
+          "Ja — det er halvdelen af pointen på hjemmekontor. Kig efter lav profil, hjul/greb og fold. Ascendic Essential og flere foldbare pads er bygget til at komme under sofa eller bag skab.",
+      },
+      {
+        question: "Forskellen på denne guide og Bedste gåbånd 2026?",
+        answer:
+          "Her er 100 % fokus på under-desk, møder og skrivetempo. Den generelle gåbånd-guide dækker stigning, fold og allround-modeller bredere — også til “gå mens du ser TV”.",
+      },
+    ],
+    relatedSlugs: [
+      "bedste-gaabaand-2026",
+      "bedste-stoejsvage-traeningsmaskiner-lejlighed-2026",
+      "bedste-foldbare-kompakte-traeningsmaskiner-2026",
+      "bedste-loebebaand-2026",
+    ],
+  },
+  {
+    slug: "bedste-traeningsudstyr-til-seniorer-2026",
+    title: "Bedste træningsudstyr til seniorer & skånsom motion (2026)",
+    excerpt:
+      "Tryghed, stabilitet og ledskånsom træning hjemme: siddecykel, crosstrainer med lav indstigning og milde elastikker — uden kompliceret tech.",
+    metaDescription:
+      "Bedste træningsudstyr til seniorer 2026. Skånsom motion med siddecykel (Odin RB-800 Comfort), crosstrainer med lav indstigning og genoptræningselastikker — live priser.",
+    categorySlug: "motionscykel",
+    intentSlug: "siddecykel",
+    recommendationsHeading: "Anbefalet skånsomt udstyr",
+    publishedAt: "2026-11-04",
+    updatedAt: "2026-11-04",
+    intro:
+      "Denne guide er til dig, der leder efter tryghed, stabilitet, smertelindring og vedligeholdelse af mobilitet — ikke efter kompliceret tech, store vægtstakke eller ure, der råber. Sproget er bevidst roligt: vi vægter ledskånsomhed, sikker indstigning og simple knapper højest. Du får de tre udstyrstyper, der oftest giver mening hjemme (siddecykel, crosstrainer, milde elastikker), tre “gyldne krav” til senior-maskiner, og konkrete modeller med aktuelle priser fra vores partnere.",
+    criteria: [
+      {
+        title: "Lav, tryg indstigning",
+        description:
+          "En traditionel motionscykel kan være svær at svinge benet over. Siddecykler og mange crosstrainere med lav indstigning lader dig gå “lige ind” og sætte dig. Det er ikke en detalje — det er ofte forskellen på, om maskinen bliver brugt.",
+      },
+      {
+        title: "Støtte til ryg og balance",
+        description:
+          "På siddecykel: bredt sæde med ryglæn, der aflaster lænden. På crosstrainer: lange, skridsikre håndtag, så balancen er sikret hele vejen. Undgå maskiner, der vipper eller føles “lette” under dig.",
+      },
+      {
+        title: "Simple, analoge computere",
+        description:
+          "Store, tydelige knapper. Skærm der viser tid, distance og puls med store tal. Ingen Wi-Fi-opsætning som forudsætning for at træne. Smart-features er valgfrie — aldrig et krav for at komme i gang.",
+      },
+      {
+        title: "Glidende magnetisk / elektromagnetisk modstand",
+        description:
+          "Systemet skal køre uden hakken eller friktion, der irriterer slidte led. Magnetisk (EMS) modstand er typisk jævn, støjsvag og nem at justere i små trin — ideelt til genoptræning og rolig cardio.",
+      },
+      {
+        title: "Høj stabilitet og egenvægt",
+        description:
+          "Maskinen skal stå urokkeligt. Solid ramme og fornuftig egenvægt giver tryghed. Transporthjul er fine til at flytte den — men under træning skal den føles plantet i gulvet. Brug gerne måtte.",
+      },
+      {
+        title: "Progression uden pludselige ryk",
+        description:
+          "Elastikker og magnetmodstand øger belastningen gradvist. Tunge frie vægte kan give pludselige belastningsskift i leddene. Til seniorer og genoptræning vinder blød, kontrolleret modstand næsten altid.",
+      },
+    ],
+    products: [
+      {
+        id: "odin-rb800-comfort",
+        name: "Odin RB-800 Comfort Siddecykel",
+        badge: "Bedst i test (siddecykel)",
+        summary:
+          "Den vigtigste maskine i senior-setuppet: siddecykel med komfortfokus. Lav indstigning, bredt støttende sæde med ryglæn og skånsom, siddende cardio. RB-800 Comfort er vores topvalg, når tryghed og ledvenlig bevægelse betyder mere end “sporty” spinning-følelse. (Toorx BRX-R65 Comfort findes ikke stabilt i vores feeds lige nu — D10 nedenfor er budget-alternativet.)",
+        pros: [
+          "Dedikeret Comfort-siddecykel",
+          "Skånsom for ryg og knæ ift. oprejst cykel",
+          "Klar “sæt dig og træn”-oplevelse",
+          "Stærkt match til genoptræning og vedligehold",
+        ],
+        cons: [
+          "Fylder mere end en mini-cykel",
+          "Dyrere end entry-siddecykler",
+          "Ikke en spinningcykel til hårde intervaller",
+        ],
+        specs: [
+          { label: "Type", value: "Siddecykel / recumbent" },
+          { label: "Brand", value: "Odin" },
+          { label: "Model", value: "RB-800 Comfort" },
+          { label: "Partner", value: "Apuls.dk" },
+        ],
+        feedProductId: "Apuls.dk:15031",
+      },
+      {
+        id: "tunturi-d10-siddecykel",
+        name: "Tunturi Cardio Fit D10 Siddecykel",
+        badge: "Bedste prisvenlige siddecykel",
+        summary:
+          "Stabil siddecykel med fri fragt hos partner — til dig, der vil have ryglæn og tryg indstigning uden at gå i den dyre Comfort/PRO-klasse. God indgang, når budgettet er stramt, men opretstående sadelcykel føles forkert.",
+        pros: [
+          "Lavere pris end RB-800 / E60-R",
+          "Ægte siddecykel (ikke mini pedaltræner)",
+          "Fri fragt hos partner",
+          "Enkel vej ind i skånsom cardio",
+        ],
+        cons: [
+          "Færre komfort-detaljer end RB-800 Comfort",
+          "Tjek sæde/ryglæn ift. din krop",
+          "Opgrader, hvis cyklen er daglig hovedtræning i årevis",
+        ],
+        specs: [
+          { label: "Type", value: "Siddecykel" },
+          { label: "Brand", value: "Tunturi" },
+          { label: "Serie", value: "Cardio Fit D10" },
+          { label: "Partner", value: "HomeX.dk" },
+        ],
+        feedProductId: "HomeX.dk:3393",
+      },
+      {
+        id: "titan-c35-senior",
+        name: "Titan Life C35 Crosstrainer",
+        badge: "Skånsom crosstrainer (lav indstigning)",
+        summary:
+          "Elliptisk træning uden stød gennem knæ, hofter og ryg — fødderne forbliver på pedalerne. C35 fremhæves med lav indstigning og magnetisk modstand: stabil entry til helkropscardio, når du vil stå op, men stadig have noget at holde i.",
+        pros: [
+          "Lav indstigning — nemmere at komme på",
+          "Ingen løbe-stød",
+          "Magnetmodstand (jævn og støjsvag)",
+          "Fri fragt hos partner",
+        ],
+        cons: [
+          "Kræver balance — brug håndtagene",
+          "Fylder mere end en cykel",
+          "Høje brugere bør tjekke skridtlængde",
+        ],
+        specs: [
+          { label: "Type", value: "Crosstrainer" },
+          { label: "Feature", value: "Lav indstigning" },
+          { label: "Brand", value: "Titan Life" },
+          { label: "Partner", value: "HomeX.dk" },
+        ],
+        feedProductId: "HomeX.dk:2792",
+      },
+      {
+        id: "theraband-level1-senior",
+        name: "Thera-Band Tubing Level 1 Let (gul)",
+        badge: "Genoptræning & mobilitet",
+        summary:
+          "Mild, progressiv elastikmodstand til genoptræning og mobilitet. Jo mere du strækker, jo hårdere bliver det — uden de pludselige ryk, frie vægte kan give. Gul Level 1 er det trygge udgangspunkt; gå op i niveau senere.",
+        pros: [
+          "Anerkendt til sportsterapi / genoptræning",
+          "Meget skånsom startbelastning",
+          "Billig add-on til cykel/crosstrainer",
+          "Kan bruges siddende eller stående med støtte",
+        ],
+        cons: [
+          "7,5 m tubing skal klippes/tilpasses til øvelser",
+          "Ikke erstatning for tung styrketræning",
+          "Udskift ved slid — elastik er sliddel",
+        ],
+        specs: [
+          { label: "Type", value: "Træningselastik (tubing)" },
+          { label: "Niveau", value: "Level 1 Let / gul" },
+          { label: "Brand", value: "Thera-Band" },
+          { label: "Partner", value: "Apuls.dk" },
+        ],
+        feedProductId: "Apuls.dk:2287",
+      },
+    ],
+    howToChoose:
+      "Primært skånsom cardio med maksimal tryghed? Odin RB-800 Comfort. Stramt budget men stadig siddecykel? Tunturi D10. Vil du stå op og træne hele kroppen uden stød? Titan Life C35. Tilføj Thera-Band Level 1 til mobilitet og genoptræning — uanset maskine. Undgå mini “circulation trainers”, medmindre en fagperson anbefaler dem specifikt. Shop via “Se pris”. Se også Motionscykel → Siddecykel for flere tilbud.",
+    learningSections: [
+      {
+        heading: "Hvorfor siddecyklen er uundværlig",
+        paragraphs: [
+          "På en almindelig motionscykel skal du ofte svinge benet højt over sadlen, og lænden kan belastes i oprejst position. En siddecykel (recumbent) har typisk step-through / lav indstigning: du går ind, sætter dig, og læner dig ind i et bredt sæde med ryglæn. Benene arbejder foran dig, mens ryggen får støtte.",
+          "Det er derfor siddecyklen er vores #1 til seniorer og genoptræning — ikke fordi den er “let”, men fordi den fjerner de barrierer, der stopper træningen, før den starter.",
+        ],
+      },
+      {
+        heading: "Crosstrainer: skånsom, men stående",
+        paragraphs: [
+          "På crosstraineren forlader fødderne aldrig pedalerne — ingen hæl-stød som ved gang/løb. Lange støttehåndtag holder balancen. Vælg modeller med lav indstigning og solid egenvægt. C35 er en ærlig entry; vil du have mere midrange-stabilitet, se vores crosstrainer-guide (C56-klassen).",
+          "Har du svær svimmelhed eller usikker balance, start med siddecykel, før du går elliptisk.",
+        ],
+      },
+      {
+        heading: "Elastikker til ledvenlig styrke",
+        paragraphs: [
+          "Milde power bands og flade genoptræningselastikker giver blød, progressiv modstand. De er ideelle til skuldre, hofter og gangfunktion — og fylder intet ved siden af cyklen. Start let (Thera-Band gul / XX-light), prioriter kontrol, og øg kun, når bevægelsen er smertefri.",
+          "Elastik erstatter ikke råd fra fysioterapeut ved akut skade — men som vedligehold og “næste skridt” efter maskin-cardio er de uvurderlige.",
+        ],
+      },
+      {
+        heading: "De 3 gyldne senior-krav",
+        paragraphs: [
+          "1) Analoge/simple computere — store tal, store knapper, ingen tvungen app. 2) Elektromagnetisk/magnetisk modstand — glidende uden hakken. 3) Høj stabilitet — maskinen skal føles plantet, så du aldrig er i tvivl.",
+          "Hvis en produkttekst lover “gaming”, “Zwift” og “HIIT” som hovedargument — og glemmer indstigning, sæde og ryglæn — så er det sandsynligvis den forkerte cykel til denne målgruppe.",
+        ],
+        comparison: {
+          caption: "Siddecykel vs. crosstrainer vs. elastik",
+          rowHeaderLabel: "Behov",
+          columns: ["Siddecykel", "Crosstrainer", "Elastik"],
+          rows: [
+            {
+              label: "Balancekrav",
+              cells: ["Lavt (siddende)", "Mellem (stående + greb)", "Lavt"],
+            },
+            {
+              label: "Ledstød",
+              cells: ["Meget lavt", "Meget lavt", "Ingen"],
+            },
+            {
+              label: "Rygstøtte",
+              cells: ["Ja (ryglæn)", "Nej (stående)", "Valgfri siddende"],
+            },
+            {
+              label: "Prisniveau",
+              cells: ["Mellem–højt", "Mellem", "Lavt"],
+            },
+          ],
+        },
+      },
+    ],
+    faqs: [
+      {
+        question: "Hvilket træningsudstyr er bedst til seniorer?",
+        answer:
+          "Start med en siddecykel (fx Odin RB-800 Comfort), hvis tryghed og rygstøtte er vigtigst. Tilføj crosstrainer med lav indstigning, hvis balancen er god. Brug milde elastikker til mobilitet og let styrke.",
+      },
+      {
+        question: "Hvad er forskellen på siddecykel og almindelig motionscykel?",
+        answer:
+          "Siddecyklen har typisk lav indstigning og et sæde med ryglæn, så du sidder mere tilbagelænet. Det er ofte nemmere for hofter, knæ og lænd end en oprejst sadelcykel.",
+      },
+      {
+        question: "Er crosstrainer skånsom for knæene?",
+        answer:
+          "Ja for de fleste: fødderne forbliver på pedalerne, så du undgår løbe-stød. Vælg stabil model med gode håndtag, og start med lav modstand.",
+      },
+      {
+        question: "Skal seniorer undgå håndvægte?",
+        answer:
+          "Ikke nødvendigvis — men milde elastikker er ofte et tryggere sted at starte, fordi belastningen stiger gradvist. Følg gerne vejledning fra sundhedsfaglig ved genoptræning.",
+      },
+      {
+        question: "Hvad med mini-cykler / circulation trainers?",
+        answer:
+          "De kan have en rolle til meget let cirkulationstræning, men de erstatter ikke en ordentlig siddecykel med ryglæn og stabil ramme. Vi anbefaler dem ikke som hovedmaskine i denne guide.",
+      },
+      {
+        question: "Behøver jeg Wi-Fi og app?",
+        answer:
+          "Nej. Til senior- og genoptræningsbrug er simple knapper og store tal nok. Vælg maskiner, der virker den dag, strømmen er i stikkontakten.",
+      },
+    ],
+    relatedSlugs: [
+      "bedste-motionscykel-2026",
+      "bedste-crosstrainer-2026",
+      "hjemmetraening-for-begyndere-foerste-90-dage",
+      "bedste-stoejsvage-traeningsmaskiner-lejlighed-2026",
     ],
   },
 ];

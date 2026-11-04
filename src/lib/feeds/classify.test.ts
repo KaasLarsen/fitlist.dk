@@ -180,6 +180,30 @@ describe("classifyProduct — real machines kept", () => {
     assert.equal(r!.categorySlug, "loebebaand");
   });
 
+  it("classifies siddecykel as motionscykel + siddecykel intent", () => {
+    const r = classifyProduct(
+      product({
+        title: "Odin RB-800 Comfort Siddecykel",
+        brand: "Odin",
+        price: 5499,
+      }),
+    );
+    assert.ok(r);
+    assert.equal(r!.categorySlug, "motionscykel");
+    assert.ok(r!.intentSlugs?.includes("siddecykel"));
+  });
+
+  it("drops circulation trainer mini bikes", () => {
+    const r = classifyProduct(
+      product({
+        title: "Titan Life Circulation Trainer Motionscykel / Siddecykel",
+        brand: "Titan Fitness",
+        price: 453,
+      }),
+    );
+    assert.equal(r, null);
+  });
+
   it("classifies spinning cykel as motionscykel", () => {
     const r = classifyProduct(
       product({

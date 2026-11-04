@@ -44,6 +44,8 @@ Mangler produktet i feedet, falder UI tilbage til kategorisiden `/maskiner/[slug
 
 ### Aktuelle guides
 
+- `/guides/gaabaand-til-kontoret-2026` (under-desk / kontor walking pads)
+- `/guides/bedste-traeningsudstyr-til-seniorer-2026` (intent: siddecykel / skånsom motion)
 - `/guides/hjemmetraening-for-begyndere-foerste-90-dage` (Must-haves / begynder)
 - `/guides/bedste-vaegmonteret-kabeltaarn-2026` (intent: kabeltårn)
 - `/guides/ultimative-udendoers-home-gym-2026`
