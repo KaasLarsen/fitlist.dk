@@ -10,6 +10,14 @@ export type GuideSpec = {
   value: string;
 };
 
+export type GuideBundleItem = {
+  name: string;
+  /** Stabilt FeedProduct.id — live pris/URL */
+  feedProductId: string;
+  /** Fx "Cardio", "Styrke", "Tilbehør" */
+  role?: string;
+};
+
 export type GuideProduct = {
   id: string;
   name: string;
@@ -21,6 +29,8 @@ export type GuideProduct = {
   specs: GuideSpec[];
   /** Stabilt FeedProduct.id — live pris/URL fra Partner-Ads-kataloget */
   feedProductId?: string;
+  /** Øvrige produkter i en pakke (live pris + CTA pr. linje) */
+  bundleItems?: GuideBundleItem[];
   /** Id fra lib/affiliates.ts — valgfri fallback */
   affiliateId?: string;
 };
@@ -33,6 +43,8 @@ export type GuideComparisonRow = {
 
 export type GuideComparison = {
   caption?: string;
+  /** Overskrift på første kolonne (default: App / platform) */
+  rowHeaderLabel?: string;
   columns: string[];
   rows: GuideComparisonRow[];
 };
@@ -59,6 +71,8 @@ export type Guide = {
   categorySlug: string;
   /** Valgfri intent til “Relaterede tilbud” (fx gaabaand) */
   intentSlug?: string;
+  /** Overskrift over produkt-/pakke-anbefalinger (default: Anbefalede modeller) */
+  recommendationsHeading?: string;
   publishedAt: string;
   updatedAt: string;
   intro: string;
@@ -98,6 +112,7 @@ export function getProductAffiliate(product: GuideProduct) {
 
 /** Featured homepage-rækkefølge (intent-guides + kernemaskiner). */
 const FEATURED_GUIDE_SLUGS = [
+  "ultimative-home-gym-budget-2026",
   "bedste-stoejsvage-traeningsmaskiner-lejlighed-2026",
   "bedste-smartcykel-2026",
   "bedste-gaabaand-2026",
@@ -3292,6 +3307,270 @@ export const guides: Guide[] = [
       "bedste-styrkemaskiner-2026",
       "bedste-multistation-2026",
       "bedste-romaskine-2026",
+    ],
+  },
+  {
+    slug: "ultimative-home-gym-budget-2026",
+    title: "Det ultimative home gym på et budget (2026)",
+    excerpt:
+      "Tre færdige home gym-pakker under 2.500, 5.000 og 10.000 kr. — cardio + styrke sammensat, så du slipper for at gætte dig frem i junglen af billigt træningsudstyr.",
+    metaDescription:
+      "Det ultimative home gym på et budget 2026: 3 færdige pakker (lejlighed, best value under 5.000 kr. og garage-gym). Hjemmetræning på budget med live priser — og 3 ting du ikke må spare væk.",
+    categorySlug: "styrkemaskiner",
+    recommendationsHeading: "3 budget-pakker",
+    publishedAt: "2026-11-04",
+    updatedAt: "2026-11-04",
+    intro:
+      "Marked for hjemmetræning er overvældende: hundredvis af maskiner, “smart”-skærme og tilbehør, der spiser budgettet, før du har en reel træningsvane. Denne guide giver dig det, de fleste egentlig leder efter — færdige pakkeløsninger. Tre niveauer, der dækker både cardio og styrke, bygget af udstyr du kan købe via vores partnere med live priser. Pakke B under 5.000 kr. er vores Best Value, hvis du vil droppe fitnesscentret uden at indrette en garage.",
+    criteria: [
+      {
+        title: "Cardio vs. Styrke – sådan fordeler du dit budget",
+        description:
+          "Tommelfingerregel på budget: ca. 50–60 % til den maskine, der skaber vanen (cardio eller styrke — hvad du mangler mest), resten til det, der gør træningen komplet. I Pakke A er cardio kernen (gåbånd). I Pakke B deles budgettet mellem crosstrainer og bænk/håndvægte. I Pakke C går næsten alt til tung styrke — cardio kan vente.",
+      },
+      {
+        title: "Køb maskiner med simple computere",
+        description:
+          "Store touch-skærme og Wi-Fi æder ofte halvdelen af prisen. På budget køber du en simpel LCD (eller næsten ingen computer) og sætter din egen iPad/telefon i holderen. Du får samme træning — uden at betale for et fjernsyn, du allerede ejer.",
+      },
+      {
+        title: "Prioritér multifunktionelt udstyr",
+        description:
+          "En justerbar bænk koster typisk et par hundrede mere end en flad — men erstatter behovet for separate løsninger til mave, ryg, incline og skulderpres. Samme logik: elastiksæt med håndtag slår ti single-purpose gadgets.",
+      },
+      {
+        title: "Gå aldrig på kompromis med maks-belastningen",
+        description:
+          "Billigt må ikke blive farligt. Tjek at bænk, rack eller station er rated til din kropsvægt + de vægte, du løfter — med margin. Undervurder ikke dynamisk belastning, når du sætter stangen eller trækker hårdt i kabler.",
+      },
+      {
+        title: "Plads før drømmeudstyr",
+        description:
+          "Mål gulv og loft, før du forelsker dig i en multistation. Lejlighed = gåbånd, elastik og foldbart. Ekstra værelse/garage = Valhalla eller rack. Et setup, der ikke kan stå, hvor du bor, er ikke et tilbud.",
+      },
+      {
+        title: "Start med én pakke, opgrader bevidst",
+        description:
+          "Køb ikke “det perfekte gym” i tre omgange af fejlindkøb. Vælg A, B eller C, brug det i 8–12 uger, og opgrader det led, der faktisk begrænser dig — ikke det, Instagram viser dig.",
+      },
+    ],
+    products: [
+      {
+        id: "pakke-a-lejlighed",
+        name: "Pakke A: Den ultrabillige lejlighedspakke",
+        badge: "Under 2.500 kr.",
+        summary:
+          "Til dig med mindst plads og mindst budget. Ascendic Essential Walking Pad til skånsom cardio under arbejde/TV, plus elastiksæt med håndtag og yogamåtte til funktionel styrke og gulvarbejde. Samlet typisk omkring 1.200 kr. — langt under loftet.",
+        pros: [
+          "Passer i lejlighed uden at fylde stuen",
+          "Lav indgangspris — hele pakken under 2.500 kr.",
+          "Cardio + styrke uden tungt grej",
+          "Støjsvag gangtempo sammenlignet med løbebånd",
+        ],
+        cons: [
+          "Ikke til tung styrke eller progressiv overload med stang",
+          "Walking pad er til gang — ikke sprint",
+          "Elastik har loft for hvor stærk du bliver",
+        ],
+        specs: [
+          { label: "Budgetloft", value: "Under 2.500 kr." },
+          { label: "Plads", value: "Lejlighed / lille hjørne" },
+          { label: "Cardio", value: "Gåbånd (walking pad)" },
+          { label: "Styrke", value: "Elastik + måtte" },
+        ],
+        feedProductId: "Ascendic.dk:56388648173912",
+        bundleItems: [
+          {
+            name: "Ascendic Elastik træningssæt (med håndtag)",
+            feedProductId: "Ascendic.dk:43590874824938",
+            role: "Styrke",
+          },
+          {
+            name: "Odin Yogamåtte 0,4 cm Sort",
+            feedProductId: "Apuls.dk:5086",
+            role: "Tilbehør",
+          },
+        ],
+      },
+      {
+        id: "pakke-b-komplet",
+        name: "Pakke B: Den komplette fitness-pakke",
+        badge: "Best Value",
+        summary:
+          "Guidens anbefaling, hvis du vil droppe centret uden et stort rum. Odin C200 crosstrainer til effektiv cardio, Odin Multi justerbar/foldbar bænk til hele kroppen, og et sæt justerbare håndvægte til 20 kg. Samlet typisk omkring 2.700 kr. — solidt under 5.000 kr.",
+        pros: [
+          "Cardio + traditionel styrke i ét køb",
+          "Foldbar bænk sparer plads mellem sessioner",
+          "Justerbare håndvægte erstatter en hel vægtafdeling",
+          "Bedste balance mellem pris, plads og træningsudbytte",
+        ],
+        cons: [
+          "Kræver mere gulv end Pakke A",
+          "Ikke til tung squat/bænk med olympisk stang",
+          "C200 har simpel computer — ingen smart-skærm",
+        ],
+        specs: [
+          { label: "Budgetloft", value: "Under 5.000 kr." },
+          { label: "Plads", value: "Ekstra værelse / større stue" },
+          { label: "Cardio", value: "Crosstrainer" },
+          { label: "Styrke", value: "Justerbar bænk + håndvægte" },
+        ],
+        feedProductId: "Apuls.dk:12748",
+        bundleItems: [
+          {
+            name: "Odin Multi Justerbar og Foldbar Træningsbænk",
+            feedProductId: "Apuls.dk:15421",
+            role: "Styrke",
+          },
+          {
+            name: "Odin Justerbar Håndvægt 20 kg (2×10 kg)",
+            feedProductId: "Apuls.dk:9007",
+            role: "Styrke",
+          },
+        ],
+      },
+      {
+        id: "pakke-c-garage",
+        name: "Pakke C: Det tunge garage-gym på budget",
+        badge: "Under 10.000 kr.",
+        summary:
+          "Til den seriøse løfter med garage, kælder eller ekstra værelse. Odin Valhalla Home Gym 100 kg som multifunktionel styrkecentrale plus Valhalla justerbar bænk. Samlet typisk omkring 6.900 kr. — plads til måtter og småting inden for 8–10.000 kr. Fokus: progressiv overload og muskelopbygning.",
+        pros: [
+          "100 kg vægtstak — mange øvelser uden at læsse skiver",
+          "Dedikeret justerbar bænk til press og variation",
+          "Seriøst hjemmegym uden center-pris",
+          "Skalerbart fundament til år frem",
+        ],
+        cons: [
+          "Kræver loftshøjde og fast plads",
+          "Tungt at flytte — ikke lejlighedsvenligt",
+          "Cardio er ikke inkluderet (tilføj cykel/romaskine senere)",
+        ],
+        specs: [
+          { label: "Budgetloft", value: "Under 10.000 kr." },
+          { label: "Plads", value: "Garage / kælder / ekstra rum" },
+          { label: "Cardio", value: "Tilføj senere" },
+          { label: "Styrke", value: "Multistation 100 kg + bænk" },
+        ],
+        feedProductId: "Apuls.dk:15327",
+        bundleItems: [
+          {
+            name: "Odin Valhalla Justerbar Træningsbænk",
+            feedProductId: "Apuls.dk:16031",
+            role: "Styrke",
+          },
+        ],
+      },
+    ],
+    howToChoose:
+      "Lille plads og stramt budget? Pakke A. Vil du erstatte fitnesscentret uden garage? Pakke B — vores Best Value under 5.000 kr. Seriøs styrke og har du rummet? Pakke C med Valhalla 100 kg. Brug “Se pris” på hver del af pakken for live partnerpriser. Opgrader først, når vanen sidder — ikke før.",
+    learningSections: [
+      {
+        heading: "Hjemmetræning på budget: Hvor lidt kan du slippe med?",
+        paragraphs: [
+          "Du behøver ikke et fuldt center for at træne effektivt. Med under 2.500 kr. kan du få daglig cardio (gåbånd) og funktionel styrke (elastik + måtte). Det er nok til at bygge vanen — og vanen er det dyreste, du kan miste, hvis du køber for stort og for tidligt.",
+          "De fleste spilder penge på smart-skærme, single-purpose tilbehør og maskiner, der ikke matcher deres plads. Start med den mindste pakke, der dækker både puls og styrke. Opgrader det led, der faktisk begrænser dig efter et par måneder.",
+        ],
+      },
+      {
+        heading: "Det ultimative home gym til under 5.000 kr.",
+        paragraphs: [
+          "Pakke B er designet til præcis den søgning: crosstrainer til effektiv, ledvenlig cardio, justerbar bænk til press/rows/core, og justerbare håndvægte så du ikke behøver et stativ med faste vægte. Du får et setup, der erstatter medlemskab — uden at kræve et dedikeret garage-rum.",
+          "Sammenligningen nedenfor viser, hvordan de tre pakker fordeler pris, plads og træningsfokus. Pakke B er sweet spot for de fleste, der vil droppe centret i 2026.",
+        ],
+        comparison: {
+          caption: "De 3 budget-pakker side om side",
+          rowHeaderLabel: "Pakke",
+          columns: ["Prisloft", "Plads", "Cardio", "Styrke"],
+          rows: [
+            {
+              label: "A – Lejlighed",
+              cells: [
+                "Under 2.500 kr.",
+                "Minimal",
+                "Gåbånd",
+                "Elastik + måtte",
+              ],
+            },
+            {
+              label: "B – Best Value",
+              cells: [
+                "Under 5.000 kr.",
+                "Mellem",
+                "Crosstrainer",
+                "Bænk + håndvægte",
+              ],
+            },
+            {
+              label: "C – Garage",
+              cells: [
+                "Under 10.000 kr.",
+                "Dedikeret rum",
+                "Senere",
+                "Valhalla 100 kg + bænk",
+              ],
+            },
+          ],
+        },
+      },
+      {
+        heading: "Spar penge på fitnessudstyr: 3 ting du IKKE må spare væk",
+        paragraphs: [
+          "1) Maks-belastning og stabilitet. En bænk eller station, der vrikker under dig, er dyr — i skader og i genkøb. Læs ratingen: dig + vægte, med margin.",
+          "2) Det, der skaber vanen. Spar på skærme og gadgets; prioriter den maskine, du faktisk vil bruge tre gange om ugen. Et simpelt gåbånd, du bruger, slår et dyrt løbebånd, der samler støv.",
+          "3) Gulv og naboer. Måtte og fornuftig placering er billig forsikring. I lejlighed er vibration og vægtdrop dyrere end den “besparelse”, du får ved at springe underlaget over.",
+        ],
+      },
+      {
+        heading: "Billigt træningsudstyr til hjemmet (Bedst i test 2026)",
+        paragraphs: [
+          "“Bedst i test” på budget betyder her: bedste pakke til formålet — ikke den dyreste enkeltmaskine. Ascendic Essential, Odin C200, Odin Multi-bænk og Valhalla 100 kg er valgt, fordi de rammer pris, funktion og partner-tilgængelighed i danske feeds lige nu.",
+          "Vil du dykke ned i én maskintype? Se vores guides til gåbånd, styrkemaskiner, multistation og justerbar træningsbænk. Priserne på denne side opdateres løbende via partnerfeeds — klik “Se pris” for aktuelt tilbud.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "Hvilken home gym-pakke skal jeg vælge til lejlighed?",
+        answer:
+          "Pakke A. Gåbånd, elastik og måtte fylder mindst, larmer mindst og holder dig under 2.500 kr. Pakke B kan godt fungere i en større lejlighed, hvis du har plads til crosstrainer og kan folde bænken væk — men start realistisk med A, hvis pladsen er knap.",
+      },
+      {
+        question: "Kan jeg droppe fitnesscentret for under 5.000 kr.?",
+        answer:
+          "Ja — det er præcis Pakke B: crosstrainer + justerbar bænk + justerbare håndvægte. Du får både cardio og helkropsstyrke. Du mangler tung squat med stang; det kommer først i Pakke C eller et senere rack-køb.",
+      },
+      {
+        question: "Hvad må jeg ikke spare væk på budget-udstyr?",
+        answer:
+          "Maks-belastning/stabilitet, den vane-skabende kernemaskine, og underlag/hensyn til gulv og naboer. Spar gerne på touch-skærme, Wi-Fi-moduler og single-purpose tilbehør.",
+      },
+      {
+        question: "Valhalla multistation eller squat rack til garage-gym?",
+        answer:
+          "Valhalla (Pakke C) er bedst, hvis du vil have mange kabel- og maskinøvelser uden at læsse skiver. Vil du primært squat/bænke med stang og skiver, se i stedet vores styrkemaskine-guide (hjemmetræningssæt eller half-rack). Mål loftshøjde, før du køber multistation.",
+      },
+      {
+        question: "Hvorfor anbefaler I simple computere på budget?",
+        answer:
+          "Fordi skærmen ofte er den dyreste del — ikke træningen. En LCD plus din egen tablet giver dig underholdning og apps uden at fordoble maskinens pris. Det er en af de hurtigste måder at holde et home gym under budgetloftet.",
+      },
+      {
+        question: "Fylder Pakke B for meget til hjemmet?",
+        answer:
+          "Crosstraineren skal have et fast footprint; bænken kan foldes. Har du kun et lille hjørne, vælg Pakke A. Har du et sove-/kontor-/fællesrum, du kan afsætte 2–3 m² til, er Pakke B realistisk for de fleste.",
+      },
+      {
+        question: "Hvordan ser jeg aktuelle priser på pakkerne?",
+        answer:
+          "Klik “Se pris” på hovedproduktet og på hver linje under “Pakken indeholder”. Priserne hentes live fra vores partnere og kan ændre sig. Samlet pakkepris er vejledende — tjek summeringen selv før køb.",
+      },
+    ],
+    relatedSlugs: [
+      "bedste-gaabaand-2026",
+      "bedste-styrkemaskiner-2026",
+      "bedste-multistation-2026",
+      "bedste-justerbar-traeningsbaenk-2026",
     ],
   },
 ];

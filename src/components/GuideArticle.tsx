@@ -18,11 +18,18 @@ import {
 async function resolveGuideOffers(
   products: GuideProduct[],
 ): Promise<Map<string, FeedProduct | undefined>> {
+  const ids = new Set<string>();
+  for (const product of products) {
+    if (product.feedProductId) ids.add(product.feedProductId);
+    for (const item of product.bundleItems ?? []) {
+      ids.add(item.feedProductId);
+    }
+  }
+
   const entries = await Promise.all(
-    products.map(async (product) => {
-      if (!product.feedProductId) return [product.id, undefined] as const;
-      const offer = await getFeedProductById(product.feedProductId);
-      return [product.id, offer] as const;
+    [...ids].map(async (id) => {
+      const offer = await getFeedProductById(id);
+      return [id, offer] as const;
     }),
   );
   return new Map(entries);
@@ -31,6 +38,8 @@ async function resolveGuideOffers(
 export async function GuideArticle({ guide }: { guide: Guide }) {
   const category = getCategory(guide.categorySlug);
   const related = getRelatedGuides(guide);
+  const recommendationsHeading =
+    guide.recommendationsHeading ?? "Anbefalede modeller";
   const [relatedOffers, offerMap] = await Promise.all([
     getProductsByCategory(guide.categorySlug as MachineCategorySlug, {
       intentSlug: guide.intentSlug,
@@ -95,7 +104,7 @@ export async function GuideArticle({ guide }: { guide: Guide }) {
                   href="#anbefalinger"
                   className="transition-colors hover:text-accent"
                 >
-                  Anbefalede modeller
+                  {recommendationsHeading}
                 </a>
               </li>
             ) : null}
@@ -160,7 +169,7 @@ export async function GuideArticle({ guide }: { guide: Guide }) {
 
         <section id="anbefalinger" className="mt-14 scroll-mt-28">
           <h2 className="font-display text-2xl font-semibold uppercase tracking-wide text-foreground">
-            Anbefalede modeller
+            {recommendationsHeading}
           </h2>
           {guide.products.length === 0 ? (
             <p className="mt-4 text-muted leading-relaxed">
@@ -170,7 +179,9 @@ export async function GuideArticle({ guide }: { guide: Guide }) {
           ) : (
             <div className="mt-8 space-y-14">
               {guide.products.map((product) => {
-                const offer = offerMap.get(product.id);
+                const offer = product.feedProductId
+                  ? offerMap.get(product.feedProductId)
+                  : undefined;
                 const affiliate = getProductAffiliate(product);
                 const shopHref = offer?.url ?? affiliate?.url;
                 const shopLabel = offer
@@ -180,6 +191,7 @@ export async function GuideArticle({ guide }: { guide: Guide }) {
                   offer?.oldPrice != null &&
                   offer.price != null &&
                   offer.oldPrice > offer.price;
+                const bundleItems = product.bundleItems ?? [];
 
                 return (
                   <div
@@ -275,6 +287,60 @@ export async function GuideArticle({ guide }: { guide: Guide }) {
                           </div>
                         ))}
                       </dl>
+                    ) : null}
+
+                    {bundleItems.length > 0 ? (
+                      <div className="mt-8 border-t border-border pt-6">
+                        <p className="font-display text-xs uppercase tracking-[0.16em] text-muted">
+                          Pakken indeholder
+                        </p>
+                        <ul className="mt-4 space-y-4">
+                          {bundleItems.map((item) => {
+                            const itemOffer = offerMap.get(item.feedProductId);
+                            const itemHref = itemOffer?.url;
+                            return (
+                              <li
+                                key={item.feedProductId}
+                                className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between sm:gap-4"
+                              >
+                                <div className="min-w-0">
+                                  {item.role ? (
+                                    <p className="font-display text-[0.65rem] uppercase tracking-[0.14em] text-accent">
+                                      {item.role}
+                                    </p>
+                                  ) : null}
+                                  <p className="text-sm text-foreground/90">
+                                    {item.name}
+                                  </p>
+                                  {itemOffer ? (
+                                    <p className="mt-0.5 text-sm tabular-nums text-muted">
+                                      {formatPriceDkk(itemOffer.price)}
+                                      <span className="ml-2">
+                                        · {itemOffer.merchant}
+                                      </span>
+                                      {!itemOffer.inStock ? (
+                                        <span className="ml-2">
+                                          · Ikke på lager
+                                        </span>
+                                      ) : null}
+                                    </p>
+                                  ) : null}
+                                </div>
+                                {itemHref ? (
+                                  <a
+                                    href={itemHref}
+                                    target="_blank"
+                                    rel="noopener noreferrer sponsored"
+                                    className="inline-flex shrink-0 items-center border border-border px-4 py-2 font-display text-xs font-semibold uppercase tracking-[0.12em] text-accent transition-colors hover:border-accent hover:text-accent-dim"
+                                  >
+                                    Se pris →
+                                  </a>
+                                ) : null}
+                              </li>
+                            );
+                          })}
+                        </ul>
+                      </div>
                     ) : null}
 
                     {shopHref && shopLabel ? (
@@ -376,7 +442,7 @@ export async function GuideArticle({ guide }: { guide: Guide }) {
                         scope="col"
                         className="py-3 pr-4 font-display text-xs font-medium uppercase tracking-[0.14em] text-muted"
                       >
-                        App / platform
+                        {section.comparison.rowHeaderLabel ?? "App / platform"}
                       </th>
                       {section.comparison.columns.map((col) => (
                         <th
