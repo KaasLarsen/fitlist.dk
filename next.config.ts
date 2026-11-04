@@ -30,6 +30,11 @@ const nextConfig: NextConfig = {
       { protocol: "https", hostname: "fitnessengros.dk", pathname: "/**" },
       { protocol: "https", hostname: "www.fitnessfree.dk", pathname: "/**" },
       { protocol: "https", hostname: "fitnessfree.dk", pathname: "/**" },
+      {
+        protocol: "https",
+        hostname: "shop93647.sfstatic.io",
+        pathname: "/**",
+      },
       { protocol: "https", hostname: "www.jtsport.dk", pathname: "/**" },
       { protocol: "https", hostname: "jtsport.dk", pathname: "/**" },
       {

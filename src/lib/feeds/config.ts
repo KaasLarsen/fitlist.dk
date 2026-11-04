@@ -47,6 +47,12 @@ export const PARTNER_ADS_FEEDS: readonly PartnerAdsFeed[] = [
     merchant: "FITNESSFREE.DK",
   },
   {
+    id: "fitnessgruppen",
+    bannerId: "106349",
+    feedId: "3301",
+    merchant: "Fitnessgruppen.dk",
+  },
+  {
     id: "homex",
     bannerId: "92127",
     feedId: "2425",
