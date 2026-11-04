@@ -1,0 +1,102 @@
+@import "tailwindcss";
+
+:root {
+  --background: #070807;
+  --foreground: #f2f4f0;
+  --muted: #9aa39a;
+  --surface: #101411;
+  --border: #1c241e;
+  --accent: #c8f531;
+  --accent-dim: #9bc41a;
+  --accent-fg: #0a0d08;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-surface: var(--surface);
+  --color-border: var(--border);
+  --color-accent: var(--accent);
+  --color-accent-dim: var(--accent-dim);
+  --color-accent-fg: var(--accent-fg);
+  --font-sans: var(--font-dm-sans);
+  --font-display: var(--font-oswald);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-dm-sans), system-ui, sans-serif;
+}
+
+::selection {
+  background: var(--accent);
+  color: var(--accent-fg);
+}
+
+.noise {
+  position: relative;
+}
+
+.noise::before {
+  content: "";
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  opacity: 0.045;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: 180px 180px;
+  z-index: 1;
+}
+
+.hero-glow {
+  background:
+    radial-gradient(ellipse 80% 55% at 70% 20%, rgba(200, 245, 49, 0.12), transparent 55%),
+    radial-gradient(ellipse 60% 50% at 15% 80%, rgba(200, 245, 49, 0.05), transparent 50%),
+    linear-gradient(165deg, #0a0e0a 0%, #070807 45%, #050605 100%);
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.animate-fade-up {
+  animation: fade-up 0.7s ease-out both;
+}
+
+.animate-fade-up-delay {
+  animation: fade-up 0.7s ease-out 0.15s both;
+}
+
+.animate-fade-up-delay-2 {
+  animation: fade-up 0.7s ease-out 0.3s both;
+}
+
+.animate-fade-in {
+  animation: fade-in 1s ease-out both;
+}
