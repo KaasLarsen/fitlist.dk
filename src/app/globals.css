@@ -9,6 +9,7 @@
   --accent: #16a34a;
   --accent-dim: #15803d;
   --accent-fg: #ffffff;
+  --campaign-banner-h: 0px;
 }
 
 @theme inline {
