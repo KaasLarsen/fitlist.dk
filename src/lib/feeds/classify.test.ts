@@ -115,6 +115,59 @@ describe("classifyProduct — hard excludes", () => {
       null,
     );
   });
+
+  it("drops spinning t-shirt even with Motionscykel feed category", () => {
+    assert.equal(
+      classifyProduct(
+        product({
+          title:
+            "Body Bike Weisshorn T-shirt str. M spinning t shirt sort, Comfort Collection",
+          brand: "Body Bike",
+          category: "Motionscykel",
+          price: 85,
+        }),
+      ),
+      null,
+    );
+  });
+
+  it("drops spinning jersey / trøje", () => {
+    assert.equal(
+      classifyProduct(
+        product({
+          title:
+            "Body Bike Dinara Jersey Women str. 36 - spinning trøje til kvinder",
+          brand: "Body Bike",
+          category: "Motionscykel",
+          price: 285,
+        }),
+      ),
+      null,
+    );
+  });
+
+  it("drops bike spare parts and accessories from motionscykel feeds", () => {
+    const noise = [
+      "Odin S800 Bremseklods",
+      "Justerings håndtag Indoor Bike 20 mm.",
+      "Peak Fitness - Strømforsyning - B2.0i motionscykel",
+      "Odin Strømadapter",
+      "Peak Fitness - Racerstyr til Indoor Bike",
+      "VirtuFit Universel Pulsmåler 5 kHz",
+      "VirtuFit Universelt Bluetooth Pulsmålerbælte",
+      "Universal Flaskeholder",
+      "Klikpedaler LOOK",
+    ];
+    for (const title of noise) {
+      assert.equal(
+        classifyProduct(
+          product({ title, category: "Motionscykel", brand: "Odin" }),
+        ),
+        null,
+        title,
+      );
+    }
+  });
 });
 
 describe("classifyProduct — tilbehoer (must-haves)", () => {
