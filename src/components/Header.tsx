@@ -84,7 +84,7 @@ export function Header() {
   }, [open, close]);
 
   const iconClass = onDarkHero
-    ? "text-white/75 drop-shadow-sm hover:text-white"
+    ? "text-white drop-shadow hover:text-white"
     : "text-muted hover:text-foreground";
 
   return (
@@ -94,7 +94,7 @@ export function Header() {
           href="/"
           className={`font-display text-xl font-semibold uppercase tracking-[0.12em] transition-colors hover:text-accent sm:text-2xl ${
             onDarkHero
-              ? "text-white drop-shadow-sm"
+              ? "text-white drop-shadow"
               : "text-foreground"
           }`}
         >
@@ -108,7 +108,7 @@ export function Header() {
                 href={item.href}
                 className={`text-sm font-medium tracking-wide transition-colors ${
                   onDarkHero
-                    ? "text-white/75 drop-shadow-sm hover:text-white"
+                    ? "text-white drop-shadow hover:text-white"
                     : "text-muted hover:text-foreground"
                 }`}
               >

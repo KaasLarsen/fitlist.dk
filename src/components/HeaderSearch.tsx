@@ -142,7 +142,7 @@ export function HeaderSearch({ onDarkHero = false }: Props) {
   const showEmpty = hasQuery && !loading && totalHits === 0;
 
   const iconClass = onDarkHero
-    ? "text-white/75 drop-shadow-sm hover:text-white"
+    ? "text-white drop-shadow hover:text-white"
     : "text-muted hover:text-foreground";
 
   return (
