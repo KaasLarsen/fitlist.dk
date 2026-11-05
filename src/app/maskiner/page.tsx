@@ -30,7 +30,10 @@ export default function MaskinerPage() {
           {categories.map((category) => {
             const guideCount = getGuidesByCategory(category.slug).length;
             return (
-              <li key={category.slug} className="group relative py-8">
+              <li
+                key={category.slug}
+                className="group relative py-8 transition-colors hover:bg-accent/5"
+              >
                 <Link
                   href={`/maskiner/${category.slug}`}
                   className="absolute inset-0"
