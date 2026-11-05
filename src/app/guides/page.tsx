@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   title: "Guides",
   description:
     "Lange købsguides til gåbånd, spinning, løbebånd, romaskiner, motionscykler, crosstrainere og styrkemaskiner — kriterier, anbefalinger og live priser fra danske partnere.",
-  alternates: { canonical: "https://fitlist.dk/guides" },
+  alternates: { canonical: "https://www.fitlist.dk/guides" },
 };
 
 export default function GuidesPage() {

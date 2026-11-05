@@ -6150,4 +6150,1039 @@ export const guides: Guide[] = [
       "hjemmetraening-for-begyndere-foerste-90-dage",
     ],
   },
+  {
+    slug: "bedste-stoejsvag-loebebaand-lejlighed-2026",
+    title: "Bedste støjsvage løbebånd til lejlighed 2026",
+    excerpt:
+      "Kan du løbe hjemme uden sure underboer? Realistisk guide til støjsvagt løbebånd, dæmpning og hvornår gåbånd er det ærligere valg — med live priser.",
+    metaDescription:
+      "Bedste støjsvage løbebånd til lejlighed 2026. Dæmpning, fold og realistisk aftenbrug — plus fire anbefalinger med live priser. Gåbånd når løb er for hårdt for naboerne.",
+    categorySlug: "loebebaand",
+    intentSlug: "stoejsvag",
+    publishedAt: "2026-11-05",
+    updatedAt: "2026-11-05",
+    intro:
+      "“Støjsvagt løbebånd” er det, mange søger i lejlighed — og det, shops gerne lover. Sandheden: sprint transmitterer gennem etagen, uanset brand. Denne guide er ærlig om, hvornår et kompakt hjemmeløbebånd kan fungere med måtte og fornuftige tider, og hvornår Bedste gåbånd 2026 eller Gåbånd til kontoret er det bedre nabo-valg. Du får fire konkrete modeller med shop-links og klare kriterier for dæmpning, fold og vibration.",
+    criteria: [
+      {
+        title: "Accepter fysikken: løb larmer mere end gang",
+        description:
+          "Strukturel støj (skridt gennem gulvet) er værre end motorbrum. Jo hurtigere og tungere, jo mere vibration. I tynde etageadskillelser er gåbånd ofte det eneste realistiske “stille” valg.",
+      },
+      {
+        title: "Måtte er ikke valgfri",
+        description:
+          "En tyk underlagsmåtte dæmper og beskytter gulvet. Budgetér den ind — den koster mindre end en nabokonflikt.",
+      },
+      {
+        title: "Fold og placering",
+        description:
+          "Stil båndet væk fra midten af rummet, hvis muligt, og vælg foldbart, så det ikke er en permanent resonanskasse midt i stuen.",
+      },
+      {
+        title: "Kompakt motor til hjemmet — ikke center-sprint",
+        description:
+          "Til lejlighed prioriterer du dæmpet, kompakt hjemmebrug over max-HK. Hold intervaller i dagtimerne.",
+      },
+      {
+        title: "Vær ærlig om dit 80 %-brug",
+        description:
+          "Går du mest? Køb gåbånd. Skal du kunne jogge/løbe nogle gange om ugen og har solide gulve/tider? Vælg kompakt løbebånd.",
+      },
+      {
+        title: "Test realistisk aftenbrug",
+        description:
+          "Hvis du kun kan træne kl. 21, er et fuldt løbebånd ofte forkert køb i etagebyggeri — uanset “quiet motor”-claims.",
+      },
+    ],
+    products: [
+      {
+        id: "reebok-irun-quiet",
+        name: "Reebok i-Run 4.5 Løbebånd",
+        badge: "Bedst til lejlighed (fold)",
+        summary:
+          "Foldes fladt og kan rulles under sofa/seng — ægte løbebånd uden permanent footprint. Bedste kompromis, når du skal kunne jogge, men stadig pakke maskinen væk.",
+        pros: [
+          "Flad fold til opbevaring",
+          "Transporthjul",
+          "Ægte løbebånd (ikke walking pad)",
+          "Færdigsamlet hos partner",
+        ],
+        cons: [
+          "Løb om aftenen kan stadig genere naboer",
+          "Ikke T66-klassen til hård interval",
+          "Kræver måtte og realistiske tider",
+        ],
+        specs: [
+          { label: "Type", value: "Foldbart løbebånd" },
+          { label: "Segment", value: "Kompakt mid" },
+          { label: "Partner", value: "Apuls.dk" },
+        ],
+        feedProductId: "Apuls.dk:15828",
+      },
+      {
+        id: "ascendic-7021-quiet",
+        name: "Ascendic 7021 Løbebånd",
+        badge: "Bedste kompakt med hældning",
+        summary:
+          "Kompakt hjemmeløbebånd med automatisk hældning — til jogging og løb uden midrange-pris. Brug hældning til intensitet i stedet for sprint, når naboerne er tæt på.",
+        pros: [
+          "Kompakt footprint",
+          "Automatisk hældning",
+          "Skarp pris for ægte løbebånd",
+          "God til at undgå topsprint",
+        ],
+        cons: [
+          "Stadig strukturel støj ved løb",
+          "Ikke “lydløs”",
+          "Tjek max-hastighed ift. dine mål",
+        ],
+        specs: [
+          { label: "Type", value: "Løbebånd" },
+          { label: "Feature", value: "Auto hældning" },
+          { label: "Partner", value: "Ascendic.dk" },
+        ],
+        feedProductId: "Ascendic.dk:56336394781016",
+      },
+      {
+        id: "titan-t36-quiet",
+        name: "Titan Life Treadmill T36",
+        badge: "Bedste Titan entry",
+        summary:
+          "Titan-entry til ægte løbebånd, når du vil have kendt linje og fri fragt — stadig med måtte og fornuftige træningstider i lejlighed.",
+        pros: [
+          "Titan Life-kvalitet i entry",
+          "Fri fragt hos partner",
+          "Ægte løbebånd til hjemmet",
+          "Klar opgradering fra walking pad",
+        ],
+        cons: [
+          "Fylder mere end fold-fladt",
+          "Løb = vibration",
+          "Overkill hvis du kun går",
+        ],
+        specs: [
+          { label: "Type", value: "Løbebånd" },
+          { label: "Brand", value: "Titan Life" },
+          { label: "Partner", value: "HomeX.dk" },
+        ],
+        feedProductId: "HomeX.dk:3178",
+      },
+      {
+        id: "ascendic-pad-quiet-alt",
+        name: "Ascendic Essential Walking Pad",
+        badge: "Ærligt alternativ (gå)",
+        summary:
+          "Når “støjsvagt løbebånd” egentlig betyder “jeg vil bevæge mig uden sure naboer”: gåbånd i gangtempo er næsten altid det rigtige lejlighedsvalg. Se også Bedste gåbånd 2026.",
+        pros: [
+          "Markant mindre strukturel støj end løb",
+          "Kan gemmes under sofa",
+          "Perfekt til zone 2 og skridt",
+          "Skarp pris",
+        ],
+        cons: [
+          "Ikke til løbeintervaller",
+          "Lavere max-hastighed",
+          "Forskellig kategori end “rigtigt løbebånd”",
+        ],
+        specs: [
+          { label: "Type", value: "Gåbånd / walking pad" },
+          { label: "Brug", value: "Gang" },
+          { label: "Partner", value: "Ascendic.dk" },
+        ],
+        feedProductId: "Ascendic.dk:56388648173912",
+      },
+    ],
+    howToChoose:
+      "Skal du primært gå? Ascendic Essential eller Bedste gåbånd 2026 / Gåbånd til kontoret. Skal du kunne jogge og kan pakke væk? Reebok i-Run 4.5. Kompakt med hældning? Ascendic 7021. Vil have Titan-entry? T36. Til seriøst løb flere gange om ugen i hus/garage: Bedste løbebånd 2026 (T56/T66). Læs også Bedste støjsvage træningsmaskiner til lejligheden.",
+    learningSections: [
+      {
+        heading: "Hvorfor “quiet treadmill” er misvisende",
+        paragraphs: [
+          "Motoren kan være relativ stille. Dine skridt er det ikke. I etagebyggeri er det vibrationen, der vækker underboen — især ved løb.",
+          "Marketing siger “støjsvag”. Din underbo hører hæl-tramp. Vælg teknologi efter bolig, ikke efter slogan.",
+        ],
+      },
+      {
+        heading: "Incline i stedet for sprint",
+        paragraphs: [
+          "Hældning hæver intensiteten uden topspeed. Det er den mest lejlighedsvenlige måde at gøre et kompakt bånd “hårdere” på.",
+          "Kombinér med måtte og dagtimer, hvis du bor ovenpå andre.",
+        ],
+      },
+      {
+        heading: "Gåbånd vs. løbebånd i lejlighed",
+        paragraphs: [
+          "Gåbånd vinder på støj og plads. Løbebånd vinder på fart og løbespecifik træning. Match 80 % af din ugentlige brug.",
+          "Se Bedste foldbare & kompakte træningsmaskiner, hvis footprint er lige så vigtigt som støj.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "Findes der et lydløst løbebånd til lejlighed?",
+        answer:
+          "Nej — ikke til rigtigt løb. Du kan mindske støj med måtte, fold, lavere tempo og fornuftige tider. Til maksimal stilhed: gåbånd.",
+      },
+      {
+        question: "Hvilket støjsvagt løbebånd skal jeg købe?",
+        answer:
+          "Til fold/opbevaring: Reebok i-Run 4.5. Til kompakt med hældning: Ascendic 7021. Primært gang: Ascendic Essential Walking Pad.",
+      },
+      {
+        question: "Er gåbånd bedre end løbebånd i lejlighed?",
+        answer:
+          "Ofte ja, hvis støj er hovedkravet. Se Bedste gåbånd 2026. Skal du løbe specifikt, planlæg dæmpning og træningstid.",
+      },
+      {
+        question: "Hjælper underlagsmåtte?",
+        answer:
+          "Ja. Den dæmper vibration og beskytter gulvet. I lejlighed er den næsten obligatorisk.",
+      },
+      {
+        question: "Hvordan ser jeg live priser?",
+        answer:
+          "Klik “Se pris” ovenfor, eller browse Løbebånd → Støjsvag for flere tilbud.",
+      },
+      {
+        question: "Tjener Fitlist på links?",
+        answer:
+          "Ja, via Partner-Ads. Det ændrer ikke din pris. Se “Sådan tjener vi penge”.",
+      },
+    ],
+    relatedSlugs: [
+      "bedste-loebebaand-2026",
+      "bedste-gaabaand-2026",
+      "gaabaand-til-kontoret-2026",
+      "bedste-stoejsvage-traeningsmaskiner-lejlighed-2026",
+      "bedste-foldbare-kompakte-traeningsmaskiner-2026",
+      "bedste-stoejsvag-romaskine-2026",
+      "bedste-stoejsvag-motionscykel-lejlighed-2026",
+    ],
+  },
+  {
+    slug: "bedste-stoejsvag-motionscykel-lejlighed-2026",
+    title: "Bedste støjsvage motionscykel til lejlighed 2026",
+    excerpt:
+      "Magnetcykel og remtræk til aftentræning uden nabo-krig: fire anbefalinger med live priser — og hvornår spinning stadig er OK.",
+    metaDescription:
+      "Bedste støjsvage motionscykel til lejlighed 2026. Magnet/rem, fold og aftenbrug — plus fire anbefalinger med live priser.",
+    categorySlug: "motionscykel",
+    intentSlug: "stoejsvag",
+    publishedAt: "2026-11-05",
+    updatedAt: "2026-11-05",
+    intro:
+      "Motionscyklen er ofte det mest lejlighedsvenlige “rigtige” cardio-valg: magnetmodstand og remtræk kan være næsten lydløse, hvis du undgår airbike og kæderaslen. Denne guide er til dig, der vil zone 2 eller intervaller hjemme uden at vække opgangen — med fire konkrete modeller og klare grænser for, hvornår spinning stadig er fair i etagebyggeri.",
+    criteria: [
+      {
+        title: "Magnet + rem, ikke luft",
+        description:
+          "Airbike er cardio-kongen — og støj-bøllen. Til lejlighed: magnetisk kondicykel eller spinning med remtræk.",
+      },
+      {
+        title: "Sadel vs. vibration",
+        description:
+          "Siddende kondicykel transmitterer mindre “tramp” end stående sprint på spin bike. Til sen aften: sid ned.",
+      },
+      {
+        title: "Måtte under",
+        description:
+          "Selv stille cykler kan sende rumlen gennem gulvet. Måtte + vater = mindre drama.",
+      },
+      {
+        title: "Fold hvis stuen er træningsrum",
+        description:
+          "En foldbar cykel, du faktisk pakker væk, slår en “stille” cykel midt i rummet, du hader at se på.",
+      },
+      {
+        title: "Pasform før skærm",
+        description:
+          "Sadelhøjde, styr og komfort afgør, om du cykler tre gange om ugen. Skærm er sekundært.",
+      },
+      {
+        title: "Airbike = hus/garage",
+        description:
+          "Elsker du fan-bikes? Gem dem til hus med træningsrum — eller se Bedste Airbike 2026 med åbne øjne for støj.",
+      },
+    ],
+    products: [
+      {
+        id: "titan-athlete-quiet",
+        name: "Titan Life Athlete Motionscykel",
+        badge: "Bedst samlet stille",
+        summary:
+          "Allround kondicykel til jævnlig, støjsvag hjemmebrug — vores hovedvalg, når du vil have magnetisk cardio uden spinning-aggressivitet.",
+        pros: [
+          "Solid midrange til hjemmet",
+          "Lejlighedsvenlig ift. airbike",
+          "Fri fragt hos partner",
+          "God til daglig zone 2",
+        ],
+        cons: [
+          "Ikke en tung spin bike",
+          "Fylder mere end fold-mini",
+          "Tjek pasform til din højde",
+        ],
+        specs: [
+          { label: "Type", value: "Kondicykel" },
+          { label: "Brand", value: "Titan Life" },
+          { label: "Partner", value: "HomeX.dk" },
+        ],
+        feedProductId: "HomeX.dk:3237",
+      },
+      {
+        id: "titan-s72-quiet",
+        name: "Titan LIFE Spinningcykel S72",
+        badge: "Bedste stille-ish spin",
+        summary:
+          "Når du vil spinne hjemme: rem/magnet-setup der typisk er langt mere lejlighedsvenligt end airbike. Hold stående sprint i dagtimerne.",
+        pros: [
+          "Remtræk uden kæderaslen",
+          "Allround S72 til hjemmet",
+          "God til intervaller",
+          "Fri fragt hos partner",
+        ],
+        cons: [
+          "Stående sprint = mere vibration",
+          "Hårdere saddel end kondicykel",
+          "Fylder",
+        ],
+        specs: [
+          { label: "Type", value: "Spinningcykel" },
+          { label: "Serie", value: "S72" },
+          { label: "Partner", value: "HomeX.dk" },
+        ],
+        feedProductId: "HomeX.dk:2807",
+      },
+      {
+        id: "titan-budget-quiet",
+        name: "Titan Life Motionscykel (budget)",
+        badge: "Bedste budget stille",
+        summary:
+          "Prisvenlig kondicykel til at bygge vanen stille — fin starter i lejlighed, før du opgraderer til midrange.",
+        pros: [
+          "Lav indgangspris",
+          "Stille ift. luftmodstand",
+          "Fri fragt hos partner",
+          "God til rolige pas",
+        ],
+        cons: [
+          "Færre features",
+          "Ikke til hård spinning",
+          "Opgrader ved daglig hård brug",
+        ],
+        specs: [
+          { label: "Type", value: "Kondicykel" },
+          { label: "Segment", value: "Budget" },
+          { label: "Partner", value: "HomeX.dk" },
+        ],
+        feedProductId: "HomeX.dk:2702",
+      },
+      {
+        id: "ascendic-fold-bike",
+        name: "Ascendic 8001 Foldbar Motionscykel",
+        badge: "Bedste fold til lejlighed",
+        summary:
+          "Foldbar cykel til små hjem — når støjkrav møder pladskrav, og maskinen skal kunne forsvinde efter træning.",
+        pros: [
+          "Foldbar",
+          "Skarp pris",
+          "Relevant i små lejligheder",
+          "Nemmere at leve med i stuen",
+        ],
+        cons: [
+          "Mindre stabil end fuldstørrelse midrange",
+          "Ikke premium spin-følelse",
+          "Tjek max bruger vægt",
+        ],
+        specs: [
+          { label: "Type", value: "Foldbar motionscykel" },
+          { label: "Partner", value: "Ascendic.dk" },
+        ],
+        feedProductId: "Ascendic.dk:39480045797550",
+      },
+    ],
+    howToChoose:
+      "Allround stille kondicykel? Titan Athlete. Vil spinne? S72 (dagtimer til stående sprint). Budget? Titan entry. Lille bolig? Ascendic foldbar. Airbike? Kun hvis naboerne tillader det — se Bedste Airbike 2026. Bredere støj-guide: Bedste støjsvage træningsmaskiner til lejligheden.",
+    learningSections: [
+      {
+        heading: "Hvorfor cykel vinder på støj",
+        paragraphs: [
+          "Ingen løbestød, ingen luftvifte (hvis du vælger magnet). Det er derfor cyklen ofte er førstevalg i etagebyggeri.",
+          "Romaskine og crosstrainer kan også være stille i magnet-udgave — se Bedste støjsvage romaskine 2026 og Bedste støjsvage crosstrainer 2026.",
+        ],
+      },
+      {
+        heading: "Spinning i lejlighed — reglerne",
+        paragraphs: [
+          "Rem + magnet = OK for mange. Stående sprint kl. 22 = dårlig idé. Brug måtte, og sænk intensiteten sent.",
+          "Se også Bedste spinningcykel 2026 for bredere spinning-picks.",
+        ],
+      },
+      {
+        heading: "Fold vs. fast plads",
+        paragraphs: [
+          "Fold hjælper kun, hvis du faktisk folder. Ellers køb den cykel, du vil sidde på — og acceptér footprint.",
+          "Kombinér med Bedste foldbare & kompakte træningsmaskiner, hvis hele hjemmegym’et skal kunne pakkes væk.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "Hvilken motionscykel er mest støjsvag?",
+        answer:
+          "Magnetiske kondicykler med remtræk. Undgå airbike i lejlighed. Titan Athlete er vores allround-stille pick.",
+      },
+      {
+        question: "Kan jeg have spinningcykel i lejlighed?",
+        answer:
+          "Ja, hvis det er rem/magnet, og du er realistisk med stående sprint og træningstid. S72 er et stærkt hjemmevalg.",
+      },
+      {
+        question: "Cykel eller gåbånd til støj?",
+        answer:
+          "Begge er stærke. Cykel til siddende cardio; gåbånd til skridt under arbejde. Se Gåbånd til kontoret hvis desk walking er målet.",
+      },
+      {
+        question: "Skal jeg købe måtte?",
+        answer:
+          "Ja i lejlighed. Den dæmper og beskytter gulvet.",
+      },
+      {
+        question: "Hvordan ser jeg priser?",
+        answer:
+          "Klik “Se pris”, eller browse Motionscykel → Støjsvag.",
+      },
+      {
+        question: "Tjener Fitlist på klik?",
+        answer:
+          "Ja, via affiliate/Partner-Ads. Se “Sådan tjener vi penge”.",
+      },
+    ],
+    relatedSlugs: [
+      "bedste-motionscykel-2026",
+      "bedste-spinningcykel-2026",
+      "bedste-stoejsvage-traeningsmaskiner-lejlighed-2026",
+      "bedste-stoejsvag-romaskine-2026",
+      "bedste-foldbare-kompakte-traeningsmaskiner-2026",
+      "bedste-airbike-2026",
+      "bedste-stoejsvag-loebebaand-lejlighed-2026",
+    ],
+  },
+  {
+    slug: "home-gym-til-lille-vaerelse-10m2-2026",
+    title: "Home gym til lille værelse / ca. 10 m² (2026)",
+    excerpt:
+      "Træn effektivt på minimal plads: gåbånd der kan gemmes, foldbar cykel, justerbare håndvægte og foldbar bænk — færdige picks med live priser.",
+    metaDescription:
+      "Home gym til lille værelse (ca. 10 m²) 2026. Pladsbesparende setup: walking pad, foldbar cykel, justerbare håndvægte og foldbar bænk med live priser.",
+    categorySlug: "styrkemaskiner",
+    publishedAt: "2026-11-05",
+    updatedAt: "2026-11-05",
+    intro:
+      "Du behøver ikke 20 m² garagegym. På ca. 10 m² (eller et lille sove-/kontor-/gæsteværelse) kan du få både cardio og styrke — hvis hver ting kan foldes, stables eller rulles væk. Denne guide er situationsbestemt: fire pladsoptimale anbefalinger, der spiller sammen, plus regler for footprint, loftshøjde og “kan det væk på to minutter?”.",
+    criteria: [
+      {
+        title: "Alt skal kunne forsvinde",
+        description:
+          "Hvis det ikke kan foldes, rulles under møbel eller stå vertikalt, hører det ikke hjemme i 10 m² — medmindre det er din eneste maskine.",
+      },
+      {
+        title: "Justerbare vægte > pladestabel",
+        description:
+          "Ét par justerbare håndvægte erstatter en væg af faste vægte. Det er den største pladsgevinst i styrketræning.",
+      },
+      {
+        title: "Cardio med lavt footprint",
+        description:
+          "Walking pad og foldbar cykel slår fuldt løbebånd og stor crosstrainer i små rum.",
+      },
+      {
+        title: "Foldbar bænk",
+        description:
+          "En bænk, der klappes fladt, giver dig press/rows uden permanent “bænk midt i rummet”.",
+      },
+      {
+        title: "Én zone ad gangen",
+        description:
+          "Træn cardio, pak væk, træn styrke — eller omvendt. Små rum kræver sekvens, ikke parallelt setup.",
+      },
+      {
+        title: "Budgetér måtte og opbevaring",
+        description:
+          "Måtte beskytter gulv. En kurv/hylde til elastikker og håndvægte holder rummet beboeligt.",
+      },
+    ],
+    products: [
+      {
+        id: "pad-10m2",
+        name: "Ascendic Essential Walking Pad",
+        badge: "Cardio der kan gemmes",
+        summary:
+          "Ultra-fladt gåbånd til skridt og zone 2 — kan typisk skubbes under sofa/seng. Cardio-fundamentet i det lille værelse.",
+        pros: [
+          "Minimal højde",
+          "Gemmes væk efter brug",
+          "Skarp pris",
+          "Lejlighedsvenlig støjprofil",
+        ],
+        cons: [
+          "Ikke til løb",
+          "Kræver hævebord hvis under-desk",
+          "Begrænset max-hastighed",
+        ],
+        specs: [
+          { label: "Type", value: "Gåbånd" },
+          { label: "Partner", value: "Ascendic.dk" },
+        ],
+        feedProductId: "Ascendic.dk:56388648173912",
+      },
+      {
+        id: "fold-bike-10m2",
+        name: "Ascendic 8001 Foldbar Motionscykel",
+        badge: "Siddende cardio på fold",
+        summary:
+          "Når du vil have siddende kondition uden permanent cykel midt i rummet. Fold sammen efter pas.",
+        pros: [
+          "Foldbar",
+          "Siddende cardio",
+          "Billigere end store maskiner",
+          "God til små værelser",
+        ],
+        cons: [
+          "Mindre stabil end fuldstørrelse",
+          "Ikke spinning-følelse",
+          "Skal faktisk foldes for at give mening",
+        ],
+        specs: [
+          { label: "Type", value: "Foldbar cykel" },
+          { label: "Partner", value: "Ascendic.dk" },
+        ],
+        feedProductId: "Ascendic.dk:39480045797550",
+      },
+      {
+        id: "db-10m2",
+        name: "Justerbare håndvægte (selector)",
+        badge: "Styrke uden pladestabel",
+        summary:
+          "Dial/selector-håndvægte er plads-hack’et i små hjem. Ét sæt dækker de fleste øvelser — se Bedste justerbare håndvægte 2026 for modelvalg.",
+        pros: [
+          "Erstatter mange faste vægte",
+          "Hurtigt skift i kilo",
+          "Minimal footprint",
+          "Skalérbar progression",
+        ],
+        cons: [
+          "Dyrere end ét par faste",
+          "Tjek max kg til dine mål",
+          "Kræver lidt tilvænning",
+        ],
+        specs: [
+          { label: "Type", value: "Justerbare håndvægte" },
+          { label: "Partner", value: "Apuls.dk" },
+        ],
+        feedProductId: "Apuls.dk:9007",
+      },
+      {
+        id: "bench-10m2",
+        name: "Odin Multi justerbar/foldbar bænk",
+        badge: "Bænk der kan pakkes",
+        summary:
+          "Justerbar bænk med fold, så den kan ligge fladt efter træning — nødvendig partner til håndvægtene i det lille rum.",
+        pros: [
+          "Foldbar",
+          "Flere vinkler",
+          "Kompletterer håndvægte",
+          "Pladsbesparende",
+        ],
+        cons: [
+          "Ikke tung competition-bænk",
+          "Tjek max belastning",
+          "Skal foldes for at give pladsgevinst",
+        ],
+        specs: [
+          { label: "Type", value: "Foldbar træningsbænk" },
+          { label: "Partner", value: "Apuls.dk" },
+        ],
+        feedProductId: "Apuls.dk:15421",
+      },
+    ],
+    howToChoose:
+      "Minimum viable 10 m²-gym: Ascendic Essential + justerbare håndvægte + foldbar bænk. Vil du have siddende cardio i stedet for/gåbånd? Ascendic foldcykel. Stramt budget? Se Det ultimative home gym på budget. Mere fold-inspiration: Bedste foldbare & kompakte træningsmaskiner. Undgå fuldt løbebånd og stort rack, indtil du har mere plads — eller se Bedste power rack & squat rack 2026 til garage.",
+    learningSections: [
+      {
+        heading: "Reglen om to minutter",
+        paragraphs: [
+          "Hvis det tager mere end to minutter at gøre rummet beboeligt igen, bruger du det ikke. Prioritér hjul, fold og faste “hjem” til hvert redskab.",
+          "Et pænt lille setup, du bruger, slår et halvfærdigt center-gym, der spærrer døren.",
+        ],
+      },
+      {
+        heading: "Hvad du bevidst dropper",
+        paragraphs: [
+          "Fuldt løbebånd, stor crosstrainer, half rack og pladestabel. De hører hjemme i større rum.",
+          "Du kan stadig træne hårdt: gåbånd + dial-håndvægte + bænk dækker 80 % af needs for de fleste.",
+        ],
+      },
+      {
+        heading: "Støj i det lille værelse",
+        paragraphs: [
+          "Små rum i etagebyggeri = samme støjregler. Se Bedste støjsvage træningsmaskiner til lejligheden.",
+          "Drop airbike og sprint på bånd sent om aftenen.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "Kan man have home gym på 10 m²?",
+        answer:
+          "Ja — med foldbart/kompakt udstyr og én zone ad gangen. Walking pad, justerbare håndvægte og foldbar bænk er kernen.",
+      },
+      {
+        question: "Hvad skal jeg købe først?",
+        answer:
+          "Det, der skaber vanen: typisk gåbånd eller foldcykel + håndvægte. Bænk som næste skridt.",
+      },
+      {
+        question: "Har jeg brug for et rack?",
+        answer:
+          "Sjældent på 10 m². Vent til mere plads — se Bedste power rack & squat rack 2026 senere.",
+      },
+      {
+        question: "Hvad med crosstrainer?",
+        answer:
+          "De fleste fylder for meget i højden/dybden. Vælg kun kompakt model, hvis du har målt rummet præcist.",
+      },
+      {
+        question: "Hvordan ser jeg priser?",
+        answer:
+          "Klik “Se pris” på anbefalingerne for live partnerpriser.",
+      },
+      {
+        question: "Tjener Fitlist på links?",
+        answer:
+          "Ja, via Partner-Ads. Se “Sådan tjener vi penge”.",
+      },
+    ],
+    relatedSlugs: [
+      "bedste-foldbare-kompakte-traeningsmaskiner-2026",
+      "ultimative-home-gym-budget-2026",
+      "bedste-justerbare-haandvaegte-2026",
+      "bedste-justerbar-traeningsbaenk-2026",
+      "bedste-gaabaand-2026",
+      "gaabaand-til-kontoret-2026",
+      "bedste-stoejsvage-traeningsmaskiner-lejlighed-2026",
+    ],
+  },
+  {
+    slug: "bedste-traeningsudstyr-til-vaegttab-hjemme-2026",
+    title: "Bedste træningsudstyr til vægttab hjemme 2026",
+    excerpt:
+      "Cardio + styrke der faktisk bliver brugt: løbebånd/gåbånd, romaskine, cykel og justerbare håndvægte — med live priser og realistiske forventninger.",
+    metaDescription:
+      "Bedste træningsudstyr til vægttab hjemme 2026. Cardio og styrke til fedttab: gåbånd, romaskine, cykel og håndvægte med live priser.",
+    categorySlug: "loebebaand",
+    publishedAt: "2026-11-05",
+    updatedAt: "2026-11-05",
+    intro:
+      "Vægttab hjemme handler ikke om den dyreste skærm — det handler om udstyr, du bruger 3+ gange om ugen, plus kost. Denne guide prioriterer maskiner og redskaber, der gør det nemt at skabe underskud: gang/løb, roning, cykling og simpel styrke. Du får fire anbefalinger med shop-links, og ærlige ord om, hvad udstyr ikke kan gøre for dig.",
+    criteria: [
+      {
+        title: "Lav barriere > perfekt maskine",
+        description:
+          "Det bedste udstyr til vægttab er det, der står klar, når motivationen er lav. Gåbånd og cykel vinder ofte over komplekse setup.",
+      },
+      {
+        title: "Cardio du kan holde ud",
+        description:
+          "Zone 2-volumen slår sporadiske hero-pas. Vælg den modalitet, du ikke hader.",
+      },
+      {
+        title: "Styrke bevarer muskel",
+        description:
+          "Under vægttab vil du gerne beholde muskelmasse. Justerbare håndvægte er den mest pladsvenlige vej.",
+      },
+      {
+        title: "Helkropseffektivitet",
+        description:
+          "Romaskine giver meget motor pr. minut. God, hvis tiden er knap — og knæene tillader det.",
+      },
+      {
+        title: "Målbarhed uden app-tyranni",
+        description:
+          "Tid, distance og frekvens er nok. Du behøver ikke et abonnement for at tabe dig.",
+      },
+      {
+        title: "Kost er stadig chefen",
+        description:
+          "Udstyr øger forbrug og vaner. Det erstatter ikke energiunderskud. Ingen maskine “brænder mavefedt lokalt”.",
+      },
+    ],
+    products: [
+      {
+        id: "pad-wl",
+        name: "Ascendic Essential Walking Pad",
+        badge: "Bedst til daglige skridt",
+        summary:
+          "Flere skridt i hverdagen er den mest undervurderede vægttabsvaner. Et gåbånd gør zone 2 til noget, du kan gøre mens du ser noget — eller arbejder.",
+        pros: [
+          "Lav barriere",
+          "Nem at bruge ofte",
+          "Lejlighedsvenlig",
+          "Skarp pris",
+        ],
+        cons: [
+          "Ikke HIIT-løb",
+          "Kræver disciplin til volumen",
+          "Resultater kræver kost også",
+        ],
+        specs: [
+          { label: "Type", value: "Gåbånd" },
+          { label: "Partner", value: "Ascendic.dk" },
+        ],
+        feedProductId: "Ascendic.dk:56388648173912",
+      },
+      {
+        id: "t56-wl",
+        name: "Titan LIFE Treadmill T56",
+        badge: "Bedst til gang + løb",
+        summary:
+          "Når du vil kunne både gå og løbe hjemme til fedttab og kondition. Allround-løbebånd til dem, der faktisk vil bruge fart — se også Bedste løbebånd 2026.",
+        pros: [
+          "Allround til gang og løb",
+          "Højere loft for progression",
+          "Titan LIFE midrange",
+          "Fri fragt hos partner",
+        ],
+        cons: [
+          "Fylder og kan larrme",
+          "Dyrere end gåbånd",
+          "Overkill hvis du kun går",
+        ],
+        specs: [
+          { label: "Type", value: "Løbebånd" },
+          { label: "Partner", value: "HomeX.dk" },
+        ],
+        feedProductId: "HomeX.dk:3179",
+      },
+      {
+        id: "rower-wl",
+        name: "Titan LIFE Rower R10",
+        badge: "Bedst helkrop pr. minut",
+        summary:
+          "Magnet-romaskine til effektiv helkropscardio, når tiden er knap. God kalorie-motor — lær teknikken først.",
+        pros: [
+          "Helkrop",
+          "Lav stødbelastning",
+          "Budgetvenlig indgang",
+          "Fri fragt hos partner",
+        ],
+        cons: [
+          "Teknik kræves",
+          "Fylder i længden",
+          "Ikke støjsvagest som luft",
+        ],
+        specs: [
+          { label: "Type", value: "Romaskine" },
+          { label: "Partner", value: "HomeX.dk" },
+        ],
+        feedProductId: "HomeX.dk:2801",
+      },
+      {
+        id: "db-wl",
+        name: "Justerbare håndvægte",
+        badge: "Styrke under cut",
+        summary:
+          "Behold muskel mens du taber fedt: fuldkropsstyrke 2–3×/uge med dial-håndvægte. Se Bedste justerbare håndvægte 2026 for konkrete sæt.",
+        pros: [
+          "Pladsbesparende styrke",
+          "Progression i kilo",
+          "Understøtter vægttab bedre end kun cardio",
+          "Fleksibelt program",
+        ],
+        cons: [
+          "Kræver program/disciplin",
+          "Ikke “cardio-erstatning” alene",
+          "Investering vs. faste vægte",
+        ],
+        specs: [
+          { label: "Type", value: "Justerbare håndvægte" },
+          { label: "Partner", value: "Apuls.dk" },
+        ],
+        feedProductId: "Apuls.dk:9007",
+      },
+    ],
+    howToChoose:
+      "Vil bygge skridtvaner? Ascendic Essential / Bedste gåbånd 2026. Vil kunne løbe? Titan T56 / Bedste løbebånd 2026. Tidsknap helkrop? Romaskine (se Bedste romaskine 2026). Skal beholde muskel? Justerbare håndvægte + evt. bænk. Stramt budget: Det ultimative home gym på budget. Knæproblemer: Bedste knævenlige træningsudstyr til genoptræning hjemme.",
+    learningSections: [
+      {
+        heading: "NEAT og skridt",
+        paragraphs: [
+          "Meget af fedttabet i hverdagen kommer fra ikke-træningsaktivitet. Et gåbånd hæver NEAT uden at føles som “pas”.",
+          "Kombinér med styrke, så vægttabet ikke bare er “mindre af dig” — men mere fordeling.",
+        ],
+      },
+      {
+        heading: "Cardio vs. styrke til vægttab",
+        paragraphs: [
+          "Cardio øger forbrug. Styrke beskytter muskel. Begge er nyttige; ingen af dem erstatter kosten.",
+          "2–4 cardio-pas + 2 styrkepas er et realistisk hjemmetemplate for de fleste.",
+        ],
+      },
+      {
+        heading: "Undgå gadget-fælden",
+        paragraphs: [
+          "Smart-skærme sælger motivation i showroom — og samler støv hjemme. Køb det, du bruger uden login.",
+          "Opgrader først, når vanen er beviselig i 6–8 uger.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "Hvilket træningsudstyr er bedst til vægttab hjemme?",
+        answer:
+          "Det, du bruger oftest. For mange: gåbånd til skridt + justerbare håndvægte til styrke. Vil du løbe: et rigtigt løbebånd.",
+      },
+      {
+        question: "Er romaskine godt til vægttab?",
+        answer:
+          "Ja — effektiv helkrop. Lær teknik, og kombiner med kost. Se Bedste romaskine 2026.",
+      },
+      {
+        question: "Kan jeg tabe mig kun med gåbånd?",
+        answer:
+          "Du kan skabe underskud med mere gang + kost. Styrke hjælper dig med at beholde muskel undervejs.",
+      },
+      {
+        question: "Hvor hurtigt ser jeg resultater?",
+        answer:
+          "Det afhænger af kost og udgangspunkt. Udstyr er et værktøj — ikke en garant. Forvent uger til måneder, ikke weekend-mirakler.",
+      },
+      {
+        question: "Hvordan ser jeg priser?",
+        answer:
+          "Klik “Se pris” for live partnerpriser.",
+      },
+      {
+        question: "Tjener Fitlist på links?",
+        answer:
+          "Ja, via Partner-Ads. Se “Sådan tjener vi penge”.",
+      },
+    ],
+    relatedSlugs: [
+      "bedste-gaabaand-2026",
+      "bedste-loebebaand-2026",
+      "bedste-romaskine-2026",
+      "bedste-justerbare-haandvaegte-2026",
+      "ultimative-home-gym-budget-2026",
+      "hjemmetraening-for-begyndere-foerste-90-dage",
+      "bedste-knaevenlig-genoptraening-hjemme-2026",
+    ],
+  },
+  {
+    slug: "bedste-traeningsudstyr-til-par-hjemmegym-2026",
+    title: "Bedste træningsudstyr til par / delt hjemmegym 2026",
+    excerpt:
+      "To kroppe, ét rum: justerbare håndvægte, bænk, rack og delt cardio — setup der skalerer i kilo og tid uden dobbelt indkøb.",
+    metaDescription:
+      "Bedste træningsudstyr til par 2026. Delt hjemmegym: justerbare håndvægte, bænk, squat rack og cardio I begge kan bruge — med live priser.",
+    categorySlug: "styrkemaskiner",
+    publishedAt: "2026-11-05",
+    updatedAt: "2026-11-05",
+    intro:
+      "Når to skal dele hjemmegym, fejler købet ofte på for smalt vægtinterval, for lille saddeljustering eller cardio kun den ene kan lide. Denne guide er til par (eller roommates), der vil undgå dobbelt udstyr: redskaber med bred progression, sikkerhed til alene-løft og cardio, I begge faktisk vil bruge — med fire konkrete anbefalinger og live priser.",
+    criteria: [
+      {
+        title: "Bredt vægtinterval",
+        description:
+          "Justerbare håndvægte skal dække begges start og progression. For smalt max-kg = den stærkeste vokser fra sættet for hurtigt.",
+      },
+      {
+        title: "Justerbarhed i pasform",
+        description:
+          "Cykel/sadel, bænkvinkler og rack-højder skal kunne skifte hurtigt mellem to kroppe.",
+      },
+      {
+        title: "Safety til alene-træning",
+        description:
+          "I er ikke altid hjemme samtidigt. Rack med safety bars er vigtigere end det flotteste bur.",
+      },
+      {
+        title: "Cardio I begge kan lide",
+        description:
+          "Kompromis-maskinen vinder: romaskine eller cykel slår ofte et specialiseret spin-setup kun den ene elsker.",
+      },
+      {
+        title: "Tidsbooking uden drama",
+        description:
+          "Én zone ad gangen eller to stationer (styrke + cardio), så I ikke venter på samme bænk.",
+      },
+      {
+        title: "Støj I begge kan leve med",
+        description:
+          "Airbike kl. 21 er et par-problem. Aftal støjregler — se støjsvag-lejlighedsguiden hvis I bor i etagebyggeri.",
+      },
+    ],
+    products: [
+      {
+        id: "db-couple",
+        name: "Justerbare håndvægte (højt interval)",
+        badge: "Bedst til to styrkeniveauer",
+        summary:
+          "Ét sæt dial-håndvægte med nok loft til begge. Hurtigt skift i kilo mellem sæt — se Bedste justerbare håndvægte 2026 for 20–40 kg-valg.",
+        pros: [
+          "Dækker to brugere",
+          "Pladsbesparende",
+          "Hurtigt kilo-skift",
+          "Undgår dobbelt køb af faste vægte",
+        ],
+        cons: [
+          "Højere pris end ét billigt par",
+          "Begge skal lære selector-mekanik",
+          "Tjek max kg til den stærkeste",
+        ],
+        specs: [
+          { label: "Type", value: "Justerbare håndvægte" },
+          { label: "Partner", value: "Apuls.dk" },
+        ],
+        feedProductId: "Apuls.dk:15047",
+      },
+      {
+        id: "bench-couple",
+        name: "Justerbar træningsbænk",
+        badge: "Delt styrkestation",
+        summary:
+          "Stabil justerbar bænk til press, rows og core for begge. Vælg model med hurtige vinkler — se Bedste justerbare træningsbænk 2026.",
+        pros: [
+          "Mange øvelser",
+          "Hurtig justering mellem brugere",
+          "Kompletterer håndvægte/rack",
+          "Centralt i delt styrkezone",
+        ],
+        cons: [
+          "Fylder hvis den ikke foldes",
+          "Tjek max belastning for begge",
+          "Én ad gangen på bænken",
+        ],
+        specs: [
+          { label: "Type", value: "Justerbar bænk" },
+          { label: "Partner", value: "Apuls.dk" },
+        ],
+        feedProductId: "Apuls.dk:16031",
+      },
+      {
+        id: "rack-couple",
+        name: "Odin Squat Rack med Safetybars",
+        badge: "Sikker squat/bænk for begge",
+        summary:
+          "Når I løfter stang: safety bars er non-negotiable til alene-pas. Juster højder til begge — se Bedste power rack & squat rack 2026 for half/PRO.",
+        pros: [
+          "Safety til alene-træning",
+          "Justerbar højde til to brugere",
+          "Solid home-rack",
+          "Undgår “spotter-afhængighed”",
+        ],
+        cons: [
+          "Kræver gulvplads og loft",
+          "Støj fra plader i lejlighed",
+          "Overkill hvis I kun bruger håndvægte",
+        ],
+        specs: [
+          { label: "Type", value: "Squat rack + safety" },
+          { label: "Partner", value: "Apuls.dk" },
+        ],
+        feedProductId: "Apuls.dk:12872",
+      },
+      {
+        id: "rower-couple",
+        name: "Reebok ZJET Rower",
+        badge: "Delt cardio begge kan lide",
+        summary:
+          "Romaskine som fælles cardio: helkrop, skånsom, og nem at skiftes til. Alternativer: støjsvag cykel hvis I bor i lejlighed — se Bedste støjsvage motionscykel til lejlighed 2026.",
+        pros: [
+          "Helkrop for begge",
+          "Lav stødbelastning",
+          "Én maskine, to brugere",
+          "Stærkt allround-valg",
+        ],
+        cons: [
+          "Fylder i længden",
+          "Teknik skal læres",
+          "Én ad gangen",
+        ],
+        specs: [
+          { label: "Type", value: "Romaskine" },
+          { label: "Partner", value: "HomeX.dk" },
+        ],
+        feedProductId: "HomeX.dk:2330",
+      },
+    ],
+    howToChoose:
+      "Kun styrke på lidt plads? Justerbare håndvægte + bænk (evt. uden rack). Løfter I stang? Tilføj rack med safety. Cardio I begge kan skiftes til? Romaskine — eller støjsvag cykel i lejlighed. Budget: Det ultimative home gym på budget. Lille værelse: Home gym til lille værelse / ca. 10 m².",
+    learningSections: [
+      {
+        heading: "Undgå “hans” og “hendes” dobbeltkøb",
+        paragraphs: [
+          "To billige sæt faste vægte fylder mere og koster ofte det samme som ét godt justerbart sæt. Køb bredde i kilo, ikke dobbelt junk.",
+          "Samme logik for cardio: én god maskine I begge bruger slår to specialmaskiner, der samler støv.",
+        ],
+      },
+      {
+        heading: "Program og skift",
+        paragraphs: [
+          "Aftal simple skiftere: A kører cardio mens B løfter — eller tidsblokke. Små hjem kræver plan, ikke bare mere grej.",
+          "Skriv saddel-/rack-højder ned, så skift tager 20 sekunder, ikke 5 minutters diskussion.",
+        ],
+      },
+      {
+        heading: "Støj som par-projekt",
+        paragraphs: [
+          "Hvis én elsker airbike og den anden hader sure naboer, vinder forholdet kun hvis I vælger teknologi efter bolig.",
+          "Se Bedste støjsvage træningsmaskiner til lejligheden før I køber “den sjove” maskine.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "Hvad skal et par købe først til hjemmegym?",
+        answer:
+          "Justerbare håndvægte + justerbar bænk dækker mest for to. Tilføj rack når I løfter stang, og én fælles cardimaskine.",
+      },
+      {
+        question: "Kan vi dele ét sæt justerbare håndvægte?",
+        answer:
+          "Ja — det er pointen. Vælg interval der dækker begge. Se Bedste justerbare håndvægte 2026.",
+      },
+      {
+        question: "Har vi brug for to cykler?",
+        answer:
+          "Sjældent. Én god cykel eller romaskine + styrkezone er nok for de fleste par.",
+      },
+      {
+        question: "Hvad med plads i lejlighed?",
+        answer:
+          "Prioritér fold/kompakt og støjsvag teknologi. Se Home gym til lille værelse / ca. 10 m² og støjsvag-lejlighedsguiden.",
+      },
+      {
+        question: "Hvordan ser jeg priser?",
+        answer:
+          "Klik “Se pris” for live partnerpriser.",
+      },
+      {
+        question: "Tjener Fitlist på links?",
+        answer:
+          "Ja, via Partner-Ads. Se “Sådan tjener vi penge”.",
+      },
+    ],
+    relatedSlugs: [
+      "bedste-justerbare-haandvaegte-2026",
+      "bedste-justerbar-traeningsbaenk-2026",
+      "bedste-power-rack-squat-rack-2026",
+      "bedste-romaskine-2026",
+      "home-gym-til-lille-vaerelse-10m2-2026",
+      "ultimative-home-gym-budget-2026",
+      "bedste-stoejsvag-motionscykel-lejlighed-2026",
+      "bedste-stoejsvage-traeningsmaskiner-lejlighed-2026",
+    ],
+  },
 ];

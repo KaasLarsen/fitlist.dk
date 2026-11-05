@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { GuideRichText } from "@/components/GuideRichText";
 import { ProductOfferList } from "@/components/ProductOfferList";
 import { getCategory } from "@/lib/categories";
 import {
@@ -87,7 +88,7 @@ export async function GuideArticle({ guide }: { guide: Guide }) {
         </h1>
         <p className="mt-4 text-lg text-muted">{guide.excerpt}</p>
         <p className="mt-6 text-base leading-relaxed text-foreground/90">
-          {guide.intro}
+          <GuideRichText text={guide.intro} currentSlug={guide.slug} />
         </p>
 
         <nav
@@ -399,7 +400,10 @@ export async function GuideArticle({ guide }: { guide: Guide }) {
                   {criterion.title}
                 </h3>
                 <p className="mt-2 text-muted leading-relaxed">
-                  {criterion.description}
+                  <GuideRichText
+                    text={criterion.description}
+                    currentSlug={guide.slug}
+                  />
                 </p>
               </li>
             ))}
@@ -413,7 +417,9 @@ export async function GuideArticle({ guide }: { guide: Guide }) {
           <h2 className="font-display text-2xl font-semibold uppercase tracking-wide text-foreground">
             Kort opsummering
           </h2>
-          <p className="mt-4 text-muted leading-relaxed">{guide.howToChoose}</p>
+          <p className="mt-4 text-muted leading-relaxed">
+            <GuideRichText text={guide.howToChoose} currentSlug={guide.slug} />
+          </p>
         </section>
 
         {guide.learningSections.map((section) => (
@@ -423,8 +429,14 @@ export async function GuideArticle({ guide }: { guide: Guide }) {
             </h2>
             <div className="mt-4 space-y-4">
               {section.paragraphs.map((paragraph) => (
-                <p key={paragraph.slice(0, 48)} className="text-muted leading-relaxed">
-                  {paragraph}
+                <p
+                  key={paragraph.slice(0, 48)}
+                  className="text-muted leading-relaxed"
+                >
+                  <GuideRichText
+                    text={paragraph}
+                    currentSlug={guide.slug}
+                  />
                 </p>
               ))}
             </div>
@@ -492,7 +504,12 @@ export async function GuideArticle({ guide }: { guide: Guide }) {
                   <dt className="font-display text-lg font-medium uppercase tracking-wide text-foreground">
                     {faq.question}
                   </dt>
-                  <dd className="mt-2 text-muted leading-relaxed">{faq.answer}</dd>
+                  <dd className="mt-2 text-muted leading-relaxed">
+                    <GuideRichText
+                      text={faq.answer}
+                      currentSlug={guide.slug}
+                    />
+                  </dd>
                 </div>
               ))}
             </dl>

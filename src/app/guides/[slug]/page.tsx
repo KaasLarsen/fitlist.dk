@@ -5,7 +5,7 @@ import { getAllGuides, getGuide } from "@/lib/guides";
 
 export const revalidate = 21600;
 
-const SITE = "https://fitlist.dk";
+const SITE = "https://www.fitlist.dk";
 
 type Props = {
   params: Promise<{ slug: string }>;

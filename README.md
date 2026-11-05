@@ -69,5 +69,12 @@ Mangler produktet i feedet, falder UI tilbage til kategorisiden `/maskiner/[slug
 - `/guides/bedste-stoejsvag-crosstrainer-2026` (intent: støjsvag)
 - `/guides/bedste-power-rack-squat-rack-2026`
 - `/guides/bedste-knaevenlig-genoptraening-hjemme-2026`
+- `/guides/bedste-stoejsvag-loebebaand-lejlighed-2026` (intent: støjsvag)
+- `/guides/bedste-stoejsvag-motionscykel-lejlighed-2026` (intent: støjsvag)
+- `/guides/home-gym-til-lille-vaerelse-10m2-2026`
+- `/guides/bedste-traeningsudstyr-til-vaegttab-hjemme-2026`
+- `/guides/bedste-traeningsudstyr-til-par-hjemmegym-2026`
 
 Kuraterede produktanbefalinger i guides er separate fra “Relaterede tilbud” (top feed-hits i samme kategori).
+
+Canonical/sitemap/robots bruger `https://www.fitlist.dk` (apex `fitlist.dk` 308-redirecter til www).

@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   },
   description:
     "Den ultimative hjælper til træningsmaskiner til hjemmet. Guides, sammenligninger og anbefalinger.",
-  metadataBase: new URL("https://fitlist.dk"),
+  metadataBase: new URL("https://www.fitlist.dk"),
   other: {
     "google-adsense-account": "ca-pub-7373148222153531",
   },

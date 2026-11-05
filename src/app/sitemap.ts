@@ -2,7 +2,7 @@ import type { MetadataRoute } from "next";
 import { categories } from "@/lib/categories";
 import { getAllGuides } from "@/lib/guides";
 
-const SITE = "https://fitlist.dk";
+const SITE = "https://www.fitlist.dk";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
