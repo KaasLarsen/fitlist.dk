@@ -115,6 +115,121 @@ describe("classifyProduct — hard excludes", () => {
       null,
     );
   });
+
+  it("drops spinning t-shirt even with Motionscykel feed category", () => {
+    assert.equal(
+      classifyProduct(
+        product({
+          title:
+            "Body Bike Weisshorn T-shirt str. M spinning t shirt sort, Comfort Collection",
+          brand: "Body Bike",
+          category: "Motionscykel",
+          price: 85,
+        }),
+      ),
+      null,
+    );
+  });
+
+  it("drops spinning jersey / trøje", () => {
+    assert.equal(
+      classifyProduct(
+        product({
+          title:
+            "Body Bike Dinara Jersey Women str. 36 - spinning trøje til kvinder",
+          brand: "Body Bike",
+          category: "Motionscykel",
+          price: 285,
+        }),
+      ),
+      null,
+    );
+  });
+
+  it("drops bike spare parts and accessories from motionscykel feeds", () => {
+    const noise = [
+      "Odin S800 Bremseklods",
+      "Justerings håndtag Indoor Bike 20 mm.",
+      "Peak Fitness - Strømforsyning - B2.0i motionscykel",
+      "Odin Strømadapter",
+      "Peak Fitness - Racerstyr til Indoor Bike",
+      "VirtuFit Universel Pulsmåler 5 kHz",
+      "VirtuFit Universelt Bluetooth Pulsmålerbælte",
+      "Universal Flaskeholder",
+      "Klikpedaler LOOK",
+    ];
+    for (const title of noise) {
+      assert.equal(
+        classifyProduct(
+          product({ title, category: "Motionscykel", brand: "Odin" }),
+        ),
+        null,
+        title,
+      );
+    }
+  });
+
+  it("drops water rower chemicals and elevate kits from romaskine feeds", () => {
+    const noise = [
+      "VirtuFit Universelle WaterRower Puritabs - Klortabletter",
+      "Fluid Rower - Tabletter 4 stk.",
+      "VirtuFit Elevate Kit",
+    ];
+    for (const title of noise) {
+      assert.equal(
+        classifyProduct(
+          product({ title, category: "Romaskine", brand: "VirtuFit" }),
+        ),
+        null,
+        title,
+      );
+    }
+  });
+
+  it("drops crosstrainer power supplies and chest transmitters", () => {
+    assert.equal(
+      classifyProduct(
+        product({
+          title: "Peak Fitness - Strømforsyning - 9V-2.000ma",
+          category: "Crosstrainer",
+        }),
+      ),
+      null,
+    );
+    assert.equal(
+      classifyProduct(
+        product({
+          title: "Polar - T34 brystsender - Ukodet",
+          category: "Crosstrainer",
+        }),
+      ),
+      null,
+    );
+  });
+
+  it("drops strength accessories that matched via bare cable / home gym", () => {
+    const noise = [
+      "Odin Cable Crossfit Sjippetov Blå Long Handle 300cm",
+      "Cruz Cable Beach Svømmebriller",
+      "Odin Mjolnir Grip Tape Sort",
+      "VirtuFit Cable D Handle",
+      "Body Bike Racer Sadel m. Beslag - sort sadel til spinningcykler og home gym",
+      "LMX PU Olympisk Disc 50mm 2,50kg - Brugt vægtskive til home gym",
+      "Plakat Bold 70 x 50 cm - sporty vægdekoration til home gym",
+      "Odin Pull Up Bar Dørribbe",
+      "Home Benlås til Home Træningsbænke",
+      "Crossmaxx T-shirt XL trænings T-shirt til styrketræning",
+    ];
+    for (const title of noise) {
+      assert.equal(
+        classifyProduct(
+          product({ title, category: "Styrkemaskiner", brand: "Odin" }),
+        ),
+        null,
+        title,
+      );
+    }
+  });
 });
 
 describe("classifyProduct — tilbehoer (must-haves)", () => {
