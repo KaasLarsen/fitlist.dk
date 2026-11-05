@@ -1,12 +1,13 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ProductOfferList } from "@/components/ProductOfferList";
+import { Suspense } from "react";
+import { CategoryOffers } from "@/components/CategoryOffers";
+import { CategoryOffersSkeleton } from "@/components/CategoryOffersSkeleton";
 import {
   getAllCategories,
   getCategory,
 } from "@/lib/categories";
-import { getProductsByCategory } from "@/lib/feeds/catalog";
 import type { MachineCategorySlug } from "@/lib/feeds/types";
 import {
   getGuideByCategoryAndIntent,
@@ -48,14 +49,6 @@ export default async function MaskineCategoryPage({
   const intentGuide = activeIntent
     ? getGuideByCategoryAndIntent(category.slug, activeIntent.slug)
     : undefined;
-
-  const products = await getProductsByCategory(
-    category.slug as MachineCategorySlug,
-    {
-      intentSlug: activeIntent?.slug,
-      limit: 48,
-    },
-  );
 
   return (
     <div className="noise hero-glow flex flex-1 flex-col">
@@ -124,27 +117,14 @@ export default async function MaskineCategoryPage({
           ) : null}
         </section>
 
-        <section className="mt-16 border-t border-border pt-10">
-          <div className="flex flex-col gap-2 sm:flex-row sm:items-baseline sm:justify-between">
-            <h2 className="font-display text-2xl font-semibold uppercase tracking-wide text-foreground">
-              Tilbud
-            </h2>
-            {products.length > 0 ? (
-              <p className="font-display text-xs uppercase tracking-[0.14em] text-muted">
-                {products.length} produkt{products.length === 1 ? "" : "er"}
-                {activeIntent ? ` · ${activeIntent.label}` : ""}
-              </p>
-            ) : null}
-          </div>
-          <ProductOfferList
-            products={products}
-            emptyMessage={
-              activeIntent
-                ? `Ingen tilbud matcher “${activeIntent.label}” lige nu. Prøv et andet filter.`
-                : `Vi har endnu ikke fundet ${category.name.toLowerCase()} i partnerfeeds. Tjek igen snart.`
-            }
+        <Suspense fallback={<CategoryOffersSkeleton />}>
+          <CategoryOffers
+            categorySlug={category.slug as MachineCategorySlug}
+            categoryName={category.name}
+            intentSlug={activeIntent?.slug}
+            intentLabel={activeIntent?.label}
           />
-        </section>
+        </Suspense>
 
         <section className="mt-16 border-t border-border pt-10">
           <h2 className="font-display text-2xl font-semibold uppercase tracking-wide text-foreground">

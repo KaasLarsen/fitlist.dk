@@ -70,27 +70,59 @@ export async function getFeedProductById(
   return raw.find((p) => p.id === id);
 }
 
-export async function getProductsByCategory(
+async function buildCategoryProducts(
   categorySlug: MachineCategorySlug,
-  opts?: { intentSlug?: string; limit?: number; inStockOnly?: boolean },
+  intentSlug: string,
+  limit: number,
+  inStockOnly: boolean,
 ): Promise<FeedProduct[]> {
   const catalog = await getMachineCatalog();
   let list = catalog.filter((p) => p.categorySlug === categorySlug);
 
-  if (opts?.intentSlug) {
-    list = list.filter((p) => p.intentSlugs?.includes(opts.intentSlug!));
+  if (intentSlug) {
+    list = list.filter((p) => p.intentSlugs?.includes(intentSlug));
   }
 
-  if (opts?.inStockOnly) {
+  if (inStockOnly) {
     list = list.filter((p) => p.inStock);
   }
 
   list = [...list].sort(sortOffers);
 
-  if (opts?.limit != null && opts.limit > 0) {
-    return list.slice(0, opts.limit);
+  if (limit > 0) {
+    return list.slice(0, limit);
   }
   return list;
+}
+
+export async function getProductsByCategory(
+  categorySlug: MachineCategorySlug,
+  opts?: { intentSlug?: string; limit?: number; inStockOnly?: boolean },
+): Promise<FeedProduct[]> {
+  const intentSlug = opts?.intentSlug ?? "";
+  const limit = opts?.limit ?? 0;
+  const inStockOnly = opts?.inStockOnly ?? false;
+
+  const cached = unstable_cache(
+    () =>
+      buildCategoryProducts(categorySlug, intentSlug, limit, inStockOnly),
+    [
+      "fitlist-category-products",
+      CATALOG_CACHE_VERSION,
+      categorySlug,
+      intentSlug,
+      String(limit),
+      String(inStockOnly),
+    ],
+    { revalidate: FEED_REVALIDATE_SECONDS, tags: ["fitlist-feeds"] },
+  );
+
+  try {
+    return await cached();
+  } catch (err) {
+    console.error(`[catalog] category slice failed (${categorySlug}):`, err);
+    return [];
+  }
 }
 
 /** Warm katalog-cache efter feed-revalidate. */

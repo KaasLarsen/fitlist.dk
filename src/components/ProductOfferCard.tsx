@@ -24,7 +24,6 @@ export function ProductOfferCard({ product, compact = false }: Props) {
             fill
             sizes="(max-width: 640px) 100vw, 128px"
             className="object-contain p-2"
-            unoptimized
           />
         ) : (
           <div className="flex h-full items-center justify-center font-display text-xs uppercase tracking-[0.14em] text-muted">
