@@ -64,5 +64,10 @@ Mangler produktet i feedet, falder UI tilbage til kategorisiden `/maskiner/[slug
 - `/guides/bedste-styrkemaskiner-2026`
 - `/guides/bedste-multistation-2026` (intent: multistation / home gym)
 - `/guides/bedste-justerbar-traeningsbaenk-2026` (intent: træningsbænk)
+- `/guides/bedste-justerbare-haandvaegte-2026` (intent: håndvægte)
+- `/guides/bedste-stoejsvag-romaskine-2026` (intent: støjsvag)
+- `/guides/bedste-stoejsvag-crosstrainer-2026` (intent: støjsvag)
+- `/guides/bedste-power-rack-squat-rack-2026`
+- `/guides/bedste-knaevenlig-genoptraening-hjemme-2026`
 
 Kuraterede produktanbefalinger i guides er separate fra “Relaterede tilbud” (top feed-hits i samme kategori).

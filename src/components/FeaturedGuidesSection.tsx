@@ -21,8 +21,8 @@ export function FeaturedGuidesSection({ guides }: Props) {
               Købsguides
             </h2>
             <p className="mt-4 max-w-lg text-muted">
-              Detaljerede guides med anbefalinger og live priser — fra begynder-
-              must-haves og kabeltårn til gåbånd, budget-pakker og styrke.
+              Detaljerede guides med anbefalinger og live priser — fra løbebånd,
+              romaskine og crosstrainer til kontor-gåbånd, budget-pakker og styrke.
             </p>
           </div>
           <Link
@@ -47,27 +47,41 @@ export function FeaturedGuidesSection({ guides }: Props) {
                       {category?.name ?? guide.categorySlug}
                       {guide.slug === "gaabaand-til-kontoret-2026"
                         ? " · Kontor / under-desk"
-                        : guide.intentSlug === "gaabaand"
-                          ? " · Gåbånd"
-                          : guide.intentSlug === "siddecykel"
-                            ? " · Senior / siddecykel"
-                            : guide.intentSlug === "spinning"
-                              ? " · Spinning"
-                              : guide.intentSlug === "smart"
-                                ? " · Smart / Zwift"
-                                : guide.intentSlug === "airbike"
-                                  ? " · Airbike"
-                                  : guide.intentSlug === "multistation"
-                                    ? " · Multistation"
-                                    : guide.intentSlug === "traeningsbaenk"
-                                      ? " · Træningsbænk"
-                                      : guide.intentSlug === "haandvaegte"
-                                        ? " · Håndvægte"
-                                        : guide.intentSlug === "kabeltaarn"
-                                          ? " · Kabeltårn"
-                                          : guide.intentSlug === "begynder"
-                                            ? " · Begynder"
-                                            : ""}
+                        : guide.slug === "bedste-stoejsvage-traeningsmaskiner-lejlighed-2026"
+                          ? " · Støjsvag / lejlighed"
+                          : guide.slug === "ultimative-home-gym-budget-2026"
+                            ? " · Budget / max 5.000"
+                            : guide.slug === "bedste-foldbare-kompakte-traeningsmaskiner-2026"
+                              ? " · Foldbar / kompakt"
+                              : guide.slug === "bedste-loebebaand-2026"
+                                ? " · Løb hjemme"
+                                : guide.slug === "bedste-romaskine-2026"
+                                  ? " · Luft / magnet / vand"
+                                  : guide.intentSlug === "gaabaand"
+                                    ? " · Gåbånd"
+                                    : guide.intentSlug === "siddecykel"
+                                      ? " · Senior / siddecykel"
+                                      : guide.intentSlug === "stoejsvag"
+                                        ? " · Støjsvag"
+                                        : guide.intentSlug === "spinning"
+                                          ? " · Spinning"
+                                          : guide.intentSlug === "smart"
+                                            ? " · Smart / Zwift"
+                                            : guide.intentSlug === "airbike"
+                                              ? " · Airbike"
+                                              : guide.intentSlug === "multistation"
+                                                ? " · Multistation"
+                                                : guide.intentSlug === "traeningsbaenk"
+                                                  ? " · Træningsbænk"
+                                                  : guide.intentSlug === "haandvaegte"
+                                                    ? " · Håndvægte"
+                                                    : guide.intentSlug === "kabeltaarn"
+                                                      ? " · Kabeltårn"
+                                                      : guide.intentSlug === "begynder"
+                                                        ? " · Begynder"
+                                                        : guide.intentSlug === "foldbar"
+                                                          ? " · Foldbar"
+                                                          : ""}
                     </p>
                     <h3 className="mt-1 font-display text-2xl font-medium uppercase tracking-wide text-foreground transition-colors group-hover:text-accent">
                       {guide.title}

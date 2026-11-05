@@ -112,16 +112,16 @@ export function getProductAffiliate(product: GuideProduct) {
 
 /** Featured homepage-rækkefølge (intent-guides + kernemaskiner). */
 const FEATURED_GUIDE_SLUGS = [
+  "bedste-loebebaand-2026",
+  "bedste-romaskine-2026",
+  "bedste-crosstrainer-2026",
   "gaabaand-til-kontoret-2026",
-  "bedste-traeningsudstyr-til-seniorer-2026",
-  "hjemmetraening-for-begyndere-foerste-90-dage",
-  "bedste-justerbare-haandvaegte-2026",
-  "bedste-vaegmonteret-kabeltaarn-2026",
-  "ultimative-udendoers-home-gym-2026",
-  "ultimative-home-gym-budget-2026",
   "bedste-stoejsvage-traeningsmaskiner-lejlighed-2026",
+  "ultimative-home-gym-budget-2026",
+  "bedste-justerbare-haandvaegte-2026",
+  "bedste-justerbar-traeningsbaenk-2026",
+  "bedste-traeningsudstyr-til-seniorer-2026",
   "bedste-foldbare-kompakte-traeningsmaskiner-2026",
-  "bedste-gaabaand-2026",
 ] as const;
 
 export function getFeaturedGuides(): Guide[] {
@@ -155,7 +155,7 @@ export const guides: Guide[] = [
       "Find den bedste støjsvage træningsmaskine til lejlighed i 2026. Guide til at undgå støj fra hjemmetræning — plus støjsvagt gåbånd, motionscykel der ikke larmer, magnet-romaskine og underlagsmåtte med live priser.",
     categorySlug: "motionscykel",
     publishedAt: "2026-11-04",
-    updatedAt: "2026-11-04",
+    updatedAt: "2026-11-05",
     intro:
       "Ingen fitnessmaskine er 100 % lydløs — det er myten, shops gerne sælger dig. Men forskellen mellem teknologierne er enorm. I en lejlighed er støj og vibration den absolut største barriere for at trykke “køb”: frygten for underboen, partneren der ikke kan høre fjernsynet, eller den pinlige “rumlen” gennem etageadskillelsen. Denne guide skærer igennem marketing. Du får de to støjtyper forklaret, hvilken modstandsteknologi du skal vælge (og undgå), og konkrete anbefalinger til gåbånd, motionscykel og romaskine — plus det underlag, der ofte redder hele setuppet.",
     criteria: [
@@ -419,14 +419,14 @@ export const guides: Guide[] = [
       },
     ],
     relatedSlugs: [
-      "hjemmetraening-for-begyndere-foerste-90-dage",
       "bedste-foldbare-kompakte-traeningsmaskiner-2026",
+      "bedste-stoejsvag-romaskine-2026",
+      "bedste-stoejsvag-crosstrainer-2026",
+      "gaabaand-til-kontoret-2026",
       "bedste-gaabaand-2026",
-      "bedste-motionscykel-2026",
-      "bedste-spinningcykel-2026",
       "bedste-romaskine-2026",
       "bedste-loebebaand-2026",
-      "bedste-airbike-2026",
+      "ultimative-home-gym-budget-2026",
     ],
   },
   {
@@ -440,7 +440,7 @@ export const guides: Guide[] = [
     intentSlug: "foldbar",
     recommendationsHeading: "Kompakte anbefalinger efter maskintype",
     publishedAt: "2026-11-04",
-    updatedAt: "2026-11-04",
+    updatedAt: "2026-11-05",
     intro:
       "Du behøver ikke et dedikeret fitnessrum på 20 kvadratmeter for at komme i topform derhjemme. Moderne træningsmaskiner behøver ikke at stå og samle støv midt i stuen. Med det rette kompakte og foldbare udstyr kan dit home gym pakkes væk på under to minutter, når du får gæster — eller når stuen bare skal være en stue igen. Denne guide handler om plads: folded dimensions, vægt og hjul, vertikal opbevaring — og fire konkrete anbefalinger, der faktisk kan gemmes væk i en lille bolig.",
     criteria: [
@@ -675,7 +675,9 @@ export const guides: Guide[] = [
     ],
     relatedSlugs: [
       "bedste-stoejsvage-traeningsmaskiner-lejlighed-2026",
+      "bedste-loebebaand-2026",
       "bedste-gaabaand-2026",
+      "gaabaand-til-kontoret-2026",
       "bedste-romaskine-2026",
       "bedste-crosstrainer-2026",
       "bedste-justerbar-traeningsbaenk-2026",
@@ -932,16 +934,16 @@ export const guides: Guide[] = [
   },
   {
     slug: "bedste-loebebaand-2026",
-    title: "Bedste løbebånd 2026",
+    title: "Bedste løbebånd til hjemmet 2026 — til rigtigt løb",
     excerpt:
-      "Sådan vælger du løbebånd til hjemmet — plads, motor, støj og fire konkrete anbefalinger med aktuelle priser.",
+      "Løbebånd til jævnligt løb hjemme: motor, løbeflade, fold og fire ægte løbebånd (ikke walking pads) med live priser.",
     metaDescription:
-      "Find det bedste løbebånd til hjemmet i 2026. Guide til motor, plads, støj og budget — plus fire anbefalede modeller med live priser fra danske webshops.",
+      "Bedste løbebånd 2026 til rigtigt løb hjemme. Guide til motor, løbeflade, støj og fold — plus fire anbefalede hjemmeløbebånd med live priser. Gåbånd? Se separat guide.",
     categorySlug: "loebebaand",
     publishedAt: "2026-11-04",
-    updatedAt: "2026-11-04",
+    updatedAt: "2026-11-05",
     intro:
-      "Et løbebånd er ofte den mest direkte vej til bedre kondition hjemme: du træner, når vejret, tidspunktet eller børnene ellers ville stoppe dig. Markedet er fyldt med modeller, der ser ens ud på papiret — men føles meget forskellige i stuen. Denne guide giver dig kriterierne først, fire konkrete anbefalinger med shop-links til vores partnere, og svar på de spørgsmål, folk typisk stiller, inden de køber.",
+      "Denne guide er til dig, der skal kunne løbe hjemme — intervaller, tempo og jævnlig kilometervis — ikke kun gå under skrivebordet. Walking pads og under-desk gåbånd har deres egne guides; her får du kun ægte hjemmeløbebånd. Du får kriterierne først (motor, løbeflade, støj, fold), fire konkrete modeller med shop-links til vores partnere, og klare svar på, hvornår du i stedet skal vælge gåbånd.",
     criteria: [
       {
         title: "Hvor ofte og hvor hårdt?",
@@ -961,17 +963,17 @@ export const guides: Guide[] = [
       {
         title: "Støj og naboer",
         description:
-          "I lejlighed betyder støddæmpning, gummifødder og en dæmpningsmåtte mindst lige så meget som topfart. Motorstøj, båndets “klap” og dine skridt gennem gulvet er tre forskellige støjkilder. Aftenbrug? Vælg dæmpning og lavere hastighed — og overvej gåbånd frem for fuldt løbebånd.",
+          "I lejlighed betyder støddæmpning, gummifødder og en dæmpningsmåtte mindst lige så meget som topfart. Motorstøj, båndets “klap” og dine skridt gennem gulvet er tre forskellige støjkilder. Aftenbrug? Vælg dæmpning, realistisk tempo — og overvej om gåbånd er det ærligere valg, hvis du primært går.",
       },
       {
         title: "Stigning (incline)",
         description:
-          "Elektronisk stigning lader dig simulere bakker uden at øge hastigheden. Det er effektivt til baller og baglår og skåner dig for at skulle løbe hurtigere for at få intensitet. Mange walking pads har manuel eller motoriseret hældning — nyttigt til kontor og gangtræning.",
+          "Elektronisk stigning lader dig simulere bakker uden at øge hastigheden. Det er effektivt til baller og baglår og skåner dig for at skulle løbe hurtigere for at få intensitet. På et rigtigt løbebånd er stigning et træningsværktøj — ikke en erstatning for manglende topfart.",
       },
       {
         title: "Budget vs. levetid",
         description:
-          "Billige bånd kan være fine til gang et par gange om ugen. Til jævnligt løb betaler du ofte mindre over tid ved at vælge en mere solid model første gang. Læg også fragt, montering og eventuel måtte ind i det samlede budget.",
+          "Til jævnligt løb betaler du ofte mindre over tid ved at vælge en mere solid model første gang. Entry-løbebånd kan fungere til let jogging; til intervaller flere gange om ugen skal motor og dæk holde. Læg fragt, montering og måtte ind i budgettet.",
       },
       {
         title: "Skærm, apps og motivation",
@@ -985,15 +987,15 @@ export const guides: Guide[] = [
         name: "Titan LIFE Treadmill T56",
         badge: "Bedst samlet",
         summary:
-          "Et solidt allround-løbebånd til hjemmet, når du både vil gå og løbe uden at gå all-in på premium-priser. God balance mellem build, løbeflade og daglig brugbarhed.",
+          "Solidt allround-hjemmeløbebånd, når du både vil jogge og løbe uden at gå all-in på premium. God balance mellem build, løbeflade og daglig brug — vores hovedanbefaling til de fleste, der træner flere gange om ugen.",
         pros: [
-          "Allround til både gang og løb",
-          "Kendte Titan LIFE-linjer med fri fragt hos partner",
-          "Bedre holdbarhed end typiske entry-walking pads",
-          "Klar anbefaling, hvis du træner flere gange om ugen",
+          "Allround til gang, jogging og løb",
+          "Opdateret Titan LIFE-hjemmelinje med fri fragt",
+          "Bedre holdbarhed end billige “3-i-1”-kompromisser",
+          "Klar anbefaling til jævnlig brug",
         ],
         cons: [
-          "Fylder mere end et rent gåbånd",
+          "Fylder mere end et gåbånd",
           "Ikke det billigste i kategorien",
           "Overkill, hvis du kun går under skrivebordet",
         ],
@@ -1006,59 +1008,59 @@ export const guides: Guide[] = [
         feedProductId: "HomeX.dk:3179",
       },
       {
-        id: "workwalk-classic",
-        name: "WorkWalk Classic Gåbånd",
-        badge: "Bedste billige",
+        id: "ascendic-7021",
+        name: "Ascendic 7021 Løbebånd",
+        badge: "Bedste budget-løbebånd",
         summary:
-          "Kompakt gåbånd til kontor og hjem, når budgettet er stramt, og behovet er gang — ikke sprint. Nem indgang til daglig bevægelse uden et stort fodaftryk.",
+          "Kompakt ægte løbebånd med automatisk hældning — til dig, der vil jogge og løbe hjemme uden midrange-pris. Skarp indgang, når walking pad ikke er nok, og pladsen stadig tæller.",
         pros: [
-          "Lav indgangspris",
-          "Kompakt footprint til kontor/hjem",
-          "God til daglig gang og standing desk",
-          "Lettere at stille væk end fuldt løbebånd",
+          "Ægte løbebånd til under midrange-pris",
+          "Automatisk hældning til variation",
+          "Kompakt footprint til hjemmet",
+          "Passer til gang, jogging og løb",
         ],
         cons: [
-          "Ikke bygget til seriøst løb",
-          "Lavere max-hastighed end klassiske løbebånd",
-          "Færre “gym”-features end dyrere modeller",
+          "Ikke Titan T66-klassen til hård interval hvert pas",
+          "Tjek max-hastighed og bruger vægt ift. dine mål",
+          "Mindre “center”-følelse end dyrere modeller",
         ],
         specs: [
-          { label: "Type", value: "Gåbånd / walking pad" },
-          { label: "Brug", value: "Gang" },
-          { label: "Segment", value: "Budget" },
-          { label: "Partner", value: "WorkWalk" },
+          { label: "Type", value: "Løbebånd (hjemme)" },
+          { label: "Feature", value: "Automatisk hældning" },
+          { label: "Segment", value: "Budget / kompakt" },
+          { label: "Partner", value: "Ascendic.dk" },
         ],
-        feedProductId: "WorkWalk:52614816366935",
+        feedProductId: "Ascendic.dk:56336394781016",
       },
       {
-        id: "foldbar-walkingpad-3i1",
-        name: "3-i-1 foldbart Walkingpad",
-        badge: "Bedste foldbare",
+        id: "reebok-irun-45",
+        name: "Reebok i-Run 4.5 Løbebånd",
+        badge: "Bedste foldbare løbebånd",
         summary:
-          "Foldbart walking pad med justerbar hældning — til dig, der skal kunne pakke træningen væk efter brug, men stadig vil have mere end et fladt bånd.",
+          "Foldes fladt og kan rulles ind under mange senge og sofaer — uden at være et walking pad. Leveres færdigsamlet hos partner: praktisk hjemmeløbebånd, når stuen også er træningsrum.",
         pros: [
-          "Foldbart og pladsbesparende",
-          "Justerbar hældning til mere intens gang",
-          "Fleksibel 3-i-1-brug",
-          "God til små lejligheder",
+          "Foldes fladt til opbevaring",
+          "Transporthjul til at rulle væk",
+          "Kendte Reebok-linjer til hjemmet",
+          "Færdigsamlet levering hos partner",
         ],
         cons: [
-          "Ikke et fuldt løbebånd til intervaller",
-          "Stabilitet ved højere tempo kan være begrænset",
-          "Tjek altid opbevaringsmål i din bolig",
+          "Foldmekanik kræver, at du faktisk pakker den væk",
+          "Ikke det stærkeste valg til daglig hård interval",
+          "Tjek foldet højde under dit møbel",
         ],
         specs: [
-          { label: "Type", value: "Foldbart walking pad" },
-          { label: "Feature", value: "Justerbar hældning" },
-          { label: "Segment", value: "Kompakt / mid" },
-          { label: "Partner", value: "Billig-fitness.dk" },
+          { label: "Type", value: "Foldbart løbebånd" },
+          { label: "Feature", value: "Flad fold / under møbel" },
+          { label: "Segment", value: "Kompakt mid" },
+          { label: "Partner", value: "Apuls.dk" },
         ],
-        feedProductId: "Billig-fitness.dk:56539723301250",
+        feedProductId: "Apuls.dk:15828",
       },
       {
         id: "titan-t66",
         name: "Titan LIFE Treadmill T66",
-        badge: "Bedste til løb",
+        badge: "Bedste til seriøst løb",
         summary:
           "Når løb er hovedformålet, og du vil have et stærkere hjemmebånd end midrange-indgangen. Mere maskine under fødderne til dem, der træner ofte og med højere intensitet.",
         pros: [
@@ -1082,26 +1084,26 @@ export const guides: Guide[] = [
       },
     ],
     howToChoose:
-      "Start med dit primære brug: kun gang → gåbånd/walking pad (fx WorkWalk Classic eller foldbart pad). Både gang og løb et par gange om ugen → midrange som Titan LIFE T56. Primært løb og høj frekvens → T66-klassen. Prioritér derefter plads (skal det foldes?) og støj (lejlighed = dæmpning + måtte). Skærm og apps kommer sidst. Tjek aktuelle priser via knapperne ovenfor — de går direkte til vores partnere.",
+      "Kun gang / under-desk? Stop — se Bedste gåbånd 2026 eller Gåbånd til kontoret. Både jogging og løb et par gange om ugen → Titan LIFE T56. Stramt budget men stadig ægte løbebånd → Ascendic 7021. Skal maskinen væk under sofa/seng → Reebok i-Run 4.5. Primært løb og høj frekvens → T66. Prioritér derefter støj (måtte + realistisk aftenbrug). Skærm kommer sidst. Shop via “Se pris”.",
     learningSections: [
       {
         heading: "Løbebånd vs. gåbånd",
         paragraphs: [
           "Et klassisk løbebånd har højere max-hastighed, typisk længere løbeflade og stærkere motor — bygget til at du kan løbe. Et gåbånd (walking pad) er lavere, ofte smallere og designet til gang under eller ved siden af et skrivebord.",
-          "Vælger du forkert her, bliver du enten frustreret over manglende fart — eller har betalt for en stor maskine, du aldrig løber på. Match maskintypen til 80 % af din træning, ikke til den ene uge du måske “kommer i gang med løb”.",
+          "Vælger du forkert her, bliver du enten frustreret over manglende fart — eller har betalt for en stor maskine, du aldrig løber på. Match maskintypen til 80 % af din træning. Denne guide anbefaler kun ægte løbebånd i top-listen.",
         ],
       },
       {
         heading: "Løbebånd vs. romaskine og cykel",
         paragraphs: [
-          "Løbebåndet er stærkt til ren kondition og løbespecifik træning, men belaster knæ og ankler mere end romaskine eller cykel. Har du ledudfordringer, så overvej romaskine eller motionscykel — eller kombiner gåbånd med styrketræning.",
-          "Romaskinen vinder på helkropsaktivering. Cyklen vinder på skånsomhed og støjsvag aftentræning. Løbebåndet vinder, når målet er at blive bedre til at løbe eller gå mere i hverdagen.",
+          "Løbebåndet er stærkt til ren kondition og løbespecifik træning, men belaster knæ og ankler mere end romaskine eller cykel. Har du ledudfordringer, så overvej romaskine, crosstrainer eller motionscykel.",
+          "Romaskinen vinder på helkropsaktivering. Cyklen vinder på skånsomhed og støjsvag aftentræning. Løbebåndet vinder, når målet er at blive bedre til at løbe.",
         ],
       },
       {
         heading: "Hvad betyder incline?",
         paragraphs: [
-          "Elektronisk eller manuel stigning øger intensiteten uden at du behøver at løbe hurtigere. Det er effektivt til bagkæde og kondition, især på walking pads, hvor topfarten er begrænset.",
+          "Elektronisk eller manuel stigning øger intensiteten uden at du behøver at løbe hurtigere. Det er effektivt til bagkæde og kondition — og et reelt træningsværktøj på hjemmeløbebånd.",
           "Decline (nedad) er nice-to-have og sjældent nødvendigt hjemme. Fokusér på, om stigningen er stabil og nem at justere — ikke på det højeste procenttal i produktteksten.",
         ],
       },
@@ -1109,14 +1111,14 @@ export const guides: Guide[] = [
         heading: "Støj, gulv og naboer",
         paragraphs: [
           "Tre støjkilder: motoren, båndet/dækket, og vibration gennem etagen. En god måtte, korrekt opstilling og lavere hastighed om aftenen gør mere end de fleste “stille motor”-claims.",
-          "Bor du i lejlighed, så test gerne i butik, læs brugererfaringer om støj, og vær realistisk: sprint på et billigt bånd i et trægulv er en dårlig cocktail — uanset brand.",
+          "Bor du i lejlighed og skal primært gå, er gåbånd ofte det ærligere valg. Skal du løbe i etagebyggeri: dæmpning, måtte, og realistiske træningstider — se også støjsvag-lejlighedsguiden.",
         ],
       },
       {
         heading: "Typiske fejl ved køb",
         paragraphs: [
           "At købe efter den største skærm. At ignorere opbevaringsmål. At vælge peak-HK i stedet for reel brug. At glemme fragt og montering. At købe et fuldt løbebånd, når et gåbånd ville dække behovet.",
-          "Omvendt fejl: at købe det billigste walking pad og forvente, at det holder til dagligt løb. Match pris og type til frekvens — ikke til ønsketænkning.",
+          "Omvendt fejl: at købe et walking pad og forvente, at det holder til dagligt løb. Match pris og type til frekvens — ikke til ønsketænkning.",
         ],
       },
       {
@@ -1131,32 +1133,32 @@ export const guides: Guide[] = [
       {
         question: "Hvilket løbebånd er bedst til hjemmet i 2026?",
         answer:
-          "Det afhænger af brug. Til allround gang og løb anbefaler vi Titan LIFE T56. Til rent budget/gang: WorkWalk Classic. Til plads: et foldbart walking pad. Til seriøst løb: Titan LIFE T66.",
+          "Til allround jogging og løb anbefaler vi Titan LIFE T56. Til budget: Ascendic 7021. Til fold/opbevaring under møbel: Reebok i-Run 4.5. Til seriøst løb flere gange om ugen: Titan LIFE T66. Kun gang? Se Bedste gåbånd 2026.",
       },
       {
         question: "Er et gåbånd godt nok, eller skal jeg have et rigtigt løbebånd?",
         answer:
-          "Hvis du primært går — også under skrivebordet — er et gåbånd ofte det rigtige valg. Se vores dedikerede guide Bedste gåbånd 2026 for walking pads. Skal du kunne løbe intervaller, vælg et klassisk løbebånd med højere hastighed og længere flade.",
+          "Hvis du primært går — også under skrivebordet — er et gåbånd det rigtige valg (Bedste gåbånd 2026 / Gåbånd til kontoret). Skal du kunne løbe intervaller, vælg et klassisk løbebånd med højere hastighed og længere flade — det er det, denne guide dækker.",
       },
       {
         question: "Hvor meget plads skal jeg regne med?",
         answer:
-          "Mål både brugslængde og foldet/opbevaret mål. Læg plads til at træde på og af sikkert. Walking pads fylder markant mindre end fulde løbebånd — tjek altid produktets mål hos forhandleren.",
+          "Mål både brugslængde og foldet/opbevaret mål. Læg plads til at træde på og af sikkert. Fulde løbebånd fylder mere end walking pads — tjek altid produktets mål hos forhandleren.",
       },
       {
         question: "Hvilket løbebånd er bedst til lejlighed?",
         answer:
-          "Prioritér dæmpning, lavere vægtbelastning på gulvet og gerne walking pad eller foldbar model. Brug måtte, undgå sen aften-sprint, og vælg modeller med godt ry for støjsvag gang.",
+          "Prioritér dæmpning, måtte og realistisk tempo. Foldbart som i-Run 4.5 hjælper på plads. Skal du mest gå (ikke løbe), er gåbånd ofte bedre for naboerne — se støjsvag-lejlighedsguiden.",
       },
       {
         question: "Skal jeg vælge foldbart løbebånd?",
         answer:
-          "Ja, hvis maskinen skal væk efter træning. Nej, hvis du har et fast træningsrum og vil maximere stabilitet. Fold er praktisk — men tjek, at mekanikken føles solid, og at den foldede højde passer under dit møbel eller i dit skab.",
+          "Ja, hvis maskinen skal væk efter træning. Nej, hvis du har et fast træningsrum og vil maximere stabilitet. Fold er praktisk — men tjek, at mekanikken føles solid, og at den foldede højde passer under dit møbel.",
       },
       {
         question: "Hvad betyder motorens HK-tal?",
         answer:
-          "Marketing nævner ofte peak-HK. Til holdbarhed er kontinuerlig effekt under belastning vigtigere. Til gang kan lavere tal være fint; til løb flere gange om ugen vil du typisk op i en stærkere klasse.",
+          "Marketing nævner ofte peak-HK. Til holdbarhed er kontinuerlig effekt under belastning vigtigere. Til jævnligt løb vil du typisk op i en stærkere klasse end til ren gang.",
       },
       {
         question: "Kan jeg stole på priserne i guiden?",
@@ -1171,22 +1173,26 @@ export const guides: Guide[] = [
     ],
     relatedSlugs: [
       "bedste-gaabaand-2026",
+      "gaabaand-til-kontoret-2026",
+      "bedste-romaskine-2026",
       "bedste-crosstrainer-2026",
-      "bedste-motionscykel-2026",
+      "bedste-stoejsvage-traeningsmaskiner-lejlighed-2026",
+      "bedste-foldbare-kompakte-traeningsmaskiner-2026",
+      "bedste-knaevenlig-genoptraening-hjemme-2026",
     ],
   },
   {
     slug: "bedste-romaskine-2026",
-    title: "Bedste romaskine 2026",
+    title: "Bedste romaskine 2026 — luft, magnet og vand",
     excerpt:
-      "Helkropstræning hjemme: vælg mellem luft, vand og magnet — og se fire anbefalede romaskiner med aktuelle priser.",
+      "Test af luft-, magnet- og vandromaskiner til hjemmet: støj, skinne, fold og fire anbefalinger med live priser.",
     metaDescription:
-      "Find den bedste romaskine til hjemmet i 2026. Guide til modstand, støj, skinnelængde og plads — plus fire anbefalinger med live priser fra danske partnere.",
+      "Bedste romaskine 2026: luft vs. magnet vs. vand. Guide til støj, skinnelængde og plads — plus fire anbefalinger med live priser fra danske partnere.",
     categorySlug: "romaskine",
     publishedAt: "2026-11-04",
-    updatedAt: "2026-11-04",
+    updatedAt: "2026-11-05",
     intro:
-      "En romaskine træner ben, ryg, core og arme i samme bevægelse — med lav stødbelastning. Det er derfor mange kalder den den mest komplette enkeltmaskine til hjemmet. Her får du valg-kriterierne på plads (især luft vs. vand vs. magnet og om maskinen kan rejses på højkant), fire konkrete modeller med shop-links, og praktiske svar om støj, teknik og plads, inden du køber.",
+      "En romaskine træner ben, ryg, core og arme i samme bevægelse — med lav stødbelastning. Det er derfor mange kalder den den mest komplette enkeltmaskine til hjemmet. De tre teknologier — luft, magnet og vand — føles og lyder vidt forskelligt: luft er realistisk men støjende, magnet er støjsvag og præcis, vand giver bådlignende splash. Her får du valg-kriterierne på plads, fire konkrete modeller (én til hver type + allround), og praktiske svar om støj, teknik og plads, inden du køber.",
     criteria: [
       {
         title: "Modstandstype",
@@ -1403,9 +1409,13 @@ export const guides: Guide[] = [
       },
     ],
     relatedSlugs: [
+      "bedste-stoejsvag-romaskine-2026",
       "bedste-loebebaand-2026",
-      "bedste-airbike-2026",
       "bedste-crosstrainer-2026",
+      "bedste-stoejsvage-traeningsmaskiner-lejlighed-2026",
+      "bedste-foldbare-kompakte-traeningsmaskiner-2026",
+      "bedste-airbike-2026",
+      "bedste-knaevenlig-genoptraening-hjemme-2026",
     ],
   },
   {
@@ -2396,10 +2406,10 @@ export const guides: Guide[] = [
     excerpt:
       "Skånsom helkropscardio hjemme: baghjul vs. forhjul, skridtlængde og fire anbefalinger med aktuelle priser.",
     metaDescription:
-      "Find den bedste crosstrainer til hjemmet i 2026. Guide til baghjul vs. forhjul, skridtlængde, støj og budget — plus fire anbefalede modeller med live priser.",
+      "Bedste crosstrainer 2026 til hjemmet. Guide til baghjul vs. forhjul, skridtlængde, støj og budget — plus fire anbefalede modeller med live priser.",
     categorySlug: "crosstrainer",
     publishedAt: "2026-11-04",
-    updatedAt: "2026-11-04",
+    updatedAt: "2026-11-05",
     intro:
       "En crosstrainer (elliptisk træner) giver kondition med lav stødbelastning — knæ og ankler belastes mindre end på løbebånd, mens arme og core også er med. Det er derfor mange vælger den som “allround cardio” i lejlighed og hus. Her får du valg-kriterierne (især baghjulstrukket vs. forhjulstrukket og skridtlængde), fire konkrete modeller med shop-links til vores partnere, og svar på de typiske spørgsmål om plads, støj og om crosstrainer overhovedet er dig.",
     criteria: [
@@ -2625,10 +2635,13 @@ export const guides: Guide[] = [
       },
     ],
     relatedSlugs: [
+      "bedste-stoejsvag-crosstrainer-2026",
       "bedste-traeningsudstyr-til-seniorer-2026",
+      "bedste-knaevenlig-genoptraening-hjemme-2026",
       "bedste-loebebaand-2026",
-      "bedste-airbike-2026",
       "bedste-romaskine-2026",
+      "bedste-stoejsvage-traeningsmaskiner-lejlighed-2026",
+      "bedste-foldbare-kompakte-traeningsmaskiner-2026",
     ],
   },
   {
@@ -3349,11 +3362,11 @@ export const guides: Guide[] = [
     excerpt:
       "Max belastning, stabilitet, hjul og decline: sådan vælger du træningsbænk — plus fire anbefalinger med aktuelle priser.",
     metaDescription:
-      "Find den bedste justerbare træningsbænk til hjemmet i 2026. Guide til max belastning, stabilitet, transporthjul og decline — plus fire anbefalinger med live priser.",
+      "Bedste justerbare træningsbænk 2026. Guide til max belastning, stabilitet, transporthjul og decline — plus fire anbefalinger med live priser.",
     categorySlug: "styrkemaskiner",
     intentSlug: "traeningsbaenk",
     publishedAt: "2026-11-04",
-    updatedAt: "2026-11-04",
+    updatedAt: "2026-11-05",
     intro:
       "Træningsbænken er fundamentet i næsten ethvert styrkerum: bænkpres, skulderpres, rows, hip thrust og mere. En dårlig bænk vipper, knirker eller mangler den vinkel, du faktisk bruger. Her får du fokus på max belastning (dig + vægte), stabilitet, om den har hjul til at flytte, og om decline (negativ hældning) er nødvendigt — plus fire konkrete modeller med shop-links.",
     criteria: [
@@ -3569,8 +3582,10 @@ export const guides: Guide[] = [
     relatedSlugs: [
       "bedste-justerbare-haandvaegte-2026",
       "bedste-styrkemaskiner-2026",
+      "bedste-power-rack-squat-rack-2026",
       "bedste-multistation-2026",
-      "bedste-romaskine-2026",
+      "ultimative-home-gym-budget-2026",
+      "bedste-foldbare-kompakte-traeningsmaskiner-2026",
     ],
   },
   {
@@ -3579,11 +3594,11 @@ export const guides: Guide[] = [
     excerpt:
       "Dial, kg-trin og plads: sådan vælger du justerbare håndvægte — plus fire anbefalinger med aktuelle priser fra danske webshops.",
     metaDescription:
-      "Find de bedste justerbare håndvægte i 2026. Test-guide til 20 kg-sæt, 24 kg dial-håndvægte og progression til 40 kg — med live priser fra danske partnere.",
+      "Bedste justerbare håndvægte 2026 (alt-i-én dumbbells). Guide til 20–40 kg dial-sæt, kg-trin og plads — med live priser fra danske partnere.",
     categorySlug: "tilbehoer",
     intentSlug: "haandvaegte",
     publishedAt: "2026-11-04",
-    updatedAt: "2026-11-04",
+    updatedAt: "2026-11-05",
     intro:
       "Justerbare håndvægte er det mest pladsbesparende styrkeværktøj til hjemmet: ét eller to greb erstatter en hel række faste vægte. I stedet for at søge bredt på “håndvægte”, leder flere nu specifikt efter dial-/selector-modeller — hvor du drejer eller klikker dig op i kilo. Denne guide giver dig valg-kriterierne (vægtinterval, trinstørrelse, greb og holdbarhed), fire konkrete anbefalinger med shop-links, og svar på de typiske spørgsmål om 20 kg vs. 24 kg, sikkerhed og hvornår du også skal have en bænk.",
     criteria: [
@@ -3832,6 +3847,7 @@ export const guides: Guide[] = [
     relatedSlugs: [
       "hjemmetraening-for-begyndere-foerste-90-dage",
       "bedste-justerbar-traeningsbaenk-2026",
+      "bedste-power-rack-squat-rack-2026",
       "ultimative-home-gym-budget-2026",
       "bedste-styrkemaskiner-2026",
       "bedste-vaegmonteret-kabeltaarn-2026",
@@ -3839,17 +3855,17 @@ export const guides: Guide[] = [
   },
   {
     slug: "ultimative-home-gym-budget-2026",
-    title: "Det ultimative home gym på et budget (2026)",
+    title: "Det ultimative home gym på budget — max 5.000 kr. (2026)",
     excerpt:
-      "Tre færdige home gym-pakker under 2.500, 5.000 og 10.000 kr. — cardio + styrke sammensat, så du slipper for at gætte dig frem i junglen af billigt træningsudstyr.",
+      "Færdige home gym-pakker med fokus på Best Value under 5.000 kr. — plus lean lejlighedspakke og garage-setup. Cardio + styrke med live priser.",
     metaDescription:
-      "Det ultimative home gym på et budget 2026: 3 færdige pakker (lejlighed, best value under 5.000 kr. og garage-gym). Hjemmetræning på budget med live priser — og 3 ting du ikke må spare væk.",
+      "Ultimative home gym på budget 2026: færdige pakker med Best Value max 5.000 kr. Cardio + styrke, live priser — og 3 ting du ikke må spare væk.",
     categorySlug: "styrkemaskiner",
     recommendationsHeading: "3 budget-pakker",
     publishedAt: "2026-11-04",
-    updatedAt: "2026-11-04",
+    updatedAt: "2026-11-05",
     intro:
-      "Marked for hjemmetræning er overvældende: hundredvis af maskiner, “smart”-skærme og tilbehør, der spiser budgettet, før du har en reel træningsvane. Denne guide giver dig det, de fleste egentlig leder efter — færdige pakkeløsninger. Tre niveauer, der dækker både cardio og styrke, bygget af udstyr du kan købe via vores partnere med live priser. Pakke B under 5.000 kr. er vores Best Value, hvis du vil droppe fitnesscentret uden at indrette en garage.",
+      "Marked for hjemmetræning er overvældende: hundredvis af maskiner, “smart”-skærme og tilbehør, der spiser budgettet, før du har en reel træningsvane. Denne guide giver dig det, de fleste egentlig leder efter — færdige pakkeløsninger. Tre niveauer, der dækker både cardio og styrke, bygget af udstyr du kan købe via vores partnere med live priser. Pakke B under 5.000 kr. er vores Best Value og det, de fleste skal sigte efter, hvis du vil droppe fitnesscentret uden at indrette en garage.",
     criteria: [
       {
         title: "Cardio vs. Styrke – sådan fordeler du dit budget",
@@ -4097,11 +4113,12 @@ export const guides: Guide[] = [
     relatedSlugs: [
       "hjemmetraening-for-begyndere-foerste-90-dage",
       "bedste-justerbare-haandvaegte-2026",
+      "bedste-justerbar-traeningsbaenk-2026",
+      "bedste-power-rack-squat-rack-2026",
       "bedste-foldbare-kompakte-traeningsmaskiner-2026",
       "bedste-gaabaand-2026",
       "bedste-styrkemaskiner-2026",
-      "bedste-multistation-2026",
-      "bedste-justerbar-traeningsbaenk-2026",
+      "bedste-loebebaand-2026",
     ],
   },
   {
@@ -4780,11 +4797,11 @@ export const guides: Guide[] = [
     excerpt:
       "Walking pad under hæve-sænkebordet: støj til Zoom/Teams, gå-tempo mens du skriver, fjernbetjening og modeller der kan rulles væk efter fyraften.",
     metaDescription:
-      "Bedste gåbånd til kontoret 2026. Under-desk walking pads til vidensarbejde: støjsvag motor til møder, 1,5–2,5 km/t skrivetempo, fjernbetjening/app og kompakte modeller — live priser.",
+      "Gåbånd til skrivebordet 2026 — under-desk walking pads til onlinemøder. Støjsvag motor, 1,5–2,5 km/t skrivetempo, fjernbetjening — live priser.",
     categorySlug: "loebebaand",
     recommendationsHeading: "Anbefalede under-desk gåbånd",
     publishedAt: "2026-11-04",
-    updatedAt: "2026-11-04",
+    updatedAt: "2026-11-05",
     intro:
       "Denne guide handler ikke om marathon eller sveddryppende intervaller. Den er skrevet til dig, der sidder foran skærmen hele dagen — kodere, konsulenter, gamere og alle på hjemmekontor — og vil bekæmpe stillesiddende arbejde, mens du svarer mails, skriver eller er på onlinemøde. Et under-desk gåbånd (walking pad) er et lavt bånd uden frontkonsol, der passer under et hæve-sænkebord. Specifikationerne, der tæller her, er andre end på et klassisk løbebånd: mikrofonstøj, jævn motor i lave tempi, styring uden at bøje dig, og om maskinen kan rulles væk, når kontoret igen bliver stue.",
     criteria: [
@@ -5013,6 +5030,7 @@ export const guides: Guide[] = [
       "bedste-stoejsvage-traeningsmaskiner-lejlighed-2026",
       "bedste-foldbare-kompakte-traeningsmaskiner-2026",
       "bedste-loebebaand-2026",
+      "ultimative-home-gym-budget-2026",
     ],
   },
   {
@@ -5021,12 +5039,12 @@ export const guides: Guide[] = [
     excerpt:
       "Tryghed, stabilitet og ledskånsom træning hjemme: siddecykel, crosstrainer med lav indstigning og milde elastikker — uden kompliceret tech.",
     metaDescription:
-      "Bedste træningsudstyr til seniorer 2026. Skånsom motion med siddecykel (Odin RB-800 Comfort), crosstrainer med lav indstigning og genoptræningselastikker — live priser.",
+      "Bedste træningsudstyr til seniorer & genoptræning 2026. Lav indstigning, siddecykel og skånsom cardio — med live priser.",
     categorySlug: "motionscykel",
     intentSlug: "siddecykel",
     recommendationsHeading: "Anbefalet skånsomt udstyr",
     publishedAt: "2026-11-04",
-    updatedAt: "2026-11-04",
+    updatedAt: "2026-11-05",
     intro:
       "Denne guide er til dig, der leder efter tryghed, stabilitet, smertelindring og vedligeholdelse af mobilitet — ikke efter kompliceret tech, store vægtstakke eller ure, der råber. Sproget er bevidst roligt: vi vægter ledskånsomhed, sikker indstigning og simple knapper højest. Du får de tre udstyrstyper, der oftest giver mening hjemme (siddecykel, crosstrainer, milde elastikker), tre “gyldne krav” til senior-maskiner, og konkrete modeller med aktuelle priser fra vores partnere.",
     criteria: [
@@ -5251,10 +5269,885 @@ export const guides: Guide[] = [
       },
     ],
     relatedSlugs: [
+      "bedste-knaevenlig-genoptraening-hjemme-2026",
       "bedste-motionscykel-2026",
       "bedste-crosstrainer-2026",
+      "bedste-stoejsvag-crosstrainer-2026",
       "hjemmetraening-for-begyndere-foerste-90-dage",
       "bedste-stoejsvage-traeningsmaskiner-lejlighed-2026",
+      "bedste-romaskine-2026",
+    ],
+  },
+  {
+    slug: "bedste-stoejsvag-romaskine-2026",
+    title: "Bedste støjsvage romaskine 2026",
+    excerpt:
+      "Magnet- og vandromaskiner til lejlighed og aftentræning: støj, skinne og fire anbefalinger med live priser — uden luftvifte-larm.",
+    metaDescription:
+      "Bedste støjsvage romaskine 2026. Magnet vs. vand til lejlighed — guide til støj, fold og skinnelængde plus fire anbefalinger med live priser.",
+    categorySlug: "romaskine",
+    intentSlug: "stoejsvag",
+    publishedAt: "2026-11-05",
+    updatedAt: "2026-11-05",
+    intro:
+      "Luftromaskiner er fantastiske til Watt og “ægte” følelse — og ofte for støjende til etagebyggeri. Denne guide er skrevet til dig, der vil ro hjemme uden at vække underboerne: magnet først, vand med forbehold, og klare kriterier for skinne, fold og gulv. Du får fire konkrete modeller med shop-links, og henvisning til den brede romaskine-guide hvis du også overvejer luft.",
+    criteria: [
+      {
+        title: "Magnet før luft i lejlighed",
+        description:
+          "Magnetmodstand er typisk den støjsvageste teknologi. Du hører mest sæde på skinnen og dine egne træk — ikke en vifte. Luft er realistisk, men fylder lydmæssigt; gem den til hus med træningsrum.",
+      },
+      {
+        title: "Vand: stemning vs. splash",
+        description:
+          "Vandromaskiner lyder “bådlignende” og motiverer mange. Splash og tank er mildere end luft for naboer i mange hjem — men stadig mere end magnet. Vælg vand bevidst, ikke som “stille” default.",
+      },
+      {
+        title: "Skinne, sæde og rumlen",
+        description:
+          "Mange “støjklager” er egentlig mekanik: tørre hjul, ujævn skinne, maskine ude af vater. Brug måtte, stil i vater, og vælg modeller med godt ry for jævn glide.",
+      },
+      {
+        title: "Fold / højkant",
+        description:
+          "En støjsvag maskine, du aldrig orker at rejse, står midt i stuen. Tjek om den foldes eller rejses på højkant — og om hjulene virker på dit gulv.",
+      },
+      {
+        title: "Skinnelængde til din højde",
+        description:
+          "Støjkrav må ikke gå ud over teknik. For korte skinner ødelægger slaglængden for høje brugere. Tjek maks. brugerhøjde, før du køber den billigste “stille” model.",
+      },
+      {
+        title: "Måtte er ikke valgfri",
+        description:
+          "I lejlighed dæmper måtten vibration gennem etagen og beskytter gulvet. Budgetér den ind — den er billigere end en nabokonflikt.",
+      },
+    ],
+    products: [
+      {
+        id: "ascendic-6004-quiet",
+        name: "Ascendic 6004 Romaskine",
+        badge: "Bedst støjsvag (magnet)",
+        summary:
+          "Magnetisk, næsten lydløs entry med 15 niveauer — vores topvalg, når stilhed er hovedkravet, og du vil have skånsom helkrop uden luftvifte.",
+        pros: [
+          "Magnetisk og meget støjsvag",
+          "Skarp pris til lejlighedsbrug",
+          "Jævn modstand til teknik og zone 2",
+          "Enkel computer uden tech-ballast",
+        ],
+        cons: [
+          "Ikke luftens “Watt-følelse”",
+          "Entry-build — opgrader ved meget hyppig tung brug",
+          "Høje brugere bør tjekke skinne",
+        ],
+        specs: [
+          { label: "Modstand", value: "Magnet" },
+          { label: "Segment", value: "Budget / stille" },
+          { label: "Partner", value: "Ascendic.dk" },
+        ],
+        feedProductId: "Ascendic.dk:55357722100056",
+      },
+      {
+        id: "titan-r36-quiet",
+        name: "Titan Life Rower R36",
+        badge: "Bedste kompakt magnet",
+        summary:
+          "Kompakt magnet-romaskine med fri fragt hos partner — god balance mellem stilhed, plads og daglig brugbarhed, når Ascendic 6004 føles for “entry”.",
+        pros: [
+          "Magnetisk og lejlighedsvenlig",
+          "Kompakt footprint",
+          "Titan Life-linjer med fri fragt",
+          "Fin til regelmæssig hjemmebrug",
+        ],
+        cons: [
+          "Dyrere end ren budget-magnet",
+          "Ikke vand-stemning",
+          "Tjek skinnelængde hvis du er høj",
+        ],
+        specs: [
+          { label: "Modstand", value: "Magnet" },
+          { label: "Segment", value: "Kompakt mid" },
+          { label: "Partner", value: "Apuls.dk" },
+        ],
+        feedProductId: "Apuls.dk:15652",
+      },
+      {
+        id: "maxxus-rx10-quiet",
+        name: "MAXXUS RX 1.0 Kompakt Romaskine",
+        badge: "Bedste “støjsvag” featured",
+        summary:
+          "Partnerteksten fremhæver trådløs, støjsvag og kompakt — magnet med mange niveauer. Relevant pick, når du specifikt søger “støjsvag romaskine” og vil have moderne features.",
+        pros: [
+          "Markedsført som støjsvag/kompakt",
+          "Mange magnetniveauer",
+          "Bluetooth til motivation",
+          "God match til lejlighedssøgning",
+        ],
+        cons: [
+          "Tjek batteri/trådløs-krav i produktteksten",
+          "Ikke Reebok/Titan midrange-build",
+          "Læs anmeldelser om sæderumlen",
+        ],
+        specs: [
+          { label: "Modstand", value: "Magnet" },
+          { label: "Feature", value: "Støjsvag / kompakt" },
+          { label: "Partner", value: "Billig-fitness.dk" },
+        ],
+        feedProductId: "Billig-fitness.dk:56853161935234",
+      },
+      {
+        id: "odin-r1800-water-quiet",
+        name: "Odin R1800 Vandromaskine",
+        badge: "Bedste stille-ish vand",
+        summary:
+          "Når du vil have vandets følelse og accepterer mere lyd end magnet — men stadig undgår luftvifte. Bedste vandpick i støj-hierarkiet til hjemmet.",
+        pros: [
+          "Autentisk vandfølelse",
+          "Mildere end luft for mange naboer",
+          "God midrange-pris for vand",
+          "Klar differentiering fra magnet-entry",
+        ],
+        cons: [
+          "Mere lyd end magnet",
+          "Kræver vandpleje",
+          "Fylder i brug — mål skinnen",
+        ],
+        specs: [
+          { label: "Modstand", value: "Vand" },
+          { label: "Segment", value: "Midrange" },
+          { label: "Partner", value: "Apuls.dk" },
+        ],
+        feedProductId: "Apuls.dk:15386",
+      },
+    ],
+    howToChoose:
+      "Maksimal stilhed? Ascendic 6004 eller Titan R36. Vil du have “støjsvag” som featured feature? MAXXUS RX 1.0. Vil du have vand-stemning og bor ikke ovenpå lette gulve? Odin R1800. Vil du have luft? Stop — se Bedste romaskine 2026 i stedet. Læg måtte under, og browse Romaskine → Støjsvag for flere tilbud.",
+    learningSections: [
+      {
+        heading: "Hvorfor luft taber i lejlighed",
+        paragraphs: [
+          "Luftmodstand skalerer med indsats — og lyden følger med. Det er fantastisk i et garagegym og ofte for aggressivt i etagebyggeri, især om aftenen.",
+          "Magnet giver dig stilhed og præcis justering. Du mister den selvskalerende “vifte”-følelse, men vinder nabo-fred.",
+        ],
+      },
+      {
+        heading: "Magnet vs. vand i støj-hierarkiet",
+        paragraphs: [
+          "Magnet: støjsvagest. Vand: mellemting med karakteristisk splash. Luft: mest fyldig lyd. Vælg ud fra bolig først, motivation bagefter.",
+          "Se også den generelle støjsvag-lejlighedsguide, hvis du stadig overvejer cykel eller gåbånd som alternativ.",
+        ],
+        comparison: {
+          caption: "Støjprofil hjemme (typisk)",
+          rowHeaderLabel: "Type",
+          columns: ["Luft", "Vand", "Magnet"],
+          rows: [
+            {
+              label: "Luftbåren støj",
+              cells: ["Høj", "Mellem", "Lav"],
+            },
+            {
+              label: "Lejlighed aften",
+              cells: ["Sjældent OK", "Afhænger", "Bedst"],
+            },
+            {
+              label: "Træningsfølelse",
+              cells: ["Meget “rigtig”", "Bådlignende", "Præcis / jævn"],
+            },
+          ],
+        },
+      },
+      {
+        heading: "Teknik og lænd",
+        paragraphs: [
+          "Stille maskine + dårlig teknik = stadig ondt i ryggen. Lær ben → core → arme, og film dig selv de første uger.",
+          "Start med korte sessioner. Støjkrav ændrer ikke biomekanikken.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "Hvilken romaskine er mest støjsvag?",
+        answer:
+          "Magnetmodstand — fx Ascendic 6004 eller Titan Life R36. Vand er næste trin. Luft er typisk mest støjende.",
+      },
+      {
+        question: "Er vandromaskine OK i lejlighed?",
+        answer:
+          "Ofte ja i dagtimerne med måtte — men den er ikke lige så stille som magnet. Test realistisk, og tal med naboer hvis du er i tvivl.",
+      },
+      {
+        question: "Kan jeg bruge luftromaskine stille?",
+        answer:
+          "Kun hvis du trækker meget let — og så mister du pointen. I lejlighed anbefaler vi magnet (eller vand med forbehold).",
+      },
+      {
+        question: "Hjælper underlagsmåtte?",
+        answer:
+          "Ja. Den dæmper vibration gennem etagen og beskytter gulvet. Budgetér den altid i lejlighed.",
+      },
+      {
+        question: "Hvor ser jeg flere støjsvage tilbud?",
+        answer:
+          "Klik “Se pris” ovenfor, eller browse Romaskine → Støjsvag. Den generelle Bedste romaskine 2026 dækker også luftmodeller.",
+      },
+      {
+        question: "Tjener Fitlist penge på links?",
+        answer:
+          "Ja, via affiliate/Partner-Ads. Det påvirker ikke din pris. Læs “Sådan tjener vi penge”.",
+      },
+    ],
+    relatedSlugs: [
+      "bedste-romaskine-2026",
+      "bedste-stoejsvage-traeningsmaskiner-lejlighed-2026",
+      "bedste-stoejsvag-crosstrainer-2026",
+      "bedste-foldbare-kompakte-traeningsmaskiner-2026",
+      "bedste-crosstrainer-2026",
+      "bedste-motionscykel-2026",
+    ],
+  },
+  {
+    slug: "bedste-stoejsvag-crosstrainer-2026",
+    title: "Bedste støjsvage crosstrainer 2026",
+    excerpt:
+      "Elliptisk træning til lejlighed og aften: magnetmodstand, stabilitet og fire anbefalinger med live priser — uden at vække underboerne.",
+    metaDescription:
+      "Bedste støjsvage crosstrainer 2026. Guide til magnet, lav indstigning og lejlighed — plus fire anbefalinger med live priser.",
+    categorySlug: "crosstrainer",
+    intentSlug: "stoejsvag",
+    publishedAt: "2026-11-05",
+    updatedAt: "2026-11-05",
+    intro:
+      "Crosstrainere er blandt de mere lejlighedsvenlige cardimaskiner — når du vælger magnetmodstand, stiller dem i vater og undgår at “trampe” i pedalerne. Denne guide er til aftentræning og etagebyggeri: hvad der faktisk larmer, hvilke modeller der matcher støjkravet, og hvornår en cykel eller gåbånd er det ærligere valg.",
+    criteria: [
+      {
+        title: "Magnetisk modstand",
+        description:
+          "EMS/magnet er standarden for støjsvag elliptisk træning. Undgå gamle rem-/friktionsløsninger, hvis støj er kritisk.",
+      },
+      {
+        title: "Stabilitet > skærm",
+        description:
+          "En vaklende ramme skaber klik og vibration. Egenvægt, fodplader og korrekt samling betyder mere end displaystørrelse.",
+      },
+      {
+        title: "Vater + måtte",
+        description:
+          "Meget “støj” er ujævnt gulv eller løse bolte. Stil maskinen i vater, efterspænd efter 2–3 uger, og brug underlagsmåtte.",
+      },
+      {
+        title: "Lav indstigning",
+        description:
+          "Nem indstigning er ikke kun senior-feature — det reducerer klodsede opstigninger, der smækker pedalerne i gulvet.",
+      },
+      {
+        title: "Armenes radius",
+        description:
+          "Armene kan slå ind i vægge og skabe dunk. Mål footprint med arme i yderposition — ikke kun maskinens fodaftryk.",
+      },
+      {
+        title: "Realistisk aftenbrug",
+        description:
+          "Selv en stille crosstrainer transmitterer skridt gennem lette gulve. Hold intensiteten nede sent, eller vælg cykel/gåbånd til zone 2 om natten.",
+      },
+    ],
+    products: [
+      {
+        id: "titan-c35-quiet",
+        name: "Titan Life C35 Crosstrainer",
+        badge: "Bedst støjsvag entry",
+        summary:
+          "Magnetbelastning, lav indstigning og solid entry-pris — vores hovedanbefaling, når du vil have støjsvag elliptisk træning uden midrange-budget.",
+        pros: [
+          "Magnetisk og lejlighedsvenlig",
+          "Lav indstigning",
+          "Fri fragt hos partner",
+          "God til at bygge vanen stille",
+        ],
+        cons: [
+          "Ikke C56/C60-jævnhed til hård interval",
+          "Fylder i højden",
+          "Tjek skridtlængde hvis du er høj",
+        ],
+        specs: [
+          { label: "Modstand", value: "Magnet" },
+          { label: "Feature", value: "Lav indstigning" },
+          { label: "Partner", value: "HomeX.dk" },
+        ],
+        feedProductId: "HomeX.dk:2792",
+      },
+      {
+        id: "titan-c56-quiet",
+        name: "Titan Life Crosstrainer C56",
+        badge: "Bedst samlet stille",
+        summary:
+          "Mere stabil midrange, når C35 ikke føles “nok”, og du træner flere gange om ugen. Stadig magnet — stadig lejlighedsrelevant med måtte.",
+        pros: [
+          "Stabil Titan midrange",
+          "Jævnere følelse end entry",
+          "God til hyppig brug",
+          "Fri fragt hos partner",
+        ],
+        cons: [
+          "Dyrere og større footprint",
+          "Overkill til 1 let pas om ugen",
+          "Kræver fast plads",
+        ],
+        specs: [
+          { label: "Modstand", value: "Magnet" },
+          { label: "Segment", value: "Midrange" },
+          { label: "Partner", value: "HomeX.dk" },
+        ],
+        feedProductId: "HomeX.dk:3176",
+      },
+      {
+        id: "odin-c500-quiet",
+        name: "Odin C500 Crosstrainer",
+        badge: "Bedste mid magnet",
+        summary:
+          "15 kg svinghjul og brugervenlig computer — solid magnet-crosstrainer, når du vil have mere “flyd” uden at gå premium-Tunturi.",
+        pros: [
+          "Solid build til hjemmet",
+          "Jævn svinghjulsfølelse",
+          "Klar computer",
+          "God støjprofil med måtte",
+        ],
+        cons: [
+          "Fylder",
+          "Ikke foldbar som C800",
+          "Tjek loftshøjde med arme oppe",
+        ],
+        specs: [
+          { label: "Modstand", value: "Magnet" },
+          { label: "Flywheel", value: "15 kg (oplyst)" },
+          { label: "Partner", value: "Apuls.dk" },
+        ],
+        feedProductId: "Apuls.dk:11353",
+      },
+      {
+        id: "odin-c800-quiet",
+        name: "Odin C800 Foldbar Crosstrainer",
+        badge: "Bedste fold + stille",
+        summary:
+          "Når du både skal have magnetisk elliptisk træning og kunne folde maskinen væk. Dyrere — men relevant i små lejligheder med støjkrav.",
+        pros: [
+          "Foldbar til plads",
+          "Stabil Odin-hjemmelinje",
+          "Magnetisk træning",
+          "Match til små rum + aftenbrug",
+        ],
+        cons: [
+          "Markant højere pris",
+          "Fold skal bruges — ellers spild",
+          "Tungere at håndtere end et gåbånd",
+        ],
+        specs: [
+          { label: "Feature", value: "Foldbar" },
+          { label: "Segment", value: "Øvre mid" },
+          { label: "Partner", value: "Apuls.dk" },
+        ],
+        feedProductId: "Apuls.dk:12800",
+      },
+    ],
+    howToChoose:
+      "Budget og stilhed? Titan C35. Træner du ofte? C56 eller Odin C500. Lille bolig der kræver fold? Odin C800. Primært zone 2 om aftenen i tyndt etagebyggeri? Overvej også magnetcykel eller gåbånd (støjsvag-lejlighedsguiden). Shop via “Se pris”, eller browse Crosstrainer → Støjsvag.",
+    learningSections: [
+      {
+        heading: "Hvad larmer egentlig?",
+        paragraphs: [
+          "Tre kilder: modstandssystemet, pedaler/arme der klikker, og vibration gennem gulvet. Magnet fikser den første. Vater, bolte og måtte fikser de to andre.",
+          "“Trampen” i pedalerne om aftenen er brugeradfærd — sænk kadencen, hvis naboerne klager.",
+        ],
+      },
+      {
+        heading: "Crosstrainer vs. cykel vs. gåbånd (støj)",
+        paragraphs: [
+          "Cykel vinder typisk på stilhed. Gåbånd vinder på lav strukturel støj ved gangtempo. Crosstrainer vinder på helkrop uden løbestød — midt i støj-hierarkiet, når den er sat rigtigt op.",
+          "Vælg crosstrainer, når skånsom helkrop er vigtigere end absolut minimal lyd.",
+        ],
+      },
+      {
+        heading: "Knæ og skånsomhed",
+        paragraphs: [
+          "Elliptisk træning er ofte knævenlig sammenlignet med løb. Start let, og se vores knæ-/genoptræningsguide hvis du kommer fra skade.",
+          "Lav indstigning (C35) gør det nemmere at komme sikkert på maskinen.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "Er crosstrainer støjsvag nok til lejlighed?",
+        answer:
+          "Ofte ja med magnet, måtte og fornuftig intensitet. Til sen aften i tynde gulve kan cykel eller gåbånd være sikrere.",
+      },
+      {
+        question: "Hvilken støjsvag crosstrainer skal jeg købe?",
+        answer:
+          "Start med Titan Life C35. Gå C56/Odin C500 ved hyppig brug. Vælg Odin C800, hvis fold er et must.",
+      },
+      {
+        question: "Hjælper underlagsmåtte?",
+        answer:
+          "Ja — især på vibration gennem etagen. Kombiner med at stille maskinen i vater.",
+      },
+      {
+        question: "Crosstrainer eller romaskine i lejlighed?",
+        answer:
+          "Begge kan være stille i magnet-udgave. Crosstrainer fylder i højden; romaskine i længden. Se også Bedste støjsvage romaskine 2026.",
+      },
+      {
+        question: "Hvordan ser jeg live priser?",
+        answer:
+          "Klik “Se pris” på anbefalingerne, eller browse Crosstrainer → Støjsvag for flere feed-tilbud.",
+      },
+      {
+        question: "Tjener Fitlist på klik?",
+        answer:
+          "Ja, via Partner-Ads/affiliate. Det ændrer ikke din pris. Se “Sådan tjener vi penge”.",
+      },
+    ],
+    relatedSlugs: [
+      "bedste-crosstrainer-2026",
+      "bedste-stoejsvage-traeningsmaskiner-lejlighed-2026",
+      "bedste-stoejsvag-romaskine-2026",
+      "bedste-traeningsudstyr-til-seniorer-2026",
+      "bedste-knaevenlig-genoptraening-hjemme-2026",
+      "bedste-foldbare-kompakte-traeningsmaskiner-2026",
+    ],
+  },
+  {
+    slug: "bedste-power-rack-squat-rack-2026",
+    title: "Bedste power rack & squat rack 2026",
+    excerpt:
+      "Fra fritstående squat rack til half rack og PRO: sikkerhed, footprint og fire anbefalinger med live priser til home gym.",
+    metaDescription:
+      "Bedste power rack / squat rack 2026 til hjemmet. Guide til safety bars, half rack og footprint — plus fire anbefalinger med live priser.",
+    categorySlug: "styrkemaskiner",
+    publishedAt: "2026-11-05",
+    updatedAt: "2026-11-05",
+    intro:
+      "Justerbare håndvægte og en bænk får dig langt — men squats, bænkpres med stang og tunge pulls kræver et rack med safety. Denne guide er styrke-fundamentets manglende brik: hvornår et simpelt squat rack er nok, hvornår half rack / power rack betaler dig, og fire konkrete modeller med shop-links fra vores partnere.",
+    criteria: [
+      {
+        title: "Safety bars / spotter arms",
+        description:
+          "Uden safety træner du alene på nåde. Prioritér justerbare safety bars, der kan sættes lige under dine dybdepunkter i squat og bænk.",
+      },
+      {
+        title: "Fritstående vs. half rack vs. bur",
+        description:
+          "Fritstående squat racks er billige og smalle. Half racks giver mere stivhed og ofte vægtholdere. Fulde bure/power racks er mest alsidige — og fylder mest.",
+      },
+      {
+        title: "Loftshøjde og pull-ups",
+        description:
+          "Mål til loft før du køber. Mange racks har pull-up bar i toppen. For lavt loft = ingen kipping, og i værste fald passer racket ikke.",
+      },
+      {
+        title: "Gulvbelastning og bolte",
+        description:
+          "Tunge racks skal stå plant. Nogle vil boltes; andre er fritstående med nok egenvægt. Tjek underlag, især i lejlighed.",
+      },
+      {
+        title: "Footprint og opbevaring af plader",
+        description:
+          "Half racks med plate storage sparer rod — men fylder i bredden. Mål væg-til-væg med vægtstang i J-hooks.",
+      },
+      {
+        title: "Budget vs. progression",
+        description:
+          "Start med et solidt squat rack + safety, hvis du er ny. Opgrader til half/PRO, når stangen og pladerne er beviseligt i brug hver uge.",
+      },
+    ],
+    products: [
+      {
+        id: "odin-squat-safety",
+        name: "Odin Squat Rack med Safetybars",
+        badge: "Bedst samlet home",
+        summary:
+          "Kraftigt fritstående rack med safety arms — vores hovedanbefaling til de fleste home gyms, der skal kunne squatte og bænkpresse sikkert uden at købe et fuldt bur.",
+        pros: [
+          "Safety bars inkluderet",
+          "Stabil Odin-hjemmekvalitet",
+          "God pris ift. sikkerhed",
+          "Passer til typisk stue/garage-setup",
+        ],
+        cons: [
+          "Ikke et fuldt power cage",
+          "Færre opbevaringsmuligheder end half rack",
+          "Tjek loftshøjde",
+        ],
+        specs: [
+          { label: "Type", value: "Squat rack + safety" },
+          { label: "Segment", value: "Home mid" },
+          { label: "Partner", value: "Apuls.dk" },
+        ],
+        feedProductId: "Apuls.dk:12872",
+      },
+      {
+        id: "odin-semi-pro-rack",
+        name: "Odin Semi Pro Squat Rack",
+        badge: "Bedste budget-rack",
+        summary:
+          "Stilrent, stabilt squat stativ i Semi Pro-linjen — skarp indgang, når du vil have rack-følelse uden half rack-pris. Kombinér med separat safety, hvis modellen kræver det (tjek produkttekst).",
+        pros: [
+          "Lav indgangspris",
+          "Stabilitet i fokus",
+          "God til at komme i gang med stang",
+          "Kompakt ift. bur",
+        ],
+        cons: [
+          "Færre features end half/PRO",
+          "Bekræft safety-udstyr i shoppen",
+          "Opgrader når belastningen stiger",
+        ],
+        specs: [
+          { label: "Type", value: "Squat rack" },
+          { label: "Segment", value: "Budget / semi-pro" },
+          { label: "Partner", value: "Apuls.dk" },
+        ],
+        feedProductId: "Apuls.dk:6873",
+      },
+      {
+        id: "nordic-half-rack",
+        name: "Nordic Fighter Half Rack Black",
+        badge: "Bedste half rack",
+        summary:
+          "Half rack med mange J-hook-positioner og safety bars — til dig, der vil have mere stivhed og “gym”-følelse end et simpelt stativ, uden at gå fuldt bur.",
+        pros: [
+          "Safety bars indbygget",
+          "Mange højdepositioner",
+          "Høj belastningskapacitet",
+          "Klar half rack-oplevelse",
+        ],
+        cons: [
+          "Fylder mere end fritstående",
+          "Dyrere end entry-squat rack",
+          "Kræver planlagt gulvplads",
+        ],
+        specs: [
+          { label: "Type", value: "Half rack" },
+          { label: "Segment", value: "Mid/øvre mid" },
+          { label: "Partner", value: "Apuls.dk" },
+        ],
+        feedProductId: "Apuls.dk:7680",
+      },
+      {
+        id: "odin-pro-squat",
+        name: "Odin PRO Squat Rack",
+        badge: "Bedste PRO / tung brug",
+        summary:
+          "Når home gym’et er seriøst, og du vil have PRO-ramme der tåler tung, hyppig brug. Overkill til begyndere — rigtigt valg til dem, der allerede løfter tungt hver uge.",
+        pros: [
+          "PRO-rammekonstruktion",
+          "Bygget til hård brug",
+          "Lang levetid ved høj frekvens",
+          "Match til seriøst garagegym",
+        ],
+        cons: [
+          "Høj pris",
+          "Unødvendig til let hjemmebrug",
+          "Fylder og vejer mere",
+        ],
+        specs: [
+          { label: "Type", value: "PRO squat rack" },
+          { label: "Segment", value: "Premium / tung" },
+          { label: "Partner", value: "Apuls.dk" },
+        ],
+        feedProductId: "Apuls.dk:12767",
+      },
+    ],
+    howToChoose:
+      "Første rack med safety til squat/bænk? Odin med safetybars. Stramt budget? Semi Pro. Vil have half rack-stivhed? Nordic Fighter Half Rack Black. Tung ugentlig progression i årevis? Odin PRO. Kombinér med justerbar bænk og evt. justerbare håndvægte/plader — se relaterede guides. Shop via “Se pris”.",
+    learningSections: [
+      {
+        heading: "Hvorfor safety ikke er “nice to have”",
+        paragraphs: [
+          "Alene-træning uden safety bars er en klassisk home gym-fejl. Sæt barrene, så du kan smide stangen sikkert i bund.",
+          "Det gælder både squat og bænkpres. Ego-løft uden exit-plan hører ikke hjemme i kælderen.",
+        ],
+      },
+      {
+        heading: "Rack + bænk + vægte = fundament",
+        paragraphs: [
+          "Racket er skelettet. Bænken og vægtene er musklerne. Køb i den rækkefølge, din træning kræver — ikke efter det flotteste bur på Instagram.",
+          "Se Bedste justerbare træningsbænk og budget-home-gym-guiden for pakketænkning under 5.000–10.000 kr.",
+        ],
+      },
+      {
+        heading: "Lejlighed vs. garage",
+        paragraphs: [
+          "I lejlighed: tænk støj fra plader, loftshøjde og naboer. Gummidækken og kontrollerede dumps. I garage: half/PRO giver mere mening.",
+          "Bolte i gulv er ofte et no-go i lejede boliger — vælg fritstående med nok stabilitet.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "Hvad er forskellen på squat rack og power rack?",
+        answer:
+          "Squat rack er typisk to stolper (evt. med safety). Power rack/bur er fire stolper med mere indeslutning og øvelsesfrihed. Half rack ligger imellem.",
+      },
+      {
+        question: "Skal jeg have safety bars?",
+        answer:
+          "Ja, hvis du løfter stang alene. Det er det vigtigste sikkerhedsfeature i hjemmet.",
+      },
+      {
+        question: "Hvilket rack er bedst til begyndere?",
+        answer:
+          "Et stabilt squat rack med safety (fx Odin med safetybars) + justerbar bænk. Gå half/PRO, når vanen og belastningen er der.",
+      },
+      {
+        question: "Kan jeg have rack i lejlighed?",
+        answer:
+          "Ja, hvis loft, naboer og gulv tillader det. Prioritér controlled lowering, måtter/dækken og undgå at dumpe plader.",
+      },
+      {
+        question: "Hvad skal jeg købe sammen med racket?",
+        answer:
+          "Justerbar bænk, vægtstang og plader — eller justerbare håndvægte som supplement. Se vores bænk- og håndvægt-guides.",
+      },
+      {
+        question: "Hvordan ser jeg aktuelle priser?",
+        answer:
+          "Klik “Se pris” på anbefalingerne for live partnerpriser, eller browse Styrkemaskiner for flere racks.",
+      },
+    ],
+    relatedSlugs: [
+      "bedste-justerbar-traeningsbaenk-2026",
+      "bedste-justerbare-haandvaegte-2026",
+      "bedste-styrkemaskiner-2026",
+      "bedste-multistation-2026",
+      "ultimative-home-gym-budget-2026",
+      "ultimative-udendoers-home-gym-2026",
+    ],
+  },
+  {
+    slug: "bedste-knaevenlig-genoptraening-hjemme-2026",
+    title: "Bedste knævenlige træningsudstyr til genoptræning hjemme (2026)",
+    excerpt:
+      "Skånsom cardio og let styrke efter knæ-/hoftebelastning: siddecykel, crosstrainer, magnet-romaskine og elastikker — med live priser.",
+    metaDescription:
+      "Knævenlig genoptræning hjemme 2026. Siddecykel, lav-indstigning crosstrainer og skånsomt udstyr — guide med live priser. Ikke erstatning for fysioterapi.",
+    categorySlug: "motionscykel",
+    publishedAt: "2026-11-05",
+    updatedAt: "2026-11-05",
+    intro:
+      "Denne guide er til dig, der skal træne hjemme med respekt for knæ og hofter — efter overbelastning, operation (i dialog med fagperson) eller bare fordi løb gør ondt. Fokus er lav stødbelastning, kontrolleret bevægelse og stabil indstigning. Det er ikke en medicinsk behandlingsplan: følg altid råd fra læge/fysioterapeut ved akut skade. Du får fire konkrete redskaber med shop-links, der ofte indgår i skånsomme hjemmeopsætninger.",
+    criteria: [
+      {
+        title: "Lav stødbelastning",
+        description:
+          "Undgå løb og hop i tidlig fase. Siddecykel, crosstrainer og romaskine belaster typisk knæene mindre end løbebånd — når intensiteten holdes nede.",
+      },
+      {
+        title: "Kontrolleret bevægelsesbane",
+        description:
+          "Maskiner med faste baner (cykel, elliptisk, romaskine) gør det nemmere at undgå pludselige vrid. Frie vægte kan komme senere.",
+      },
+      {
+        title: "Lav indstigning og støtte",
+        description:
+          "Siddecykel med step-through og crosstrainer med lav indstigning reducerer risikoen ved påstigning. Ryglæn aflaster lænd og giver tryghed.",
+      },
+      {
+        title: "Jævn magnetmodstand",
+        description:
+          "Hakken eller pludselige belastningsskift irriterer irriterede led. Magnetisk modstand justeres i små trin — ideelt til progression.",
+      },
+      {
+        title: "Smertefri zone først",
+        description:
+          "Træn i det område, der er smertefrit eller kun “let ubehag” efter aftale med fagperson. Stop ved skarp smerte. Ego hører ikke hjemme i genoptræning.",
+      },
+      {
+        title: "Elastik før tunge håndvægte",
+        description:
+          "Milde elastikker giver progressiv belastning uden de samme peaks. Brug dem til hofte, sæde og let styrke omkring knæet.",
+      },
+    ],
+    products: [
+      {
+        id: "odin-rb800-knee",
+        name: "Odin RB-800 Comfort Siddecykel",
+        badge: "Bedst til knæ (siddecykel)",
+        summary:
+          "Siddende cardio med ryglæn og lav indstigning — vores #1, når knæene skal bevæges uden stød, og balancen skal være tryg.",
+        pros: [
+          "Skånsom siddende bevægelse",
+          "Ryglæn og Comfort-fokus",
+          "Lav indstigning",
+          "Klar til genoptræningscardio",
+        ],
+        cons: [
+          "Fylder mere end mini-cykel",
+          "Dyrere end entry-siddecykler",
+          "Ikke en spinningcykel",
+        ],
+        specs: [
+          { label: "Type", value: "Siddecykel" },
+          { label: "Brand", value: "Odin" },
+          { label: "Partner", value: "Apuls.dk" },
+        ],
+        feedProductId: "Apuls.dk:15031",
+      },
+      {
+        id: "tunturi-d10-knee",
+        name: "Tunturi Cardio Fit D10 Siddecykel",
+        badge: "Bedste budget siddecykel",
+        summary:
+          "Ægte siddecykel til skarpere pris — når RB-800 er for dyrt, men opretstående sadelcykel stadig føles forkert for knæ/hofter.",
+        pros: [
+          "Lavere pris",
+          "Ryglæn / siddecykel-geometri",
+          "Fri fragt hos partner",
+          "God indgang til skånsom cardio",
+        ],
+        cons: [
+          "Færre komfort-detaljer end RB-800",
+          "Tjek sæde ift. din krop",
+          "Opgrader ved daglig lang brug",
+        ],
+        specs: [
+          { label: "Type", value: "Siddecykel" },
+          { label: "Brand", value: "Tunturi" },
+          { label: "Partner", value: "HomeX.dk" },
+        ],
+        feedProductId: "HomeX.dk:3393",
+      },
+      {
+        id: "titan-c35-knee",
+        name: "Titan Life C35 Crosstrainer",
+        badge: "Skånsom stående (lav indstigning)",
+        summary:
+          "Elliptisk bevægelse uden løbestød — når balancen er OK, og du vil stå op. Lav indstigning og magnetmodstand passer til forsigtig progression.",
+        pros: [
+          "Ingen hæl-stød som ved løb",
+          "Lav indstigning",
+          "Magnetisk jævn modstand",
+          "Fri fragt hos partner",
+        ],
+        cons: [
+          "Kræver balance — brug håndtag",
+          "Ikke førstevalg ved svær svimmelhed",
+          "Fylder mere end cykel",
+        ],
+        specs: [
+          { label: "Type", value: "Crosstrainer" },
+          { label: "Feature", value: "Lav indstigning" },
+          { label: "Partner", value: "HomeX.dk" },
+        ],
+        feedProductId: "HomeX.dk:2792",
+      },
+      {
+        id: "titan-r36-knee",
+        name: "Titan Life Rower R36",
+        badge: "Helkrop uden stød",
+        summary:
+          "Magnet-romaskine til skånsom helkrop, når knæene tåler den siddende trækbevægelse, og du vil have mere end cykel. Hold slaglængde og intensitet konservativ i starten.",
+        pros: [
+          "Lav stødbelastning",
+          "Magnetisk og jævn",
+          "Helkrop uden løb",
+          "Kompakt hjemmemodel",
+        ],
+        cons: [
+          "Teknik kræves for at skåne lænd",
+          "Ikke hvis fagperson fraråder roning",
+          "Fylder i længden",
+        ],
+        specs: [
+          { label: "Type", value: "Magnet-romaskine" },
+          { label: "Partner", value: "Apuls.dk" },
+        ],
+        feedProductId: "Apuls.dk:15652",
+      },
+    ],
+    howToChoose:
+      "Usikker balance eller behov for rygstøtte? Odin RB-800 Comfort (eller Tunturi D10 på budget). Klar til stående skånsom cardio? Titan C35. Vil have helkrop siddende? Titan R36 — med teknikfokus. Tilføj milde elastikker (se senior-guiden) til styrke omkring hofte/knæ. Undgå løbebånd til sprint, indtil du er klareret. Shop via “Se pris”.",
+    learningSections: [
+      {
+        heading: "Hvorfor løbebånd ofte venter",
+        paragraphs: [
+          "Løb og hurtig gang på bånd giver stød gennem knæ og ankler. Mange genoptræningsforløb starter med cykel eller elliptisk arbejde, før løb genintroduceres.",
+          "Når du er klar til løb igen, se Bedste løbebånd 2026 — ikke før.",
+        ],
+      },
+      {
+        heading: "Siddecykel vs. crosstrainer",
+        paragraphs: [
+          "Siddecykel: maksimal tryghed, rygstøtte, lav indstigning. Crosstrainer: mere helkrop, stadig lavt stød, men kræver balance.",
+          "Har du svær usikkerhed i stand, start siddende.",
+        ],
+        comparison: {
+          caption: "Skånsom cardio-valg",
+          rowHeaderLabel: "Behov",
+          columns: ["Siddecykel", "Crosstrainer", "Romaskine"],
+          rows: [
+            {
+              label: "Stød",
+              cells: ["Meget lavt", "Meget lavt", "Meget lavt"],
+            },
+            {
+              label: "Balancekrav",
+              cells: ["Lavt", "Mellem", "Lavt–mellem"],
+            },
+            {
+              label: "Rygstøtte",
+              cells: ["Ja", "Nej", "Delvist"],
+            },
+          ],
+        },
+      },
+      {
+        heading: "Fagperson først",
+        paragraphs: [
+          "Fitlist anbefaler udstyr — ikke diagnoser. Smerter, hævelse, ustabilitet eller post-op skal styres af sundhedsfaglig.",
+          "Brug guiden til at forstå produkttyper, så du kan stille bedre spørgsmål til din fysioterapeut.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "Hvad er bedst til knævenlig træning hjemme?",
+        answer:
+          "Ofte en siddecykel (fx Odin RB-800 Comfort) som start. Crosstrainer og magnet-romaskine kan følge, når balancen og knæene tillader det.",
+      },
+      {
+        question: "Er crosstrainer godt for knæene?",
+        answer:
+          "For mange ja — fødderne forbliver på pedalerne uden løbestød. Start med lav modstand, og stop ved skarp smerte.",
+      },
+      {
+        question: "Kan jeg bruge løbebånd under genoptræning?",
+        answer:
+          "Kun hvis din fagperson siger ja. Ellers vent — se løbebånd-guiden, når du er klareret til gang/løb med stød.",
+      },
+      {
+        question: "Er det her medicinsk rådgivning?",
+        answer:
+          "Nej. Det er produktguide til skånsomt hjemmeudstyr. Følg altid læge/fysioterapeut ved skade eller operation.",
+      },
+      {
+        question: "Hvad med senior-guiden?",
+        answer:
+          "Senior-guiden overlapper på siddecykel og lav indstigning, men har bredere “tryghed/ældre”-fokus. Denne side er mere specifikt knæ/genoptræningsvinklet.",
+      },
+      {
+        question: "Hvordan ser jeg priser?",
+        answer:
+          "Klik “Se pris” for live partnerpriser. Du kan også se Motionscykel → Siddecykel og Crosstrainer for flere tilbud.",
+      },
+    ],
+    relatedSlugs: [
+      "bedste-traeningsudstyr-til-seniorer-2026",
+      "bedste-crosstrainer-2026",
+      "bedste-stoejsvag-crosstrainer-2026",
+      "bedste-romaskine-2026",
+      "bedste-motionscykel-2026",
+      "bedste-loebebaand-2026",
+      "hjemmetraening-for-begyndere-foerste-90-dage",
     ],
   },
 ];
