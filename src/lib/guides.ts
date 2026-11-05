@@ -115,13 +115,13 @@ const FEATURED_GUIDE_SLUGS = [
   "gaabaand-til-kontoret-2026",
   "bedste-traeningsudstyr-til-seniorer-2026",
   "hjemmetraening-for-begyndere-foerste-90-dage",
+  "bedste-justerbare-haandvaegte-2026",
   "bedste-vaegmonteret-kabeltaarn-2026",
   "ultimative-udendoers-home-gym-2026",
   "ultimative-home-gym-budget-2026",
   "bedste-stoejsvage-traeningsmaskiner-lejlighed-2026",
   "bedste-foldbare-kompakte-traeningsmaskiner-2026",
   "bedste-gaabaand-2026",
-  "bedste-multistation-2026",
 ] as const;
 
 export function getFeaturedGuides(): Guide[] {
@@ -141,8 +141,8 @@ export function getGuideByCategoryAndIntent(
 
 /**
  * Kategori-guides + intent-guides (gåbånd, kontor/under-desk, siddecykel/senior,
- * spinning, smart/Zwift, airbike, multistation, træningsbænk, kabeltårn,
- * begynder/must-haves).
+ * spinning, smart/Zwift, airbike, multistation, træningsbænk, håndvægte,
+ * kabeltårn, begynder/must-haves).
  * Anbefalinger kobles til Partner-Ads via feedProductId (live pris + CTA).
  */
 export const guides: Guide[] = [
@@ -3567,9 +3567,274 @@ export const guides: Guide[] = [
       },
     ],
     relatedSlugs: [
+      "bedste-justerbare-haandvaegte-2026",
       "bedste-styrkemaskiner-2026",
       "bedste-multistation-2026",
       "bedste-romaskine-2026",
+    ],
+  },
+  {
+    slug: "bedste-justerbare-haandvaegte-2026",
+    title: "Bedste justerbare håndvægte 2026",
+    excerpt:
+      "Dial, kg-trin og plads: sådan vælger du justerbare håndvægte — plus fire anbefalinger med aktuelle priser fra danske webshops.",
+    metaDescription:
+      "Find de bedste justerbare håndvægte i 2026. Test-guide til 20 kg-sæt, 24 kg dial-håndvægte og progression til 40 kg — med live priser fra danske partnere.",
+    categorySlug: "tilbehoer",
+    intentSlug: "haandvaegte",
+    publishedAt: "2026-11-04",
+    updatedAt: "2026-11-04",
+    intro:
+      "Justerbare håndvægte er det mest pladsbesparende styrkeværktøj til hjemmet: ét eller to greb erstatter en hel række faste vægte. I stedet for at søge bredt på “håndvægte”, leder flere nu specifikt efter dial-/selector-modeller — hvor du drejer eller klikker dig op i kilo. Denne guide giver dig valg-kriterierne (vægtinterval, trinstørrelse, greb og holdbarhed), fire konkrete anbefalinger med shop-links, og svar på de typiske spørgsmål om 20 kg vs. 24 kg, sikkerhed og hvornår du også skal have en bænk.",
+    criteria: [
+      {
+        title: "Vægtinterval — start realistisk, planlæg progression",
+        description:
+          "Et 20 kg-sæt (typisk 2×10 kg) er nok til de fleste begyndere. 24 kg pr. håndvægt (ofte 3–24 kg i trin) er sweet spot til hjemmetræning i flere år. 32–40 kg er relevant, når presses og rows allerede føles lette — ikke dag 1. Køb til 80 % af din træning, ikke til den ene uge du drømmer om tung bænkpres.",
+      },
+      {
+        title: "Dial/selector vs. skiver + låse",
+        description:
+          "Dial- og selector-håndvægte (drejeskive eller klik-mekanisme) skifter vægt på sekunder og er det folk mener med “justerbare håndvægte” i 2026. Klassiske sæt med skiver og skrue-/fjederlåse er billigere, men langsommere mellem øvelser. Vælg dial, hvis du skifter belastning ofte; vælg skivesæt, hvis budgettet er stramt, og du kan leve med at skrue.",
+      },
+      {
+        title: "Trinstørrelse (1 kg vs. 2–2,5 kg)",
+        description:
+          "Finere trin (1 kg) gør progression lettere, især på skulderpres og isolation. 2 kg-trin er fint til compound-løft for de fleste. Elite-/pro-linjer med 1 kg-trin koster mere — betal kun for det, hvis du allerede er tæt på dine grænser mellem sæt.",
+      },
+      {
+        title: "Greb, balance og “følelse”",
+        description:
+          "Et tykt, slebet greb og jævn balance ved alle vægte betyder mere end brochure-tal. Ubalancerede dial-vægte føles billige under overhead-pres. Tjek også længde: meget lange justerbare kan støde ind i lår ved curls eller i gulvet ved rows.",
+      },
+      {
+        title: "Holdbarhed og klik-sikkerhed",
+        description:
+          "Mekanismen skal sidde, før du løfter. Lyt efter tydeligt klik, og undgå at svinge vægten, hvis låsen føles usikker. Droppede dial-håndvægte er dyre at reparere — brug måtte, og sænk kontrolleret. Garantivilkår og reservedelspolitik er et plus på dyrere modeller.",
+      },
+      {
+        title: "Plads vs. faste hex-håndvægte",
+        description:
+          "Et dial-sæt erstatter typisk 10–16 par faste vægte og fylder et hjørne i stedet for en vægreol. Faste hex er hurtigere at gribe og mere “gym-agtige”, men æder plads og budget. I lejlighed og små hjem vinder justerbare næsten altid — især sammen med en foldbar bænk.",
+      },
+      {
+        title: "Budget: sæt, enkeltstyk og “køb nr. 2 senere”",
+        description:
+          "Mange dial-modeller sælges som én håndvægt. Et ægte træningssæt kræver to. Budgetér parret fra start, eller start med 20 kg skivesæt og opgrader senere. Læg fragt og evt. holder/stander ind i det samlede tal — “Se pris” viser den aktuelle shop-pris.",
+      },
+    ],
+    products: [
+      {
+        id: "odin-justerbare-24-saet",
+        name: "Odin Justerbare Håndvægte Sæt 2×24 kg (12-i-én)",
+        badge: "Bedst samlet",
+        summary:
+          "Det stærkeste allround-valg til hjemmet i 2026: to dial-håndvægte med typisk 3–24 kg og 12 vægttrin. Ét sæt erstatter en hel række faste vægte, dækker press, row, squat-varianter og lunges — og matcher den mest søgte “24 kg”-intention uden at fylde stuen.",
+        pros: [
+          "Komplet par (2 stk.) — klar til træning dag 1",
+          "24 kg pr. håndvægt dækker de fleste i flere år",
+          "Markant mindre plads end faste hex-sæt",
+          "Klar anbefaling til “justerbare håndvægte test”",
+        ],
+        cons: [
+          "Dyrere end et 20 kg begynder-sæt",
+          "Dial kræver, at du klikker korrekt før hvert sæt",
+          "Ikke nok, hvis du allerede presser tungt over 24 kg",
+        ],
+        specs: [
+          { label: "Type", value: "Justerbare dial-håndvægte (sæt)" },
+          { label: "Interval", value: "Ca. 3–24 kg pr. stk." },
+          { label: "Trin", value: "12-i-én" },
+          { label: "Brand", value: "Odin" },
+          { label: "Partner", value: "Apuls.dk" },
+        ],
+        feedProductId: "Apuls.dk:15047",
+      },
+      {
+        id: "odin-justerbare-20",
+        name: "Odin Justerbar Håndvægt 20 kg (2×10 kg)",
+        badge: "Bedste billige",
+        summary:
+          "Prisvenligt skivesæt til dig, der skal i gang uden dial-premium. To håndvægte op til 10 kg hver (samlet 20 kg-sæt) — nok til begynderstyrke, home gym på budget og de første 90 dage, før du opgraderer til 24 kg dial.",
+        pros: [
+          "Lav indgangspris ift. dial-sæt",
+          "Komplet par i én ordre",
+          "God til begynder og budget-pakker",
+          "Minimal plads vs. mange faste par",
+        ],
+        cons: [
+          "Skift mellem vægte er langsommere end dial",
+          "10 kg pr. hånd bliver “for let” for mange inden for et år",
+          "Ikke det samme som en 24 kg selector-model",
+        ],
+        specs: [
+          { label: "Type", value: "Justerbart skivesæt" },
+          { label: "Sæt", value: "2×10 kg (20 kg samlet)" },
+          { label: "Brand", value: "Odin" },
+          { label: "Segment", value: "Budget / begynder" },
+          { label: "Partner", value: "Apuls.dk" },
+        ],
+        feedProductId: "Apuls.dk:9007",
+      },
+      {
+        id: "justerbar-dial-24",
+        name: "Justerbar Håndvægt 24 kg (2 kg-stigninger)",
+        badge: "Bedste 24 kg",
+        summary:
+          "Dial-håndvægt med 2 kg-stigninger fra 2 til 24 kg — præcis den “drej på skiven”-oplevelse, folk søger. Købes typisk som enkeltstyk: planlæg to, hvis du vil have et par. Ideel, når SEO-søgningen er “justerbare håndvægte 24 kg”, og du vil have selector frem for skiver.",
+        pros: [
+          "Ægte dial fra 2–24 kg",
+          "2 kg-trin passer til de fleste compound-løft",
+          "Pladsbesparende alternativ til faste 24 kg-hex",
+          "Kan købes enkelt og udvides til par",
+        ],
+        cons: [
+          "Én håndvægt i ordren — budgetér nr. 2",
+          "Dyrere pr. kg end begynder-skivesæt",
+          "Kræver korrekt dial-klik før hvert løft",
+        ],
+        specs: [
+          { label: "Type", value: "Dial / selector (1 stk.)" },
+          { label: "Interval", value: "2–24 kg" },
+          { label: "Trin", value: "2 kg" },
+          { label: "Segment", value: "24 kg midrange" },
+          { label: "Partner", value: "Apuls.dk" },
+        ],
+        feedProductId: "Apuls.dk:15402",
+      },
+      {
+        id: "odin-justerbare-40-saet",
+        name: "Odin Justerbare Håndvægte Sæt 2×40 kg (16-i-én)",
+        badge: "Bedste til progression",
+        summary:
+          "Når 24 kg ikke længere er nok: to håndvægte op til 40 kg med 16 vægttrin. Til dig, der træner ofte, vil progressiv overload hjemme, og hellere betaler for loft end at bygge en vægreol med faste hex.",
+        pros: [
+          "Højt loft til år frem (op til 40 kg)",
+          "Komplet par — ikke “køb nr. 2 senere”",
+          "Erstatter mange tunge faste par",
+          "Matcher seriøs hjemmestyrke uden rack",
+        ],
+        cons: [
+          "Markant højere pris",
+          "Overkill for begyndere",
+          "Tungere at håndtere og stille væk",
+        ],
+        specs: [
+          { label: "Type", value: "Justerbare dial-håndvægte (sæt)" },
+          { label: "Interval", value: "Op til 40 kg pr. stk." },
+          { label: "Trin", value: "16-i-én" },
+          { label: "Brand", value: "Odin" },
+          { label: "Partner", value: "Apuls.dk" },
+        ],
+        feedProductId: "Apuls.dk:15048",
+      },
+    ],
+    howToChoose:
+      "Begynder eller stramt budget? Odin 20 kg-sæt. Vil du have det rigtige hjemme-allround uden at købe to gange? Odin 2×24 kg. Jagter du specifikt dial 24 kg og kan købe parvist? 2–24 kg dial-modellen. Allerede stærk og vil undgå loft? 2×40 kg. Tilføj bænk, når floor press begrænser dig — se vores bænk-guide. Shop via “Se pris” for live partnerpriser.",
+    learningSections: [
+      {
+        heading: "Justerbare vs. faste håndvægte",
+        paragraphs: [
+          "Faste hex-håndvægte er simple: du griber det rigtige par og løfter. Ulempen er plads og pris, når du skal dække 2–24 kg i trin. Justerbare samler intervallet i ét greb — ideelt i lejlighed, gæsteværelse og “stue-gym”.",
+          "Kompromiset er mekanik: dial skal klikke, og skivesæt skal skrues. Til de fleste hjemmekøbere vinder pladsbesparelsen. Køb faste, hvis du har dedikeret vægplads og vil have hurtigste flow mellem sæt.",
+        ],
+      },
+      {
+        heading: "Hvor mange kg skal du starte med?",
+        paragraphs: [
+          "Tommelfingerregel: 20 kg-sæt (2×10) til absolut nybegynder. 24 kg dial pr. hånd til dig, der allerede kan lave gulvpres og rows med lidt belastning. 40 kg først, når 24 kg er “for let” på dine tungeste sæt — ikke fordi tallet ser sejt ud.",
+          "Kvinder og mænd har forskellige startpunkter, men progressionen er den samme: vælg et interval, du kan vokse i 12–24 måneder. Det er billigere end at opgradere to gange.",
+        ],
+        comparison: {
+          caption: "Hurtig vægtguide til justerbare håndvægte",
+          rowHeaderLabel: "Niveau",
+          columns: ["Anbefalet", "Typisk brug"],
+          rows: [
+            {
+              label: "Begynder",
+              cells: ["20 kg-sæt (2×10)", "Vane, teknik, fuldkropspas"],
+            },
+            {
+              label: "Allround hjemme",
+              cells: ["2×24 kg dial", "Press, row, squat-varianter i flere år"],
+            },
+            {
+              label: "Tung progression",
+              cells: ["2×32–40 kg", "Når 24 kg er begrænsningen"],
+            },
+          ],
+        },
+      },
+      {
+        heading: "Sikkerhed: klik, før du løfter",
+        paragraphs: [
+          "Dial- og selector-håndvægte skal sidde fast, før vægten forlader holderen. Drej til næste trin, mærk/ hør klik, og giv et let træk-test. Løft aldrig, hvis mekanismen føles halvvejs mellem to vægte.",
+          "Undgå at dumpe justerbare i gulvet — det er den klassiske måde at ødelægge skiver og låse på. Brug måtte, sænk kontrolleret, og hold børn væk fra dial-mekanismen.",
+        ],
+      },
+      {
+        heading: "Hvornår skal du købe en træningsbænk?",
+        paragraphs: [
+          "Floor press, gulv-rows og goblet squat kører langt på bare håndvægte. En justerbar bænk bliver relevant, når du vil have incline, bedre skulderpres-støtte eller mere behagelig bænkpres end gulvet tillader.",
+          "Mange køber håndvægte og bænk sammen — se Bedste justerbare træningsbænk 2026. På budget er foldbar bænk + 20–24 kg håndvægte ofte den skarpeste “erstat center”-kombi.",
+        ],
+      },
+      {
+        heading: "Typiske fejl ved køb",
+        paragraphs: [
+          "At købe én dial-håndvægt og glemme, at næsten alle øvelser kræver et par. At købe 40 kg som nybegynder. At vælge det billigste no-name uden tydeligt klik. At ignorere grebslængde ift. curls og rows.",
+          "Omvendt fejl: at blive på 10 kg i årevis af frygt for at “investere”. Når teknikken sidder, er opgradering til 24 kg ofte den bedste ROI i hele home gym’et.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "Hvilke justerbare håndvægte er bedst i 2026?",
+        answer:
+          "Til de fleste anbefaler vi Odin 2×24 kg-sættet som bedst samlet. Til budget: Odin 20 kg (2×10). Til ren dial 24 kg: 2–24 kg-modellen (køb to). Til tung progression: Odin 2×40 kg.",
+      },
+      {
+        question: "Hvad er forskellen på justerbare håndvægte og almindelige håndvægte?",
+        answer:
+          "Justerbare lader dig skifte kilo på samme greb (dial/selector eller skiver). Almindelige/faste hex har én vægt pr. par. Justerbare sparer plads; faste er hurtigere at skifte mellem, hvis du ejer hele rækken.",
+      },
+      {
+        question: "Er justerbare håndvægte 24 kg nok?",
+        answer:
+          "For de fleste hjemmetrænende ja — især som par (2×24). Du mangler loft, hvis du allerede laver tunge presses over 24 kg pr. hånd. Så kig på 32–40 kg-sæt i stedet.",
+      },
+      {
+        question: "Kan jeg bygge muskler med justerbare håndvægte?",
+        answer:
+          "Ja. Progressiv overload (flere reps eller mere vægt), god teknik og nok protein betyder mere end maskinmærket. En bænk og senere kabel/rack er opgraderinger — ikke krav de første måneder.",
+      },
+      {
+        question: "Hvad koster et godt sæt justerbare håndvægte?",
+        answer:
+          "Begynder-skivesæt ligger typisk under 1.000 kr. Solide 24 kg dial-sæt lander ofte i mid-range (et par tusinde). 40 kg-sæt koster markant mere. Tjek “Se pris” — tallene hentes live fra partnerne.",
+      },
+      {
+        question: "Skal jeg købe ét eller to justerbare håndvægte?",
+        answer:
+          "Næsten altid to. Enkeltstyk er fint til unilaterale øvelser og test, men curls, presses og rows fungerer bedst som par. Vælg færdige sæt, når de findes — ellers budgetér dobbelt.",
+      },
+      {
+        question: "Er billige håndvægte sæt gode nok?",
+        answer:
+          "Til at bygge vane: ja, hvis låse og skiver føles solide. Til daglig dial-brug vil du typisk op i en bedre mekanisme. Undgå de billigste no-name, hvor vægten kan sidde løst.",
+      },
+      {
+        question: "Tjener Fitlist penge, når jeg køber?",
+        answer:
+          "Ja, vi kan få provision via affiliate-links. Det påvirker ikke prisen for dig. Vi vælger anbefalinger ud fra brug og kriterier — ikke kun provision. Læs mere under “Sådan tjener vi penge”.",
+      },
+    ],
+    relatedSlugs: [
+      "hjemmetraening-for-begyndere-foerste-90-dage",
+      "bedste-justerbar-traeningsbaenk-2026",
+      "ultimative-home-gym-budget-2026",
+      "bedste-styrkemaskiner-2026",
+      "bedste-vaegmonteret-kabeltaarn-2026",
     ],
   },
   {
@@ -3831,6 +4096,7 @@ export const guides: Guide[] = [
     ],
     relatedSlugs: [
       "hjemmetraening-for-begyndere-foerste-90-dage",
+      "bedste-justerbare-haandvaegte-2026",
       "bedste-foldbare-kompakte-traeningsmaskiner-2026",
       "bedste-gaabaand-2026",
       "bedste-styrkemaskiner-2026",
@@ -4470,12 +4736,17 @@ export const guides: Guide[] = [
       {
         question: "Hvad skal jeg købe som absolut nybegynder?",
         answer:
-          "Justerbare håndvægte, et elastiksæt og en måtte. Det er nok til styrke, mobilitet og vane. Vent med maskiner, til du har trænet konsekvent i et par måneder.",
+          "Justerbare håndvægte, et elastiksæt og en måtte. Det er nok til styrke, mobilitet og vane. Vent med maskiner, til du har trænet konsekvent i et par måneder. Se også Bedste justerbare håndvægte 2026, hvis du vil sammenligne 20 kg-sæt, 24 kg dial og tungere modeller.",
       },
       {
         question: "Kan jeg bygge muskler uden maskiner?",
         answer:
           "Ja — især som begynder. Progressive håndvægte og god teknik giver masser af stimulus. Maskiner bliver relevante, når du vil have specifikke mønstre eller tungere belastning mere behageligt.",
+      },
+      {
+        question: "Hvilke justerbare håndvægte skal jeg vælge?",
+        answer:
+          "Som begynder er et 20 kg-sæt (2×10 kg) nok. Vil du undgå at opgradere hurtigt, så gå efter et 24 kg dial-sæt. Fuld sammenligning findes i vores guide Bedste justerbare håndvægte 2026.",
       },
       {
         question: "Hvornår skal jeg købe en træningsbænk?",
@@ -4494,6 +4765,7 @@ export const guides: Guide[] = [
       },
     ],
     relatedSlugs: [
+      "bedste-justerbare-haandvaegte-2026",
       "ultimative-home-gym-budget-2026",
       "bedste-stoejsvage-traeningsmaskiner-lejlighed-2026",
       "bedste-justerbar-traeningsbaenk-2026",

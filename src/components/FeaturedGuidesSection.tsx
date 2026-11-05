@@ -61,11 +61,13 @@ export function FeaturedGuidesSection({ guides }: Props) {
                                     ? " · Multistation"
                                     : guide.intentSlug === "traeningsbaenk"
                                       ? " · Træningsbænk"
-                                      : guide.intentSlug === "kabeltaarn"
-                                        ? " · Kabeltårn"
-                                        : guide.intentSlug === "begynder"
-                                          ? " · Begynder"
-                                          : ""}
+                                      : guide.intentSlug === "haandvaegte"
+                                        ? " · Håndvægte"
+                                        : guide.intentSlug === "kabeltaarn"
+                                          ? " · Kabeltårn"
+                                          : guide.intentSlug === "begynder"
+                                            ? " · Begynder"
+                                            : ""}
                     </p>
                     <h3 className="mt-1 font-display text-2xl font-medium uppercase tracking-wide text-foreground transition-colors group-hover:text-accent">
                       {guide.title}
