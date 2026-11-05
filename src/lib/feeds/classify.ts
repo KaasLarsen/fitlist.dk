@@ -23,7 +23,17 @@ function normalize(s: string): string {
  */
 const HARD_EXCLUDES: RegExp[] = [
   /silikone/,
+  /silicone/,
   /olie/,
+  /\boil\b/,
+  /lubricant/,
+  /loebebaelte/,
+  /løbebælte/,
+  /treadmill\s*belt/,
+  /running\s*belt/,
+  /\bvoks\b/,
+  /\bwax\b/,
+  /tablet\s*holder/,
   /reservedel/,
   /garanti/,
   /warranty/,
@@ -250,6 +260,13 @@ const INTENT_RULES: { slug: string; test: (hay: string, price: number | null) =>
         /\bunderdesk\b/.test(hay),
     },
     {
+      slug: "stigning",
+      test: (hay) =>
+        /\bstigning\b/.test(hay) ||
+        /\bincline\b/.test(hay) ||
+        /\bhaeldning\b/.test(hay),
+    },
+    {
       slug: "stoejsvag",
       test: (hay) =>
         /\bstoejsvag\b/.test(hay) ||
@@ -267,7 +284,14 @@ const INTENT_RULES: { slug: string; test: (hay: string, price: number | null) =>
         /\bcompact\b/.test(hay) ||
         /\bvaegmonter/.test(hay) ||
         /\bvægmonter/.test(hay) ||
-        /\bwall[\s-]*mount/.test(hay),
+        /\bwall[\s-]*mount/.test(hay) ||
+        // Walking pads / gåbånd er typisk det pladsbesparende valg på løbebånd
+        /\bunderdesk\b/.test(hay) ||
+        /\bunder[\s-]*desk\b/.test(hay) ||
+        /\bwalking\s*pad\b/.test(hay) ||
+        /\bwalkingpad\b/.test(hay) ||
+        /\bgaabaand\b/.test(hay) ||
+        /\bgåbånd\b/.test(hay),
     },
     {
       slug: "siddecykel",

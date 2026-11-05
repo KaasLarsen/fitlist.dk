@@ -32,6 +32,42 @@ describe("classifyProduct — hard excludes", () => {
     assert.equal(r, null);
   });
 
+  it("drops English silicone product even with løbebånd feed category", () => {
+    const r = classifyProduct(
+      product({
+        title: "Kema - Silicone GM12",
+        brand: "Kema",
+        category: "Løbebånd",
+        price: 125,
+      }),
+    );
+    assert.equal(r, null);
+  });
+
+  it("drops tablet holder kit in løbebånd feed category", () => {
+    const r = classifyProduct(
+      product({
+        title: "Star Trac Tablet Holder Kit.",
+        brand: "Star Trac",
+        category: "Løbebånd",
+        price: 1454,
+      }),
+    );
+    assert.equal(r, null);
+  });
+
+  it("drops OEM løbebælte spare part", () => {
+    const r = classifyProduct(
+      product({
+        title: "Life Fitness løbebælte OEM - Classic voks",
+        brand: "Life Fitness",
+        category: "Løbebånd",
+        price: 2995,
+      }),
+    );
+    assert.equal(r, null);
+  });
+
   it("drops WorkWalk warranty (brand-only match)", () => {
     const r = classifyProduct(
       product({
@@ -268,6 +304,21 @@ describe("classifyProduct — real machines kept", () => {
     assert.equal(r!.categorySlug, "loebebaand");
     assert.ok(r!.intentSlugs?.includes("gaabaand"));
     assert.ok(r!.intentSlugs?.includes("foldbar"));
+    assert.ok(r!.intentSlugs?.includes("stigning"));
+    assert.ok(r!.intentSlugs?.includes("plads"));
+  });
+
+  it("does not tag siddecykel indstigning as stigning intent", () => {
+    const r = classifyProduct(
+      product({
+        title: "Odin RB-800 Comfort Siddecykel med lav indstigning",
+        brand: "Odin",
+        price: 4999,
+      }),
+    );
+    assert.ok(r);
+    assert.equal(r!.categorySlug, "motionscykel");
+    assert.ok(!r!.intentSlugs?.includes("stigning"));
   });
 
   it("classifies AssaultBike without airbike keyword as motionscykel + airbike", () => {

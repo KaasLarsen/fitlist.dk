@@ -62,6 +62,21 @@ export const categories: MachineCategory[] = [
         description: "Lavere hastighed, ofte under skrivebordet.",
       },
       {
+        slug: "stigning",
+        label: "Med stigning",
+        description: "Hældning til højere intensitet uden mere fart.",
+      },
+      {
+        slug: "stoejsvag",
+        label: "Støjsvag",
+        description: "Til lejlighed, aftentræning og hensyn til naboer.",
+      },
+      {
+        slug: "plads",
+        label: "Kompakt",
+        description: "Småt footprint når kvadratmeterne er få.",
+      },
+      {
         slug: "billig",
         label: "Billigt",
         description: "De bedste valg i den lavere prisklasse.",
