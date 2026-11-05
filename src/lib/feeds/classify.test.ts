@@ -168,6 +168,23 @@ describe("classifyProduct — hard excludes", () => {
       );
     }
   });
+
+  it("drops water rower chemicals and elevate kits from romaskine feeds", () => {
+    const noise = [
+      "VirtuFit Universelle WaterRower Puritabs - Klortabletter",
+      "Fluid Rower - Tabletter 4 stk.",
+      "VirtuFit Elevate Kit",
+    ];
+    for (const title of noise) {
+      assert.equal(
+        classifyProduct(
+          product({ title, category: "Romaskine", brand: "VirtuFit" }),
+        ),
+        null,
+        title,
+      );
+    }
+  });
 });
 
 describe("classifyProduct — tilbehoer (must-haves)", () => {

@@ -66,6 +66,14 @@ const HARD_EXCLUDES: RegExp[] = [
   /flaskeholder/,
   /bottle\s*(?:holder|cage)/,
   /klikpedaler/,
+  // Romaskine-kemi og kits der matcher via feed-kategori / "rower"
+  /puritabs/,
+  /klortabletter/,
+  /tabletter/,
+  /chlorine/,
+  /vandrens/,
+  /water\s*purif/,
+  /elevate\s*kit/,
 ];
 
 /** Machine categories — matched before tilbehoer. */
@@ -90,6 +98,7 @@ const MACHINE_RULES: CategoryRule[] = [
       /\bairrow\b/,
       /\browing\s*machine\b/,
       /\brower\b/,
+      /\bvandromaskine\b/,
     ],
     exclude: [
       /\bhaandbold\b/,
@@ -102,6 +111,10 @@ const MACHINE_RULES: CategoryRule[] = [
       /\bovertraek\b/,
       /\bovertræk\b/,
       /\bcover\b/,
+      /\btabletter\b/,
+      /\bpuritabs\b/,
+      /\bklortabletter\b/,
+      /\belevate\s*kit\b/,
     ],
   },
   {
