@@ -185,6 +185,51 @@ describe("classifyProduct — hard excludes", () => {
       );
     }
   });
+
+  it("drops crosstrainer power supplies and chest transmitters", () => {
+    assert.equal(
+      classifyProduct(
+        product({
+          title: "Peak Fitness - Strømforsyning - 9V-2.000ma",
+          category: "Crosstrainer",
+        }),
+      ),
+      null,
+    );
+    assert.equal(
+      classifyProduct(
+        product({
+          title: "Polar - T34 brystsender - Ukodet",
+          category: "Crosstrainer",
+        }),
+      ),
+      null,
+    );
+  });
+
+  it("drops strength accessories that matched via bare cable / home gym", () => {
+    const noise = [
+      "Odin Cable Crossfit Sjippetov Blå Long Handle 300cm",
+      "Cruz Cable Beach Svømmebriller",
+      "Odin Mjolnir Grip Tape Sort",
+      "VirtuFit Cable D Handle",
+      "Body Bike Racer Sadel m. Beslag - sort sadel til spinningcykler og home gym",
+      "LMX PU Olympisk Disc 50mm 2,50kg - Brugt vægtskive til home gym",
+      "Plakat Bold 70 x 50 cm - sporty vægdekoration til home gym",
+      "Odin Pull Up Bar Dørribbe",
+      "Home Benlås til Home Træningsbænke",
+      "Crossmaxx T-shirt XL trænings T-shirt til styrketræning",
+    ];
+    for (const title of noise) {
+      assert.equal(
+        classifyProduct(
+          product({ title, category: "Styrkemaskiner", brand: "Odin" }),
+        ),
+        null,
+        title,
+      );
+    }
+  });
 });
 
 describe("classifyProduct — tilbehoer (must-haves)", () => {

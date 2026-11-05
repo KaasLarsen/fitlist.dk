@@ -10,7 +10,7 @@ import {
 } from "@/lib/feeds/fetch";
 import type { FeedProduct, MachineCategorySlug } from "@/lib/feeds/types";
 
-const CATALOG_CACHE_VERSION = "v6";
+const CATALOG_CACHE_VERSION = "v7";
 
 async function buildMachineCatalog(): Promise<FeedProduct[]> {
   const batches = await Promise.all(
