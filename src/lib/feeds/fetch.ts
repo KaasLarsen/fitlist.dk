@@ -4,6 +4,7 @@ import {
   partnerAdsFeedUrl,
   type PartnerAdsFeed,
 } from "@/lib/feeds/config";
+import { passesMerchantGate } from "@/lib/feeds/classify";
 import { decodeFeedText, parsePartnerAdsXml, UA } from "@/lib/feeds/parse";
 import type { FeedProduct } from "@/lib/feeds/types";
 
@@ -44,7 +45,7 @@ export async function fetchFeedProductsInner(
 
   const buf = await res.arrayBuffer();
   const text = decodeFeedText(buf);
-  return parsePartnerAdsXml(text, feed.merchant);
+  return parsePartnerAdsXml(text, feed.merchant).filter(passesMerchantGate);
 }
 
 async function fetchFeedProductsForCache(

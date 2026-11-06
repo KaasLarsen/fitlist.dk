@@ -32,6 +32,16 @@ const nextConfig: NextConfig = {
       { protocol: "https", hostname: "homex.dk", pathname: "/**" },
       { protocol: "https", hostname: "www.cbl-fitness.dk", pathname: "/**" },
       { protocol: "https", hostname: "cbl-fitness.dk", pathname: "/**" },
+      {
+        protocol: "https",
+        hostname: "www.denintelligentekrop.dk",
+        pathname: "/**",
+      },
+      {
+        protocol: "https",
+        hostname: "denintelligentekrop.dk",
+        pathname: "/**",
+      },
       { protocol: "https", hostname: "www.fitnessengros.dk", pathname: "/**" },
       { protocol: "https", hostname: "fitnessengros.dk", pathname: "/**" },
       { protocol: "https", hostname: "www.fitnessfree.dk", pathname: "/**" },

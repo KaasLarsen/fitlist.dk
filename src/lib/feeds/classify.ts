@@ -637,6 +637,43 @@ function isHardExcluded(combined: string): boolean {
   return HARD_EXCLUDES.some((re) => re.test(combined));
 }
 
+const DIK_MERCHANT = "Den Intelligente Krop";
+
+/**
+ * Den Intelligente Krop er mest yoga, pilates og massage.
+ * Kun romaskiner, siddecykel, håndvægte, kettlebells og TRX-sæt.
+ */
+function denIntelligenteKropKeep(product: FeedProduct): boolean {
+  const hay = normalize(`${product.title} ${product.category}`);
+  const raw = `${product.title} ${product.category}`.toLowerCase();
+  const text = `${hay} ${raw}`;
+
+  if (/romaskine|\brower\b/.test(text) && !/maatte|måtte/.test(text)) return true;
+  if (/siddecykel/.test(text)) return true;
+  if (
+    /\bmotionscykel\b/.test(text) &&
+    !/maatte|måtte|elastik|reformer/.test(text)
+  ) {
+    return true;
+  }
+
+  if (/\btrx\b/.test(text)) {
+    if (/elastik|maatte|måtte|\bmat\b|extender|anker|xmount|doer|dør/.test(text)) {
+      return false;
+    }
+    return /suspension|\btrainer\b|\bkit\b/.test(text);
+  }
+
+  if (/vaegtvest|vægtvest|\brack\b|\bstativ\b/.test(text)) return false;
+  return /haandvaegt|håndvægt|dumbbell|kettlebell|\bybell\b/.test(text);
+}
+
+/** Shop-specifikt filter før den generelle klassificering. */
+export function passesMerchantGate(product: FeedProduct): boolean {
+  if (product.merchant !== DIK_MERCHANT) return true;
+  return denIntelligenteKropKeep(product);
+}
+
 function matchRule(
   rule: CategoryRule,
   combined: string,
@@ -649,6 +686,8 @@ function matchRule(
 export function classifyProduct(
   product: FeedProduct,
 ): FeedProduct | null {
+  if (!passesMerchantGate(product)) return null;
+
   const hay = haystack(product);
   // Also keep a lightly normalized raw for æ/ø/å patterns in regexes that use Danish chars
   const hayRaw = `${product.title} ${product.category} ${product.brand}`.toLowerCase();

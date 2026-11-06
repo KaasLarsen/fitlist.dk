@@ -616,3 +616,86 @@ describe("classifyProduct — real machines kept", () => {
     assert.equal(r!.categorySlug, "styrkemaskiner");
   });
 });
+
+describe("classifyProduct — Den Intelligente Krop", () => {
+  const dik = { merchant: "Den Intelligente Krop", brand: "Den Intelligente Krop" };
+
+  it("keeps rowers, siddecykel, weights and TRX sets", () => {
+    const rower = classifyProduct(
+      product({
+        ...dik,
+        title: "TITAN LIFE Rower R65",
+        category: "Træningsudstyr",
+        price: 4999,
+      }),
+    );
+    assert.equal(rower?.categorySlug, "romaskine");
+
+    const bike = classifyProduct(
+      product({
+        ...dik,
+        title: "Titan Life siddecykel / motionscykel",
+        category: "Ergonomi",
+        price: 599,
+      }),
+    );
+    assert.equal(bike?.categorySlug, "motionscykel");
+    assert.ok(bike?.intentSlugs?.includes("siddecykel"));
+
+    const dumbbell = classifyProduct(
+      product({
+        ...dik,
+        title: "NU-BEL Justerbar håndvægte 2 - 20 KG",
+        price: 5599,
+      }),
+    );
+    assert.equal(dumbbell?.categorySlug, "tilbehoer");
+    assert.ok(dumbbell?.intentSlugs?.includes("haandvaegte"));
+
+    const bell = classifyProduct(
+      product({
+        ...dik,
+        title: "Titan LIFE Kettlebell 16 kg. (Støbejern)",
+        price: 659,
+      }),
+    );
+    assert.equal(bell?.categorySlug, "tilbehoer");
+    assert.ok(bell?.intentSlugs?.includes("haandvaegte"));
+
+    const trx = classifyProduct(
+      product({
+        ...dik,
+        title: "TRX MOVE Suspension Trainer",
+        price: 1129,
+      }),
+    );
+    assert.equal(trx?.categorySlug, "tilbehoer");
+    assert.ok(trx?.intentSlugs?.includes("slyngetraener"));
+  });
+
+  it("drops yoga, bands, reformers and TRX accessories", () => {
+    for (const title of [
+      "Yogamåtte Kurma Geco Lite (Lagoon)",
+      "Thera-Band træningselastik 2,5 m. (Gul)",
+      "Balanced Body Reformer 1",
+      "TRX Rip Trainer Elastik - Light",
+      "TRX Suspension Training Mat",
+      "AYA&IDA Låg (Matte Black)",
+      "TITAN LIFE PRO Rack til 10 sæt håndvægte",
+      "POWR.4 PRO Justerbar Vægtvest (30 kg)",
+    ]) {
+      assert.equal(classifyProduct(product({ ...dik, title })), null, title);
+    }
+  });
+
+  it("still classifies elastik from other merchants", () => {
+    const r = classifyProduct(
+      product({
+        title: "Thera-Band træningselastik 2,5 m. (Gul)",
+        merchant: "Apuls.dk",
+      }),
+    );
+    assert.equal(r?.categorySlug, "tilbehoer");
+    assert.ok(r?.intentSlugs?.includes("elastikker"));
+  });
+});
