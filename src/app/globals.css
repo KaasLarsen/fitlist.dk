@@ -12,6 +12,17 @@
   --campaign-banner-h: 0px;
 }
 
+/* Mobile campaign copy wraps to two lines (~4.25rem); sm+ stays one line. */
+.has-campaign-banner {
+  --campaign-banner-h: 4.25rem;
+}
+
+@media (min-width: 640px) {
+  .has-campaign-banner {
+    --campaign-banner-h: 2.75rem;
+  }
+}
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
