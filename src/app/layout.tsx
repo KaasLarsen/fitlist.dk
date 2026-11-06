@@ -1,4 +1,3 @@
-import type { CSSProperties } from "react";
 import type { Metadata } from "next";
 import { DM_Sans, Oswald } from "next/font/google";
 import { CampaignBanner } from "@/components/CampaignBanner";
@@ -42,12 +41,7 @@ export default function RootLayout({
   return (
     <html
       lang="da"
-      className={`${dmSans.variable} ${oswald.variable} h-full antialiased`}
-      style={
-        campaign
-          ? ({ "--campaign-banner-h": "2.75rem" } as CSSProperties)
-          : undefined
-      }
+      className={`${dmSans.variable} ${oswald.variable} h-full antialiased${campaign ? " has-campaign-banner" : ""}`}
     >
       <body className="flex min-h-full flex-col bg-background text-foreground">
         <CampaignBanner />
