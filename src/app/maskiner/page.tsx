@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { getAllCategories } from "@/lib/categories";
+import { categoryIntentHref, getAllCategories } from "@/lib/categories";
 import { getGuidesByCategory } from "@/lib/guides";
 
 export const metadata: Metadata = {
@@ -57,7 +57,7 @@ export default function MaskinerPage() {
                     <span key={intent.slug}>
                       {index > 0 ? " · " : null}
                       <Link
-                        href={`/maskiner/${category.slug}?intent=${intent.slug}`}
+                        href={categoryIntentHref(category.slug, intent.slug)}
                         className="pointer-events-auto inline-block py-1 transition-colors hover:text-accent hover:underline focus-visible:text-accent focus-visible:underline focus-visible:outline-none"
                       >
                         {intent.label}

@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { getAllCategories } from "@/lib/categories";
+import { categoryIntentHref, getAllCategories } from "@/lib/categories";
 
 export function CategorySection() {
   const categories = getAllCategories();
@@ -49,7 +49,7 @@ export function CategorySection() {
                     <span key={intent.slug}>
                       {index > 0 ? " · " : null}
                       <Link
-                        href={`/maskiner/${category.slug}?intent=${intent.slug}`}
+                        href={categoryIntentHref(category.slug, intent.slug)}
                         className="inline-block py-1 transition-colors hover:text-accent hover:underline focus-visible:text-accent focus-visible:underline focus-visible:outline-none"
                       >
                         {intent.label}
