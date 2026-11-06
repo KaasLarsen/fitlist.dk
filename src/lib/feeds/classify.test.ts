@@ -101,6 +101,41 @@ describe("classifyProduct — hard excludes", () => {
     assert.equal(r, null);
   });
 
+  it("drops bademåtte and sauna-underlag", () => {
+    assert.equal(
+      classifyProduct(
+        product({
+          title: "AquaMat Superabsorberende bademåtte",
+          category: "Hjem og have > Badeværelse tilbehør > Badeværelse måtter",
+          brand: "AVA Beauty",
+          merchant: "AVA Beauty",
+        }),
+      ),
+      null,
+    );
+    assert.equal(
+      classifyProduct(
+        product({
+          title: "Cobblestone Badeværelsesmåtte",
+          brand: "AVA Beauty",
+          merchant: "AVA Beauty",
+        }),
+      ),
+      null,
+    );
+    assert.equal(
+      classifyProduct(
+        product({
+          title: "Brandfast Underlag til Saunatæppe",
+          category: "Hjem og have > Pool og spa > Saunatilbehør",
+          brand: "AVA Beauty",
+          merchant: "AVA Beauty",
+        }),
+      ),
+      null,
+    );
+  });
+
   it("drops mini motionscykel / bevægelsestræner", () => {
     assert.equal(
       classifyProduct(
@@ -233,6 +268,46 @@ describe("classifyProduct — hard excludes", () => {
 });
 
 describe("classifyProduct — tilbehoer (must-haves)", () => {
+  it("classifies AVA Beauty træningsmåtte, håndvægt og elastik", () => {
+    const mat = classifyProduct(
+      product({
+        title: "Gulvbeskyttende træningsmåtte",
+        category: "Sportsartikler > Fitness og konditionstræning > Måtter til træningsmaskiner",
+        brand: "AVA Beauty",
+        merchant: "AVA Beauty",
+        price: 199,
+      }),
+    );
+    assert.ok(mat);
+    assert.equal(mat!.categorySlug, "tilbehoer");
+    assert.ok(mat!.intentSlugs?.includes("gulvmaatter"));
+
+    const dumbbell = classifyProduct(
+      product({
+        title: "Justerbar Håndvægt til hjemmetræning",
+        brand: "AVA Beauty",
+        merchant: "AVA Beauty",
+        price: 799,
+      }),
+    );
+    assert.ok(dumbbell);
+    assert.equal(dumbbell!.categorySlug, "tilbehoer");
+    assert.ok(dumbbell!.intentSlugs?.includes("haandvaegte"));
+
+    const bands = classifyProduct(
+      product({
+        title: "5 træningselastikker",
+        category: "Sportsartikler > Fitness og konditionstræning > Træningselastikker",
+        brand: "AVA Beauty",
+        merchant: "AVA Beauty",
+        price: 99,
+      }),
+    );
+    assert.ok(bands);
+    assert.equal(bands!.categorySlug, "tilbehoer");
+    assert.ok(bands!.intentSlugs?.includes("elastikker"));
+  });
+
   it("classifies gulvbeskyttelsesmåtte as tilbehoer + gulvmaatter", () => {
     const r = classifyProduct(
       product({
@@ -306,6 +381,21 @@ describe("classifyProduct — tilbehoer (must-haves)", () => {
 });
 
 describe("classifyProduct — real machines kept", () => {
+  it("classifies AVA Beauty løbebånd", () => {
+    const r = classifyProduct(
+      product({
+        title: "TrueNordic Luksus Løbebånd",
+        category:
+          "Sportsartikler > Fitness og konditionstræning > Cardio > Cardio-maskiner > Løbebånd",
+        brand: "AVA Beauty",
+        merchant: "AVA Beauty",
+        price: 1399,
+      }),
+    );
+    assert.ok(r);
+    assert.equal(r!.categorySlug, "loebebaand");
+  });
+
   it("classifies WorkWalk Classic Gåbånd as loebebaand + gaabaand", () => {
     const r = classifyProduct(
       product({

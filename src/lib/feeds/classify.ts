@@ -113,6 +113,12 @@ const HARD_EXCLUDES: RegExp[] = [
   /dip\s*(?:haandtag|håndtag|for|bar)/,
   /kabeltraek/,
   /kabeltræk/,
+  // Badeværelse og sauna matcher ellers "måtte" / "underlag"
+  /bademaatte/,
+  /bademåtte/,
+  /badevaerelse/,
+  /badeværelse/,
+  /sauna/,
 ];
 
 /** Machine categories — matched before tilbehoer. */

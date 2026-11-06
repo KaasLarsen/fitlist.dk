@@ -29,6 +29,12 @@ export const PARTNER_ADS_FEEDS: readonly PartnerAdsFeed[] = [
     merchant: "Ascendic.dk",
   },
   {
+    id: "ava-beauty",
+    bannerId: "116946",
+    feedId: "4310",
+    merchant: "AVA Beauty",
+  },
+  {
     id: "billig-fitness",
     bannerId: "90815",
     feedId: "2352",

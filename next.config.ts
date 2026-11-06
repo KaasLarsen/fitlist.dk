@@ -14,6 +14,7 @@ const nextConfig: NextConfig = {
       { protocol: "https", hostname: "cdn.shopify.com", pathname: "/**" },
       { protocol: "https", hostname: "www.apuls.dk", pathname: "/**" },
       { protocol: "https", hostname: "apuls.dk", pathname: "/**" },
+      { protocol: "https", hostname: "m2.apuls.dk", pathname: "/**" },
       {
         protocol: "https",
         hostname: "www.billig-fitness.dk",
@@ -38,6 +39,16 @@ const nextConfig: NextConfig = {
       {
         protocol: "https",
         hostname: "shop93647.sfstatic.io",
+        pathname: "/**",
+      },
+      {
+        protocol: "https",
+        hostname: "shop12835.sfstatic.io",
+        pathname: "/**",
+      },
+      {
+        protocol: "https",
+        hostname: "sw73240.sfstatic.io",
         pathname: "/**",
       },
       { protocol: "https", hostname: "www.jtsport.dk", pathname: "/**" },
