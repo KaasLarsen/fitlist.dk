@@ -40,8 +40,18 @@ export const sharedIntents: MachineIntent[] = [
 
 /**
  * Maskiner + Must-haves (tilbehør).
- * Intent-undersider: /maskiner/[slug]?intent=… eller fremtidige /maskiner/[slug]/[intent]
+ * Intent-undersider: /maskiner/[slug]/[intent]
  */
+
+/** Path til kategori (alle) eller et intent-filter. */
+export function categoryIntentHref(
+  categorySlug: string,
+  intentSlug?: string,
+): string {
+  if (!intentSlug) return `/maskiner/${categorySlug}`;
+  return `/maskiner/${categorySlug}/${intentSlug}`;
+}
+
 export const categories: MachineCategory[] = [
   {
     slug: "loebebaand",

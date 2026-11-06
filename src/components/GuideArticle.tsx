@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { GuideRichText } from "@/components/GuideRichText";
 import { ProductOfferList } from "@/components/ProductOfferList";
-import { getCategory } from "@/lib/categories";
+import { categoryIntentHref, getCategory } from "@/lib/categories";
 import {
   formatPriceDkk,
   getFeedProductById,
@@ -51,9 +51,7 @@ export async function GuideArticle({ guide }: { guide: Guide }) {
   ]);
 
   const categoryHref = category
-    ? guide.intentSlug
-      ? `/maskiner/${category.slug}?intent=${guide.intentSlug}`
-      : `/maskiner/${category.slug}`
+    ? categoryIntentHref(category.slug, guide.intentSlug)
     : "/maskiner";
 
   return (
