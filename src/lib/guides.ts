@@ -140,9 +140,9 @@ export function getGuideByCategoryAndIntent(
 }
 
 /**
- * Kategori-guides + intent-guides (gåbånd, kontor/under-desk, siddecykel/senior,
- * spinning, smart/Zwift, airbike, multistation, træningsbænk, håndvægte,
- * kabeltårn, begynder/must-haves).
+ * Kategori-guides, beslutningsguides (X eller Y) og intent-guides
+ * (gåbånd, kontor/under-desk, siddecykel, spinning, smart/Zwift, airbike,
+ * multistation, træningsbænk, håndvægte, kabeltårn, begynder/must-haves).
  * Anbefalinger kobles til Partner-Ads via feedProductId (live pris + CTA).
  */
 export const guides: Guide[] = [
@@ -926,6 +926,7 @@ export const guides: Guide[] = [
       },
     ],
     relatedSlugs: [
+      "loebebaand-eller-gaabaand-2026",
       "gaabaand-til-kontoret-2026",
       "bedste-loebebaand-2026",
       "bedste-motionscykel-2026",
@@ -1172,6 +1173,7 @@ export const guides: Guide[] = [
       },
     ],
     relatedSlugs: [
+      "loebebaand-eller-gaabaand-2026",
       "bedste-gaabaand-2026",
       "gaabaand-til-kontoret-2026",
       "bedste-romaskine-2026",
@@ -1409,6 +1411,7 @@ export const guides: Guide[] = [
       },
     ],
     relatedSlugs: [
+      "romaskine-eller-crosstrainer-2026",
       "bedste-stoejsvag-romaskine-2026",
       "bedste-loebebaand-2026",
       "bedste-crosstrainer-2026",
@@ -1663,6 +1666,8 @@ export const guides: Guide[] = [
       },
     ],
     relatedSlugs: [
+      "motionscykel-eller-spinningcykel-2026",
+      "bedste-siddecykel-2026",
       "bedste-traeningsudstyr-til-seniorer-2026",
       "bedste-smartcykel-2026",
       "bedste-cykel-til-zwift-2026",
@@ -1910,6 +1915,7 @@ export const guides: Guide[] = [
       },
     ],
     relatedSlugs: [
+      "motionscykel-eller-spinningcykel-2026",
       "bedste-smartcykel-2026",
       "bedste-cykel-til-zwift-2026",
       "bedste-motionscykel-2026",
@@ -2635,6 +2641,7 @@ export const guides: Guide[] = [
       },
     ],
     relatedSlugs: [
+      "romaskine-eller-crosstrainer-2026",
       "bedste-stoejsvag-crosstrainer-2026",
       "bedste-traeningsudstyr-til-seniorer-2026",
       "bedste-knaevenlig-genoptraening-hjemme-2026",
@@ -5026,6 +5033,7 @@ export const guides: Guide[] = [
       },
     ],
     relatedSlugs: [
+      "loebebaand-eller-gaabaand-2026",
       "bedste-gaabaand-2026",
       "bedste-stoejsvage-traeningsmaskiner-lejlighed-2026",
       "bedste-foldbare-kompakte-traeningsmaskiner-2026",
@@ -5041,7 +5049,6 @@ export const guides: Guide[] = [
     metaDescription:
       "Bedste træningsudstyr til seniorer & genoptræning 2026. Lav indstigning, siddecykel og skånsom cardio — med live priser.",
     categorySlug: "motionscykel",
-    intentSlug: "siddecykel",
     recommendationsHeading: "Anbefalet skånsomt udstyr",
     publishedAt: "2026-11-04",
     updatedAt: "2026-11-05",
@@ -5182,7 +5189,7 @@ export const guides: Guide[] = [
       },
     ],
     howToChoose:
-      "Primært skånsom cardio med maksimal tryghed? Odin RB-800 Comfort. Stramt budget men stadig siddecykel? Tunturi D10. Vil du stå op og træne hele kroppen uden stød? Titan Life C35. Tilføj Thera-Band Level 1 til mobilitet og genoptræning — uanset maskine. Undgå mini “circulation trainers”, medmindre en fagperson anbefaler dem specifikt. Shop via “Se pris”. Se også Motionscykel → Siddecykel for flere tilbud.",
+      "Primært skånsom cardio med maksimal tryghed? Odin RB-800 Comfort. Stramt budget men stadig siddecykel? Tunturi D10. Vil du stå op og træne hele kroppen uden stød? Titan Life C35. Tilføj Thera-Band Level 1 til mobilitet og genoptræning — uanset maskine. Undgå mini “circulation trainers”, medmindre en fagperson anbefaler dem specifikt. Shop via “Se pris”. Siddecyklerne er samlet i Bedste siddecykel 2026; Motionscykel → Siddecykel viser flere tilbud.",
     learningSections: [
       {
         heading: "Hvorfor siddecyklen er uundværlig",
@@ -5269,6 +5276,7 @@ export const guides: Guide[] = [
       },
     ],
     relatedSlugs: [
+      "bedste-siddecykel-2026",
       "bedste-knaevenlig-genoptraening-hjemme-2026",
       "bedste-motionscykel-2026",
       "bedste-crosstrainer-2026",
@@ -7183,6 +7191,953 @@ export const guides: Guide[] = [
       "ultimative-home-gym-budget-2026",
       "bedste-stoejsvag-motionscykel-lejlighed-2026",
       "bedste-stoejsvage-traeningsmaskiner-lejlighed-2026",
+    ],
+  },
+  {
+    slug: "loebebaand-eller-gaabaand-2026",
+    title: "Løbebånd eller gåbånd? Sådan vælger du i 2026",
+    excerpt:
+      "Løb hjemme eller gang under skrivebordet? Forskellen på løbebånd og walking pad — og hvornår det ene er det forkerte køb.",
+    metaDescription:
+      "Løbebånd eller gåbånd i 2026? Hvornår du skal kunne løbe, og hvornår et walking pad under bordet er nok — med konkrete modeller og live priser.",
+    categorySlug: "loebebaand",
+    recommendationsHeading: "Én model til hvert valg",
+    publishedAt: "2026-11-06",
+    updatedAt: "2026-11-06",
+    intro:
+      "Shops blander løbebånd og gåbånd i samme hylde, men de løser to forskellige jobs. Et løbebånd er bygget til jogging og løb. Et gåbånd (walking pad) er lavt, kompakt og lavet til gang — ofte under et skrivebord. Denne side er til valget, før du dykker ned i en fuld købsguide: hvornår gang slår løb, og hvilke modeller der repræsenterer hvert spor.",
+    criteria: [
+      {
+        title: "Skal du kunne løbe?",
+        description:
+          "Hvis svaret er ja — intervaller, 10 km/t eller bare en joggetur — så er et gåbånd det forkerte køb. Walking pads topper typisk i gang- og hurtiggang. Et rigtigt løbebånd har længere dæk og en motor, der kan holde løb.",
+      },
+      {
+        title: "Gang under arbejde",
+        description:
+          "Mails, møder og skridt i løbet af dagen er gåbåndets hjemmebane. Det er lavt nok til at stå under et hæve-sænkebord og kan ofte pakkes væk bagefter. Et løbebånd med konsol er i vejen under bordet.",
+      },
+      {
+        title: "Plads og opbevaring",
+        description:
+          "Gåbånd vinder, når kvadratmeterne er få, og maskinen skal forsvinde. Løbebånd fylder mere, også foldet. Mål gulvet, før du lader prisen afgøre det.",
+      },
+      {
+        title: "Støj og naboer",
+        description:
+          "Løb larmer mere end gang — skridt gennem gulvet, ikke kun motoren. I lejlighed er et gåbånd plus måtte ofte det, naboen kan leve med. Vil du løbe om aftenen, så læs den støjsvage løbebåndsguide, før du køber.",
+      },
+      {
+        title: "Intensitet uden fart",
+        description:
+          "På et gåbånd er stigning vejen til hårdere træning. På et løbebånd har du både fart og hældning. Køb ikke et walking pad for at “løbe dig i form”.",
+      },
+      {
+        title: "Budget mod brug",
+        description:
+          "Et billigt gåbånd er nok til skridt. Et billigt “3-i-1”, der lover både desk walking og løb, er ofte svagt på begge. Betal for det job, du faktisk har 80 % af tiden.",
+      },
+    ],
+    products: [
+      {
+        id: "valg-t56",
+        name: "Titan LIFE Treadmill T56",
+        badge: "Vælg løbebånd",
+        summary:
+          "Allround-hjemmeløbebånd, når du vil jogge og løbe flere gange om ugen. Det rigtige svar, hvis gåbåndets tophastighed er for lav.",
+        pros: [
+          "Bygget til gang, jogging og løb",
+          "Mere maskine end et walking pad",
+          "Fri fragt hos partner",
+          "God til jævnlig brug",
+        ],
+        cons: [
+          "Fylder mere end et gåbånd",
+          "Ikke til under skrivebordet",
+          "Overkill, hvis du kun vil gå",
+        ],
+        specs: [
+          { label: "Type", value: "Løbebånd" },
+          { label: "Job", value: "Løb hjemme" },
+          { label: "Partner", value: "HomeX.dk" },
+        ],
+        feedProductId: "HomeX.dk:3179",
+      },
+      {
+        id: "valg-ascendic-7021",
+        name: "Ascendic 7021 Løbebånd",
+        badge: "Løbebånd på budget",
+        summary:
+          "Kompakt ægte løbebånd med hældning, når du vil løbe uden midrange-pris — og walking pad stadig ikke er nok.",
+        pros: [
+          "Ægte løbebånd under midrange",
+          "Automatisk hældning",
+          "Mindre end store hjemmebaner",
+          "Klar opgradering fra gåbånd",
+        ],
+        cons: [
+          "Ikke et under-desk pad",
+          "Tjek dæk og motor til dit tempo",
+          "Mindre “færdig” end T56",
+        ],
+        specs: [
+          { label: "Type", value: "Løbebånd" },
+          { label: "Job", value: "Budget-løb" },
+          { label: "Partner", value: "Ascendic.dk" },
+        ],
+        feedProductId: "Ascendic.dk:56336394781016",
+      },
+      {
+        id: "valg-w10",
+        name: "TITAN LIFE Walking W10",
+        badge: "Vælg gåbånd",
+        summary:
+          "Dedikeret walking pad til kontor og hjem. Det rigtige svar, når du går — og aldrig har tænkt dig at løbe på det.",
+        pros: [
+          "Lavet til gang",
+          "Passer til kontor og hverdag",
+          "Mere færdigt end det billigste pad",
+          "Fri fragt hos partner",
+        ],
+        cons: [
+          "Ikke et løbebånd",
+          "Dyrere end WorkWalk Classic",
+          "Tjek frihøjde under bordet",
+        ],
+        specs: [
+          { label: "Type", value: "Gåbånd" },
+          { label: "Job", value: "Gang / desk" },
+          { label: "Partner", value: "HomeX.dk" },
+        ],
+        feedProductId: "HomeX.dk:3182",
+      },
+      {
+        id: "valg-workwalk",
+        name: "WorkWalk Classic Gåbånd",
+        badge: "Gåbånd på budget",
+        summary:
+          "Lav indgang, hvis du vil teste skridt under arbejde, før du bruger penge på stigning eller et rigtigt løbebånd.",
+        pros: [
+          "Lav pris",
+          "Kompakt",
+          "God til at bygge vanen",
+          "Ærligt gåbånd — ikke et løfte om løb",
+        ],
+        cons: [
+          "Færre features",
+          "Ikke til løb",
+          "Opgrader, når vanen er daglig",
+        ],
+        specs: [
+          { label: "Type", value: "Gåbånd" },
+          { label: "Job", value: "Budget-gang" },
+          { label: "Partner", value: "WorkWalk" },
+        ],
+        feedProductId: "WorkWalk:52614816366935",
+      },
+    ],
+    howToChoose:
+      "Du vil løbe: Titan LIFE T56, eller Ascendic 7021 hvis budgettet er stramt. Du vil gå under bordet eller i stuen: Walking W10, eller WorkWalk Classic som første pad. Derefter: Bedste løbebånd 2026 hvis løb vandt, og Gåbånd til kontoret hvis gang vandt. Shop via “Se pris”.",
+    learningSections: [
+      {
+        heading: "To maskiner, to jobs",
+        paragraphs: [
+          "Løbebåndet står på gulvet og er træningen. Gåbåndet ligger under hverdagen: mails, serier, møder. De deler ord i webshops, men ikke formål.",
+          "Tommelfingerregel: hvis du aldrig løber på det, køb gåbånd. Hvis du vil kunne løbe, køb løbebånd. Et kompromis midt imellem skuffer ofte begge dele.",
+        ],
+        comparison: {
+          caption: "Løbebånd vs. gåbånd",
+          rowHeaderLabel: "Behov",
+          columns: ["Løbebånd", "Gåbånd"],
+          rows: [
+            {
+              label: "Løb",
+              cells: ["Ja", "Nej — gang og hurtiggang"],
+            },
+            {
+              label: "Under skrivebord",
+              cells: ["Nej", "Ja, hvis frihøjden passer"],
+            },
+            {
+              label: "Plads",
+              cells: ["Større, også foldet", "Lavt og ofte foldbart"],
+            },
+            {
+              label: "Støj ved hård brug",
+              cells: ["Skridt larmer", "Lavere, især ved roligt tempo"],
+            },
+          ],
+        },
+      },
+      {
+        heading: "Hvornår gåbåndet vinder",
+        paragraphs: [
+          "Du vil have flere skridt, ikke et løbeprogram. Bordet kan hæves, og du kan starte på 2–3 km/t. Maskinen skal kunne væk, når stuen er stue igen.",
+          "Stigning på pad’et er intensitet, når farten er begrænset. Det erstatter stadig ikke et løbebånd.",
+        ],
+      },
+      {
+        heading: "Hvornår løbebåndet vinder",
+        paragraphs: [
+          "Du jogger allerede ude, eller du vil kunne. Dækket skal være langt nok, og motoren skal holde tempoet, uden at båndet føles som et legetøj.",
+          "I lejlighed: løb om aftenen er et nabospørgsmål. Vælg løbebånd bevidst — eller gåbånd, hvis hensynet vejer tungere end tempoet.",
+        ],
+      },
+      {
+        heading: "Den typiske fejl",
+        paragraphs: [
+          "At købe et walking pad “så jeg også kan løbe lidt”. Max-hastighed og dæk er til gang. Frustrationen kommer i uge to.",
+          "Eller at købe et fuldt løbebånd til desk walking. Konsollen rammer bordet, og maskinen bliver stående, fordi den er for besværlig.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "Hvad er forskellen på løbebånd og gåbånd?",
+        answer:
+          "Løbebåndet er højere, længere og bygget til løb. Gåbåndet (walking pad) er lavt og lavet til gang, ofte under et skrivebord. De er ikke den samme maskine med et andet navn.",
+      },
+      {
+        question: "Kan man løbe på et gåbånd?",
+        answer:
+          "De fleste walking pads er ikke bygget til løb. Vil du løbe hjemme, så vælg et løbebånd. Se Bedste løbebånd 2026.",
+      },
+      {
+        question: "Er et gåbånd nok træning?",
+        answer:
+          "Til skridt, zone 2 og desk walking: ja. Til intervaller og løb: nej. Stigning kan gøre gang hårdere, men den gør ikke pad’et til et løbebånd.",
+      },
+      {
+        question: "Hvad skal jeg købe til hjemmekontoret?",
+        answer:
+          "Et gåbånd. Mål frihøjden under bordet først. Walking W10 er allround-valget; WorkWalk Classic er den billige indgang. Se også Gåbånd til kontoret.",
+      },
+      {
+        question: "Hvad hvis jeg både vil gå og løbe?",
+        answer:
+          "Køb løbebåndet, hvis løb er kravet. Du kan gå på et løbebånd. Du kan ikke løbe ordentligt på de fleste gåbånd. To maskiner er kun relevant, hvis desk walking og løb begge er daglige.",
+      },
+      {
+        question: "Hvilken guide skal jeg læse bagefter?",
+        answer:
+          "Løb: Bedste løbebånd til hjemmet 2026. Gang: Bedste gåbånd 2026 og Gåbånd til kontoret.",
+      },
+    ],
+    relatedSlugs: [
+      "bedste-loebebaand-2026",
+      "gaabaand-til-kontoret-2026",
+      "bedste-gaabaand-2026",
+      "bedste-stoejsvag-loebebaand-lejlighed-2026",
+    ],
+  },
+  {
+    slug: "romaskine-eller-crosstrainer-2026",
+    title: "Romaskine eller crosstrainer? Sådan vælger du i 2026",
+    excerpt:
+      "Siddende træk eller stående ellipse? Støj, led, plads og hvem der bør vælge romaskine frem for crosstrainer.",
+    metaDescription:
+      "Romaskine eller crosstrainer i 2026? Sammenlign støj, led, plads og træning — med konkrete modeller og live priser fra danske partnere.",
+    categorySlug: "romaskine",
+    recommendationsHeading: "Én model til hvert valg",
+    publishedAt: "2026-11-06",
+    updatedAt: "2026-11-06",
+    intro:
+      "Begge er skånsom kondition uden løbestød. Der stopper ligheden. Romaskinen er et siddende træk, der tager ryg, ben og arme i samme tag. Crosstraineren er stående ellipse med fødderne på pedalerne. Denne side er valget imellem dem — ikke en fuld test af hver kategori.",
+    criteria: [
+      {
+        title: "Siddende eller stående",
+        description:
+          "Romaskinen træner dig siddende på skinnen. Crosstraineren kræver, at du står og holder balancen i håndtagene. Svimmelhed eller usikker balance taler for romaskine — eller en siddecykel, hvis roning er for teknisk.",
+      },
+      {
+        title: "Led og ryg",
+        description:
+          "Begge er lavstød. Crosstraineren er ofte det nemme valg for knæ, fordi fødderne aldrig lander. Romaskinen er venlig, når teknikken er god — og hård ved lænden, når den ikke er. Lær taget, før du køber den dyre model.",
+      },
+      {
+        title: "Støj i lejlighed",
+        description:
+          "Luftromaskiner larmer. Magnet er det stille romaskine-valg. Crosstrainere med magnet er typisk rolige, men en løs maskine kan rumle i gulvet. Måtte hjælper begge.",
+      },
+      {
+        title: "Plads",
+        description:
+          "En romaskine er lang i brug og kan ofte rejses på højkant. En crosstrainer fylder som en ellipse hele tiden. Mål længden, ikke kun “foldbar” i annoncen.",
+      },
+      {
+        title: "Hvad du træner",
+        description:
+          "Roning er helkrop i ét træk, med ryg og bagkæde i fokus. Crosstraineren er mere “gå uden stød” plus arme. Vælg den bevægelse, du faktisk vil lave tre gange om ugen.",
+      },
+      {
+        title: "Indlæring",
+        description:
+          "Crosstraineren er træd-og-kør. Romaskinen har en teknik. Hvis du ikke gider lære den, så køb ikke romaskinen — den bliver en tørrestativ.",
+      },
+    ],
+    products: [
+      {
+        id: "valg-zjet",
+        name: "Reebok ZJET Rower",
+        badge: "Vælg romaskine",
+        summary:
+          "Allround-romaskine til hjemmet, når du vil have helkropstræk og er klar til at lære taget.",
+        pros: [
+          "Stærkt hjemmevalg",
+          "Helkrop i ét træk",
+          "Kendte Reebok-linjer",
+          "Fri fragt hos partner",
+        ],
+        cons: [
+          "Fylder i brug",
+          "Teknik skal læres",
+          "Tjek støj ift. boligen",
+        ],
+        specs: [
+          { label: "Type", value: "Romaskine" },
+          { label: "Job", value: "Helkrop, siddende" },
+          { label: "Partner", value: "HomeX.dk" },
+        ],
+        feedProductId: "HomeX.dk:2330",
+      },
+      {
+        id: "valg-r10",
+        name: "Titan LIFE Rower R10",
+        badge: "Romaskine på budget",
+        summary:
+          "Billig magnet-indgang, hvis du vil teste roning, før du bruger midrange-penge.",
+        pros: [
+          "Lav pris",
+          "Magnet — ofte roligere end luft",
+          "Fin til begyndere",
+          "Fri fragt hos partner",
+        ],
+        cons: [
+          "Mindre raffineret til hård brug",
+          "Høje brugere bør tjekke skinnen",
+          "Ikke en crosstrainer",
+        ],
+        specs: [
+          { label: "Type", value: "Romaskine" },
+          { label: "Job", value: "Budget-roning" },
+          { label: "Partner", value: "HomeX.dk" },
+        ],
+        feedProductId: "HomeX.dk:2801",
+      },
+      {
+        id: "valg-c56",
+        name: "Titan Life Crosstrainer C56",
+        badge: "Vælg crosstrainer",
+        summary:
+          "Stabil ellipse til jævnlig cardio, når du vil stå op, holde i håndtagene og undgå løbestød.",
+        pros: [
+          "Træd-og-kør",
+          "Lavt stød",
+          "God til daglig brug",
+          "Fri fragt hos partner",
+        ],
+        cons: [
+          "Fylder fast på gulvet",
+          "Kræver balance",
+          "Mindre “rygtræk” end roning",
+        ],
+        specs: [
+          { label: "Type", value: "Crosstrainer" },
+          { label: "Job", value: "Stående cardio" },
+          { label: "Partner", value: "HomeX.dk" },
+        ],
+        feedProductId: "HomeX.dk:3176",
+      },
+      {
+        id: "valg-c35",
+        name: "Titan Life C35 Crosstrainer",
+        badge: "Crosstrainer på budget",
+        summary:
+          "Lav indstigning og lav pris, når ellipse er valget, men C56 er for meget maskine til at starte.",
+        pros: [
+          "Lav indgangspris",
+          "Lav indstigning",
+          "Magnetisk modstand",
+          "Fri fragt hos partner",
+        ],
+        cons: [
+          "Færre detaljer end C56",
+          "Tjek skridtlængde hvis du er høj",
+          "Stadig en stående maskine",
+        ],
+        specs: [
+          { label: "Type", value: "Crosstrainer" },
+          { label: "Job", value: "Budget-ellipse" },
+          { label: "Partner", value: "HomeX.dk" },
+        ],
+        feedProductId: "HomeX.dk:2792",
+      },
+    ],
+    howToChoose:
+      "Du vil trække og træne ryggen med, og du gider lære teknik: Reebok ZJET, eller R10 hvis du tester disciplinen. Du vil stå og gå uden stød: C56, eller C35 på budget og med lav indstigning. Læs derefter Bedste romaskine 2026 eller Bedste crosstrainer 2026. I lejlighed: vælg magnet, ikke luftvifte.",
+    learningSections: [
+      {
+        heading: "Samme løfte, forskellig krop",
+        paragraphs: [
+          "Begge sælges som “skånsom cardio”. Romaskinen er en robåd på en skinne. Crosstraineren er en ellipse, du står i. Pulsen kan blive høj på begge. Musklerne, der bliver trætte, er ikke de samme.",
+        ],
+        comparison: {
+          caption: "Romaskine vs. crosstrainer",
+          rowHeaderLabel: "Behov",
+          columns: ["Romaskine", "Crosstrainer"],
+          rows: [
+            {
+              label: "Stilling",
+              cells: ["Siddende træk", "Stående ellipse"],
+            },
+            {
+              label: "Balance",
+              cells: ["Lav", "Mellem — hold i håndtag"],
+            },
+            {
+              label: "Teknik",
+              cells: ["Skal læres", "Næsten ingen"],
+            },
+            {
+              label: "Støj",
+              cells: ["Luft larmer, magnet er rolig", "Typisk rolig med magnet"],
+            },
+            {
+              label: "Plads",
+              cells: ["Lang i brug, ofte på højkant", "Bred ellipse, bliver stående"],
+            },
+          ],
+        },
+      },
+      {
+        heading: "Vælg romaskine når",
+        paragraphs: [
+          "Du vil have ryg, core og ben i samme bevægelse, og du accepterer en indlæringsuge. Magnet eller vand, hvis naboerne er tæt på. Luft, hvis du har hus eller kælder og vil have den klassiske følelse.",
+          "Spring den over, hvis lænden allerede brokker sig, og du ikke vil bruge tid på teknik.",
+        ],
+      },
+      {
+        heading: "Vælg crosstrainer når",
+        paragraphs: [
+          "Du vil i gang uden instruktion, og knæene skal skånes for løb. Lav indstigning betyder noget, hvis hofterne er stive. Høje brugere skal tjekke skridtlængde — for kort skridt føles hakket.",
+        ],
+      },
+      {
+        heading: "Du kan også vælge ingen af dem",
+        paragraphs: [
+          "Usikker balance: siddecykel. Du vil løbe: løbebånd. Du vil bare have skridt under arbejdet: gåbånd. Romaskine og crosstrainer er ikke de eneste skånsomme svar.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "Hvad er bedst, romaskine eller crosstrainer?",
+        answer:
+          "Romaskine, hvis du vil trække og træne ryggen med, og du vil lære teknikken. Crosstrainer, hvis du vil stå, holde balancen i håndtagene og træde uden instruktion. Ingen af dem er “bedst” for alle.",
+      },
+      {
+        question: "Hvad er mest skånsomt for knæene?",
+        answer:
+          "Begge er lavstød sammenlignet med løb. Crosstraineren er ofte det enkle knævalg. Romaskinen er fin, når taget er kontrolleret og modstanden ikke er for hård fra start.",
+      },
+      {
+        question: "Hvad larmer mindst i en lejlighed?",
+        answer:
+          "Magnetromaskine eller magnet-crosstrainer. Luftromaskinens vifte er den, naboen hører. Brug måtte under begge.",
+      },
+      {
+        question: "Hvad fylder mindst?",
+        answer:
+          "En romaskine, der kan stå på højkant, vinder ofte på hverdagsplads. I brug er den lang. Crosstraineren optager sit ellipse-areal, også når du ikke træner.",
+      },
+      {
+        question: "Er romaskine sværere?",
+        answer:
+          "Bevægelsen skal læres: ben, så krop, så arme. En dårlig teknik belaster lænden. Crosstraineren er nemmere den første dag.",
+      },
+      {
+        question: "Hvilken guide skal jeg læse bagefter?",
+        answer:
+          "Romaskine: Bedste romaskine 2026. Crosstrainer: Bedste crosstrainer 2026. Lejlighed: de støjsvage varianter af begge.",
+      },
+    ],
+    relatedSlugs: [
+      "bedste-romaskine-2026",
+      "bedste-crosstrainer-2026",
+      "bedste-stoejsvag-romaskine-2026",
+      "bedste-stoejsvag-crosstrainer-2026",
+      "bedste-siddecykel-2026",
+    ],
+  },
+  {
+    slug: "motionscykel-eller-spinningcykel-2026",
+    title: "Motionscykel eller spinningcykel? Sådan vælger du i 2026",
+    excerpt:
+      "Rolig kondicykel med ryglæn-venlig saddel, eller tungt svinghjul og intervaller? Forskellen før du køber.",
+    metaDescription:
+      "Motionscykel eller spinningcykel i 2026? Kondicykel mod spin bike: pasform, støj, intervaller og konkrete modeller med live priser.",
+    categorySlug: "motionscykel",
+    recommendationsHeading: "Én model til hvert valg",
+    publishedAt: "2026-11-06",
+    updatedAt: "2026-11-06",
+    intro:
+      "Begge er cykler. Det er også det eneste, de har til fælles i praksis. En motionscykel (kondicykel) er oprejst, roligere og lavet til længere pas. En spinningcykel har tungt svinghjul, sporty position og er lavet til intervaller. Køber du den forkerte, hader du sadlen i uge ét.",
+    criteria: [
+      {
+        title: "Pas, ikke pose",
+        description:
+          "Kondicyklen er til 30–60 minutter, hvor du kan læse eller høre noget. Spinningcyklen er til korte, hårde blokke, hvor du står i pedalerne. Vælg den session, du faktisk vil tage.",
+      },
+      {
+        title: "Sadel og ryg",
+        description:
+          "Kondicyklen har typisk en bredere, mere oprejst sadel. Spin-sadlen er smallere og hårdere, og overkroppen ligger længere fremme. Ond lænd eller stive hofter taler for kondicykel — eller siddecykel, hvis oprejst sadel stadig er forkert.",
+      },
+      {
+        title: "Svinghjul",
+        description:
+          "Spinningcyklens pointe er det tunge hjul og den direkte følelse. Kondicyklen er ofte magnetbrems og mere “jævn cardio” end cykelrytter-følelse. Et let hjul på en cykel, der kaldes spinning, skuffer.",
+      },
+      {
+        title: "Støj",
+        description:
+          "Magnet og rem er det rolige valg på kondicykel. Spin kan være fin i lejlighed, men sprint og et løst gulv larmer. Airbike er en tredje maskine — den hører ikke hjemme i en lejlighed.",
+      },
+      {
+        title: "Justering",
+        description:
+          "Sadel og styr skal kunne flyttes, især hvis to personer deler cyklen. Spin-cykler har flere punkter at sætte. En kondicykel med for få justeringer bliver stående.",
+      },
+      {
+        title: "Betal for vanen",
+        description:
+          "Den billigste spin-cykel er rigtig, hvis du vil teste intervaller. Den er forkert, hvis du ville have en stille aften-cykel til serier. Omvendt er en dyr kondicykel spild, hvis du keder dig uden intensitet.",
+      },
+    ],
+    products: [
+      {
+        id: "valg-b56",
+        name: "Titan Life Athlete B56",
+        badge: "Vælg motionscykel",
+        summary:
+          "Oprejst kondicykel til rolige, længere pas. Det rigtige svar, når spinning-positionen lyder anstrengende.",
+        pros: [
+          "Allround kondicykel",
+          "Bedre til lange pas end spin",
+          "Titan Life Athlete-linje",
+          "Fri fragt hos partner",
+        ],
+        cons: [
+          "Ikke et tungt svinghjul",
+          "Ikke til stående intervaller",
+          "Tjek pasform til din højde",
+        ],
+        specs: [
+          { label: "Type", value: "Kondicykel" },
+          { label: "Job", value: "Rolig cardio" },
+          { label: "Partner", value: "HomeX.dk" },
+        ],
+        feedProductId: "HomeX.dk:3237",
+      },
+      {
+        id: "valg-b35",
+        name: "Titan Life B35",
+        badge: "Motionscykel på budget",
+        summary:
+          "Billig kondicykel, når vanen skal bygges, og spin-cyklens saddel ikke er det, du mangler.",
+        pros: [
+          "Lav pris",
+          "Til begyndere og rolige pas",
+          "Fri fragt hos partner",
+          "Ærlig kondicykel",
+        ],
+        cons: [
+          "Færre justeringer end dyrere cykler",
+          "Ikke spinning",
+          "Opgrader, hvis den bliver daglig i årevis",
+        ],
+        specs: [
+          { label: "Type", value: "Kondicykel" },
+          { label: "Job", value: "Budget-cardio" },
+          { label: "Partner", value: "HomeX.dk" },
+        ],
+        feedProductId: "HomeX.dk:2702",
+      },
+      {
+        id: "valg-s72",
+        name: "Titan LIFE Spinning Cykel S72",
+        badge: "Vælg spinningcykel",
+        summary:
+          "Spin bike til intervaller derhjemme. Vælg den, når du vil svede, ikke når du vil se nyheder.",
+        pros: [
+          "Tungt nok til jævnlig spinning",
+          "Allround i S-serien",
+          "Klar “jeg vil spinne”-cykel",
+          "Fri fragt hos partner",
+        ],
+        cons: [
+          "Hårdere sadel",
+          "Mere aggressiv position",
+          "Fylder — mål gulvet",
+        ],
+        specs: [
+          { label: "Type", value: "Spinningcykel" },
+          { label: "Job", value: "Intervaller" },
+          { label: "Partner", value: "HomeX.dk" },
+        ],
+        feedProductId: "HomeX.dk:2807",
+      },
+      {
+        id: "valg-s11",
+        name: "Titan LIFE Spinning Cykel S11",
+        badge: "Spinning på budget",
+        summary:
+          "Billig indgang, hvis du vil mærke spin-formatet, før du køber S72.",
+        pros: [
+          "Laveste pris i S-serien her",
+          "Spinning fra start",
+          "God til at teste vanen",
+          "Fri fragt hos partner",
+        ],
+        cons: [
+          "Færre detaljer end S72",
+          "Stadig en hård sadel",
+          "Ikke en kondicykel til serier",
+        ],
+        specs: [
+          { label: "Type", value: "Spinningcykel" },
+          { label: "Job", value: "Budget-spin" },
+          { label: "Partner", value: "HomeX.dk" },
+        ],
+        feedProductId: "HomeX.dk:2805",
+      },
+    ],
+    howToChoose:
+      "Lange, rolige pas: B56, eller B35 hvis prisen skal ned. Intervaller og sved: S72, eller S11 for at teste. Ond lænd og brug for ryglæn: stop — se Bedste siddecykel 2026. Derefter de fulde guider til motionscykel og spinningcykel.",
+    learningSections: [
+      {
+        heading: "Navnet på æsken lyver gerne",
+        paragraphs: [
+          "“Motionscykel” i en shop kan være kondicykel, spin bike eller airbike. Kig efter saddel, svinghjul og om du sidder oprejst eller læner dig frem. Det afgør, om du bruger den.",
+        ],
+        comparison: {
+          caption: "Kondicykel vs. spinningcykel",
+          rowHeaderLabel: "Behov",
+          columns: ["Motionscykel", "Spinningcykel"],
+          rows: [
+            {
+              label: "Session",
+              cells: ["Længere, rolig cardio", "Korte intervaller"],
+            },
+            {
+              label: "Position",
+              cells: ["Mere oprejst", "Fremad, sporty"],
+            },
+            {
+              label: "Sadel",
+              cells: ["Bredere, mere tilgivende", "Smallere og hårdere"],
+            },
+            {
+              label: "Følelse",
+              cells: ["Jævn magnetmodstand", "Tungt svinghjul"],
+            },
+          ],
+        },
+      },
+      {
+        heading: "Vælg motionscykel når",
+        paragraphs: [
+          "Du vil træne, mens du hører noget, og du ikke skal stå i pedalerne. Kondicyklen er også det normale kompromis, når to personer med forskellig lyst skal dele én cykel — medmindre den ene kun vil spinne.",
+        ],
+      },
+      {
+        heading: "Vælg spinningcykel når",
+        paragraphs: [
+          "Du keder dig på en oprejst cykel, og du allerede kan lide hold-følelsen. Sæt sadlen rigtigt fra dag ét. En forkert højde er den hurtigste vej til at hade købet.",
+        ],
+      },
+      {
+        heading: "Den tredje cykel",
+        paragraphs: [
+          "Siddecykel, hvis du skal ind uden at svinge benet over, og ryggen skal have et ryglæn. Airbike, hvis du vil have helkrop og vind — og bor et sted, hvor larmen er ok. Ingen af dem er en spinningcykel.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "Hvad er forskellen på motionscykel og spinningcykel?",
+        answer:
+          "Motionscyklen (kondicykel) er mere oprejst og lavet til længere, rolige pas. Spinningcyklen har tungere svinghjul, hårdere sadel og en position til intervaller.",
+      },
+      {
+        question: "Hvilken er bedst for begyndere?",
+        answer:
+          "Kondicyklen, hvis du vil i gang uden en hård sadel. Spinningcyklen, hvis du specifikt vil træne intervaller og accepterer positionen. Den forkerte cykel bliver ikke brugt.",
+      },
+      {
+        question: "Kan jeg se tv på en spinningcykel?",
+        answer:
+          "Teknisk ja. Praktisk er positionen dårlig til lange, afslappede pas. Det er kondicyklens job.",
+      },
+      {
+        question: "Hvad hvis min lænd ikke kan lide oprejst cykling?",
+        answer:
+          "Se på en siddecykel med ryglæn i stedet. Hverken B56 eller S72 løser et ryglæns-behov.",
+      },
+      {
+        question: "Er spinningcykel for højlydt til lejlighed?",
+        answer:
+          "Selve cyklen kan være acceptabel. Sprint, en løs bolt og et tyndt gulv er det, naboen hører. Airbike er værre. Brug måtte, og hold de hårdeste pas til et tidspunkt, der er til at leve med.",
+      },
+      {
+        question: "Hvilken guide skal jeg læse bagefter?",
+        answer:
+          "Kondicykel: Bedste motionscykel 2026. Spin: Bedste spinningcykel 2026. Ryglæn: Bedste siddecykel 2026.",
+      },
+    ],
+    relatedSlugs: [
+      "bedste-motionscykel-2026",
+      "bedste-spinningcykel-2026",
+      "bedste-siddecykel-2026",
+      "bedste-stoejsvag-motionscykel-lejlighed-2026",
+    ],
+  },
+  {
+    slug: "bedste-siddecykel-2026",
+    title: "Bedste siddecykel 2026",
+    excerpt:
+      "Recumbent med ryglæn og lav indstigning: sådan vælger du siddecykel til hjemmet — og hvilke modeller der er rigtige cykler, ikke pedaltrænere.",
+    metaDescription:
+      "Bedste siddecykel 2026. Ryglæn, lav indstigning og stabil ramme — Odin RB-800, Tunturi E60-R og D10 med live priser. Ikke mini-cykler.",
+    categorySlug: "motionscykel",
+    intentSlug: "siddecykel",
+    recommendationsHeading: "Anbefalede siddecykler",
+    publishedAt: "2026-11-06",
+    updatedAt: "2026-11-06",
+    intro:
+      "En siddecykel (recumbent) har lav indstigning og et sæde med ryglæn. Du går ind, sætter dig og træder foran dig. Det er derfor, den slår en almindelig motionscykel, når hofter, knæ eller lænd ikke vil svinge benet over en sadel. Denne guide er kun til rigtige siddecykler — ikke de små circulation trainers, som shops også kalder siddecykel.",
+    criteria: [
+      {
+        title: "Lav indstigning",
+        description:
+          "Du skal kunne gå ind og sætte dig uden at løfte benet højt over en ramme. Det er hele pointen. En “siddecykel”, der stadig kræver et højt bensving, er den forkerte geometri.",
+      },
+      {
+        title: "Ryglæn, ikke bare en lav sadel",
+        description:
+          "Ryggen skal have noget at læne sig ind i. Bredt sæde og et rigtigt ryglæn aflaster lænden. En lille pude på en oprejst cykel er ikke en siddecykel.",
+      },
+      {
+        title: "Stabil ramme",
+        description:
+          "Maskinen skal stå stille, når du træder. Letvægts-pedaltrænere vipper. Egenvægt og en ramme, der kan boltes mentalt til gulvet, er tryghed. Måtte under er stadig en god idé.",
+      },
+      {
+        title: "Jævn magnetmodstand",
+        description:
+          "Modstanden skal kunne skrues op i små trin uden hak. Det er det, der gør cyklen brugbar til både rolig cardio og genoptræning. Store spring i modstand er et dårligt tegn.",
+      },
+      {
+        title: "Simple tal",
+        description:
+          "Tid, distance og modstand skal kunne læses uden en app. Wi-Fi er ligegyldigt, hvis cyklen skal bruges samme dag, den kommer ind ad døren.",
+      },
+      {
+        title: "Ikke en circulation trainer",
+        description:
+          "Modeller til et par hundrede kroner, som står foran en stol, er ikke denne kategori. De kan have en rolle til let cirkulation. De er ikke en siddecykel med ryglæn. Vi anbefaler dem ikke som hovedcykel.",
+      },
+    ],
+    products: [
+      {
+        id: "sidde-rb800",
+        name: "Odin RB-800 Comfort Siddecykel",
+        badge: "Bedst samlet",
+        summary:
+          "Comfort-siddecykel til de fleste hjem: ryglæn, lav indstigning og en pris, der stadig er hjemmeudstyr — ikke center-maskine.",
+        pros: [
+          "Ægte siddecykel med ryglæn",
+          "Lav indstigning",
+          "Comfort-fokus frem for spinning",
+          "Den model, vi oftest vil pege på",
+        ],
+        cons: [
+          "Fylder mere end en opret cykel",
+          "Dyrere end D10",
+          "Ikke til intervaller i spin-position",
+        ],
+        specs: [
+          { label: "Type", value: "Siddecykel" },
+          { label: "Model", value: "RB-800 Comfort" },
+          { label: "Partner", value: "Apuls.dk" },
+        ],
+        feedProductId: "Apuls.dk:15031",
+      },
+      {
+        id: "sidde-e60r",
+        name: "Tunturi Signature E60-R",
+        badge: "Bedste kraftigere",
+        summary:
+          "Når RB-800 føles for spinkel, og cyklen skal være den daglige maskine i årevis. Tungere hjemmesiddecykel med fri fragt hos partner.",
+        pros: [
+          "Kraftigere og mere stabil klasse",
+          "Tunturi Signature",
+          "Til daglig, længere brug",
+          "Fri fragt hos partner",
+        ],
+        cons: [
+          "Tydeligt dyrere end RB-800",
+          "Fylder",
+          "Overkill, hvis cyklen bruges to gange om måneden",
+        ],
+        specs: [
+          { label: "Type", value: "Siddecykel" },
+          { label: "Model", value: "Signature E60-R" },
+          { label: "Partner", value: "HomeX.dk" },
+        ],
+        feedProductId: "HomeX.dk:3355",
+      },
+      {
+        id: "sidde-d10",
+        name: "Tunturi Cardio Fit D10 Siddecykel",
+        badge: "Bedste billige",
+        summary:
+          "Ægte siddecykel til den lave pris. Rigtig, når budgettet er stramt, og en opret sadel stadig er forkert.",
+        pros: [
+          "Lavest pris blandt de rigtige siddecykler her",
+          "Ryglæn og siddecykel-geometri",
+          "Fri fragt hos partner",
+          "God første cykel",
+        ],
+        cons: [
+          "Færre komfort-detaljer end RB-800 og E60-R",
+          "Tjek sædet til din vægt og højde",
+          "Opgrader, hvis den bliver daglig hovedtræning",
+        ],
+        specs: [
+          { label: "Type", value: "Siddecykel" },
+          { label: "Model", value: "Cardio Fit D10" },
+          { label: "Partner", value: "HomeX.dk" },
+        ],
+        feedProductId: "HomeX.dk:3393",
+      },
+      {
+        id: "sidde-arctic",
+        name: "BH Fitness Arctic Comfort Siddecykel",
+        badge: "Alternativ i comfort-klassen",
+        summary:
+          "Endnu en rigtig comfort-siddecykel, hvis Odin og Tunturi ikke er på lager, eller du vil sammenligne ryglæn i den øvre hjemmeklasse.",
+        pros: [
+          "Comfort-siddecykel, ikke pedaltræner",
+          "Et alternativ til RB-800 / E60-R",
+          "Stabil prisklasse til hjemmebrug",
+          "Kan sammenlignes direkte på ryglæn og ramme",
+        ],
+        cons: [
+          "Dyrere end D10",
+          "Tjek mål — den fylder",
+          "Ikke nødvendig, hvis RB-800 allerede passer",
+        ],
+        specs: [
+          { label: "Type", value: "Siddecykel" },
+          { label: "Model", value: "Arctic Comfort" },
+          { label: "Partner", value: "Fitnessengros.dk" },
+        ],
+        feedProductId: "Fitnessengros.dk:BHH854B",
+      },
+    ],
+    howToChoose:
+      "De fleste hjem: Odin RB-800 Comfort. Daglig brug i mange år og du vil have mere maskine: Tunturi E60-R. Stramt budget, men stadig rigtig siddecykel: Tunturi D10. Arctic Comfort er alternativet, hvis de andre ikke er på lager. Spring circulation trainers over som hovedcykel. Shop via “Se pris”, eller se Motionscykel → Siddecykel for flere tilbud.",
+    learningSections: [
+      {
+        heading: "Hvad en siddecykel er",
+        paragraphs: [
+          "Du sidder tilbagelænet med benene foran dig. Ryggen hviler. Indstigningen er lav. Det er en anden maskine end både kondicykel og spinningcykel, selv om alle tre har pedaler.",
+          "Den er populær, når træningen skal være tryg: seniorer, genoptræning, tunge knæ, eller bare en ryg der ikke vil læne sig frem over et styr.",
+        ],
+      },
+      {
+        heading: "Siddecykel vs. almindelig motionscykel",
+        paragraphs: [
+          "På en opret cykel svinger du benet over sadlen og bærer mere af vægten i lænd og hænder. På siddecyklen er vægten i sædet og ryglænet. Vælg opret, hvis du vil have en mere “cykel-agtig” træning. Vælg siddecykel, hvis indstigning og ryg er sagen.",
+        ],
+        comparison: {
+          caption: "Siddecykel vs. kondicykel",
+          rowHeaderLabel: "Behov",
+          columns: ["Siddecykel", "Kondicykel"],
+          rows: [
+            {
+              label: "Indstigning",
+              cells: ["Lav, gå ind", "Benet over sadlen"],
+            },
+            {
+              label: "Ryg",
+              cells: ["Ryglæn", "Oprejst, mere lænd"],
+            },
+            {
+              label: "Balance",
+              cells: ["Lav — du sidder", "Lav til mellem"],
+            },
+            {
+              label: "Plads",
+              cells: ["Ofte længere", "Mere kompakt"],
+            },
+          ],
+        },
+      },
+      {
+        heading: "Hvad du ikke skal købe",
+        paragraphs: [
+          "Pedaltrænere og “circulation trainers” til et par hundrede kroner står foran en stol. De har ikke et ryglæn, der bærer dig. Shops putter ordet siddecykel på dem. Det gør dem ikke til RB-800.",
+          "Center-modeller til 30–70.000 kr. er en anden kategori. De hører til i et fitnesscenter, ikke i denne hjemme-guide.",
+        ],
+      },
+      {
+        heading: "Sådan bruges den",
+        paragraphs: [
+          "Start med lav modstand. Sædet skal støtte lænden, uden at du skubber dig op i skuldrene. Knæene skal ikke låse i bunden af taget.",
+          "Siddecyklen er cardio og bevægelse. Den er ikke en erstatning for råd fra fysioterapeut, hvis du er midt i en skade. Se også guiden til knævenlig genoptræning, hvis knæene er årsagen.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "Hvilken siddecykel er bedst i 2026?",
+        answer:
+          "Til de fleste hjem: Odin RB-800 Comfort. Vil du have en kraftigere daglig cykel: Tunturi Signature E60-R. På budget: Tunturi Cardio Fit D10. BH Arctic Comfort er et alternativ i comfort-klassen.",
+      },
+      {
+        question: "Hvad er forskellen på siddecykel og motionscykel?",
+        answer:
+          "Siddecyklen har lav indstigning og ryglæn, så du sidder tilbagelænet. En almindelig motionscykel er mere oprejst, og du skal typisk svinge benet over sadlen.",
+      },
+      {
+        question: "Er en circulation trainer en siddecykel?",
+        answer:
+          "Nej. Det er en lille pedaltræner foran en stol. Den kan bruges til let cirkulation, men den erstatter ikke en siddecykel med ramme og ryglæn.",
+      },
+      {
+        question: "Er siddecykel god for knæ og ryg?",
+        answer:
+          "Ofte ja: lavt stød, rygstøtte og en bevægelse, du kan dosere. Start let. Ved akut skade skal en fagperson stadig være med i beslutningen.",
+      },
+      {
+        question: "Hvor meget plads skal jeg bruge?",
+        answer:
+          "Mere i længden end en opret cykel. Mål værelset med ryglænet lænet tilbage, ikke kun rammens mål i annoncen. D10 er det kompakte budgetvalg; E60-R og Arctic fylder mere.",
+      },
+      {
+        question: "Hvad koster en rigtig siddecykel?",
+        answer:
+          "D10 ligger i den lave ende (omkring 2.000 kr. i feedet). RB-800 ligger omkring 5.500 kr. E60-R og Arctic Comfort ligger højere, stadig som hjemmecykler. Center-modeller til titusinder er en anden liga. Tjek “Se pris” — tallene flytter sig.",
+      },
+    ],
+    relatedSlugs: [
+      "bedste-traeningsudstyr-til-seniorer-2026",
+      "bedste-knaevenlig-genoptraening-hjemme-2026",
+      "bedste-motionscykel-2026",
+      "motionscykel-eller-spinningcykel-2026",
+      "bedste-crosstrainer-2026",
     ],
   },
 ];
