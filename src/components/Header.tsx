@@ -83,7 +83,7 @@ export function Header() {
   }, [open, close]);
 
   return (
-    <header className="absolute inset-x-0 top-[var(--campaign-banner-h)] z-50 animate-fade-in">
+    <header className="absolute inset-x-0 top-[calc(var(--campaign-banner-h)+0.5rem)] z-50 animate-fade-in sm:top-[var(--campaign-banner-h)]">
       <div className="mx-auto flex h-16 w-full max-w-6xl items-center justify-between px-5 sm:h-20 sm:px-8">
         <Link
           href="/"
