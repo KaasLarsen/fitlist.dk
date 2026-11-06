@@ -48,7 +48,8 @@ function parsePrice(raw: string): number | null {
     .replace(/\s/g, "")
     .replace(",", ".");
   const n = Number.parseFloat(cleaned);
-  return Number.isFinite(n) ? n : null;
+  if (!Number.isFinite(n) || n <= 0) return null;
+  return n;
 }
 
 function parseInStock(raw: string): boolean {
