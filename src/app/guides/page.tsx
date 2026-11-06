@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { getCategory } from "@/lib/categories";
-import { getAllGuides } from "@/lib/guides";
+import { getAllCategories, getCategory } from "@/lib/categories";
+import { getAllGuides, getGuidesByCategory } from "@/lib/guides";
 
 export const metadata: Metadata = {
   title: "Guides",
@@ -10,8 +10,24 @@ export const metadata: Metadata = {
   alternates: { canonical: "https://www.fitlist.dk/guides" },
 };
 
-export default function GuidesPage() {
-  const guides = getAllGuides();
+type Props = {
+  searchParams: Promise<{ category?: string }>;
+};
+
+export default async function GuidesPage({ searchParams }: Props) {
+  const { category: categorySlug } = await searchParams;
+  const categories = getAllCategories();
+  const activeCategory = categorySlug ? getCategory(categorySlug) : undefined;
+  const guides = activeCategory
+    ? getGuidesByCategory(activeCategory.slug)
+    : getAllGuides();
+
+  const chipClass = (active: boolean) =>
+    `inline-flex border px-4 py-2 font-display text-xs font-semibold uppercase tracking-[0.14em] transition-colors ${
+      active
+        ? "border-accent bg-accent text-accent-fg"
+        : "border-border text-muted hover:border-foreground hover:text-foreground"
+    }`;
 
   return (
     <div className="noise hero-glow flex flex-1 flex-col">
@@ -27,34 +43,66 @@ export default function GuidesPage() {
           klik videre til aktuelle priser hos vores partnere.
         </p>
 
-        <ul className="mt-16 divide-y divide-border border-t border-border">
-          {guides.map((guide) => {
-            const category = getCategory(guide.categorySlug);
-            return (
-              <li key={guide.slug}>
-                <Link
-                  href={`/guides/${guide.slug}`}
-                  className="group flex flex-col gap-2 py-8 transition-colors sm:flex-row sm:items-baseline sm:justify-between"
-                >
-                  <div>
-                    <p className="text-xs uppercase tracking-[0.16em] text-muted">
-                      {category?.name ?? guide.categorySlug}
-                    </p>
-                    <h2 className="mt-1 font-display text-2xl font-medium uppercase tracking-wide text-foreground transition-colors group-hover:text-accent">
-                      {guide.title}
-                    </h2>
-                    <p className="mt-2 max-w-xl text-sm text-muted">
-                      {guide.excerpt}
-                    </p>
-                  </div>
-                  <span className="shrink-0 font-display text-xs uppercase tracking-[0.16em] text-accent opacity-0 transition-opacity group-hover:opacity-100">
-                    Læs →
-                  </span>
-                </Link>
-              </li>
-            );
-          })}
-        </ul>
+        <section className="mt-12">
+          <p className="font-display text-sm font-medium uppercase tracking-[0.16em] text-muted">
+            Filtrer efter kategori
+          </p>
+          <ul className="mt-4 flex flex-wrap gap-3">
+            <li>
+              <Link href="/guides" className={chipClass(!activeCategory)}>
+                Alle
+              </Link>
+            </li>
+            {categories.map((category) => {
+              const active = activeCategory?.slug === category.slug;
+              return (
+                <li key={category.slug}>
+                  <Link
+                    href={`/guides?category=${category.slug}`}
+                    className={chipClass(active)}
+                  >
+                    {category.shortName}
+                  </Link>
+                </li>
+              );
+            })}
+          </ul>
+        </section>
+
+        {guides.length === 0 ? (
+          <p className="mt-16 border-t border-border pt-8 text-muted">
+            Ingen guides i denne kategori endnu.
+          </p>
+        ) : (
+          <ul className="mt-16 divide-y divide-border border-t border-border">
+            {guides.map((guide) => {
+              const category = getCategory(guide.categorySlug);
+              return (
+                <li key={guide.slug}>
+                  <Link
+                    href={`/guides/${guide.slug}`}
+                    className="group flex flex-col gap-2 py-8 transition-colors sm:flex-row sm:items-baseline sm:justify-between"
+                  >
+                    <div>
+                      <p className="text-xs uppercase tracking-[0.16em] text-muted">
+                        {category?.name ?? guide.categorySlug}
+                      </p>
+                      <h2 className="mt-1 font-display text-2xl font-medium uppercase tracking-wide text-foreground transition-colors group-hover:text-accent">
+                        {guide.title}
+                      </h2>
+                      <p className="mt-2 max-w-xl text-sm text-muted">
+                        {guide.excerpt}
+                      </p>
+                    </div>
+                    <span className="shrink-0 font-display text-xs uppercase tracking-[0.16em] text-accent opacity-0 transition-opacity group-hover:opacity-100">
+                      Læs →
+                    </span>
+                  </Link>
+                </li>
+              );
+            })}
+          </ul>
+        )}
 
         <Link
           href="/maskiner"
