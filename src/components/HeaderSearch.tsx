@@ -11,10 +11,6 @@ import {
 } from "react";
 import type { SearchResults } from "@/lib/search";
 
-type Props = {
-  onDarkHero?: boolean;
-};
-
 const emptyResults: SearchResults = {
   categories: [],
   guides: [],
@@ -41,7 +37,7 @@ function SearchIcon({ className }: { className?: string }) {
   );
 }
 
-export function HeaderSearch({ onDarkHero = false }: Props) {
+export function HeaderSearch() {
   const panelId = useId();
   const rootRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
@@ -141,10 +137,6 @@ export function HeaderSearch({ onDarkHero = false }: Props) {
     results.products.length;
   const showEmpty = hasQuery && !loading && totalHits === 0;
 
-  const iconClass = onDarkHero
-    ? "text-white drop-shadow hover:text-white"
-    : "text-muted hover:text-foreground";
-
   return (
     <div ref={rootRef} className="relative">
       <button
@@ -156,7 +148,7 @@ export function HeaderSearch({ onDarkHero = false }: Props) {
           if (open) close();
           else setOpen(true);
         }}
-        className={`flex size-9 items-center justify-center transition-colors ${iconClass}`}
+        className="header-chrome flex size-9 items-center justify-center transition-colors"
       >
         <SearchIcon />
       </button>

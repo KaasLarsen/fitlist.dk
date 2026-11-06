@@ -53,7 +53,6 @@ function CloseIcon() {
 
 export function Header() {
   const pathname = usePathname();
-  const onDarkHero = pathname === "/";
   const panelId = useId();
   const menuRef = useRef<HTMLDivElement>(null);
   const [open, setOpen] = useState(false);
@@ -83,20 +82,12 @@ export function Header() {
     };
   }, [open, close]);
 
-  const iconClass = onDarkHero
-    ? "text-white drop-shadow hover:text-white"
-    : "text-muted hover:text-foreground";
-
   return (
     <header className="absolute inset-x-0 top-[var(--campaign-banner-h)] z-50 animate-fade-in">
       <div className="mx-auto flex h-16 w-full max-w-6xl items-center justify-between px-5 sm:h-20 sm:px-8">
         <Link
           href="/"
-          className={`font-display text-xl font-semibold uppercase tracking-[0.12em] transition-colors hover:text-accent sm:text-2xl ${
-            onDarkHero
-              ? "text-white drop-shadow"
-              : "text-foreground"
-          }`}
+          className="header-chrome font-display text-xl font-semibold uppercase tracking-[0.12em] transition-colors sm:text-2xl"
         >
           Fitlist
         </Link>
@@ -106,11 +97,7 @@ export function Header() {
               <Link
                 key={item.href}
                 href={item.href}
-                className={`text-sm font-medium tracking-wide transition-colors ${
-                  onDarkHero
-                    ? "text-white drop-shadow hover:text-white"
-                    : "text-muted hover:text-foreground"
-                }`}
+                className="header-chrome text-sm font-medium tracking-wide transition-colors"
               >
                 {item.label}
               </Link>
@@ -124,7 +111,7 @@ export function Header() {
               aria-expanded={open}
               aria-controls={panelId}
               onClick={() => setOpen((v) => !v)}
-              className={`flex size-9 items-center justify-center transition-colors ${iconClass}`}
+              className="header-chrome flex size-9 items-center justify-center transition-colors"
             >
               {open ? <CloseIcon /> : <MenuIcon />}
             </button>
@@ -149,7 +136,7 @@ export function Header() {
             ) : null}
           </div>
 
-          <HeaderSearch onDarkHero={onDarkHero} />
+          <HeaderSearch />
         </div>
       </div>
     </header>
