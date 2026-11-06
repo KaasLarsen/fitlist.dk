@@ -144,7 +144,7 @@ export async function warmCatalog(): Promise<{
 }
 
 export function formatPriceDkk(price: number | null): string {
-  if (price == null || !Number.isFinite(price)) return "Se pris";
+  if (price == null || !Number.isFinite(price) || price <= 0) return "Se pris";
   return new Intl.NumberFormat("da-DK", {
     style: "currency",
     currency: "DKK",
