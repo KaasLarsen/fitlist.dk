@@ -122,6 +122,7 @@ const FEATURED_GUIDE_SLUGS = [
   "bedste-justerbar-traeningsbaenk-2026",
   "bedste-traeningsudstyr-til-seniorer-2026",
   "bedste-foldbare-kompakte-traeningsmaskiner-2026",
+  "bedste-cardio-under-lavt-loft-2026",
 ] as const;
 
 export function getFeaturedGuides(): Guide[] {
@@ -682,6 +683,7 @@ export const guides: Guide[] = [
       "bedste-crosstrainer-2026",
       "bedste-justerbar-traeningsbaenk-2026",
       "ultimative-home-gym-budget-2026",
+      "bedste-cardio-under-lavt-loft-2026",
     ],
   },
   {
@@ -1181,6 +1183,7 @@ export const guides: Guide[] = [
       "bedste-stoejsvage-traeningsmaskiner-lejlighed-2026",
       "bedste-foldbare-kompakte-traeningsmaskiner-2026",
       "bedste-knaevenlig-genoptraening-hjemme-2026",
+      "bedste-cardio-under-lavt-loft-2026",
     ],
   },
   {
@@ -1933,7 +1936,7 @@ export const guides: Guide[] = [
     categorySlug: "motionscykel",
     intentSlug: "smart",
     publishedAt: "2026-11-04",
-    updatedAt: "2026-11-04",
+    updatedAt: "2026-11-07",
     intro:
       "En smart motionscykel har indbygget Bluetooth (ofte også ANT+) og elektronik, der kan tale med en app. Magien er simpel: når du kører op ad en virtuel bakke i Zwift eller Kinomap, kan cyklen justere modstanden — og sende dine watt-tal tilbage, så træningen føles og måles som rigtig cykling. Denne guide forklarer, hvad “smart” egentlig betyder, de tre brugertyper (Peloton-typen, Zwift-nørden og budget-smart), hvad du skal kigge efter, og fire konkrete modeller du kan købe via vores danske partnere lige nu.",
     criteria: [
@@ -2090,6 +2093,13 @@ export const guides: Guide[] = [
         ],
       },
       {
+        heading: "Hometrainer til din egen racercykel",
+        paragraphs: [
+          "Har du allerede en race- eller gravelcykel, er en smart hometrainer ofte det rigtige køb: direct drive til watt og pasform, wheel-on hvis du sjældent kører inde. En dedikeret smartbike vinder kun, når bekvemmelighed betyder mere end at cyklen føles som din.",
+          "Valget mellem egen cykel og indoor bike — kassette, thru-axle og hvem der skal dele maskinen — står i Bedste cykel til Zwift 2026. Anbefalingerne med “Se pris” her er smartbikes. Partnerfeedet har ikke KICKR- eller Tacx-hometrainere.",
+        ],
+      },
+      {
         heading: "Zwift-alternativ til hjemmet",
         paragraphs: [
           "Zwift er gaming og communities. Vil du hellere køre på video af Alpe d’Huez og Mallorca, er Rouvy det realistiske alternativ. Vil du have hold, coaches og høj musik, er Peloton (eller lignende studio-apps) svaret — ofte med egen cykel/skærm. Kinomap sidder midt imellem og er populært på mange europæiske hjemmecykler.",
@@ -2210,9 +2220,9 @@ export const guides: Guide[] = [
       "Find den bedste cykel til Zwift i 2026. Guide til Bluetooth, watt og tablet-setup — plus fire Zwift-kompatible motionscykler med live priser fra danske partnere.",
     categorySlug: "motionscykel",
     publishedAt: "2026-11-04",
-    updatedAt: "2026-11-04",
+    updatedAt: "2026-11-07",
     intro:
-      "“Bedste cykel til Zwift” er en af de søgninger, der afgør, om du ender med en frustrerende spin bike uden signal — eller en cykel der faktisk spiller med i Watopia. Du behøver ikke en Wahoo KICKR BIKE til at komme i gang, men du skal have Bluetooth (gerne FTMS), en ordentlig tablet-holder og en model, der eksplicit lover Zwift-kompatibilitet. Her får du kriterierne, fire konkrete cykler med shop-links, og hvornår du i stedet skal kigge på hometrainer + din egen racercykel.",
+      "“Bedste cykel til Zwift” er en af de søgninger, der afgør, om du ender med en frustrerende spin bike uden signal — eller en cykel der faktisk spiller med i Watopia. Du behøver ikke en Wahoo KICKR BIKE til at komme i gang, men du skal vælge mellem tre setup: direct drive-hometrainer til din egen racercykel, en billigere wheel-on-rulle, eller en dedikeret smartbike du bare sætter dig på. Her får du det valg, kriterierne, og fire Zwift-kompatible cykler med shop-links. Hometrainere fra Wahoo og Tacx er markedsreferencer — de ligger ikke som købbare anbefalinger i vores partnerfeeds lige nu.",
     criteria: [
       {
         title: "Eksplicit Zwift-kompatibilitet",
@@ -2355,9 +2365,47 @@ export const guides: Guide[] = [
       {
         heading: "Smart hometrainer vs. dedikeret Zwift-cykel",
         paragraphs: [
-          "Hometrainer + din racercykel: bedste pasform og ofte bedste watt, hvis du allerede ejer cyklen. Dedikeret indoor bike: hurtigere “sæt dig og kør”, ingen sved på karbonrammen, flere kan dele maskinen.",
-          "Vælg hometrainer, hvis landevej er din identitet. Vælg dedikeret cykel, hvis Zwift er vanen, og bekvemmelighed vinder.",
+          "Der er tre måder at komme ind i Watopia på. Direct drive: baghjulet af, kæden på trainerens kassette. Wheel-on: hjulet bliver på, og et dæk presses mod en rulle. Dedikeret smartbike: et stel, der aldrig skal udenfor. Pasformen vinder på de to første, hvis racercyklen allerede er tilpasset dig. Bekvemmeligheden vinder på den tredje, når flere i huset skal køre, eller du ikke orker at montere hver gang.",
+          "Direct drive kræver at kassetten matcher din (eller at traineren bruger en Zwift Cog / virtuel gearing, så du ikke skifter kassette). Thru-axle og quick release er ikke det samme beslag — tjek hvad din ramme har, før du køber. Wheel-on er ligeglad med kassette, men dæktryk og rullens tryk flytter watt-tallet, og dækket mod rullen larmer mere. En smartbike som Odin S1000 springer begge problemer over: du sætter dig, og Bluetooth klarer resten. Til gengæld er geometrien et kompromis, og bakkefølelsen er ikke en KICKR eller Tacx NEO.",
+          "Vores partnerfeeds har Zwift-cykler med live pris. De har ikke direct drive- eller wheel-on-hometrainere, vi kan linke til. Wahoo og Tacx er derfor reference, ikke en “Se pris”-knap. Vælg hometrainer, hvis landevej er din identitet og du kan købe traineren et andet sted. Vælg en af cyklerne herunder, hvis Zwift er vanen.",
         ],
+        comparison: {
+          caption: "Tre veje til Zwift — hometrainerne er ikke i partnerfeedet",
+          rowHeaderLabel: "Setup",
+          columns: ["Pasform", "Montering", "Watt", "Støj", "Vælg hvis"],
+          rows: [
+            {
+              label: "Direct drive",
+              cells: [
+                "Din egen cykel",
+                "Hjul af, kassette og aksel skal passe",
+                "Typisk den mest stabile",
+                "Lavere end wheel-on",
+                "Du cykler ude og vil have racercyklen",
+              ],
+            },
+            {
+              label: "Wheel-on",
+              cells: [
+                "Din egen cykel",
+                "Hjulet bliver på",
+                "Dæk og rulle kan snyde",
+                "Dæk mod rulle larmer",
+                "Sjælden Zwift og et lavere budget",
+              ],
+            },
+            {
+              label: "Smartbike",
+              cells: [
+                "Stellet du køber",
+                "Sæt dig og kør",
+                "God til de fleste, ikke NEO/KICKR",
+                "Afhænger af svinghjul og sprint",
+                "Zwift er vanen, og flere skal dele",
+              ],
+            },
+          ],
+        },
       },
       {
         heading: "Typiske Zwift-fejl før køb",
@@ -2377,6 +2425,11 @@ export const guides: Guide[] = [
         question: "Kan jeg køre Zwift på en almindelig spinningcykel?",
         answer:
           "Kun hvis den kan sende de rigtige data (og helst modstand) til Zwift. Ellers er det bare spinning med Zwift på en skærm ved siden af — uden bakke-styring.",
+      },
+      {
+        question: "Hometrainer eller smartbike til Zwift?",
+        answer:
+          "Hometrainer (direct drive) hvis du allerede har en racercykel og vil beholde pasform og watt. Smartbike hvis du vil sætte dig uden at montere noget, og hvis flere skal dele. Wheel-on er den billige mellemvej og larmer mere. Vores shop-links er smartbikes — Wahoo og Tacx findes ikke i partnerfeedet lige nu.",
       },
       {
         question: "Skal jeg bruge computer, iPad eller Apple TV?",
@@ -2649,6 +2702,7 @@ export const guides: Guide[] = [
       "bedste-romaskine-2026",
       "bedste-stoejsvage-traeningsmaskiner-lejlighed-2026",
       "bedste-foldbare-kompakte-traeningsmaskiner-2026",
+      "bedste-cardio-under-lavt-loft-2026",
     ],
   },
   {
@@ -2908,7 +2962,7 @@ export const guides: Guide[] = [
     categorySlug: "motionscykel",
     intentSlug: "airbike",
     publishedAt: "2026-11-04",
-    updatedAt: "2026-11-04",
+    updatedAt: "2026-11-07",
     intro:
       "En airbike (Assault Bike-typen) er ikke en stille kondicykel. Den bruger vindmodstand: jo hårdere du træder og trækker i armene, jo hårdere bliver det — arme og ben samtidigt. Det gør den genial til korte, intensive intervaller (HIIT) og CrossFit-agtige finishers, og mindre oplagt til rolige aftenpas i en lejlighed. Her får du valg-kriterierne, fire konkrete modeller med shop-links, og ærlig snak om støj, før du køber.",
     criteria: [
@@ -3073,6 +3127,40 @@ export const guides: Guide[] = [
           "Kondicykel: støjsvag, komfortabel, zone-2. Spinning: tungt svinghjul, sporty position, hold-agtig intensitet uden samme armtræk. Airbike: vind + arme + ben — maksimal HIIT-tæthed.",
           "Har du brug for alle tre? Sjældent. De fleste vælger én primær cykeltype. Læs også Bedste motionscykel 2026 og Bedste spinningcykel 2026, hvis du er i tvivl.",
         ],
+        comparison: {
+          caption: "Airbike er ikke en motionscykel med et andet navn",
+          rowHeaderLabel: "Type",
+          columns: ["Modstand", "Muskelgrupper", "Støj", "Bedst til"],
+          rows: [
+            {
+              label: "Airbike",
+              cells: [
+                "Vind — stiger med indsatsen",
+                "Ben og arme samtidig",
+                "Høj vifte-lyd",
+                "HIIT og CrossFit-finishers",
+              ],
+            },
+            {
+              label: "Kondicykel",
+              cells: [
+                "Magnet, ofte trinvis",
+                "Primært ben",
+                "Lav",
+                "Zone-2 og aftenpas",
+              ],
+            },
+            {
+              label: "Spinning",
+              cells: [
+                "Tungt svinghjul + magnet",
+                "Ben, stående sprint",
+                "Lav til middel",
+                "Hold og cykelagtig intensitet",
+              ],
+            },
+          ],
+        },
       },
       {
         heading: "Opstilling og plads",
@@ -3099,6 +3187,11 @@ export const guides: Guide[] = [
         question: "Er airbike det samme som Assault Bike?",
         answer:
           "Assault Bike er et brand/produktnavn inden for airbike-kategorien (vindmodstand med arme+ben). Mange siger “Assault” om hele typen — ligesom “fridge” for køleskab. Funktionelt er det samme disciplin.",
+      },
+      {
+        question: "Kan jeg stole på kalorierne på airbiken?",
+        answer:
+          "Nej, ikke som en kostdagbog. Computeren estimerer ud fra hvor hårdt du trækker i viften, og tallet hopper mellem mærker. Brug tid og intensitet, når du sammenligner med en magnetcykel. Displayets kcal er motivation, ikke et regnskab.",
       },
       {
         question: "Hvor meget larmer en airbike?",
@@ -4350,18 +4443,18 @@ export const guides: Guide[] = [
   },
   {
     slug: "bedste-vaegmonteret-kabeltaarn-2026",
-    title: "Bedste kabeltårn til vægmontering (2026)",
+    title: "Bedste kabeltårne og funktionelle trænere (2026)",
     excerpt:
-      "Det pladsbesparende alternativ til store cable stations: vægmonteret trækstation og kompakte kabeltårne, der kun rager ca. 15–20 cm ud.",
+      "Vægmonteret kabeltårn eller fritstående functional trainer: vægtstak vs. plate load, pulley-højde og hvor meget gulv du reelt afgiver.",
     metaDescription:
-      "Bedste vægmonterede kabeltårn 2026: enkel vs. dobbelt wire, vægtstak vs. plate load, og krav til væggen (beton vs. gips). Live priser fra danske partnere.",
+      "Bedste kabeltårn og functional trainer 2026: vægtstak vs. plate load, vægmontering vs. gulvstående dual, og plads foran maskinen. Live priser fra danske partnere.",
     categorySlug: "styrkemaskiner",
     intentSlug: "kabeltaarn",
     recommendationsHeading: "Anbefalede kabeltårne",
     publishedAt: "2026-11-04",
-    updatedAt: "2026-11-04",
+    updatedAt: "2026-11-07",
     intro:
-      "Et stort kabeltårn midt i stuen æder kvadratmeter. Et vægmonteret kabeltårn eller en kompakt trækstation rager typisk kun omkring 15–20 cm ud fra væggen, når den ikke er i brug — og det er en af de mest populære opgraderinger, når folk har trænet hjemme et par måneder. Her får du forskellen på enkel vs. dobbelt wire, vægtstak vs. skiver, og hvad din væg faktisk skal kunne holde til.",
+      "Et kabeltårn er den opgradering, de fleste hjemmegym mangler efter bænk og håndvægte: lat pulldown, rows, face pulls og triceps uden et fitnesscenter. Valget er ikke “et tårn eller ej”. Det er væg eller gulv, én trisse eller to, og vægtstak eller dine egne skiver. Et vægmonteret tårn kan rage så lidt som ca. 10 cm ud (GetRX'd Slim i vores feed). En fritstående functional trainer med to stakke fylder som en rigtig station — og giver de uafhængige træk, en enkelt væg-pulley ikke kan. Her er forskellen, pladskravet og modeller med live priser.",
     criteria: [
       {
         title: "Væggens styrke først",
@@ -4381,12 +4474,22 @@ export const guides: Guide[] = [
       {
         title: "Udveksling og følelse",
         description:
-          "1:1 og 1:2 føles forskelligt. Tjek produktspec: nogle “lette” stakke trækker hårdere i grebet end tallene antyder. Prøv i butik, hvis du kan.",
+          "1:1 betyder, at 20 kg på stakken føles som ca. 20 kg i hånden. 2:1 (ofte skrevet 1:2) halverer belastningen i grebet og gør stakken “lettere”, men mere glidende. Tjek produktspec: nogle “lette” stakke trækker hårdere i grebet end tallene antyder, fordi udvekslingen går den anden vej. Sammenlign følelse, ikke kun kilo på klistermærket.",
+      },
+      {
+        title: "Justerbar pulley-højde",
+        description:
+          "En fast høj og lav trisse dækker pulldown og rows. Justerbar højde er det, der gør face pulls, woodchops og en-arms pres mulige uden at flytte bænken. Valhalla-tårnene i feedet nævner justerbare kabler. En functional trainer med mange positioner (som Relax Cable Cross Smalls to justerbare udtag) går videre. Spørg efter antal højder, ikke kun ordet “kabeltårn”.",
+      },
+      {
+        title: "Gulvstående dual vs. væg",
+        description:
+          "Vægmontering vinder, når rummet skal være stue bagefter. GetRX'd Slim stikker ca. 10 cm ud fra væggen. En fritstående functional trainer med to stakke kræver bredden af to stolper plus 1,5–2 m fri zone foran til rows, presses og bænk. Vælg gulv, hvis væggen er gips, eller du vil have to uafhængige træk.",
       },
       {
         title: "Footprint og svingplads",
         description:
-          "Mål ikke kun dybden fra væggen — mål også armens udslag, bænk foran tårnet og døråbninger. Et “tyndt” tårn kan stadig kræve 1,5–2 m fri zone foran.",
+          "Mål ikke kun dybden fra væggen — mål også armens udslag, bænk foran tårnet og døråbninger. Et “tyndt” tårn kan stadig kræve 1,5–2 m fri zone foran. Et dual-tårn skal måles i bredden med armene i yderposition, ikke kun som rammen står på billedet.",
       },
     ],
     products: [
@@ -4481,14 +4584,38 @@ export const guides: Guide[] = [
         ],
         specs: [
           { label: "Type", value: "Wall-mounted single pulley" },
+          { label: "Dybde fra væg", value: "Ca. 10 cm" },
           { label: "Brand", value: "GetRX'd" },
           { label: "Segment", value: "Premium / garage" },
         ],
         feedProductId: "Fitnessengros.dk:FT-SC-2000-SLIM",
       },
+      {
+        id: "odin-pro-cable-cross-elite",
+        name: "Odin PRO Cable Cross Elite (118 kg)",
+        badge: "Bedste fritstående functional trainer",
+        summary:
+          "Gulvstående kabeltårn med to vægtstakke à 59 kg. Det er functional trainer-valget, når du ikke vil bore i væggen, og når én trisse ikke rækker til to uafhængige træk. Shopteksten placerer den til hjemmetræning — ikke kun til et center.",
+        pros: [
+          "To stakke (2 × 59 kg) — dual cable",
+          "Fritstående — ingen krav til betonvæg",
+          "118 kg samlet stak uden plate load-rod",
+        ],
+        cons: [
+          "Markant dyrere end Valhalla",
+          "Fylder som en station, ikke 10 cm fra væggen",
+          "Mål bredde og svingzone i shoppen før køb",
+        ],
+        specs: [
+          { label: "Type", value: "Fritstående cable cross" },
+          { label: "Stak", value: "2 × 59 kg" },
+          { label: "Brand", value: "Odin PRO" },
+        ],
+        feedProductId: "Apuls.dk:15041",
+      },
     ],
     howToChoose:
-      "Usikker væg eller første cable-køb? Home Trækstation 2.0 til væg — men verificér underlaget. Vil du have stak og “tænd og træn”? Valhalla 71 kg. Har du skiver i forvejen? Valhalla PL. Vil du investere i en rigtig wall-mounted pulley? GetRX'd. Shop via “Se pris”.",
+      "Usikker væg eller første cable-køb? Home Trækstation 2.0 til væg — men verificér underlaget. Vil du have stak og “tænd og træn”? Valhalla 71 kg. Har du skiver i forvejen? Valhalla PL. Vil du investere i en rigtig wall-mounted pulley, der kun stikker ca. 10 cm ud? GetRX'd. Vil du have to uafhængige træk og en gulvstående functional trainer? Odin PRO Cable Cross Elite. Et multigym med pres, lår og cable i samme ramme er en anden maskine — se Bedste multistation / Home Gym 2026. Shop via “Se pris”.",
     learningSections: [
       {
         heading: "Hvorfor vægmontering slår gulvtårn i små hjem",
@@ -4501,7 +4628,7 @@ export const guides: Guide[] = [
         heading: "Enkel vs. dobbelt wire",
         paragraphs: [
           "Enkel pulley/tårn: én kabelbane ad gangen. Det dækker 80 % af hjemmebehovet — lat pulldown, seated row, face pulls, curls, triceps, pallof. Dobbelt wire (dual) lader dig arbejde spejlvendt eller med to arme i uafhængige baner; det er fedt til functional training, men fylder og koster mere.",
-          "De fleste, der kommer fra håndvægte, bliver glade for enkel. Køb dual, når du savner den — ikke fordi brochure-billedet ser cool ud.",
+          "De fleste, der kommer fra håndvægte, bliver glade for enkel. Køb dual, når du savner den — ikke fordi brochure-billedet ser cool ud. En functional trainer er stadig et kabeltårn. Vil du have brystpres, lårmaskine og cable i samme ramme, er det en multistation — se Bedste multistation / Home Gym 2026.",
         ],
         comparison: {
           caption: "Kabeltyper til hjemmet",
@@ -5727,14 +5854,14 @@ export const guides: Guide[] = [
     slug: "bedste-power-rack-squat-rack-2026",
     title: "Bedste power rack & squat rack 2026",
     excerpt:
-      "Fra fritstående squat rack til half rack og PRO: sikkerhed, footprint og fire anbefalinger med live priser til home gym.",
+      "Garage-gym med stang: safety, 50×50 vs. 75×75, hulmønster og maks-belastning — plus racks med live priser.",
     metaDescription:
-      "Bedste power rack / squat rack 2026 til hjemmet. Guide til safety bars, half rack og footprint — plus fire anbefalinger med live priser.",
+      "Bedste power rack og squat rack 2026 til garage og kælder. Safety, stålprofil, hulafstand og tilbehør — med live priser fra danske partnere.",
     categorySlug: "styrkemaskiner",
     publishedAt: "2026-11-05",
-    updatedAt: "2026-11-05",
+    updatedAt: "2026-11-07",
     intro:
-      "Justerbare håndvægte og en bænk får dig langt — men squats, bænkpres med stang og tunge pulls kræver et rack med safety. Denne guide er styrke-fundamentets manglende brik: hvornår et simpelt squat rack er nok, hvornår half rack / power rack betaler dig, og fire konkrete modeller med shop-links fra vores partnere.",
+      "Justerbare håndvægte og en bænk får dig langt. Squats, bænkpres med stang og tunge pulls kræver et rack med safety — især når du træner alene i garage eller kælder. Denne guide er den tungere søskende til Det ultimative home gym på budget: hvornår et squat-stativ er nok, hvornår du skal op i 70×70 eller 75×75 mm, og hvad hulmønster og tilbehør betyder, når belastningen bliver seriøs.",
     criteria: [
       {
         title: "Safety bars / spotter arms",
@@ -5754,17 +5881,32 @@ export const guides: Guide[] = [
       {
         title: "Gulvbelastning og bolte",
         description:
-          "Tunge racks skal stå plant. Nogle vil boltes; andre er fritstående med nok egenvægt. Tjek underlag, især i lejlighed.",
+          "I en garage med beton kan et bur boltes fast, og det er den stabile løsning til tunge squats. I en lejet lejlighed er bolte ofte et no-go — vælg fritstående med nok egenvægt, og læg gummi under fødder og plader. Tunge racks skal stå plant, uanset rum.",
+      },
+      {
+        title: "50×50 mm vs. 75×75 mm",
+        description:
+          "50×50 mm er den lettere hjemmeprofil: billigere, nemmere at flytte, og tilbehør fra en anden profil passer sjældent. 70×70 og 75×75 mm er stivere under tung belastning, og dip-station, safety og plate horns er oftere bygget til netop det mål. I partnerfeedet er Abilica HR 550 oplyst som 75×75 mm, Odin Elite Power Rack som 70×70 mm, og Peak Fitness’ foldbare rack som 70×70×3 mm. Køb ikke et smalt stativ og forvent, at et 75 mm-sæt klikker på.",
+      },
+      {
+        title: "Hulafstand og positioner",
+        description:
+          "Westside-hulmønster (hul for ca. hver tomme) lader dig sætte safety og J-hooks præcis i bundpositionen. Mange hjemmeracks har færre huller, ofte omkring 50 mm imellem — feedene skriver sjældent millimetertallet. Nordic Fighter Half Rack Black oplyser 14 positioner. Tæl huller i shopteksten, og vælg det rack, hvor safety kan ramme din dybde i squat og bænk, ikke bare “nogenlunde”.",
+      },
+      {
+        title: "Oplyst maks-belastning",
+        description:
+          "Tallet på rammen er et loft for stativet, ikke et mål for din squat. Nordic Fighter Half Rack Black er oplyst til 450 kg. Dynamisk belastning — når stangen rammer safety — er hårdere end et statisk tal. Gå efter margin, og stol ikke på et rack uden oplyst kapacitet, hvis du løfter tungt alene.",
       },
       {
         title: "Footprint og opbevaring af plader",
         description:
-          "Half racks med plate storage sparer rod — men fylder i bredden. Mål væg-til-væg med vægtstang i J-hooks.",
+          "Half racks med plate storage sparer rod — men fylder i bredden. HR 550 nævner opbevaring til 50 mm skiver. Mål væg-til-væg med vægtstang i J-hooks, og læg plads til at lægge skiver på, uden at de rammer bilen eller væggen.",
       },
       {
         title: "Budget vs. progression",
         description:
-          "Start med et solidt squat rack + safety, hvis du er ny. Opgrader til half/PRO, når stangen og pladerne er beviseligt i brug hver uge.",
+          "Start med et solidt squat rack + safety, hvis du er ny — eller se Det ultimative home gym på budget, hvis hele setuppet skal holde sig under 5.000 kr. Opgrader til half rack eller bur, når stangen er i brug hver uge, og profilen skal bære både vægt og tilbehør.",
       },
     ],
     products: [
@@ -5835,7 +5977,8 @@ export const guides: Guide[] = [
         ],
         specs: [
           { label: "Type", value: "Half rack" },
-          { label: "Segment", value: "Mid/øvre mid" },
+          { label: "Belastning", value: "Op til 450 kg" },
+          { label: "Positioner", value: "14" },
           { label: "Partner", value: "Apuls.dk" },
         ],
         feedProductId: "Apuls.dk:7680",
@@ -5864,9 +6007,56 @@ export const guides: Guide[] = [
         ],
         feedProductId: "Apuls.dk:12767",
       },
+      {
+        id: "abilica-hr-550",
+        name: "Abilica HR 550 Half Rack",
+        badge: "75×75 mm til garagen",
+        summary:
+          "Half rack med 75×75 mm ramme og opbevaring til 50 mm vægtskiver. Det er det konkrete svar, når du vil op fra et let hjemmestativ til et profil, tilbehør faktisk er bygget til — uden at købe et kommercielt bur.",
+        pros: [
+          "75×75 mm oplyst i shopteksten",
+          "Pladeopbevaring til 50 mm skiver",
+          "Half rack-format til hjem og træningsrum",
+          "På lager hos Træningspartner",
+        ],
+        cons: [
+          "Ikke et lukket power bur",
+          "Dyrere end entry squat racks",
+          "Tilbehør skal matche 75 mm-profilen",
+        ],
+        specs: [
+          { label: "Type", value: "Half rack" },
+          { label: "Profil", value: "75×75 mm" },
+          { label: "Skiver", value: "Opbevaring til 50 mm" },
+        ],
+        feedProductId: "Træningspartner:018a929cecbd730a9d8c4f6838621ab3",
+      },
+      {
+        id: "odin-elite-power-rack",
+        name: "Odin Elite Power Rack",
+        badge: "70×70 mm bur",
+        summary:
+          "Power rack med 70×70 mm profiler og J-hooks, beskrevet som kommerciel kvalitet til center og firmagym. Det er buret, når garagen skal tåle tung, hyppig brug — ikke det første stativ til en nybegynder.",
+        pros: [
+          "70×70 mm oplyst i shopteksten",
+          "Lukket power rack med J-hooks",
+          "Bygget til hård, hyppig belastning",
+        ],
+        cons: [
+          "Pris i den kommercielle ende",
+          "Fylder og vejer som et center-bur",
+          "Overkill hvis stangen bruges en gang om ugen",
+        ],
+        specs: [
+          { label: "Type", value: "Power rack" },
+          { label: "Profil", value: "70×70 mm" },
+          { label: "Partner", value: "Apuls.dk" },
+        ],
+        feedProductId: "Apuls.dk:15609",
+      },
     ],
     howToChoose:
-      "Første rack med safety til squat/bænk? Odin med safetybars. Stramt budget? Semi Pro. Vil have half rack-stivhed? Nordic Fighter Half Rack Black. Tung ugentlig progression i årevis? Odin PRO. Kombinér med justerbar bænk og evt. justerbare håndvægte/plader — se relaterede guides. Shop via “Se pris”.",
+      "Første rack med safety til squat/bænk? Odin med safetybars. Stramt budget? Semi Pro — eller Det ultimative home gym på budget, hvis hele rummet skal under 5.000 kr. Half rack med oplyst kapacitet? Nordic Fighter (450 kg, 14 positioner). 75×75 mm og pladeopbevaring til garagen? Abilica HR 550. Lukket bur i 70×70 mm? Odin Elite. Tung PRO-squat uden at gå fuldt bur? Odin PRO. Kombinér med justerbar bænk. Shop via “Se pris”.",
     learningSections: [
       {
         heading: "Hvorfor safety ikke er “nice to have”",
@@ -5876,10 +6066,55 @@ export const guides: Guide[] = [
         ],
       },
       {
+        heading: "Squat-stativ, half rack eller bur",
+        paragraphs: [
+          "Et fritstående squat-stativ er to stolper og en safety, hvis den følger med. Det er nok til squat og bænk, når pladsen er smal. Et half rack er stivere og har oftere pull-up og et sted at hænge skiver. Et power rack er fire stolper: sværere at misse safety, og flere steder at bolte tilbehør på.",
+          "Vælg efter den øvelse, du ikke kan droppe sikkert — ikke efter hvor “komplet” billedet ser ud.",
+        ],
+        comparison: {
+          caption: "Tre rack-typer til garage og kælder",
+          rowHeaderLabel: "Type",
+          columns: ["Sikkerhed", "Plads", "Tilbehør"],
+          rows: [
+            {
+              label: "Squat-stativ",
+              cells: [
+                "Safety, hvis de følger med",
+                "Mindst gulvplads",
+                "Få fæster",
+              ],
+            },
+            {
+              label: "Half rack",
+              cells: [
+                "Safety og mere stivhed",
+                "Bredere, ofte pladeopbevaring",
+                "J-hooks, pull-up, 75×75 på nogle",
+              ],
+            },
+            {
+              label: "Power rack",
+              cells: [
+                "Fire stolper omkring stangen",
+                "Størst",
+                "Dip, landmine og lat, hvis profilen passer",
+              ],
+            },
+          ],
+        },
+      },
+      {
+        heading: "Tilbehør der gør racket til et garage-gym",
+        paragraphs: [
+          "J-hooks holder stangen. Safety fanger den. Det er basen. Dip-håndtag, landmine, lat/row-pulley og plate storage er det, der gør buret til hele styrkerummet. Køb tilbehør der er lavet til din profil: et dip-sæt til 75×75 mm sidder ikke på et 50×50 mm-stativ.",
+          "Nogle bure sælges med sættet i kassen. Odin Pro Ragnarok 4000’s titel inkluderer multi arms, lat, row, dips, landmine og safety arms — læs med, om det er standard eller tilvalg, før du sammenligner prisen med et nøgent rack. Nordic Fighter sælger dip-håndtag separat til deres power rack. Start med safety og J-hooks. Læg dip og landmine til, når de tre store løft sidder.",
+        ],
+      },
+      {
         heading: "Rack + bænk + vægte = fundament",
         paragraphs: [
           "Racket er skelettet. Bænken og vægtene er musklerne. Køb i den rækkefølge, din træning kræver — ikke efter det flotteste bur på Instagram.",
-          "Se Bedste justerbare træningsbænk og budget-home-gym-guiden for pakketænkning under 5.000–10.000 kr.",
+          "Se Bedste justerbare træningsbænk og Det ultimative home gym på budget, hvis pakken skal holdes under 5.000 kr. Denne guide er garagen, når det budget ikke rækker til stang, safety og en profil der kan bære det.",
         ],
       },
       {
@@ -5895,6 +6130,11 @@ export const guides: Guide[] = [
         question: "Hvad er forskellen på squat rack og power rack?",
         answer:
           "Squat rack er typisk to stolper (evt. med safety). Power rack/bur er fire stolper med mere indeslutning og øvelsesfrihed. Half rack ligger imellem.",
+      },
+      {
+        question: "Skal jeg vælge 50×50 eller 75×75 mm?",
+        answer:
+          "50×50 mm er den lettere hjemmeprofil. 75×75 mm (Abilica HR 550 i feedet) og 70×70 mm (Odin Elite) er stivere og passer til mere garage-tilbehør. Bland ikke profiler: dip og safety fra den ene sidder ikke på den anden.",
       },
       {
         question: "Skal jeg have safety bars?",
@@ -6588,7 +6828,7 @@ export const guides: Guide[] = [
     publishedAt: "2026-11-05",
     updatedAt: "2026-11-05",
     intro:
-      "Du behøver ikke 20 m² garagegym. På ca. 10 m² (eller et lille sove-/kontor-/gæsteværelse) kan du få både cardio og styrke — hvis hver ting kan foldes, stables eller rulles væk. Denne guide er situationsbestemt: fire pladsoptimale anbefalinger, der spiller sammen, plus regler for footprint, loftshøjde og “kan det væk på to minutter?”.",
+      "Du behøver ikke 20 m² garagegym. På ca. 10 m² (eller et lille sove-/kontor-/gæsteværelse) kan du få både cardio og styrke — hvis hver ting kan foldes, stables eller rulles væk. Denne guide er situationsbestemt: fire pladsoptimale anbefalinger, der spiller sammen, plus regler for footprint, loftshøjde og “kan det væk på to minutter?”. Er problemet skråvæg og trædehøjde frem for gulvplads, så læs Bedste cardio under lavt loft.",
     criteria: [
       {
         title: "Alt skal kunne forsvinde",
@@ -6780,6 +7020,7 @@ export const guides: Guide[] = [
       "bedste-gaabaand-2026",
       "gaabaand-til-kontoret-2026",
       "bedste-stoejsvage-traeningsmaskiner-lejlighed-2026",
+      "bedste-cardio-under-lavt-loft-2026",
     ],
   },
   {
@@ -8138,6 +8379,242 @@ export const guides: Guide[] = [
       "bedste-motionscykel-2026",
       "motionscykel-eller-spinningcykel-2026",
       "bedste-crosstrainer-2026",
+      "bedste-cardio-under-lavt-loft-2026",
+    ],
+  },
+  {
+    slug: "bedste-cardio-under-lavt-loft-2026",
+    title: "Bedste cardio under lavt loft og skråvæg (2026)",
+    excerpt:
+      "Kælder og skråvæg: sådan måler du trædehøjde, før løbebånd eller crosstrainer rammer loftet — plus fire maskiner der holder dig nede.",
+    metaDescription:
+      "Cardio under lavt loft og skråvæg 2026. Mål trædehøjde på løbebånd, crosstrainer, romaskine og siddecykel — med live priser fra danske partnere.",
+    categorySlug: "loebebaand",
+    publishedAt: "2026-11-07",
+    updatedAt: "2026-11-07",
+    intro:
+      "Mange danske fitnessrum ligger i en kælder eller under en skråvæg, hvor loftet er højt midt i rummet og lavt der, hvor du faktisk står. Et løbebånds dæk løfter dig, og løb lægger et hop oveni. En crosstrainers pedaler løfter dig endnu mere i toppen af skridtet. En romaskine og en siddecykel holder dig i sædet. Denne guide er regnestykket: gulv til laveste loft, minus din højde i bevægelsen, minus 10–15 cm luft. Og fire maskiner, der holder kroppen nede — uden opdigtede centimetertal, feedet ikke oplyser.",
+    criteria: [
+      {
+        title: "Mål der, hvor hovedet er højest",
+        description:
+          "Mål fra gulv til loft det sted, hovedet er, når bevægelsen topper — ikke midt i rummet, hvor skråvæggen er højest. På et løbebånd er det over dækket, mens du løber. På en crosstrainer er det over pedalen i topposition, med opret overkrop. Træk 10–15 cm fra, så håret og et nys ikke rammer gipsen.",
+      },
+      {
+        title: "Trædehøjde er ikke indstigningshøjde",
+        description:
+          "“Lav indstigning” i en shoptekst betyder, at du kan komme op på maskinen uden at svinge benet højt. Det siger intet om, hvor højt pedalen eller dækket løfter dig, når du træner. En crosstrainer kan være nem at stige på og stadig sende hovedet i skråvæggen i toppen af skridtet.",
+      },
+      {
+        title: "Maskinens egen højde",
+        description:
+          "Konsol, styret og håndtag stjæler loft, selv om din isse er lavere. Et gåbånd uden håndtag (Ascendic Essential beskrives som lav og uden håndtag) er et andet rum end et løbebånd med konsol i øjenhøjde. Mål den højeste faste del, og den højeste del af dig.",
+      },
+      {
+        title: "Gang og sæde slår løb og ellipse",
+        description:
+          "Gang på et fladt bånd holder hovedet roligt. Løb adderer et hop over dækket. Crosstrainerens pedalbane er den klassiske skråvægs-fælde. Roning og siddecykel holder dig siddende. Vælg den bevægelse, hvis top du kan måle, ikke den maskine der ser mest “cardio” ud.",
+      },
+      {
+        title: "Foldbar løser gulv, ikke loft",
+        description:
+          "En foldbar maskine kan gemmes, når du er færdig. Den ændrer ikke trædehøjden, mens du bruger den. Se Bedste foldbare & kompakte træningsmaskiner, hvis problemet er gulvplads. Brug denne guide, hvis problemet er loftet.",
+      },
+    ],
+    products: [
+      {
+        id: "lavt-loft-walking-pad",
+        name: "Ascendic Essential Walking Pad",
+        badge: "Tættest på gulvet",
+        summary:
+          "Shopteksten kalder den lav og uden håndtag. Du går, du løber ikke, så der er ikke et hop over et dæk og ingen konsol i øjenhøjde. Det er det sikreste cardio-valg under en skråvæg, når målet er skridt og rolig puls.",
+        pros: [
+          "Lav og uden håndtag ifølge shoppen",
+          "Gang i stedet for løb",
+          "Kan skubbes væk efter brug",
+          "Skarp pris",
+        ],
+        cons: [
+          "Ikke til løb",
+          "Ingen oplyst tykkelse i den korte feed-tekst — mål selv",
+          "For let, hvis du vil have intervaller",
+        ],
+        specs: [
+          { label: "Type", value: "Gåbånd" },
+          { label: "Håndtag", value: "Ingen" },
+          { label: "Partner", value: "Ascendic.dk" },
+        ],
+        feedProductId: "Ascendic.dk:56388648173912",
+      },
+      {
+        id: "lavt-loft-concept2",
+        name: "Concept2 Model D PM5",
+        badge: "Sæde 36 cm",
+        summary:
+          "Du sidder og ror, du står ikke. På den høje Model D oplyser Concept2 sædehøjde 51 cm og skriver, at standardmodellen er 36 cm. Standard Model D er derfor et af de få cardio-valg, hvor vi kan sige et tal for, hvor højt kroppen starter — og hovedet løfter sig i trækket, så mål stadig til loft i toppen af bevægelsen.",
+        pros: [
+          "Sædehøjde 36 cm oplyst via Concept2s egen sammenligning",
+          "Siddende — intet pedalhop",
+          "Kendt holdbarhed til daglig roning",
+        ],
+        cons: [
+          "Skinnen kræver længde, ikke loft",
+          "Hovedet stiger, når du læner dig tilbage",
+          "Luftmodstand larmer mere end magnet",
+        ],
+        specs: [
+          { label: "Type", value: "Romaskine, luft" },
+          { label: "Sæde", value: "36 cm (standard)" },
+          { label: "Partner", value: "Apuls.dk" },
+        ],
+        feedProductId: "Apuls.dk:12843",
+      },
+      {
+        id: "lavt-loft-siddecykel",
+        name: "Odin RB-800 Comfort Siddecykel",
+        badge: "Siddende under skråvæggen",
+        summary:
+          "Ryglæn og lav indstigning holder dig i sædet i stedet for at løfte dig op på pedaler. Det er cardio, hvor hovedet bliver i nogenlunde samme højde hele pasningen. Feedet oplyser ikke sædehøjden i centimeter — mål den med sædet, hvor du faktisk sidder.",
+        pros: [
+          "Siddende med ryglæn",
+          "Ingen stående pedalposition",
+          "Skånsom for knæ sammenlignet med løb",
+        ],
+        cons: [
+          "Ingen oplyst sædehøjde i cm",
+          "Fylder i længden, når ryglænet er tilbage",
+          "Ikke til intervaller på stående",
+        ],
+        specs: [
+          { label: "Type", value: "Siddecykel" },
+          { label: "Position", value: "Siddende med ryglæn" },
+          { label: "Partner", value: "Apuls.dk" },
+        ],
+        feedProductId: "Apuls.dk:15031",
+      },
+      {
+        id: "lavt-loft-f20",
+        name: "Tunturi Signature F20",
+        badge: "Siddende, lav indstigning",
+        summary:
+          "Opret motionscykel med lav indstigning: nemt af og på, og du bliver i sadlen. Det slår en crosstrainer under en skråvæg, fordi pedalerne ikke løfter hele kroppen. Sadlen kan stadig sættes så højt, at hovedet rammer — sæt den, og mål, før du køber et løbebånd i stedet.",
+        pros: [
+          "Lav indstigning ifølge shoppen",
+          "Siddende træning",
+          "Mere “rigtig cykel” end en siddecykel, hvis du vil det",
+        ],
+        cons: [
+          "Sadelhøjde kan stadig ramme loftet",
+          "Ikke en løsning, hvis du vil løbe",
+          "Lav indstigning er ikke det samme som lav trædehøjde",
+        ],
+        specs: [
+          { label: "Type", value: "Motionscykel" },
+          { label: "Indstigning", value: "Lav" },
+          { label: "Partner", value: "HomeX.dk" },
+        ],
+        feedProductId: "HomeX.dk:3385",
+      },
+    ],
+    howToChoose:
+      "Skråvæg og gang er nok? Ascendic Essential Walking Pad. Vil du sidde lavt og kende et tal? Concept2 Model D, sæde 36 cm på standardmodellen. Ryglæn og rolig cardio? Odin RB-800. Opret cykel, hvor du selv sænker sadlen? Tunturi F20. Vil du løbe eller køre crosstrainer, så mål dækket eller pedalens top under dit laveste loft og behold 10–15 cm. Er problemet kvadratmeter og ikke loft, se Home gym til lille værelse og Bedste foldbare & kompakte træningsmaskiner. Shop via “Se pris”.",
+    learningSections: [
+      {
+        heading: "Regnestykket",
+        paragraphs: [
+          "Fri højde = loft der, hvor hovedet er højest, minus din højde i den bevægelse, minus 10–15 cm. En person på 180 cm, der står på et dæk, er ikke 180 cm over gulvet. Dækkets tykkelse plus et løbeskridt lægges oveni. Sidder du, er det sædehøjde plus overkrop, ikke din stående højde.",
+          "Skriv tallet ned, før du forelsker dig i en maskine. Shoppens “højde” er ofte konsollen, ikke den højde du opnår i brug.",
+        ],
+      },
+      {
+        heading: "Hvad de forskellige maskiner løfter dig",
+        paragraphs: [
+          "Løbebånd: dækket er et trin, og løb hopper ovenpå. Gåbånd uden stigning holder skridtet fladt. Crosstrainer: pedalen er lavest foran og højest i toppen af ellipsen — det er dér, skråvægge vinder over folk, der kun målte midt i rummet. Romaskine: du starter i sædet. Concept2 oplyser 36 cm på standard Model D og 51 cm på den høje. Siddecykel og opret cykel: du sidder, men sadlen er et tal, du selv skal måle.",
+          "Vi skriver kun de centimeter, feedet faktisk nævner. Resten er en tommestok i kælderen, ikke et gæt herfra.",
+        ],
+        comparison: {
+          caption: "Hvor kroppen er, mens du træner",
+          rowHeaderLabel: "Maskine",
+          columns: ["Kroppen", "Fast højde", "Under skråvæg"],
+          rows: [
+            {
+              label: "Gåbånd",
+              cells: ["Går, tæt på gulvet", "Ofte uden håndtag", "Det sikre valg"],
+            },
+            {
+              label: "Løbebånd",
+              cells: ["Dæk + hop", "Konsol kan være høj", "Kun med målt margin"],
+            },
+            {
+              label: "Crosstrainer",
+              cells: ["Pedalens top, opret", "Konsol foran brystet", "Mål toppen af skridtet"],
+            },
+            {
+              label: "Romaskine",
+              cells: ["Sæde, 36 cm på Concept2 standard", "Lav computer", "Ja, hvis trækket ikke rammer"],
+            },
+            {
+              label: "Siddecykel",
+              cells: ["Sæde med ryglæn", "Skærm foran, ikke over dig", "Ja"],
+            },
+          ],
+        },
+      },
+      {
+        heading: "Skråvæg: mål skråningen, ikke midten",
+        paragraphs: [
+          "Et loft på 240 cm midt i rummet kan være 190 cm en meter ude ved knævæggen. Stil maskinen der, den skal stå, og mål lodret over det punkt, hovedet når. På en crosstrainer er det ofte længere fremme end rammens midte, fordi pedalen svinger.",
+          "Et smalt rum med skrå begge veje efterlader en stribe, der er høj nok. Maskinen skal kunne stå i den stribe, ikke “i rummet” generelt.",
+        ],
+      },
+      {
+        heading: "Hvornår cykel eller romaskine er det ærlige køb",
+        paragraphs: [
+          "Hvis regnestykket ikke levner 10 cm over et løbende hoved, så køb ikke løbebåndet og håb. En siddecykel, en opret cykel med sænket sadel eller en romaskine giver kondition uden at løfte dig op på et dæk. Se Bedste siddecykel 2026, Bedste romaskine 2026 og Bedste crosstrainer 2026, hvis du vil sammenligne maskintype bagefter.",
+          "Gulvplads er en anden begrænsning. Home gym til lille værelse / ca. 10 m² handler om at pakke udstyret væk. Her handler det om ikke at slå hovedet, mens det er i brug.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "Hvad er trædehøjde?",
+        answer:
+          "Hvor højt maskinen løfter dig over gulvet, mens du bruger den. På et løbebånd er det dækket. På en crosstrainer er det pedalen i top. Det er ikke det samme som maskinens samlede højde eller “lav indstigning”.",
+      },
+      {
+        question: "Hvordan måler jeg under en skråvæg?",
+        answer:
+          "Mål fra gulv til loft det sted, hovedet er på det højeste punkt i bevægelsen. Træk din højde i den stilling fra, og behold 10–15 cm. Mål ikke kun midt i rummet.",
+      },
+      {
+        question: "Kan jeg have løbebånd under et lavt loft?",
+        answer:
+          "Kun hvis dæk plus din løbshøjde plus 10–15 cm er under loftet der, hvor du løber. Ellers er et gåbånd, en romaskine eller en siddecykel det ærlige valg.",
+      },
+      {
+        question: "Er en crosstrainer med lav indstigning lav nok?",
+        answer:
+          "Ikke automatisk. Lav indstigning betyder, at du let kommer op. Pedalen kan stadig løfte dig højt i skridtet. Mål toppen, før du køber.",
+      },
+      {
+        question: "Hvilken maskine holder mig tættest på gulvet?",
+        answer:
+          "Et gåbånd uden håndtag, som Ascendic Essential. Derefter siddende valg: Concept2 Model D (sæde 36 cm på standard) og en siddecykel som Odin RB-800.",
+      },
+      {
+        question: "Hvordan ser jeg aktuelle priser?",
+        answer:
+          "Klik “Se pris” på anbefalingerne. Pris og lager kommer live fra partneren. Flere løbebånd og gåbånd ligger under Løbebånd.",
+      },
+    ],
+    relatedSlugs: [
+      "bedste-loebebaand-2026",
+      "bedste-crosstrainer-2026",
+      "bedste-foldbare-kompakte-traeningsmaskiner-2026",
+      "home-gym-til-lille-vaerelse-10m2-2026",
+      "bedste-gaabaand-2026",
+      "bedste-siddecykel-2026",
+      "bedste-romaskine-2026",
     ],
   },
 ];

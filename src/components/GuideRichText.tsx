@@ -51,6 +51,10 @@ const GUIDE_LINK_ALIASES: Record<string, string[]> = {
     "Home gym til lille værelse / ca. 10 m²",
     "Home gym til lille værelse",
   ],
+  "bedste-cardio-under-lavt-loft-2026": [
+    "Bedste cardio under lavt loft",
+    "cardio under lavt loft",
+  ],
   "bedste-traeningsudstyr-til-vaegttab-hjemme-2026": [
     "Bedste træningsudstyr til vægttab hjemme 2026",
   ],
