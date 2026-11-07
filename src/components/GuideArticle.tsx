@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { GuideAffiliateBanner } from "@/components/GuideAffiliateBanner";
 import { GuideRichText } from "@/components/GuideRichText";
 import { ProductOfferList } from "@/components/ProductOfferList";
 import { categoryIntentHref, getCategory } from "@/lib/categories";
@@ -383,6 +384,8 @@ export async function GuideArticle({ guide }: { guide: Guide }) {
             </Link>
           </aside>
         ) : null}
+
+        <GuideAffiliateBanner guide={guide} />
 
         <section id="saadan-vaelger-du" className="mt-14 scroll-mt-28">
           <h2 className="font-display text-2xl font-semibold uppercase tracking-wide text-foreground">
