@@ -77,6 +77,12 @@ export const PARTNER_ADS_FEEDS: readonly PartnerAdsFeed[] = [
     merchant: "Fitnessgruppen.dk",
   },
   {
+    id: "gopad",
+    bannerId: "117030",
+    feedId: "4326",
+    merchant: "GoPad",
+  },
+  {
     id: "homex",
     bannerId: "92127",
     feedId: "2425",
