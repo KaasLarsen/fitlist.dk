@@ -1,4 +1,7 @@
-import { ensurePartnerAdsKlikUid } from "@/lib/feeds/config";
+import {
+  ensureAdtractionEpi,
+  ensurePartnerAdsKlikUid,
+} from "@/lib/feeds/config";
 import type { FeedProduct } from "@/lib/feeds/types";
 
 const UA =
@@ -107,6 +110,75 @@ export function parsePartnerAdsXml(
       inStock: parseInStock(
         pickTag(block, "lagerantal") || pickTag(block, "lagerstatus"),
       ),
+    });
+  }
+
+  return out;
+}
+
+/** Andet decode-pas. Feedet skriver `&amp;gt;` og `&amp;amp;`. */
+function pickTagDeep(block: string, tag: string): string {
+  return decodeHtmlEntities(pickTag(block, tag));
+}
+
+function splitItemBlocks(xml: string): string[] {
+  const blocks: string[] = [];
+  const re = /<item>([\s\S]*?)<\/item>/gi;
+  let m: RegExpExecArray | null;
+  while ((m = re.exec(xml)) !== null) {
+    blocks.push(m[1]);
+  }
+  return blocks;
+}
+
+/** Google Shopping `g:availability` — `out_of_stock` er ikke “out of stock”. */
+function parseGoogleAvailability(raw: string): boolean {
+  const v = raw.trim().toLowerCase().replace(/[\s-]+/g, "_");
+  if (v === "out_of_stock" || v === "outofstock" || v === "unavailable") {
+    return false;
+  }
+  if (!v || v === "in_stock" || v === "instock") return true;
+  return parseInStock(raw);
+}
+
+/**
+ * Adtraction-feed med gsh=1: RSS 2.0 + Google-namespace (`<item>`, `g:*`).
+ */
+export function parseAdtractionGoogleRss(
+  xml: string,
+  merchant: string,
+): FeedProduct[] {
+  const out: FeedProduct[] = [];
+
+  for (const block of splitItemBlocks(xml)) {
+    const title = pickTagDeep(block, "title");
+    const urlRaw = pickTagDeep(block, "link");
+    const productId = pickTagDeep(block, "g:id");
+    if (!title || !urlRaw || !productId) continue;
+
+    const regular = parsePrice(pickTagDeep(block, "g:price"));
+    const sale = parsePrice(pickTagDeep(block, "g:sale_price"));
+    let price = regular;
+    let oldPrice: number | null = null;
+    if (sale != null && regular != null && sale < regular) {
+      price = sale;
+      oldPrice = regular;
+    } else if (sale != null && regular == null) {
+      price = sale;
+    }
+
+    out.push({
+      id: `${merchant}:${productId}`,
+      merchant,
+      title,
+      desc: pickTagDeep(block, "description"),
+      category: pickTagDeep(block, "g:product_type"),
+      brand: pickTagDeep(block, "g:brand"),
+      price,
+      oldPrice,
+      image: pickTagDeep(block, "g:image_link"),
+      url: ensureAdtractionEpi(urlRaw),
+      inStock: parseGoogleAvailability(pickTagDeep(block, "g:availability")),
     });
   }
 

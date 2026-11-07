@@ -1,11 +1,19 @@
 import { unstable_cache } from "next/cache";
 import {
-  PARTNER_ADS_FEEDS,
+  CATALOG_FEEDS,
+  isAdtractionFeed,
   partnerAdsFeedUrl,
+  type AdtractionFeed,
+  type CatalogFeed,
   type PartnerAdsFeed,
 } from "@/lib/feeds/config";
-import { passesMerchantGate } from "@/lib/feeds/classify";
-import { decodeFeedText, parsePartnerAdsXml, UA } from "@/lib/feeds/parse";
+import { classifyProduct, passesMerchantGate } from "@/lib/feeds/classify";
+import {
+  decodeFeedText,
+  parseAdtractionGoogleRss,
+  parsePartnerAdsXml,
+  UA,
+} from "@/lib/feeds/parse";
 import type { FeedProduct } from "@/lib/feeds/types";
 
 const FEED_CACHE_VERSION = "v1";
@@ -20,13 +28,11 @@ function slimFeedProducts(products: FeedProduct[]): FeedProduct[] {
   }));
 }
 
-export async function fetchFeedProductsInner(
-  feed: PartnerAdsFeed,
-  opts?: { timeoutMs?: number },
-): Promise<FeedProduct[]> {
-  const url = partnerAdsFeedUrl(feed);
-  const timeoutMs = opts?.timeoutMs ?? DEFAULT_TIMEOUT_MS;
-
+async function fetchFeedText(
+  url: string,
+  merchant: string,
+  timeoutMs: number,
+): Promise<string> {
   const res = await fetch(url, {
     headers: {
       "user-agent": UA,
@@ -38,35 +44,79 @@ export async function fetchFeedProductsInner(
   });
 
   if (!res.ok) {
-    throw new Error(
-      `[feed] ${feed.merchant} HTTP ${res.status} for ${url}`,
-    );
+    throw new Error(`[feed] ${merchant} HTTP ${res.status} for ${url}`);
   }
 
   const buf = await res.arrayBuffer();
-  const text = decodeFeedText(buf);
+  return decodeFeedText(buf);
+}
+
+export async function fetchFeedProductsInner(
+  feed: PartnerAdsFeed,
+  opts?: { timeoutMs?: number },
+): Promise<FeedProduct[]> {
+  const url = partnerAdsFeedUrl(feed);
+  const timeoutMs = opts?.timeoutMs ?? DEFAULT_TIMEOUT_MS;
+  const text = await fetchFeedText(url, feed.merchant, timeoutMs);
   return parsePartnerAdsXml(text, feed.merchant).filter(passesMerchantGate);
 }
 
-async function fetchFeedProductsForCache(
-  feed: PartnerAdsFeed,
+/**
+ * Adtraction-kataloget er stort (tøj, tilskud, kampsport).
+ * Kun varer som klassificeringen accepterer caches — ellers rammer
+ * Next.js’ 2 MB-grænse pr. cache-entry.
+ */
+export async function fetchAdtractionProductsInner(
+  feed: AdtractionFeed,
+  opts?: { timeoutMs?: number },
 ): Promise<FeedProduct[]> {
-  const products = await fetchFeedProductsInner(feed);
+  const timeoutMs = opts?.timeoutMs ?? DEFAULT_TIMEOUT_MS;
+  const text = await fetchFeedText(feed.feedUrl, feed.merchant, timeoutMs);
+  return parseAdtractionGoogleRss(text, feed.merchant).filter(
+    (product) => classifyProduct(product) != null,
+  );
+}
+
+export async function fetchCatalogFeedInner(
+  feed: CatalogFeed,
+  opts?: { timeoutMs?: number },
+): Promise<FeedProduct[]> {
+  if (isAdtractionFeed(feed)) return fetchAdtractionProductsInner(feed, opts);
+  return fetchFeedProductsInner(feed, opts);
+}
+
+async function fetchFeedProductsForCache(
+  feed: CatalogFeed,
+): Promise<FeedProduct[]> {
+  const products = await fetchCatalogFeedInner(feed);
   return slimFeedProducts(products);
 }
 
+function feedCacheKey(feed: CatalogFeed): string[] {
+  if (isAdtractionFeed(feed)) {
+    return [
+      "fitlist-feed",
+      FEED_CACHE_VERSION,
+      "adtraction",
+      feed.id,
+      feed.feedUrl,
+    ];
+  }
+  return [
+    "fitlist-feed",
+    FEED_CACHE_VERSION,
+    feed.id,
+    feed.bannerId,
+    feed.feedId,
+  ];
+}
+
 export async function getCachedFeedProducts(
-  feed: PartnerAdsFeed,
+  feed: CatalogFeed,
 ): Promise<FeedProduct[]> {
   const cached = unstable_cache(
     () => fetchFeedProductsForCache(feed),
-    [
-      "fitlist-feed",
-      FEED_CACHE_VERSION,
-      feed.id,
-      feed.bannerId,
-      feed.feedId,
-    ],
+    feedCacheKey(feed),
     { revalidate: FEED_REVALIDATE_SECONDS, tags: ["fitlist-feeds"] },
   );
 
@@ -86,7 +136,7 @@ export async function warmAllFeeds(): Promise<{
   error?: string;
 }[]> {
   return Promise.all(
-    PARTNER_ADS_FEEDS.map(async (feed) => {
+    CATALOG_FEEDS.map(async (feed) => {
       try {
         const products = await getCachedFeedProducts(feed);
         return {

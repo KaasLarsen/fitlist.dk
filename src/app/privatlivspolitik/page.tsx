@@ -74,7 +74,7 @@ export default function PrivatlivspolitikPage() {
             <li className="border-l-2 border-accent/40 pl-5">
               <strong className="text-foreground">Affiliate-klik.</strong> Når
               du klikker videre til en forhandler via vores links, kan
-              affiliate-netværk og webshops (fx Partner-Ads og den enkelte
+              affiliate-netværk og webshops (fx Partner-Ads, Adtraction og den enkelte
               butik) registrere klikket hos dem. Den behandling sker typisk hos
               dem som selvstændige dataansvarlige.
             </li>

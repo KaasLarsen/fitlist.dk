@@ -75,7 +75,7 @@ export default function CookiesPage() {
           </h2>
           <p className="mt-4 text-muted leading-relaxed">
             Når du klikker på et affiliate-link og forlader Fitlist, kan
-            forhandleren eller affiliate-netværket (fx Partner-Ads) sætte egne
+            forhandleren eller affiliate-netværket (fx Partner-Ads og Adtraction) sætte egne
             cookies i deres regi for at registrere klik og køb. Det styres af
             dem — ikke af Fitlist. Se også{" "}
             <Link

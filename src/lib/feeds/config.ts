@@ -159,3 +159,52 @@ export function ensurePartnerAdsKlikUid(
     return trimmed;
   }
 }
+
+/**
+ * Adtraction-produktfeeds (Google Shopping-RSS når gsh=1).
+ * epi svarer til Partner-Ads uid og må ikke indeholde `/`.
+ */
+export const ADTRACTION_EPI = "fitlist";
+
+export type AdtractionFeed = {
+  id: string;
+  merchant: string;
+  /** Færdig feed-URL fra Adtraction (format=XML, gsh=1). */
+  feedUrl: string;
+};
+
+export const ADTRACTION_FEEDS: readonly AdtractionFeed[] = [
+  {
+    id: "sportgymbutikken",
+    merchant: "Sportgymbutikken",
+    feedUrl:
+      "https://secure.adtraction.com/productfeed.htm?type=feed&format=XML&encoding=UTF8&epi=0&zip=0&cdelim=tab&tdelim=singlequote&sd=0&sn=0&flat=0&apid=1954033533&asid=2127168443&gsh=1&pfid=2769&gt=0",
+  },
+] as const;
+
+export type CatalogFeed = PartnerAdsFeed | AdtractionFeed;
+
+export function isAdtractionFeed(feed: CatalogFeed): feed is AdtractionFeed {
+  return "feedUrl" in feed;
+}
+
+export const CATALOG_FEEDS: readonly CatalogFeed[] = [
+  ...PARTNER_ADS_FEEDS,
+  ...ADTRACTION_FEEDS,
+];
+
+/** Sæt epi på Adtraction-trackinglinks fra produktfeeds. */
+export function ensureAdtractionEpi(
+  href: string,
+  epi: string = ADTRACTION_EPI,
+): string {
+  const trimmed = href.trim();
+  if (!trimmed) return trimmed;
+  try {
+    const u = new URL(trimmed);
+    u.searchParams.set("epi", epi.trim() || ADTRACTION_EPI);
+    return u.toString();
+  } catch {
+    return trimmed;
+  }
+}

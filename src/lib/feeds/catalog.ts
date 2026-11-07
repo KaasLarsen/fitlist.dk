@@ -1,5 +1,5 @@
 import { unstable_cache } from "next/cache";
-import { PARTNER_ADS_FEEDS } from "@/lib/feeds/config";
+import { CATALOG_FEEDS } from "@/lib/feeds/config";
 import {
   classifyProducts,
   refineBilligIntent,
@@ -10,11 +10,11 @@ import {
 } from "@/lib/feeds/fetch";
 import type { FeedProduct, MachineCategorySlug } from "@/lib/feeds/types";
 
-const CATALOG_CACHE_VERSION = "v9";
+const CATALOG_CACHE_VERSION = "v10";
 
 async function buildMachineCatalog(): Promise<FeedProduct[]> {
   const batches = await Promise.all(
-    PARTNER_ADS_FEEDS.map((feed) => getCachedFeedProducts(feed)),
+    CATALOG_FEEDS.map((feed) => getCachedFeedProducts(feed)),
   );
   const all = batches.flat();
   const classified = classifyProducts(all);
@@ -63,7 +63,7 @@ export async function getFeedProductById(
 
   const merchant = id.split(":")[0];
   if (!merchant) return undefined;
-  const feed = PARTNER_ADS_FEEDS.find((f) => f.merchant === merchant);
+  const feed = CATALOG_FEEDS.find((f) => f.merchant === merchant);
   if (!feed) return undefined;
 
   const raw = await getCachedFeedProducts(feed);
