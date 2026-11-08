@@ -61,6 +61,21 @@ const GUIDE_LINK_ALIASES: Record<string, string[]> = {
   "bedste-traeningsudstyr-til-par-hjemmegym-2026": [
     "Bedste træningsudstyr til par / delt hjemmegym 2026",
   ],
+  "bedste-mavebaenk-rygtraener-2026": [
+    "Bedste mavebænk og rygtræner 2026",
+  ],
+  "bedste-sjippetov-traeningsmaatte-lejlighed-2026": [
+    "Bedste sjippetov og træningsmåtte til lejligheden",
+  ],
+  "bedste-vaegtstangssaet-bumper-plates-2026": [
+    "Bedste vægtstangssæt og bumper plates 2026",
+  ],
+  "bedste-traeningselastikker-slyngetraener-2026": [
+    "Bedste træningselastikker og slyngetræner 2026",
+  ],
+  "incline-loebebaand-eller-klassisk-2026": [
+    "Incline løbebånd eller klassisk løbebånd",
+  ],
 };
 
 function linkLabelsForGuide(guide: Guide): string[] {

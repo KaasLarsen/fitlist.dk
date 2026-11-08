@@ -577,6 +577,21 @@ describe("classifyProduct — real machines kept", () => {
     assert.ok(r!.intentSlugs?.includes("multistation"));
   });
 
+  it("classifies hyperextension, roman chair, rygtræner and skråbænk as træningsbænk", () => {
+    for (const title of [
+      "Odin Semi Pro Hyperextension Rygtræner",
+      "Premium RomanChair 90 Back Extension",
+      "Finnlo Tricon rygtræner",
+      "Peak Fitness Foldbar Skråbænk",
+      "Odin SitUp Mavebænk",
+    ]) {
+      const r = classifyProduct(product({ title, price: 999 }));
+      assert.ok(r, title);
+      assert.equal(r!.categorySlug, "styrkemaskiner", title);
+      assert.ok(r!.intentSlugs?.includes("traeningsbaenk"), title);
+    }
+  });
+
   it("classifies justerbar træningsbænk as styrkemaskiner + traeningsbaenk", () => {
     const r = classifyProduct(
       product({

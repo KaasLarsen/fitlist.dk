@@ -411,7 +411,7 @@ export const guides: Guide[] = [
       {
         question: "Skal jeg købe underlagsmåtte?",
         answer:
-          "Ja, i lejlighed næsten altid. Måtten beskytter gulv og dæmper vibration. Vi anbefaler Titan Life Floor Guard Mat til cykel-footprint og en dedikeret walking pad-måtte til gåbånd — se anbefalingerne ovenfor med aktuelle priser.",
+          "Ja, i lejlighed næsten altid. Måtten beskytter gulv og dæmper vibration. Vi anbefaler Titan Life Floor Guard Mat til cykel-footprint og en dedikeret walking pad-måtte til gåbånd — se anbefalingerne ovenfor med aktuelle priser. Tykt gulv og sjippetov: Bedste sjippetov og træningsmåtte til lejligheden.",
       },
       {
         question: "Hvordan ser jeg aktuelle priser?",
@@ -420,6 +420,7 @@ export const guides: Guide[] = [
       },
     ],
     relatedSlugs: [
+      "bedste-sjippetov-traeningsmaatte-lejlighed-2026",
       "bedste-foldbare-kompakte-traeningsmaskiner-2026",
       "bedste-stoejsvag-romaskine-2026",
       "bedste-stoejsvag-crosstrainer-2026",
@@ -914,7 +915,7 @@ export const guides: Guide[] = [
       {
         question: "Skal jeg vælge gåbånd med stigning?",
         answer:
-          "Hvis du går meget og mangler intensitet uden at hæve farten: ja. Til ren desk walking på lav hastighed er fladt eller let hældning nok. Stigning er en smart opgradering, når vanen sidder.",
+          "Hvis du går meget og mangler intensitet uden at hæve farten: ja. Til ren desk walking på lav hastighed er fladt eller let hældning nok. Stigning er en smart opgradering, når vanen sidder. Valget mellem stejl gang og rigtigt løb står i Incline løbebånd eller klassisk løbebånd? Sådan vælger du i 2026.",
       },
       {
         question: "Hvor meget koster et godt gåbånd?",
@@ -928,6 +929,7 @@ export const guides: Guide[] = [
       },
     ],
     relatedSlugs: [
+      "incline-loebebaand-eller-klassisk-2026",
       "loebebaand-eller-gaabaand-2026",
       "gaabaand-til-kontoret-2026",
       "bedste-loebebaand-2026",
@@ -1107,7 +1109,7 @@ export const guides: Guide[] = [
         heading: "Hvad betyder incline?",
         paragraphs: [
           "Elektronisk eller manuel stigning øger intensiteten uden at du behøver at løbe hurtigere. Det er effektivt til bagkæde og kondition — og et reelt træningsværktøj på hjemmeløbebånd.",
-          "Decline (nedad) er nice-to-have og sjældent nødvendigt hjemme. Fokusér på, om stigningen er stabil og nem at justere — ikke på det højeste procenttal i produktteksten.",
+          "Decline (nedad) er nice-to-have og sjældent nødvendigt hjemme. Fokusér på, om stigningen er stabil og nem at justere — ikke på det højeste procenttal i produktteksten. Stejl gang kontra et bånd til løb: Incline løbebånd eller klassisk løbebånd? Sådan vælger du i 2026.",
         ],
       },
       {
@@ -1175,6 +1177,7 @@ export const guides: Guide[] = [
       },
     ],
     relatedSlugs: [
+      "incline-loebebaand-eller-klassisk-2026",
       "loebebaand-eller-gaabaand-2026",
       "bedste-gaabaand-2026",
       "gaabaand-til-kontoret-2026",
@@ -3629,7 +3632,7 @@ export const guides: Guide[] = [
         heading: "Har du brug for decline?",
         paragraphs: [
           "Decline (negativ hældning) rammer nedre bryst og kan bruges til visse maveøvelser. De fleste begyndere får mere ud af flat + incline. Køb decline, når du savner den — ikke fordi listen over vinkler er længere.",
-          "En 6-i-1 eller dedikeret negativ/mavebænk dækker behovet, hvis du ved, at du bruger det.",
+          "En 6-i-1 eller dedikeret negativ/mavebænk dækker behovet, hvis du ved, at du bruger det. Dedikerede mave- og rygbænke er samlet i Bedste mavebænk og rygtræner 2026.",
         ],
       },
       {
@@ -3680,6 +3683,7 @@ export const guides: Guide[] = [
       },
     ],
     relatedSlugs: [
+      "bedste-mavebaenk-rygtraener-2026",
       "bedste-justerbare-haandvaegte-2026",
       "bedste-styrkemaskiner-2026",
       "bedste-power-rack-squat-rack-2026",
@@ -4912,10 +4916,11 @@ export const guides: Guide[] = [
       {
         question: "Er slyngetræner nødvendigt fra start?",
         answer:
-          "Nej. Det er et stærkt “næste skridt”, ikke et krav på dag 1. Håndvægte + elastik + måtte kommer først.",
+          "Nej. Det er et stærkt “næste skridt”, ikke et krav på dag 1. Håndvægte + elastik + måtte kommer først. Sæt og slynge: Bedste træningselastikker og slyngetræner 2026.",
       },
     ],
     relatedSlugs: [
+      "bedste-traeningselastikker-slyngetraener-2026",
       "bedste-justerbare-haandvaegte-2026",
       "ultimative-home-gym-budget-2026",
       "bedste-stoejsvage-traeningsmaskiner-lejlighed-2026",
@@ -5389,7 +5394,7 @@ export const guides: Guide[] = [
       {
         question: "Skal seniorer undgå håndvægte?",
         answer:
-          "Ikke nødvendigvis — men milde elastikker er ofte et tryggere sted at starte, fordi belastningen stiger gradvist. Følg gerne vejledning fra sundhedsfaglig ved genoptræning.",
+          "Ikke nødvendigvis — men milde elastikker er ofte et tryggere sted at starte, fordi belastningen stiger gradvist. Følg gerne vejledning fra sundhedsfaglig ved genoptræning. Sæt og slynge: Bedste træningselastikker og slyngetræner 2026.",
       },
       {
         question: "Hvad med mini-cykler / circulation trainers?",
@@ -5403,6 +5408,7 @@ export const guides: Guide[] = [
       },
     ],
     relatedSlugs: [
+      "bedste-traeningselastikker-slyngetraener-2026",
       "bedste-siddecykel-2026",
       "bedste-knaevenlig-genoptraening-hjemme-2026",
       "bedste-motionscykel-2026",
@@ -6154,7 +6160,7 @@ export const guides: Guide[] = [
       {
         question: "Hvad skal jeg købe sammen med racket?",
         answer:
-          "Justerbar bænk, vægtstang og plader — eller justerbare håndvægte som supplement. Se vores bænk- og håndvægt-guides.",
+          "Justerbar bænk, vægtstang og plader — eller justerbare håndvægte som supplement. Se vores bænk- og håndvægt-guides, og Bedste vægtstangssæt og bumper plates 2026 til stang og skiver.",
       },
       {
         question: "Hvordan ser jeg aktuelle priser?",
@@ -6163,6 +6169,7 @@ export const guides: Guide[] = [
       },
     ],
     relatedSlugs: [
+      "bedste-vaegtstangssaet-bumper-plates-2026",
       "bedste-justerbar-traeningsbaenk-2026",
       "bedste-justerbare-haandvaegte-2026",
       "bedste-styrkemaskiner-2026",
@@ -6212,7 +6219,7 @@ export const guides: Guide[] = [
       {
         title: "Elastik før tunge håndvægte",
         description:
-          "Milde elastikker giver progressiv belastning uden de samme peaks. Brug dem til hofte, sæde og let styrke omkring knæet.",
+          "Milde elastikker giver progressiv belastning uden de samme peaks. Brug dem til hofte, sæde og let styrke omkring knæet. Sæt og slynge er samlet i Bedste træningselastikker og slyngetræner 2026.",
       },
     ],
     products: [
@@ -6389,6 +6396,7 @@ export const guides: Guide[] = [
       },
     ],
     relatedSlugs: [
+      "bedste-traeningselastikker-slyngetraener-2026",
       "bedste-traeningsudstyr-til-seniorer-2026",
       "bedste-crosstrainer-2026",
       "bedste-stoejsvag-crosstrainer-2026",
@@ -7661,10 +7669,11 @@ export const guides: Guide[] = [
       {
         question: "Hvilken guide skal jeg læse bagefter?",
         answer:
-          "Løb: Bedste løbebånd til hjemmet 2026. Gang: Bedste gåbånd 2026 og Gåbånd til kontoret.",
+          "Løb: Bedste løbebånd til hjemmet 2026. Gang: Bedste gåbånd 2026 og Gåbånd til kontoret. Stejl gang i stedet for løb: Incline løbebånd eller klassisk løbebånd? Sådan vælger du i 2026.",
       },
     ],
     relatedSlugs: [
+      "incline-loebebaand-eller-klassisk-2026",
       "bedste-loebebaand-2026",
       "gaabaand-til-kontoret-2026",
       "bedste-gaabaand-2026",
@@ -8615,6 +8624,1157 @@ export const guides: Guide[] = [
       "bedste-gaabaand-2026",
       "bedste-siddecykel-2026",
       "bedste-romaskine-2026",
+    ],
+  },
+  {
+    slug: "bedste-mavebaenk-rygtraener-2026",
+    title: "Bedste mavebænk og rygtræner 2026",
+    excerpt:
+      "Hyperextension, sit-up og 45 grader: sådan vælger du en dedikeret mave- og rygbænk — plus fire anbefalinger med live priser.",
+    metaDescription:
+      "Bedste mavebænk og rygtræner 2026. Stabilitet, højde og fold til hjemmet — med fire dedikerede bænke og live priser fra danske partnere.",
+    categorySlug: "styrkemaskiner",
+    intentSlug: "traeningsbaenk",
+    publishedAt: "2026-11-08",
+    updatedAt: "2026-11-08",
+    intro:
+      "En justerbar presse-bænk er til bænkpres og skulderpres. En mavebænk og en hyperextension-bænk er noget andet: anklerne låses, og du træner mave eller lænd i et lille footprint. De fylder mindre end et rack, og de er klassisk hjemmeudstyr netop fordi de kan stå i et hjørne — eller foldes væk. Denne guide holder sig til dedikerede mave- og rygbænke. Vil du også presse, så læs Bedste justerbare træningsbænk 2026. Odin 6-i-1 dér er kombi-løsningen, ikke helten her.",
+    criteria: [
+      {
+        title: "Mave, ryg eller begge dele",
+        description:
+          "En sit-up-bænk låser fødderne og giver range til mave. En hyperextension (rygtræner) vender dig, så lænd, balder og baglår arbejder. Køb den, du faktisk vil bruge tre gange om ugen. En 6-i-1 dækker begge, men er et andet køb.",
+      },
+      {
+        title: "Stabilitet før ekstra puder",
+        description:
+          "Rammen må ikke vride, når du sænker overkroppen. Profilrør og et bredt fodaftryk slår tynde foldbare stel til tunge brugere. Odin Semi Pro er oplyst med 70×50 mm rør og brugervægt op til 200 kg. Det er et andet leje end en let sit-up-bænk.",
+      },
+      {
+        title: "Højde og pasform",
+        description:
+          "Ankelstøtte og lændepude skal kunne flyttes, hvis I er flere om bænken. Nordic Fighter 45 Degree oplyser justerbar længde på både lændestøtte og ankelstøtte. En fast pude, der rammer forkert, bliver stående ubrugt.",
+      },
+      {
+        title: "Fold efter brug",
+        description:
+          "I en stue er fold afgørende. Odin Hyperextension Rygtræner kan foldes og stilles væk. I et fast træningsrum er en tung, ufældbar ramme ofte mere stabil. Køb fold, når bænken ellers bliver et møbel, I går udenom.",
+      },
+      {
+        title: "Vinkel: flad sit-up eller 45 grader",
+        description:
+          "45 grader er den klassiske rygtræner-vinkel: du hænger ikke lodret, og bevægelsen er kontrolleret. En sit-up-bænk er fladere og rettet mod mave. Vinklen er formålet — ikke en indstilling, du skal kunne ændre til incline press.",
+      },
+      {
+        title: "Brugervægt med margin",
+        description:
+          "Tallet er dig, ikke en vægtstang. Odin SitUp Mavebænk er oplyst til 150 kg. Semi Pro hyperextension til 200 kg. På den foldbare Odin-rygtræner skriver feedet, at 50 mm-rammen giver en høj brugervægt, men tallet er klippet i produktteksten — tjek det på shoppen, før du køber til en tung bruger.",
+      },
+      {
+        title: "Gulv og nabo",
+        description:
+          "Bænken selv larmer lidt. Det, der høres under dig, er fødder og det lille bump, når du sætter dig. En måtte under stellet beskytter gulvet. Se Bedste sjippetov og træningsmåtte til lejligheden, hvis underboen er en del af beslutningen.",
+      },
+    ],
+    products: [
+      {
+        id: "odin-semi-pro-hyper",
+        name: "Odin Semi Pro Hyperextension Rygtræner",
+        badge: "Bedst samlet",
+        summary:
+          "Den stabile rygtræner til hjemmet: 70×50 mm profilrør og oplyst brugervægt op til 200 kg. Vælg den, når bænken skal stå fast og bære en tung bruger.",
+        pros: [
+          "70×50 mm profilrør",
+          "Brugervægt op til 200 kg",
+          "Dedikeret hyperextension",
+          "Mere ramme end de lette sit-up-bænke",
+        ],
+        cons: [
+          "Ikke oplyst som foldbar",
+          "Fylder, når den står fremme",
+          "Ikke en presse-bænk",
+        ],
+        specs: [
+          { label: "Type", value: "Hyperextension" },
+          { label: "Ramme", value: "70×50 mm" },
+          { label: "Brugervægt", value: "Op til 200 kg" },
+          { label: "Partner", value: "Apuls.dk" },
+        ],
+        feedProductId: "Apuls.dk:6887",
+      },
+      {
+        id: "odin-hyper-fold",
+        name: "Odin Hyperextension Rygtræner",
+        badge: "Bedste foldbare",
+        summary:
+          "Rygtræner der kan foldes og stilles væk. 50 mm profilrør og fokus på core og ryg. Det praktiske valg, når stuen skal være stue bagefter.",
+        pros: [
+          "Kan foldes sammen",
+          "50 mm profilrør",
+          "Lav indgangspris til en rigtig rygtræner",
+          "Nemt at gemme væk",
+        ],
+        cons: [
+          "Spinklere ramme end Semi Pro",
+          "Maks. brugervægt står ikke færdig i feedteksten",
+          "Ikke til mave-sit-ups som hovedøvelse",
+        ],
+        specs: [
+          { label: "Type", value: "Hyperextension" },
+          { label: "Ramme", value: "50 mm" },
+          { label: "Fold", value: "Ja" },
+          { label: "Partner", value: "Apuls.dk" },
+        ],
+        feedProductId: "Apuls.dk:6888",
+      },
+      {
+        id: "nordic-fighter-45",
+        name: "Nordic Fighter 45 Degree Hyperextension",
+        badge: "Bedste pasform",
+        summary:
+          "45-graders rygbænk, hvor både lændestøttens længde og ankelstøtten kan justeres. Til husstande, hvor I ikke er lige høje.",
+        pros: [
+          "45 graders vinkel",
+          "Justerbar lændestøtte",
+          "Justerbar ankelstøtte",
+          "Dedikeret ryg, ikke en presse-bænk",
+        ],
+        cons: [
+          "Ikke oplyst som foldbar",
+          "Fast vinkel — ikke en sit-up-bænk",
+          "Dyrere end den foldbare Odin",
+        ],
+        specs: [
+          { label: "Type", value: "45° hyperextension" },
+          { label: "Justering", value: "Lænd og ankler" },
+          { label: "Brand", value: "Nordic Fighter" },
+          { label: "Partner", value: "Apuls.dk" },
+        ],
+        feedProductId: "Apuls.dk:7669",
+      },
+      {
+        id: "odin-situp",
+        name: "Odin SitUp Mavebænk",
+        badge: "Bedste mavebænk",
+        summary:
+          "Sit-up-bænk med 50 mm profilrør og oplyst brugervægt op til 150 kg. Til dig, der vil træne mave — ikke lænd i hyperextension.",
+        pros: [
+          "Lavet til sit-ups",
+          "Brugervægt op til 150 kg",
+          "50 mm profilrør",
+          "Lav pris til en dedikeret mavebænk",
+        ],
+        cons: [
+          "Ikke en rygtræner",
+          "Ikke oplyst som foldbar",
+          "Én opgave — ikke incline press",
+        ],
+        specs: [
+          { label: "Type", value: "Sit-up / mavebænk" },
+          { label: "Ramme", value: "50 mm" },
+          { label: "Brugervægt", value: "Op til 150 kg" },
+          { label: "Partner", value: "Apuls.dk" },
+        ],
+        feedProductId: "Apuls.dk:6889",
+      },
+    ],
+    howToChoose:
+      "Ryg, og bænken skal kunne bære: Odin Semi Pro. Ryg, og den skal væk efter brug: den foldbare Odin Hyperextension. Flere højder i hjemmet: Nordic Fighter 45 Degree. Mave, ikke lænd: Odin SitUp. Vil du presse og lave mave i samme møbel, så stop — se Bedste justerbare træningsbænk 2026. Shop via “Se pris”.",
+    learningSections: [
+      {
+        heading: "Hvorfor en dedikeret bænk",
+        paragraphs: [
+          "Gulvet dur til crunches. Det dur dårligt til hyperextension, hvor anklerne skal holdes, og hofterne skal have en pude at dreje over. Det er den bevægelse, bænken købes for.",
+          "En justerbar presse-bænk kan have en decline-vinkel og en 6-i-1 kan have hyperextension. Det er kompromis. En dedikeret bænk gør én ting, og den står mere roligt, når det er det, du træner.",
+        ],
+      },
+      {
+        heading: "Stabilitet du kan mærke",
+        paragraphs: [
+          "Når overkroppen hænger ud over puden, bliver stellet en vægtstang. Smalle ben og tynde rør gynger. 70×50 mm og 200 kg brugervægt på Semi Pro er tal, der betyder noget. 50 mm kan være nok — især hvis bænken skal foldes.",
+          "Testankeret er enkelt: bænken må ikke vandre på gulvet, når du sænker dig. Gummi under fødderne hjælper på trægulv.",
+        ],
+      },
+      {
+        heading: "Højde er ikke en detalje",
+        paragraphs: [
+          "For kort lændepude rammer hoften forkert. For høj ankelstøtte presser på læggen. Justerbar længde, som på Nordic Fighter, er derfor vigtigere end en ekstra farve på polstringen.",
+          "Er I én bruger, kan en fast bænk være fin. Er I to med 15 cm forskel, så køb justeringen.",
+        ],
+      },
+      {
+        heading: "Fold eller lad den stå",
+        paragraphs: [
+          "Den foldbare Odin er til lejligheden og rækkehuset, hvor hjørnet også er ganglinje. Semi Pro er til rummet, hvor bænken må stå.",
+          "Fold er kun en fordel, hvis du faktisk folder. En bænk, der altid står halvvejs ude, skulle have været den tunge model.",
+        ],
+      },
+      {
+        heading: "Typiske fejl",
+        paragraphs: [
+          "At købe en presse-bænk og tro, decline erstatter en rygtræner. At købe den billigste foldbare til en bruger over den oplyste vægt. At glemme, at 45 grader er en rygøvelse, ikke en maveøvelse.",
+          "Og den modsatte fejl: at købe både sit-up og hyperextension, før vanen er der. Start med den øvelse, du allerede laver.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "Hvad er forskellen på mavebænk og rygtræner?",
+        answer:
+          "Mavebænken (sit-up) træner forsiden med fødderne låst. Rygtræneren (hyperextension) træner lænd, balder og baglår, ofte i 45 grader. Det er to redskaber.",
+      },
+      {
+        question: "Kan jeg bruge min justerbare bænk i stedet?",
+        answer:
+          "Til incline press: ja. Til hyperextension: nej, medmindre det er en 6-i-1 med den station. Se Bedste justerbare træningsbænk 2026.",
+      },
+      {
+        question: "Hvilken skal foldes væk?",
+        answer:
+          "Odin Hyperextension Rygtræner er den af de fire, shoppen skriver kan foldes. Semi Pro, Nordic Fighter 45 og SitUp-bænken er ikke oplyst som foldbare.",
+      },
+      {
+        question: "Hvor tung en bruger kan bænken tage?",
+        answer:
+          "Semi Pro: op til 200 kg. Odin SitUp: op til 150 kg. Den foldbare Odin oplyser høj brugervægt via 50 mm-rammen, men ikke et færdigt tal i den tekst, vi kan læse. Tjek tallet på produktsiden.",
+      },
+      {
+        question: "Passer den i en lejlighed?",
+        answer:
+          "Ja, hvis den kan foldes eller stå i et hjørne, og du lægger måtte under. Selve øvelsen larmer mindre end et løbebånd. Gulvkontakten er det, underboen mærker.",
+      },
+      {
+        question: "Hvordan ser jeg aktuelle priser?",
+        answer:
+          "Klik “Se pris”. Flere bænke ligger under Styrkemaskiner → Træningsbænk.",
+      },
+    ],
+    relatedSlugs: [
+      "bedste-justerbar-traeningsbaenk-2026",
+      "bedste-power-rack-squat-rack-2026",
+      "bedste-justerbare-haandvaegte-2026",
+      "bedste-styrkemaskiner-2026",
+      "bedste-sjippetov-traeningsmaatte-lejlighed-2026",
+    ],
+  },
+  {
+    slug: "bedste-sjippetov-traeningsmaatte-lejlighed-2026",
+    title: "Bedste sjippetov og træningsmåtte til lejligheden",
+    excerpt:
+      "Tykt gummigulv, tynd maskinmåtte og et tungt sjippetov: sådan skåner du gulv og underbo — med fire anbefalinger og live priser.",
+    metaDescription:
+      "Bedste sjippetov og træningsmåtte til lejligheden. 25 mm puslegulv, tynd PVC-måtte og tungt sjippetov — med live priser.",
+    categorySlug: "tilbehoer",
+    intentSlug: "gulvmaatter",
+    publishedAt: "2026-11-08",
+    updatedAt: "2026-11-08",
+    intro:
+      "I en lejlighed er gulvet en højttaler. Løbebånd, sjip og vægte sender vibration ned til underboen, også når motoren er “støjsvag”. Måtten er ikke pynt. Et tyndt underlag beskytter lakken. Et tykt puslegulv dæmper stødet. Og sjippetovet betyder mere, end folk tror: et let speed rope pisker, et tungt tov tvinger tempoet ned. Her er to måtter og to tove, der findes hos partnerne lige nu.",
+    criteria: [
+      {
+        title: "Tykkelse er dæmpning",
+        description:
+          "0,6 cm PVC stopper ridser og statisk elektricitet under et gåbånd. 25 mm gummi er et andet lag: det tager stød fra hop, vægte og maskinfødder. Køb tykkelsen til det, du stiller ovenpå — ikke den, der er nemmest at rulle sammen.",
+      },
+      {
+        title: "Dæk fodaftrykket",
+        description:
+          "En pusleflise på 1×1 meter dækker ikke et løbebånd. Nordic Fighter 25 mm er én flise, der kan samles og skæres til. Køb nok fliser til maskinens fødder plus et skridt på hver side. Den tynde 200×90 cm-måtte er derimod ét stykke under et walking pad.",
+      },
+      {
+        title: "Tungt tov i stedet for speed rope",
+        description:
+          "Speed ropes er bygget til hurtige dobbeltunder og larmer, når linen slår i luften og gulvet. Odin HeavyRope 700 g er et medium tungt tov. Vægten gør svinget langsommere. Det er lejlighedsvalget, hvis naboen sidder under dig.",
+      },
+      {
+        title: "Almindeligt tov til korte pas",
+        description:
+          "Et tov med kuglelejer vrider mindre og dur til opvarmning foran fjernsynet. Ascendic-tovet har kuglelejer og aftagelige vægte i håndtagene. Det er ikke lydløst. Det er det normale tov, når du ikke vil have et 700 g-tov.",
+      },
+      {
+        title: "Ropeless er ikke i det her udvalg",
+        description:
+          "Et tov uden line fjerner piskelyden, men partnerfeedet har ikke et tydeligt ropeless-tov på lager, vi vil anbefale. Det tunge tov er den konkrete erstatning: lavere tempo, mindre pisk.",
+      },
+      {
+        title: "Gulvtype",
+        description:
+          "Træ og laminat tåler ikke jernskiver og maskinfødder direkte. PVC-måtten er skridsikker nok til et pad. Gummiflisen er til det, der hopper og lander. Tæpper dæmper allerede — men skjuler også, at maskinen vandrer.",
+      },
+      {
+        title: "Maskine plus måtte",
+        description:
+          "Måtten redder ikke et dårligt løbebånd kl. 22. Den gør et fornuftigt et tåleligt. Læs også Bedste støjsvage træningsmaskiner til lejligheden, før du køber selve maskinen.",
+      },
+    ],
+    products: [
+      {
+        id: "nordic-25mm",
+        name: "Nordic Fighter Floor Guards 25 mm",
+        badge: "Bedste støjdæmpning",
+        summary:
+          "1×1 meter pusleflise i 25 mm gummi. Den tykke løsning under hop, vægte og maskinfødder. Du samler flere, og de kan skæres til.",
+        pros: [
+          "25 mm gummi",
+          "Puzzle — kan bygges ud",
+          "Kan skæres til",
+          "Tager stød, en tynd PVC-måtte ikke tager",
+        ],
+        cons: [
+          "Én flise er kun 1×1 meter",
+          "Et løbebånd kræver flere",
+          "Tungere at flytte end en rullemåtte",
+        ],
+        specs: [
+          { label: "Tykkelse", value: "25 mm" },
+          { label: "Mål", value: "1×1 m pr. flise" },
+          { label: "Type", value: "Puzzle-gummi" },
+          { label: "Partner", value: "Apuls.dk" },
+        ],
+        feedProductId: "Apuls.dk:5136",
+      },
+      {
+        id: "pvc-200",
+        name: "Gulvbeskyttelsesmåtte 200×90×0,6 cm",
+        badge: "Bedste under gåbånd",
+        summary:
+          "Tynd PVC-måtte i ét stykke til walking pad og løbebånd. Shoppen skriver, at den dæmper statisk elektricitet fra båndet og beskytter gulvet. Den er ikke et støjdæmpende gulv.",
+        pros: [
+          "200×90 cm i ét stykke",
+          "Passer under et walking pad",
+          "PVC mod statisk elektricitet",
+          "Let at lægge under maskinen",
+        ],
+        cons: [
+          "Kun 0,6 cm — tynd mod hop og vægte",
+          "Stort hvidt logo på måtten",
+          "Beskytter lakken mere end underboen",
+        ],
+        specs: [
+          { label: "Mål", value: "200×90×0,6 cm" },
+          { label: "Materiale", value: "PVC" },
+          { label: "Job", value: "Under pad / løbebånd" },
+          { label: "Partner", value: "Billig-fitness.dk" },
+        ],
+        feedProductId: "Billig-fitness.dk:55961226051970",
+      },
+      {
+        id: "odin-heavy-700",
+        name: "Odin HeavyRope 700 g",
+        badge: "Bedste til lejlighed",
+        summary:
+          "Medium tungt sjippetov på 700 gram. Vægten gør svinget langsommere end et speed rope, så linen ikke pisker i samme tempo. Det er lejlighedstovet.",
+        pros: [
+          "700 g — medium heavy",
+          "Langsommere kadence end et let tov",
+          "Mindre pisk end speed rope",
+          "Findes i flere vægte, hvis 700 g er for lidt eller for meget",
+        ],
+        cons: [
+          "Ikke til hurtige double-unders",
+          "Stadig en lyd, når det rammer gulv",
+          "Hårdere for skuldre end et let tov",
+        ],
+        specs: [
+          { label: "Type", value: "Heavy rope" },
+          { label: "Vægt", value: "700 g" },
+          { label: "Niveau", value: "Medium" },
+          { label: "Partner", value: "Apuls.dk" },
+        ],
+        feedProductId: "Apuls.dk:6899",
+      },
+      {
+        id: "ascendic-rope",
+        name: "Ascendic Sjippetov",
+        badge: "Bedste almindelige",
+        summary:
+          "Almindeligt tov med kuglelejer, så linen ikke vrider, og aftagelige vægte i håndtagene. Til korte pas og opvarmning — ikke til sen aften over underboen.",
+        pros: [
+          "Kuglelejer i håndtagene",
+          "Aftagelige vægte",
+          "Lav pris",
+          "Nemt at have i tasken",
+        ],
+        cons: [
+          "Et let tov pisker mere end 700 g",
+          "Dårligt valg kl. 22 i etagebyggeri",
+          "Ikke et heavy rope",
+        ],
+        specs: [
+          { label: "Type", value: "Sjippetov" },
+          { label: "Håndtag", value: "Kuglelejer + vægte" },
+          { label: "Job", value: "Korte pas" },
+          { label: "Partner", value: "Ascendic.dk" },
+        ],
+        feedProductId: "Ascendic.dk:43590733496554",
+      },
+    ],
+    howToChoose:
+      "Maskine eller hop på trægulv: Nordic Fighter 25 mm, og køb fliser nok til fodaftrykket. Kun et walking pad, der skal glide ind under: 200×90 cm PVC. Sjip over en underbo: Odin HeavyRope 700 g. Sjip i haven eller om dagen, hvor piskelyd er ligegyldig: Ascendic-tovet. Shop via “Se pris”.",
+    learningSections: [
+      {
+        heading: "To støjtyper",
+        paragraphs: [
+          "Luftstøj er det, du hører i rummet: motor, liner der suser, en vægt der klirrer. Strukturstøj er det, etagen sender videre. Måtten arbejder på den anden.",
+          "Et tyndt underlag er gulvbeskyttelse. Et 25 mm puslegulv er dæmpning. De løser ikke samme problem, og mange køber kun den første.",
+        ],
+      },
+      {
+        heading: "Sådan lægger du det",
+        paragraphs: [
+          "Flisen skal række ud over maskinens fødder. Én kvadratmeter under et løbebånd lader hjørnerne stå på det bare gulv, og så vandrer vibrationen alligevel.",
+          "PVC-måtten på 200×90 cm er skåret til et pad. Læg den, så båndet ikke fræser i kanten. Shoppen gør opmærksom på et stort hvidt logo — det er kosmetik, ikke funktion.",
+        ],
+      },
+      {
+        heading: "Sjip uden at vække opgangen",
+        paragraphs: [
+          "Tempo er lyden. Et let tov inviterer til hurtige sving og et smæld, når linen misser. 700 gram gør den samme fejl dyrere for skulderen og langsommere i luften. Det er pointen i en lejlighed.",
+          "Hop på gummi, ikke på laminat. Selv det rigtige tov på bart gulv er et bank i loftet nedenunder.",
+        ],
+      },
+      {
+        heading: "Hvad måtten ikke kan",
+        paragraphs: [
+          "Den gør ikke et luft-romaskine-stille. Den gør ikke et speed rope til nattetid. Og den reparerer ikke en maskine, der står skævt og hamrer i ét hjørne.",
+          "Vælg maskinen først, hvis du er i tvivl. Måtten er det lag, der gør et fornuftigt valg tåleligt. Se Bedste støjsvage træningsmaskiner til lejligheden.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "Hvor tyk skal måtten være i en lejlighed?",
+        answer:
+          "Under et walking pad er 0,6 cm PVC nok til at skåne gulvet. Under hop, sjip og maskiner, der stamper, er 25 mm gummi et andet niveau. Én flise er 1×1 meter — dæk hele fodaftrykket.",
+      },
+      {
+        question: "Findes der et lydløst sjippetov?",
+        answer:
+          "Ikke i det udvalg, vi kan stå inde for. Et tungt tov på 700 g svinger langsommere end et speed rope og pisker mindre. Det er stadig ikke lydløst. Hop på gummi.",
+      },
+      {
+        question: "Kan jeg sjippe på en yogamåtte?",
+        answer:
+          "En tynd yogamåtte beskytter knæene lidt og gulvet dårligt. Til sjip i lejlighed skal der gummi under, ikke kun en 4 mm-måtte.",
+      },
+      {
+        question: "Passer 25 mm-flisen under et løbebånd?",
+        answer:
+          "Én flise gør ikke. Den er 1×1 meter og kan samles. Læg fliser, så fødderne og et skridt omkring ikke står på det bare gulv.",
+      },
+      {
+        question: "Hvad med den tynde måtte og logoet?",
+        answer:
+          "Billig-fitness skriver selv, at der er et stort hvidt Nordic Strength-logo på 200×90 cm-måtten. Funktionen er PVC under pad og løbebånd, ikke et pænt gulv.",
+      },
+      {
+        question: "Hvordan ser jeg aktuelle priser?",
+        answer:
+          "Klik “Se pris”. Flere måtter ligger under Must-haves → Gulvmåtter. Sjippetovene ligger kun i guiden, ikke som kategori.",
+      },
+    ],
+    relatedSlugs: [
+      "bedste-stoejsvage-traeningsmaskiner-lejlighed-2026",
+      "bedste-stoejsvag-loebebaand-lejlighed-2026",
+      "bedste-gaabaand-2026",
+      "bedste-vaegtstangssaet-bumper-plates-2026",
+      "bedste-foldbare-kompakte-traeningsmaskiner-2026",
+    ],
+  },
+  {
+    slug: "bedste-vaegtstangssaet-bumper-plates-2026",
+    title: "Bedste vægtstangssæt og bumper plates 2026",
+    excerpt:
+      "30 mm eller 50 mm, jern eller gummi: sådan vælger du stang og skiver til hjemmet — plus fire sæt med live priser.",
+    metaDescription:
+      "Bedste vægtstangssæt og bumper plates 2026. 30 mm vs. 50 mm Olympic, gummiskiver og maks-kapacitet — med live priser.",
+    categorySlug: "styrkemaskiner",
+    publishedAt: "2026-11-08",
+    updatedAt: "2026-11-08",
+    intro:
+      "Et squat rack uden stang er et stativ. Skiverne er det, der gør stangen til træning — og det, underboen hører, når du lægger dem på gulvet. 30 mm er den smallere hjemmestang med jernskiver. 50 mm er olympisk: samme hul som i centeret, og bumper plates i gummi, der må ramme gulvet. Her er fire konkrete køb fra partnerne: to bumper-sæt, én olympisk stang og ét 30 mm-jernsæt. Ikke løse 1,25 kg-skiver.",
+    criteria: [
+      {
+        title: "30 mm eller 50 mm",
+        description:
+          "30 mm er standard på mange billige hjemmesæt og aerobic-stænger. 50 mm er olympisk. Skiverne passer ikke på tværs, medmindre du køber en adapter. Har du eller vil du have et rack til rigtige squats, så gå 50 mm fra start. Et 30 mm-sæt kan ikke “bare opgraderes” ved at købe OL-skiver.",
+      },
+      {
+        title: "Bumper plates til hjemmet",
+        description:
+          "Jernskiver klinger og slår mærker. Bumper plates er gummiklædte skiver, der tåler at blive smidt — og larmer mindre, når de sættes ned. Odin High Impact-sættet skriver gummi på skiverne. Det er lejligheds- og garagevalget, hvis du deadlifter.",
+      },
+      {
+        title: "Sæt kontra løse skiver",
+        description:
+          "Et sæt er stang, låse og en bunke kilo, der passer sammen. Løse skiver er til den, der allerede har stangen. Vi anbefaler sæt og én ren stang — ikke en enkelt 5 kg-skive som “start”.",
+      },
+      {
+        title: "Hvor mange kilo er sættet",
+        description:
+          "Odin-bumper-sættene er på 50 kg inklusive det, shoppen lægger i kassen. Det er en start, ikke et loft for evigt. 30 mm-sættet fra Billig-fitness sælges som 100 kg: beskrivelsen nævner en 170 cm stang, to fjederluk og 90 kg jernskiver. Mere vægt, mere støj.",
+      },
+      {
+        title: "Stangens egen kapacitet",
+        description:
+          "Odin Olympic Vægtstang 220 cm er oplyst som 20 kg, 50 mm og maks. belastning 450 kg. Det tal er stangen, ikke de skiver du har i dag. En tynd 30 mm-stang er ikke bygget til det samme, og feedet oplyser ikke et tilsvarende tal på jernsættet.",
+      },
+      {
+        title: "Længde og loft",
+        description:
+          "220 cm er en fuld olympisk stang. Den skal kunne ligge i racket uden at ramme væg eller bil. 170 cm på 30 mm-sættet er kortere og nemmere i et lille rum — og forkert, hvis du vil squatte som i centeret. Mål rummet med armene ude.",
+      },
+      {
+        title: "Rack først, hvis du træner alene",
+        description:
+          "Stang uden safety er et dårligt squat-setup, når du er alene. Læs Bedste power rack og squat rack 2026, før du køber 50 kg, du ikke kan komme ud under.",
+      },
+    ],
+    products: [
+      {
+        id: "odin-high-impact-50",
+        name: "Odin High Impact Bumper Plates-sæt 50 kg",
+        badge: "Bedst samlet",
+        summary:
+          "50 kg-sæt med bumper plates, shoppen beskriver som slidstærke og med gummioverflade. Det er hjemmesættet, når skiverne må sættes ned uden at klinge som jern.",
+        pros: [
+          "Bumper plates med gummi",
+          "50 kg sæt — ikke løse skiver",
+          "Bygget til stød, ikke kun til at ligge på stangen",
+          "Olympisk retning, ikke 30 mm-jern",
+        ],
+        cons: [
+          "50 kg samlet er et loft, du vokser fra",
+          "Dyrere end det billigste bumper-sæt",
+          "Stanglængde står ikke i den korte feedtekst",
+        ],
+        specs: [
+          { label: "Type", value: "Bumper-sæt" },
+          { label: "Vægt", value: "50 kg" },
+          { label: "Skiver", value: "Gummi / high impact" },
+          { label: "Partner", value: "Apuls.dk" },
+        ],
+        feedProductId: "Apuls.dk:13642",
+      },
+      {
+        id: "odin-bumper-50",
+        name: "Odin Olympic Bumper Plates-sæt 50 kg",
+        badge: "Bedste billige bumper",
+        summary:
+          "Olympisk sæt på 50 kg med en 220 cm stang, nubret greb og bumper plates. Den billigere indgang, når du vil have OL-mål og gummi frem for jern.",
+        pros: [
+          "220 cm OL-stang",
+          "Nubret greb",
+          "Bumper plates",
+          "Lavere pris end High Impact-sættet",
+        ],
+        cons: [
+          "Også kun 50 kg i kassen",
+          "Feedteksten siger ikke “gummi” lige så direkte som High Impact",
+          "220 cm kræver plads",
+        ],
+        specs: [
+          { label: "Type", value: "OL bumper-sæt" },
+          { label: "Stang", value: "220 cm" },
+          { label: "Vægt", value: "50 kg sæt" },
+          { label: "Partner", value: "Apuls.dk" },
+        ],
+        feedProductId: "Apuls.dk:13639",
+      },
+      {
+        id: "odin-bar-220",
+        name: "Odin Olympic Vægtstang 220 cm",
+        badge: "Bedste stang",
+        summary:
+          "Selve stangen: 220 cm, 20 kg, 50 mm og oplyst maks. belastning på 450 kg. Køb den, når du allerede har skiver — eller vil købe dem bagefter.",
+        pros: [
+          "20 kg og 220 cm",
+          "50 mm OL-skiver",
+          "Maks. belastning 450 kg",
+          "Den stang, et rack faktisk skal bruge",
+        ],
+        cons: [
+          "Ingen skiver i prisen",
+          "220 cm er lang i et lille rum",
+          "Overkill, hvis du kun vil have et 30 mm-sæt",
+        ],
+        specs: [
+          { label: "Længde", value: "220 cm" },
+          { label: "Vægt", value: "20 kg" },
+          { label: "Diameter", value: "50 mm" },
+          { label: "Maks.", value: "450 kg" },
+          { label: "Partner", value: "Apuls.dk" },
+        ],
+        feedProductId: "Apuls.dk:6850",
+      },
+      {
+        id: "bf-30mm-100",
+        name: "100 kg vægtstangssæt 30 mm",
+        badge: "Bedste 30 mm",
+        summary:
+          "Jernsæt solgt som 100 kg. Beskrivelsen nævner en 170 cm stang, to fjederluk og 90 kg sorte jernskiver. Mest kilo for pengene — og den højlydte løsning.",
+        pros: [
+          "30 mm hjemmestandard",
+          "170 cm stang — kortere end 220 cm",
+          "90 kg jernskiver i beskrivelsen",
+          "To fjederluk med i sættet",
+        ],
+        cons: [
+          "Jern klinger og slår gulv",
+          "Passer ikke på 50 mm bumper plates",
+          "Fjederluk er en simpel lås",
+        ],
+        specs: [
+          { label: "Diameter", value: "30 mm" },
+          { label: "Stang", value: "170 cm" },
+          { label: "Skiver", value: "90 kg jern" },
+          { label: "Partner", value: "Billig-fitness.dk" },
+        ],
+        feedProductId: "Billig-fitness.dk:47664516399443",
+      },
+    ],
+    howToChoose:
+      "Deadlift og gulv i hjemmet: Odin High Impact 50 kg. Samme idé, lavere pris, og du vil have 220 cm-stangen stavet ud: Odin Olympic Bumper-sættet. Du har skiver og mangler stangen: Odin Olympic 220 cm, 20 kg, 450 kg maks. Du vil have flest kilo og accepterer jern og 30 mm: 100 kg-sættet. Skal stangen i et rack, så læs Bedste power rack og squat rack 2026 først. Shop via “Se pris”.",
+    learningSections: [
+      {
+        heading: "Hvorfor diameteren låser dig",
+        paragraphs: [
+          "Hullet i skiven er enten ca. 30 mm eller 50 mm. De er ikke “næsten det samme”. Et rack, en OL-stang og bumper plates er ét system. Et 30 mm-sæt er et andet.",
+          "Adaptere findes, men de er et plaster. Vælg diameteren, før du køber den første skive.",
+        ],
+      },
+      {
+        heading: "Gummi er støj og gulv",
+        paragraphs: [
+          "Jern på laminat er både en lyd og et mærke. Bumper plates er lavet til at ramme gulvet. High Impact-sættet siger gummi. Det er derfor, det står øverst til hjemmebrug.",
+          "Gummi gør ikke et 100 kg drop lydløst. Det gør det tåleligt i en garage og mindre katastrofalt i en stue. I en lejlighed: læg puslegulv under, og drop ikke fra hoftehøjde. Se Bedste sjippetov og træningsmåtte til lejligheden.",
+        ],
+      },
+      {
+        heading: "50 kg er en start",
+        paragraphs: [
+          "Et 50 kg-sæt inklusive stang er nok til at lære squat, bænk og dødløft. Det er ikke nok, den dag dødløftet er det eneste, du laver. Stangen på 450 kg maks. kan bære mere, end sættet indeholder. Køb skiver bagefter — i samme diameter.",
+          "100 kg i jern føles som et kup, indtil lyden og gulvet er en del af regnestykket.",
+        ],
+      },
+      {
+        heading: "Stang uden rack",
+        paragraphs: [
+          "Du kan lave dødløft, rows og floor press uden bur. Du bør ikke squatte tungt alene uden safety. Stangen er køb nummer to, hvis racket ikke er der endnu — eller køb nummer et, hvis du kun dødløfter.",
+          "220 cm skal kunne ligge på gulvet og i J-hooks. Mål, før kassen kommer.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "Hvad er forskellen på 30 mm og 50 mm?",
+        answer:
+          "30 mm er den smallere hjemmestang. 50 mm er olympisk og passer til OL-skiver og de fleste racks. Skiverne kan ikke byttes uden adapter.",
+      },
+      {
+        question: "Er bumper plates nødvendig derhjemme?",
+        answer:
+          "Hvis skiverne rammer gulvet: ja. Jern klinger og laver mærker. Gummi dæmper og tåler stødet. Til stille bænkpres i et rack kan jern godt gå, men det er det højlydte valg.",
+      },
+      {
+        question: "Hvor meget vægt får jeg i sættet?",
+        answer:
+          "De to Odin-bumper-sæt er på 50 kg. Billig-fitness-sættet sælges som 100 kg; teksten nævner 170 cm stang, to fjederluk og 90 kg jernskiver.",
+      },
+      {
+        question: "Kan stangen bære mere end sættet?",
+        answer:
+          "Odin Olympic 220 cm er oplyst til 450 kg. Det er stangens tal. Sættene på 50 kg er, hvad der ligger i kassen.",
+      },
+      {
+        question: "Skal jeg have et rack?",
+        answer:
+          "Til squat og bænk alene: ja, med safety. Se Bedste power rack og squat rack 2026. Til dødløft kan du starte med stang, skiver og gulv.",
+      },
+      {
+        question: "Hvordan ser jeg aktuelle priser?",
+        answer:
+          "Klik “Se pris”. Stang og skiver ligger i guiden. Racks og bænke ligger under Styrkemaskiner.",
+      },
+    ],
+    relatedSlugs: [
+      "bedste-power-rack-squat-rack-2026",
+      "bedste-justerbar-traeningsbaenk-2026",
+      "bedste-justerbare-haandvaegte-2026",
+      "bedste-sjippetov-traeningsmaatte-lejlighed-2026",
+      "bedste-styrkemaskiner-2026",
+    ],
+  },
+  {
+    slug: "bedste-traeningselastikker-slyngetraener-2026",
+    title: "Bedste træningselastikker og slyngetræner 2026",
+    excerpt:
+      "Modstand, døranker og en slynge, der ikke fylder: fire sæt til hjemmet med live priser.",
+    metaDescription:
+      "Bedste træningselastikker og slyngetræner 2026. Modstandsniveauer, døranker og holdbarhed — med fire anbefalinger og live priser.",
+    categorySlug: "tilbehoer",
+    publishedAt: "2026-11-08",
+    updatedAt: "2026-11-08",
+    intro:
+      "Elastik og slynge er det, der kan bo i en skuffe og stadig træne hele kroppen. Elastikken giver modstand, du kan gøre hårdere ved at kombinere bånd. Slyngen bruger din egen vægt og en dør eller et loft. Senior-guiden og begynder-guiden nævner elastik i forbifarten. Her er selve købet: to sæt med flere niveauer, og to slyngetrænere hvor ophænget følger med.",
+    criteria: [
+      {
+        title: "Flere niveauer, ikke ét bånd",
+        description:
+          "Et enkelt gult bånd bliver for let. Ascendic-sættet har fem elastikker fra 4,5 til 22,5 kg, som kan bruges hver for sig eller sammen. Billig-fitness PRO har fem exertubes og oplyser en samlet modstand på 150 lbs, cirka 68,5 kg. Køb spændet, ikke souveniren.",
+      },
+      {
+        title: "Håndtag og døranker",
+        description:
+          "Uden håndtag skærer båndet i hænderne. Uden anker står du og binder det fast i et dørhåndtag, der ikke er lavet til det. Ascendic-sættet leveres med håndtag, ankelremme og døranker. Det er derfor, det slår et løst bånd.",
+      },
+      {
+        title: "Holdbarhed: kig efter slid, ikke et magisk stempel",
+        description:
+          "Elastik springer, når den har hakker, har ligget i sol eller er trukket ud over det, gummiet kan. Feedene lover ikke “anti-snap”. Det, du kan gøre, er at købe et sæt, du kan skifte enkeltbånd i, og kassere et bånd med revner. Et knæk er et sliddel-problem, ikke et trænings-PR.",
+      },
+      {
+        title: "Slynge: dør eller loft",
+        description:
+          "Odin Slyngetræner kan hænges i loftet eller klemmes i en dør — klemmen følger med. TRX Move-pakken indeholder døranker, ophæng, pose og træningsark. Bor du til leje, er døren ofte det eneste, du må bruge.",
+      },
+      {
+        title: "Egen vægt kontra bånd",
+        description:
+          "Slyngen bliver hårdere, jo mere vandret du ligger. Elastikken bliver hårdere, jo mere du strækker, og jo flere bånd du lægger sammen. De overlapper, men slyngen er stærkere til rows og pressebevægelser, når båndene er blevet for lette.",
+      },
+      {
+        title: "Plads",
+        description:
+          "Begge dele fylder mindre end en bænk. Slyngen kræver en dør, der kan lukkes om ankeret, og plads til at ligge foran den. Elastikken kræver ingenting ud over gulv. I et 10 m²-værelse er det her før racket.",
+      },
+      {
+        title: "Begynder eller supplement",
+        description:
+          "De første 90 dage kan elastik være nok ved siden af håndvægte. Slyngen er det næste skridt, ikke dag-1-kravet. Se Hjemmetræning for begyndere, hvis du stadig samler det første sæt.",
+      },
+    ],
+    products: [
+      {
+        id: "ascendic-elastik",
+        name: "Ascendic Elastik træningssæt",
+        badge: "Bedste billige",
+        summary:
+          "Fem elastikker fra 4,5 til 22,5 kg, som kan kombineres. Håndtag, ankelremme og døranker følger med. Den komplette indgang, uden at du skal købe ankeret bagefter.",
+        pros: [
+          "Fem niveauer, 4,5–22,5 kg",
+          "Kan kombineres",
+          "Håndtag, ankelremme og døranker",
+          "Lav pris til et helt sæt",
+        ],
+        cons: [
+          "22,5 kg på ét bånd er et loft for stærke løft",
+          "Elastik er en sliddel",
+          "Ikke en erstatning for en stang",
+        ],
+        specs: [
+          { label: "Indhold", value: "5 elastikker" },
+          { label: "Modstand", value: "4,5–22,5 kg" },
+          { label: "Medfølger", value: "Håndtag, ankler, dør" },
+          { label: "Partner", value: "Ascendic.dk" },
+        ],
+        feedProductId: "Ascendic.dk:43590874824938",
+      },
+      {
+        id: "bf-elastik-pro",
+        name: "Elastiksæt med håndtag PRO",
+        badge: "Bedste modstand",
+        summary:
+          "Fem exertubes med håndtag. Shoppen oplyser en samlet modstand på 150 lbs, cirka 68,5 kg. Til dig, der allerede synes, et let sæt er for spinkelt.",
+        pros: [
+          "Fem tuber",
+          "Samlet modstand oplyst til ca. 68,5 kg",
+          "Håndtag med i sættet",
+          "Mere loft end 22,5 kg på ét bånd",
+        ],
+        cons: [
+          "Døranker er ikke nævnt i feedteksten",
+          "Tuber kan stadig knække ved hakker",
+          "Hårdere er ikke automatisk bedre for begynderen",
+        ],
+        specs: [
+          { label: "Indhold", value: "5 exertubes + håndtag" },
+          { label: "Modstand", value: "150 lbs / ca. 68,5 kg samlet" },
+          { label: "Segment", value: "PRO" },
+          { label: "Partner", value: "Billig-fitness.dk" },
+        ],
+        feedProductId: "Billig-fitness.dk:32421711937602",
+      },
+      {
+        id: "odin-slynge",
+        name: "Odin Slyngetræner",
+        badge: "Bedste billige slynge",
+        summary:
+          "Slynge til hele kroppen, som kan hænges i loft eller sættes i en dør med den medfølgende klemme. Den billige måde at få suspension derhjemme.",
+        pros: [
+          "Dørklemme følger med",
+          "Kan også hænges i loft",
+          "Justerbar",
+          "Lav pris i forhold til TRX-sæt",
+        ],
+        cons: [
+          "Ikke et TRX-sæt med programmateriale",
+          "Kvaliteten er hjemme, ikke center",
+          "Kræver en dør eller et beslag",
+        ],
+        specs: [
+          { label: "Type", value: "Slyngetræner" },
+          { label: "Ophæng", value: "Dørklemme eller loft" },
+          { label: "Brand", value: "Odin" },
+          { label: "Partner", value: "Apuls.dk" },
+        ],
+        feedProductId: "Apuls.dk:9021",
+      },
+      {
+        id: "trx-move",
+        name: "TRX Move Slyngetræner",
+        badge: "Bedste med døranker",
+        summary:
+          "TRX til hjemmet. Pakken indeholder slyngen, pose, døranker, suspension anchor, seks digitale workouts og en plakat. Køb den, når ophænget og et program skal følge med.",
+        pros: [
+          "Døranker i pakken",
+          "Pose og ophæng",
+          "Seks workouts og en plakat",
+          "TRX til privat brug",
+        ],
+        cons: [
+          "Markant dyrere end Odin",
+          "Du betaler for pakken, ikke kun stroppen",
+          "Stadig afhængig af en solid dør",
+        ],
+        specs: [
+          { label: "Type", value: "TRX Move" },
+          { label: "Medfølger", value: "Døranker, pose, workouts" },
+          { label: "Segment", value: "Hjemme-TRX" },
+          { label: "Partner", value: "Apuls.dk" },
+        ],
+        feedProductId: "Apuls.dk:12746",
+      },
+    ],
+    howToChoose:
+      "Første sæt, og ankeret skal følge med: Ascendic, 4,5–22,5 kg. Du er stærk og vil kunne lægge bånd sammen op omkring 68 kg: PRO-sættet — og køb et døranker, hvis det ikke ligger i kassen. Slynge til prisen: Odin med klemme. Slynge, hvor døranker og workouts er en del af pakken: TRX Move. Shop via “Se pris”, eller se Must-haves → Elastikker og Must-haves → Slyngetræner.",
+    learningSections: [
+      {
+        heading: "Hvorfor det fylder mindre end et rack",
+        paragraphs: [
+          "Et rack er infrastruktur. Elastik og slynge er noget, du kan hænge på en krog. I en lejlighed er det ofte forskellen på at træne og på at have et møbel, du undskylder.",
+          "De erstatter ikke en stang, den dag du vil squatte tungt. De dækker de måneder — og de hjem — hvor stangen ikke kan være der.",
+        ],
+      },
+      {
+        heading: "Modstand du kan skrue på",
+        paragraphs: [
+          "4,5 kg og 22,5 kg i samme pose betyder, at opvarmning og arbejdsæt ikke er samme bånd. At kombinere dem er, hvordan sættet vokser med dig.",
+          "150 lbs samlet på PRO-sættet er et andet loft. Det er ikke “hårdere elastik” som følelse alene — det er flere tuber, du kan lægge på. Start ikke der, hvis du er ny og bare skal lære bevægelsen.",
+        ],
+      },
+      {
+        heading: "Sådan undgår du, at båndet springer",
+        paragraphs: [
+          "Kig efter hvide hakker, før du trækker. Lad være med at trække et bånd, der allerede er matteret. Sol i vindueskarmen ælder gummi hurtigere end træning gør.",
+          "Ingen af de her produkter er solgt som anti-snap. Behandl dem som sliddele: skift det bånd, der ser træt ud, før det knækker i ansigtet på dig.",
+        ],
+      },
+      {
+        heading: "Døren er ophænget",
+        paragraphs: [
+          "Et anker over dørens hængselside, døren lukket i, er den lejede løsning. TRX Move har ankeret i kassen. Odin har en klemme. Ascendic-elastikken har også et døranker.",
+          "Et dørhåndtag er ikke et anker. Det er den fejl, der koster et håndtag og en tå.",
+        ],
+      },
+      {
+        heading: "Hvornår du er vokset fra det",
+        paragraphs: [
+          "Når rows i slyngen er lette, og du vil have en stang, er næste køb ikke et sjette bånd. Så er det bænk, håndvægte eller rack.",
+          "Indtil da er et sæt, du bruger, mere værd end en maskine, du går udenom. Se også Bedste træningsudstyr til seniorer, hvis belastningen skal være mild og progressiv.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "Elastik eller slynge først?",
+        answer:
+          "Elastik, hvis du vil have modstand i en pose og træne uden at montere noget. Slynge, hvis du vil bruge kropsvægt og har en dør. Mange ender med begge. Start med det, du vil bruge i morgen.",
+      },
+      {
+        question: "Hvad betyder niveauerne?",
+        answer:
+          "Ascendic oplyser fem bånd fra 4,5 til 22,5 kg, som kan kombineres. PRO-sættet oplyser fem tuber og ca. 68,5 kg samlet. Højere tal er ikke et krav de første uger.",
+      },
+      {
+        question: "Kan elastikken springe?",
+        answer:
+          "Ja, hvis den har hakker eller er nedslidt. Ingen af sættene loves som anti-snap. Smid båndet ud, når overfladen revner.",
+      },
+      {
+        question: "Skal jeg bore i væggen?",
+        answer:
+          "Nej. Odin klemmes i døren eller hænges i loft. TRX Move har døranker i pakken. Ascendic-sættet har også døranker. Loftbeslag er valgfrit.",
+      },
+      {
+        question: "Er det nok til genoptræning?",
+        answer:
+          "Milde bånd er ofte det, der giver mening, fordi modstanden stiger gradvist. Følg fysioterapeuten. Se også Bedste træningsudstyr til seniorer og knæ-guiden — de her sæt er købsguiden, ikke en behandlingsplan.",
+      },
+      {
+        question: "Hvordan ser jeg aktuelle priser?",
+        answer:
+          "Klik “Se pris”. Flere bånd og slynge ligger under Must-haves → Elastikker og Must-haves → Slyngetræner.",
+      },
+    ],
+    relatedSlugs: [
+      "hjemmetraening-for-begyndere-foerste-90-dage",
+      "bedste-traeningsudstyr-til-seniorer-2026",
+      "bedste-knaevenlig-genoptraening-hjemme-2026",
+      "bedste-justerbare-haandvaegte-2026",
+      "ultimative-home-gym-budget-2026",
+      "bedste-sjippetov-traeningsmaatte-lejlighed-2026",
+    ],
+  },
+  {
+    slug: "incline-loebebaand-eller-klassisk-2026",
+    title: "Incline løbebånd eller klassisk løbebånd? Sådan vælger du i 2026",
+    excerpt:
+      "Stejl gang eller rigtigt løb? Forskellen på høj stigning og et klassisk løbebånd — og hvem der bør droppe farten.",
+    metaDescription:
+      "Incline løbebånd eller klassisk løbebånd i 2026? 40 % walking pad, 20 % stigning og to klassiske hjemmeløbebånd — med live priser.",
+    categorySlug: "loebebaand",
+    recommendationsHeading: "Én model til hvert valg",
+    publishedAt: "2026-11-08",
+    updatedAt: "2026-11-08",
+    intro:
+      "“Incline trainer” lyder som en særlig maskine. I de danske partnerfeeds er den stejle ende et walking pad med op til 40 % stigning — ikke et løbebånd, du spurter på. Det nærmeste, der både kan hælde og løbe lidt, er et sammenklappeligt bånd med 20 % automatisk stigning og cirka 14 km/t. Et klassisk hjemmeløbebånd er en anden maskine: bygget til at løbe, ikke til at gå op ad en væg. Denne side er valget imellem dem.",
+    criteria: [
+      {
+        title: "Stigning eller fart",
+        description:
+          "På et walking pad er bakken intensiteten, fordi farten er gang. På et klassisk løbebånd er farten intensiteten, og stigning er et ekstra gear. Du træner hårdt på begge. Du træner ikke det samme.",
+      },
+      {
+        title: "Led og løb",
+        description:
+          "Løb er gentagne stød. Stejl gang er hårdt for læg, baller og puls, men uden det samme løbestød. Har du droppet løb på grund af knæ eller skinneben, er 15–40 % gang det spor, du skal kigge på — ikke et hurtigere bånd.",
+      },
+      {
+        title: "40 % er ikke hverdagsløb",
+        description:
+          "Foldbart walking pad med op til 40 % er bjerggang i korte pas. Shoppen kalder det walking pad. De fleste bruger langt mindre hældning det meste af tiden. 40 % er loftet, ikke det, du står på i en time.",
+      },
+      {
+        title: "20 % og let løb er kompromiset",
+        description:
+          "Billig-fitness har et sammenklappeligt løbebånd med op til 20 % automatisk stigning og tophastighed på ca. 14 km/t. Det dækker gang, rask gang og let løb. Det er ikke et bånd til hårde løbeintervaller.",
+      },
+      {
+        title: "Klassisk, når du vil løbe",
+        description:
+          "Titan LIFE T56 og T66 er hjemmeløbebånd. T56 er allround-båndet. T66 sælges som den stærkere model. Ingen af dem er købt for 40 % bjerggang. Vil du løbe, så køb løbebåndet og læs Bedste løbebånd til hjemmet 2026 for motor og dæk.",
+      },
+      {
+        title: "Kalorier uden et falsk regnestykke",
+        description:
+          "Høj stigning kan gøre gang hård nok til at erstatte en rolig løbetur, fordi pulsen stiger uden at farten gør. Høj fart forbrænder, fordi du flytter dig hurtigere og lander hårdere. Der er ikke et seriøst “40 % svarer til 12 km/t”-tal, der gælder for alle. Vælg den belastning, dine led kan gentage i morgen.",
+      },
+    ],
+    products: [
+      {
+        id: "pad-40",
+        name: "Foldbart walking pad med op til 40 % stigning",
+        badge: "Vælg stejl stigning",
+        summary:
+          "Walking pad til bjerggang, ikke til løb. Op til 40 % og foldbart. Levering fra fjernlager i Tyskland, op til seks hverdage. Det er den stejle ende af det, shoppen faktisk sælger.",
+        pros: [
+          "Op til 40 % stigning",
+          "Foldbart",
+          "Gang og bjerg — ikke løb",
+          "Hård træning uden løbestød",
+        ],
+        cons: [
+          "Ikke et løbebånd",
+          "40 % er korte pas, ikke en time",
+          "Op til seks hverdages levering fra Tyskland",
+        ],
+        specs: [
+          { label: "Type", value: "Walking pad" },
+          { label: "Stigning", value: "Op til 40 %" },
+          { label: "Fold", value: "Ja" },
+          { label: "Partner", value: "Billig-fitness.dk" },
+        ],
+        feedProductId: "Billig-fitness.dk:56856250057090",
+      },
+      {
+        id: "lb-20",
+        name: "Sammenklappeligt løbebånd med 20 % stigning",
+        badge: "Vælg stigning og let løb",
+        summary:
+          "Det tætteste på en incline-løbebånd i feedet: op til 20 % automatisk stigning, ca. 14 km/t, og shoppen skriver gang, rask gang og let løb. Foldbart.",
+        pros: [
+          "Op til 20 % automatisk",
+          "Ca. 14 km/t — let løb er med",
+          "Foldbart",
+          "Både bakke og et rigtigt bånd",
+        ],
+        cons: [
+          "14 km/t er ikke hårde intervaller",
+          "Ikke 40 % bjerg",
+          "Et kompromis, hvis du kun vil det ene",
+        ],
+        specs: [
+          { label: "Type", value: "Løbebånd" },
+          { label: "Stigning", value: "Op til 20 % automatisk" },
+          { label: "Fart", value: "Ca. 14 km/t" },
+          { label: "Partner", value: "Billig-fitness.dk" },
+        ],
+        feedProductId: "Billig-fitness.dk:56242838208898",
+      },
+      {
+        id: "t56",
+        name: "Titan LIFE Treadmill T56",
+        badge: "Vælg klassisk løbebånd",
+        summary:
+          "Hjemmeløbebånd til familien, med fri fragt og hurtig levering hos HomeX. Vælg det, når jobbet er at løbe — ikke at gå på 40 %.",
+        pros: [
+          "Klassisk hjemmeløbebånd",
+          "Fri fragt hos partner",
+          "Hurtig levering",
+          "Allround, når du vil kunne løbe",
+        ],
+        cons: [
+          "Ikke et 40 % walking pad",
+          "Fylder mere end et pad",
+          "For meget maskine, hvis du kun vil gå bakke",
+        ],
+        specs: [
+          { label: "Type", value: "Løbebånd" },
+          { label: "Job", value: "Løb hjemme" },
+          { label: "Partner", value: "HomeX.dk" },
+        ],
+        feedProductId: "HomeX.dk:3179",
+      },
+      {
+        id: "t66",
+        name: "Titan LIFE Treadmill T66",
+        badge: "Klassisk til seriøst løb",
+        summary:
+          "Den stærkere Titan LIFE-model hos HomeX, også med fri fragt og hurtig levering. Til dig, der løber ofte og ikke er på udkig efter et bjerg-pad.",
+        pros: [
+          "Sælges som stærkere kvalitet end indgangsbånd",
+          "Fri fragt",
+          "Hurtig levering",
+          "Til jævnligt løb",
+        ],
+        cons: [
+          "Højere pris",
+          "Spild, hvis træningen er stejl gang",
+          "Kræver plads og et gulv, der kan bære",
+        ],
+        specs: [
+          { label: "Type", value: "Løbebånd" },
+          { label: "Job", value: "Seriøst løb" },
+          { label: "Partner", value: "HomeX.dk" },
+        ],
+        feedProductId: "HomeX.dk:3180",
+      },
+    ],
+    howToChoose:
+      "Du vil gå dig hård uden at løbe: 40 %-pad’et. Du vil både kunne gå bakke og løbe let: 20 %-båndet med ca. 14 km/t. Du vil løbe som på et almindeligt hjemmebånd: T56. Du løber ofte og vil have den stærkere model: T66. Kun kontorgang uden bakke: stop, og læs Bedste gåbånd 2026. Shop via “Se pris”.",
+    learningSections: [
+      {
+        heading: "To måder at gøre det hårdt på",
+        paragraphs: [
+          "Fart belaster landing og puls. Stigning belaster læg, baller og puls, mens fødderne bliver på båndet i gang. Begge kan være en svedig time. Kun den ene er løb.",
+          "Derfor kan stejl gang være det rigtige, når løb har gjort ondt — og det forkerte, når målet er at kunne løbe 10 km udenfor.",
+        ],
+        comparison: {
+          caption: "Høj stigning vs. klassisk løb",
+          rowHeaderLabel: "Behov",
+          columns: ["Høj stigning", "Klassisk løbebånd"],
+          rows: [
+            {
+              label: "Sådan bliver det hårdt",
+              cells: ["Bakke, lav fart", "Fart, stigning som ekstra"],
+            },
+            {
+              label: "Løb",
+              cells: ["Nej på 40 %-pad. Let løb på 20 %-båndet", "Ja"],
+            },
+            {
+              label: "Led",
+              cells: ["Mindre løbestød", "Gentagne landinger"],
+            },
+            {
+              label: "Hvem det passer",
+              cells: ["Gang, led, fedtforbrænding uden løb", "Dig, der vil løbe"],
+            },
+          ],
+        },
+      },
+      {
+        heading: "Hvem der bør droppe det klassiske bånd",
+        paragraphs: [
+          "Drop det, hvis du i praksis går, og det eneste, du savner, er at det føles som træning. Så er stigning værktøjet. Et T66 i et hjem, der aldrig løber, er et dyrt tørrestativ.",
+          "Behold løbebåndet, hvis du allerede løber ude eller vil kunne. Et 40 %-pad lærer dig ikke at løbe. Det lærer dig at gå opad.",
+        ],
+      },
+      {
+        heading: "Hvad shoppen rent faktisk har",
+        paragraphs: [
+          "15 % på et walking pad ligger i Bedste gåbånd 2026. 40 % er det foldbare pad her. 20 % automatisk og ca. 14 km/t er det ene bånd, der både hælder og løber let. Der er ikke en særlig “incline trainer”-kategori med 40 % og maratonfart i de her feeds.",
+          "Køb det, teksten beskriver. Et pad med 40 % er ikke et løbebånd, bare fordi overskriften siger hjemmetræning.",
+        ],
+      },
+      {
+        heading: "Støj følger med valget",
+        paragraphs: [
+          "Gang på bakke larmer mindre end løb, fordi skridtene er langsommere. Et klassisk bånd om aftenen er et nabospørgsmål. Måtte under begge. Se Bedste sjippetov og træningsmåtte til lejligheden og den støjsvage løbebåndsguide, hvis etagen er tynd.",
+          "Leveringstid er også et valg: 40 %-pad’et sendes fra Tyskland og kan tage op til seks hverdage. T56 og T66 hos HomeX er solgt med hurtig levering og fri fragt.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "Hvad er et incline-løbebånd?",
+        answer:
+          "I de her feeds er den stejle model et walking pad med op til 40 % stigning. Et sammenklappeligt bånd med 20 % automatisk stigning og ca. 14 km/t er det, der både kan hælde og løbe let. Et klassisk løbebånd er til løb.",
+      },
+      {
+        question: "Forbrænder bakke mere end løb?",
+        answer:
+          "Bakke gør gang hård og løfter pulsen uden løbestød. Løb forbrænder, fordi du lander og flytter dig hurtigere. Vælg den, du kan gentage. Der er ikke ét tal, der gælder for alle.",
+      },
+      {
+        question: "Kan jeg løbe på 40 %-pad’et?",
+        answer:
+          "Nej. Det er et walking pad til bjerggang. Vil du løbe, så vælg 20 %-båndet til let løb eller T56/T66 til rigtigt løb.",
+      },
+      {
+        question: "Er 14 km/t nok?",
+        answer:
+          "Til gang, rask gang og let løb: shoppen siger ja. Til hurtige intervaller: nej. Så er T56 eller T66 sporet, og Bedste løbebånd til hjemmet 2026 er guiden.",
+      },
+      {
+        question: "Hvad hvis jeg mest går under skrivebordet?",
+        answer:
+          "Så er det her den forkerte duel. Se Bedste gåbånd 2026 og Løbebånd eller gåbånd? Sådan vælger du i 2026. 15 % stigning findes allerede på et pad i gåbånds-guiden.",
+      },
+      {
+        question: "Hvordan ser jeg aktuelle priser?",
+        answer:
+          "Klik “Se pris”. Flere bånd ligger under Løbebånd og Løbebånd → Gåbånd.",
+      },
+    ],
+    relatedSlugs: [
+      "bedste-loebebaand-2026",
+      "bedste-gaabaand-2026",
+      "loebebaand-eller-gaabaand-2026",
+      "bedste-stoejsvag-loebebaand-lejlighed-2026",
+      "gaabaand-til-kontoret-2026",
+      "bedste-sjippetov-traeningsmaatte-lejlighed-2026",
     ],
   },
 ];

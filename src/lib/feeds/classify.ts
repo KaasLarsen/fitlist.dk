@@ -256,6 +256,16 @@ const MACHINE_RULES: CategoryRule[] = [
       /\bpower\s*station\b/,
       /\bkraftstation\b/,
       /\bfunctional\s*trainer\b/,
+      /\bhyperextension\b/,
+      /\broman\s*chair\b/,
+      /\bromanchair\b/,
+      /\bback\s*extension\b/,
+      /\brygtraener\b/,
+      /\brygtræner\b/,
+      /\bskraabaenk\b/,
+      /\bskråbænk\b/,
+      /\bmavebaenk\b/,
+      /\bmavebænk\b/,
     ],
     exclude: [
       /\bkabel\b(?!\s*(?:cross|machine|station|taarn|tårn))/,
@@ -532,7 +542,15 @@ const INTENT_RULES: { slug: string; test: (hay: string, price: number | null) =>
           /\bweight\s*bench\b/.test(hay) ||
           /\bworkout\s*bench\b/.test(hay) ||
           /\bmavebaenk\b/.test(hay) ||
-          /\bmavebænk\b/.test(hay)
+          /\bmavebænk\b/.test(hay) ||
+          /\bhyperextension\b/.test(hay) ||
+          /\broman\s*chair\b/.test(hay) ||
+          /\bromanchair\b/.test(hay) ||
+          /\bback\s*extension\b/.test(hay) ||
+          /\brygtraener\b/.test(hay) ||
+          /\brygtræner\b/.test(hay) ||
+          /\bskraabaenk\b/.test(hay) ||
+          /\bskråbænk\b/.test(hay)
         );
       },
     },
