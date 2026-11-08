@@ -1,13 +1,11 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { GuideArticle } from "@/components/GuideArticle";
-import { getCategory } from "@/lib/categories";
 import { getAllGuides, getGuide } from "@/lib/guides";
 
 export const revalidate = 21600;
 
 const SITE = "https://www.fitlist.dk";
-const DEFAULT_OG_IMAGE = "/images/hero-home.webp";
 
 type Props = {
   params: Promise<{ slug: string }>;
@@ -17,10 +15,6 @@ export function generateStaticParams() {
   return getAllGuides().map((guide) => ({ slug: guide.slug }));
 }
 
-function guideOgImage(guide: NonNullable<ReturnType<typeof getGuide>>) {
-  return getCategory(guide.categorySlug)?.image ?? DEFAULT_OG_IMAGE;
-}
-
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const guide = getGuide(slug);
@@ -28,7 +22,6 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   const description = guide.metaDescription || guide.excerpt;
   const url = `${SITE}/guides/${guide.slug}`;
-  const image = guideOgImage(guide);
 
   return {
     title: guide.title,
@@ -43,20 +36,18 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       siteName: "Fitlist",
       publishedTime: guide.publishedAt,
       modifiedTime: guide.updatedAt,
-      images: [image],
     },
     twitter: {
       card: "summary_large_image",
       title: guide.title,
       description,
-      images: [image],
     },
   };
 }
 
 function guideJsonLd(guide: NonNullable<ReturnType<typeof getGuide>>) {
   const url = `${SITE}/guides/${guide.slug}`;
-  const image = `${SITE}${guideOgImage(guide)}`;
+  const image = `${url}/opengraph-image`;
 
   const article = {
     "@type": "Article",

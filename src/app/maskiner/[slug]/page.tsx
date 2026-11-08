@@ -32,13 +32,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       type: "website",
       locale: "da_DK",
       siteName: "Fitlist",
-      images: [category.image],
     },
     twitter: {
       card: "summary_large_image",
       title: category.name,
       description: category.description,
-      images: [category.image],
     },
   };
 }

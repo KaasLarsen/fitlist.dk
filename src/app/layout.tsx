@@ -30,11 +30,9 @@ export const metadata: Metadata = {
     type: "website",
     locale: "da_DK",
     siteName: "Fitlist",
-    images: ["/images/hero-home.webp"],
   },
   twitter: {
     card: "summary_large_image",
-    images: ["/images/hero-home.webp"],
   },
   other: {
     "google-adsense-account": "ca-pub-7373148222153531",

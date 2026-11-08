@@ -15,14 +15,12 @@ export const metadata: Metadata = {
     type: "website",
     locale: "da_DK",
     siteName: "Fitlist",
-    images: ["/images/hero-home.webp"],
   },
   twitter: {
     card: "summary_large_image",
     title: "Fitlist — Træningsmaskiner til hjemmet",
     description:
       "Den ultimative hjælper til træningsmaskiner til hjemmet. Guides, sammenligninger og anbefalinger.",
-    images: ["/images/hero-home.webp"],
   },
 };
 
