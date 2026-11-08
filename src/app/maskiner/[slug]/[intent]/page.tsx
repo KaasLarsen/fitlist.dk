@@ -28,9 +28,27 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!category) return { title: "Kategori ikke fundet" };
   const intent = category.intents.find((i) => i.slug === intentSlug);
   if (!intent) return { title: "Filter ikke fundet" };
+  const title = `${category.name} · ${intent.label}`;
+  const url = `https://www.fitlist.dk/maskiner/${category.slug}/${intent.slug}`;
   return {
-    title: `${category.name} · ${intent.label}`,
+    title,
     description: intent.description,
+    alternates: { canonical: url },
+    openGraph: {
+      title,
+      description: intent.description,
+      url,
+      type: "website",
+      locale: "da_DK",
+      siteName: "Fitlist",
+      images: [category.image],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description: intent.description,
+      images: [category.image],
+    },
   };
 }
 

@@ -26,6 +26,16 @@ export const metadata: Metadata = {
   description:
     "Den ultimative hjælper til træningsmaskiner til hjemmet. Guides, sammenligninger og anbefalinger.",
   metadataBase: new URL("https://www.fitlist.dk"),
+  openGraph: {
+    type: "website",
+    locale: "da_DK",
+    siteName: "Fitlist",
+    images: ["/images/hero-home.webp"],
+  },
+  twitter: {
+    card: "summary_large_image",
+    images: ["/images/hero-home.webp"],
+  },
   other: {
     "google-adsense-account": "ca-pub-7373148222153531",
   },
