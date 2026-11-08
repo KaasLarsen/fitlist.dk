@@ -22,6 +22,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   const description = guide.metaDescription || guide.excerpt;
   const url = `${SITE}/guides/${guide.slug}`;
+  const imageUrl = `${url}/opengraph-image/og`;
+  const imageAlt = guide.title;
 
   return {
     title: guide.title,
@@ -36,18 +38,27 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       siteName: "Fitlist",
       publishedTime: guide.publishedAt,
       modifiedTime: guide.updatedAt,
+      images: [
+        {
+          url: imageUrl,
+          width: 1200,
+          height: 630,
+          alt: imageAlt,
+        },
+      ],
     },
     twitter: {
       card: "summary_large_image",
       title: guide.title,
       description,
+      images: [imageUrl],
     },
   };
 }
 
 function guideJsonLd(guide: NonNullable<ReturnType<typeof getGuide>>) {
   const url = `${SITE}/guides/${guide.slug}`;
-  const image = `${url}/opengraph-image`;
+  const image = `${url}/opengraph-image/og`;
 
   const article = {
     "@type": "Article",
