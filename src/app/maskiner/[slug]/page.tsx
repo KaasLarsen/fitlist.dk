@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import { CategoryPageView } from "@/components/CategoryPageView";
 import { getAllCategories, getCategory } from "@/lib/categories";
 import { getGuidesByCategory } from "@/lib/guides";
+import { categoryOgPath } from "@/lib/og";
 
 export const revalidate = 21600;
 
@@ -21,6 +22,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const category = getCategory(slug);
   if (!category) return { title: "Kategori ikke fundet" };
   const url = `${SITE}/maskiner/${category.slug}`;
+  const imageUrl = categoryOgPath(category.slug);
   return {
     title: category.name,
     description: category.description,
@@ -32,11 +34,21 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       type: "website",
       locale: "da_DK",
       siteName: "Fitlist",
+      images: [
+        {
+          url: imageUrl,
+          width: 1200,
+          height: 630,
+          alt: category.name,
+          type: "image/jpeg",
+        },
+      ],
     },
     twitter: {
       card: "summary_large_image",
       title: category.name,
       description: category.description,
+      images: [imageUrl],
     },
   };
 }

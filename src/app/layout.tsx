@@ -4,6 +4,7 @@ import { CampaignBanner } from "@/components/CampaignBanner";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { getActiveCampaignBanner } from "@/lib/campaigns";
+import { homeOgPath } from "@/lib/og";
 import "./globals.css";
 
 const dmSans = DM_Sans({
@@ -30,9 +31,19 @@ export const metadata: Metadata = {
     type: "website",
     locale: "da_DK",
     siteName: "Fitlist",
+    images: [
+      {
+        url: homeOgPath(),
+        width: 1200,
+        height: 630,
+        alt: "Fitlist — Træningsmaskiner til hjemmet",
+        type: "image/jpeg",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
+    images: [homeOgPath()],
   },
   other: {
     "google-adsense-account": "ca-pub-7373148222153531",

@@ -6,6 +6,7 @@ import {
   getGuideByCategoryAndIntent,
   getGuidesByCategory,
 } from "@/lib/guides";
+import { categoryIntentOgPath } from "@/lib/og";
 
 export const revalidate = 21600;
 
@@ -30,6 +31,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!intent) return { title: "Filter ikke fundet" };
   const title = `${category.name} · ${intent.label}`;
   const url = `https://www.fitlist.dk/maskiner/${category.slug}/${intent.slug}`;
+  const imageUrl = categoryIntentOgPath(category.slug, intent.slug);
   return {
     title,
     description: intent.description,
@@ -41,11 +43,21 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       type: "website",
       locale: "da_DK",
       siteName: "Fitlist",
+      images: [
+        {
+          url: imageUrl,
+          width: 1200,
+          height: 630,
+          alt: title,
+          type: "image/jpeg",
+        },
+      ],
     },
     twitter: {
       card: "summary_large_image",
       title,
       description: intent.description,
+      images: [imageUrl],
     },
   };
 }

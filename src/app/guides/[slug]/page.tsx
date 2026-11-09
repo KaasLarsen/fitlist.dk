@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { GuideArticle } from "@/components/GuideArticle";
 import { getAllGuides, getGuide } from "@/lib/guides";
+import { guideOgPath } from "@/lib/og";
 
 export const revalidate = 21600;
 
@@ -22,7 +23,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   const description = guide.metaDescription || guide.excerpt;
   const url = `${SITE}/guides/${guide.slug}`;
-  const imageUrl = `${url}/opengraph-image/og`;
+  const imageUrl = guideOgPath(guide.slug);
   const imageAlt = guide.title;
 
   return {
@@ -44,6 +45,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
           width: 1200,
           height: 630,
           alt: imageAlt,
+          type: "image/jpeg",
         },
       ],
     },
@@ -58,7 +60,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 function guideJsonLd(guide: NonNullable<ReturnType<typeof getGuide>>) {
   const url = `${SITE}/guides/${guide.slug}`;
-  const image = `${url}/opengraph-image/og`;
+  const image = `${SITE}/og/guide-${guide.slug}.jpg`;
 
   const article = {
     "@type": "Article",
