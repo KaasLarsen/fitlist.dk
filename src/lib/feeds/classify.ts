@@ -119,6 +119,17 @@ const HARD_EXCLUDES: RegExp[] = [
   /badevaerelse/,
   /badeværelse/,
   /sauna/,
+  // "Ellipse"-produktlinjer (camping/sko) matcher ellers crosstrainer via ellipse
+  /camping/,
+  /foldeskaal/,
+  /foldeskål/,
+  /foldetallerken/,
+  /campingservice/,
+  /koekkenredskab/,
+  /køkkenredskab/,
+  /loebe\s*sko/,
+  /løbesko/,
+  /running\s*shoe/,
 ];
 
 /** Machine categories — matched before tilbehoer. */
@@ -208,7 +219,9 @@ const MACHINE_RULES: CategoryRule[] = [
       /\belliptical\b/,
       /\bellipsetraener\b/,
       /\bellipsetræner\b/,
-      /\bellipse\b/,
+      // Kræv maskine-kontekst — bare "ellipse" matcher campinggrej og sko
+      /\bellipse[\s-]?(?:traener|træner|trainer|maskine)\b/,
+      /\bellipse\b(?=.*\b(?:crosstrainer|elliptisk|elliptical|traener|træner|trainer|maskine)\b)/,
     ],
     exclude: [
       /\bhaandbold\b/,
@@ -220,6 +233,8 @@ const MACHINE_RULES: CategoryRule[] = [
       /\bstroemforsyning\b/,
       /\bstrømforsyning\b/,
       /\bbrystsender\b/,
+      /\bsko\b/,
+      /\bcamping\b/,
     ],
   },
   {
@@ -317,6 +332,8 @@ const ACCESSORY_PRIORITY: RegExp[] = [
   /\bkettlebell/,
   /overtraek\s*(?:til|til\s+roma|til\s+loebe|til\s+cykel)/,
   /overtræk\s*(?:til|til\s+roma|til\s+løbe|til\s+cykel)/,
+  /cover\s*til/,
+  /(?:overtraek|overtræk|cover).{0,24}(?:roma|loebe|løbe|cykel|maskine|rower|treadmill|crosstrainer)/,
 ];
 
 /** Must-haves / accessories — only if no machine rule matched (or accessory-priority). */
@@ -350,8 +367,9 @@ const TILBEHOER_RULE: CategoryRule = {
     /suspension\s*trainer/,
     /overtraek\s*(?:til|roma|loebe|cykel|maskine)/,
     /overtræk\s*(?:til|roma|løbe|cykel|maskine)/,
-    /(?:roma|loebe|cykel|maskine|rower|treadmill).{0,24}(?:overtraek|overtræk|cover)/,
-    /(?:overtraek|overtræk|cover).{0,24}(?:roma|loebe|cykel|maskine|rower|treadmill)/,
+    /cover\s*til/,
+    /(?:roma|loebe|løbe|cykel|maskine|rower|treadmill|crosstrainer).{0,24}(?:overtraek|overtræk|cover)/,
+    /(?:overtraek|overtræk|cover).{0,24}(?:roma|loebe|løbe|cykel|maskine|rower|treadmill|crosstrainer)/,
   ],
   exclude: [
     /\bsilikone/,

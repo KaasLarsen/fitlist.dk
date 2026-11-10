@@ -242,6 +242,40 @@ describe("classifyProduct — hard excludes", () => {
     );
   });
 
+  it("drops LifeVenture Ellipse camping gear that matched bare ellipse", () => {
+    const noise = [
+      "LifeVenture - Ellipse foldeskål - Antracit",
+      "LifeVenture - Ellipse foldetallerken - Antracit",
+      "LifeVenture - Ellipse krus - Antracit",
+      "LifeVenture - Ellipse campingbestik - Antracit",
+      "LifeVenture - Ellipse campingservice, 4 dele - Marineblå",
+      "LifeVenture - Ellipse køkkenredskabssæt - Standard",
+    ];
+    for (const title of noise) {
+      assert.equal(
+        classifyProduct(
+          product({ title, brand: "LifeVenture", merchant: "JT Sport", price: 40 }),
+        ),
+        null,
+        title,
+      );
+    }
+  });
+
+  it("drops New Balance Ellipse løbesko that matched bare ellipse", () => {
+    assert.equal(
+      classifyProduct(
+        product({
+          title: "New Balance Fresh Foam Ellipse Løbesko Dame",
+          brand: "New Balance",
+          merchant: "Billigsport24.dk",
+          price: 699,
+        }),
+      ),
+      null,
+    );
+  });
+
   it("drops strength accessories that matched via bare cable / home gym", () => {
     const noise = [
       "Odin Cable Crossfit Sjippetov Blå Long Handle 300cm",
@@ -378,6 +412,18 @@ describe("classifyProduct — tilbehoer (must-haves)", () => {
     assert.equal(r!.categorySlug, "tilbehoer");
     assert.ok(r!.intentSlugs?.includes("slyngetraener"));
   });
+
+  it("classifies cover til løbebånd as tilbehoer, not loebebaand", () => {
+    const r = classifyProduct(
+      product({
+        title: "Cover til Løbebånd Hold det støvfrit under sengen og sofaen",
+        merchant: "AVA Beauty",
+        price: 70,
+      }),
+    );
+    assert.ok(r);
+    assert.equal(r!.categorySlug, "tilbehoer");
+  });
 });
 
 describe("classifyProduct — real machines kept", () => {
@@ -419,6 +465,20 @@ describe("classifyProduct — real machines kept", () => {
     );
     assert.ok(r);
     assert.equal(r!.categorySlug, "loebebaand");
+  });
+
+  it("classifies real crosstrainer titles as crosstrainer", () => {
+    const titles = [
+      "Odin C200 Crosstrainer",
+      "VirtuFit Elliptisk Crosstrainer CTR 3.0i",
+      "Abilica Ellipsetræner Premium",
+      "Titan Life Elliptical Trainer E55",
+    ];
+    for (const title of titles) {
+      const r = classifyProduct(product({ title, price: 4999 }));
+      assert.ok(r, title);
+      assert.equal(r!.categorySlug, "crosstrainer", title);
+    }
   });
 
   it("classifies siddecykel as motionscykel + siddecykel intent", () => {
