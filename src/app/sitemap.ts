@@ -1,52 +1,51 @@
 import type { MetadataRoute } from "next";
-import { categories } from "@/lib/categories";
+import { categories, categoryIntentHref } from "@/lib/categories";
 import { getAllGuides } from "@/lib/guides";
-
-const SITE = "https://www.fitlist.dk";
+import { canonical } from "@/lib/site";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
 
   const staticRoutes: MetadataRoute.Sitemap = [
-    { url: SITE, lastModified: now, changeFrequency: "daily", priority: 1 },
+    { url: canonical("/"), lastModified: now, changeFrequency: "daily", priority: 1 },
     {
-      url: `${SITE}/guides`,
+      url: canonical("/guides"),
       lastModified: now,
       changeFrequency: "weekly",
       priority: 0.9,
     },
     {
-      url: `${SITE}/maskiner`,
+      url: canonical("/maskiner"),
       lastModified: now,
       changeFrequency: "daily",
       priority: 0.9,
     },
     {
-      url: `${SITE}/om`,
+      url: canonical("/om"),
       lastModified: now,
       changeFrequency: "monthly",
       priority: 0.4,
     },
     {
-      url: `${SITE}/saadan-tjener-vi-penge`,
+      url: canonical("/saadan-tjener-vi-penge"),
       lastModified: now,
       changeFrequency: "monthly",
       priority: 0.3,
     },
     {
-      url: `${SITE}/kontakt`,
+      url: canonical("/kontakt"),
       lastModified: now,
       changeFrequency: "monthly",
       priority: 0.3,
     },
     {
-      url: `${SITE}/privatlivspolitik`,
+      url: canonical("/privatlivspolitik"),
       lastModified: now,
       changeFrequency: "monthly",
       priority: 0.2,
     },
     {
-      url: `${SITE}/cookies`,
+      url: canonical("/cookies"),
       lastModified: now,
       changeFrequency: "monthly",
       priority: 0.2,
@@ -54,18 +53,27 @@ export default function sitemap(): MetadataRoute.Sitemap {
   ];
 
   const guideRoutes: MetadataRoute.Sitemap = getAllGuides().map((guide) => ({
-    url: `${SITE}/guides/${guide.slug}`,
+    url: canonical(`/guides/${guide.slug}`),
     lastModified: new Date(guide.updatedAt),
     changeFrequency: "weekly",
     priority: 0.85,
   }));
 
   const categoryRoutes: MetadataRoute.Sitemap = categories.map((category) => ({
-    url: `${SITE}/maskiner/${category.slug}`,
+    url: canonical(`/maskiner/${category.slug}`),
     lastModified: now,
     changeFrequency: "daily",
     priority: 0.8,
   }));
 
-  return [...staticRoutes, ...guideRoutes, ...categoryRoutes];
+  const intentRoutes: MetadataRoute.Sitemap = categories.flatMap((category) =>
+    category.intents.map((intent) => ({
+      url: canonical(categoryIntentHref(category.slug, intent.slug)),
+      lastModified: now,
+      changeFrequency: "daily" as const,
+      priority: 0.7,
+    })),
+  );
+
+  return [...staticRoutes, ...guideRoutes, ...categoryRoutes, ...intentRoutes];
 }

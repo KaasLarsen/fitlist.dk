@@ -1,4 +1,5 @@
 import type { MetadataRoute } from "next";
+import { SITE } from "@/lib/site";
 
 export default function robots(): MetadataRoute.Robots {
   return {
@@ -7,7 +8,7 @@ export default function robots(): MetadataRoute.Robots {
       allow: "/",
       disallow: ["/api/"],
     },
-    sitemap: "https://www.fitlist.dk/sitemap.xml",
-    host: "https://www.fitlist.dk",
+    sitemap: `${SITE}/sitemap.xml`,
+    host: SITE,
   };
 }

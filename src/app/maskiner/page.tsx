@@ -2,11 +2,13 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { categoryIntentHref, getAllCategories } from "@/lib/categories";
 import { getGuidesByCategory } from "@/lib/guides";
+import { canonical } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Træningsmaskiner",
   description:
     "Løbebånd, motionscykel, romaskine, crosstrainer, styrkemaskiner og Must-haves til hjemmet — vælg efter type og behov.",
+  alternates: { canonical: canonical("/maskiner") },
 };
 
 export default function MaskinerPage() {

@@ -1,7 +1,8 @@
 import { NextResponse, type NextRequest } from "next/server";
 import { categoryIntentHref, getCategory } from "@/lib/categories";
+import { canonical } from "@/lib/site";
 
-/** Legacy /maskiner/[slug]?intent=… → /maskiner/[slug]/[intent] */
+/** Legacy /maskiner/[slug]?intent=… → https://www.fitlist.dk/maskiner/[slug]/[intent] */
 export function middleware(request: NextRequest) {
   const intentSlug = request.nextUrl.searchParams.get("intent");
   if (!intentSlug) return NextResponse.next();
@@ -13,10 +14,10 @@ export function middleware(request: NextRequest) {
   const intent = category?.intents.find((i) => i.slug === intentSlug);
   if (!intent || !category) return NextResponse.next();
 
-  const url = request.nextUrl.clone();
-  url.pathname = categoryIntentHref(category.slug, intent.slug);
-  url.search = "";
-  return NextResponse.redirect(url, 308);
+  const destination = new URL(
+    canonical(categoryIntentHref(category.slug, intent.slug)),
+  );
+  return NextResponse.redirect(destination, 308);
 }
 
 export const config = {

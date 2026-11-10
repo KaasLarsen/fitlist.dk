@@ -1,9 +1,11 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { canonical } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Om Fitlist",
   description: "Hvad Fitlist er, og hvordan vi hjælper dig med hjemmetræning.",
+  alternates: { canonical: canonical("/om") },
 };
 
 export default function OmPage() {

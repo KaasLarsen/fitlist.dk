@@ -6,15 +6,17 @@ import { Hero } from "@/components/Hero";
 import { getDailyDeals } from "@/lib/feeds/catalog";
 import { getFeaturedGuides } from "@/lib/guides";
 import { homeOgPath } from "@/lib/og";
+import { canonical } from "@/lib/site";
 
 const homeImage = homeOgPath();
 
 export const metadata: Metadata = {
+  alternates: { canonical: canonical("/") },
   openGraph: {
     title: "Fitlist — Træningsmaskiner til hjemmet",
     description:
       "Den ultimative hjælper til træningsmaskiner til hjemmet. Guides, sammenligninger og anbefalinger.",
-    url: "https://www.fitlist.dk",
+    url: canonical("/"),
     type: "website",
     locale: "da_DK",
     siteName: "Fitlist",

@@ -2,12 +2,13 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { getAllCategories, getCategory } from "@/lib/categories";
 import { getAllGuides, getGuidesByCategory } from "@/lib/guides";
+import { canonical } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Guides",
   description:
     "Lange købsguides til gåbånd, spinning, løbebånd, romaskiner, motionscykler, crosstrainere og styrkemaskiner — kriterier, anbefalinger og live priser fra danske partnere.",
-  alternates: { canonical: "https://www.fitlist.dk/guides" },
+  alternates: { canonical: canonical("/guides") },
 };
 
 type Props = {

@@ -1,10 +1,12 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { canonical } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Sådan tjener vi penge",
   description:
     "Fitlist er reklamefinansieret. Sådan fungerer vores affiliate-links, og hvad det betyder for dig.",
+  alternates: { canonical: canonical("/saadan-tjener-vi-penge") },
 };
 
 export default function MonetizationPage() {

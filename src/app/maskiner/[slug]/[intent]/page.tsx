@@ -7,6 +7,7 @@ import {
   getGuidesByCategory,
 } from "@/lib/guides";
 import { categoryIntentOgPath } from "@/lib/og";
+import { canonical } from "@/lib/site";
 
 export const revalidate = 21600;
 
@@ -30,7 +31,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const intent = category.intents.find((i) => i.slug === intentSlug);
   if (!intent) return { title: "Filter ikke fundet" };
   const title = `${category.name} · ${intent.label}`;
-  const url = `https://www.fitlist.dk/maskiner/${category.slug}/${intent.slug}`;
+  const url = canonical(`/maskiner/${category.slug}/${intent.slug}`);
   const imageUrl = categoryIntentOgPath(category.slug, intent.slug);
   return {
     title,

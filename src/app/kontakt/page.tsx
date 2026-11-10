@@ -1,9 +1,11 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { canonical } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Kontakt",
   description: "Kontakt Fitlist på info@fitlist.dk.",
+  alternates: { canonical: canonical("/kontakt") },
 };
 
 export default function KontaktPage() {

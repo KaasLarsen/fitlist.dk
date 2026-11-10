@@ -4,10 +4,9 @@ import { CategoryPageView } from "@/components/CategoryPageView";
 import { getAllCategories, getCategory } from "@/lib/categories";
 import { getGuidesByCategory } from "@/lib/guides";
 import { categoryOgPath } from "@/lib/og";
+import { canonical } from "@/lib/site";
 
 export const revalidate = 21600;
-
-const SITE = "https://www.fitlist.dk";
 
 type Props = {
   params: Promise<{ slug: string }>;
@@ -21,7 +20,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const category = getCategory(slug);
   if (!category) return { title: "Kategori ikke fundet" };
-  const url = `${SITE}/maskiner/${category.slug}`;
+  const url = canonical(`/maskiner/${category.slug}`);
   const imageUrl = categoryOgPath(category.slug);
   return {
     title: category.name,

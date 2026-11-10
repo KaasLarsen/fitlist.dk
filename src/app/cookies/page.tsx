@@ -1,10 +1,12 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { canonical } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Cookiepolitik",
   description:
     "Hvordan Fitlist bruger cookies, og hvad der sker når du klikker videre til forhandlere.",
+  alternates: { canonical: canonical("/cookies") },
 };
 
 export default function CookiesPage() {

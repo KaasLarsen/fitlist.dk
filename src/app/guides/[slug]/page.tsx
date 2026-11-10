@@ -3,10 +3,9 @@ import { notFound } from "next/navigation";
 import { GuideArticle } from "@/components/GuideArticle";
 import { getAllGuides, getGuide } from "@/lib/guides";
 import { guideOgPath } from "@/lib/og";
+import { canonical, SITE } from "@/lib/site";
 
 export const revalidate = 21600;
-
-const SITE = "https://www.fitlist.dk";
 
 type Props = {
   params: Promise<{ slug: string }>;
@@ -22,7 +21,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!guide) return { title: "Guide ikke fundet" };
 
   const description = guide.metaDescription || guide.excerpt;
-  const url = `${SITE}/guides/${guide.slug}`;
+  const url = canonical(`/guides/${guide.slug}`);
   const imageUrl = guideOgPath(guide.slug);
   const imageAlt = guide.title;
 
@@ -59,7 +58,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 function guideJsonLd(guide: NonNullable<ReturnType<typeof getGuide>>) {
-  const url = `${SITE}/guides/${guide.slug}`;
+  const url = canonical(`/guides/${guide.slug}`);
   const image = `${SITE}/og/guide-${guide.slug}.jpg`;
 
   const article = {

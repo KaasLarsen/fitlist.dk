@@ -1,10 +1,12 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { canonical } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Privatlivspolitik",
   description:
     "Hvordan Fitlist behandler personoplysninger, når du bruger fitlist.dk.",
+  alternates: { canonical: canonical("/privatlivspolitik") },
 };
 
 export default function PrivatlivspolitikPage() {
