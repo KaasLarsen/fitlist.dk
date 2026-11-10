@@ -88,6 +88,16 @@ const nextConfig: NextConfig = {
         hostname: "sportgymbutikken.dk",
         pathname: "/**",
       },
+      {
+        protocol: "https",
+        hostname: "www.fitnessshoppen.dk",
+        pathname: "/**",
+      },
+      {
+        protocol: "https",
+        hostname: "fitnessshoppen.dk",
+        pathname: "/**",
+      },
     ],
   },
 };

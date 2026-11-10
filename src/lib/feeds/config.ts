@@ -180,6 +180,18 @@ export const ADTRACTION_FEEDS: readonly AdtractionFeed[] = [
     feedUrl:
       "https://secure.adtraction.com/productfeed.htm?type=feed&format=XML&encoding=UTF8&epi=0&zip=0&cdelim=tab&tdelim=singlequote&sd=0&sn=0&flat=0&apid=1954033533&asid=2127168443&gsh=1&pfid=2769&gt=0",
   },
+  {
+    id: "fitnessshoppen",
+    merchant: "Fitnessshoppen",
+    feedUrl:
+      "https://secure.adtraction.com/productfeed.htm?type=feed&format=XML&encoding=UTF8&epi=0&zip=0&cdelim=tab&tdelim=singlequote&sd=0&sn=0&flat=0&apid=1873812172&asid=2127168443&gsh=1&pfid=2029&gt=0",
+  },
+  {
+    id: "ihero",
+    merchant: "iHero",
+    feedUrl:
+      "https://secure.adtraction.com/productfeed.htm?type=feed&format=XML&encoding=UTF8&epi=0&zip=0&cdelim=tab&tdelim=singlequote&sd=0&sn=0&flat=0&apid=1980284366&asid=2127168443&gsh=1&pfid=2971&gt=0",
+  },
 ] as const;
 
 export type CatalogFeed = PartnerAdsFeed | AdtractionFeed;
