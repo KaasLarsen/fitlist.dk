@@ -16,12 +16,17 @@ import {
 } from "@/lib/feeds/parse";
 import type { FeedProduct } from "@/lib/feeds/types";
 
-const FEED_CACHE_VERSION = "v1";
+const FEED_CACHE_VERSION = "v2";
 const FEED_REVALIDATE_SECONDS = 21_600; // 6 timer
 const DEFAULT_TIMEOUT_MS = 30_000;
 /** Cykelpartner-feedet er ~46 MB XML — kræver længere timeout. */
 const CYKELPARTNER_TIMEOUT_MS = 90_000;
 const CYKELPARTNER_MERCHANT = "Cykelpartner.dk";
+
+/** Undgå OOM: hent ikke alle partnerfeeds under `next build` (SSG). */
+function isProductionBuild(): boolean {
+  return process.env.NEXT_PHASE === "phase-production-build";
+}
 
 /** Fjern tunge felter så Data Cache holder sig under Next.js 2MB-grænsen. */
 function slimFeedProducts(products: FeedProduct[]): FeedProduct[] {
@@ -128,6 +133,12 @@ function feedCacheKey(feed: CatalogFeed): string[] {
 export async function getCachedFeedProducts(
   feed: CatalogFeed,
 ): Promise<FeedProduct[]> {
+  // Build SSG’er alle guides/maskiner parallelt — fuld feed-hentning OOM’er Vercel.
+  // Priser fyldes via ISR + cron efter deploy.
+  if (isProductionBuild()) {
+    return [];
+  }
+
   const cached = unstable_cache(
     () => fetchFeedProductsForCache(feed),
     feedCacheKey(feed),
