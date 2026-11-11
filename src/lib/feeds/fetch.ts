@@ -16,15 +16,19 @@ import {
 } from "@/lib/feeds/parse";
 import type { FeedProduct } from "@/lib/feeds/types";
 
-const FEED_CACHE_VERSION = "v5";
+const FEED_CACHE_VERSION = "v6";
 const FEED_REVALIDATE_SECONDS = 21_600; // 6 timer
-/** Partner-Ads XML er ofte langsom; 30s timeout’ede hele kataloget i parallel warm. */
-const DEFAULT_TIMEOUT_MS = 60_000;
+/** Partner-Ads XML er ofte langsom; for lav timeout tømmer hele kataloget. */
+const DEFAULT_TIMEOUT_MS = 120_000;
 /** Cykelpartner-feedet er ~46 MB XML — kræver længere timeout. */
-const CYKELPARTNER_TIMEOUT_MS = 90_000;
+const CYKELPARTNER_TIMEOUT_MS = 150_000;
 const CYKELPARTNER_MERCHANT = "Cykelpartner.dk";
-/** Max samtidige feed-hentninger (cron + katalog-build). */
-const FEED_FETCH_CONCURRENCY = 3;
+/**
+ * Max samtidige feed-hentninger (cron + katalog-build).
+ * 2 er kompromis: Adtraction 429’er ved høj parallelitet, men 1 er for langsomt
+ * til cold catalog-build inden for serverless-timeout.
+ */
+const FEED_FETCH_CONCURRENCY = 2;
 
 async function mapWithConcurrency<T, R>(
   items: readonly T[],
@@ -68,27 +72,61 @@ function slimFeedProducts(products: FeedProduct[]): FeedProduct[] {
   }));
 }
 
+function sleep(ms: number): Promise<void> {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+}
+
 async function fetchFeedText(
   url: string,
   merchant: string,
   timeoutMs: number,
 ): Promise<string> {
-  const res = await fetch(url, {
-    headers: {
-      "user-agent": UA,
-      accept: "text/xml,application/xml,text/plain,*/*",
-    },
-    redirect: "follow",
-    cache: "no-store",
-    signal: AbortSignal.timeout(timeoutMs),
-  });
+  const maxAttempts = 3;
+  let lastError: Error | null = null;
 
-  if (!res.ok) {
-    throw new Error(`[feed] ${merchant} HTTP ${res.status} for ${url}`);
+  for (let attempt = 1; attempt <= maxAttempts; attempt++) {
+    try {
+      const res = await fetch(url, {
+        headers: {
+          "user-agent": UA,
+          accept: "text/xml,application/xml,text/plain,*/*",
+        },
+        redirect: "follow",
+        cache: "no-store",
+        signal: AbortSignal.timeout(timeoutMs),
+      });
+
+      if (res.status === 429 && attempt < maxAttempts) {
+        const backoffMs = attempt * 2_500;
+        console.warn(
+          `[feed] ${merchant} HTTP 429 — retry ${attempt}/${maxAttempts - 1} in ${backoffMs}ms`,
+        );
+        await sleep(backoffMs);
+        continue;
+      }
+
+      if (!res.ok) {
+        throw new Error(`[feed] ${merchant} HTTP ${res.status} for ${url}`);
+      }
+
+      const buf = await res.arrayBuffer();
+      return decodeFeedText(buf);
+    } catch (err) {
+      lastError = err instanceof Error ? err : new Error(String(err));
+      const isTimeout =
+        lastError.name === "TimeoutError" ||
+        /aborted|timeout/i.test(lastError.message);
+      if (isTimeout && attempt < maxAttempts) {
+        console.warn(
+          `[feed] ${merchant} timeout — retry ${attempt}/${maxAttempts - 1}`,
+        );
+        continue;
+      }
+      throw lastError;
+    }
   }
 
-  const buf = await res.arrayBuffer();
-  return decodeFeedText(buf);
+  throw lastError ?? new Error(`[feed] ${merchant} failed`);
 }
 
 export async function fetchFeedProductsInner(
@@ -139,19 +177,8 @@ export async function fetchCatalogFeedInner(
 async function fetchFeedProductsForCache(
   feed: CatalogFeed,
 ): Promise<FeedProduct[]> {
-  try {
-    const products = await fetchCatalogFeedInner(feed);
-    return slimFeedProducts(products);
-  } catch (err) {
-    const message = err instanceof Error ? err.message : String(err);
-    const isTimeout =
-      err instanceof Error &&
-      (err.name === "TimeoutError" || /aborted|timeout/i.test(message));
-    if (!isTimeout) throw err;
-    console.warn(`[feed] timeout ${feed.merchant}, retrying once…`);
-    const products = await fetchCatalogFeedInner(feed);
-    return slimFeedProducts(products);
-  }
+  const products = await fetchCatalogFeedInner(feed);
+  return slimFeedProducts(products);
 }
 
 function feedCacheKey(feed: CatalogFeed): string[] {

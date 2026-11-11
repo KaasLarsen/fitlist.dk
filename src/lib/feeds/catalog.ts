@@ -12,7 +12,7 @@ import {
 } from "@/lib/feeds/fetch";
 import type { FeedProduct, MachineCategorySlug } from "@/lib/feeds/types";
 
-const CATALOG_CACHE_VERSION = "v15";
+const CATALOG_CACHE_VERSION = "v16";
 
 async function buildMachineCatalog(): Promise<FeedProduct[]> {
   const batches = await mapWithConcurrency(
@@ -22,7 +22,12 @@ async function buildMachineCatalog(): Promise<FeedProduct[]> {
   );
   const all = batches.flat();
   const classified = classifyProducts(all);
-  return refineBilligIntent(classified);
+  const refined = refineBilligIntent(classified);
+  // Tomt katalog må ikke caches (6t) — typisk midlertidigt feed-timeout/429.
+  if (refined.length === 0) {
+    throw new Error("[catalog] refusing to cache empty machine catalog");
+  }
+  return refined;
 }
 
 /** Samlet maskinekatalog (kun klassificerede produkter). */

@@ -1,13 +1,15 @@
-import { revalidateTag } from "next/cache";
 import { NextResponse } from "next/server";
 import { warmCatalog } from "@/lib/feeds/catalog";
 import { warmAllFeeds } from "@/lib/feeds/fetch";
 
-/** Partner-feeds hentes i batches — kræver længere end default 60s. */
+/** Partner-feeds hentes sekventielt — kræver længere end default 60s. */
 export const maxDuration = 300;
 
 /**
- * Cron: invalider feed-cache og varm den op igen.
+ * Cron: varm feed- + katalog-cache op.
+ * Invaliderer ikke længere før warm — et mislykket wipe efterlod tomt katalog
+ * i 6 timer. Friskhed kommer via unstable_cache revalidate (6t) + denne warm.
+ *
  * På Vercel: sæt CRON_SECRET — Vercel Cron sender `Authorization: Bearer <CRON_SECRET>`.
  */
 export async function GET(request: Request) {
@@ -27,14 +29,35 @@ export async function GET(request: Request) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
 
-  revalidateTag("fitlist-feeds", "max");
-
   const feeds = await warmAllFeeds();
-  const catalog = await warmCatalog();
+  const okFeeds = feeds.filter((f) => f.ok && f.count > 0);
+  if (okFeeds.length === 0) {
+    return NextResponse.json(
+      {
+        ok: false,
+        error: "All feeds failed — existing cache preserved",
+        feeds,
+      },
+      { status: 503 },
+    );
+  }
 
-  return NextResponse.json({
-    ok: true,
-    feeds,
-    catalog,
-  });
+  try {
+    const catalog = await warmCatalog();
+    return NextResponse.json({
+      ok: true,
+      feeds,
+      catalog,
+    });
+  } catch (err) {
+    const message = err instanceof Error ? err.message : String(err);
+    return NextResponse.json(
+      {
+        ok: false,
+        error: message,
+        feeds,
+      },
+      { status: 503 },
+    );
+  }
 }
