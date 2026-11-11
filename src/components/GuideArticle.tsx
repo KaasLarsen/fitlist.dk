@@ -9,6 +9,8 @@ import {
   getFeedProductById,
   getProductsByCategory,
 } from "@/lib/feeds/catalog";
+import { CYKELPARTNER_MERCHANT } from "@/lib/feeds/cykelpartner-guide-ids";
+import { getCachedCykelpartnerGuideProducts } from "@/lib/feeds/fetch";
 import type { FeedProduct, MachineCategorySlug } from "@/lib/feeds/types";
 import {
   getProductAffiliate,
@@ -28,6 +30,11 @@ async function resolveGuideOffers(
     for (const item of product.bundleItems ?? []) {
       ids.add(item.feedProductId);
     }
+  }
+
+  // Én Cykelpartner-hentning før parallelle id-opslag (46 MB feed).
+  if ([...ids].some((id) => id.startsWith(`${CYKELPARTNER_MERCHANT}:`))) {
+    await getCachedCykelpartnerGuideProducts();
   }
 
   const entries = await Promise.all(

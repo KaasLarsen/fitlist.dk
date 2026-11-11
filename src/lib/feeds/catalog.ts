@@ -1,9 +1,11 @@
 import { unstable_cache } from "next/cache";
 import { CATALOG_FEEDS } from "@/lib/feeds/config";
 import { refineBilligIntent } from "@/lib/feeds/classify";
+import { CYKELPARTNER_MERCHANT } from "@/lib/feeds/cykelpartner-guide-ids";
 import {
   FEED_FETCH_CONCURRENCY,
   FEED_REVALIDATE_SECONDS,
+  getCachedCykelpartnerGuideProducts,
   getCachedFeedProducts,
   mapWithConcurrency,
 } from "@/lib/feeds/fetch";
@@ -55,16 +57,24 @@ function sortOffers(a: FeedProduct, b: FeedProduct): number {
  * Finder først i maskinekataloget; falder tilbage til den rå merchant-feed,
  * så guides kan linke accessories (fx underlagsmåtter) uden at de dukker op
  * på /maskiner.
+ * Cykelpartner er ikke i kataloget (~46 MB) — guides bruger targeteret cache
+ * (kortsluttes før katalog-build, så parallel guide-opslag ikke OOM’er).
  */
 export async function getFeedProductById(
   id: string,
 ): Promise<FeedProduct | undefined> {
+  const merchant = id.split(":")[0];
+  if (!merchant) return undefined;
+
+  if (merchant === CYKELPARTNER_MERCHANT) {
+    const guideProducts = await getCachedCykelpartnerGuideProducts();
+    return guideProducts.find((p) => p.id === id);
+  }
+
   const catalog = await getMachineCatalog();
   const fromCatalog = catalog.find((p) => p.id === id);
   if (fromCatalog) return fromCatalog;
 
-  const merchant = id.split(":")[0];
-  if (!merchant) return undefined;
   const feed = CATALOG_FEEDS.find((f) => f.merchant === merchant);
   if (!feed) return undefined;
 

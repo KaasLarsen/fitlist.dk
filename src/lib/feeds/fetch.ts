@@ -2,6 +2,7 @@ import { unstable_cache } from "next/cache";
 import {
   CATALOG_FEEDS,
   isAdtractionFeed,
+  PARTNER_ADS_FEEDS,
   partnerAdsFeedUrl,
   type AdtractionFeed,
   type CatalogFeed,
@@ -14,6 +15,10 @@ import {
   parsePartnerAdsXml,
   UA,
 } from "@/lib/feeds/parse";
+import {
+  CYKELPARTNER_MERCHANT,
+  getCykelpartnerGuideFeedProductIds,
+} from "@/lib/feeds/cykelpartner-guide-ids";
 import type { FeedProduct } from "@/lib/feeds/types";
 
 const FEED_CACHE_VERSION = "v10";
@@ -22,7 +27,8 @@ const FEED_REVALIDATE_SECONDS = 21_600; // 6 timer
 const DEFAULT_TIMEOUT_MS = 90_000;
 /** Cykelpartner-feedet er ~46 MB XML — kræver længere timeout (hvis det en dag genaktiveres). */
 const CYKELPARTNER_TIMEOUT_MS = 120_000;
-const CYKELPARTNER_MERCHANT = "Cykelpartner.dk";
+
+export { getCykelpartnerGuideFeedProductIds } from "@/lib/feeds/cykelpartner-guide-ids";
 /**
  * Max samtidige feed-hentninger (cron + katalog-build).
  * 2 er kompromis: Adtraction 429’er ved høj parallelitet, men 1 er for langsomt
@@ -37,12 +43,39 @@ const FEED_CACHE_PRODUCT_LIMIT = 300;
 
 /**
  * Springes over i warm + katalog:
- * - Cykelpartner: ~46 MB XML
+ * - Cykelpartner: ~46 MB XML (guides hentes targeteret via getCachedCykelpartnerGuideProducts)
  * - Adtraction: hyppige HTTP 429 der trækker hele katalog-build ned
- * Guides bruger imageUrl/affiliate-fallback.
+ * Guides bruger imageUrl/affiliate-fallback når feed mangler.
  */
 function isSkippedHeavyFeed(feed: CatalogFeed): boolean {
   return feed.merchant === CYKELPARTNER_MERCHANT || isAdtractionFeed(feed);
+}
+
+function cykelpartnerFeed(): PartnerAdsFeed | undefined {
+  return PARTNER_ADS_FEEDS.find((f) => f.merchant === CYKELPARTNER_MERCHANT);
+}
+
+/**
+ * Hent kun de Cykelpartner-varer guides linker til — ikke hele outdoor-kataloget.
+ * Fuldt XML downloades stadig (~46 MB), men kun matching produkter caches.
+ */
+async function fetchCykelpartnerGuideProductsInner(): Promise<FeedProduct[]> {
+  const feed = cykelpartnerFeed();
+  if (!feed) return [];
+
+  const onlyIds = new Set(getCykelpartnerGuideFeedProductIds());
+  if (onlyIds.size === 0) return [];
+
+  const url = partnerAdsFeedUrl(feed);
+  const text = await fetchFeedText(url, feed.merchant, CYKELPARTNER_TIMEOUT_MS);
+  const matched = parsePartnerAdsXml(text, feed.merchant, { onlyIds });
+
+  return slimFeedProducts(
+    matched.map((product) => {
+      const classified = classifyProduct(product);
+      return classified ?? product;
+    }),
+  );
 }
 
 async function mapWithConcurrency<T, R>(
@@ -254,7 +287,7 @@ export async function getCachedFeedProducts(
     return [];
   }
 
-  // Cykelpartner (~46 MB XML) — for tungt til warm/katalog; guides har fallback.
+  // Cykelpartner (~46 MB XML) — for tungt til fuldt katalog; guides: se getCachedCykelpartnerGuideProducts.
   if (isSkippedHeavyFeed(feed)) {
     return [];
   }
@@ -270,6 +303,77 @@ export async function getCachedFeedProducts(
   } catch (err) {
     console.error(`[feed] cache FAILED for ${feed.merchant}:`, err);
     return [];
+  }
+}
+
+const CYKELPARTNER_GUIDE_CACHE_KEY = [
+  "fitlist-feed",
+  FEED_CACHE_VERSION,
+  "cykelpartner-guides",
+] as const;
+
+/** Dedupér samtidige guide-opslag (Promise.all pr. produkt) — undgå 4× 46 MB fetch. */
+let cykelpartnerGuideInflight: Promise<FeedProduct[]> | null = null;
+
+/**
+ * Targeteret Cykelpartner-cache til guide feedProductId’er.
+ * Fuldt feed springes stadig over i maskinekataloget.
+ */
+export async function getCachedCykelpartnerGuideProducts(): Promise<
+  FeedProduct[]
+> {
+  if (isProductionBuild()) {
+    return [];
+  }
+
+  if (!cykelpartnerGuideInflight) {
+    cykelpartnerGuideInflight = (async () => {
+      const cached = unstable_cache(
+        () => fetchCykelpartnerGuideProductsInner(),
+        [...CYKELPARTNER_GUIDE_CACHE_KEY],
+        { revalidate: FEED_REVALIDATE_SECONDS, tags: ["fitlist-feeds"] },
+      );
+
+      try {
+        return await cached();
+      } catch (err) {
+        console.error(`[feed] Cykelpartner guide cache FAILED:`, err);
+        return [];
+      }
+    })().finally(() => {
+      cykelpartnerGuideInflight = null;
+    });
+  }
+
+  return cykelpartnerGuideInflight;
+}
+
+/** Opvarm den targeterede Cykelpartner-guide-cache (cron). */
+export async function warmCykelpartnerGuideProducts(): Promise<{
+  merchant: string;
+  count: number;
+  ok: boolean;
+  error?: string;
+  guideOnly: true;
+}> {
+  try {
+    const products = await getCachedCykelpartnerGuideProducts();
+    return {
+      merchant: CYKELPARTNER_MERCHANT,
+      count: products.length,
+      ok: true,
+      guideOnly: true,
+    };
+  } catch (err) {
+    const message = err instanceof Error ? err.message : String(err);
+    console.error(`[feed] Cykelpartner guide warm failed:`, message);
+    return {
+      merchant: CYKELPARTNER_MERCHANT,
+      count: 0,
+      ok: false,
+      error: message,
+      guideOnly: true,
+    };
   }
 }
 

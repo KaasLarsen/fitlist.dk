@@ -82,8 +82,10 @@ function splitProduktBlocks(xml: string): string[] {
 export function parsePartnerAdsXml(
   xml: string,
   merchant: string,
+  opts?: { onlyIds?: ReadonlySet<string> },
 ): FeedProduct[] {
   const out: FeedProduct[] = [];
+  const onlyIds = opts?.onlyIds;
 
   for (const block of splitProduktBlocks(xml)) {
     const title = pickTag(block, "produktnavn");
@@ -91,13 +93,16 @@ export function parsePartnerAdsXml(
     if (!title || !urlRaw) continue;
 
     const productId = pickTag(block, "produktid") || urlRaw;
+    const id = `${merchant}:${productId}`;
+    if (onlyIds && !onlyIds.has(id)) continue;
+
     const nypris = parsePrice(pickTag(block, "nypris"));
     const glpris = parsePrice(pickTag(block, "glpris"));
     let image = pickTag(block, "billedurl");
     if (image.includes("|")) image = image.split("|")[0].trim();
 
     out.push({
-      id: `${merchant}:${productId}`,
+      id,
       merchant,
       title,
       desc: pickTag(block, "beskrivelse") || pickTag(block, "produktbeskrivelse"),

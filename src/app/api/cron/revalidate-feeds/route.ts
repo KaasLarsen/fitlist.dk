@@ -1,7 +1,10 @@
 import { revalidatePath } from "next/cache";
 import { NextResponse } from "next/server";
 import { warmCatalog } from "@/lib/feeds/catalog";
-import { warmAllFeeds } from "@/lib/feeds/fetch";
+import {
+  warmAllFeeds,
+  warmCykelpartnerGuideProducts,
+} from "@/lib/feeds/fetch";
 
 /** Partner-feeds hentes sekventielt — kræver længere end default 60s. */
 export const maxDuration = 300;
@@ -30,7 +33,10 @@ export async function GET(request: Request) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
 
+  // Cykelpartner-guide-subset (~46 MB XML) kører efter øvrige feeds, så
+  // maskinekataloget ikke konkurrerer om hukommelse under parallel fetch.
   const feeds = await warmAllFeeds();
+  const cykelpartnerGuides = await warmCykelpartnerGuideProducts();
   const okFeeds = feeds.filter((f) => f.ok && f.count > 0);
   if (okFeeds.length === 0) {
     return NextResponse.json(
@@ -38,6 +44,7 @@ export async function GET(request: Request) {
         ok: false,
         error: "All feeds failed — existing cache preserved",
         feeds,
+        cykelpartnerGuides,
       },
       { status: 503 },
     );
@@ -49,9 +56,11 @@ export async function GET(request: Request) {
     revalidatePath("/", "layout");
     revalidatePath("/tilbud");
     revalidatePath("/maskiner", "layout");
+    revalidatePath("/guides", "layout");
     return NextResponse.json({
       ok: true,
       feeds,
+      cykelpartnerGuides,
       catalog,
     });
   } catch (err) {
@@ -61,6 +70,7 @@ export async function GET(request: Request) {
         ok: false,
         error: message,
         feeds,
+        cykelpartnerGuides,
       },
       { status: 503 },
     );

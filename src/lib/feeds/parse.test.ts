@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import { describe, it } from "node:test";
-import { parseAdtractionGoogleRss } from "./parse";
+import { parseAdtractionGoogleRss, parsePartnerAdsXml } from "./parse";
 
 const XML = `<?xml version="1.0" encoding="UTF-8"?>
 <rss xmlns:g="http://base.google.com/ns/1.0" version="2.0">
@@ -62,5 +62,43 @@ describe("parseAdtractionGoogleRss", () => {
     assert.equal(regular.oldPrice, null);
     assert.equal(regular.inStock, true);
     assert.equal(new URL(regular.url).searchParams.get("epi"), "fitlist");
+  });
+});
+
+const PARTNER_ADS_XML = `<?xml version="1.0" encoding="ISO-8859-1"?>
+<produkter>
+  <produkt>
+    <produktid>111</produktid>
+    <produktnavn>Wahoo KICKR CORE</produktnavn>
+    <vareurl>https://www.partner-ads.com/dk/klikbanner.php?bannerid=1&amp;partnerid=1&amp;htmlurl=https://example.com/a</vareurl>
+    <nypris>3999</nypris>
+    <glpris>4499</glpris>
+    <billedurl>https://example.com/a.jpg</billedurl>
+    <kategorinavn>Hometrainere</kategorinavn>
+    <brand>Wahoo</brand>
+    <lagerantal>1</lagerantal>
+  </produkt>
+  <produkt>
+    <produktid>222</produktid>
+    <produktnavn>Outdoor cykel</produktnavn>
+    <vareurl>https://www.partner-ads.com/dk/klikbanner.php?bannerid=1&amp;partnerid=1&amp;htmlurl=https://example.com/b</vareurl>
+    <nypris>9999</nypris>
+    <billedurl>https://example.com/b.jpg</billedurl>
+    <kategorinavn>Racercykler</kategorinavn>
+    <brand>Specialized</brand>
+    <lagerantal>1</lagerantal>
+  </produkt>
+</produkter>`;
+
+describe("parsePartnerAdsXml onlyIds", () => {
+  it("returns only matching guide product ids", () => {
+    const products = parsePartnerAdsXml(PARTNER_ADS_XML, "Cykelpartner.dk", {
+      onlyIds: new Set(["Cykelpartner.dk:111"]),
+    });
+    assert.equal(products.length, 1);
+    assert.equal(products[0].id, "Cykelpartner.dk:111");
+    assert.equal(products[0].title, "Wahoo KICKR CORE");
+    assert.equal(products[0].price, 3999);
+    assert.equal(products[0].oldPrice, 4499);
   });
 });
