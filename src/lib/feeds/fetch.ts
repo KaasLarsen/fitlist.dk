@@ -19,9 +19,9 @@ import type { FeedProduct } from "@/lib/feeds/types";
 const FEED_CACHE_VERSION = "v6";
 const FEED_REVALIDATE_SECONDS = 21_600; // 6 timer
 /** Partner-Ads XML er ofte langsom; for lav timeout tømmer hele kataloget. */
-const DEFAULT_TIMEOUT_MS = 120_000;
+const DEFAULT_TIMEOUT_MS = 90_000;
 /** Cykelpartner-feedet er ~46 MB XML — kræver længere timeout. */
-const CYKELPARTNER_TIMEOUT_MS = 150_000;
+const CYKELPARTNER_TIMEOUT_MS = 120_000;
 const CYKELPARTNER_MERCHANT = "Cykelpartner.dk";
 /**
  * Max samtidige feed-hentninger (cron + katalog-build).
@@ -81,10 +81,10 @@ async function fetchFeedText(
   merchant: string,
   timeoutMs: number,
 ): Promise<string> {
-  const maxAttempts = 3;
+  // 429: op til 3 forsøg. Timeout: max 1 retry — ellers æder Cykelpartner cron-budgettet.
   let lastError: Error | null = null;
 
-  for (let attempt = 1; attempt <= maxAttempts; attempt++) {
+  for (let attempt = 1; attempt <= 3; attempt++) {
     try {
       const res = await fetch(url, {
         headers: {
@@ -96,10 +96,10 @@ async function fetchFeedText(
         signal: AbortSignal.timeout(timeoutMs),
       });
 
-      if (res.status === 429 && attempt < maxAttempts) {
+      if (res.status === 429 && attempt < 3) {
         const backoffMs = attempt * 2_500;
         console.warn(
-          `[feed] ${merchant} HTTP 429 — retry ${attempt}/${maxAttempts - 1} in ${backoffMs}ms`,
+          `[feed] ${merchant} HTTP 429 — retry ${attempt}/2 in ${backoffMs}ms`,
         );
         await sleep(backoffMs);
         continue;
@@ -116,10 +116,13 @@ async function fetchFeedText(
       const isTimeout =
         lastError.name === "TimeoutError" ||
         /aborted|timeout/i.test(lastError.message);
-      if (isTimeout && attempt < maxAttempts) {
-        console.warn(
-          `[feed] ${merchant} timeout — retry ${attempt}/${maxAttempts - 1}`,
-        );
+      // Cykelpartner er for stor til retry inden for cron/page-budget.
+      if (
+        isTimeout &&
+        attempt === 1 &&
+        merchant !== CYKELPARTNER_MERCHANT
+      ) {
+        console.warn(`[feed] ${merchant} timeout — retry once`);
         continue;
       }
       throw lastError;
@@ -223,36 +226,42 @@ export async function getCachedFeedProducts(
   }
 }
 
-/** Opvarm Data Cache efter cron-revalidate (kaldes efter revalidateTag). */
+function warmFeedPriority(feed: CatalogFeed): number {
+  // Små Partner-Ads først — Cykelpartner + Adtraction til sidst (timeout/429).
+  if (isAdtractionFeed(feed)) return 2;
+  if (feed.merchant === CYKELPARTNER_MERCHANT) return 2;
+  return 0;
+}
+
+/** Opvarm Data Cache (cron). Prioritér maskine-feeds før tunge/ustabile feeds. */
 export async function warmAllFeeds(): Promise<{
   merchant: string;
   count: number;
   ok: boolean;
   error?: string;
 }[]> {
-  return mapWithConcurrency(
-    CATALOG_FEEDS,
-    FEED_FETCH_CONCURRENCY,
-    async (feed) => {
-      try {
-        const products = await getCachedFeedProducts(feed);
-        return {
-          merchant: feed.merchant,
-          count: products.length,
-          ok: true as const,
-        };
-      } catch (err) {
-        const message = err instanceof Error ? err.message : String(err);
-        console.error(`[feed] warm failed ${feed.merchant}:`, message);
-        return {
-          merchant: feed.merchant,
-          count: 0,
-          ok: false as const,
-          error: message,
-        };
-      }
-    },
+  const ordered = [...CATALOG_FEEDS].sort(
+    (a, b) => warmFeedPriority(a) - warmFeedPriority(b),
   );
+  return mapWithConcurrency(ordered, FEED_FETCH_CONCURRENCY, async (feed) => {
+    try {
+      const products = await getCachedFeedProducts(feed);
+      return {
+        merchant: feed.merchant,
+        count: products.length,
+        ok: true as const,
+      };
+    } catch (err) {
+      const message = err instanceof Error ? err.message : String(err);
+      console.error(`[feed] warm failed ${feed.merchant}:`, message);
+      return {
+        merchant: feed.merchant,
+        count: 0,
+        ok: false as const,
+        error: message,
+      };
+    }
+  });
 }
 
 export { FEED_REVALIDATE_SECONDS, mapWithConcurrency, FEED_FETCH_CONCURRENCY };
