@@ -16,12 +16,39 @@ import {
 } from "@/lib/feeds/parse";
 import type { FeedProduct } from "@/lib/feeds/types";
 
-const FEED_CACHE_VERSION = "v2";
+const FEED_CACHE_VERSION = "v3";
 const FEED_REVALIDATE_SECONDS = 21_600; // 6 timer
-const DEFAULT_TIMEOUT_MS = 30_000;
+/** Partner-Ads XML er ofte langsom; 30s timeout’ede hele kataloget i parallel warm. */
+const DEFAULT_TIMEOUT_MS = 60_000;
 /** Cykelpartner-feedet er ~46 MB XML — kræver længere timeout. */
 const CYKELPARTNER_TIMEOUT_MS = 90_000;
 const CYKELPARTNER_MERCHANT = "Cykelpartner.dk";
+/** Max samtidige feed-hentninger (cron + katalog-build). */
+const FEED_FETCH_CONCURRENCY = 3;
+
+async function mapWithConcurrency<T, R>(
+  items: readonly T[],
+  concurrency: number,
+  mapper: (item: T, index: number) => Promise<R>,
+): Promise<R[]> {
+  const results = new Array<R>(items.length);
+  let next = 0;
+
+  async function worker() {
+    while (next < items.length) {
+      const index = next;
+      next += 1;
+      results[index] = await mapper(items[index], index);
+    }
+  }
+
+  const workers = Array.from(
+    { length: Math.min(concurrency, items.length) },
+    () => worker(),
+  );
+  await Promise.all(workers);
+  return results;
+}
 
 /** Undgå OOM: hent ikke alle partnerfeeds under `next build` (SSG). */
 function isProductionBuild(): boolean {
@@ -107,8 +134,19 @@ export async function fetchCatalogFeedInner(
 async function fetchFeedProductsForCache(
   feed: CatalogFeed,
 ): Promise<FeedProduct[]> {
-  const products = await fetchCatalogFeedInner(feed);
-  return slimFeedProducts(products);
+  try {
+    const products = await fetchCatalogFeedInner(feed);
+    return slimFeedProducts(products);
+  } catch (err) {
+    const message = err instanceof Error ? err.message : String(err);
+    const isTimeout =
+      err instanceof Error &&
+      (err.name === "TimeoutError" || /aborted|timeout/i.test(message));
+    if (!isTimeout) throw err;
+    console.warn(`[feed] timeout ${feed.merchant}, retrying once…`);
+    const products = await fetchCatalogFeedInner(feed);
+    return slimFeedProducts(products);
+  }
 }
 
 function feedCacheKey(feed: CatalogFeed): string[] {
@@ -160,8 +198,10 @@ export async function warmAllFeeds(): Promise<{
   ok: boolean;
   error?: string;
 }[]> {
-  return Promise.all(
-    CATALOG_FEEDS.map(async (feed) => {
+  return mapWithConcurrency(
+    CATALOG_FEEDS,
+    FEED_FETCH_CONCURRENCY,
+    async (feed) => {
       try {
         const products = await getCachedFeedProducts(feed);
         return {
@@ -179,8 +219,8 @@ export async function warmAllFeeds(): Promise<{
           error: message,
         };
       }
-    }),
+    },
   );
 }
 
-export { FEED_REVALIDATE_SECONDS };
+export { FEED_REVALIDATE_SECONDS, mapWithConcurrency, FEED_FETCH_CONCURRENCY };

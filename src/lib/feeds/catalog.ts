@@ -5,16 +5,20 @@ import {
   refineBilligIntent,
 } from "@/lib/feeds/classify";
 import {
+  FEED_FETCH_CONCURRENCY,
   FEED_REVALIDATE_SECONDS,
   getCachedFeedProducts,
+  mapWithConcurrency,
 } from "@/lib/feeds/fetch";
 import type { FeedProduct, MachineCategorySlug } from "@/lib/feeds/types";
 
-const CATALOG_CACHE_VERSION = "v13";
+const CATALOG_CACHE_VERSION = "v14";
 
 async function buildMachineCatalog(): Promise<FeedProduct[]> {
-  const batches = await Promise.all(
-    CATALOG_FEEDS.map((feed) => getCachedFeedProducts(feed)),
+  const batches = await mapWithConcurrency(
+    CATALOG_FEEDS,
+    FEED_FETCH_CONCURRENCY,
+    (feed) => getCachedFeedProducts(feed),
   );
   const all = batches.flat();
   const classified = classifyProducts(all);

@@ -238,44 +238,65 @@ export async function GuideArticle({ guide }: { guide: Guide }) {
                       </div>
                     ) : null}
 
-                    {offer ? (
+                    {!modelGuide && (productImage || offer) ? (
                       <div className="mt-6 flex flex-col gap-4 sm:flex-row sm:items-center sm:gap-6">
-                        {!modelGuide ? (
-                          <div className="relative h-36 w-full shrink-0 overflow-hidden border border-border bg-surface sm:h-28 sm:w-36">
-                            {productImage ? (
-                              <Image
-                                src={productImage}
-                                alt={product.name}
-                                fill
-                                sizes="(max-width: 640px) 100vw, 144px"
-                                className="object-contain p-2"
-                                unoptimized
-                              />
-                            ) : (
-                              <div className="flex h-full items-center justify-center font-display text-xs uppercase tracking-[0.14em] text-muted">
-                                Intet billede
-                              </div>
-                            )}
+                        <div className="relative h-36 w-full shrink-0 overflow-hidden border border-border bg-surface sm:h-28 sm:w-36">
+                          {productImage ? (
+                            <Image
+                              src={productImage}
+                              alt={product.name}
+                              fill
+                              sizes="(max-width: 640px) 100vw, 144px"
+                              className="object-contain p-2"
+                              unoptimized
+                            />
+                          ) : (
+                            <div className="flex h-full items-center justify-center font-display text-xs uppercase tracking-[0.14em] text-muted">
+                              Intet billede
+                            </div>
+                          )}
+                        </div>
+                        {offer ? (
+                          <div className="min-w-0">
+                            <p className="font-display text-xs uppercase tracking-[0.14em] text-muted">
+                              {offer.merchant}
+                              {!offer.inStock ? (
+                                <span className="ml-2 text-muted/80">
+                                  · Ikke på lager
+                                </span>
+                              ) : null}
+                            </p>
+                            <p className="mt-2 font-display text-2xl font-semibold tabular-nums text-foreground">
+                              {formatPriceDkk(offer.price)}
+                              {hasDiscount ? (
+                                <span className="ml-3 text-base font-normal text-muted line-through">
+                                  {formatPriceDkk(offer.oldPrice)}
+                                </span>
+                              ) : null}
+                            </p>
                           </div>
                         ) : null}
-                        <div className="min-w-0">
-                          <p className="font-display text-xs uppercase tracking-[0.14em] text-muted">
-                            {offer.merchant}
-                            {!offer.inStock ? (
-                              <span className="ml-2 text-muted/80">
-                                · Ikke på lager
-                              </span>
-                            ) : null}
-                          </p>
-                          <p className="mt-2 font-display text-2xl font-semibold tabular-nums text-foreground">
-                            {formatPriceDkk(offer.price)}
-                            {hasDiscount ? (
-                              <span className="ml-3 text-base font-normal text-muted line-through">
-                                {formatPriceDkk(offer.oldPrice)}
-                              </span>
-                            ) : null}
-                          </p>
-                        </div>
+                      </div>
+                    ) : null}
+
+                    {modelGuide && offer ? (
+                      <div className="mt-6">
+                        <p className="font-display text-xs uppercase tracking-[0.14em] text-muted">
+                          {offer.merchant}
+                          {!offer.inStock ? (
+                            <span className="ml-2 text-muted/80">
+                              · Ikke på lager
+                            </span>
+                          ) : null}
+                        </p>
+                        <p className="mt-2 font-display text-2xl font-semibold tabular-nums text-foreground">
+                          {formatPriceDkk(offer.price)}
+                          {hasDiscount ? (
+                            <span className="ml-3 text-base font-normal text-muted line-through">
+                              {formatPriceDkk(offer.oldPrice)}
+                            </span>
+                          ) : null}
+                        </p>
                       </div>
                     ) : null}
 
@@ -327,33 +348,53 @@ export async function GuideArticle({ guide }: { guide: Guide }) {
                           {bundleItems.map((item) => {
                             const itemOffer = offerMap.get(item.feedProductId);
                             const itemHref = itemOffer?.url;
+                            const itemImage =
+                              itemOffer?.image || item.imageUrl;
                             return (
                               <li
                                 key={item.feedProductId}
-                                className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between sm:gap-4"
+                                className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between sm:gap-4"
                               >
-                                <div className="min-w-0">
-                                  {item.role ? (
-                                    <p className="font-display text-[0.65rem] uppercase tracking-[0.14em] text-accent">
-                                      {item.role}
+                                <div className="flex min-w-0 items-start gap-3 sm:items-center">
+                                  <div className="relative h-16 w-16 shrink-0 overflow-hidden border border-border bg-surface">
+                                    {itemImage ? (
+                                      <Image
+                                        src={itemImage}
+                                        alt={item.name}
+                                        fill
+                                        sizes="64px"
+                                        className="object-contain p-1"
+                                        unoptimized
+                                      />
+                                    ) : (
+                                      <div className="flex h-full items-center justify-center px-1 text-center font-display text-[0.55rem] uppercase leading-tight tracking-[0.08em] text-muted">
+                                        Intet billede
+                                      </div>
+                                    )}
+                                  </div>
+                                  <div className="min-w-0">
+                                    {item.role ? (
+                                      <p className="font-display text-[0.65rem] uppercase tracking-[0.14em] text-accent">
+                                        {item.role}
+                                      </p>
+                                    ) : null}
+                                    <p className="text-sm text-foreground/90">
+                                      {item.name}
                                     </p>
-                                  ) : null}
-                                  <p className="text-sm text-foreground/90">
-                                    {item.name}
-                                  </p>
-                                  {itemOffer ? (
-                                    <p className="mt-0.5 text-sm tabular-nums text-muted">
-                                      {formatPriceDkk(itemOffer.price)}
-                                      <span className="ml-2">
-                                        · {itemOffer.merchant}
-                                      </span>
-                                      {!itemOffer.inStock ? (
+                                    {itemOffer ? (
+                                      <p className="mt-0.5 text-sm tabular-nums text-muted">
+                                        {formatPriceDkk(itemOffer.price)}
                                         <span className="ml-2">
-                                          · Ikke på lager
+                                          · {itemOffer.merchant}
                                         </span>
-                                      ) : null}
-                                    </p>
-                                  ) : null}
+                                        {!itemOffer.inStock ? (
+                                          <span className="ml-2">
+                                            · Ikke på lager
+                                          </span>
+                                        ) : null}
+                                      </p>
+                                    ) : null}
+                                  </div>
                                 </div>
                                 {itemHref ? (
                                   <a

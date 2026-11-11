@@ -3,6 +3,9 @@ import { NextResponse } from "next/server";
 import { warmCatalog } from "@/lib/feeds/catalog";
 import { warmAllFeeds } from "@/lib/feeds/fetch";
 
+/** Partner-feeds hentes i batches — kræver længere end default 60s. */
+export const maxDuration = 300;
+
 /**
  * Cron: invalider feed-cache og varm den op igen.
  * På Vercel: sæt CRON_SECRET — Vercel Cron sender `Authorization: Bearer <CRON_SECRET>`.

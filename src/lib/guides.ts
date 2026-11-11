@@ -16,6 +16,8 @@ export type GuideBundleItem = {
   feedProductId: string;
   /** Fx "Cardio", "Styrke", "Tilbehør" */
   role?: string;
+  /** Fast produktbillede når feed mangler/er koldt */
+  imageUrl?: string;
 };
 
 export type GuideProduct = {
@@ -4083,17 +4085,24 @@ export const guides: Guide[] = [
           { label: "Cardio", value: "Gåbånd (walking pad)" },
           { label: "Styrke", value: "Elastik + måtte" },
         ],
+        imageUrl:
+          "https://cdn.shopify.com/s/files/1/0023/6840/5573/files/black-month-essential_e2765fba-a63d-4969-8268-a4389ae7c52d.png?v=1793364986",
         feedProductId: "Ascendic.dk:56388648173912",
+        affiliateId: "ascendic-essential-walking-pad",
         bundleItems: [
           {
             name: "Ascendic Elastik træningssæt (med håndtag)",
             feedProductId: "Ascendic.dk:43590874824938",
             role: "Styrke",
+            imageUrl:
+              "https://cdn.shopify.com/s/files/1/0023/6840/5573/files/black-month-elastik-traeningssaet_4ecb8ae2-bb74-4ec4-a2ce-cf82ab8c1684.png?v=1793364953",
           },
           {
             name: "Odin Yogamåtte 0,4 cm Sort",
             feedProductId: "Apuls.dk:5086",
             role: "Tilbehør",
+            imageUrl:
+              "https://m2.apuls.dk/media/catalog/product/6/5/658144fa69a63odinyogamaatte4cmsort1.jpg",
           },
         ],
       },
@@ -4120,17 +4129,23 @@ export const guides: Guide[] = [
           { label: "Cardio", value: "Crosstrainer" },
           { label: "Styrke", value: "Justerbar bænk + håndvægte" },
         ],
+        imageUrl:
+          "https://m2.apuls.dk/media/catalog/product/6/7/679b4abfd8d01odinc200crosstrainer123.jpg",
         feedProductId: "Apuls.dk:12748",
         bundleItems: [
           {
             name: "Odin Multi Justerbar og Foldbar Træningsbænk",
             feedProductId: "Apuls.dk:15421",
             role: "Styrke",
+            imageUrl:
+              "https://m2.apuls.dk/media/catalog/product/6/8/68a5aa023c8c6odinmultijusterbarfoldbartrarningsbarnk1.jpg",
           },
           {
             name: "Odin Justerbar Håndvægt 20 kg (2×10 kg)",
             feedProductId: "Apuls.dk:9007",
             role: "Styrke",
+            imageUrl:
+              "https://m2.apuls.dk/media/catalog/product/D/B/DBS1203_1.jpg",
           },
         ],
       },
@@ -4157,12 +4172,16 @@ export const guides: Guide[] = [
           { label: "Cardio", value: "Tilføj senere" },
           { label: "Styrke", value: "Multistation 100 kg + bænk" },
         ],
+        imageUrl:
+          "https://m2.apuls.dk/media/catalog/product/6/7/677fcebc230caOdinValhallaHomeGymMultistation100kg1.jpg",
         feedProductId: "Apuls.dk:15327",
         bundleItems: [
           {
             name: "Odin Valhalla Justerbar Træningsbænk",
             feedProductId: "Apuls.dk:16031",
             role: "Styrke",
+            imageUrl:
+              "https://m2.apuls.dk/media/catalog/product/o/d/odin-valhalla-benhpres-1.jpg",
           },
         ],
       },
