@@ -3,6 +3,7 @@ import { CategorySection } from "@/components/CategorySection";
 import { DailyDealsSection } from "@/components/DailyDealsSection";
 import { FeaturedGuidesSection } from "@/components/FeaturedGuidesSection";
 import { Hero } from "@/components/Hero";
+import { SituationsSection } from "@/components/SituationsSection";
 import { getDailyDeals } from "@/lib/feeds/catalog";
 import { getFeaturedGuides } from "@/lib/guides";
 import { homeOgPath } from "@/lib/og";
@@ -47,6 +48,7 @@ export default async function Home() {
     <>
       <Hero />
       <DailyDealsSection products={deals} />
+      <SituationsSection />
       <FeaturedGuidesSection guides={featuredGuides} />
       <CategorySection />
     </>
