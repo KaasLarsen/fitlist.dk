@@ -16,7 +16,7 @@ import {
 } from "@/lib/feeds/parse";
 import type { FeedProduct } from "@/lib/feeds/types";
 
-const FEED_CACHE_VERSION = "v9";
+const FEED_CACHE_VERSION = "v10";
 const FEED_REVALIDATE_SECONDS = 21_600; // 6 timer
 /** Partner-Ads XML er ofte langsom; for lav timeout tømmer hele kataloget. */
 const DEFAULT_TIMEOUT_MS = 90_000;
@@ -35,9 +35,14 @@ const FEED_FETCH_CONCURRENCY = 2;
  */
 const FEED_CACHE_PRODUCT_LIMIT = 300;
 
-/** For tunge feeds springes over i warm + katalog (guides bruger imageUrl-fallback). */
+/**
+ * Springes over i warm + katalog:
+ * - Cykelpartner: ~46 MB XML
+ * - Adtraction: hyppige HTTP 429 der trækker hele katalog-build ned
+ * Guides bruger imageUrl/affiliate-fallback.
+ */
 function isSkippedHeavyFeed(feed: CatalogFeed): boolean {
-  return feed.merchant === CYKELPARTNER_MERCHANT;
+  return feed.merchant === CYKELPARTNER_MERCHANT || isAdtractionFeed(feed);
 }
 
 async function mapWithConcurrency<T, R>(
@@ -268,13 +273,7 @@ export async function getCachedFeedProducts(
   }
 }
 
-function warmFeedPriority(feed: CatalogFeed): number {
-  // Små Partner-Ads først — Adtraction til sidst (429).
-  if (isAdtractionFeed(feed)) return 2;
-  return 0;
-}
-
-/** Opvarm Data Cache (cron). Spring tunge feeds over; prioritér maskine-feeds. */
+/** Opvarm Data Cache (cron). Kun Partner-Ads (uden Cykelpartner/Adtraction). */
 export async function warmAllFeeds(): Promise<{
   merchant: string;
   count: number;
@@ -282,12 +281,10 @@ export async function warmAllFeeds(): Promise<{
   error?: string;
   skipped?: boolean;
 }[]> {
-  const ordered = CATALOG_FEEDS.filter((f) => !isSkippedHeavyFeed(f)).sort(
-    (a, b) => warmFeedPriority(a) - warmFeedPriority(b),
-  );
+  const active = CATALOG_FEEDS.filter((f) => !isSkippedHeavyFeed(f));
 
   const warmed = await mapWithConcurrency(
-    ordered,
+    active,
     FEED_FETCH_CONCURRENCY,
     async (feed) => {
       try {
