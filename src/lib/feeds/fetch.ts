@@ -16,7 +16,7 @@ import {
 } from "@/lib/feeds/parse";
 import type { FeedProduct } from "@/lib/feeds/types";
 
-const FEED_CACHE_VERSION = "v4";
+const FEED_CACHE_VERSION = "v5";
 const FEED_REVALIDATE_SECONDS = 21_600; // 6 timer
 /** Partner-Ads XML er ofte langsom; 30s timeout’ede hele kataloget i parallel warm. */
 const DEFAULT_TIMEOUT_MS = 60_000;
@@ -104,12 +104,12 @@ export async function fetchFeedProductsInner(
   const products = parsePartnerAdsXml(text, feed.merchant).filter(
     passesMerchantGate,
   );
-  // Stort outdoor-katalog: cache kun varer klassifikationen accepterer
-  // (samme mønster som Adtraction — undgår Next.js 2 MB cache-grænse).
-  if (isCykelpartner) {
-    return products.filter((product) => classifyProduct(product) != null);
-  }
-  return products;
+  // Cache kun klassificerede varer — fulde Partner-Ads-feeds (Apuls m.fl.)
+  // ligger over Next.js’ 2 MB Data Cache-loft og kan ellers ikke warm’es.
+  // Guide-accessories uden klasse bruger imageUrl/affiliate-fallback.
+  return products
+    .map((product) => classifyProduct(product))
+    .filter((product): product is FeedProduct => product != null);
 }
 
 /**
