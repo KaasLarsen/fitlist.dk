@@ -57,7 +57,6 @@ const GUIDE_LINK_ALIASES: Record<string, string[]> = {
   ],
   "bedste-spinningcykel-2026": ["Bedste spinningcykel 2026"],
   "bedste-cykel-til-zwift-2026": ["Bedste cykel til Zwift 2026"],
-  "bedste-hometrainer-2026": ["Bedste hometrainer 2026"],
   "bedste-justerbare-haandvaegte-2026": ["Bedste justerbare håndvægte 2026"],
   "bedste-justerbar-traeningsbaenk-2026": [
     "Bedste justerbare træningsbænk 2026",
