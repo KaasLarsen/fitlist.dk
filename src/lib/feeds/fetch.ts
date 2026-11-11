@@ -16,7 +16,7 @@ import {
 } from "@/lib/feeds/parse";
 import type { FeedProduct } from "@/lib/feeds/types";
 
-const FEED_CACHE_VERSION = "v7";
+const FEED_CACHE_VERSION = "v8";
 const FEED_REVALIDATE_SECONDS = 21_600; // 6 timer
 /** Partner-Ads XML er ofte langsom; for lav timeout tømmer hele kataloget. */
 const DEFAULT_TIMEOUT_MS = 90_000;
@@ -29,6 +29,11 @@ const CYKELPARTNER_MERCHANT = "Cykelpartner.dk";
  * til cold catalog-build inden for serverless-timeout.
  */
 const FEED_FETCH_CONCURRENCY = 2;
+/**
+ * Hård cap pr. merchant-feed efter classify — Next.js Data Cache max 2 MB/entry.
+ * Prioritér på lager + billede, derefter lavest pris.
+ */
+const FEED_CACHE_PRODUCT_LIMIT = 600;
 
 async function mapWithConcurrency<T, R>(
   items: readonly T[],
@@ -80,6 +85,23 @@ function slimFeedProducts(products: FeedProduct[]): FeedProduct[] {
     categorySlug: p.categorySlug,
     intentSlugs: p.intentSlugs,
   }));
+}
+
+/** Hold hver feed-cache under 2 MB: cap + prioritering. */
+function limitFeedProducts(products: FeedProduct[]): FeedProduct[] {
+  if (products.length <= FEED_CACHE_PRODUCT_LIMIT) return products;
+  return [...products]
+    .sort((a, b) => {
+      if (a.inStock !== b.inStock) return a.inStock ? -1 : 1;
+      const aImg = Boolean(a.image);
+      const bImg = Boolean(b.image);
+      if (aImg !== bImg) return aImg ? -1 : 1;
+      if (a.price == null && b.price == null) return 0;
+      if (a.price == null) return 1;
+      if (b.price == null) return -1;
+      return a.price - b.price;
+    })
+    .slice(0, FEED_CACHE_PRODUCT_LIMIT);
 }
 
 function sleep(ms: number): Promise<void> {
@@ -191,7 +213,7 @@ async function fetchFeedProductsForCache(
   feed: CatalogFeed,
 ): Promise<FeedProduct[]> {
   const products = await fetchCatalogFeedInner(feed);
-  return slimFeedProducts(products);
+  return slimFeedProducts(limitFeedProducts(products));
 }
 
 function feedCacheKey(feed: CatalogFeed): string[] {
