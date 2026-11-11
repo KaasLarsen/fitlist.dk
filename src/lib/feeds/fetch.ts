@@ -16,7 +16,7 @@ import {
 } from "@/lib/feeds/parse";
 import type { FeedProduct } from "@/lib/feeds/types";
 
-const FEED_CACHE_VERSION = "v3";
+const FEED_CACHE_VERSION = "v4";
 const FEED_REVALIDATE_SECONDS = 21_600; // 6 timer
 /** Partner-Ads XML er ofte langsom; 30s timeout’ede hele kataloget i parallel warm. */
 const DEFAULT_TIMEOUT_MS = 60_000;
@@ -55,11 +55,16 @@ function isProductionBuild(): boolean {
   return process.env.NEXT_PHASE === "phase-production-build";
 }
 
-/** Fjern tunge felter så Data Cache holder sig under Next.js 2MB-grænsen. */
+/**
+ * Fjern tunge felter så Data Cache holder sig under Next.js 2MB-grænsen.
+ * Apuls (~3300 varer) lå lige over 2MB med desc trunceret til 180 tegn.
+ */
 function slimFeedProducts(products: FeedProduct[]): FeedProduct[] {
   return products.map((p) => ({
     ...p,
-    desc: (p.desc || "").slice(0, 180),
+    desc: "",
+    category: (p.category || "").slice(0, 80),
+    brand: (p.brand || "").slice(0, 60),
   }));
 }
 
