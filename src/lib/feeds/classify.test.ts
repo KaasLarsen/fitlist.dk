@@ -285,9 +285,9 @@ describe("classifyProduct — hard excludes", () => {
       "Body Bike Racer Sadel m. Beslag - sort sadel til spinningcykler og home gym",
       "LMX PU Olympisk Disc 50mm 2,50kg - Brugt vægtskive til home gym",
       "Plakat Bold 70 x 50 cm - sporty vægdekoration til home gym",
-      "Odin Pull Up Bar Dørribbe",
       "Home Benlås til Home Træningsbænke",
       "Crossmaxx T-shirt XL trænings T-shirt til styrketræning",
+      "Chin up greb med gummihåndtag",
     ];
     for (const title of noise) {
       assert.equal(
@@ -364,6 +364,101 @@ describe("classifyProduct — tilbehoer (must-haves)", () => {
     assert.ok(r);
     assert.equal(r!.categorySlug, "tilbehoer");
     assert.ok(r!.intentSlugs?.includes("gulvmaatter"));
+    assert.ok(!r!.intentSlugs?.includes("fitnessgulv"));
+  });
+
+  it("classifies puzzle fitnessgulv as tilbehoer + fitnessgulv", () => {
+    const r = classifyProduct(
+      product({
+        title: "Nordic Fighter Gummi Floor Guards Fitnessgulv All Black 25mm",
+        brand: "Nordic Fighter",
+        price: 428,
+      }),
+    );
+    assert.ok(r);
+    assert.equal(r!.categorySlug, "tilbehoer");
+    assert.ok(r!.intentSlugs?.includes("fitnessgulv"));
+    assert.ok(!r!.intentSlugs?.includes("gulvmaatter"));
+  });
+
+  it("classifies kettlebell as tilbehoer + kettlebells (not haandvaegte)", () => {
+    const r = classifyProduct(
+      product({
+        title: "Odin Støbejern Kettlebell 16kg",
+        brand: "Odin",
+        price: 589,
+      }),
+    );
+    assert.ok(r);
+    assert.equal(r!.categorySlug, "tilbehoer");
+    assert.ok(r!.intentSlugs?.includes("kettlebells"));
+    assert.ok(!r!.intentSlugs?.includes("haandvaegte"));
+  });
+
+  it("classifies vandromaskine as romaskine + vand", () => {
+    const r = classifyProduct(
+      product({
+        title: "Odin R1800 Vandromaskine",
+        brand: "Odin",
+        price: 4499,
+      }),
+    );
+    assert.ok(r);
+    assert.equal(r!.categorySlug, "romaskine");
+    assert.ok(r!.intentSlugs?.includes("vand"));
+  });
+
+  it("classifies dørribbe as tilbehoer + pullup", () => {
+    const r = classifyProduct(
+      product({
+        title: "Odin Pull Up Bar Dørribbe",
+        brand: "Odin",
+        price: 124,
+      }),
+    );
+    assert.ok(r);
+    assert.equal(r!.categorySlug, "tilbehoer");
+    assert.ok(r!.intentSlugs?.includes("pullup"));
+  });
+
+  it("classifies vægmonteret pull-up bar as tilbehoer + pullup", () => {
+    const r = classifyProduct(
+      product({
+        title: "Odin Elite Heavy Pull Up Bar",
+        brand: "Odin",
+        price: 899,
+      }),
+    );
+    assert.ok(r);
+    assert.equal(r!.categorySlug, "tilbehoer");
+    assert.ok(r!.intentSlugs?.includes("pullup"));
+  });
+
+  it("classifies power tower as styrkemaskiner (not pullup accessory)", () => {
+    const r = classifyProduct(
+      product({
+        title: "Odin Ragnarok Power Tower Pull Up Station",
+        brand: "Odin",
+        price: 3400,
+      }),
+    );
+    assert.ok(r);
+    assert.equal(r!.categorySlug, "styrkemaskiner");
+    assert.ok(!r!.intentSlugs?.includes("pullup"));
+  });
+
+  it("classifies hometrainer intent on trainer titles", () => {
+    const r = classifyProduct(
+      product({
+        title: "Wahoo KICKR Core Direct Drive Smart Trainer",
+        brand: "Wahoo",
+        category: "Hometrainer",
+        price: 7999,
+      }),
+    );
+    assert.ok(r);
+    assert.equal(r!.categorySlug, "motionscykel");
+    assert.ok(r!.intentSlugs?.includes("hometrainer"));
   });
 
   it("classifies beskyttelsesmåtte as tilbehoer", () => {
@@ -735,7 +830,8 @@ describe("classifyProduct — Den Intelligente Krop", () => {
       }),
     );
     assert.equal(bell?.categorySlug, "tilbehoer");
-    assert.ok(bell?.intentSlugs?.includes("haandvaegte"));
+    assert.ok(bell?.intentSlugs?.includes("kettlebells"));
+    assert.ok(!bell?.intentSlugs?.includes("haandvaegte"));
 
     const trx = classifyProduct(
       product({

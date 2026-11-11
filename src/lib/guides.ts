@@ -1354,7 +1354,7 @@ export const guides: Guide[] = [
         heading: "Luft, vand eller magnet?",
         paragraphs: [
           "Luft: realistisk, selvsvalende intensitet, mere “vifte”-lyd. Vand: stemning, jævn følelse og den karakteristiske splash — favorit for mange, der vil have den ægte oplevelse hjemme. Magnet: stille, præcis, ofte billigere — men mindre “båd”.",
-          "Der findes ikke én rigtig type. Der findes den type, der matcher din bolig og din motivation. Mange bliver glade for magnet i lejlighed, vand i hus med træningsrum, og luft når de jagter Watt-tal.",
+          "Der findes ikke én rigtig type. Der findes den type, der matcher din bolig og din motivation. Mange bliver glade for magnet i lejlighed, vand i hus med træningsrum, og luft når de jagter Watt-tal. Vil du kun sammenligne vandmodeller (trædesign, fold, splash)? Se Bedste vandromaskine 2026.",
         ],
       },
       {
@@ -1417,6 +1417,7 @@ export const guides: Guide[] = [
       },
     ],
     relatedSlugs: [
+      "bedste-vandromaskine-2026",
       "romaskine-eller-crosstrainer-2026",
       "bedste-stoejsvag-romaskine-2026",
       "bedste-loebebaand-2026",
@@ -1677,6 +1678,7 @@ export const guides: Guide[] = [
       "bedste-traeningsudstyr-til-seniorer-2026",
       "bedste-smartcykel-2026",
       "bedste-cykel-til-zwift-2026",
+      "bedste-hometrainer-2026",
       "bedste-airbike-2026",
       "bedste-spinningcykel-2026",
       "bedste-crosstrainer-2026",
@@ -2099,7 +2101,7 @@ export const guides: Guide[] = [
         heading: "Hometrainer til din egen racercykel",
         paragraphs: [
           "Har du allerede en race- eller gravelcykel, er en smart hometrainer ofte det rigtige køb: direct drive til watt og pasform, wheel-on hvis du sjældent kører inde. En dedikeret smartbike vinder kun, når bekvemmelighed betyder mere end at cyklen føles som din.",
-          "Valget mellem egen cykel og indoor bike — kassette, thru-axle og hvem der skal dele maskinen — står i Bedste cykel til Zwift 2026. Anbefalingerne med “Se pris” her er smartbikes. Partnerfeedet har ikke KICKR- eller Tacx-hometrainere.",
+          "Hele valget — kassette, thru-axle, støj og hvad vi kan (og ikke kan) linke til — står i Bedste hometrainer 2026. Anbefalingerne med “Se pris” her er smartbikes. Til Zwift-cykler i dybden: Bedste cykel til Zwift 2026.",
         ],
       },
       {
@@ -2208,6 +2210,7 @@ export const guides: Guide[] = [
       },
     ],
     relatedSlugs: [
+      "bedste-hometrainer-2026",
       "bedste-cykel-til-zwift-2026",
       "bedste-spinningcykel-2026",
       "bedste-motionscykel-2026",
@@ -2370,10 +2373,10 @@ export const guides: Guide[] = [
         paragraphs: [
           "Der er tre måder at komme ind i Watopia på. Direct drive: baghjulet af, kæden på trainerens kassette. Wheel-on: hjulet bliver på, og et dæk presses mod en rulle. Dedikeret smartbike: et stel, der aldrig skal udenfor. Pasformen vinder på de to første, hvis racercyklen allerede er tilpasset dig. Bekvemmeligheden vinder på den tredje, når flere i huset skal køre, eller du ikke orker at montere hver gang.",
           "Direct drive kræver at kassetten matcher din (eller at traineren bruger en Zwift Cog / virtuel gearing, så du ikke skifter kassette). Thru-axle og quick release er ikke det samme beslag — tjek hvad din ramme har, før du køber. Wheel-on er ligeglad med kassette, men dæktryk og rullens tryk flytter watt-tallet, og dækket mod rullen larmer mere. En smartbike som Odin S1000 springer begge problemer over: du sætter dig, og Bluetooth klarer resten. Til gengæld er geometrien et kompromis, og bakkefølelsen er ikke en KICKR eller Tacx NEO.",
-          "Vores partnerfeeds har Zwift-cykler med live pris. De har ikke direct drive- eller wheel-on-hometrainere, vi kan linke til. Wahoo og Tacx er derfor reference, ikke en “Se pris”-knap. Vælg hometrainer, hvis landevej er din identitet og du kan købe traineren et andet sted. Vælg en af cyklerne herunder, hvis Zwift er vanen.",
+          "Vores partnerfeeds har Zwift-cykler med live pris. Direct drive- og wheel-on-hometrainere er sjældne i samme feeds — Wahoo og Tacx er derfor reference her. Hele hometrainer-valget (kassette, thru-axle, støj) står i Bedste hometrainer 2026. Vælg hometrainer, hvis landevej er din identitet. Vælg en af cyklerne herunder, hvis Zwift er vanen uden montering.",
         ],
         comparison: {
-          caption: "Tre veje til Zwift — hometrainerne er ikke i partnerfeedet",
+          caption: "Tre veje til Zwift — se også hometrainer-guiden",
           rowHeaderLabel: "Setup",
           columns: ["Pasform", "Montering", "Watt", "Støj", "Vælg hvis"],
           rows: [
@@ -2432,7 +2435,7 @@ export const guides: Guide[] = [
       {
         question: "Hometrainer eller smartbike til Zwift?",
         answer:
-          "Hometrainer (direct drive) hvis du allerede har en racercykel og vil beholde pasform og watt. Smartbike hvis du vil sætte dig uden at montere noget, og hvis flere skal dele. Wheel-on er den billige mellemvej og larmer mere. Vores shop-links er smartbikes — Wahoo og Tacx findes ikke i partnerfeedet lige nu.",
+          "Hometrainer (direct drive) hvis du allerede har en racercykel og vil beholde pasform og watt. Smartbike hvis du vil sætte dig uden at montere noget, og hvis flere skal dele. Wheel-on er den billige mellemvej og larmer mere. Læs Bedste hometrainer 2026 for direct drive vs. wheel-on — vores shop-links her er smartbikes.",
       },
       {
         question: "Skal jeg bruge computer, iPad eller Apple TV?",
@@ -2456,6 +2459,7 @@ export const guides: Guide[] = [
       },
     ],
     relatedSlugs: [
+      "bedste-hometrainer-2026",
       "bedste-smartcykel-2026",
       "bedste-spinningcykel-2026",
       "bedste-motionscykel-2026",
@@ -3949,6 +3953,7 @@ export const guides: Guide[] = [
       },
     ],
     relatedSlugs: [
+      "bedste-kettlebells-hjemmetraening-2026",
       "hjemmetraening-for-begyndere-foerste-90-dage",
       "bedste-justerbar-traeningsbaenk-2026",
       "bedste-power-rack-squat-rack-2026",
@@ -5639,6 +5644,7 @@ export const guides: Guide[] = [
       },
     ],
     relatedSlugs: [
+      "bedste-vandromaskine-2026",
       "bedste-romaskine-2026",
       "bedste-stoejsvage-traeningsmaskiner-lejlighed-2026",
       "bedste-stoejsvag-crosstrainer-2026",
@@ -6169,9 +6175,12 @@ export const guides: Guide[] = [
       },
     ],
     relatedSlugs: [
+      "bedste-pull-up-bar-doerribbe-2026",
       "bedste-vaegtstangssaet-bumper-plates-2026",
       "bedste-justerbar-traeningsbaenk-2026",
       "bedste-justerbare-haandvaegte-2026",
+      "bedste-kettlebells-hjemmetraening-2026",
+      "bedste-traeningsmaatte-gulvbeskyttelse-home-gym-2026",
       "bedste-styrkemaskiner-2026",
       "bedste-multistation-2026",
       "ultimative-home-gym-budget-2026",
@@ -9074,6 +9083,7 @@ export const guides: Guide[] = [
       },
     ],
     relatedSlugs: [
+      "bedste-traeningsmaatte-gulvbeskyttelse-home-gym-2026",
       "bedste-stoejsvage-traeningsmaskiner-lejlighed-2026",
       "bedste-stoejsvag-loebebaand-lejlighed-2026",
       "bedste-gaabaand-2026",
@@ -9301,6 +9311,7 @@ export const guides: Guide[] = [
       "bedste-power-rack-squat-rack-2026",
       "bedste-justerbar-traeningsbaenk-2026",
       "bedste-justerbare-haandvaegte-2026",
+      "bedste-traeningsmaatte-gulvbeskyttelse-home-gym-2026",
       "bedste-sjippetov-traeningsmaatte-lejlighed-2026",
       "bedste-styrkemaskiner-2026",
     ],
@@ -9775,6 +9786,1093 @@ export const guides: Guide[] = [
       "bedste-stoejsvag-loebebaand-lejlighed-2026",
       "gaabaand-til-kontoret-2026",
       "bedste-sjippetov-traeningsmaatte-lejlighed-2026",
+    ],
+  },
+  {
+    slug: "bedste-kettlebells-hjemmetraening-2026",
+    title: "Bedste kettlebells til hjemmetræning 2026",
+    excerpt:
+      "Støbejern vs. vinyl, klassisk vs. konkurrencegreb og vægtvalg: sådan bygger du et kettlebell-setup hjemme — med fire anbefalinger og live priser.",
+    metaDescription:
+      "Bedste kettlebells til hjemmetræning 2026. Støbejern vs. vinyl, konkurrencegreb og vægtpakker — med live priser fra danske partnere.",
+    categorySlug: "tilbehoer",
+    intentSlug: "kettlebells",
+    publishedAt: "2026-11-11",
+    updatedAt: "2026-11-11",
+    intro:
+      "Kettlebells er det mest pladsøkonomiske “helkropsværktøj” efter håndvægtene: swings, goblet squat, press, turkish get-up og rows med ét greb. Alligevel mangler de ofte i home gym-lister, der ellers dækker dial-dumbbells og elastikker tæt. Her får du materialevalget (støbejern vs. vinyl), grebforskellen (klassisk vs. konkurrence), realistiske startvægte — og fire konkrete køb med live partnerpriser.",
+    criteria: [
+      {
+        title: "Støbejern vs. vinyl/neopren",
+        description:
+          "Støbejern er standarden til swings og presses: hård overflade, kompakt krop og greb, der ikke føles “oppustet”. Vinyl- eller neoprenbelagte klokker er venligere mod gulv og møbler, mere stille ved nedsætning — og ofte billigere som pakke. Vælg støbejern, når teknik og progression er målet. Vælg vinyl, når du træner i stuen og vil skåne gulv og naboer for dump.",
+      },
+      {
+        title: "Klassisk greb vs. konkurrence",
+        description:
+          "Klassiske støbejernsklokker vokser i greb og krop med vægten. Konkurrence-kettlebells (steel) har samme ydre mål på tværs af kilo — grebet føles ens, når du skifter 12 → 16 → 20 kg. Konkurrence er værd at betale for, hvis du træner snatches og jerks seriøst. Til allround hjemmetræning er klassisk støbejern nok for de fleste.",
+      },
+      {
+        title: "Startvægt — køb til 80 % af træningen",
+        description:
+          "Mange begyndere starter for tungt. Som tommelfingerregel: swings ofte 12–16 kg (kvinder) / 16–24 kg (mænd), goblet squat samme zone, overhead press 1–2 trin lettere. En pakke med 10–16 kg dækker progression bedre end én “ego-klokke” på 28 kg, du kun bruger til swings.",
+      },
+      {
+        title: "Pakke vs. enkeltstyk",
+        description:
+          "Enkelte klokker er fine, når du allerede kender din vægt. Pakker (4–8 styk) er billigere pr. kilo og giver dig progression uden at vente på næste lønseddel. Start med en mid-pakke, hvis du er usikker — og udvid opad, når presses er lette.",
+      },
+      {
+        title: "Gulv og nabo",
+        description:
+          "Støbejern på laminat uden måtte er en dårlig idé. Læg puslespilsgummi eller tyk gulvbeskyttelse under zonen — se Bedste træningsmåtte til gulvbeskyttelse / home gym. Vinyl er mere tilgivende, men erstatter ikke et ordentligt underlag ved swings.",
+      },
+      {
+        title: "Justerbar kettlebell",
+        description:
+          "Dial-/selector-kettlebells sparer plads som justerbare håndvægte. De er stærke til presses og squats, men swings føles ofte mindre “rigtige” end en massiv klokke. Brug dem som plads-hack — ikke som erstatning for en god støbejerns-swingvægt, hvis swings er din hovedøvelse.",
+      },
+    ],
+    products: [
+      {
+        id: "odin-stobejern-pakke-10-16",
+        name: "Odin Kettlebell Støbejern PAKKETILBUD (10, 12, 14, 16 kg)",
+        badge: "Bedst samlet",
+        summary:
+          "Fire klassiske støbejernsklokker i det interval, de fleste hjemmetrænere faktisk bruger. Progression uden at købe én for tung klokke først — og ægte swing-følelse, vinyl ikke kan matche.",
+        pros: [
+          "Dækker begynder → mellemprogression",
+          "Klassisk støbejern til swings og presses",
+          "Bedre pris pr. kilo end fire enkeltkøb",
+          "Klar “første rigtige” kettlebell-setup",
+        ],
+        cons: [
+          "Fylder mere end én justerbar klokke",
+          "Kræver måtte under zonen",
+          "Ikke konkurrence-greb",
+        ],
+        specs: [
+          { label: "Type", value: "Støbejern (pakke)" },
+          { label: "Vægte", value: "10 / 12 / 14 / 16 kg" },
+          { label: "Brand", value: "Odin" },
+          { label: "Partner", value: "Apuls.dk" },
+        ],
+        feedProductId: "Apuls.dk:11843",
+      },
+      {
+        id: "odin-vinyl-pakke-4-10",
+        name: "Odin Vinyl Kettlebell PAKKETILBUD (4, 6, 8, 10 kg)",
+        badge: "Bedste billige / stuen",
+        summary:
+          "Vinylbelagte klokker til stuen, lejligheden og dem, der vil skåne gulv og møbler. Ideel indgang, hvis du er ny — eller vil have lette klokker til mobility, goblet og teknik.",
+        pros: [
+          "Gulvvenlig overflade",
+          "Lav entry-pris for fire vægte",
+          "God til teknik og let styrke",
+          "Mindre “jern-dump” end støbejern",
+        ],
+        cons: [
+          "For let til tunge swings for mange",
+          "Greb/krop vokser anderledes end konkurrence",
+          "Ikke førstevalg til seriøs snatch-progression",
+        ],
+        specs: [
+          { label: "Type", value: "Vinyl (pakke)" },
+          { label: "Vægte", value: "4 / 6 / 8 / 10 kg" },
+          { label: "Brand", value: "Odin" },
+          { label: "Partner", value: "Apuls.dk" },
+        ],
+        feedProductId: "Apuls.dk:11840",
+      },
+      {
+        id: "odin-competition-20",
+        name: "Odin Competition Kettlebell 20 kg",
+        badge: "Bedste konkurrencegreb",
+        summary:
+          "Steel competition-klokke med ens ydre mål — grebet ændrer sig ikke, når du senere køber 16 eller 24 kg i samme serie. Til dig, der vil have ensartet snatch/jerk-følelse hjemme.",
+        pros: [
+          "Ens greb på tværs af vægte i serien",
+          "Seriøs træningsfølelse",
+          "Klar opgradering fra vinyl/entry støbejern",
+          "20 kg er et stærkt allround-trin",
+        ],
+        cons: [
+          "Dyrere pr. kilo end klassisk støbejern",
+          "Én vægt — du skal købe flere over tid",
+          "Hårdere ved gulv uden måtte",
+        ],
+        specs: [
+          { label: "Type", value: "Competition (steel)" },
+          { label: "Vægt", value: "20 kg" },
+          { label: "Brand", value: "Odin" },
+          { label: "Partner", value: "Apuls.dk" },
+        ],
+        feedProductId: "Apuls.dk:10508",
+      },
+      {
+        id: "odin-justerbar-kb-12",
+        name: "Odin Justerbar Kettlebell 12 kg (12-i-én)",
+        badge: "Bedste pladsbesparende",
+        summary:
+          "Én justerbar klokke erstatter en række lette kettlebells. Stærkt, når kvadratmeterne er få — og presses/squats skifter vægt ofte. Swings føles stadig bedst på en massiv klokke.",
+        pros: [
+          "Minimalt footprint",
+          "Hurtigt vægtskift",
+          "Billigere end en fuld støbejernsrække",
+          "God til lejlighed og rejse-setup",
+        ],
+        cons: [
+          "Swing-følelse matcher ikke massiv støbejern",
+          "Mekanisme kræver korrekt lås før hvert sæt",
+          "Loftet på 12 kg begrænser progression",
+        ],
+        specs: [
+          { label: "Type", value: "Justerbar kettlebell" },
+          { label: "Interval", value: "Op til 12 kg" },
+          { label: "Brand", value: "Odin" },
+          { label: "Partner", value: "Apuls.dk" },
+        ],
+        feedProductId: "Apuls.dk:15017",
+      },
+    ],
+    howToChoose:
+      "Vil du have det rigtige første setup? Tag støbejerns-pakken 10–16 kg. Træner du i stuen og vil skåne gulvet? Vinyl 4–10 kg. Jagter du ensartet greb til snatch? Competition 20 kg (og planlæg næste vægt i samme serie). Har du næsten ingen plads? Justerbar 12 kg — og overvej én massiv swing-klokke senere. Læg altid måtte under. Shop via “Se pris”.",
+    learningSections: [
+      {
+        heading: "Hvorfor kettlebells rammer hjemmetræning så godt",
+        paragraphs: [
+          "Én klokke giver dig hinge, squat, press og carry uden rack. Det er derfor kettlebells ofte slår et halvt vægtstativ, når pladsen er en stue eller et ekstra værelse.",
+          "Kombineret med justerbare håndvægte og en foldbar bænk har de fleste det, de behøver i 1–2 år — uden power rack.",
+        ],
+      },
+      {
+        heading: "Støbejern, vinyl og konkurrence — kort sagt",
+        paragraphs: [
+          "Støbejern: bedste allround-følelse. Vinyl: bedste “stue-mode”. Konkurrence: bedste grebskonsistens, når du træner olympisk-inspirerede løft.",
+          "Du behøver ikke alle tre. Du behøver den type, der matcher gulv, naboer og de øvelser, du faktisk laver tre gange om ugen.",
+        ],
+        comparison: {
+          caption: "Materiale og greb",
+          rowHeaderLabel: "Type",
+          columns: ["Følelse", "Gulv", "Pris pr. kg", "Vælg hvis"],
+          rows: [
+            {
+              label: "Støbejern",
+              cells: ["Klassisk swing", "Kræver måtte", "Lav–mid", "Allround hjemme"],
+            },
+            {
+              label: "Vinyl",
+              cells: ["Blødere dump", "Mere tilgivende", "Lav", "Stue / begynder"],
+            },
+            {
+              label: "Competition",
+              cells: ["Ens greb", "Hård — måtte", "Højere", "Snatch / seriøs KB"],
+            },
+          ],
+        },
+      },
+      {
+        heading: "Kettlebell vs. justerbare håndvægte",
+        paragraphs: [
+          "Håndvægte vinder til bænk, rows og curls med fine trin. Kettlebells vinder til swings, cleans og unilaterale carries. De fleste hjem har gavn af begge — start med det, du vil bruge oftest.",
+          "Læs Bedste justerbare håndvægte 2026, hvis dial-dumbbells er din primære styrkevej.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "Hvilken kettlebell skal jeg starte med?",
+        answer:
+          "Usikker på vægt? En støbejerns-pakke 10–16 kg eller vinyl 4–10 kg. Kender du allerede din swing-vægt? Køb den enkelt — typisk 12–16 kg eller 16–24 kg — og planlæg næste trin.",
+      },
+      {
+        question: "Er vinyl kettlebells “dårligere”?",
+        answer:
+          "Nej til begynder- og stuebrug. Ja, hvis du jagter den mest præcise swing-følelse og lang progression. Vinyl er et bevidst kompromis for gulv og støj — ikke en fejl.",
+      },
+      {
+        question: "Hvad er en competition kettlebell?",
+        answer:
+          "En steel-klokke med samme ydre mål på tværs af vægte, så grebet føles ens. Relevant til snatch/jerk. Unødvendig, hvis du mest laver swings og goblet squats.",
+      },
+      {
+        question: "Skal jeg have måtte under kettlebells?",
+        answer:
+          "Ja — især støbejern på træ/laminat/fliser. Se Bedste træningsmåtte til gulvbeskyttelse / home gym for puslespil og gummigulv.",
+      },
+      {
+        question: "Hvordan ser jeg aktuelle priser?",
+        answer:
+          "Klik “Se pris” på anbefalingerne. Flere kettlebells ligger under Must-haves → Kettlebells.",
+      },
+    ],
+    relatedSlugs: [
+      "bedste-justerbare-haandvaegte-2026",
+      "bedste-traeningsmaatte-gulvbeskyttelse-home-gym-2026",
+      "bedste-traeningselastikker-slyngetraener-2026",
+      "ultimative-home-gym-budget-2026",
+      "bedste-power-rack-squat-rack-2026",
+      "hjemmetraening-for-begyndere-foerste-90-dage",
+    ],
+  },
+  {
+    slug: "bedste-traeningsmaatte-gulvbeskyttelse-home-gym-2026",
+    title: "Bedste træningsmåtte til gulvbeskyttelse / home gym 2026",
+    excerpt:
+      "Puslespilsmåtter, gummigulv og tyk gulvbeskyttelse under håndvægte og vægtstang: tykkelse, m² og fire anbefalinger med live priser.",
+    metaDescription:
+      "Bedste træningsmåtte til tung styrketræning og gulvbeskyttelse 2026. Puslespil, Floor Guards og fitnessgulv — med live priser.",
+    categorySlug: "tilbehoer",
+    intentSlug: "fitnessgulv",
+    publishedAt: "2026-11-11",
+    updatedAt: "2026-11-11",
+    intro:
+      "En tynd PVC-måtte under et gåbånd beskytter lakken. Den redder ikke fliser eller parket, når en 24 kg håndvægt eller en vægtstang lander. Til et rigtigt home gym skal du tænke i gummigulv: puslespilsfliser, Floor Guards og tykkelse i millimeter — ikke yogamåtte-logik. Denne guide er til tung styrke og drop. Til støj + sjip i lejlighed: se Bedste sjippetov og træningsmåtte til lejligheden.",
+    criteria: [
+      {
+        title: "Tykkelse matcher belastningen",
+        description:
+          "10 mm fitnessgulv beskytter mod slid og let nedsætning. 20–25 mm tager stød fra kettlebells og håndvægte. 30–40 mm er til mere aggressive drops og hårdere underlag. Køb ikke “én måtte til alt” — køb tykkelsen til det, du faktisk smider.",
+      },
+      {
+        title: "Dæk zonen, ikke kun én flise",
+        description:
+          "Én 60×60 eller 1×1 m-flise er et startpunkt. En vægtzone med bænk og stang kræver typisk 4–8+ fliser. Mål længde × bredde af træningsfeltet, og læg 10–20 cm margin. Pakker på 8–20 stk. er oftere det rigtige køb end “prøv én”.",
+      },
+      {
+        title: "Hårdt gummi vs. bløde puzzle-fliser",
+        description:
+          "Hårde gummi-Floor Guards er stabile under rack-fødder og vægtstativer. Blødere EVA/puzzle-fliser er mere behagelige til gulvarbejde, men kan “gynge” under tungt udstyr. Til seriøs styrke: hård gummi. Til bodyweight + lette vægte: blødere fliser kan være fine.",
+      },
+      {
+        title: "Træ, laminat, fliser",
+        description:
+          "Træ og laminat ridses og buler. Fliser kan knække under punktbelastning. Gummigulv fordeler trykket. Undgå at sætte rack eller vægtskiver direkte på gulvet — også “bare lige i dag”.",
+      },
+      {
+        title: "Støj er en bonus — ikke hovedformålet her",
+        description:
+          "Tyk gummi dæmper stød til underboen bedre end bar gulv. Det erstatter ikke fornuftig træningstid og teknik. Til maskin-vibration og sjip: den dedikerede lejlighedsguide. Her er fokus: beskyt gulvet under jern.",
+      },
+      {
+        title: "Udvidbart system",
+        description:
+          "Puslespil og Floor Guards vinder, fordi du kan købe flere senere. En enkelt rullemåtte er nem dag 1 og for lille dag 90. Vælg et format, shoppen stadig lager, så du kan udvide vægtzonen.",
+      },
+    ],
+    products: [
+      {
+        id: "nordic-fighter-25mm-black",
+        name: "Nordic Fighter Gummi Floor Guards All Black 25 mm",
+        badge: "Bedst til tung styrke",
+        summary:
+          "25 mm hård gummi er sweet spot under kettlebells, håndvægte og kontrollerede nedsætninger. Tykkere end 10 mm-pakkerne — uden at gå all-in på 40 mm blød skum.",
+        pros: [
+          "25 mm til rigtig vægtzone",
+          "Hård gummi under jern",
+          "Kan bygges ud flise for flise",
+          "All black — mindre “legeplads”-look",
+        ],
+        cons: [
+          "Én flise dækker ikke en hel zone",
+          "Tungere at flytte end tynd PVC",
+          "Kan lugte nyt gummi de første dage",
+        ],
+        specs: [
+          { label: "Tykkelse", value: "25 mm" },
+          { label: "Type", value: "Gummi Floor Guards" },
+          { label: "Brand", value: "Nordic Fighter" },
+          { label: "Partner", value: "Apuls.dk" },
+        ],
+        feedProductId: "Apuls.dk:5136",
+      },
+      {
+        id: "odin-floor-guards-8",
+        name: "Odin Floor Guards Fitnessgulv (8 stk. / 2,88 m²)",
+        badge: "Bedste startpakke",
+        summary:
+          "8 × 60×60×10 mm giver dig næsten 3 m² med det samme. Det er den mest ærlige “jeg starter et home gym”-pakke: nok til bænk + vægtzone, før du udvider.",
+        pros: [
+          "2,88 m² fra dag 1",
+          "Udvidbar med samme serie (12/16/20-pak)",
+          "Lav pris pr. m²",
+          "God under rack-fødder og skiver",
+        ],
+        cons: [
+          "10 mm er tyndere end 25 mm til hårde drops",
+          "Ikke blød at ligge på længe",
+          "Skal ligge plant",
+        ],
+        specs: [
+          { label: "Tykkelse", value: "10 mm" },
+          { label: "Dækning", value: "Ca. 2,88 m² (8 stk.)" },
+          { label: "Brand", value: "Odin" },
+          { label: "Partner", value: "Apuls.dk" },
+        ],
+        feedProductId: "Apuls.dk:5084",
+      },
+      {
+        id: "odin-floor-guards-20",
+        name: "Odin Floor Guards Fitnessgulv (20 stk. / 7,2 m²)",
+        badge: "Bedste til fuldt home gym",
+        summary:
+          "Når zonen skal dække rack, bænk og landingsfelt, er 7+ m² det, der faktisk føles som et gulv — ikke en måtte-ø midt i rummet.",
+        pros: [
+          "Dækker et lille styrkerum",
+          "Samme 10 mm-system som 8-pakken",
+          "Bedre end at købe enkeltfliser ad 10 gange",
+          "Stabilt under udstyr",
+        ],
+        cons: [
+          "Større investering dag 1",
+          "10 mm — supplér med 25 mm i drop-zone hvis nødvendigt",
+          "Fylder ved levering/opbevaring før montering",
+        ],
+        specs: [
+          { label: "Tykkelse", value: "10 mm" },
+          { label: "Dækning", value: "Ca. 7,2 m² (20 stk.)" },
+          { label: "Brand", value: "Odin" },
+          { label: "Partner", value: "Apuls.dk" },
+        ],
+        feedProductId: "Apuls.dk:6885",
+      },
+      {
+        id: "nordic-25mm-medium",
+        name: "Nordic Fighter Floor Guards Sort/Grå 25 mm (Medium Bløde)",
+        badge: "Bedste til gulvarbejde + vægte",
+        summary:
+          "25 mm medium-blød flise: mere komfort til core og mobilitet end hård gummi, stadig tyk nok til at skåne gulvet under moderate vægte. Kompromis mellem “måtte” og “gulv”.",
+        pros: [
+          "Behagelige til gulvøvelser",
+          "25 mm beskyttelse",
+          "Puzzle — kan udvides",
+          "God i lejlighed hvor komfort tæller",
+        ],
+        cons: [
+          "Mindre stabil under tungt rack end hård gummi",
+          "Kan komprimere over tid under punktbelastning",
+          "Farvet look er mere synligt i stuen",
+        ],
+        specs: [
+          { label: "Tykkelse", value: "25 mm (medium blød)" },
+          { label: "Type", value: "Puzzle Floor Guards" },
+          { label: "Brand", value: "Nordic Fighter" },
+          { label: "Partner", value: "Apuls.dk" },
+        ],
+        feedProductId: "Apuls.dk:5378",
+      },
+    ],
+    howToChoose:
+      "Tunge kettlebells og håndvægte i en zone? Nordic Fighter 25 mm hård gummi. Første home gym på budget? Odin 8-pak (2,88 m²). Fuldt styrkerum? Odin 20-pak. Meget gulvarbejde + moderate vægte? 25 mm medium-blød. Til sjip og tynd maskinmåtte: Bedste sjippetov og træningsmåtte til lejligheden. Shop via “Se pris”.",
+    learningSections: [
+      {
+        heading: "Tynd maskinmåtte vs. fitnessgulv",
+        paragraphs: [
+          "0,6 cm PVC under et walking pad er et andet produkt end 25 mm gummi under vægte. Den første beskytter lak og tager statisk elektricitet. Den anden beskytter konstruktionen mod stød og punktbelastning.",
+          "Mange køber den forkerte først. Har du jern, start med fitnessgulv. Har du kun en cykel eller et gåbånd, er tynd måtte ofte nok.",
+        ],
+        comparison: {
+          caption: "To jobs — to underlag",
+          rowHeaderLabel: "Underlag",
+          columns: ["Tykkelse", "Job", "Ikke til"],
+          rows: [
+            {
+              label: "PVC / Floor Guard Mat",
+              cells: ["~0,6 cm", "Maskine / ridser", "Drop af vægte"],
+            },
+            {
+              label: "Fitnessgulv 10 mm",
+              cells: ["10 mm", "Zone + slid", "Hårde drops alene"],
+            },
+            {
+              label: "Gummi 25 mm",
+              cells: ["25 mm", "Vægte / KB", "Erstatte teknik"],
+            },
+          ],
+        },
+      },
+      {
+        heading: "Sådan måler du din vægtzone",
+        paragraphs: [
+          "Stil dig, hvor bænk og stang skal være. Mål til vægge og møbler. Læg margin til at træde tilbage efter et løft. Det tal — ikke “en måtte” — afgør, om du køber 8 eller 20 fliser.",
+          "Bedre at dække for meget end at lande skiver på bar parket i kanten.",
+        ],
+      },
+      {
+        heading: "Udendørs vs. indendørs",
+        paragraphs: [
+          "Samme Floor Guards bruges ofte på terrasse under rack. Ude tæller dræn, UV og frost mere. Inde tæller lugt, farve og naboer. Se også Det ultimative udendørs home gym, hvis zonen er udenfor.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "Hvor tyk skal en træningsmåtte være til vægte?",
+        answer:
+          "Til håndvægte og kettlebells: sigt efter 20–25 mm gummi i zonen. 10 mm fitnessgulv er et godt base-lag under udstyr. Yogamåtter er ikke gulvbeskyttelse til jern.",
+      },
+      {
+        question: "Er puslespilsmåtter gode nok?",
+        answer:
+          "Ja, hvis de er gummi/fitnessgulv i den rigtige tykkelse, og du køber nok m². Bløde EVA-fliser alene under tungt rack er et kompromis.",
+      },
+      {
+        question: "Kan jeg bruge dem i lejlighed?",
+        answer:
+          "Ja — og det er ofte det, der redder gulvet. De dæmper også stød, men erstatter ikke hensyn til træningstid. Til sjip: se lejlighedsguiden med sjippetov.",
+      },
+      {
+        question: "Hvordan ser jeg aktuelle priser?",
+        answer:
+          "Klik “Se pris”. Flere gulve ligger under Must-haves → Fitnessgulv.",
+      },
+    ],
+    relatedSlugs: [
+      "bedste-sjippetov-traeningsmaatte-lejlighed-2026",
+      "bedste-kettlebells-hjemmetraening-2026",
+      "bedste-vaegtstangssaet-bumper-plates-2026",
+      "bedste-power-rack-squat-rack-2026",
+      "ultimative-udendoers-home-gym-2026",
+      "bedste-stoejsvage-traeningsmaskiner-lejlighed-2026",
+    ],
+  },
+  {
+    slug: "bedste-vandromaskine-2026",
+    title: "Bedste vandromaskine 2026",
+    excerpt:
+      "WaterRower-typen til stuen: trædesign, splash, fold og vedligehold — plus fire vandromaskiner med live priser.",
+    metaDescription:
+      "Bedste vandromaskine 2026. Guide til vandmodstand, trædesign og støj — plus foldbare og midrange-modeller med live priser.",
+    categorySlug: "romaskine",
+    intentSlug: "vand",
+    publishedAt: "2026-11-11",
+    updatedAt: "2026-11-11",
+    intro:
+      "Vandromaskiner trender, fordi de ser ud som møbler og lyder som en båd — ikke som en ventilator. I den overordnede romaskine-guide sammenligner vi luft, magnet og vand. Her går vi kun efter vandmodstand: æstetik i stuen, splash vs. naboer, fold/træsort, vedligeholdelse af tanken — og fire modeller, du kan købe via danske partnere lige nu.",
+    criteria: [
+      {
+        title: "Vand er en følelse — ikke “stille”",
+        description:
+          "Splash er organisk og motiverende for mange. Det er stadig lyd i rummet. Til etagebyggeri sent om aftenen er magnet ofte sikrere. Vælg vand, fordi du vil have bådfølelsen — ikke fordi marketing siger “whisper”.",
+      },
+      {
+        title: "Trædesign og stue-fit",
+        description:
+          "Ask, eg og fyr ændrer både look og pris. En foldbar træ-vandromaskine er dem, der oftest får lov at stå fremme. Mål brugslængde (ofte 2+ m) og det lodrette footprint efter fold.",
+      },
+      {
+        title: "Fold og opbevaring",
+        description:
+          "Mange Ascendic-/Odin-vandmodeller folder, så skinnen ikke æder stuen permanent. Tjek hjul, lås og vægt — en “foldbar” maskine, du aldrig orker at folde, er ikke foldbar i praksis.",
+      },
+      {
+        title: "Skinnelængde og højde",
+        description:
+          "For korte skinner ødelægger slaglængden for høje brugere. Tjek maks. brugerhøjde/-vægt. Sid i maskinen mentalt: fuld benspark uden at ramme væg eller sofa.",
+      },
+      {
+        title: "Vedligeholdelse af vand",
+        description:
+          "Tank kræver rent vand og jævnlig rens (tabletter/purif — købes separat). Det er ikke svært, men det er mere end en magnetmaskine. Planlæg det som bilens vask — ikke som en overraskelse efter tre måneder.",
+      },
+      {
+        title: "Budget: entry-vand vs. træ-premium",
+        description:
+          "Entry-vand giver splash uden dyrt møbel-look. Træ-foldbare modeller koster mere og betaler sig, når maskinen skal leve i stuen. Magnet+vand-hybrider findes — læs specifikationen, så du ved, hvad du faktisk ror imod.",
+      },
+    ],
+    products: [
+      {
+        id: "odin-r1800",
+        name: "Odin R1800 Vandromaskine",
+        badge: "Bedst samlet",
+        summary:
+          "Den vandromaskine, vi allerede anbefaler i den generelle romaskine-guide: ægte splash og jævn trækfølelse til midrange-pris — uden at kræve Fluid Rower-budget.",
+        pros: [
+          "Autentisk vandmodstand",
+          "Stærk midrange-pris",
+          "Helkropspas der føles “rigtige”",
+          "Klar allround-anbefaling",
+        ],
+        cons: [
+          "Mere lyd end magnet",
+          "Kræver vandvedligehold",
+          "Fylder i brug — mål skinnen",
+        ],
+        specs: [
+          { label: "Modstand", value: "Vand" },
+          { label: "Brand", value: "Odin" },
+          { label: "Segment", value: "Midrange" },
+          { label: "Partner", value: "Apuls.dk" },
+        ],
+        feedProductId: "Apuls.dk:15386",
+      },
+      {
+        id: "ascendic-6015-ask",
+        name: "Ascendic 6015 Foldbar Vandromaskine i Asketræ",
+        badge: "Bedste til stuen",
+        summary:
+          "Foldbar vandromaskine i asketræ — typen, der får lov at stå fremme. Splash + møbelæstetik + mulighed for at klappe sammen efter pas.",
+        pros: [
+          "Asketræ-look til stuen",
+          "Foldbar efter træning",
+          "Vandmodstand med “båd”-følelse",
+          "Stærkt match til æstetik-købere",
+        ],
+        cons: [
+          "Dyrere end simpel entry-vand",
+          "Splash er stadig hørbar",
+          "Træ kræver fornuftig placering (sol/fugt)",
+        ],
+        specs: [
+          { label: "Modstand", value: "Vand" },
+          { label: "Materiale", value: "Asketræ" },
+          { label: "Fold", value: "Ja" },
+          { label: "Partner", value: "Ascendic.dk" },
+        ],
+        feedProductId: "Ascendic.dk:47720712569176",
+      },
+      {
+        id: "ascendic-6014-eg",
+        name: "Ascendic 6014 Foldbar Vandromaskine i Egetræ",
+        badge: "Bedste træ-premium",
+        summary:
+          "Samme foldbare vand-koncept i eg — varmere look, typisk lidt højere pris. Til dig, der prioriterer design i stuen og stadig vil have ægte vandmodstand.",
+        pros: [
+          "Egetræ-finish",
+          "Foldbar",
+          "Vandmodstand",
+          "Møbel-agtig tilstedeværelse",
+        ],
+        cons: [
+          "Premium-pris ift. R1800",
+          "Ikke støjsvageste teknologi",
+          "Vedligehold af tank gælder stadig",
+        ],
+        specs: [
+          { label: "Modstand", value: "Vand" },
+          { label: "Materiale", value: "Egetræ" },
+          { label: "Fold", value: "Ja" },
+          { label: "Partner", value: "Ascendic.dk" },
+        ],
+        feedProductId: "Ascendic.dk:47879180648792",
+      },
+      {
+        id: "odin-r1000",
+        name: "Odin R1000 Vandromaskine",
+        badge: "Bedste billige vand",
+        summary:
+          "Indgangen til vandmodstand uden træ-premium. Til dig, der vil teste splash-følelsen, før du investerer i ask/eg-modeller.",
+        pros: [
+          "Laveste entry blandt vores vand-anbefalinger",
+          "Ægte vandmodstand",
+          "Fin til at afklare, om vand er dig",
+          "Live partnerpris",
+        ],
+        cons: [
+          "Mindre “møbel” end Ascendic-træ",
+          "Tjek fold/opbevaring på shopsiden",
+          "Stadig mere lyd end magnet",
+        ],
+        specs: [
+          { label: "Modstand", value: "Vand" },
+          { label: "Brand", value: "Odin" },
+          { label: "Segment", value: "Entry–mid" },
+          { label: "Partner", value: "Apuls.dk" },
+        ],
+        feedProductId: "Apuls.dk:12902",
+      },
+    ],
+    howToChoose:
+      "Allround vand uden møbel-premium? Odin R1800. Skal den leve i stuen og kunne foldes? Ascendic 6015 (ask) eller 6014 (eg). Stramt budget, men stadig vand? Odin R1000. Usikker på vand vs. magnet? Start i Bedste romaskine 2026 — og vælg magnet, hvis naboerne er dealbreakeren. Shop via “Se pris”.",
+    learningSections: [
+      {
+        heading: "Hvorfor vandromaskiner sælger lige nu",
+        paragraphs: [
+          "Det er ikke kun træningseffekten — den deler vand med luft og magnet. Det er den visuelle og auditive oplevelse: træ, vandtank, splash. Maskinen må gerne ses.",
+          "Hvis du skjuler udstyr i et bryggers, er magnet ofte mere rationelt. Hvis maskinen er en del af stuen, vinder vand oftere på motivation.",
+        ],
+      },
+      {
+        heading: "Vand vs. magnet vs. luft (kort)",
+        paragraphs: [
+          "Vand: stemning + jævn følelse. Magnet: støjsvagest + præcis. Luft: selvskalerende + mere vifte-lyd.",
+          "Dybdegående sammenligning og blandede anbefalinger står i Bedste romaskine 2026. Til lejlighed om aftenen: Bedste støjsvage romaskine 2026.",
+        ],
+        comparison: {
+          caption: "Kun når du allerede hælder til vand",
+          rowHeaderLabel: "Prioritet",
+          columns: ["Vælg"],
+          rows: [
+            { label: "Stue + look", cells: ["Foldbar træ (Ascendic)"] },
+            { label: "Bedste balance", cells: ["Odin R1800"] },
+            { label: "Pris først", cells: ["Odin R1000"] },
+            { label: "Naboer først", cells: ["Skift til magnet-guide"] },
+          ],
+        },
+      },
+      {
+        heading: "Vedligehold uden drama",
+        paragraphs: [
+          "Brug rent vand, følg shoppens vejledning for tabletter/rens, og tjek niveauet, før sæsonen skifter. Undgå at lade tanken blive et science-projekt.",
+          "Klortabletter og kits sælges separat — de er ikke “en romaskine” i vores katalog, men du skal budgettere dem.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "Er en vandromaskine støjsvag?",
+        answer:
+          "Den er ofte mildere for underboen end luft/vifte, men splash høres i rummet. Til stilhed: magnet. Til stemning: vand.",
+      },
+      {
+        question: "Hvilken vandromaskine er bedst til stuen?",
+        answer:
+          "Foldbare træmodeller som Ascendic 6015/6014. De kombinerer look og opbevaring bedst i vores udvalg.",
+      },
+      {
+        question: "Skal jeg vælge vand eller magnet?",
+        answer:
+          "Vand for følelse og æstetik. Magnet for stilhed og simpel drift. Usikker? Læs Bedste romaskine 2026.",
+      },
+      {
+        question: "Hvordan ser jeg aktuelle priser?",
+        answer:
+          "Klik “Se pris”. Flere vandmodeller ligger under Romaskine → Vandmodstand.",
+      },
+    ],
+    relatedSlugs: [
+      "bedste-romaskine-2026",
+      "bedste-stoejsvag-romaskine-2026",
+      "romaskine-eller-crosstrainer-2026",
+      "bedste-foldbare-kompakte-traeningsmaskiner-2026",
+      "bedste-stoejsvage-traeningsmaskiner-lejlighed-2026",
+    ],
+  },
+  {
+    slug: "bedste-pull-up-bar-doerribbe-2026",
+    title: "Bedste pull-up bar og dørribbe 2026",
+    excerpt:
+      "Dørribbe uden skruer, vægmonteret bar og fritstående station: hvad karmen kan holde til — plus fire anbefalinger med live priser.",
+    metaDescription:
+      "Bedste pull-up bar og dørribbe 2026. Dørkarm vs. væg vs. station, sikkerhed og greb — med live priser fra danske partnere.",
+    categorySlug: "tilbehoer",
+    intentSlug: "pullup",
+    publishedAt: "2026-11-11",
+    updatedAt: "2026-11-11",
+    intro:
+      "En pull-up bar er det billigste “must-have”, der låser op for ryg, greb og core derhjemme — uden et fuldt rack. Valget er ikke bare pris. Det er om karmen kan holde dig, om væggen er bæredygtig, eller om du skal have en fritstående station. Her er forskellen på skruefri dørribber, væg-/loftmonterede barer og tungere setup — med produkter, du kan købe via partnerfeeds.",
+    criteria: [
+      {
+        title: "Dørribbe: karmens realitet",
+        description:
+          "Skruefri dørribber spændes i karmen. De kræver en solid, plan karm i den rigtige bredde — og ærlig kropvægt uden kipping. Gipsplader, skæve karme og “jeg hopper op i baren” er klassiske fejl. Læs altid shops max-vægt og monteringsvejledning. Er du i tvivl om karmen: vælg vægmontage i mur/beton eller en station.",
+      },
+      {
+        title: "Vægmonteret bar",
+        description:
+          "Bolte i bæredygtigt underlag (mur, beton, forstærket træ). Giver stivere bar, flere grebsvarianter og højere tillid ved tungere brugere. Kræver borearbejde og korrekt rawplugs/bolte. Gips alene er ikke et underlag.",
+      },
+      {
+        title: "Loftmontage",
+        description:
+          "Fri svingbane og god hovedhøjde — men loftet skal kunne trække. Samme regel: bæredygtigt underlag, ikke kun gips. Mål højden, så du kan hænge med strakte arme uden at slå knæene i gulvet ved raise-varianter.",
+      },
+      {
+        title: "Fritstående / power tower",
+        description:
+          "Ingen huller i væggen. Fylder mere og koster mere. Relevant, når du lejer, ikke må bore, eller vil have dips/leg raise i samme station. Se også Bedste power rack & squat rack, hvis du alligevel vil squat/bænke.",
+      },
+      {
+        title: "Greb og bredde",
+        description:
+          "Straight bar, multi-grip og neutrale greb ændrer albue- og skulderbelastning. Multi-grip er mere alsidigt til hjemmetræning. Tykt, slebet greb slår blankt rør, når hænderne er svedige.",
+      },
+      {
+        title: "Progression uden fuld pull-up",
+        description:
+          "Negativer, scap-pulls og elastik-assistance er fine. En dørribbe er stadig nyttig, før du kan lave strenge reps — forudsat at monteringen er sikker.",
+      },
+    ],
+    products: [
+      {
+        id: "odin-doerribbe-pro",
+        name: "Odin Pull Up Bar Pro Dørribbe",
+        badge: "Bedste dørribbe",
+        summary:
+          "Skruefri dørribbe til dig, der vil i gang uden boremaskine. Vælg den kun, hvis karmen er solid — og hold dig til kontrollerede reps.",
+        pros: [
+          "Ingen skruer",
+          "Hurtig at sætte op/tage ned",
+          "Lav entry-pris",
+          "God til hangs og strenge pull-ups",
+        ],
+        cons: [
+          "Kun så stærk som karmen",
+          "Ikke til kipping/muscle-ups",
+          "Begrænset grebsvariation ift. multi-grip vægbar",
+        ],
+        specs: [
+          { label: "Type", value: "Dørribbe (skruefri)" },
+          { label: "Brand", value: "Odin" },
+          { label: "Partner", value: "Apuls.dk" },
+        ],
+        feedProductId: "Apuls.dk:6131",
+      },
+      {
+        id: "titan-doerribbe",
+        name: "TITAN LIFE Dørribbe",
+        badge: "Bedste billige",
+        summary:
+          "Budget-dørribbe til at teste vanen. Samme karm-advarsel som alle skruefri modeller: monteringsflade først, ego bagefter.",
+        pros: [
+          "Lav pris",
+          "Skruefri",
+          "Nem indgang til pull-ups/hangs",
+        ],
+        cons: [
+          "Færre “pro”-detaljer",
+          "Karm-afhængig",
+          "Tjek max-vægt på shoppen",
+        ],
+        specs: [
+          { label: "Type", value: "Dørribbe" },
+          { label: "Brand", value: "TITAN LIFE" },
+          { label: "Partner", value: "Apuls.dk" },
+        ],
+        feedProductId: "Apuls.dk:14626",
+      },
+      {
+        id: "odin-elite-heavy",
+        name: "Odin Elite Heavy Pull Up Bar",
+        badge: "Bedst vægmonteret",
+        summary:
+          "Tung vægmonteret bar til solid mur. Den vi også peget på i udendørs-guiden — minimal footprint, når du ikke træner, og langt mere tillid end en tvivlsom karm.",
+        pros: [
+          "Stabil ved korrekt montage",
+          "Tung konstruktion",
+          "Minimal footprint",
+          "Kan kombineres med elastik/slynge",
+        ],
+        cons: [
+          "Kræver bæredygtig væg + borearbejde",
+          "Ikke til gips alene",
+          "Permanent montage",
+        ],
+        specs: [
+          { label: "Type", value: "Vægmonteret pull-up bar" },
+          { label: "Brand", value: "Odin" },
+          { label: "Partner", value: "Apuls.dk" },
+        ],
+        feedProductId: "Apuls.dk:7011",
+      },
+      {
+        id: "odin-multi-grip",
+        name: "Odin Multi Grip Pull Up Bar",
+        badge: "Bedste grebsvariation",
+        summary:
+          "Multi-grip vægbar til wide, narrow og neutrale greb. Til dig, der vil variere skulderbelastning uden at eje et helt rack.",
+        pros: [
+          "Flere grebspositioner",
+          "Alsidig hjemmetræning",
+          "Vægmontage — stivere end dørribbe",
+        ],
+        cons: [
+          "Kræver korrekt vægmontage",
+          "Fylder mere visuelt end en straight bar",
+          "Dyrere end basis-dørribbe",
+        ],
+        specs: [
+          { label: "Type", value: "Multi-grip vægbar" },
+          { label: "Brand", value: "Odin" },
+          { label: "Partner", value: "Apuls.dk" },
+        ],
+        feedProductId: "Apuls.dk:8623",
+      },
+    ],
+    howToChoose:
+      "Solid karm og kontrollerede reps? Odin Pro-dørribbe (eller TITAN LIFE på budget). Vil du have tillid og må bore i mur? Elite Heavy eller Multi Grip. Må ikke bore / vil have dips også? Kig efter power tower / station — og Bedste power rack & squat rack, hvis squat er næste skridt. Shop via “Se pris”.",
+    learningSections: [
+      {
+        heading: "Hvad karmen reelt kan holde til",
+        paragraphs: [
+          "En dørribbe fordeler kraft via tryk i karmen. Det virker på mange standardkarme — indtil du svinger, hopper eller overbelaster en skæv/løs karm. Strenge, døde hangs og strenge pull-ups er use casen. Kipping er det ikke.",
+          "Hvis karmen knirker, flytter sig, eller du er tungere end shops angivelse: stop og skift til væg/station.",
+        ],
+      },
+      {
+        heading: "Dørribbe vs. væg vs. rack",
+        paragraphs: [
+          "Dørribbe: hurtigst og billigst. Væg: bedst tillid pr. krone, hvis underlaget er rigtigt. Rack/tower: mest alsidighed, mest plads.",
+          "Mange starter med dørribbe og opgraderer til væg, når vanen sidder. Det er fine penge brugt — så længe du ikke ignorerer sikkerheden undervejs.",
+        ],
+        comparison: {
+          caption: "Tre veje til pull-ups",
+          rowHeaderLabel: "Setup",
+          columns: ["Bore?", "Plads", "Tillid", "Vælg hvis"],
+          rows: [
+            {
+              label: "Dørribbe",
+              cells: ["Nej", "Minimal", "Karm-afhængig", "Leje / test"],
+            },
+            {
+              label: "Vægbar",
+              cells: ["Ja", "Minimal", "Høj i mur", "Fast hjem"],
+            },
+            {
+              label: "Tower/rack",
+              cells: ["Nej*", "Stor", "Høj", "Flere øvelser"],
+            },
+          ],
+        },
+      },
+      {
+        heading: "Elastik og slynge på baren",
+        paragraphs: [
+          "En solid vægbar er et ankerpunkt til elastik-assistance og slyngetræner. Tjek at baren og væggen er dimensioneret til det. Se Bedste træningselastikker og slyngetræner 2026.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "Er dørribber sikre?",
+        answer:
+          "De kan være det på en solid karm med korrekt montage og kontrolleret teknik. De er ikke sikre til kipping, skæve karme eller overskredet max-vægt.",
+      },
+      {
+        question: "Kan jeg montere pull-up bar i gips?",
+        answer:
+          "Ikke alene. Du skal hitte bæredygtigt underlag (stolper, mur, beton) eller bruge en dørribbe/station uden borekrav.",
+      },
+      {
+        question: "Hvilken pull-up bar er bedst til hjemmet?",
+        answer:
+          "Til de fleste med mulighed for at bore i mur: Odin Elite Heavy eller Multi Grip. Uden boreadgang: Odin Pro-dørribbe — hvis karmen er ok.",
+      },
+      {
+        question: "Hvordan ser jeg aktuelle priser?",
+        answer:
+          "Klik “Se pris”. Flere barer ligger under Must-haves → Pull-up / dørribbe.",
+      },
+    ],
+    relatedSlugs: [
+      "bedste-power-rack-squat-rack-2026",
+      "bedste-traeningselastikker-slyngetraener-2026",
+      "ultimative-udendoers-home-gym-2026",
+      "bedste-kettlebells-hjemmetraening-2026",
+      "hjemmetraening-for-begyndere-foerste-90-dage",
+      "home-gym-til-lille-vaerelse-10m2-2026",
+    ],
+  },
+  {
+    slug: "bedste-hometrainer-2026",
+    title: "Bedste hometrainer 2026 — direct drive vs. wheel-on",
+    excerpt:
+      "Spænd din egen racercykel op: direct drive vs. wheel-on, kassette, thru-axle og Zwift — plus ærlig shop-vejledning, når Kickr/Tacx mangler i partnerfeeds.",
+    metaDescription:
+      "Bedste hometrainer 2026: direct drive vs. wheel-on til egen cykel. Kassette, støj, Zwift — og smartbike-alternativer med live priser.",
+    categorySlug: "motionscykel",
+    intentSlug: "hometrainer",
+    recommendationsHeading: "Sådan køber du (og hvad vi kan linke til)",
+    publishedAt: "2026-11-11",
+    updatedAt: "2026-11-11",
+    intro:
+      "Har du allerede en race- eller gravelcykel, er en hometrainer ofte det rigtige indoor-køb: du beholder pasform, sadlen og watt-følelsen. Smartcykel-guides dækker dedikerede Zwift-bikes. Her er fokus direct drive vs. wheel-on — kassette, thru-axle, støj og Zwift. Vigtigt: Wahoo KICKR- og Tacx-hometrainere ligger typisk ikke som købbare varer i vores Partner-Ads-feeds lige nu. Du får derfor købsrammen + referencepunkter, og “Se pris” på de smartbikes, vi faktisk kan spore, hvis du hellere vil springe monteringen over.",
+    criteria: [
+      {
+        title: "Direct drive vs. wheel-on",
+        description:
+          "Direct drive: baghjul af, kæde på trainerens kassette — bedst watt, mindst dækslid, mest “rigtig” følelse. Wheel-on: hjulet bliver på, rulle presser på dækket — billigere, hurtigere at sætte op, mere larm og mindre præcis power. Til regelmæssig Zwift: direct drive. Til sjældne regnvejrs-pas: wheel-on kan være nok.",
+      },
+      {
+        title: "Kassette, freenav og gearing",
+        description:
+          "Direct drive kræver en kassette, der matcher dit drivlinje (eller Zwift Cog / virtuel gearing på nogle modeller). Tæl tænder og brand (Shimano/SRAM). Glem det, og du står med en trainer, du ikke kan skifte på.",
+      },
+      {
+        title: "Thru-axle vs. quick release",
+        description:
+          "Din rammes bagaksel er ikke universel. Tjek diameter og gaffelbredde. De fleste moderne trainers leveres med adapters — men “følger med” betyder ikke “passer uden at tjekke”.",
+      },
+      {
+        title: "Zwift / FTMS / ANT+",
+        description:
+          "Til interaktiv træning skal traineren kunne sende watt/kadence og helst lade appen styre modstand (FTMS/Bluetooth og/eller ANT+). En dum rulle uden smart-forbindelse er ikke en Zwift-trainer.",
+      },
+      {
+        title: "Støj og underlag",
+        description:
+          "Direct drive er typisk mere stille end wheel-on (intet dæk mod rulle). Gulv, dæktype og cadence afgør resten. Læg måtte under. I lejlighed: undgå late-night sprints på wheel-on.",
+      },
+      {
+        title: "Hvornår smartbike vinder alligevel",
+        description:
+          "Hvis flere skal dele, du ikke orker daglig montering, eller cyklen skal udenfor uden nultolerance for slid: en dedikeret Zwift-cykel er ofte det bedre liv. Se Bedste cykel til Zwift 2026 og Bedste smartcykler 2026.",
+      },
+    ],
+    products: [
+      {
+        id: "ref-direct-drive",
+        name: "Direct drive-hometrainer (fx Wahoo KICKR / Tacx)",
+        badge: "Reference — bedst til egen cykel",
+        summary:
+          "Markedets standard til seriøs indoor: baghjul af, præcis watt, Zwift-styring. KICKR- og Tacx-trainere er de navne, ryttere sammenligner med. Vi kan normalt ikke give “Se pris” på dem via Partner-Ads endnu — køb dem dér, din cykelshop eller stor webshop har dem på lager, og brug kriterierne ovenfor.",
+        pros: [
+          "Bedste pasform (din egen cykel)",
+          "Stabile watt til race/zoner",
+          "Mindre dækslid end wheel-on",
+          "Økosystem (Wahoo/Tacx) er gennemtestet til Zwift",
+        ],
+        cons: [
+          "Ikke i vores partnerfeed lige nu (ingen live CTA)",
+          "Kræver kassette/adapters",
+          "Daglig eller ugentlig montering",
+        ],
+        specs: [
+          { label: "Type", value: "Direct drive smart trainer" },
+          { label: "Reference", value: "Wahoo KICKR / Tacx Neo m.fl." },
+          { label: "Shop", value: "Ikke i Partner-Ads feed" },
+        ],
+      },
+      {
+        id: "ref-wheel-on",
+        name: "Wheel-on-hometrainer / cykelrulle",
+        badge: "Reference — billigste vej",
+        summary:
+          "Hjulet bliver på; en rulle driver modstand. Hurtig at sætte op, lavere pris, mere støj og mere usikker power. Fine til vedligeholdelsestræning — ikke førstevalg til seriøse Zwift-løb.",
+        pros: [
+          "Billigere indgang",
+          "Ingen kassette-skift",
+          "Hurtig on/off",
+        ],
+        cons: [
+          "Dækslid og mere larm",
+          "Watt mindre præcise",
+          "Sjældent i vores partnerfeeds",
+        ],
+        specs: [
+          { label: "Type", value: "Wheel-on / rulle" },
+          { label: "Shop", value: "Ikke stabilt i Partner-Ads" },
+        ],
+      },
+      {
+        id: "odin-s1000-fallback",
+        name: "Odin S1000 Spinningcykel (Kinomap & Zwift)",
+        badge: "Bedste alternativ med live pris",
+        summary:
+          "Hvis du vil have Zwift uden at vente på en Kickr i feedet — eller uden daglig montering — er S1000 vores stærkeste smartbike med “Se pris”. Det er ikke en hometrainer. Det er den ærlige plan B.",
+        pros: [
+          "Zwift/Kinomap med live partnerpris",
+          "Ingen baghjuls-montering",
+          "God til husstande der deler",
+        ],
+        cons: [
+          "Ikke din racercykels pasform",
+          "Ikke KICKR/NEO-bakke-realisme",
+          "Kræver egen tablet/skærm",
+        ],
+        specs: [
+          { label: "Type", value: "Smart spinningcykel" },
+          { label: "Apps", value: "Zwift, Kinomap" },
+          { label: "Partner", value: "Apuls.dk" },
+        ],
+        feedProductId: "Apuls.dk:15043",
+      },
+      {
+        id: "reebok-i-bike-fallback",
+        name: "Reebok i-Bike Spinningcykel (Zwift & Kinomap)",
+        badge: "Billigste Zwift-alternativ",
+        summary:
+          "Budget-vejen ind i Zwift, mens du sparer op til en direct drive — eller hvis hometrainer slet ikke er praktisk hjemme hos dig.",
+        pros: [
+          "Lav entry med Zwift-kompatibilitet",
+          "Live “Se pris”",
+          "Fin til at teste vanen",
+        ],
+        cons: [
+          "Ikke en hometrainer",
+          "Mindre premium end S1000 / Wahoo",
+        ],
+        specs: [
+          { label: "Type", value: "Budget Zwift spin bike" },
+          { label: "Apps", value: "Zwift, Kinomap" },
+          { label: "Partner", value: "Apuls.dk" },
+        ],
+        feedProductId: "Apuls.dk:15655",
+      },
+    ],
+    howToChoose:
+      "Har du race-/gravelcykel og vil have maksimal realisme? Direct drive (KICKR/Tacx-klassen) — køb uden for vores feed, indtil den lander hos en partner. Kun lejlighedsvis indoor? Wheel-on kan række. Vil du bare køre Zwift i aften uden værktøj? Odin S1000 (eller Reebok i-Bike på budget). Dybde på smartbikes: Bedste cykel til Zwift 2026.",
+    learningSections: [
+      {
+        heading: "Direct drive vs. wheel-on vs. smartbike",
+        paragraphs: [
+          "Tre setup, tre kompromiser. Direct drive vinder på watt og pasform. Wheel-on vinder på pris og hastighed. Smartbike vinder på bekvemmelighed.",
+          "Fitlists shop-links følger Partner-Ads. Derfor er Kickr/Tacx reference her, mens S1000/i-Bike har “Se pris”.",
+        ],
+        comparison: {
+          caption: "Vælg setup efter din cykel-identitet",
+          rowHeaderLabel: "Setup",
+          columns: ["Pasform", "Montering", "Watt", "I vores feed?"],
+          rows: [
+            {
+              label: "Direct drive",
+              cells: ["Din cykel", "Hjul af", "Bedst", "Sjældent"],
+            },
+            {
+              label: "Wheel-on",
+              cells: ["Din cykel", "Hurtig", "Ok", "Sjældent"],
+            },
+            {
+              label: "Smartbike",
+              cells: ["Kompromis", "Sæt dig", "God", "Ja"],
+            },
+          ],
+        },
+      },
+      {
+        heading: "Checkliste før du bestiller en trainer",
+        paragraphs: [
+          "1) Thru-axle eller QR? 2) Kassette / Zwift Cog? 3) Bluetooth FTMS til Zwift? 4) Max watt til dine intervaller? 5) Måtte og plads til sveddryp under cyklen.",
+          "Spring én over, og returnering bliver dyrere end den “rigtige” model fra starten.",
+        ],
+      },
+      {
+        heading: "Når feedet får hometrainere",
+        paragraphs: [
+          "Så snart danske partnere feeder Kickr/Tacx/andre smart trainers ind i Partner-Ads, opdaterer vi anbefalingerne med live “Se pris”. Indtil da er denne guide din købsramme — ikke et tomt løfte om knapper, vi ikke kan ære.",
+          "Relaterede tilbud under Motionscykel → Hometrainer viser det, klassifikationen finder. Er listen tom, er markedet stadig tyndt i feeds.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "Direct drive eller wheel-on?",
+        answer:
+          "Direct drive til regelmæssig Zwift og præcis watt. Wheel-on til budget og sjælden brug. Smartbike, hvis du ikke vil montere.",
+      },
+      {
+        question: "Kan jeg købe Wahoo KICKR via Fitlist?",
+        answer:
+          "Ikke via live partner-CTA lige nu — den ligger typisk ikke i vores feeds. Brug kriterierne her, køb hos en forhandler der har den, og brug vores smartbike-links hvis du vil have “Se pris” i dag.",
+      },
+      {
+        question: "Hometrainer eller smartcykel?",
+        answer:
+          "Hometrainer hvis racercyklen er din pasform. Smartcykel hvis bekvemmelighed og deling betyder mere. Se Bedste cykel til Zwift 2026.",
+      },
+      {
+        question: "Hvordan ser jeg aktuelle priser?",
+        answer:
+          "På smartbike-anbefalingerne: “Se pris”. På Motionscykel → Smart / Zwift for flere cykler. Hometrainer-filteret viser feedede trainers, når de findes.",
+      },
+    ],
+    relatedSlugs: [
+      "bedste-cykel-til-zwift-2026",
+      "bedste-smartcykel-2026",
+      "bedste-spinningcykel-2026",
+      "bedste-motionscykel-2026",
+      "bedste-stoejsvag-motionscykel-lejlighed-2026",
     ],
   },
 ];

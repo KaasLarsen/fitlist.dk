@@ -76,6 +76,22 @@ const GUIDE_LINK_ALIASES: Record<string, string[]> = {
   "incline-loebebaand-eller-klassisk-2026": [
     "Incline løbebånd eller klassisk løbebånd",
   ],
+  "bedste-kettlebells-hjemmetraening-2026": [
+    "Bedste kettlebells til hjemmetræning 2026",
+    "Bedste kettlebells",
+  ],
+  "bedste-traeningsmaatte-gulvbeskyttelse-home-gym-2026": [
+    "Bedste træningsmåtte til gulvbeskyttelse / home gym",
+    "Bedste træningsmåtte til gulvbeskyttelse / home gym 2026",
+  ],
+  "bedste-vandromaskine-2026": ["Bedste vandromaskine 2026"],
+  "bedste-pull-up-bar-doerribbe-2026": [
+    "Bedste pull-up bar og dørribbe 2026",
+  ],
+  "bedste-hometrainer-2026": [
+    "Bedste hometrainer 2026",
+    "Bedste hometrainer 2026 — direct drive vs. wheel-on",
+  ],
 };
 
 function linkLabelsForGuide(guide: Guide): string[] {

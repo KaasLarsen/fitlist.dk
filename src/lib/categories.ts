@@ -119,6 +119,12 @@ export const categories: MachineCategory[] = [
           "Bluetooth/app-styret modstand og interaktiv træning (Zwift, Kinomap m.fl.).",
       },
       {
+        slug: "hometrainer",
+        label: "Hometrainer",
+        description:
+          "Direct drive og wheel-on til din egen race-/gravelcykel (Zwift m.fl.).",
+      },
+      {
         slug: "airbike",
         label: "Airbike",
         description: "Assault-style bike med vindmodstand til HIIT.",
@@ -152,6 +158,11 @@ export const categories: MachineCategory[] = [
         slug: "stoejsvag",
         label: "Støjsvag",
         description: "Magnetmodstand til stille hjemmetræning.",
+      },
+      {
+        slug: "vand",
+        label: "Vandmodstand",
+        description: "Vandromaskiner med splash og bådlignende følelse.",
       },
       {
         slug: "plads",
@@ -231,7 +242,7 @@ export const categories: MachineCategory[] = [
     name: "Must-haves",
     shortName: "Tilbehør",
     description:
-      "Håndvægte, underlagsmåtter, elastikker og slyngetræner — det lille tilbehør, der følger med ethvert maskinkøb.",
+      "Håndvægte, kettlebells, underlagsmåtter, elastikker og slyngetræner — det lille tilbehør, der følger med ethvert maskinkøb.",
     image: "/images/categories/tilbehoer.webp",
     intents: [
       {
@@ -240,9 +251,26 @@ export const categories: MachineCategory[] = [
         description: "Justerbare og faste håndvægte til hjemmestyrke.",
       },
       {
+        slug: "kettlebells",
+        label: "Kettlebells",
+        description: "Støbejern, vinyl og konkurrence-kettlebells til hjemmetræning.",
+      },
+      {
         slug: "gulvmaatter",
         label: "Gulvmåtter",
         description: "Underlag der beskytter gulv og dæmper vibration.",
+      },
+      {
+        slug: "fitnessgulv",
+        label: "Fitnessgulv",
+        description:
+          "Puslespilsmåtter, gummigulv og tyk gulvbeskyttelse til home gym.",
+      },
+      {
+        slug: "pullup",
+        label: "Pull-up / dørribbe",
+        description:
+          "Dørribber uden skruer, vægmonterede barer og loftmonterede pull-up bars.",
       },
       {
         slug: "elastikker",

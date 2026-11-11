@@ -103,14 +103,10 @@ const HARD_EXCLUDES: RegExp[] = [
   /vaegtskive/,
   /vægtskive/,
   /olympic\s*disc/,
-  /doerribbe/,
-  /dørribbe/,
-  /doerkarm/,
-  /dørkarm/,
-  /chin\s*up\s*bar/,
-  /pull[\s-]*up\s*bar/,
-  /pullup\s*bar/,
-  /dip\s*(?:haandtag|håndtag|for|bar)/,
+  // Dørribber / pull-up bars klassificeres som tilbehoer (pullup) —
+  // behold kun greb/handles og kabeltræk som støj
+  /dip\s*(?:haandtag|håndtag)/,
+  /chin\s*up\s*greb/,
   /kabeltraek/,
   /kabeltræk/,
   // Badeværelse og sauna matcher ellers "måtte" / "underlag"
@@ -191,6 +187,16 @@ const MACHINE_RULES: CategoryRule[] = [
       /\bspinbike\b/,
       /\bspin\s*bike\b/,
       /\boffice\s*bike\b/,
+      /\bhometrainer\b/,
+      /\bhome\s*trainer\b/,
+      /\bsmart\s*trainer\b/,
+      /\bdirect\s*drive\b/,
+      /\bwheel[\s-]*on\b/,
+      /\bcykelrulle\b/,
+      /\btræningsrulle\b/,
+      /\btrainingsrulle\b/,
+      /\bkickr\b/,
+      /\btacx\b/,
     ],
     exclude: [
       /\bbiker\s*shorts?\b/,
@@ -209,6 +215,9 @@ const MACHINE_RULES: CategoryRule[] = [
       /\bracerstyr\b/,
       /\bhaandtag\b/,
       /\bhåndtag\b/,
+      /\bmini\s*(?:bike|motionscykel)\b/,
+      /pedaltraener/,
+      /pedal\s*trainer/,
     ],
   },
   {
@@ -269,6 +278,11 @@ const MACHINE_RULES: CategoryRule[] = [
       /\bbenpres\b/,
       /\bhack\s*squat\b/,
       /\bpower\s*station\b/,
+      /\bpower\s*tower\b/,
+      /\bsquat\s*stand\b/,
+      /\bpull[\s-]*up\s*(?:og|&|\/)\s*dip/,
+      /\bchin[\s-]*up\s*(?:og|&|\/)\s*dip/,
+      /\bpullup[\s-]*(?:og|&|\/)\s*dip/,
       /\bkraftstation\b/,
       /\bfunctional\s*trainer\b/,
       /\bhyperextension\b/,
@@ -330,6 +344,11 @@ const ACCESSORY_PRIORITY: RegExp[] = [
   /\bhåndvægt/,
   /\bdumbbell/,
   /\bkettlebell/,
+  /doerribbe/,
+  /dørribbe/,
+  /chin\s*up\s*bar/,
+  /pull[\s-]*up\s*bar/,
+  /pullup\s*bar/,
   /overtraek\s*(?:til|til\s+roma|til\s+loebe|til\s+cykel)/,
   /overtræk\s*(?:til|til\s+roma|til\s+løbe|til\s+cykel)/,
   /cover\s*til/,
@@ -346,6 +365,11 @@ const TILBEHOER_RULE: CategoryRule = {
     /\bkettlebell/,
     /\bjusterbar(?:e)?\s*(?:haand|hånd)?vaegt/,
     /\bjusterbar(?:e)?\s*(?:haand|hånd)?vægt/,
+    /doerribbe/,
+    /dørribbe/,
+    /chin\s*up\s*bar/,
+    /pull[\s-]*up\s*bar/,
+    /pullup\s*bar/,
     /maatte/,
     /matte/,
     /yogamaatte/,
@@ -614,21 +638,133 @@ const INTENT_RULES: { slug: string; test: (hay: string, price: number | null) =>
       test: (hay) =>
         /\bhaandvaegt/.test(hay) ||
         /\bhåndvægt/.test(hay) ||
-        /\bdumbbell/.test(hay) ||
-        /\bkettlebell/.test(hay),
+        /\bdumbbell/.test(hay),
+    },
+    {
+      slug: "kettlebells",
+      test: (hay) => {
+        // 3-i-1 håndvægt+kettlebell-sæt hører under haandvaegte
+        if (
+          /\bhaandvaegt/.test(hay) ||
+          /\bhåndvægt/.test(hay) ||
+          /\bdumbbell/.test(hay)
+        ) {
+          return false;
+        }
+        return (
+          /\bkettlebell/.test(hay) ||
+          /\bkettle\s*bell/.test(hay) ||
+          /\bybell\b/.test(hay)
+        );
+      },
     },
     {
       slug: "gulvmaatter",
+      test: (hay) => {
+        // Tykke puzzle-/gummigulve går til fitnessgulv
+        if (
+          /puslespil/.test(hay) ||
+          /\bpuzzle\b/.test(hay) ||
+          /gummigulv/.test(hay) ||
+          /fitnessgulv/.test(hay) ||
+          /floor\s*guards\b/.test(hay) ||
+          /\b(?:15|20|25|30|40)\s*mm\b/.test(hay)
+        ) {
+          return false;
+        }
+        return (
+          /maatte/.test(hay) ||
+          /matte/.test(hay) ||
+          /floor\s*guard/.test(hay) ||
+          /underlag/.test(hay) ||
+          /gulvbeskytt/.test(hay)
+        );
+      },
+    },
+    {
+      slug: "fitnessgulv",
       test: (hay) =>
-        /maatte/.test(hay) ||
-        /matte/.test(hay) ||
-        /floor\s*guard/.test(hay) ||
-        /underlag/.test(hay) ||
-        /gulvbeskytt/.test(hay) ||
         /puslespil/.test(hay) ||
         /\bpuzzle\b/.test(hay) ||
         /gummigulv/.test(hay) ||
-        /fitnessgulv/.test(hay),
+        /fitnessgulv/.test(hay) ||
+        /floor\s*guards\b/.test(hay) ||
+        (/\b(?:15|20|25|30|40)\s*mm\b/.test(hay) &&
+          (/maatte/.test(hay) ||
+            /matte/.test(hay) ||
+            /gulv/.test(hay) ||
+            /floor/.test(hay) ||
+            /underlag/.test(hay) ||
+            /guard/.test(hay))),
+    },
+    {
+      slug: "vand",
+      test: (hay) =>
+        /\bvandromaskine\b/.test(hay) ||
+        /\bwater\s*rower\b/.test(hay) ||
+        /\bwaterrower\b/.test(hay) ||
+        (/\bvand(?:modstand|tank)?\b/.test(hay) &&
+          (/\bromaskine\b/.test(hay) || /\brower\b/.test(hay))),
+    },
+    {
+      slug: "pullup",
+      test: (hay) => {
+        // Power tower / dip-stationer er styrkemaskiner — ikke tilbehør
+        if (
+          /\bpower\s*tower\b/.test(hay) ||
+          /\bpower\s*rack\b/.test(hay) ||
+          /\bsquat\s*(?:rack|stand)\b/.test(hay) ||
+          /\bmultistation\b/.test(hay) ||
+          /\bpull[\s-]*up\s*(?:og|&|\/)\s*dip/.test(hay) ||
+          /\bchin[\s-]*up\s*(?:og|&|\/)\s*dip/.test(hay)
+        ) {
+          return false;
+        }
+        return (
+          /doerribbe/.test(hay) ||
+          /dørribbe/.test(hay) ||
+          /chin\s*up/.test(hay) ||
+          /pull[\s-]*up/.test(hay) ||
+          /pullup/.test(hay)
+        );
+      },
+    },
+    {
+      slug: "hometrainer",
+      test: (hay) => {
+        // Dedikerede smartbikes / spin bikes er ikke hometrainere
+        if (
+          /\bsmart\s*bike\b/.test(hay) ||
+          /\bspinning\b/.test(hay) ||
+          /\bspinbike\b/.test(hay) ||
+          /\bindoor\s*bike\b/.test(hay) ||
+          /\bkickr\s*bike\b/.test(hay) ||
+          /\bneo\s*bike\b/.test(hay) ||
+          /\bmotionscykel\b/.test(hay) ||
+          /\bmini\s*(?:bike|motionscykel)\b/.test(hay) ||
+          /pedaltraener/.test(hay) ||
+          /pedal\s*trainer/.test(hay)
+        ) {
+          return false;
+        }
+        return (
+          /\bhometrainer\b/.test(hay) ||
+          /\bhome\s*trainer\b/.test(hay) ||
+          /\bsmart\s*trainer\b/.test(hay) ||
+          /\bdirect\s*drive\b/.test(hay) ||
+          /\bwheel[\s-]*on\b/.test(hay) ||
+          /\bcykelrulle\b/.test(hay) ||
+          /\btrainingsrulle\b/.test(hay) ||
+          /\btræningsrulle\b/.test(hay) ||
+          (/\bkickr\b/.test(hay) && !/\bbike\b/.test(hay)) ||
+          (/\btacx\b/.test(hay) && !/\bbike\b/.test(hay)) ||
+          (/\btrainer\b/.test(hay) &&
+            (/\bzwift\b/.test(hay) ||
+              /\bwahoo\b/.test(hay) ||
+              /\belite\b/.test(hay) ||
+              /\bsaris\b/.test(hay)))
+        );
+      },
     },
     {
       slug: "elastikker",
@@ -640,11 +776,15 @@ const INTENT_RULES: { slug: string; test: (hay: string, price: number | null) =>
     },
     {
       slug: "slyngetraener",
-      test: (hay) =>
-        /\btrx\b/.test(hay) ||
-        /slyngetraener/.test(hay) ||
-        /slyngetræner/.test(hay) ||
-        /suspension\s*trainer/.test(hay),
+      test: (hay) => {
+        if (/\bkettlebell/.test(hay)) return false;
+        return (
+          /\btrx\b/.test(hay) ||
+          /slyngetraener/.test(hay) ||
+          /slyngetræner/.test(hay) ||
+          /suspension\s*trainer/.test(hay)
+        );
+      },
     },
     {
       slug: "begynder",
@@ -764,10 +904,23 @@ export function classifyProduct(
     filteredIntents = filteredIntents.filter(
       (s) =>
         s !== "haandvaegte" &&
+        s !== "kettlebells" &&
         s !== "gulvmaatter" &&
+        s !== "fitnessgulv" &&
         s !== "elastikker" &&
-        s !== "slyngetraener",
+        s !== "slyngetraener" &&
+        s !== "pullup",
     );
+  }
+
+  // vand only on romaskine
+  if (matched !== "romaskine") {
+    filteredIntents = filteredIntents.filter((s) => s !== "vand");
+  }
+
+  // hometrainer only on motionscykel
+  if (matched !== "motionscykel") {
+    filteredIntents = filteredIntents.filter((s) => s !== "hometrainer");
   }
 
   // kabeltaarn only on styrkemaskiner
