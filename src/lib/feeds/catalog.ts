@@ -9,9 +9,10 @@ import {
 } from "@/lib/feeds/fetch";
 import type { FeedProduct, MachineCategorySlug } from "@/lib/feeds/types";
 
-const CATALOG_CACHE_VERSION = "v17";
+const CATALOG_CACHE_VERSION = "v18";
 
 async function buildMachineCatalog(): Promise<FeedProduct[]> {
+  // getCachedFeedProducts springer tunge feeds (Cykelpartner) over automatisk.
   const batches = await mapWithConcurrency(
     CATALOG_FEEDS,
     FEED_FETCH_CONCURRENCY,

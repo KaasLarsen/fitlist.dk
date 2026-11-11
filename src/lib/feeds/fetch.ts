@@ -16,11 +16,11 @@ import {
 } from "@/lib/feeds/parse";
 import type { FeedProduct } from "@/lib/feeds/types";
 
-const FEED_CACHE_VERSION = "v8";
+const FEED_CACHE_VERSION = "v9";
 const FEED_REVALIDATE_SECONDS = 21_600; // 6 timer
 /** Partner-Ads XML er ofte langsom; for lav timeout tømmer hele kataloget. */
 const DEFAULT_TIMEOUT_MS = 90_000;
-/** Cykelpartner-feedet er ~46 MB XML — kræver længere timeout. */
+/** Cykelpartner-feedet er ~46 MB XML — kræver længere timeout (hvis det en dag genaktiveres). */
 const CYKELPARTNER_TIMEOUT_MS = 120_000;
 const CYKELPARTNER_MERCHANT = "Cykelpartner.dk";
 /**
@@ -33,7 +33,12 @@ const FEED_FETCH_CONCURRENCY = 2;
  * Hård cap pr. merchant-feed efter classify — Next.js Data Cache max 2 MB/entry.
  * Prioritér på lager + billede, derefter lavest pris.
  */
-const FEED_CACHE_PRODUCT_LIMIT = 600;
+const FEED_CACHE_PRODUCT_LIMIT = 300;
+
+/** For tunge feeds springes over i warm + katalog (guides bruger imageUrl-fallback). */
+function isSkippedHeavyFeed(feed: CatalogFeed): boolean {
+  return feed.merchant === CYKELPARTNER_MERCHANT;
+}
 
 async function mapWithConcurrency<T, R>(
   items: readonly T[],
@@ -244,6 +249,11 @@ export async function getCachedFeedProducts(
     return [];
   }
 
+  // Cykelpartner (~46 MB XML) — for tungt til warm/katalog; guides har fallback.
+  if (isSkippedHeavyFeed(feed)) {
+    return [];
+  }
+
   const cached = unstable_cache(
     () => fetchFeedProductsForCache(feed),
     feedCacheKey(feed),
@@ -259,41 +269,55 @@ export async function getCachedFeedProducts(
 }
 
 function warmFeedPriority(feed: CatalogFeed): number {
-  // Små Partner-Ads først — Cykelpartner + Adtraction til sidst (timeout/429).
+  // Små Partner-Ads først — Adtraction til sidst (429).
   if (isAdtractionFeed(feed)) return 2;
-  if (feed.merchant === CYKELPARTNER_MERCHANT) return 2;
   return 0;
 }
 
-/** Opvarm Data Cache (cron). Prioritér maskine-feeds før tunge/ustabile feeds. */
+/** Opvarm Data Cache (cron). Spring tunge feeds over; prioritér maskine-feeds. */
 export async function warmAllFeeds(): Promise<{
   merchant: string;
   count: number;
   ok: boolean;
   error?: string;
+  skipped?: boolean;
 }[]> {
-  const ordered = [...CATALOG_FEEDS].sort(
+  const ordered = CATALOG_FEEDS.filter((f) => !isSkippedHeavyFeed(f)).sort(
     (a, b) => warmFeedPriority(a) - warmFeedPriority(b),
   );
-  return mapWithConcurrency(ordered, FEED_FETCH_CONCURRENCY, async (feed) => {
-    try {
-      const products = await getCachedFeedProducts(feed);
-      return {
-        merchant: feed.merchant,
-        count: products.length,
-        ok: true as const,
-      };
-    } catch (err) {
-      const message = err instanceof Error ? err.message : String(err);
-      console.error(`[feed] warm failed ${feed.merchant}:`, message);
-      return {
-        merchant: feed.merchant,
-        count: 0,
-        ok: false as const,
-        error: message,
-      };
-    }
-  });
+
+  const warmed = await mapWithConcurrency(
+    ordered,
+    FEED_FETCH_CONCURRENCY,
+    async (feed) => {
+      try {
+        const products = await getCachedFeedProducts(feed);
+        return {
+          merchant: feed.merchant,
+          count: products.length,
+          ok: true as const,
+        };
+      } catch (err) {
+        const message = err instanceof Error ? err.message : String(err);
+        console.error(`[feed] warm failed ${feed.merchant}:`, message);
+        return {
+          merchant: feed.merchant,
+          count: 0,
+          ok: false as const,
+          error: message,
+        };
+      }
+    },
+  );
+
+  const skipped = CATALOG_FEEDS.filter(isSkippedHeavyFeed).map((feed) => ({
+    merchant: feed.merchant,
+    count: 0,
+    ok: true as const,
+    skipped: true as const,
+  }));
+
+  return [...warmed, ...skipped];
 }
 
 export { FEED_REVALIDATE_SECONDS, mapWithConcurrency, FEED_FETCH_CONCURRENCY };
