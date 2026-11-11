@@ -1132,7 +1132,7 @@ export const guides: Guide[] = [
       },
     ],
     howToChoose:
-      "Kun gang / under-desk? Stop — se Bedste gåbånd 2026 eller Gåbånd til kontoret. Både jogging og løb et par gange om ugen → Titan LIFE T56. Stramt budget men stadig ægte løbebånd → Ascendic 7021. Skal maskinen væk under sofa/seng → Reebok i-Run 4.5. Primært løb og høj frekvens → T66. Prioritér derefter støj (måtte + realistisk aftenbrug). Skærm kommer sidst. Shop via “Se pris”.",
+      "Kun gang / under-desk? Stop — se Bedste gåbånd 2026 eller Gåbånd til kontoret. Både jogging og løb et par gange om ugen → Titan LIFE T56. Stramt budget men stadig ægte løbebånd → Ascendic 7021 (dyk ned i Ascendic 7021 Løbebånd — modelguide 2026). Foldbart budget med app/stigning? Se VeloraFit Foldbart Løbebånd — modelguide 2026. Skal maskinen væk under sofa/seng → Reebok i-Run 4.5. Primært løb og høj frekvens → T66. Prioritér derefter støj (måtte + realistisk aftenbrug). Skærm kommer sidst. Shop via “Se pris”.",
     learningSections: [
       {
         heading: "Løbebånd vs. gåbånd",
@@ -1220,6 +1220,9 @@ export const guides: Guide[] = [
       },
     ],
     relatedSlugs: [
+      "ascendic-7021-loebebaand-2026",
+      "velorafit-foldbart-loebebaand-2026",
+      "ascendic-essential-walking-pad-2026",
       "incline-loebebaand-eller-klassisk-2026",
       "loebebaand-eller-gaabaand-2026",
       "bedste-gaabaand-2026",
@@ -8351,7 +8354,7 @@ export const guides: Guide[] = [
       },
     ],
     howToChoose:
-      "De fleste hjem: Odin RB-800 Comfort. Daglig brug i mange år og du vil have mere maskine: Tunturi E60-R. Stramt budget, men stadig rigtig siddecykel: Tunturi D10. Arctic Comfort er alternativet, hvis de andre ikke er på lager. Spring circulation trainers over som hovedcykel. Shop via “Se pris”, eller se Motionscykel → Siddecykel for flere tilbud.",
+      "De fleste hjem: Odin RB-800 Comfort — dyk ned i Odin RB-800 Comfort Siddecykel — modelguide 2026. Daglig brug i mange år og du vil have mere maskine: Tunturi E60-R. Stramt budget, men stadig rigtig siddecykel: Tunturi D10. Arctic Comfort er alternativet, hvis de andre ikke er på lager. Spring circulation trainers over som hovedcykel. Shop via “Se pris”, eller se Motionscykel → Siddecykel for flere tilbud.",
     learningSections: [
       {
         heading: "Hvad en siddecykel er",
@@ -8437,6 +8440,7 @@ export const guides: Guide[] = [
       },
     ],
     relatedSlugs: [
+      "odin-rb-800-siddecykel-2026",
       "bedste-traeningsudstyr-til-seniorer-2026",
       "bedste-knaevenlig-genoptraening-hjemme-2026",
       "bedste-motionscykel-2026",
@@ -11799,12 +11803,445 @@ export const guides: Guide[] = [
       },
     ],
     relatedSlugs: [
+      "ascendic-7021-loebebaand-2026",
       "bedste-gaabaand-2026",
       "gaabaand-til-kontoret-2026",
       "bedste-foldbare-kompakte-traeningsmaskiner-2026",
       "bedste-stoejsvage-traeningsmaskiner-lejlighed-2026",
       "bedste-loebebaand-2026",
       "home-gym-til-lille-vaerelse-10m2-2026",
+    ],
+  },
+  {
+    slug: "ascendic-7021-loebebaand-2026",
+    title: "Ascendic 7021 Løbebånd — modelguide 2026",
+    excerpt:
+      "Alt om Ascendic 7021: ægte budget-løbebånd med automatisk hældning — hvem den passer til, vs. walking pad, støj/plads — og live pris hos Ascendic.dk.",
+    metaDescription:
+      "Modelguide til Ascendic 7021 Løbebånd 2026. Kompakt budget-løbebånd med automatisk hældning: fordele, ulemper, vs. gåbånd — live pris hos Ascendic.",
+    categorySlug: "loebebaand",
+    intentSlug: "billig",
+    kind: "modelguide",
+    recommendationsHeading: "Modellen",
+    publishedAt: "2026-11-11",
+    updatedAt: "2026-11-11",
+    intro:
+      "Ascendic 7021 er et kompakt ægte løbebånd — ikke et walking pad. Den er bygget til gang, jogging og løb hjemme, med automatisk hældning, når du vil have mere intensitet uden at skrue farten op. Denne modelguide handler kun om 7021: hvem den er til, hvornår den slår Essential-gåbåndet, og hvornår du hellere skal op i Titan-/Reebok-klassen. Vil du sammenligne flere løbebånd, se Bedste løbebånd 2026.",
+    criteria: [
+      {
+        title: "Ja — hvis walking pad ikke længere er nok",
+        description:
+          "Du vil kunne jogge og løbe hjemme, ikke kun gå i 4–6 km/t. 7021 er vores budget-pick til ægte løbebånd, når Ascendic Essential Walking Pad — modelguide 2026 (eller et andet walking pad) er blevet for lille til målene.",
+      },
+      {
+        title: "Ja — hvis du vil have hældning uden midrange-pris",
+        description:
+          "Automatisk stigning gør det nemt at variere pas uden at sprinte. Det er et reelt træningsværktøj på hjemmeløbebånd — og en af grundene til, at 7021 lander som “Bedste budget-løbebånd” i vores købsguides.",
+      },
+      {
+        title: "Ja — hvis pladsen tæller, men du stadig vil have et rigtigt bånd",
+        description:
+          "7021 er kompakt ift. store center-løbebånd. Den fylder stadig mere end et fladt walking pad — mål brugslængde og plads til at træde af/på, før du køber.",
+      },
+      {
+        title: "Nej — hvis du primært skal gå under skrivebordet",
+        description:
+          "Så er et gåbånd det ærligere køb: lavere profil, mindre larm ved gangtempo, nemmere at gemme. Se Ascendic Essential modelguide eller Bedste gåbånd 2026.",
+      },
+      {
+        title: "Nej — hvis du vil have daglig hård interval i “center”-klassen",
+        description:
+          "7021 er budget/kompakt. Til seriøst løb flere gange om ugen med højere belastning peger vi opad (fx Titan T56/T66 i Bedste løbebånd 2026) — ikke mere marketing på 7021.",
+      },
+    ],
+    products: [
+      {
+        id: "ascendic-7021-loebebaand",
+        name: "Ascendic 7021 Løbebånd",
+        badge: "Modelguide",
+        summary:
+          "Kompakt ægte løbebånd fra Ascendic med automatisk hældning — vores go-to, når budgettet er stramt, men walking pad ikke dækker jogging og løb. Ærlig entry til hjemmeløbebånd: godt til variation og pladsbevidste hjem, ikke et erstatning for et tungt interval-bånd. Live pris og lagerstatus hos Ascendic.dk.",
+        pros: [
+          "Ægte løbebånd til under midrange-pris",
+          "Automatisk hældning til variation",
+          "Kompakt footprint til hjemmet",
+          "Passer til gang, jogging og løb",
+          "Partner: Ascendic.dk — direkte shop-link",
+        ],
+        cons: [
+          "Ikke Titan T66-klassen til hård interval hvert pas",
+          "Tjek max-hastighed og brugervægt ift. dine mål",
+          "Mindre “center”-følelse end dyrere modeller",
+          "Budget-løbebånd sælger hurtigt — tjek lager via “Se pris”",
+        ],
+        specs: [
+          { label: "Type", value: "Løbebånd (hjemme)" },
+          { label: "Brand", value: "Ascendic" },
+          { label: "Feature", value: "Automatisk hældning" },
+          { label: "Segment", value: "Budget / kompakt" },
+          { label: "Brug", value: "Gang, jogging, løb" },
+          { label: "Partner", value: "Ascendic.dk" },
+        ],
+        imageUrl:
+          "https://cdn.shopify.com/s/files/1/0023/6840/5573/files/black-month-7021_68ae3874-57dd-4766-8e09-a77dda884139.png?v=1793365078",
+        feedProductId: "Ascendic.dk:56336394781016",
+        affiliateId: "ascendic-7021-loebebaand",
+      },
+    ],
+    howToChoose:
+      "Vil du have Ascendic 7021? Køb den, hvis du skal kunne løbe/jogge hjemme på budget uden at gå all-in på midrange. Primært gang under bord? Ascendic Essential Walking Pad — modelguide 2026. Foldbart budget med app? VeloraFit Foldbart Løbebånd — modelguide 2026. Flere modeller side om side: Bedste løbebånd 2026. Shop via “Se pris” — tjek lager, da budget-bånd ofte er udsolgt midlertidigt.",
+    learningSections: [
+      {
+        heading: "Hvad 7021 egentlig er",
+        paragraphs: [
+          "7021 er Ascendics kompakte indgang til ægte løbebånd: højere tempo-zone end et walking pad, automatisk hældning, og en pris der rammer “jeg vil løbe hjemme uden at købe center-maskine”.",
+          "I vores guides bruger vi den som budget-pick netop fordi den løser ét klart job: løb/jogging derhjemme, når plads og penge begrænser — uden at love Elite-dæk eller peak-interval hver dag.",
+        ],
+      },
+      {
+        heading: "7021 vs. Ascendic Essential (gåbånd)",
+        paragraphs: [
+          "Essential er lav, uden håndtag, til gang og desk walking. 7021 er et løbebånd med konsol/struktur til højere tempo. Samme brand — to forskellige jobs.",
+          "Tommelfingerregel: 80 % gang → Essential. 80 % jogging/løb → 7021 eller et stærkere bånd. Midt imellem? Vær ærlig om, hvad du faktisk gør tre gange om ugen — ikke hvad du håber i januar.",
+        ],
+      },
+      {
+        heading: "Støj, måtte og lejlighed",
+        paragraphs: [
+          "Løb sender mere vibration gennem gulvet end gang. Måtte, korrekt opstilling og realistiske aftentempi er halvdelen af “støjsvag”-oplevelsen — mere end marketingtekst.",
+          "I etagebyggeri: overvej om du faktisk skal løbe, eller om gåbånd + udendørs løb er det bedre mix. Se også Bedste støjsvage løbebånd til lejlighed 2026.",
+        ],
+      },
+      {
+        heading: "Hvornår du skal vælge noget andet",
+        paragraphs: [
+          "Skal båndet forsvinde under sofaen efter hvert pas? Kig foldbare modeller (Reebok i-Run / VeloraFit). Vil du have mere maskine under fødderne til hård interval? Gå op i Bedste løbebånd 2026.",
+          "Kun skridt under arbejde? Gå tilbage til gåbånd — 7021 er overkill til desk walking.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "Er Ascendic 7021 et gåbånd?",
+        answer:
+          "Nej. Det er et kompakt ægte løbebånd til gang, jogging og løb. Til under-desk gang: se Ascendic Essential Walking Pad — modelguide 2026.",
+      },
+      {
+        question: "Har 7021 stigning?",
+        answer:
+          "Ja — automatisk hældning er en af hovedårsagerne til at vælge den frem for de helt bare budget-bånd. Brug den til intensitet uden kun at skrue på farten.",
+      },
+      {
+        question: "Ascendic 7021 eller Titan LIFE T56?",
+        answer:
+          "7021, hvis budget og kompakt footprint er vigtigst. T56, hvis du vil have et stærkere allround-hjemmeløbebånd til jævnlig jogging/løb. Sammenlign i Bedste løbebånd 2026.",
+      },
+      {
+        question: "Passer den til lejlighed?",
+        answer:
+          "Muligt med måtte og fornuftige tider — men løb larmer mere end gang. Hvis naboer er den største risiko, er gåbånd ofte ærligere. Se støjsvag-lejlighedsguiden.",
+      },
+      {
+        question: "Hvor ser jeg pris og lager?",
+        answer:
+          "Klik “Se pris hos Ascendic.dk”. Budget-løbebånd kan være midlertidigt udsolgt — lagerstatus kommer fra partner-feedet.",
+      },
+    ],
+    relatedSlugs: [
+      "ascendic-essential-walking-pad-2026",
+      "velorafit-foldbart-loebebaand-2026",
+      "bedste-loebebaand-2026",
+      "loebebaand-eller-gaabaand-2026",
+      "bedste-stoejsvag-loebebaand-lejlighed-2026",
+      "bedste-foldbare-kompakte-traeningsmaskiner-2026",
+    ],
+  },
+  {
+    slug: "velorafit-foldbart-loebebaand-2026",
+    title: "VeloraFit Foldbart Løbebånd — modelguide 2026",
+    excerpt:
+      "Alt om VeloraFit foldbart løbebånd hos iHero: 1–12 km/t, 6 % incline, app og LED — hvem den passer til, ærlige fordele/ulemper og aktuel tilbudspris.",
+    metaDescription:
+      "Modelguide til VeloraFit Foldbart Løbebånd 2026 (iHero). Foldbart budget-bånd med stigning og app: fordele, ulemper, vs. walking pad — live pris.",
+    categorySlug: "loebebaand",
+    intentSlug: "foldbar",
+    kind: "modelguide",
+    recommendationsHeading: "Modellen",
+    publishedAt: "2026-11-11",
+    updatedAt: "2026-11-11",
+    intro:
+      "VeloraFit Foldbart Løbebånd er iHeros pladsbesparende indgang til hjemmeløb: foldbart design, 1–12 km/t, op til 6 % stigning, LED-display og FitShow-app via Bluetooth. Denne modelguide handler kun om den ene maskine — især relevant, når den ligger skarpt i pris. Vil du sammenligne flere foldbare/budget-løbebånd, se Bedste løbebånd 2026.",
+    criteria: [
+      {
+        title: "Ja — hvis du vil have fold + lidt mere end et gåbånd",
+        description:
+          "Du mangler et fast træningsrum, og båndet skal kunne væk under sofa eller langs væg. Samtidig vil du kunne gå raskt og jogge let — ikke kun desk-walking i 2 km/t.",
+      },
+      {
+        title: "Ja — hvis tilbudsprisen er en del af beslutningen",
+        description:
+          "VeloraFit er ofte positioneret som “populært på tilbud”. Modelguiden er til dig, der overvejer netop det køb — ikke til dig, der leder efter et tungt center-bånd til 10+ år hård interval.",
+      },
+      {
+        title: "Ja — hvis app og stigning motiverer dig",
+        description:
+          "6 % incline + FitShow-app er konkrete features, du kan bruge. Hvis du aldrig åbner en app og aldrig skruer på hældning, betaler du for ting, du ikke bruger — så overvej et simplere bånd.",
+      },
+      {
+        title: "Nej — hvis du skal have seriøst dagligt løb i høj fart",
+        description:
+          "12 km/t-loftet og den kompakte flade (ca. 105 × 38,5 cm i produktteksten) er til hjemmebrug og moderate pas. Til hård interval flere gange om ugen: se stærkere modeller i Bedste løbebånd 2026.",
+      },
+      {
+        title: "Nej — hvis du kun skal gå under hæve-sænkebordet",
+        description:
+          "Så vinder et lavt walking pad uden konsol (fx Ascendic Essential Walking Pad — modelguide 2026). VeloraFit er et foldbart løbebånd — ikke et under-desk pad.",
+      },
+    ],
+    products: [
+      {
+        id: "velorafit-foldbart-loebebaand",
+        name: "VeloraFit Foldbart Løbebånd",
+        badge: "Modelguide",
+        summary:
+          "Foldbart hjemmeløbebånd fra iHero/VeloraFit med 1–12 km/t, op til 6 % stigning, LED-display og Bluetooth til FitShow. Skarp indgang, når du vil have fold + lidt mere end et walking pad — til tilbudspris, ikke til center-ambitioner. Live pris hos iHero.",
+        pros: [
+          "Foldbart — nemmere at gemme under sofa/væg",
+          "1–12 km/t dækker gang og let jogging",
+          "Op til 6 % stigning til ekstra intensitet",
+          "App + LED til motivation og overblik",
+          "Ofte skarp tilbudspris hos iHero",
+        ],
+        cons: [
+          "Ikke et tungt interval-bånd til daglig hård løb",
+          "Kompakt løbeflade — tjek din skridtlængde/tempo",
+          "Mindre “kendt brand”-følelse end Reebok/Titan",
+          "Brug måtte — fold løser ikke nabostøj alene",
+        ],
+        specs: [
+          { label: "Type", value: "Foldbart løbebånd" },
+          { label: "Brand", value: "VeloraFit / iHero" },
+          { label: "Hastighed", value: "1–12 km/t" },
+          { label: "Stigning", value: "Op til 6 %" },
+          { label: "App", value: "FitShow (Bluetooth)" },
+          { label: "Maks. brugervægt", value: "120 kg (ifølge partner)" },
+          { label: "Partner", value: "iHero" },
+        ],
+        imageUrl:
+          "https://cdn.shopify.com/s/files/1/0761/6072/9404/files/velorafit-foldbart-loebebaand-1-12-kmt-6-incline-app-led-display-3366549.webp?v=1791834761",
+        feedProductId: "iHero:57220268130686",
+        affiliateId: "velorafit-foldbart-loebebaand",
+      },
+    ],
+    howToChoose:
+      "Vil du have VeloraFit? Køb den, hvis fold + budget + let jogging/stigning er jobbet, og tilbuddet frister. Ren under-desk gang? Ascendic Essential Walking Pad — modelguide 2026. Mere “rigtigt” Ascendic-løbebånd med auto-hældning? Ascendic 7021 Løbebånd — modelguide 2026. Flere foldbare/kendte brands: Bedste løbebånd 2026 (fx Reebok i-Run). Shop via “Se pris hos iHero”.",
+    learningSections: [
+      {
+        heading: "Hvad VeloraFit egentlig er",
+        paragraphs: [
+          "Det er et foldbart hjemmeløbebånd i den billige ende: nok fart til gang og let løb, lidt stigning, app-tilkobling, og et design der prioriterer at kunne væk efter træning.",
+          "Fitlist har ikke haft iHero i købsguides før — denne modelguide er den direkte vej ind, når du lander på netop denne SKU via tilbud eller Facebook.",
+        ],
+      },
+      {
+        heading: "Fold er ikke det samme som walking pad",
+        paragraphs: [
+          "Et foldbart løbebånd har stadig højde, konsol og en anden støjprofil end et fladt under-desk pad. Du vinder opbevaring — ikke automatisk nabovenlig desk walking.",
+          "Mål den foldede pakke mod dit møbel. Hvis den aldrig bliver pakket væk, har du købt et permanent møbel midt i stuen.",
+        ],
+      },
+      {
+        heading: "Stigning og app — nice eller nødvendigt?",
+        paragraphs: [
+          "6 % er nok til at mærke forskel på gang/jog uden at jagte 40 %-bjerg. Appen er motiverende for nogen og støj for andre. Køb features, du vil bruge ugentligt.",
+          "Data på displayet (tid, distance, tempo) er ofte mere værd i hverdagen end endnu en app-konto.",
+        ],
+      },
+      {
+        heading: "Hvornår du skal vælge noget andet",
+        paragraphs: [
+          "Vil du have Ascendic-brand og klassisk budget-løbebånd uden “app-first”? Se Ascendic 7021. Vil du have kendt fold-brand til under sofa? Reebok i-Run i Bedste løbebånd 2026.",
+          "Kun skridt under arbejde: gåbånd. Seriøst løb flere gange om ugen: op i kraftigere klasse.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "Er VeloraFit et walking pad?",
+        answer:
+          "Nej — det er et foldbart løbebånd med hastighed op til 12 km/t. Til under-desk gang: se Ascendic Essential Walking Pad — modelguide 2026.",
+      },
+      {
+        question: "Hvad er max-hastighed og stigning?",
+        answer:
+          "Ifølge partner: 1–12 km/t og op til 6 % incline. Det dækker gang og let jogging — ikke marathon-tempo eller bjerg-intervaller.",
+      },
+      {
+        question: "Kan den gemmes under sofaen?",
+        answer:
+          "Det er designintentionen — men mål altid maskinens foldede mål mod din sofa/seng. “Under sofa” er et møbelspørgsmål, ikke et produktnavn.",
+      },
+      {
+        question: "VeloraFit eller Ascendic 7021?",
+        answer:
+          "VeloraFit, hvis fold + tilbud + app/stigning er vigtigst. 7021, hvis du vil have Ascendic budget-løbebånd med automatisk hældning i en mere klassisk løbebåndsform. Læs begge modelguides.",
+      },
+      {
+        question: "Hvor ser jeg den aktuelle pris?",
+        answer:
+          "Klik “Se pris hos iHero”. Pris og lager kommer fra partner-feedet og kan ændre sig hurtigt på tilbud.",
+      },
+    ],
+    relatedSlugs: [
+      "ascendic-7021-loebebaand-2026",
+      "ascendic-essential-walking-pad-2026",
+      "bedste-loebebaand-2026",
+      "bedste-foldbare-kompakte-traeningsmaskiner-2026",
+      "loebebaand-eller-gaabaand-2026",
+      "bedste-gaabaand-2026",
+    ],
+  },
+  {
+    slug: "odin-rb-800-siddecykel-2026",
+    title: "Odin RB-800 Comfort Siddecykel — modelguide 2026",
+    excerpt:
+      "Alt om Odin RB-800 Comfort: siddecykel med ryglæn og lav indstigning — hvem den passer til, vs. kondicykel, og live pris hos Apuls.dk.",
+    metaDescription:
+      "Modelguide til Odin RB-800 Comfort Siddecykel 2026. Skånsom cardio med ryglæn: fordele, ulemper, senior/knæ — live pris hos Apuls.",
+    categorySlug: "motionscykel",
+    intentSlug: "siddecykel",
+    kind: "modelguide",
+    recommendationsHeading: "Modellen",
+    publishedAt: "2026-11-11",
+    updatedAt: "2026-11-11",
+    intro:
+      "Odin RB-800 Comfort er en ægte siddecykel (recumbent): lav indstigning, sæde med ryglæn, og skånsom siddende cardio. Denne modelguide handler kun om RB-800 — vores hyppigste anbefaling, når tryghed, knæ/ryg og “sæt dig og træn” betyder mere end spinning-følelse. Vil du sammenligne flere siddecykler, se Bedste siddecykel 2026.",
+    criteria: [
+      {
+        title: "Ja — hvis du vil have ryglæn og lav indstigning",
+        description:
+          "Du skal kunne gå ind, sætte dig og træde uden at svinge benet højt over en sadel. Det er hele pointen med en siddecykel — og RB-800 Comfort er bygget til netop det.",
+      },
+      {
+        title: "Ja — hvis knæ, hofter eller lænd sætter grænser",
+        description:
+          "Siddende position med rygstøtte er ofte mere skånsom end opret kondicykel eller spinning. Vi bruger RB-800 i senior- og knævenlige guides af den grund — ikke fordi den er “let”, men fordi barrieren for at starte er lavere.",
+      },
+      {
+        title: "Ja — hvis cyklen skal være den daglige, trygge maskine",
+        description:
+          "Comfort-fokus frem for sporty interval. Du vil have en maskine, du faktisk sætter dig på flere gange om ugen — ikke en mini-pedaltræner foran sofaen.",
+      },
+      {
+        title: "Nej — hvis du vil have oprejst spinning/HIIT-cykel",
+        description:
+          "RB-800 er ikke en spinningcykel. Til tung flywheel og stående sprint: se Bedste spinningcykel 2026. Til opret kondicykel: Bedste motionscykel 2026.",
+      },
+      {
+        title: "Nej — hvis du egentlig leder efter en circulation trainer",
+        description:
+          "Små pedaltrænere til et par hundrede kroner er en anden kategori. De er ikke RB-800. Køb ikke “siddecykel” i shop-søgning uden at tjekke ryglæn og ramme.",
+      },
+    ],
+    products: [
+      {
+        id: "odin-rb-800-siddecykel",
+        name: "Odin RB-800 Comfort Siddecykel",
+        badge: "Modelguide",
+        summary:
+          "Odin RB-800 Comfort fra Apuls — vores go-to siddecykel til hjemmet, når skånsom cardio med ryglæn og lav indstigning er jobbet. Comfort frem for spin: god til seniorer, genoptræning og alle, der vil sætte sig trygt og træde. Live pris hos Apuls.dk.",
+        pros: [
+          "Ægte siddecykel med ryglæn",
+          "Lav indstigning — nem at komme på",
+          "Skånsom for ryg og knæ ift. oprejst cykel",
+          "Klar “sæt dig og træn”-oplevelse",
+          "Partner: Apuls.dk — direkte shop-link",
+        ],
+        cons: [
+          "Fylder mere end en opret cykel",
+          "Dyrere end entry-siddecykler (fx D10)",
+          "Ikke til intervaller i spin-position",
+          "Kræver plads til længden — mål før køb",
+        ],
+        specs: [
+          { label: "Type", value: "Siddecykel / recumbent" },
+          { label: "Brand", value: "Odin" },
+          { label: "Model", value: "RB-800 Comfort" },
+          { label: "Fokus", value: "Comfort / skånsom cardio" },
+          { label: "Partner", value: "Apuls.dk" },
+        ],
+        imageUrl:
+          "https://m2.apuls.dk/media/catalog/product/6/6/66c4a336a68b9odinrbcomfortsiddecykel2.jpg",
+        feedProductId: "Apuls.dk:15031",
+        affiliateId: "odin-rb-800-siddecykel",
+      },
+    ],
+    howToChoose:
+      "Vil du have Odin RB-800? Køb den, hvis siddecykel med comfort og lav indstigning er hovedbehovet. Stramt budget men stadig rigtig siddecykel? Se Bedste siddecykel 2026 (Tunturi D10). Kraftigere daglig maskine i årevis? E60-R-klassen i samme guide. Undgå mini circulation trainers. Shop via “Se pris hos Apuls.dk”.",
+    learningSections: [
+      {
+        heading: "Hvad RB-800 egentlig er",
+        paragraphs: [
+          "En siddecykel med comfort-fokus: du sidder tilbagelænet, benene arbejder foran dig, og ryggen har støtte. Det er en anden disciplin end både kondicykel og spinning — selv om alle tre har pedaler.",
+          "På Fitlist er RB-800 den model, vi oftest peget på i Bedste siddecykel 2026 og i senior-/knæ-guides, fordi den rammer “rigtig maskine” uden center-pris.",
+        ],
+      },
+      {
+        heading: "Siddecykel vs. kondicykel",
+        paragraphs: [
+          "Opret cykel: mere “cykel-agtig”, mere vægt i lænd/hænder, benet over sadlen. Siddecykel: gå ind, sæt dig, læn dig. Vælg efter krop og mål — ikke efter hvilket billede der ser sporty ud.",
+          "Har du usikker balance eller svært ved at komme op på en sadel, vinder siddecyklen næsten altid.",
+        ],
+      },
+      {
+        heading: "Plads og hverdag",
+        paragraphs: [
+          "Siddecykler er ofte længere end oprette cykler. Mål dybden i rummet, og planlæg at den står fremme — de fleste pakker den ikke væk efter hvert pas.",
+          "En måtte under beskytter gulv og dæmper. Magnetmodstand er typisk den støjsvage vej til aftentræning i lejlighed.",
+        ],
+      },
+      {
+        heading: "Hvornår du skal vælge noget andet",
+        paragraphs: [
+          "Vil du stå op og træne hele kroppen uden stød? Crosstrainer. Vil du have tung flywheel og HIIT? Spinning. Vil du have billigere siddecykel? D10 i Bedste siddecykel 2026.",
+          "Er du midt i genoptræning: følg fagpersonen. RB-800 er udstyr — ikke en behandlingsplan. Se også Bedste knævenlige træningsudstyr til genoptræning hjemme.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "Er Odin RB-800 en spinningcykel?",
+        answer:
+          "Nej. Det er en siddecykel med ryglæn og lav indstigning. Til spinning: se Bedste spinningcykel 2026.",
+      },
+      {
+        question: "Passer den til seniorer?",
+        answer:
+          "Den er et af vores stærkeste bud netop til skånsom, tryg cardio — lav indstigning og rygstøtte. Individuelle behov varierer; start roligt.",
+      },
+      {
+        question: "RB-800 eller Tunturi D10?",
+        answer:
+          "RB-800, hvis comfort og “bedst samlet”-følelse er vigtigst. D10, hvis budgettet er stramt, men du stadig vil have en rigtig siddecykel. Se Bedste siddecykel 2026.",
+      },
+      {
+        question: "Fylder den meget?",
+        answer:
+          "Ja ift. en smal opret cykel — især i længden. Mål pladsen, før du køber. Den er sjældent noget, man gemmer under sofaen.",
+      },
+      {
+        question: "Hvor ser jeg den aktuelle pris?",
+        answer:
+          "Klik “Se pris hos Apuls.dk”. Pris og lager hentes live fra partner-feedet.",
+      },
+    ],
+    relatedSlugs: [
+      "bedste-siddecykel-2026",
+      "bedste-traeningsudstyr-til-seniorer-2026",
+      "bedste-knaevenlig-genoptraening-hjemme-2026",
+      "bedste-motionscykel-2026",
+      "motionscykel-eller-spinningcykel-2026",
+      "bedste-cardio-under-lavt-loft-2026",
     ],
   },
 ];

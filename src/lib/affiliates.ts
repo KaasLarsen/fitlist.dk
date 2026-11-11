@@ -19,6 +19,24 @@ export const affiliates: AffiliateLink[] = [
     label: "Se pris hos Ascendic.dk",
     url: "https://www.partner-ads.com/dk/klikbanner.php?bannerid=94094&partnerid=57983&htmlurl=https://ascendic.dk/products/ascendic-7023-walking-pad-essential?variant=56388648173912",
   },
+  {
+    id: "ascendic-7021-loebebaand",
+    partner: "Ascendic.dk",
+    label: "Se pris hos Ascendic.dk",
+    url: "https://www.partner-ads.com/dk/klikbanner.php?bannerid=94094&partnerid=57983&htmlurl=https://ascendic.dk/products/ascendic-7021-lobeband?variant=56336394781016",
+  },
+  {
+    id: "velorafit-foldbart-loebebaand",
+    partner: "iHero",
+    label: "Se pris hos iHero",
+    url: "https://do.ihero.dk/t/t?a=1980284371&as=2127168443&t=2&tk=1&cupa_sku=57220268130686&fid=2971&epi=fitlist&url=https://shop.ihero.dk/products/lobeband?variant=57220268130686",
+  },
+  {
+    id: "odin-rb-800-siddecykel",
+    partner: "Apuls.dk",
+    label: "Se pris hos Apuls.dk",
+    url: "https://www.partner-ads.com/dk/klikbanner.php?bannerid=46187&partnerid=57983&htmlurl=https://apuls.dk/odin-rb-800-comfort-siddecykel",
+  },
 ];
 
 export function getAffiliate(id: string): AffiliateLink | undefined {

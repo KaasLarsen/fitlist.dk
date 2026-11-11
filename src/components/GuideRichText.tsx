@@ -8,7 +8,20 @@ const GUIDE_LINK_ALIASES: Record<string, string[]> = {
     "Ascendic Essential modelguide",
     "Ascendic Essential Walking Pad — modelguide 2026",
   ],
+  "ascendic-7021-loebebaand-2026": [
+    "Ascendic 7021 modelguide",
+    "Ascendic 7021 Løbebånd — modelguide 2026",
+  ],
+  "velorafit-foldbart-loebebaand-2026": [
+    "VeloraFit modelguide",
+    "VeloraFit Foldbart Løbebånd — modelguide 2026",
+  ],
+  "odin-rb-800-siddecykel-2026": [
+    "Odin RB-800 modelguide",
+    "Odin RB-800 Comfort Siddecykel — modelguide 2026",
+  ],
   "bedste-loebebaand-2026": ["Bedste løbebånd 2026"],
+  "bedste-siddecykel-2026": ["Bedste siddecykel 2026"],
   "bedste-romaskine-2026": ["Bedste romaskine 2026"],
   "bedste-crosstrainer-2026": ["Bedste crosstrainer 2026"],
   "bedste-gaabaand-2026": ["Bedste gåbånd 2026"],
