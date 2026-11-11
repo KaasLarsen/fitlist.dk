@@ -61,6 +61,8 @@ export type GuideFaq = {
   answer: string;
 };
 
+export type GuideKind = "modelguide";
+
 export type Guide = {
   slug: string;
   title: string;
@@ -71,6 +73,11 @@ export type Guide = {
   categorySlug: string;
   /** Valgfri intent til “Relaterede tilbud” (fx gaabaand) */
   intentSlug?: string;
+  /**
+   * modelguide = én maskine pr. side.
+   * Udeladt = almindelig købs-/beslutningsguide.
+   */
+  kind?: GuideKind;
   /** Overskrift over produkt-/pakke-anbefalinger (default: Anbefalede modeller) */
   recommendationsHeading?: string;
   publishedAt: string;
@@ -83,6 +90,10 @@ export type Guide = {
   faqs: GuideFaq[];
   relatedSlugs?: string[];
 };
+
+export function isModelGuide(guide: Pick<Guide, "kind">): boolean {
+  return guide.kind === "modelguide";
+}
 
 export function getGuide(slug: string): Guide | undefined {
   return guides.find((g) => g.slug === slug);
@@ -136,14 +147,18 @@ export function getGuideByCategoryAndIntent(
   intentSlug: string,
 ): Guide | undefined {
   return guides.find(
-    (g) => g.categorySlug === categorySlug && g.intentSlug === intentSlug,
+    (g) =>
+      g.categorySlug === categorySlug &&
+      g.intentSlug === intentSlug &&
+      !isModelGuide(g),
   );
 }
 
 /**
- * Kategori-guides, beslutningsguides (X eller Y) og intent-guides
+ * Kategori-guides, beslutningsguides (X eller Y), intent-guides
  * (gåbånd, kontor/under-desk, siddecykel, spinning, smart/Zwift, airbike,
- * multistation, træningsbænk, håndvægte, kabeltårn, begynder/must-haves).
+ * multistation, træningsbænk, håndvægte, kabeltårn, begynder/must-haves)
+ * og modelguides (én maskine pr. side).
  * Anbefalinger kobles til Partner-Ads via feedProductId (live pris + CTA).
  */
 export const guides: Guide[] = [
@@ -841,7 +856,7 @@ export const guides: Guide[] = [
       },
     ],
     howToChoose:
-      "Ren desk walking på budget? WorkWalk Classic. Vil du have et dedikeret allround-gåbånd til kontor/hjem? Titan LIFE Walking W10. Går du allerede hver dag og mangler intensitet? Pad med 15 % stigning. Skal det væk efter brug og vil du kunne gå “bjerg”? Foldbart med høj stigning. Skal du kunne løbe? Stop — gå til Bedste løbebånd 2026 i stedet. Shop via “Se pris” for live partnerpriser, eller se flere under Løbebånd → Gåbånd.",
+      "Ren desk walking på budget? WorkWalk Classic. Vil du have et dedikeret allround-gåbånd til kontor/hjem? Titan LIFE Walking W10. Går du allerede hver dag og mangler intensitet? Pad med 15 % stigning. Skal det væk efter brug og vil du kunne gå “bjerg”? Foldbart med høj stigning. Vil du dykke ned i én konkret budget-/plads-model? Læs Ascendic Essential Walking Pad — modelguide 2026. Skal du kunne løbe? Stop — gå til Bedste løbebånd 2026 i stedet. Shop via “Se pris” for live partnerpriser, eller se flere under Løbebånd → Gåbånd.",
     learningSections: [
       {
         heading: "Hvorfor gåbånd er så stort lige nu",
@@ -929,6 +944,7 @@ export const guides: Guide[] = [
       },
     ],
     relatedSlugs: [
+      "ascendic-essential-walking-pad-2026",
       "incline-loebebaand-eller-klassisk-2026",
       "loebebaand-eller-gaabaand-2026",
       "gaabaand-til-kontoret-2026",
@@ -5083,7 +5099,7 @@ export const guides: Guide[] = [
       },
     ],
     howToChoose:
-      "Dedikeret hjemmekontor og mange timer? Gymstick Walking Pad Pro eller Titan W10. Skal tempo justeres midt i Zoom uden at bøje dig? Xiaomi A1 Pro. Lille plads og vil bare i gang under hæve-sænkebordet? Ascendic Essential. Skal du kunne løbe? Stop — se Bedste løbebånd 2026. Vil du have bredere walking pad-guide (stigning, fold, allround)? Se Bedste gåbånd 2026. Shop via “Se pris” for live partnerpriser.",
+      "Dedikeret hjemmekontor og mange timer? Gymstick Walking Pad Pro eller Titan W10. Skal tempo justeres midt i Zoom uden at bøje dig? Xiaomi A1 Pro. Lille plads og vil bare i gang under hæve-sænkebordet? Ascendic Essential — dyk ned i Ascendic Essential Walking Pad — modelguide 2026. Skal du kunne løbe? Stop — se Bedste løbebånd 2026. Vil du have bredere walking pad-guide (stigning, fold, allround)? Se Bedste gåbånd 2026. Shop via “Se pris” for live partnerpriser.",
     learningSections: [
       {
         heading: "Hvorfor under-desk er en anden disciplin",
@@ -5170,6 +5186,7 @@ export const guides: Guide[] = [
       },
     ],
     relatedSlugs: [
+      "ascendic-essential-walking-pad-2026",
       "loebebaand-eller-gaabaand-2026",
       "bedste-gaabaand-2026",
       "bedste-stoejsvage-traeningsmaskiner-lejlighed-2026",
@@ -11610,6 +11627,153 @@ export const guides: Guide[] = [
       "bedste-sjippetov-traeningsmaatte-lejlighed-2026",
       "bedste-vaegtvest-2026",
       "bedste-justerbare-haandvaegte-2026",
+      "home-gym-til-lille-vaerelse-10m2-2026",
+    ],
+  },
+  {
+    slug: "ascendic-essential-walking-pad-2026",
+    title: "Ascendic Essential Walking Pad — modelguide 2026",
+    excerpt:
+      "Alt om Ascendic Essential Walking Pad: hvem den passer til, støj og plads, under-desk brug, ærlige fordele/ulemper — og live pris hos Ascendic.dk.",
+    metaDescription:
+      "Modelguide til Ascendic Essential Walking Pad 2026. Under-desk gåbånd til lejlighed og kontor: støj, plads, tempo, fordele og ulemper — live pris hos Ascendic.",
+    categorySlug: "loebebaand",
+    intentSlug: "gaabaand",
+    kind: "modelguide",
+    recommendationsHeading: "Modellen",
+    publishedAt: "2026-11-11",
+    updatedAt: "2026-11-11",
+    intro:
+      "Ascendic Essential Walking Pad er et ultra-lavt gåbånd uden håndtag — bygget til gang, ikke løb. Denne modelguide handler kun om den ene maskine: hvem den er til, hvor den fungerer (lejlighed, under hæve-sænkebordet, lille stue), hvad den bevidst ikke kan, og hvornår du hellere skal kigge på et dyrere pad eller et rigtigt løbebånd. Vil du sammenligne flere walking pads side om side, så gå videre til Bedste gåbånd 2026 eller Gåbånd til kontoret.",
+    criteria: [
+      {
+        title: "Ja — hvis du vil have skridt uden et skrummel",
+        description:
+          "Essential er skabt til zone 2, desk walking og “flere skridt mens serien kører”. Lav profil, ingen stang der spærrer under bordet, og en pris der gør det nemt at starte vanen. Passer til lejlighed, hjemmekontor og små rum, hvor et klassisk løbebånd aldrig ville få lov at bo.",
+      },
+      {
+        title: "Ja — hvis båndet skal kunne gemmes væk",
+        description:
+          "Den flade form gør det realistisk at skubbe pad’et under sofa eller seng, når arbejdsdagen er slut — forudsat du har målt frihøjden. Det er halvdelen af pointen: maskinen skal ikke eje stuen, før den bliver brugt.",
+      },
+      {
+        title: "Nej — hvis du vil løbe eller jogge",
+        description:
+          "Topfarten ligger i gang-/hurtiggang-zonen (typisk op til ca. 6 km/t). Intervalløb, sprint og “rigtigt” løbetræning hører til på et løbebånd. Køb ikke Essential som mini-løbebånd — du bliver skuffet. Se Bedste løbebånd 2026 i stedet.",
+      },
+      {
+        title: "Nej — hvis du allerede går mange timer dagligt og mangler intensitet",
+        description:
+          "Entry-pad’et er stærkt til at bygge vanen. Når desk walking er blevet hverdag, og du vil have mere belastning uden højere fart, er stigning eller et mere “pro” under-desk-pad (fx Titan W10 / Gymstick-klassen) det næste skridt — ikke flere features på Essential.",
+      },
+      {
+        title: "Tjek frihøjde under bord og sofa før køb",
+        description:
+          "Mål gulv til underside af bordplade (skuffer, kabler, crossbars) og frihøjde under sofa/seng. Essential vinder på lav højde uden håndtag — men pladsen er stadig din, ikke marketingtekstens. En underlagsmåtte er næsten obligatorisk i lejlighed.",
+      },
+    ],
+    products: [
+      {
+        id: "ascendic-essential-walking-pad",
+        name: "Ascendic Essential Walking Pad",
+        badge: "Modelguide",
+        summary:
+          "Ultra-lavt walking pad uden håndtag fra Ascendic — vores go-to når målet er skridt under arbejde eller TV, minimal højde og en skarp indgangspris. Det er et ærligt entry-/plads-valg: godt til gang og vaner, ikke til løb eller “pro”-kontorbrug hele dagen. Live pris og lagerstatus hentes direkte fra Ascendic.dk.",
+        pros: [
+          "Meget lav profil — velegnet under hæve-sænkebord",
+          "Ingen stang der spærrer under bordpladen",
+          "Skarp pris til at bygge desk walking-vanen",
+          "Nem at skubbe væk under sofa/seng (mål først)",
+          "Partner: Ascendic.dk — direkte shop-link med live pris",
+        ],
+        cons: [
+          "Ikke til løb eller jog — kun gangtempo",
+          "Færre “pro”-features end Titan W10 / Gymstick Pro",
+          "Ingen stigning til højere intensitet",
+          "Opgrader, når du går mange timer hver dag",
+        ],
+        specs: [
+          { label: "Type", value: "Under-desk walking pad / gåbånd" },
+          { label: "Brand", value: "Ascendic" },
+          { label: "Brug", value: "Gang, kontor, lejlighed" },
+          { label: "Segment", value: "Budget / kompakt" },
+          { label: "Håndtag", value: "Nej (lav profil)" },
+          { label: "Typisk max tempo", value: "Ca. 6 km/t (gang)" },
+          { label: "Partner", value: "Ascendic.dk" },
+        ],
+        feedProductId: "Ascendic.dk:56388648173912",
+      },
+    ],
+    howToChoose:
+      "Vil du have Ascendic Essential? Køb den, hvis du primært skal gå — under bord, i lejlighed eller i et lille rum — og vil starte billigt uden at fylde stuen. Skal du sammenligne flere pads (stigning, premium, fold)? Se Bedste gåbånd 2026. Dedikeret under-desk til møder og skrivetempo? Se Gåbånd til kontoret. Skal du kunne løbe? Bedste løbebånd 2026. Shop via “Se pris” for aktuel Ascendic-pris.",
+    learningSections: [
+      {
+        heading: "Hvad Essential egentlig er",
+        paragraphs: [
+          "Essential er et walking pad: et fladt bånd til gang. Der er ingen frontkonsol og ingen håndtagsstang, der stjæler loft under et hæve-sænkebord. Formålet er NEAT — flere skridt i hverdagen — ikke sveddryppende intervaller.",
+          "Ascendic positionerer den som en enkel, kompakt indgang til gåbånd. På Fitlist bruger vi den ofte som lejligheds- og budget-pick i købsguides netop derfor: den løser ét job klart, i stedet for at love “3-i-1 løb + gang + bjerg”.",
+        ],
+      },
+      {
+        heading: "Støj, måtte og lejlighed",
+        paragraphs: [
+          "Gangtempo giver mildere vibrationer end løb — men motorbrum, båndsus og skridt gennem gulvet findes stadig. I etagebyggeri: brug underlagsmåtte, gå blødt, og sænk tempoet om aftenen. En måtte beskytter også gulvet under daglig brug.",
+          "“Støjsvag” er ikke en licens til at trampere i sokker kl. 22. Essential er realistisk til lejlighed, når du behandler den som et gåbånd — ikke et løbebånd. Mere om stille cardio: Bedste støjsvage træningsmaskiner til lejligheden.",
+        ],
+      },
+      {
+        heading: "Under desk og under sofa",
+        paragraphs: [
+          "Uden håndtag er Essential et stærkt under-desk-match: frihøjde til bordpladen bliver ofte det, der afgør, om du kan skrive, mens du går. Start i 1,5–2,5 km/t til tastaturarbejde; hurtigere tempo til pauser.",
+          "Efter fyraften er pointen, at pad’et kan forsvinde. Mål folded/stående højde mod mellemrummet under sofa eller seng. Passer det ikke, bliver maskinen stående midt i rummet — og så dør vanen. Mere fold-/plads-inspiration: Bedste foldbare & kompakte træningsmaskiner.",
+        ],
+      },
+      {
+        heading: "Hvornår du skal vælge noget andet",
+        paragraphs: [
+          "Vælg et andet pad, hvis du vil have stigning, app-styring midt i Zoom, eller et mere “pro” under-desk-setup til lange arbejdsdage — så er Gåbånd til kontoret og Bedste gåbånd 2026 bedre udgangspunkt end denne modelguide.",
+          "Vælg et løbebånd, hvis jogging er målet. Essential stopper bevidst ved gang. Det er ikke en svaghed i produktet — det er produktets jobbeskrivelse.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "Er Ascendic Essential Walking Pad et løbebånd?",
+        answer:
+          "Nej. Det er et gåbånd / walking pad til gangtempo. Skal du kunne løbe eller jogge hjemme, kig på et rigtigt løbebånd i stedet.",
+      },
+      {
+        question: "Kan jeg bruge den under et hæve-sænkebord?",
+        answer:
+          "Ja — det er et af de stærkeste use cases. Der er ingen håndtagsstang, der spærrer under pladen. Mål stadig frihøjde med skuffer og kabler i tankerne, og start i lavt skrivetempo.",
+      },
+      {
+        question: "Passer den under sofaen?",
+        answer:
+          "Ofte ja, hvis sofaen har nok frihøjde, og du måler maskinens højde først. Essential er netop valgt i vores fold-/plads-guides, fordi den er lav og uden stang — men møblet afgør det, ikke produktnavnet.",
+      },
+      {
+        question: "Hvor støjsvag er den i lejlighed?",
+        answer:
+          "Gang er mildere end løb, men du skal stadig regne med motor og skridt. Brug måtte, bløde skridt og lavere tempo om aftenen. Til ren “nabo-angst” er vanen + måtte vigtigere end marketing-claims om dB.",
+      },
+      {
+        question: "Ascendic Essential eller Titan LIFE Walking W10?",
+        answer:
+          "Essential, hvis du vil have lavest mulige indgangspris og minimal højde til at bygge vanen. Titan W10, hvis du vil have et mere “færdigt” allround-gåbånd til daglig kontor-/hjemmebrug og er villig til at betale mere. Sammenlign flere i Bedste gåbånd 2026.",
+      },
+      {
+        question: "Hvor ser jeg den aktuelle pris?",
+        answer:
+          "Klik “Se pris hos Ascendic.dk” på denne side. Pris og lager hentes live fra partner-feedet.",
+      },
+    ],
+    relatedSlugs: [
+      "bedste-gaabaand-2026",
+      "gaabaand-til-kontoret-2026",
+      "bedste-foldbare-kompakte-traeningsmaskiner-2026",
+      "bedste-stoejsvage-traeningsmaskiner-lejlighed-2026",
+      "bedste-loebebaand-2026",
       "home-gym-til-lille-vaerelse-10m2-2026",
     ],
   },

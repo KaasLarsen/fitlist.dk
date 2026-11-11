@@ -1,7 +1,11 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { getAllCategories, getCategory } from "@/lib/categories";
-import { getAllGuides, getGuidesByCategory } from "@/lib/guides";
+import {
+  getAllGuides,
+  getGuidesByCategory,
+  isModelGuide,
+} from "@/lib/guides";
 import { canonical } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -86,6 +90,12 @@ export default async function GuidesPage({ searchParams }: Props) {
                   >
                     <div>
                       <p className="text-xs uppercase tracking-[0.16em] text-muted">
+                        {isModelGuide(guide) ? (
+                          <>
+                            <span className="text-accent">Modelguide</span>
+                            <span className="mx-2 text-border">·</span>
+                          </>
+                        ) : null}
                         {category?.name ?? guide.categorySlug}
                       </p>
                       <h2 className="mt-1 font-display text-2xl font-medium uppercase tracking-wide text-foreground transition-colors group-hover:text-accent">

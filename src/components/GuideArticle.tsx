@@ -13,6 +13,7 @@ import type { FeedProduct, MachineCategorySlug } from "@/lib/feeds/types";
 import {
   getProductAffiliate,
   getRelatedGuides,
+  isModelGuide,
   type Guide,
   type GuideProduct,
 } from "@/lib/guides";
@@ -40,8 +41,10 @@ async function resolveGuideOffers(
 export async function GuideArticle({ guide }: { guide: Guide }) {
   const category = getCategory(guide.categorySlug);
   const related = getRelatedGuides(guide);
+  const modelGuide = isModelGuide(guide);
   const recommendationsHeading =
     guide.recommendationsHeading ?? "Anbefalede modeller";
+  const criteriaHeading = modelGuide ? "Passer den til dig?" : "Sådan vælger du";
   const [relatedOffers, offerMap] = await Promise.all([
     getProductsByCategory(guide.categorySlug as MachineCategorySlug, {
       intentSlug: guide.intentSlug,
@@ -59,18 +62,26 @@ export async function GuideArticle({ guide }: { guide: Guide }) {
     <article className="noise hero-glow flex flex-1 flex-col">
       <div className="relative z-10 mx-auto w-full max-w-3xl px-5 pb-28 pt-28 sm:px-8 sm:pb-32 sm:pt-32">
         <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-sm">
+          {modelGuide ? (
+            <span className="font-display font-medium uppercase tracking-[0.2em] text-accent">
+              Modelguide
+            </span>
+          ) : null}
           {category ? (
-            <Link
-              href={categoryHref}
-              className="font-display font-medium uppercase tracking-[0.2em] text-accent transition-colors hover:text-accent-dim"
-            >
-              {category.name}
-            </Link>
-          ) : (
+            <>
+              {modelGuide ? <span className="text-muted">·</span> : null}
+              <Link
+                href={categoryHref}
+                className="font-display font-medium uppercase tracking-[0.2em] text-accent transition-colors hover:text-accent-dim"
+              >
+                {category.name}
+              </Link>
+            </>
+          ) : !modelGuide ? (
             <span className="font-display font-medium uppercase tracking-[0.2em] text-accent">
               Guide
             </span>
-          )}
+          ) : null}
           <span className="text-muted">·</span>
           <time className="text-muted" dateTime={guide.updatedAt}>
             Opdateret{" "}
@@ -113,7 +124,7 @@ export async function GuideArticle({ guide }: { guide: Guide }) {
                 href="#saadan-vaelger-du"
                 className="transition-colors hover:text-accent"
               >
-                Sådan vælger du
+                {criteriaHeading}
               </a>
             </li>
             <li>
@@ -141,7 +152,7 @@ export async function GuideArticle({ guide }: { guide: Guide }) {
             </li>
           </ul>
 
-          {guide.products.length > 0 ? (
+          {guide.products.length > 0 && !modelGuide ? (
             <div className="mt-8">
               <p className="font-display text-sm font-medium uppercase tracking-[0.16em] text-muted">
                 I denne test
@@ -389,7 +400,7 @@ export async function GuideArticle({ guide }: { guide: Guide }) {
 
         <section id="saadan-vaelger-du" className="mt-14 scroll-mt-28">
           <h2 className="font-display text-2xl font-semibold uppercase tracking-wide text-foreground">
-            Sådan vælger du
+            {criteriaHeading}
           </h2>
           <ul className="mt-6 space-y-6">
             {guide.criteria.map((criterion) => (

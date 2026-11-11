@@ -4,6 +4,10 @@ import { getAllGuides, type Guide } from "@/lib/guides";
 
 /** Extra short forms that appear in prose (beyond auto-derived title slices). */
 const GUIDE_LINK_ALIASES: Record<string, string[]> = {
+  "ascendic-essential-walking-pad-2026": [
+    "Ascendic Essential modelguide",
+    "Ascendic Essential Walking Pad — modelguide 2026",
+  ],
   "bedste-loebebaand-2026": ["Bedste løbebånd 2026"],
   "bedste-romaskine-2026": ["Bedste romaskine 2026"],
   "bedste-crosstrainer-2026": ["Bedste crosstrainer 2026"],
