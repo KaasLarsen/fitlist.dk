@@ -595,10 +595,10 @@ export async function GuideArticle({ guide }: { guide: Guide }) {
         </p>
 
         <Link
-          href="/guides"
+          href={modelGuide ? "/guides/modelguides" : "/guides"}
           className="mt-10 inline-flex font-display text-sm font-semibold uppercase tracking-[0.14em] text-accent transition-colors hover:text-accent-dim"
         >
-          ← Alle guides
+          {modelGuide ? "← Alle modelguides" : "← Alle guides"}
         </Link>
       </div>
     </article>

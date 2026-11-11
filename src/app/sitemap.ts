@@ -15,6 +15,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
     },
     {
+      url: canonical("/guides/modelguides"),
+      lastModified: now,
+      changeFrequency: "weekly",
+      priority: 0.85,
+    },
+    {
       url: canonical("/maskiner"),
       lastModified: now,
       changeFrequency: "daily",

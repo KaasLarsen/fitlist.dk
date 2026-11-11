@@ -106,8 +106,19 @@ export function getAllGuides(): Guide[] {
   );
 }
 
+/** Købs-/beslutningsguides — uden modelguides. */
+export function getBuyingGuides(): Guide[] {
+  return getAllGuides().filter((g) => !isModelGuide(g));
+}
+
+/** Én maskine pr. side. */
+export function getModelGuides(): Guide[] {
+  return getAllGuides().filter(isModelGuide);
+}
+
+/** Købsguides i en maskinkategori (ekskluderer modelguides). */
 export function getGuidesByCategory(categorySlug: string): Guide[] {
-  return getAllGuides().filter((g) => g.categorySlug === categorySlug);
+  return getBuyingGuides().filter((g) => g.categorySlug === categorySlug);
 }
 
 export function getRelatedGuides(guide: Guide): Guide[] {
