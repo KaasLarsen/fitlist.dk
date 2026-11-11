@@ -939,6 +939,7 @@ function isHardExcluded(combined: string): boolean {
 }
 
 const DIK_MERCHANT = "Den Intelligente Krop";
+const CYKELPARTNER_MERCHANT = "Cykelpartner.dk";
 
 /**
  * Den Intelligente Krop er mest yoga, pilates og massage.
@@ -970,10 +971,54 @@ function denIntelligenteKropKeep(product: FeedProduct): boolean {
   return /haandvaegt|håndvægt|dumbbell|kettlebell|\bybell\b/.test(text);
 }
 
+/**
+ * Cykelpartner er et outdoor-cykelkatalog (~49k varer).
+ * Kun indoor-maskiner: hometrainere, smart bikes, cykelruller, motionscykler.
+ */
+function cykelpartnerKeep(product: FeedProduct): boolean {
+  const titleHay = normalize(product.title);
+  const catHay = normalize(product.category);
+  const hay = `${titleHay} ${catHay}`;
+  const raw = `${product.title} ${product.category}`.toLowerCase();
+  const text = `${hay} ${raw}`;
+
+  // Ren tilbehør-kategori — ikke selve maskinen
+  if (/tilbehoer\s+til\s+hometrainer/.test(catHay)) return false;
+
+  // Tilbehør/støj der nævner hometrainer men ikke er maskinen selv
+  if (
+    /stroemforsyning|strømforsyning|power\s*supply|cas+ette\s*body|kassettehus|thru[\s-]*axle|adapter|mount|holder|flaskeholder|sweat\s*(?:net|cover)|svedcover|headwind|\bfan\b|ventilator|bord|desk|tray|towel|haandklaede|håndklæde|shorts?|knickers|jersey|troeje|trøje|eger|nipler|bremse|slange|sadel|pedaler?|sko\b|hjelm/.test(
+      text,
+    )
+  ) {
+    return false;
+  }
+
+  // Maskin-kategori fra feedet
+  if (/^hometrainere?$/.test(catHay.trim())) return true;
+
+  if (/\bhometrainer\b/.test(titleHay)) return true;
+  if (/\bsmart\s*bike\b/.test(titleHay)) return true;
+  if (/\bkickr\s*bike\b/.test(titleHay)) return true;
+  if (/\bwattbike\b/.test(titleHay)) return true;
+  if (/\bcykelrulle\b/.test(titleHay)) return true;
+  if (/\bmotionscykel\b/.test(titleHay)) return true;
+  if (/\bkondicykel\b/.test(titleHay)) return true;
+  if (/\bindoor\s*bike\b/.test(titleHay)) return true;
+  if (/\bspinning(?:cykel|[\s-]*bike)\b/.test(titleHay)) return true;
+  if (/\bexercise\s*bike\b/.test(titleHay)) return true;
+  if (/\bair(?:\s*)?bike\b/.test(titleHay)) return true;
+
+  return false;
+}
+
 /** Shop-specifikt filter før den generelle klassificering. */
 export function passesMerchantGate(product: FeedProduct): boolean {
-  if (product.merchant !== DIK_MERCHANT) return true;
-  return denIntelligenteKropKeep(product);
+  if (product.merchant === DIK_MERCHANT) return denIntelligenteKropKeep(product);
+  if (product.merchant === CYKELPARTNER_MERCHANT) {
+    return cykelpartnerKeep(product);
+  }
+  return true;
 }
 
 function matchRule(

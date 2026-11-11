@@ -974,3 +974,64 @@ describe("classifyProduct — Den Intelligente Krop", () => {
     assert.ok(r?.intentSlugs?.includes("elastikker"));
   });
 });
+
+describe("classifyProduct — Cykelpartner.dk", () => {
+  const cp = { merchant: "Cykelpartner.dk", brand: "Wahoo" };
+
+  it("keeps hometrainers and smart bikes", () => {
+    const trainer = classifyProduct(
+      product({
+        ...cp,
+        brand: "Tacx",
+        title: "Garmin Tacx Neo 3M - Smart hometrainer - 2200 Watt",
+        category: "Hometrainere",
+        price: 12999,
+      }),
+    );
+    assert.ok(trainer);
+    assert.equal(trainer!.categorySlug, "motionscykel");
+    assert.ok(trainer!.intentSlugs?.includes("hometrainer"));
+
+    const smartBike = classifyProduct(
+      product({
+        ...cp,
+        title: "Wahoo KICKR Bike PRO - Smart Bike",
+        category: "Hometrainere",
+        price: 29999,
+      }),
+    );
+    assert.ok(smartBike);
+    assert.equal(smartBike!.categorySlug, "motionscykel");
+  });
+
+  it("drops outdoor cycling parts, apparel and hometrainer accessories", () => {
+    for (const { title, category } of [
+      {
+        title: "DT Swiss Revolite Straigh Pull eger sort (Egerlængde: 282 mm)",
+        category: "Eger & Nipler",
+      },
+      {
+        title: "Bioracer Icon Jersey - Cykeltrøje - Korte ærmer - Dame",
+        category: "Cykeltrøjer",
+      },
+      {
+        title: "Tacx - Campagnolo casette body - Til Tacx Neo 2 og Flux S",
+        category: "Tilbehør til hometrainer",
+      },
+      {
+        title: "Elite strømforsyning EU 12V 1.5A",
+        category: "Tilbehør til hometrainer",
+      },
+      {
+        title: "Specialized Allez Sport - Racercykel",
+        category: "Urban & fritid",
+      },
+    ]) {
+      assert.equal(
+        classifyProduct(product({ ...cp, title, category })),
+        null,
+        title,
+      );
+    }
+  });
+});

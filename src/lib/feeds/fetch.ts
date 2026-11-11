@@ -19,6 +19,9 @@ import type { FeedProduct } from "@/lib/feeds/types";
 const FEED_CACHE_VERSION = "v1";
 const FEED_REVALIDATE_SECONDS = 21_600; // 6 timer
 const DEFAULT_TIMEOUT_MS = 30_000;
+/** Cykelpartner-feedet er ~46 MB XML — kræver længere timeout. */
+const CYKELPARTNER_TIMEOUT_MS = 90_000;
+const CYKELPARTNER_MERCHANT = "Cykelpartner.dk";
 
 /** Fjern tunge felter så Data Cache holder sig under Next.js 2MB-grænsen. */
 function slimFeedProducts(products: FeedProduct[]): FeedProduct[] {
@@ -56,9 +59,20 @@ export async function fetchFeedProductsInner(
   opts?: { timeoutMs?: number },
 ): Promise<FeedProduct[]> {
   const url = partnerAdsFeedUrl(feed);
-  const timeoutMs = opts?.timeoutMs ?? DEFAULT_TIMEOUT_MS;
+  const isCykelpartner = feed.merchant === CYKELPARTNER_MERCHANT;
+  const timeoutMs =
+    opts?.timeoutMs ??
+    (isCykelpartner ? CYKELPARTNER_TIMEOUT_MS : DEFAULT_TIMEOUT_MS);
   const text = await fetchFeedText(url, feed.merchant, timeoutMs);
-  return parsePartnerAdsXml(text, feed.merchant).filter(passesMerchantGate);
+  const products = parsePartnerAdsXml(text, feed.merchant).filter(
+    passesMerchantGate,
+  );
+  // Stort outdoor-katalog: cache kun varer klassifikationen accepterer
+  // (samme mønster som Adtraction — undgår Next.js 2 MB cache-grænse).
+  if (isCykelpartner) {
+    return products.filter((product) => classifyProduct(product) != null);
+  }
+  return products;
 }
 
 /**

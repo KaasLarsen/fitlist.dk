@@ -53,6 +53,12 @@ export const PARTNER_ADS_FEEDS: readonly PartnerAdsFeed[] = [
     merchant: "CBL-Fitness.dk",
   },
   {
+    id: "cykelpartner",
+    bannerId: "16446",
+    feedId: "2",
+    merchant: "Cykelpartner.dk",
+  },
+  {
     id: "den-intelligente-krop",
     bannerId: "38097",
     feedId: "400",
