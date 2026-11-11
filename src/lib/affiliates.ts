@@ -55,6 +55,24 @@ export const affiliates: AffiliateLink[] = [
     label: "Se pris hos Apuls.dk",
     url: "https://www.partner-ads.com/dk/klikbanner.php?bannerid=46187&partnerid=57983&htmlurl=https://apuls.dk/odin-a10-airbike-motionscykel",
   },
+  {
+    id: "odin-s1000-spinningcykel",
+    partner: "Apuls.dk",
+    label: "Se pris hos Apuls.dk",
+    url: "https://www.partner-ads.com/dk/klikbanner.php?bannerid=46187&partnerid=57983&htmlurl=https://apuls.dk/odin-s1000-spinningcykel-kinomap-zwift-bike",
+  },
+  {
+    id: "odin-justerbare-haandvaegte-24kg",
+    partner: "Apuls.dk",
+    label: "Se pris hos Apuls.dk",
+    url: "https://www.partner-ads.com/dk/klikbanner.php?bannerid=46187&partnerid=57983&htmlurl=https://apuls.dk/odin-justerbar-handvaegte-2-stk-24kg",
+  },
+  {
+    id: "ascendic-6004-romaskine",
+    partner: "Ascendic.dk",
+    label: "Se pris hos Ascendic.dk",
+    url: "https://www.partner-ads.com/dk/klikbanner.php?bannerid=94094&partnerid=57983&htmlurl=https://ascendic.dk/products/ascendic-6004-romaskine?variant=55357722100056",
+  },
 ];
 
 export function getAffiliate(id: string): AffiliateLink | undefined {

@@ -32,6 +32,18 @@ const GUIDE_LINK_ALIASES: Record<string, string[]> = {
     "Odin A1000 modelguide",
     "Odin A1000 Airbike — modelguide 2026",
   ],
+  "odin-s1000-spinningcykel-2026": [
+    "Odin S1000 modelguide",
+    "Odin S1000 Spinningcykel — modelguide 2026",
+  ],
+  "odin-justerbare-haandvaegte-24kg-2026": [
+    "Odin 2×24 kg modelguide",
+    "Odin Justerbare Håndvægte 2×24 kg — modelguide 2026",
+  ],
+  "ascendic-6004-romaskine-2026": [
+    "Ascendic 6004 modelguide",
+    "Ascendic 6004 Romaskine — modelguide 2026",
+  ],
   "bedste-loebebaand-2026": ["Bedste løbebånd 2026"],
   "bedste-siddecykel-2026": ["Bedste siddecykel 2026"],
   "bedste-romaskine-2026": ["Bedste romaskine 2026"],
@@ -39,6 +51,13 @@ const GUIDE_LINK_ALIASES: Record<string, string[]> = {
   "bedste-crosstrainer-2026": ["Bedste crosstrainer 2026"],
   "bedste-gaabaand-2026": ["Bedste gåbånd 2026"],
   "bedste-motionscykel-2026": ["Bedste motionscykel 2026"],
+  "bedste-smartcykel-2026": [
+    "Bedste smartcykler 2026",
+    "Bedste smartcykel 2026",
+  ],
+  "bedste-spinningcykel-2026": ["Bedste spinningcykel 2026"],
+  "bedste-cykel-til-zwift-2026": ["Bedste cykel til Zwift 2026"],
+  "bedste-hometrainer-2026": ["Bedste hometrainer 2026"],
   "bedste-justerbare-haandvaegte-2026": ["Bedste justerbare håndvægte 2026"],
   "bedste-justerbar-traeningsbaenk-2026": [
     "Bedste justerbare træningsbænk 2026",

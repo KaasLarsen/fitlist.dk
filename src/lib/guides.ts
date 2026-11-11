@@ -2121,7 +2121,7 @@ export const guides: Guide[] = [
       },
     ],
     howToChoose:
-      "Vil du have interaktiv træning uden at låse dig til ét studium? Start med Odin S1000 (eller Reebok i-Bike på budget). Jagter du landevejs-realisme uden montering? Wahoo Kickr Bike Shift — eller KICKR Bike PRO, hvis det er all-in. Har du allerede en racercykel? Så er en hometrainer ofte klogere — se Bedste hometrainer 2026. Til Zwift i dybden: Bedste cykel til Zwift 2026.",
+      "Vil du have interaktiv træning uden at låse dig til ét studium? Start med Odin S1000 Spinningcykel — modelguide 2026 (eller Reebok i-Bike på budget). Jagter du landevejs-realisme uden montering? Wahoo Kickr Bike Shift — eller KICKR Bike PRO, hvis det er all-in. Har du allerede en racercykel? Så er en hometrainer ofte klogere — se Bedste hometrainer 2026. Til Zwift i dybden: Bedste cykel til Zwift 2026.",
     learningSections: [
       {
         heading: "Hvad gør en cykel “smart”?",
@@ -2258,6 +2258,7 @@ export const guides: Guide[] = [
       },
     ],
     relatedSlugs: [
+      "odin-s1000-spinningcykel-2026",
       "bedste-hometrainer-2026",
       "bedste-cykel-til-zwift-2026",
       "bedste-spinningcykel-2026",
@@ -2400,7 +2401,7 @@ export const guides: Guide[] = [
       },
     ],
     howToChoose:
-      "Har du race-/gravelcykel? Start med Wahoo KICKR CORE 2 (eller Tacx Neo 2T, hvis watt/stilhed er premium). Vil du bare sætte dig? Kickr Bike Shift. Budget først, mens vanen bygges? Odin S1000. Dybde på trainers: Bedste hometrainer 2026. Hele smart-landskabet: Bedste smartcykler 2026.",
+      "Har du race-/gravelcykel? Start med Wahoo KICKR CORE 2 (eller Tacx Neo 2T, hvis watt/stilhed er premium). Vil du bare sætte dig? Kickr Bike Shift. Budget først, mens vanen bygges? Odin S1000 Spinningcykel — modelguide 2026. Dybde på trainers: Bedste hometrainer 2026. Hele smart-landskabet: Bedste smartcykler 2026.",
     learningSections: [
       {
         heading: "Hvad kræver Zwift af dit setup?",
@@ -2507,6 +2508,7 @@ export const guides: Guide[] = [
       },
     ],
     relatedSlugs: [
+      "odin-s1000-spinningcykel-2026",
       "bedste-hometrainer-2026",
       "bedste-smartcykel-2026",
       "bedste-spinningcykel-2026",
@@ -3902,7 +3904,7 @@ export const guides: Guide[] = [
       },
     ],
     howToChoose:
-      "Begynder eller stramt budget? Odin 20 kg-sæt. Vil du have det rigtige hjemme-allround uden at købe to gange? Odin 2×24 kg. Jagter du specifikt dial 24 kg og kan købe parvist? 2–24 kg dial-modellen. Allerede stærk og vil undgå loft? 2×40 kg. Tilføj bænk, når floor press begrænser dig — se vores bænk-guide. Shop via “Se pris” for live partnerpriser.",
+      "Begynder eller stramt budget? Odin 20 kg-sæt. Vil du have det rigtige hjemme-allround uden at købe to gange? Odin Justerbare Håndvægte 2×24 kg — modelguide 2026. Jagter du specifikt dial 24 kg og kan købe parvist? 2–24 kg dial-modellen. Allerede stærk og vil undgå loft? 2×40 kg. Tilføj bænk, når floor press begrænser dig — se vores bænk-guide. Shop via “Se pris” for live partnerpriser.",
     learningSections: [
       {
         heading: "Justerbare vs. faste håndvægte",
@@ -4002,6 +4004,7 @@ export const guides: Guide[] = [
       },
     ],
     relatedSlugs: [
+      "odin-justerbare-haandvaegte-24kg-2026",
       "bedste-kettlebells-hjemmetraening-2026",
       "hjemmetraening-for-begyndere-foerste-90-dage",
       "bedste-justerbar-traeningsbaenk-2026",
@@ -5618,7 +5621,7 @@ export const guides: Guide[] = [
       },
     ],
     howToChoose:
-      "Maksimal stilhed? Ascendic 6004 eller Titan R36. Vil du have “støjsvag” som featured feature? MAXXUS RX 1.0. Vil du have vand-stemning og bor ikke ovenpå lette gulve? Odin R1800. Vil du have luft? Stop — se Bedste romaskine 2026 i stedet. Læg måtte under, og browse Romaskine → Støjsvag for flere tilbud.",
+      "Maksimal stilhed? Ascendic 6004 Romaskine — modelguide 2026 eller Titan R36. Vil du have “støjsvag” som featured feature? MAXXUS RX 1.0. Vil du have vand-stemning og bor ikke ovenpå lette gulve? Odin R1800 Vandromaskine — modelguide 2026. Vil du have luft? Stop — se Bedste romaskine 2026 i stedet. Læg måtte under, og browse Romaskine → Støjsvag for flere tilbud.",
     learningSections: [
       {
         heading: "Hvorfor luft taber i lejlighed",
@@ -5694,6 +5697,8 @@ export const guides: Guide[] = [
       },
     ],
     relatedSlugs: [
+      "ascendic-6004-romaskine-2026",
+      "odin-r1800-vandromaskine-2026",
       "bedste-vandromaskine-2026",
       "bedste-romaskine-2026",
       "bedste-stoejsvage-traeningsmaskiner-lejlighed-2026",
@@ -12473,7 +12478,7 @@ export const guides: Guide[] = [
       },
     ],
     howToChoose:
-      "Vil du have Odin R1800? Køb den, hvis vand-stemning + midrange allround er jobbet. Stue + foldbart træ? Ascendic i Bedste vandromaskine 2026. Stramt budget men stadig vand? Odin R1000 i samme guide. Naboer først? Magnet i Bedste støjsvage romaskine 2026. Usikker på vand vs. luft vs. magnet? Bedste romaskine 2026. Shop via “Se pris hos Apuls.dk”.",
+      "Vil du have Odin R1800? Køb den, hvis vand-stemning + midrange allround er jobbet. Stue + foldbart træ? Ascendic i Bedste vandromaskine 2026. Stramt budget men stadig vand? Odin R1000 i samme guide. Naboer først? Ascendic 6004 Romaskine — modelguide 2026. Usikker på vand vs. luft vs. magnet? Bedste romaskine 2026. Shop via “Se pris hos Apuls.dk”.",
     learningSections: [
       {
         heading: "Hvad R1800 egentlig er",
@@ -12532,6 +12537,7 @@ export const guides: Guide[] = [
       },
     ],
     relatedSlugs: [
+      "ascendic-6004-romaskine-2026",
       "bedste-vandromaskine-2026",
       "bedste-romaskine-2026",
       "bedste-stoejsvag-romaskine-2026",
@@ -12677,9 +12683,442 @@ export const guides: Guide[] = [
       "bedste-airbike-2026",
       "odin-rb-800-siddecykel-2026",
       "odin-r1800-vandromaskine-2026",
+      "odin-s1000-spinningcykel-2026",
       "bedste-spinningcykel-2026",
       "bedste-motionscykel-2026",
       "bedste-romaskine-2026",
+    ],
+  },
+  {
+    slug: "odin-s1000-spinningcykel-2026",
+    title: "Odin S1000 Spinningcykel — modelguide 2026",
+    excerpt:
+      "Alt om Odin S1000: smart spinningcykel til Zwift og Kinomap — hvem den passer til, vs. i-Bike/KICKR, apps og live pris hos Apuls.dk.",
+    metaDescription:
+      "Modelguide til Odin S1000 Spinningcykel 2026. Zwift/Kinomap spin-smart uden Peloton-lock-in: fordele, ulemper — live pris hos Apuls.",
+    categorySlug: "motionscykel",
+    intentSlug: "smart",
+    kind: "modelguide",
+    recommendationsHeading: "Modellen",
+    publishedAt: "2026-11-11",
+    updatedAt: "2026-11-11",
+    intro:
+      "Odin S1000 er vores “Bedst samlet spin-smart”-cykel: eksplicit Zwift- og Kinomap-kompatibilitet, spinning-geometri og frihed til egen tablet — uden Peloton-abonnementslås. Denne modelguide handler kun om S1000: hvem den er til, hvornår den slår Reebok i-Bike, og hvornår du hellere skal have Wahoo KICKR Bike eller en hometrainer til egen racercykel. Vil du sammenligne flere smartcykler, se Bedste smartcykler 2026.",
+    criteria: [
+      {
+        title: "Ja — hvis du vil have Zwift/Kinomap uden studium-lock-in",
+        description:
+          "Du vil køre interaktivt med egen tablet, skifte app frit, og have en rigtig spin-følelse til zone 2 og intervaller — ikke kun en “Bluetooth-cykel” uden klar app-vinkel.",
+      },
+      {
+        title: "Ja — hvis spin-smart midrange er nok, mens vanen bygges",
+        description:
+          "Du vil starte stærkt uden Wahoo-budget. S1000 er indgangen, mange bliver på i årevis — andre opgraderer senere til KICKR Bike / CORE, når vanen er beviselig.",
+      },
+      {
+        title: "Ja — hvis du ikke har (eller ikke vil montere) en racercykel",
+        description:
+          "Dedicated spin-smart: sæt dig og kør. Har du allerede en god udecykel, er en hometrainer ofte det klogere Zwift-valg — se Bedste hometrainer 2026 / Bedste cykel til Zwift 2026.",
+      },
+      {
+        title: "Nej — hvis du jagter landevejs-watt-realisme",
+        description:
+          "S1000 er ikke Kickr Bike Shift. Bakke-følelse, watt-nøjagtighed og race-pasform ligger i Wahoo-/Tacx-klassen. Køb S1000 til smart spin — ikke til at erstatte en power meter-racer.",
+      },
+      {
+        title: "Nej — hvis du egentlig vil have stille kondicykel uden apps",
+        description:
+          "Så er Bedste motionscykel 2026 eller Odin RB-800 Comfort Siddecykel — modelguide 2026 det ærligere køb. S1000 forudsætter, at apps og spinning motiverer dig.",
+      },
+    ],
+    products: [
+      {
+        id: "odin-s1000-spinningcykel",
+        name: "Odin S1000 Spinningcykel (Kinomap & Zwift)",
+        badge: "Modelguide",
+        summary:
+          "Odin S1000 fra Apuls — vores go-to smart spinningcykel, når Zwift/Kinomap uden Peloton-lock-in er jobbet. Spin-geometri, egen tablet, midrange-smart: godt til at bygge vanen og køre seriøst hjemme, ikke en erstatning for KICKR Bike. Live pris hos Apuls.dk.",
+        pros: [
+          "Zwift- og Kinomap-klar",
+          "Spinning-geometri til intervaller",
+          "Frihed til at skifte app (egen tablet)",
+          "God balance mellem pris og “smart”-features",
+          "Partner: Apuls.dk — direkte shop-link",
+        ],
+        cons: [
+          "Ikke samme bakke-realisme som Wahoo KICKR Bike",
+          "Kræver egen tablet/skærm og typisk app-abonnement",
+          "Watt/finish matcher ikke premium dedicated smart bikes",
+          "Fylder — planlæg et fast hjørne",
+        ],
+        specs: [
+          { label: "Type", value: "Smart spinningcykel" },
+          { label: "Brand", value: "Odin" },
+          { label: "Apps", value: "Zwift, Kinomap" },
+          { label: "Skærm", value: "Brug egen tablet" },
+          { label: "Segment", value: "Spin-smart midrange" },
+          { label: "Partner", value: "Apuls.dk" },
+        ],
+        imageUrl:
+          "https://m2.apuls.dk/media/catalog/product/6/6/66c49b1cce831odins1000spinningcykel1.jpg",
+        feedProductId: "Apuls.dk:15043",
+        affiliateId: "odin-s1000-spinningcykel",
+      },
+    ],
+    howToChoose:
+      "Vil du have Odin S1000? Køb den, hvis Zwift/Kinomap på en spin bike uden lock-in er målet. Billigere test? Reebok i-Bike i Bedste smartcykler 2026. Dedicated indoor-racer? Kickr Bike Shift. Egen racercykel? Bedste hometrainer 2026. Ren HIIT uden apps? Odin A1000 Airbike — modelguide 2026. Shop via “Se pris hos Apuls.dk”.",
+    learningSections: [
+      {
+        heading: "Hvad S1000 egentlig er",
+        paragraphs: [
+          "En smart spinningcykel: Bluetooth til apps, spinning-geometri, og du medbringer skærmen. Magien er, at modstand og data kan tale med Zwift/Kinomap — uden at du er låst til ét studium.",
+          "På Fitlist er den “Bedst samlet spin-smart”, fordi den rammer den brug, de fleste vil have: interaktiv træning hjemme til midrange-pris.",
+        ],
+      },
+      {
+        heading: "S1000 vs. i-Bike vs. KICKR Bike",
+        paragraphs: [
+          "i-Bike: billigere indgang til samme app-univers. S1000: stærkere allround spin-smart. Kickr Bike Shift/PRO: dedicated smart bike med landevejs-ambition og højere pris.",
+          "Tommelfingerregel: byg vanen på S1000 (eller i-Bike). Opgrader til Wahoo, når watt og bakke-realisme begrænser dig — ikke før.",
+        ],
+      },
+      {
+        heading: "Apps, abonnement og tablet",
+        paragraphs: [
+          "Regn tablet + evt. Zwift/Kinomap-abonnement ind i den reelle pris. “Smart” uden skærm og data er bare en dyr motionscykel med ekstra kabler.",
+          "Mere om valget mellem trainer, dedicated bike og spin-smart: Bedste cykel til Zwift 2026.",
+        ],
+      },
+      {
+        heading: "Hvornår du skal vælge noget andet",
+        paragraphs: [
+          "Har du race-/gravelcykel: hometrainer. Vil du have stående sprint uden apps: klassisk spinning i Bedste spinningcykel 2026. Vil du have skånsom siddende cardio: RB-800.",
+          "Airbike-HIIT uden Zwift: A1000-modelguiden.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "Kan jeg køre Zwift på Odin S1000?",
+        answer:
+          "Ja — den er positioneret som Zwift- og Kinomap-kompatibel. Du bruger egen tablet/skærm og forbinder via Bluetooth. Tjek altid aktuel shop-tekst for protokoller.",
+      },
+      {
+        question: "S1000 eller Reebok i-Bike?",
+        answer:
+          "S1000, hvis du vil have det stærkere spin-smart allround-valg. i-Bike, hvis budgettet er strammest, mens du tester vanen. Se Bedste smartcykler 2026.",
+      },
+      {
+        question: "S1000 eller Wahoo Kickr Bike?",
+        answer:
+          "S1000 til spin-smart midrange. Kickr Bike, hvis du vil have dedicated indoor-racer med højere realisme og er villig til at betale for det.",
+      },
+      {
+        question: "Har jeg brug for abonnement?",
+        answer:
+          "Til den fulde Zwift/Kinomap-oplevelse: typisk ja. Du kan stadig træne uden app — men så mister du meget af grunden til at købe “smart”.",
+      },
+      {
+        question: "Hvor ser jeg den aktuelle pris?",
+        answer:
+          "Klik “Se pris hos Apuls.dk”. Pris og lager hentes live fra partner-feedet.",
+      },
+    ],
+    relatedSlugs: [
+      "bedste-smartcykel-2026",
+      "bedste-cykel-til-zwift-2026",
+      "bedste-hometrainer-2026",
+      "bedste-spinningcykel-2026",
+      "odin-a1000-airbike-2026",
+      "odin-rb-800-siddecykel-2026",
+      "bedste-motionscykel-2026",
+    ],
+  },
+  {
+    slug: "odin-justerbare-haandvaegte-24kg-2026",
+    title: "Odin Justerbare Håndvægte 2×24 kg — modelguide 2026",
+    excerpt:
+      "Alt om Odin justerbare håndvægte 2×24 kg (12-i-én): hvem sættet passer til, vs. 20 kg og 40 kg, plads og live pris hos Apuls.dk.",
+    metaDescription:
+      "Modelguide til Odin Justerbare Håndvægte 2×24 kg 2026. Dial-sæt til hjemmet: fordele, ulemper, vs. 20/40 kg — live pris hos Apuls.",
+    categorySlug: "tilbehoer",
+    intentSlug: "haandvaegte",
+    kind: "modelguide",
+    recommendationsHeading: "Modellen",
+    publishedAt: "2026-11-11",
+    updatedAt: "2026-11-11",
+    intro:
+      "Odin Justerbare Håndvægte Sæt 2×24 kg er vores “Bedst samlet”-valg til hjemmet: to dial-håndvægte, typisk ca. 3–24 kg og 12 vægttrin — ét sæt der erstatter en hel række faste hex. Denne modelguide handler kun om 2×24 kg-sættet: hvem det er til, hvornår 20 kg er nok, og hvornår du skal hoppe til 40 kg. Vil du sammenligne flere sæt, se Bedste justerbare håndvægte 2026.",
+    criteria: [
+      {
+        title: "Ja — hvis du vil have allround styrke uden vægreol",
+        description:
+          "Du træner press, row, squat-varianter og lunges hjemme, og vil skifte vægt hurtigt uden at eje 10 par faste håndvægte. 24 kg pr. hånd dækker de fleste i flere år.",
+      },
+      {
+        title: "Ja — hvis plads i stue/lejlighed er et hard requirement",
+        description:
+          "Dial-sæt er en af de mest pladseffektive styrke-investeringer. To håndvægte + evt. bænk slår næsten altid en vægreol i små hjem.",
+      },
+      {
+        title: "Ja — hvis du hellere køber rigtigt én gang end opgraderer to gange",
+        description:
+          "20 kg-sæt er billigere at starte på — men mange vokser fra 10 kg pr. hånd inden for et år. 2×24 er “køb det rigtige hjemme-allround”-valget.",
+      },
+      {
+        title: "Nej — hvis du allerede presser tungt over 24 kg",
+        description:
+          "Så er 2×40 kg (eller faste/olympiske) det næste skridt. Køb ikke 24 kg for at “være realistisk”, hvis du allerede er der.",
+      },
+      {
+        title: "Nej — hvis budgettet kun rækker til at bygge vanen",
+        description:
+          "Start med Odin 20 kg-sæt i Bedste justerbare håndvægte 2026, brug det 90 dage, og opgrader til 2×24 når teknikken sidder.",
+      },
+    ],
+    products: [
+      {
+        id: "odin-justerbare-haandvaegte-24kg",
+        name: "Odin Justerbare Håndvægte Sæt 2×24 kg (12-i-én)",
+        badge: "Modelguide",
+        summary:
+          "Odin 2×24 kg dial-sæt fra Apuls — vores go-to justerbare håndvægte til hjemmet. Komplet par, 12-i-én, pladsbesparende allround til press/row/squat-varianter i flere år. Live pris hos Apuls.dk.",
+        pros: [
+          "Komplet par (2 stk.) — klar til træning dag 1",
+          "24 kg pr. hånd dækker de fleste i flere år",
+          "Markant mindre plads end faste hex-sæt",
+          "Hurtigt vægtskift vs. skivesæt",
+          "Partner: Apuls.dk — direkte shop-link",
+        ],
+        cons: [
+          "Dyrere end et 20 kg begynder-sæt",
+          "Dial kræver korrekt klik før hvert sæt",
+          "Ikke nok, hvis du allerede løfter tungt over 24 kg",
+          "Bænk er ofte næste køb til press",
+        ],
+        specs: [
+          { label: "Type", value: "Justerbare dial-håndvægte (sæt)" },
+          { label: "Interval", value: "Ca. 3–24 kg pr. stk." },
+          { label: "Trin", value: "12-i-én" },
+          { label: "Brand", value: "Odin" },
+          { label: "Partner", value: "Apuls.dk" },
+        ],
+        imageUrl:
+          "https://m2.apuls.dk/media/catalog/product/6/6/6659afab0e703661518ec91659odinjusterbardumbbell24kg12stk.jpg",
+        feedProductId: "Apuls.dk:15047",
+        affiliateId: "odin-justerbare-haandvaegte-24kg",
+      },
+    ],
+    howToChoose:
+      "Vil du have Odin 2×24 kg? Køb sættet, hvis allround hjemmestyrke uden vægreol er jobbet. Stramt budget / absolut nybegynder? 20 kg-sæt i Bedste justerbare håndvægte 2026. Allerede forbi 24 kg? 2×40 kg i samme guide. Mangler du bænk til press? Bedste justerbare træningsbænk 2026. Shop via “Se pris hos Apuls.dk”.",
+    learningSections: [
+      {
+        heading: "Hvad 2×24 kg egentlig er",
+        paragraphs: [
+          "Et komplet dial-par: drej (eller klik) dig frem til den vægt, du skal bruge, uden at skifte håndvægt. Det er plads- og flow-optimering til hjemmetræning — ikke et “gadget-stunt”.",
+          "Vi peaker det som Bedst samlet, fordi det matcher den mest søgte hjemme-intention: nok loft til progression, uden 40 kg-prisen fra dag ét.",
+        ],
+      },
+      {
+        heading: "24 kg vs. 20 kg vs. 40 kg",
+        paragraphs: [
+          "20 kg-sæt (2×10): vane og teknik. 2×24: allround i flere år for de fleste. 2×40: når 24 kg er begrænsningen på dine tungeste sæt.",
+          "Køb loft til 12–24 måneders progression — ikke til det tal, der ser sejt ud på Instagram.",
+        ],
+      },
+      {
+        heading: "Dial-sikkerhed og bænk",
+        paragraphs: [
+          "Klik altid korrekt før løftet. En halvklikket dial er den klassiske fejl. Start let, lær grebet, og bygg volume op.",
+          "Floor press fungerer — men en justerbar bænk låser flere øvelser op. Se bænk-guiden, når gulvet begrænser dig.",
+        ],
+      },
+      {
+        heading: "Hvornår du skal vælge noget andet",
+        paragraphs: [
+          "Vil du have kettlebell-flow og sving? Se Bedste kettlebells til hjemmetræning. Vil du have kabel og maskin-følelse? Multistation/kabeltårn.",
+          "Dedikeret garage med plads til faste hex? Faste kan være hurtigere mellem sæt — men fylder mere.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "Er det ét eller to håndvægte?",
+        answer:
+          "Sættet er 2 stk. (par). Det er det, du skal bruge til presses, rows og de fleste hjemmeprogrammer.",
+      },
+      {
+        question: "Er 24 kg nok?",
+        answer:
+          "For de fleste hjemmetrænere: ja i flere år — især med flere reps, langsom tempo og unilaterale øvelser. Træner du allerede tungt over 24 kg, kig 40 kg.",
+      },
+      {
+        question: "2×24 kg eller 20 kg-sæt?",
+        answer:
+          "20 kg for at bygge vanen billigt. 2×24, hvis du vil undgå at opgradere inden for det første år. Læs Bedste justerbare håndvægte 2026.",
+      },
+      {
+        question: "Skal jeg købe bænk med det samme?",
+        answer:
+          "Ikke obligatorisk dag 1. Tilføj bænk, når floor press og gulvøvelser begrænser dig. Se Bedste justerbare træningsbænk 2026.",
+      },
+      {
+        question: "Hvor ser jeg den aktuelle pris?",
+        answer:
+          "Klik “Se pris hos Apuls.dk”. Pris og lager hentes live fra partner-feedet.",
+      },
+    ],
+    relatedSlugs: [
+      "bedste-justerbare-haandvaegte-2026",
+      "bedste-justerbar-traeningsbaenk-2026",
+      "bedste-kettlebells-hjemmetraening-2026",
+      "ultimative-home-gym-budget-2026",
+      "home-gym-til-lille-vaerelse-10m2-2026",
+      "hjemmetraening-for-begyndere-foerste-90-dage",
+    ],
+  },
+  {
+    slug: "ascendic-6004-romaskine-2026",
+    title: "Ascendic 6004 Romaskine — modelguide 2026",
+    excerpt:
+      "Alt om Ascendic 6004: støjsvag magnet-romaskine til lejlighed — hvem den passer til, vs. R1800/vand, skinne og live pris hos Ascendic.dk.",
+    metaDescription:
+      "Modelguide til Ascendic 6004 Romaskine 2026. Støjsvag magnet-romaskine til lejlighed: fordele, ulemper, vs. vand — live pris hos Ascendic.",
+    categorySlug: "romaskine",
+    intentSlug: "stoejsvag",
+    kind: "modelguide",
+    recommendationsHeading: "Modellen",
+    publishedAt: "2026-11-11",
+    updatedAt: "2026-11-11",
+    intro:
+      "Ascendic 6004 er vores topvalg, når stilhed er hovedkravet: magnetisk romaskine med 15 niveauer, skånsom helkrop og en pris der gør lejlighedsroning realistisk. Denne modelguide handler kun om 6004 — hvem den er til, hvornår den slår vand (R1800), og hvornår du skal op i en tungere magnet. Vil du sammenligne flere stille romaskiner, se Bedste støjsvage romaskine 2026; vand: Odin R1800 Vandromaskine — modelguide 2026.",
+    criteria: [
+      {
+        title: "Ja — hvis naboer / aftenstilhed er dealbreakeren",
+        description:
+          "Du vil have helkropsroning uden luftvifte og uden vand-splash. Magnet er den støjsvageste disciplin — og 6004 er vores budget-/lejligheds-pick.",
+      },
+      {
+        title: "Ja — hvis du vil lære teknik og zone 2 uden dyrt entry",
+        description:
+          "15 niveauer, enkel computer, jævn modstand. God til at bygge vane, før du eventuelt opgraderer til tungere magnet eller vand.",
+      },
+      {
+        title: "Ja — hvis Ascendic-partner og skarp pris tæller",
+        description:
+          "Samme partner-univers som Essential/7021. Nem funnel, hvis du allerede kender Ascendic — og prisen er ofte skarp på tilbud.",
+      },
+      {
+        title: "Nej — hvis du vil have den ægte vand-stemning",
+        description:
+          "Så er Odin R1800 Vandromaskine — modelguide 2026 det rigtige spor. 6004 er stille magnet — ikke splash.",
+      },
+      {
+        title: "Nej — hvis du ror hårdt flere gange om ugen og vil have “pro”-build",
+        description:
+          "6004 er entry/stille. Ved meget hyppig tung brug: se tungere magnet (fx Titan R36) i Bedste støjsvage romaskine 2026 eller midrange i Bedste romaskine 2026.",
+      },
+    ],
+    products: [
+      {
+        id: "ascendic-6004-romaskine",
+        name: "Ascendic 6004 Romaskine",
+        badge: "Modelguide",
+        summary:
+          "Ascendic 6004 — vores go-to støjsvage magnet-romaskine, når lejlighed og aftenbrug er jobbet. Næsten lydløs entry med 15 niveauer: skånsom helkrop uden luftvifte. Live pris hos Ascendic.dk.",
+        pros: [
+          "Magnetisk og meget støjsvag",
+          "Skarp pris til lejlighedsbrug",
+          "Jævn modstand til teknik og zone 2",
+          "Enkel computer uden tech-ballast",
+          "Partner: Ascendic.dk — direkte shop-link",
+        ],
+        cons: [
+          "Ikke luftens “Watt-følelse” eller vand-splash",
+          "Entry-build — opgrader ved meget hyppig tung brug",
+          "Høje brugere bør tjekke skinne",
+          "Fylder i brug — mål længden",
+        ],
+        specs: [
+          { label: "Type", value: "Magnet-romaskine" },
+          { label: "Modstand", value: "Magnet (15 niveauer)" },
+          { label: "Brand", value: "Ascendic" },
+          { label: "Segment", value: "Budget / stille" },
+          { label: "Partner", value: "Ascendic.dk" },
+        ],
+        imageUrl:
+          "https://cdn.shopify.com/s/files/1/0023/6840/5573/files/black-month-6004_526d8dac-8388-47d0-a5e2-f9b05fe6f862.png?v=1793364773",
+        feedProductId: "Ascendic.dk:55357722100056",
+        affiliateId: "ascendic-6004-romaskine",
+      },
+    ],
+    howToChoose:
+      "Vil du have Ascendic 6004? Køb den, hvis stille magnet-roning i lejlighed er jobbet. Vil have splash og stemning? Odin R1800 Vandromaskine — modelguide 2026. Mere kompakt/tungere magnet? Titan R36 i Bedste støjsvage romaskine 2026. Luft? Stop — se Bedste romaskine 2026. Shop via “Se pris hos Ascendic.dk”.",
+    learningSections: [
+      {
+        heading: "Hvad 6004 egentlig er",
+        paragraphs: [
+          "En magnetisk entry-romaskine: stilhed, præcis justering, helkrop uden stød. Den er bygget til lejlighed og vane — ikke til Concept2-Watt-jagt.",
+          "I vores støjsvag-guide er den “Bedst støjsvag (magnet)” netop fordi stilhed og pris rammer det, lejlighedskøbere faktisk har brug for.",
+        ],
+      },
+      {
+        heading: "6004 vs. Odin R1800 (vand)",
+        paragraphs: [
+          "6004: stille, simpel, lejlighedsvenlig. R1800: splash, stemning, mere lyd og vandvedligehold.",
+          "Tommelfingerregel: naboer først → 6004. Motivation fra “båd”-følelse og hus/rum der tåler lyd → R1800.",
+        ],
+      },
+      {
+        heading: "Skinne, teknik og måtte",
+        paragraphs: [
+          "Mål brugslængde og tjek max brugerhøjde. Lær ben → core → arme. Dårlig teknik belaster lænden — uanset hvor stille maskinen er.",
+          "Måtte er næsten obligatorisk i etagebyggeri: dæmper og beskytter gulvet.",
+        ],
+      },
+      {
+        heading: "Hvornår du skal vælge noget andet",
+        paragraphs: [
+          "Vil du have foldbart træ-vand til stuen? Se Bedste vandromaskine 2026. Vil du have luftens selvskalerende følelse? AirRow i Bedste romaskine 2026.",
+          "Kun skridt under bordet? Ascendic Essential Walking Pad — modelguide 2026.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "Er Ascendic 6004 en vandromaskine?",
+        answer:
+          "Nej. Det er en magnet-romaskine. Til vand: se Odin R1800 Vandromaskine — modelguide 2026.",
+      },
+      {
+        question: "Passer den til lejlighed?",
+        answer:
+          "Ja — det er hovedårsagen til at vælge den. Magnet er typisk støjsvagest. Brug stadig måtte og fornuftig teknik.",
+      },
+      {
+        question: "6004 eller Titan R36?",
+        answer:
+          "6004, hvis pris og Ascendic-entry/stille er vigtigst. R36, hvis du vil have et mere kompakt/tungere magnet-valg til jævnlig brug. Se Bedste støjsvage romaskine 2026.",
+      },
+      {
+        question: "Skal høje brugere være opmærksomme?",
+        answer:
+          "Ja — tjek skinnelængde/max brugerhøjde på shopsiden. For kort skinne ødelægger slaglængden.",
+      },
+      {
+        question: "Hvor ser jeg den aktuelle pris?",
+        answer:
+          "Klik “Se pris hos Ascendic.dk”. Pris og lager hentes live fra partner-feedet.",
+      },
+    ],
+    relatedSlugs: [
+      "odin-r1800-vandromaskine-2026",
+      "bedste-stoejsvag-romaskine-2026",
+      "bedste-romaskine-2026",
+      "bedste-vandromaskine-2026",
+      "bedste-stoejsvage-traeningsmaskiner-lejlighed-2026",
+      "ascendic-essential-walking-pad-2026",
+      "romaskine-eller-crosstrainer-2026",
     ],
   },
 ];
