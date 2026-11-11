@@ -1,6 +1,6 @@
 import type { ReactNode } from "react";
 import Link from "next/link";
-import { getAllGuides, type Guide } from "@/lib/guides";
+import { getAllGuides, guidePathFromSlug, type Guide } from "@/lib/guides";
 
 /** Extra short forms that appear in prose (beyond auto-derived title slices). */
 const GUIDE_LINK_ALIASES: Record<string, string[]> = {
@@ -198,7 +198,7 @@ export function GuideRichText({
     nodes.push(
       <Link
         key={`g-${key++}`}
-        href={`/guides/${earliest.pattern.slug}`}
+        href={guidePathFromSlug(earliest.pattern.slug)}
         className="text-accent underline decoration-accent/30 underline-offset-2 transition-colors hover:text-accent-dim hover:decoration-accent"
       >
         {earliest.pattern.label}

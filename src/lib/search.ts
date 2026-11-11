@@ -1,7 +1,7 @@
 import { categories } from "@/lib/categories";
 import { formatPriceDkk } from "@/lib/feeds/catalog";
 import type { FeedProduct } from "@/lib/feeds/types";
-import { getAllGuides } from "@/lib/guides";
+import { getAllGuides, guidePath } from "@/lib/guides";
 
 export type SearchCategoryHit = {
   type: "category";
@@ -13,6 +13,7 @@ export type SearchCategoryHit = {
 export type SearchGuideHit = {
   type: "guide";
   slug: string;
+  href: string;
   title: string;
   excerpt: string;
 };
@@ -98,6 +99,7 @@ export function searchSite(
       guideHits.push({
         type: "guide",
         slug: guide.slug,
+        href: guidePath(guide),
         title: guide.title,
         excerpt: guide.excerpt,
       });

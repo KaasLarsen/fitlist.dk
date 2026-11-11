@@ -1,6 +1,6 @@
 import type { MetadataRoute } from "next";
 import { categories, categoryIntentHref } from "@/lib/categories";
-import { getAllGuides } from "@/lib/guides";
+import { getAllGuides, guidePath } from "@/lib/guides";
 import { canonical } from "@/lib/site";
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -59,7 +59,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   ];
 
   const guideRoutes: MetadataRoute.Sitemap = getAllGuides().map((guide) => ({
-    url: canonical(`/guides/${guide.slug}`),
+    url: canonical(guidePath(guide)),
     lastModified: new Date(guide.updatedAt),
     changeFrequency: "weekly",
     priority: 0.85,

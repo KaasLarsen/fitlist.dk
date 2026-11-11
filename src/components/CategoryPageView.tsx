@@ -5,7 +5,7 @@ import { CategoryOffersSkeleton } from "@/components/CategoryOffersSkeleton";
 import type { MachineCategory, MachineIntent } from "@/lib/categories";
 import { categoryIntentHref } from "@/lib/categories";
 import type { MachineCategorySlug } from "@/lib/feeds/types";
-import type { Guide } from "@/lib/guides";
+import { guidePath, type Guide } from "@/lib/guides";
 
 type Props = {
   category: MachineCategory;
@@ -76,7 +76,7 @@ export function CategoryPageView({
                 <p className="text-sm text-foreground/90">
                   <span className="text-muted">Købsguide: </span>
                   <Link
-                    href={`/guides/${intentGuide.slug}`}
+                    href={guidePath(intentGuide)}
                     className="font-display uppercase tracking-wide text-accent transition-colors hover:text-accent-dim"
                   >
                     {intentGuide.title} →
@@ -115,7 +115,7 @@ export function CategoryPageView({
               ].map((guide) => (
                 <li key={guide.slug}>
                   <Link
-                    href={`/guides/${guide.slug}`}
+                    href={guidePath(guide)}
                     className="group block py-8"
                   >
                     {intentGuide?.slug === guide.slug ? (

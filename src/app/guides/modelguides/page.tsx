@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { getCategory } from "@/lib/categories";
-import { getModelGuides } from "@/lib/guides";
+import { getModelGuides, guidePath } from "@/lib/guides";
 import { canonical } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -64,7 +64,7 @@ export default function ModelGuidesPage() {
               return (
                 <li key={guide.slug}>
                   <Link
-                    href={`/guides/${guide.slug}`}
+                    href={guidePath(guide)}
                     className="group flex flex-col gap-2 py-8 transition-colors sm:flex-row sm:items-baseline sm:justify-between"
                   >
                     <div>

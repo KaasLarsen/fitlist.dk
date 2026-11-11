@@ -4,6 +4,7 @@ import { getAllCategories, getCategory } from "@/lib/categories";
 import {
   getBuyingGuides,
   getGuidesByCategory,
+  guidePath,
 } from "@/lib/guides";
 import { canonical } from "@/lib/site";
 
@@ -98,7 +99,7 @@ export default async function GuidesPage({ searchParams }: Props) {
               return (
                 <li key={guide.slug}>
                   <Link
-                    href={`/guides/${guide.slug}`}
+                    href={guidePath(guide)}
                     className="group flex flex-col gap-2 py-8 transition-colors sm:flex-row sm:items-baseline sm:justify-between"
                   >
                     <div>

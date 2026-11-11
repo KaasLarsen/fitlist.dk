@@ -95,6 +95,17 @@ export function isModelGuide(guide: Pick<Guide, "kind">): boolean {
   return guide.kind === "modelguide";
 }
 
+/** Sti til guide-artikel (modelguides ligger under /guides/modelguides/). */
+export function guidePath(guide: Pick<Guide, "slug" | "kind">): string {
+  if (isModelGuide(guide)) return `/guides/modelguides/${guide.slug}`;
+  return `/guides/${guide.slug}`;
+}
+
+export function guidePathFromSlug(slug: string): string {
+  const guide = getGuide(slug);
+  return guide ? guidePath(guide) : `/guides/${slug}`;
+}
+
 export function getGuide(slug: string): Guide | undefined {
   return guides.find((g) => g.slug === slug);
 }

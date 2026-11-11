@@ -13,6 +13,7 @@ import type { FeedProduct, MachineCategorySlug } from "@/lib/feeds/types";
 import {
   getProductAffiliate,
   getRelatedGuides,
+  guidePath,
   isModelGuide,
   type Guide,
   type GuideProduct,
@@ -571,7 +572,7 @@ export async function GuideArticle({ guide }: { guide: Guide }) {
               {related.map((r) => (
                 <li key={r.slug}>
                   <Link
-                    href={`/guides/${r.slug}`}
+                    href={guidePath(r)}
                     className="font-display text-lg uppercase tracking-wide text-accent transition-colors hover:text-accent-dim"
                   >
                     {r.title} →

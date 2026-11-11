@@ -1,7 +1,12 @@
 import type { Metadata } from "next";
-import { notFound } from "next/navigation";
+import { notFound, permanentRedirect } from "next/navigation";
 import { GuideArticle } from "@/components/GuideArticle";
-import { getAllGuides, getGuide } from "@/lib/guides";
+import {
+  getBuyingGuides,
+  getGuide,
+  guidePath,
+  isModelGuide,
+} from "@/lib/guides";
 import { guideOgPath } from "@/lib/og";
 import { canonical, SITE } from "@/lib/site";
 
@@ -12,16 +17,22 @@ type Props = {
 };
 
 export function generateStaticParams() {
-  return getAllGuides().map((guide) => ({ slug: guide.slug }));
+  return getBuyingGuides().map((guide) => ({ slug: guide.slug }));
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const guide = getGuide(slug);
   if (!guide) return { title: "Guide ikke fundet" };
+  if (isModelGuide(guide)) {
+    return {
+      title: guide.title,
+      alternates: { canonical: canonical(guidePath(guide)) },
+    };
+  }
 
   const description = guide.metaDescription || guide.excerpt;
-  const url = canonical(`/guides/${guide.slug}`);
+  const url = canonical(guidePath(guide));
   const imageUrl = guideOgPath(guide.slug);
   const imageAlt = guide.title;
 
@@ -58,7 +69,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 function guideJsonLd(guide: NonNullable<ReturnType<typeof getGuide>>) {
-  const url = canonical(`/guides/${guide.slug}`);
+  const url = canonical(guidePath(guide));
   const image = `${SITE}/og/guide-${guide.slug}.jpg`;
 
   const article = {
@@ -122,6 +133,7 @@ export default async function GuidePage({ params }: Props) {
   const { slug } = await params;
   const guide = getGuide(slug);
   if (!guide) notFound();
+  if (isModelGuide(guide)) permanentRedirect(guidePath(guide));
 
   return (
     <>

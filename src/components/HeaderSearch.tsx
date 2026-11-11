@@ -262,7 +262,7 @@ export function HeaderSearch() {
                   {results.guides.map((guide) => (
                     <li key={guide.slug}>
                       <Link
-                        href={`/guides/${guide.slug}`}
+                        href={guide.href}
                         onClick={close}
                         className="block px-4 py-3 transition-colors hover:bg-accent/5"
                       >

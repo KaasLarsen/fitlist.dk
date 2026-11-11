@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { getCategory } from "@/lib/categories";
-import type { Guide } from "@/lib/guides";
+import { guidePath, type Guide } from "@/lib/guides";
 
 type Props = {
   guides: Guide[];
@@ -39,7 +39,7 @@ export function FeaturedGuidesSection({ guides }: Props) {
             return (
               <li key={guide.slug}>
                 <Link
-                  href={`/guides/${guide.slug}`}
+                  href={guidePath(guide)}
                   className="group flex flex-col gap-2 py-8 transition-colors sm:flex-row sm:items-baseline sm:justify-between"
                 >
                   <div>
