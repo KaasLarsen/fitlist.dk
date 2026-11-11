@@ -57,12 +57,12 @@ export function SituationsSection() {
           mest.
         </p>
 
-        <ul className="mt-12 grid grid-cols-2 gap-px border border-border bg-border lg:grid-cols-3">
+        <ul className="mt-12 grid grid-cols-2 gap-3 sm:gap-5 lg:grid-cols-3">
           {items.map((item) => (
-            <li key={item.slug} className="bg-background">
+            <li key={item.slug}>
               <Link
                 href={item.href}
-                className="group flex h-full flex-col justify-between gap-4 px-4 py-6 transition-colors sm:gap-6 sm:px-6 sm:py-10"
+                className="group flex h-full flex-col justify-between gap-4 border border-border bg-surface px-4 py-6 transition-colors hover:border-accent/40 sm:gap-6 sm:px-6 sm:py-10"
               >
                 <div>
                   <p className="font-display text-xl font-medium uppercase tracking-wide text-foreground transition-colors group-hover:text-accent sm:text-2xl">
