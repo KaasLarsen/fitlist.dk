@@ -134,6 +134,11 @@ export function getModelGuides(): Guide[] {
   return getAllGuides().filter(isModelGuide);
 }
 
+/** Modelguides i en maskinkategori. */
+export function getModelGuidesByCategory(categorySlug: string): Guide[] {
+  return getModelGuides().filter((g) => g.categorySlug === categorySlug);
+}
+
 /** Købsguides i en maskinkategori (ekskluderer modelguides). */
 export function getGuidesByCategory(categorySlug: string): Guide[] {
   return getBuyingGuides().filter((g) => g.categorySlug === categorySlug);

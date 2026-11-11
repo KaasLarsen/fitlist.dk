@@ -1,7 +1,11 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { getCategory } from "@/lib/categories";
-import { getModelGuides, guidePath } from "@/lib/guides";
+import { getAllCategories, getCategory } from "@/lib/categories";
+import {
+  getModelGuides,
+  getModelGuidesByCategory,
+  guidePath,
+} from "@/lib/guides";
 import { canonical } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -11,6 +15,10 @@ export const metadata: Metadata = {
   alternates: { canonical: canonical("/guides/modelguides") },
 };
 
+type Props = {
+  searchParams: Promise<{ category?: string }>;
+};
+
 const chipClass = (active: boolean) =>
   `inline-flex border px-4 py-2 font-display text-xs font-semibold uppercase tracking-[0.14em] transition-colors ${
     active
@@ -18,8 +26,17 @@ const chipClass = (active: boolean) =>
       : "border-border text-muted hover:border-foreground hover:text-foreground"
   }`;
 
-export default function ModelGuidesPage() {
-  const guides = getModelGuides();
+export default async function ModelGuidesPage({ searchParams }: Props) {
+  const { category: categorySlug } = await searchParams;
+  const activeCategory = categorySlug ? getCategory(categorySlug) : undefined;
+  const allModelGuides = getModelGuides();
+  const guides = activeCategory
+    ? getModelGuidesByCategory(activeCategory.slug)
+    : allModelGuides;
+
+  const categoriesWithGuides = getAllCategories().filter((category) =>
+    allModelGuides.some((guide) => guide.categorySlug === category.slug),
+  );
 
   return (
     <div className="noise hero-glow flex flex-1 flex-col">
@@ -37,25 +54,41 @@ export default function ModelGuidesPage() {
 
         <section className="mt-12">
           <p className="font-display text-sm font-medium uppercase tracking-[0.16em] text-muted">
-            Filtrer
+            Filtrer efter kategori
           </p>
           <ul className="mt-4 flex flex-wrap gap-3">
             <li>
-              <Link href="/guides" className={chipClass(false)}>
-                Alle købsguides
+              <Link
+                href="/guides/modelguides"
+                className={chipClass(!activeCategory)}
+              >
+                Alle
               </Link>
             </li>
             <li>
-              <Link href="/guides/modelguides" className={chipClass(true)}>
-                Modelguides
+              <Link href="/guides" className={chipClass(false)}>
+                Købsguides
               </Link>
             </li>
+            {categoriesWithGuides.map((category) => {
+              const active = activeCategory?.slug === category.slug;
+              return (
+                <li key={category.slug}>
+                  <Link
+                    href={`/guides/modelguides?category=${category.slug}`}
+                    className={chipClass(active)}
+                  >
+                    {category.shortName}
+                  </Link>
+                </li>
+              );
+            })}
           </ul>
         </section>
 
         {guides.length === 0 ? (
           <p className="mt-16 border-t border-border pt-8 text-muted">
-            Ingen modelguides endnu.
+            Ingen modelguides i denne kategori endnu.
           </p>
         ) : (
           <ul className="mt-16 divide-y divide-border border-t border-border">
