@@ -27,6 +27,11 @@ export type GuideProduct = {
   pros: string[];
   cons: string[];
   specs: GuideSpec[];
+  /**
+   * Fast produktbillede (fx modelguides).
+   * Bruges når feedet mangler/er koldt — ellers erstattes af live offer.image.
+   */
+  imageUrl?: string;
   /** Stabilt FeedProduct.id — live pris/URL fra Partner-Ads-kataloget */
   feedProductId?: string;
   /** Øvrige produkter i en pakke (live pris + CTA pr. linje) */
@@ -11723,7 +11728,10 @@ export const guides: Guide[] = [
           { label: "Typisk max tempo", value: "Ca. 6 km/t (gang)" },
           { label: "Partner", value: "Ascendic.dk" },
         ],
+        imageUrl:
+          "https://cdn.shopify.com/s/files/1/0023/6840/5573/files/black-month-essential_e2765fba-a63d-4969-8268-a4389ae7c52d.png?v=1793364986",
         feedProductId: "Ascendic.dk:56388648173912",
+        affiliateId: "ascendic-essential-walking-pad",
       },
     ],
     howToChoose:

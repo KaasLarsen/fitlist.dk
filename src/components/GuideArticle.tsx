@@ -204,6 +204,7 @@ export async function GuideArticle({ guide }: { guide: Guide }) {
                   offer.price != null &&
                   offer.oldPrice > offer.price;
                 const bundleItems = product.bundleItems ?? [];
+                const productImage = offer?.image || product.imageUrl;
 
                 return (
                   <div
@@ -223,24 +224,40 @@ export async function GuideArticle({ guide }: { guide: Guide }) {
                       {product.summary}
                     </p>
 
+                    {modelGuide && productImage ? (
+                      <div className="relative mt-8 aspect-[4/3] w-full overflow-hidden border border-border bg-surface sm:aspect-[16/10]">
+                        <Image
+                          src={productImage}
+                          alt={product.name}
+                          fill
+                          sizes="(max-width: 768px) 100vw, 768px"
+                          className="object-contain p-4 sm:p-8"
+                          unoptimized
+                          priority
+                        />
+                      </div>
+                    ) : null}
+
                     {offer ? (
                       <div className="mt-6 flex flex-col gap-4 sm:flex-row sm:items-center sm:gap-6">
-                        <div className="relative h-36 w-full shrink-0 overflow-hidden border border-border bg-surface sm:h-28 sm:w-36">
-                          {offer.image ? (
-                            <Image
-                              src={offer.image}
-                              alt=""
-                              fill
-                              sizes="(max-width: 640px) 100vw, 144px"
-                              className="object-contain p-2"
-                              unoptimized
-                            />
-                          ) : (
-                            <div className="flex h-full items-center justify-center font-display text-xs uppercase tracking-[0.14em] text-muted">
-                              Intet billede
-                            </div>
-                          )}
-                        </div>
+                        {!modelGuide ? (
+                          <div className="relative h-36 w-full shrink-0 overflow-hidden border border-border bg-surface sm:h-28 sm:w-36">
+                            {productImage ? (
+                              <Image
+                                src={productImage}
+                                alt={product.name}
+                                fill
+                                sizes="(max-width: 640px) 100vw, 144px"
+                                className="object-contain p-2"
+                                unoptimized
+                              />
+                            ) : (
+                              <div className="flex h-full items-center justify-center font-display text-xs uppercase tracking-[0.14em] text-muted">
+                                Intet billede
+                              </div>
+                            )}
+                          </div>
+                        ) : null}
                         <div className="min-w-0">
                           <p className="font-display text-xs uppercase tracking-[0.14em] text-muted">
                             {offer.merchant}
