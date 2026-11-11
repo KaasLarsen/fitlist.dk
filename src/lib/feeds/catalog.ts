@@ -1,9 +1,6 @@
 import { unstable_cache } from "next/cache";
 import { CATALOG_FEEDS } from "@/lib/feeds/config";
-import {
-  classifyProducts,
-  refineBilligIntent,
-} from "@/lib/feeds/classify";
+import { refineBilligIntent } from "@/lib/feeds/classify";
 import {
   FEED_FETCH_CONCURRENCY,
   FEED_REVALIDATE_SECONDS,
@@ -12,7 +9,7 @@ import {
 } from "@/lib/feeds/fetch";
 import type { FeedProduct, MachineCategorySlug } from "@/lib/feeds/types";
 
-const CATALOG_CACHE_VERSION = "v16";
+const CATALOG_CACHE_VERSION = "v17";
 
 async function buildMachineCatalog(): Promise<FeedProduct[]> {
   const batches = await mapWithConcurrency(
@@ -20,26 +17,21 @@ async function buildMachineCatalog(): Promise<FeedProduct[]> {
     FEED_FETCH_CONCURRENCY,
     (feed) => getCachedFeedProducts(feed),
   );
-  const all = batches.flat();
-  const classified = classifyProducts(all);
-  const refined = refineBilligIntent(classified);
-  // Tomt katalog må ikke caches (6t) — typisk midlertidigt feed-timeout/429.
-  if (refined.length === 0) {
-    throw new Error("[catalog] refusing to cache empty machine catalog");
-  }
-  return refined;
+  // Feeds caches allerede klassificerede varer (categorySlug sat).
+  // classifyProducts igen ville mangle feed-category-tekst (slimmet væk).
+  const classified = batches.flat().filter((p) => p.categorySlug != null);
+  return refineBilligIntent(classified);
 }
 
-/** Samlet maskinekatalog (kun klassificerede produkter). */
+/**
+ * Samlet maskinekatalog (kun klassificerede produkter).
+ * Caches IKKE som ét blob — det samlede katalog er >2 MB og Next.js Data Cache
+ * afviser det, hvilket tidligere efterlod sider uden produkter. Per-feed-cache
+ * (slimmet + klassificeret) er kilden; merge er billigt ved cache-hit.
+ */
 export async function getMachineCatalog(): Promise<FeedProduct[]> {
-  const cached = unstable_cache(
-    () => buildMachineCatalog(),
-    ["fitlist-machine-catalog", CATALOG_CACHE_VERSION],
-    { revalidate: FEED_REVALIDATE_SECONDS, tags: ["fitlist-feeds"] },
-  );
-
   try {
-    return await cached();
+    return await buildMachineCatalog();
   } catch (err) {
     console.error("[catalog] failed:", err);
     return [];
@@ -134,14 +126,15 @@ export async function getProductsByCategory(
   }
 }
 
-/** Warm katalog-cache efter feed-revalidate. */
+/** Warm: sørg for at per-feed-cache er varm, og rapportér katalog-størrelse. */
 export async function warmCatalog(): Promise<{
   total: number;
   byCategory: Record<string, number>;
 }> {
-  const catalog = await buildMachineCatalog();
-  // Touch unstable_cache path
-  await getMachineCatalog();
+  const catalog = await getMachineCatalog();
+  if (catalog.length === 0) {
+    throw new Error("[catalog] empty after feed warm");
+  }
 
   const byCategory: Record<string, number> = {};
   for (const p of catalog) {

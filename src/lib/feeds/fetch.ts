@@ -16,7 +16,7 @@ import {
 } from "@/lib/feeds/parse";
 import type { FeedProduct } from "@/lib/feeds/types";
 
-const FEED_CACHE_VERSION = "v6";
+const FEED_CACHE_VERSION = "v7";
 const FEED_REVALIDATE_SECONDS = 21_600; // 6 timer
 /** Partner-Ads XML er ofte langsom; for lav timeout tømmer hele kataloget. */
 const DEFAULT_TIMEOUT_MS = 90_000;
@@ -65,10 +65,20 @@ function isProductionBuild(): boolean {
  */
 function slimFeedProducts(products: FeedProduct[]): FeedProduct[] {
   return products.map((p) => ({
-    ...p,
+    id: p.id,
+    merchant: p.merchant,
+    title: (p.title || "").slice(0, 140),
     desc: "",
-    category: (p.category || "").slice(0, 80),
-    brand: (p.brand || "").slice(0, 60),
+    // category-tekst bruges kun til classify (allerede sket); drop for cache-størrelse
+    category: "",
+    brand: (p.brand || "").slice(0, 40),
+    price: p.price,
+    oldPrice: p.oldPrice,
+    image: p.image || "",
+    url: p.url || "",
+    inStock: p.inStock,
+    categorySlug: p.categorySlug,
+    intentSlugs: p.intentSlugs,
   }));
 }
 
@@ -164,9 +174,9 @@ export async function fetchAdtractionProductsInner(
 ): Promise<FeedProduct[]> {
   const timeoutMs = opts?.timeoutMs ?? DEFAULT_TIMEOUT_MS;
   const text = await fetchFeedText(feed.feedUrl, feed.merchant, timeoutMs);
-  return parseAdtractionGoogleRss(text, feed.merchant).filter(
-    (product) => classifyProduct(product) != null,
-  );
+  return parseAdtractionGoogleRss(text, feed.merchant)
+    .map((product) => classifyProduct(product))
+    .filter((product): product is FeedProduct => product != null);
 }
 
 export async function fetchCatalogFeedInner(
