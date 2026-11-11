@@ -6176,6 +6176,7 @@ export const guides: Guide[] = [
     ],
     relatedSlugs: [
       "bedste-pull-up-bar-doerribbe-2026",
+      "bedste-dip-station-parallettes-2026",
       "bedste-vaegtstangssaet-bumper-plates-2026",
       "bedste-justerbar-traeningsbaenk-2026",
       "bedste-justerbare-haandvaegte-2026",
@@ -8859,6 +8860,7 @@ export const guides: Guide[] = [
       },
     ],
     relatedSlugs: [
+      "bedste-ab-wheel-mavetraener-2026",
       "bedste-justerbar-traeningsbaenk-2026",
       "bedste-power-rack-squat-rack-2026",
       "bedste-justerbare-haandvaegte-2026",
@@ -9084,6 +9086,7 @@ export const guides: Guide[] = [
     ],
     relatedSlugs: [
       "bedste-traeningsmaatte-gulvbeskyttelse-home-gym-2026",
+      "bedste-stepbaenk-plyoboks-2026",
       "bedste-stoejsvage-traeningsmaskiner-lejlighed-2026",
       "bedste-stoejsvag-loebebaand-lejlighed-2026",
       "bedste-gaabaand-2026",
@@ -10008,6 +10011,7 @@ export const guides: Guide[] = [
     ],
     relatedSlugs: [
       "bedste-justerbare-haandvaegte-2026",
+      "bedste-vaegtvest-2026",
       "bedste-traeningsmaatte-gulvbeskyttelse-home-gym-2026",
       "bedste-traeningselastikker-slyngetraener-2026",
       "ultimative-home-gym-budget-2026",
@@ -10229,6 +10233,7 @@ export const guides: Guide[] = [
     ],
     relatedSlugs: [
       "bedste-sjippetov-traeningsmaatte-lejlighed-2026",
+      "bedste-stepbaenk-plyoboks-2026",
       "bedste-kettlebells-hjemmetraening-2026",
       "bedste-vaegtstangssaet-bumper-plates-2026",
       "bedste-power-rack-squat-rack-2026",
@@ -10656,6 +10661,7 @@ export const guides: Guide[] = [
       },
     ],
     relatedSlugs: [
+      "bedste-dip-station-parallettes-2026",
       "bedste-power-rack-squat-rack-2026",
       "bedste-traeningselastikker-slyngetraener-2026",
       "ultimative-udendoers-home-gym-2026",
@@ -10873,6 +10879,737 @@ export const guides: Guide[] = [
       "bedste-spinningcykel-2026",
       "bedste-motionscykel-2026",
       "bedste-stoejsvag-motionscykel-lejlighed-2026",
+    ],
+  },
+  {
+    slug: "bedste-ab-wheel-mavetraener-2026",
+    title: "Bedste ab wheel / mavetræner 2026",
+    excerpt:
+      "Smalt vs. bredt hjul, albuestøtte og retur-hjælp: sådan vælger du ab wheel til hjemmet — med fire anbefalinger og live priser.",
+    metaDescription:
+      "Bedste ab wheel og mavetræner 2026. Guide til hjulbredde, support og begynder-modeller — med live priser fra danske partnere.",
+    categorySlug: "tilbehoer",
+    intentSlug: "abwheel",
+    publishedAt: "2026-11-11",
+    updatedAt: "2026-11-11",
+    intro:
+      "Ab wheel er det billigste stykke core-udstyr, der stadig føles hårdt: roll-outs træner mavemuskler, skuldre og stabilitet i én bevægelse. I har mavebænke dækket — men det lille hjul mangler ofte i home gym-lister. Her er forskellen på smalle og brede hjul, support-modeller til begyndere og konkrete køb med live partnerpriser.",
+    criteria: [
+      {
+        title: "Smalt vs. bredt / dobbelt hjul",
+        description:
+          "Smalle enkelt-hjul kræver mere balance og er “gym-klassikeren”. Bredere eller dobbelthjul er mere stabile sideværts — lettere for begyndere og dem med usikker skuldermekanik. Vælg bredt, hvis du ofte vælter. Vælg smalt, når teknikken sidder.",
+      },
+      {
+        title: "Support og knæmåtte",
+        description:
+          "Support-edition og sæt med knæmåtte skåner knæ på hårde gulve og gør setup mere “stue-venligt”. Det er ikke snyd — det er det, der får dig til at træne tre gange om ugen.",
+      },
+      {
+        title: "Retur-hjælp / fjeder",
+        description:
+          "Nogle modeller har fjeder eller elastik-retur, der hjælper dig tilbage. Ideelt til begyndere. Mangler feedet en tydelig fjeder-model, er bredt hjul + korte reps det praktiske alternativ.",
+      },
+      {
+        title: "Greb og build",
+        description:
+          "Bløde, skridsikre greb slår blankt plastik, når hænderne er svedige. Gummidæk på hjulet skåner gulv bedre end hård plast — kombiner gerne med måtte.",
+      },
+      {
+        title: "Progression uden ego",
+        description:
+          "Start på knæ, korte udrulninger. Fuld standing roll-out er avanceret. Et dyrt hjul gør dig ikke stærkere end et billigt — volumen og kontrol gør.",
+      },
+    ],
+    products: [
+      {
+        id: "adidas-ab-wheel",
+        name: "Adidas Ab Wheel",
+        badge: "Bedst samlet",
+        summary:
+          "Kendte Adidas-kvalitet til et klassisk enkelt-hjul. God allround-mavetræner, når du vil have et solidt greb og et mærke, der føles mere “færdigt” end no-name entry.",
+        pros: [
+          "Stærkt allround-valg",
+          "Kendt brand",
+          "Fin til regelmæssig core",
+        ],
+        cons: [
+          "Dyrere end Odin/Titan-entry",
+          "Kræver teknik — ikke “let”",
+        ],
+        specs: [
+          { label: "Type", value: "Ab wheel (enkelt)" },
+          { label: "Brand", value: "Adidas" },
+          { label: "Partner", value: "Apuls.dk" },
+        ],
+        feedProductId: "Apuls.dk:1436",
+      },
+      {
+        id: "odin-ab-wheel-rubber",
+        name: "Odin Ab Wheel Mavehjul Black Rubber",
+        badge: "Bedste billige",
+        summary:
+          "Gummi-hjul til lav pris — det mest ærlige “kom i gang”-køb. Brug måtte under knæene, og rul kort, indtil core kan holde længere udrulninger.",
+        pros: [
+          "Lav entry-pris",
+          "Gummi skåner gulv bedre end hård plast",
+          "Klar begynder-indgang",
+        ],
+        cons: [
+          "Mindre “premium” finish",
+          "Ingen support-arm",
+        ],
+        specs: [
+          { label: "Type", value: "Ab wheel" },
+          { label: "Brand", value: "Odin" },
+          { label: "Partner", value: "Apuls.dk" },
+        ],
+        feedProductId: "Apuls.dk:6875",
+      },
+      {
+        id: "odin-double-wheel",
+        name: "Odin Double Wheel Ab Mavehjul",
+        badge: "Bedste stabile",
+        summary:
+          "Dobbelt hjul giver mere sideværts stabilitet end klassisk single. Til dig, der vælter på smalle hjul, eller vil have en mere tilgivende indlæring.",
+        pros: [
+          "Mere stabilt end single",
+          "Lav pris",
+          "God til begynder-progression",
+        ],
+        cons: [
+          "Mindre “balance-krav” end single (kan være et plus)",
+          "Stadig hårdt for lænden ved for lange roll-outs",
+        ],
+        specs: [
+          { label: "Type", value: "Dobbelt ab wheel" },
+          { label: "Brand", value: "Odin" },
+          { label: "Partner", value: "Apuls.dk" },
+        ],
+        feedProductId: "Apuls.dk:13507",
+      },
+      {
+        id: "mavehjul-support",
+        name: "Mavehjul — Support Edition",
+        badge: "Bedste til begyndere",
+        summary:
+          "Support-udgave til dem, der vil have mere vejledning i bevægelsen end et nøgent hjul. Typisk det rigtige valg, hvis enkelt-hjul føles umuligt dag 1.",
+        pros: [
+          "Mere support end basis-hjul",
+          "Bedre indlæring",
+          "Stadig kompakt og billigt",
+        ],
+        cons: [
+          "Ikke nødvendig, når teknikken sidder",
+          "Tjek shops beskrivelse for præcis support-type",
+        ],
+        specs: [
+          { label: "Type", value: "Ab wheel med support" },
+          { label: "Partner", value: "Billig-fitness.dk" },
+        ],
+        feedProductId: "Billig-fitness.dk:41611559501995",
+      },
+    ],
+    howToChoose:
+      "Vil du have et solidt allround-hjul? Adidas. Stramt budget? Odin Black Rubber. Vælter du sideværts? Double Wheel. Føles roll-outs umulige? Support Edition. Til bænk-baseret mavetræning: Bedste mavebænk og rygtræner 2026. Shop via “Se pris”.",
+    learningSections: [
+      {
+        heading: "Hvorfor ab wheel rammer så hårdt",
+        paragraphs: [
+          "Du træner anti-extension: core skal holde ribben nede, mens armene ruller ud. Det er derfor lænden klager, hvis du går for langt for tidligt.",
+          "Korte, rene reps slår lange, knækkede roll-outs. Film dig selv fra siden.",
+        ],
+      },
+      {
+        heading: "Ab wheel vs. mavebænk",
+        paragraphs: [
+          "Mavebænk er guidet sit-up/crunch. Ab wheel er ustabil roll-out. De fleste har gavn af begge — start med det, du vil bruge oftest.",
+          "Læs Bedste mavebænk og rygtræner 2026, hvis du vil have bænk først.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "Er ab wheel godt for begyndere?",
+        answer:
+          "Ja — på knæ, med korte udrulninger. Support-modeller og dobbelthjul gør indlæringen lettere. Spring standing roll-outs over, indtil knæ-varianten er ren.",
+      },
+      {
+        question: "Skal jeg have bredt eller smalt hjul?",
+        answer:
+          "Bredt/dobbelt er mere stabilt. Smalt kræver mere balance. Vælg efter, om du vil have tilgivelse eller maksimal “gym”-følelse.",
+      },
+      {
+        question: "Hvordan ser jeg aktuelle priser?",
+        answer:
+          "Klik “Se pris”. Flere hjul ligger under Must-haves → Ab wheel.",
+      },
+    ],
+    relatedSlugs: [
+      "bedste-mavebaenk-rygtraener-2026",
+      "bedste-traeningselastikker-slyngetraener-2026",
+      "bedste-kettlebells-hjemmetraening-2026",
+      "hjemmetraening-for-begyndere-foerste-90-dage",
+      "bedste-traeningsmaatte-gulvbeskyttelse-home-gym-2026",
+    ],
+  },
+  {
+    slug: "bedste-dip-station-parallettes-2026",
+    title: "Bedste dip station og parallettes 2026",
+    excerpt:
+      "Fritstående dip-stativ, parallettes og power tower: stabilitet, brugervægt og plads — med fire anbefalinger og live priser.",
+    metaDescription:
+      "Bedste dip station og parallettes 2026. Guide til stabilitet, max vægt og kompakte modeller — med live priser.",
+    categorySlug: "styrkemaskiner",
+    intentSlug: "dipstation",
+    publishedAt: "2026-11-11",
+    updatedAt: "2026-11-11",
+    intro:
+      "Dips er en af de mest effektive overkropsøvelser du kan lave uden vægtstang — men kun hvis stativet ikke gynge. Et dip-setup fylder langt mindre end et power rack og passer til lejlighed og ekstra værelse. Her sammenligner vi fritstående stationer, parallettes/equalizer-bars og power towers med dips — plus hvad max-brugervægt og footprint betyder i praksis.",
+    criteria: [
+      {
+        title: "Stabilitet først",
+        description:
+          "Bred base, solide fødder og ingen vrik, når du går ned i bunden af dippen. Lette “toy”-stativer føles fine til push-ups og elendige til dips med svedige hænder.",
+      },
+      {
+        title: "Maks. brugervægt",
+        description:
+          "Tallet er dig + evt. vægtvest. Vælg margin. Shops angivelser varierer — læs dem, før du køber til en tung bruger eller loaded dips.",
+      },
+      {
+        title: "Parallettes vs. station vs. tower",
+        description:
+          "Parallettes: lavt, billigt, alsidigt (L-sit, push-up, handstand-progressions). Dip-station: dedikeret højde til dips. Power tower: dips + pull-ups + ofte leg raise — mere plads, mere alsidighed.",
+      },
+      {
+        title: "Plads og sammenklappelighed",
+        description:
+          "Equalizer-bars og lave parallettes gemmes nemmere væk. Towers står fremme. Mål footprint, før du køber “kompakt” marketing.",
+      },
+      {
+        title: "Greb og bredde",
+        description:
+          "Parallelle greb skåner skuldre for mange. For smalt eller for bredt greb kan irritere albuer. Justerbare stationer vinder, hvis flere skal dele.",
+      },
+    ],
+    products: [
+      {
+        id: "odin-power-tower",
+        name: "Odin Power Tower",
+        badge: "Bedst samlet",
+        summary:
+          "Power tower til dips, pull-ups og mere i ét footprint. Til dig, der vil have stationær kropsvægt uden et fuldt rack — og stadig have plads til progression.",
+        pros: [
+          "Dips + pull-ups i én station",
+          "Stærkere allround end rene parallettes",
+          "Live partnerpris",
+        ],
+        cons: [
+          "Fylder mere end parallettes",
+          "Ikke et squat-rack",
+        ],
+        specs: [
+          { label: "Type", value: "Power tower" },
+          { label: "Brand", value: "Odin" },
+          { label: "Partner", value: "Apuls.dk" },
+        ],
+        feedProductId: "Apuls.dk:12969",
+      },
+      {
+        id: "billig-dips-station",
+        name: "Billig Dips Station (sort)",
+        badge: "Bedste dedikerede dip-station",
+        summary:
+          "Fritstående dip-fokus uden tower-prisen. Til dig, der primært vil dippe — og allerede har pull-ups et andet sted (dørribbe/vægbar).",
+        pros: [
+          "Dedikeret til dips",
+          "Lavere pris end mange towers",
+          "Klar home-gym-indgang",
+        ],
+        cons: [
+          "Ingen pull-up-bar",
+          "Tjek max-vægt og footprint på shoppen",
+        ],
+        specs: [
+          { label: "Type", value: "Dip-station" },
+          { label: "Partner", value: "Billig-fitness.dk" },
+        ],
+        feedProductId: "Billig-fitness.dk:42643875594411",
+      },
+      {
+        id: "odin-equalizer",
+        name: "Odin Viking Equalizer Dip Bars",
+        badge: "Bedste kompakte / alsidige",
+        summary:
+          "Equalizer-bars til dips, rows, push-ups og L-sit. Fylder mindre end en tower og kan flyttes. Stærkt lejlighedsvalg.",
+        pros: [
+          "Kompakt footprint",
+          "Flere øvelser end “kun dips”",
+          "Nemmere at gemme væk",
+        ],
+        cons: [
+          "Mindre “plantet” end tung station",
+          "Kræver gulvplads til begge bars",
+        ],
+        specs: [
+          { label: "Type", value: "Equalizer / dip bars" },
+          { label: "Brand", value: "Odin" },
+          { label: "Partner", value: "Apuls.dk" },
+        ],
+        feedProductId: "Apuls.dk:15508",
+      },
+      {
+        id: "odin-parallettes-m",
+        name: "Odin Parallettes M 50×10 cm Træ",
+        badge: "Bedste parallettes",
+        summary:
+          "Mellemstore træ-parallettes til L-sit, tuck-planche-progressions og dybe push-ups. Det lille setup, der stadig føles seriøst.",
+        pros: [
+          "Lavt og stabilt til gulvarbejde",
+          "Trægreb med godt “grip”",
+          "Billigere end station/tower",
+        ],
+        cons: [
+          "Ikke fuld dip-højde som en station",
+          "Kræver håndleds-tolerance",
+        ],
+        specs: [
+          { label: "Type", value: "Parallettes (M)" },
+          { label: "Brand", value: "Odin" },
+          { label: "Partner", value: "Apuls.dk" },
+        ],
+        feedProductId: "Apuls.dk:15736",
+      },
+    ],
+    howToChoose:
+      "Vil du have dips + pull-ups i ét? Odin Power Tower. Kun dips? Billig Dips Station. Lille lejlighed? Equalizer eller parallettes. Skal du også squat/bænke? Se Bedste power rack & squat rack 2026. Pull-ups uden tower: Bedste pull-up bar og dørribbe 2026. Shop via “Se pris”.",
+    learningSections: [
+      {
+        heading: "Parallettes er ikke “kun for calisthenics-nørder”",
+        paragraphs: [
+          "De giver dig elevationen til dybere push-ups og et greb, der ofte er venligere end gulvet. Combined med vægtvest bliver de et seriøst styrkeværktøj.",
+          "Til rene bodyweight-dips i fuld ROM er en station eller tower dog stadig mere ærlige.",
+        ],
+        comparison: {
+          caption: "Tre dip-setup",
+          rowHeaderLabel: "Setup",
+          columns: ["Plads", "Dips", "Andet", "Vælg hvis"],
+          rows: [
+            {
+              label: "Parallettes",
+              cells: ["Minimal", "Lav/delvis", "L-sit, PU", "Plads først"],
+            },
+            {
+              label: "Equalizer",
+              cells: ["Lille", "Ja", "Rows, PU", "Lejlighed"],
+            },
+            {
+              label: "Tower/station",
+              cells: ["Større", "Ja", "Pull-ups*", "Fast zone"],
+            },
+          ],
+        },
+      },
+      {
+        heading: "Sikkerhed og skuldre",
+        paragraphs: [
+          "Gå ikke dybere, end skuldrene tillader. Let fremadlænet dip belaster bryst mere; mere oprejst belaster triceps — men begge kræver kontrol.",
+          "Smerte i forsiden af skulderen er et stop-signal, ikke et “no pain no gain”-badge.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "Hvad er parallettes?",
+        answer:
+          "Lave, parallelle greb til gulvet — til L-sit, push-ups og calisthenics-progressions. De erstatter ikke altid en høj dip-station.",
+      },
+      {
+        question: "Dip-station eller power tower?",
+        answer:
+          "Tower hvis du også vil have pull-ups. Ren dip-station hvis pull-ups allerede er løst med bar/ribbe.",
+      },
+      {
+        question: "Hvordan ser jeg aktuelle priser?",
+        answer:
+          "Klik “Se pris”. Flere modeller ligger under Styrkemaskiner → Dip / parallettes.",
+      },
+    ],
+    relatedSlugs: [
+      "bedste-pull-up-bar-doerribbe-2026",
+      "bedste-power-rack-squat-rack-2026",
+      "bedste-vaegtvest-2026",
+      "home-gym-til-lille-vaerelse-10m2-2026",
+      "bedste-styrkemaskiner-2026",
+    ],
+  },
+  {
+    slug: "bedste-vaegtvest-2026",
+    title: "Bedste vægtvest 2026",
+    excerpt:
+      "Fast vs. justerbar vægtvest til gang, rucking og styrke: pasform, klodser og fire anbefalinger med live priser.",
+    metaDescription:
+      "Bedste vægtvest 2026 til løb, gang og styrketræning. Fast vs. justerbar, pasform og live priser fra danske partnere.",
+    categorySlug: "tilbehoer",
+    intentSlug: "vaegtvest",
+    publishedAt: "2026-11-11",
+    updatedAt: "2026-11-11",
+    intro:
+      "Vægtveste trender, fordi de gør gang, rucking og kropsvægtsøvelser hårdere uden at fylde et helt rack. Valget er ikke “hvor mange kilo”. Det er fast vs. udtagelige klodser, hvordan vesten sidder på bryst og hofter — og om den er bygget til motion eller loaded dips. Her er kriterierne og fire modeller med live partnerpriser.",
+    criteria: [
+      {
+        title: "Fast vs. justerbar",
+        description:
+          "Faste veste er enklere og ofte billigere pr. kilo. Justerbare med udtagelige klodser lader dig progressive loade og dele vesten i husstanden. Til seriøs progression: justerbar. Til “jeg vil bare have 8 kg på gåture”: fast kan være nok.",
+      },
+      {
+        title: "Pasform til krop og bryster",
+        description:
+          "Vesten skal sidde tæt uden at hoppe, skære eller presse åndedrættet. Prøv remme over skulder og torso. Mange “unisex”-veste sidder dårligt på smallere skuldre eller bryst — kig efter justerbare sideremme og kortere torso-længde.",
+      },
+      {
+        title: "Fordeling af vægt",
+        description:
+          "Jævn fordeling foran/bagpå føles bedre til gang. Tungt kun foran ændrer holdningen. Soft-veste fordeler ofte mere behageligt end hårde plader ved længere pas.",
+      },
+      {
+        title: "Brug: gang, rucking, styrke",
+        description:
+          "Gang/rucking: komfort og åndbarhed. Styrke/dips/pull-ups: stabilitet, så vesten ikke glider op i ansigtet. Soft 5–10 kg er typisk gang; 15–30 kg justerbar er styrke-territorium.",
+      },
+      {
+        title: "Startvægt",
+        description:
+          "Start lettere end egoet foreslår — især til løb. Mange klarer 5–10 % af kropsvægt til gang først. Opbyg volumen, før du jagter 20–30 kg.",
+      },
+    ],
+    products: [
+      {
+        id: "odin-justerbar-30",
+        name: "Odin Justerbar Vægtvest 30 kg",
+        badge: "Bedst samlet",
+        summary:
+          "Justerbar 30 kg-vest med udtagelige klodser — det mest fleksible allround-valg til styrke, rucking-progression og husstande, der deler udstyr.",
+        pros: [
+          "Op til 30 kg progression",
+          "Udtagelige klodser",
+          "Dækker gang → tung styrke",
+        ],
+        cons: [
+          "Tungere og mere “bulk” end soft 5–10 kg",
+          "Kræver, at du faktisk justerer — ikke bare max fra dag 1",
+        ],
+        specs: [
+          { label: "Type", value: "Justerbar vægtvest" },
+          { label: "Max", value: "30 kg" },
+          { label: "Brand", value: "Odin" },
+          { label: "Partner", value: "Apuls.dk" },
+        ],
+        feedProductId: "Apuls.dk:5069",
+      },
+      {
+        id: "odin-fast-8",
+        name: "Odin Fast Vægtvest 8 kg",
+        badge: "Bedste billige",
+        summary:
+          "Fast 8 kg til dem, der vil have vægt på gåture og kropsvægt uden at fumle med klodser. Lav entry, klar til brug.",
+        pros: [
+          "Lav pris",
+          "Simpel — ingen klodser at miste",
+          "Fin til gang og bodyweight",
+        ],
+        cons: [
+          "Ingen progression uden ny vest",
+          "8 kg kan være for lidt til tung styrke",
+        ],
+        specs: [
+          { label: "Type", value: "Fast vægtvest" },
+          { label: "Vægt", value: "8 kg" },
+          { label: "Brand", value: "Odin" },
+          { label: "Partner", value: "Apuls.dk" },
+        ],
+        feedProductId: "Apuls.dk:12898",
+      },
+      {
+        id: "odin-soft-10",
+        name: "Odin Soft Vægtvest 10 kg",
+        badge: "Bedste til gang / komfort",
+        summary:
+          "Soft-vest på 10 kg — mere behagelig fordeling til længere gangture end hårde plader. Sweet spot til kondition med ekstra load.",
+        pros: [
+          "Blødere komfort",
+          "10 kg er realistisk til gang",
+          "Mindre “plade-klap”",
+        ],
+        cons: [
+          "Ikke 20–30 kg styrke-progression",
+          "Fast vægt",
+        ],
+        specs: [
+          { label: "Type", value: "Soft vægtvest" },
+          { label: "Vægt", value: "10 kg" },
+          { label: "Brand", value: "Odin" },
+          { label: "Partner", value: "Apuls.dk" },
+        ],
+        feedProductId: "Apuls.dk:15581",
+      },
+      {
+        id: "reebok-vest-5",
+        name: "Reebok Vægtvest Strength Series 5 kg",
+        badge: "Bedste lette indgang",
+        summary:
+          "5 kg Reebok-vest til dem, der er nye i weighted walking, eller vil have let load på løb/gang uden at overbelaste led dag 1.",
+        pros: [
+          "Let startvægt",
+          "Kendt brand",
+          "God til at teste vanen",
+        ],
+        cons: [
+          "For let til mange styrke-mål",
+          "Fast vægt",
+        ],
+        specs: [
+          { label: "Type", value: "Vægtvest" },
+          { label: "Vægt", value: "5 kg" },
+          { label: "Brand", value: "Reebok" },
+          { label: "Partner", value: "Apuls.dk" },
+        ],
+        feedProductId: "Apuls.dk:14980",
+      },
+    ],
+    howToChoose:
+      "Vil du kunne progressive loade? Odin 30 kg justerbar. Bare gang med fast vægt? Soft 10 kg eller Fast 8 kg. Helt ny? Reebok 5 kg. Kombiner med dips/parallettes eller kettlebells for mere stimulus. Shop via “Se pris”.",
+    learningSections: [
+      {
+        heading: "Rucking vs. “bare gå med vægt”",
+        paragraphs: [
+          "Rucking er systematisk gang med load — ofte længere distancer. En vest er én vej; en vægtet rygsæk er en anden. Vesten holder load tættere på kroppen.",
+          "Start med tid/distance, før du jager kilo. Led og ryg skal vænne sig.",
+        ],
+      },
+      {
+        heading: "Vægtvest vs. kettlebells",
+        paragraphs: [
+          "Vesten gør det, du allerede gør, tungere. Kettlebells tilføjer hinge/swing-mønstre. De fleste hjem har gavn af begge over tid — ikke nødvendigvis dag 1.",
+          "Se Bedste kettlebells til hjemmetræning 2026.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "Hvilken vægtvest skal jeg starte med?",
+        answer:
+          "Til gang: 5–10 kg soft/fast. Til progression over måneder: justerbar op til 20–30 kg. Undgå at starte på max.",
+      },
+      {
+        question: "Kan jeg løbe med vægtvest?",
+        answer:
+          "Korte, lette loads kan fungere for erfarne. De fleste bør mestre gang først. Hold øje med knæ og lænd.",
+      },
+      {
+        question: "Hvordan ser jeg aktuelle priser?",
+        answer:
+          "Klik “Se pris”. Flere veste ligger under Must-haves → Vægtvest.",
+      },
+    ],
+    relatedSlugs: [
+      "bedste-kettlebells-hjemmetraening-2026",
+      "bedste-dip-station-parallettes-2026",
+      "bedste-traeningselastikker-slyngetraener-2026",
+      "bedste-gaabaand-2026",
+      "hjemmetraening-for-begyndere-foerste-90-dage",
+    ],
+  },
+  {
+    slug: "bedste-stepbaenk-plyoboks-2026",
+    title: "Bedste stepbænk og plyoboks 2026",
+    excerpt:
+      "Justerbar aerobic-step vs. blød 3-i-1 plyoboks: kondition, benstyrke og eksplosiv træning hjemme — med fire anbefalinger og live priser.",
+    metaDescription:
+      "Bedste stepbænk og plyoboks 2026. Aerobic-step vs. soft plyo til lejlighed — med live priser fra danske partnere.",
+    categorySlug: "tilbehoer",
+    intentSlug: "stepbaenk",
+    publishedAt: "2026-11-11",
+    updatedAt: "2026-11-11",
+    intro:
+      "En stepbænk eller plyoboks er et af de mest alsidige stykker hjemmeudstyr: step-ups, box jumps, elevér push-ups, hip thrusts. Valget står mellem klassisk justerbar plastik-step (aerobic) og bløde 3-i-1 skum-plyobokse, der skåner skinneben og gulv i lejligheden. Her er forskellen — og fire konkrete modeller med live priser.",
+    criteria: [
+      {
+        title: "Aerobic-step vs. plyoboks",
+        description:
+          "Step: justerbar højde, let, billig, god til cardio-step og step-ups. Plyoboks: tre højder i én (typisk), bygget til jumps. Soft plyo skåner skinneben ved miss; træ/metal er mere “gym” og hårdere ved fejl.",
+      },
+      {
+        title: "Højde og progression",
+        description:
+          "For høj boks = dårlige landinger. Start lavt. Soft 40/50/60 cm-klassen er realistisk hjemme. Maxi-steps med flere risers giver finjustering til step-ups uden jumps.",
+      },
+      {
+        title: "Lejlighed, støj og gulv",
+        description:
+          "Box jumps i etagebyggeri er et nabospørgsmål. Soft plyo + måtte dæmper bedre end bar træboks. Step-ups larmer langt mindre end jumps — vælg efter bolig, ikke kun Instagram.",
+      },
+      {
+        title: "Stabilitet og overflade",
+        description:
+          "Skridsikker top, stabile fødder. Billige steps der “klaprer” ødelægger tilliden midt i et sæt. Soft bokse skal være faste nok til at lande på — ikke madras-bløde.",
+      },
+      {
+        title: "Plads",
+        description:
+          "Steps er flade og nemme at stille væk. Plyobokse fylder mere permanent. Har du 10 m², er step ofte det ærligere køb.",
+      },
+    ],
+    products: [
+      {
+        id: "odin-aerobic-step",
+        name: "Odin Aerobic Step Stepbræt",
+        badge: "Bedst samlet step",
+        summary:
+          "Klassisk aerobic-step til step-ups, cardio og elevation. Det mest alsidige “lille” ben-/konditionsværktøj til stuen — uden box jump-støj.",
+        pros: [
+          "Kompakt og alsidigt",
+          "Lav støj ift. jumps",
+          "God entry-pris",
+        ],
+        cons: [
+          "Ikke en plyoboks til høje jumps",
+          "Tjek riser/højde på shopsiden",
+        ],
+        specs: [
+          { label: "Type", value: "Aerobic step" },
+          { label: "Brand", value: "Odin" },
+          { label: "Partner", value: "Apuls.dk" },
+        ],
+        feedProductId: "Apuls.dk:12977",
+      },
+      {
+        id: "nordic-step-medium",
+        name: "Justerbar stepbænk Medium — Nordic Strength",
+        badge: "Bedste billige step",
+        summary:
+          "Justerbar medium-step til budget. Fin, når du vil have højdejustering uden at betale maxi-priser.",
+        pros: [
+          "Justerbar højde",
+          "Lav pris",
+          "Klar til step-ups dag 1",
+        ],
+        cons: [
+          "Mindre “premium” end dyre steps",
+          "Ikke soft plyo",
+        ],
+        specs: [
+          { label: "Type", value: "Justerbar stepbænk" },
+          { label: "Partner", value: "Billig-fitness.dk" },
+        ],
+        feedProductId: "Billig-fitness.dk:13899026497602",
+      },
+      {
+        id: "atx-soft-plyo-m",
+        name: "ATX Soft Plyo-Box M (40/50/60 cm)",
+        badge: "Bedste soft plyo",
+        summary:
+          "Polstret 3-i-1 soft plyoboks — det lejlighedsvenlige valg til box jumps og step-ups med tre højder. Skåner skinneben ved miss bedre end træ.",
+        pros: [
+          "Tre højder i én",
+          "Blødere ved fejl-landing",
+          "Bedre til etagebyggeri end hård træboks",
+        ],
+        cons: [
+          "Dyrere end aerobic-step",
+          "Fylder mere permanent",
+        ],
+        specs: [
+          { label: "Type", value: "Soft plyoboks" },
+          { label: "Højder", value: "40 / 50 / 60 cm" },
+          { label: "Partner", value: "Billig-fitness.dk" },
+        ],
+        feedProductId: "Billig-fitness.dk:56259750723970",
+      },
+      {
+        id: "atx-soft-plyo-l",
+        name: "ATX Soft Plyo-Box L (50/60/70 cm)",
+        badge: "Bedste til højere jumps",
+        summary:
+          "Større soft plyo til dig, der allerede jumper 50+ cm rent og vil have 70 cm-option uden at skifte til hård træboks.",
+        pros: [
+          "Højere progression",
+          "Stadig soft ved miss",
+          "3-i-1 format",
+        ],
+        cons: [
+          "For høj til mange begyndere",
+          "Større footprint og pris",
+        ],
+        specs: [
+          { label: "Type", value: "Soft plyoboks L" },
+          { label: "Højder", value: "50 / 60 / 70 cm" },
+          { label: "Partner", value: "Billig-fitness.dk" },
+        ],
+        feedProductId: "Billig-fitness.dk:56259601269122",
+      },
+    ],
+    howToChoose:
+      "Kondition og step-ups i stuen? Odin Aerobic Step eller Nordic Medium. Box jumps i lejlighed? ATX Soft M. Allerede højere jumps? Soft L. Trægulv: læg fitnessgulv under — se Bedste træningsmåtte til gulvbeskyttelse / home gym. Shop via “Se pris”.",
+    learningSections: [
+      {
+        heading: "Jumps er valgfrit — step-ups er undervurderet",
+        paragraphs: [
+          "Step-ups med vægtvest eller håndvægte bygger ben uden landing-stød. I lejlighed er det ofte det smartere “plyo-alternativ”.",
+          "Box jumps er værktøj til power — ikke et krav for at få værdi ud af en boks eller et step.",
+        ],
+        comparison: {
+          caption: "Step vs. soft plyo",
+          rowHeaderLabel: "Type",
+          columns: ["Højde", "Støj", "Miss", "Primær brug"],
+          rows: [
+            {
+              label: "Aerobic step",
+              cells: ["Justerbar lav–mid", "Lav", "Mild", "Cardio / step-ups"],
+            },
+            {
+              label: "Soft plyo",
+              cells: ["3 højder", "Mid", "Tilgivende", "Jumps / step-ups"],
+            },
+            {
+              label: "Træ-plyo",
+              cells: ["3 højder", "Højere", "Hård", "Garage-gym"],
+            },
+          ],
+        },
+      },
+      {
+        heading: "Gulv og naboer",
+        paragraphs: [
+          "Selv soft bokse sender stød nedad. Måtte under, fornuftige tider, og drop de maks-højde-jumps kl. 22.",
+          "Se også Bedste sjippetov og træningsmåtte til lejligheden for støj-logik.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "Stepbænk eller plyoboks?",
+        answer:
+          "Step til cardio og step-ups med lav støj. Soft plyo til jumps med tre højder. De fleste lejligheder vinder med step eller soft — ikke hård træboks.",
+      },
+      {
+        question: "Hvilken højde skal jeg starte med?",
+        answer:
+          "Den højde, du kan lande blødt og kontrolleret på. For mange er 40–50 cm mere end nok i starten.",
+      },
+      {
+        question: "Hvordan ser jeg aktuelle priser?",
+        answer:
+          "Klik “Se pris”. Flere modeller ligger under Must-haves → Step / plyo.",
+      },
+    ],
+    relatedSlugs: [
+      "bedste-traeningsmaatte-gulvbeskyttelse-home-gym-2026",
+      "bedste-sjippetov-traeningsmaatte-lejlighed-2026",
+      "bedste-vaegtvest-2026",
+      "bedste-justerbare-haandvaegte-2026",
+      "home-gym-til-lille-vaerelse-10m2-2026",
     ],
   },
 ];

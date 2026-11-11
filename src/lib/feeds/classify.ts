@@ -283,6 +283,14 @@ const MACHINE_RULES: CategoryRule[] = [
       /\bpull[\s-]*up\s*(?:og|&|\/)\s*dip/,
       /\bchin[\s-]*up\s*(?:og|&|\/)\s*dip/,
       /\bpullup[\s-]*(?:og|&|\/)\s*dip/,
+      /\bdip\s*station\b/,
+      /\bdipstation\b/,
+      /\bdipstativ\b/,
+      /\bdip\s*stativ\b/,
+      /\bdip\s*bars?\b/,
+      /\bparallettes?\b/,
+      /\bparallette[rs]?\b/,
+      /\bequalizer\b/,
       /\bkraftstation\b/,
       /\bfunctional\s*trainer\b/,
       /\bhyperextension\b/,
@@ -349,6 +357,22 @@ const ACCESSORY_PRIORITY: RegExp[] = [
   /chin\s*up\s*bar/,
   /pull[\s-]*up\s*bar/,
   /pullup\s*bar/,
+  /ab[\s-]*wheel/,
+  /abwheel/,
+  /abs?\s*roller/,
+  /vaegtvest/,
+  /vægtvest/,
+  /weighted\s*vest/,
+  /stepbaenk/,
+  /stepbænk/,
+  /stepbraet/,
+  /stepbræt/,
+  /aerobic\s*step/,
+  /plyo(?:metrisk)?\s*boks/,
+  /plyobox/,
+  /plyo[\s-]*box/,
+  /jump\s*box/,
+  /springboks/,
   /overtraek\s*(?:til|til\s+roma|til\s+loebe|til\s+cykel)/,
   /overtræk\s*(?:til|til\s+roma|til\s+løbe|til\s+cykel)/,
   /cover\s*til/,
@@ -370,6 +394,24 @@ const TILBEHOER_RULE: CategoryRule = {
     /chin\s*up\s*bar/,
     /pull[\s-]*up\s*bar/,
     /pullup\s*bar/,
+    /ab[\s-]*wheel/,
+    /abwheel/,
+    /abs?\s*roller/,
+    /mavehjul/,
+    /(?:mave|abs?)\s*(?:hjul|wheel|roller)/,
+    /vaegtvest/,
+    /vægtvest/,
+    /weighted\s*vest/,
+    /stepbaenk/,
+    /stepbænk/,
+    /stepbraet/,
+    /stepbræt/,
+    /aerobic\s*step/,
+    /plyo(?:metrisk)?\s*boks/,
+    /plyobox/,
+    /plyo[\s-]*box/,
+    /jump\s*box/,
+    /springboks/,
     /maatte/,
     /matte/,
     /yogamaatte/,
@@ -401,12 +443,20 @@ const TILBEHOER_RULE: CategoryRule = {
     /\breservedel/,
     /\bgaranti/,
     /\bwarranty/,
-    /\bvest\b/,
+    // Tøj-/sikkerhedsveste — ikke vægtveste
+    /refleksvest/,
+    /loebevest/,
+    /løbevest/,
+    /safety\s*vest/,
+    /hi[\s-]*viz/,
     /\bshorts?\b/,
     /\btaske\b/,
     /\bsko\b/,
     /\bsadel\b/,
     /\bbind\b/,
+    // Presse-/træningsbænk uden step/plyo
+    /\b(?:justerbar(?:e)?|flad|incline)\s*(?:traenings|trænings)?baenk\b/,
+    /\b(?:justerbar(?:e)?|flad|incline)\s*(?:traenings|trænings)?bænk\b/,
   ],
 };
 
@@ -767,6 +817,81 @@ const INTENT_RULES: { slug: string; test: (hay: string, price: number | null) =>
       },
     },
     {
+      slug: "abwheel",
+      test: (hay) =>
+        /ab[\s-]*wheel/.test(hay) ||
+        /abwheel/.test(hay) ||
+        /abs?\s*roller/.test(hay) ||
+        /mavehjul/.test(hay) ||
+        /(?:mave|abs?)\s*(?:hjul|wheel|roller)/.test(hay),
+    },
+    {
+      slug: "vaegtvest",
+      test: (hay) =>
+        /vaegtvest/.test(hay) ||
+        /vægtvest/.test(hay) ||
+        /weighted\s*vest/.test(hay) ||
+        (/\bvest\b/.test(hay) &&
+          (/\bvaegt/.test(hay) ||
+            /\bvægt/.test(hay) ||
+            /\bweight/.test(hay) ||
+            /\bjusterbar/.test(hay))),
+    },
+    {
+      slug: "stepbaenk",
+      test: (hay) => {
+        // Undgå squat-/læggblokke og stair steppers
+        if (
+          /squat\s*(?:stand\s*)?block/.test(hay) ||
+          /knaeboejning/.test(hay) ||
+          /knæbøjning/.test(hay) ||
+          /calf\s*block/.test(hay) ||
+          /laeg\s*blok/.test(hay) ||
+          /læg\s*blok/.test(hay) ||
+          /stair\s*stepper/.test(hay) ||
+          /trappemaskine/.test(hay)
+        ) {
+          return false;
+        }
+        return (
+          /stepbaenk/.test(hay) ||
+          /stepbænk/.test(hay) ||
+          /stepbraet/.test(hay) ||
+          /stepbræt/.test(hay) ||
+          /aerobic\s*step/.test(hay) ||
+          /plyo(?:metrisk)?\s*boks/.test(hay) ||
+          /plyobox/.test(hay) ||
+          /plyo[\s-]*box/.test(hay) ||
+          /jump\s*box/.test(hay) ||
+          /springboks/.test(hay) ||
+          (/\bstep\b/.test(hay) &&
+            (/\bbaenk/.test(hay) ||
+              /\bbænk/.test(hay) ||
+              /\baerobic/.test(hay)))
+        );
+      },
+    },
+    {
+      slug: "dipstation",
+      test: (hay) =>
+        /\bdip\s*station\b/.test(hay) ||
+        /\bdipstation\b/.test(hay) ||
+        /\bdipstativ\b/.test(hay) ||
+        /\bdip\s*stativ\b/.test(hay) ||
+        /\bparallettes?\b/.test(hay) ||
+        /\bparallette[rs]?\b/.test(hay) ||
+        /\bequalizer\b/.test(hay) ||
+        /\bpower\s*tower\b/.test(hay) ||
+        /\bpull[\s-]*up\s*(?:og|&|\/)\s*dip/.test(hay) ||
+        /\bchin[\s-]*up\s*(?:og|&|\/)\s*dip/.test(hay) ||
+        /\bpullup[\s-]*(?:og|&|\/)\s*dip/.test(hay) ||
+        (/\bdip\b/.test(hay) &&
+          (/\bstation\b/.test(hay) ||
+            /\bstativ\b/.test(hay) ||
+            /\btower\b/.test(hay) ||
+            /\bbars?\b/.test(hay))),
+    },
+    {
       slug: "elastikker",
       test: (hay) =>
         /elastik/.test(hay) ||
@@ -817,7 +942,7 @@ const DIK_MERCHANT = "Den Intelligente Krop";
 
 /**
  * Den Intelligente Krop er mest yoga, pilates og massage.
- * Kun romaskiner, siddecykel, håndvægte, kettlebells og TRX-sæt.
+ * Kun romaskiner, siddecykel, håndvægte, kettlebells, vægtveste og TRX-sæt.
  */
 function denIntelligenteKropKeep(product: FeedProduct): boolean {
   const hay = normalize(`${product.title} ${product.category}`);
@@ -840,7 +965,8 @@ function denIntelligenteKropKeep(product: FeedProduct): boolean {
     return /suspension|\btrainer\b|\bkit\b/.test(text);
   }
 
-  if (/vaegtvest|vægtvest|\brack\b|\bstativ\b/.test(text)) return false;
+  if (/vaegtvest|vægtvest|weighted\s*vest/.test(text)) return true;
+  if (/\brack\b|\bstativ\b/.test(text)) return false;
   return /haandvaegt|håndvægt|dumbbell|kettlebell|\bybell\b/.test(text);
 }
 
@@ -909,7 +1035,10 @@ export function classifyProduct(
         s !== "fitnessgulv" &&
         s !== "elastikker" &&
         s !== "slyngetraener" &&
-        s !== "pullup",
+        s !== "pullup" &&
+        s !== "abwheel" &&
+        s !== "vaegtvest" &&
+        s !== "stepbaenk",
     );
   }
 
@@ -923,9 +1052,11 @@ export function classifyProduct(
     filteredIntents = filteredIntents.filter((s) => s !== "hometrainer");
   }
 
-  // kabeltaarn only on styrkemaskiner
+  // kabeltaarn + dipstation only on styrkemaskiner
   if (matched !== "styrkemaskiner") {
-    filteredIntents = filteredIntents.filter((s) => s !== "kabeltaarn");
+    filteredIntents = filteredIntents.filter(
+      (s) => s !== "kabeltaarn" && s !== "dipstation",
+    );
   }
 
   return {

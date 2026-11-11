@@ -235,6 +235,12 @@ export const categories: MachineCategory[] = [
         description:
           "Vægmonteret cable — typisk kun 15–20 cm fra væggen.",
       },
+      {
+        slug: "dipstation",
+        label: "Dip / parallettes",
+        description:
+          "Dip-stationer, power towers med dips og parallettes til kropsvægt.",
+      },
     ],
   },
   {
@@ -271,6 +277,24 @@ export const categories: MachineCategory[] = [
         label: "Pull-up / dørribbe",
         description:
           "Dørribber uden skruer, vægmonterede barer og loftmonterede pull-up bars.",
+      },
+      {
+        slug: "abwheel",
+        label: "Ab wheel",
+        description:
+          "Ab wheels og mavetrænere med/uden retur-fjeder til core hjemme.",
+      },
+      {
+        slug: "vaegtvest",
+        label: "Vægtvest",
+        description:
+          "Faste og justerbare vægtveste til gang, rucking og kropsvægt.",
+      },
+      {
+        slug: "stepbaenk",
+        label: "Step / plyo",
+        description:
+          "Aerobic-stepbænke og plyobokse til kondition og eksplosiv træning.",
       },
       {
         slug: "elastikker",

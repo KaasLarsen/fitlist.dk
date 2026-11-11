@@ -445,6 +445,94 @@ describe("classifyProduct — tilbehoer (must-haves)", () => {
     assert.ok(r);
     assert.equal(r!.categorySlug, "styrkemaskiner");
     assert.ok(!r!.intentSlugs?.includes("pullup"));
+    assert.ok(r!.intentSlugs?.includes("dipstation"));
+  });
+
+  it("classifies ab wheel as tilbehoer + abwheel", () => {
+    const r = classifyProduct(
+      product({
+        title: "Odin Ab Wheel med retur-fjeder",
+        brand: "Odin",
+        price: 199,
+      }),
+    );
+    assert.ok(r);
+    assert.equal(r!.categorySlug, "tilbehoer");
+    assert.ok(r!.intentSlugs?.includes("abwheel"));
+  });
+
+  it("does not tag mavebænk as abwheel", () => {
+    const r = classifyProduct(
+      product({
+        title: "Odin SitUp Mavebænk",
+        brand: "Odin",
+        price: 799,
+      }),
+    );
+    assert.ok(r);
+    assert.equal(r!.categorySlug, "styrkemaskiner");
+    assert.ok(!r!.intentSlugs?.includes("abwheel"));
+  });
+
+  it("classifies parallettes and dip station as styrkemaskiner + dipstation", () => {
+    const bars = classifyProduct(
+      product({
+        title: "Odin Parallettes Push Up Bars",
+        brand: "Odin",
+        price: 349,
+      }),
+    );
+    assert.ok(bars);
+    assert.equal(bars!.categorySlug, "styrkemaskiner");
+    assert.ok(bars!.intentSlugs?.includes("dipstation"));
+
+    const station = classifyProduct(
+      product({
+        title: "Home Dip Station til væg",
+        brand: "Home",
+        price: 599,
+      }),
+    );
+    assert.ok(station);
+    assert.equal(station!.categorySlug, "styrkemaskiner");
+    assert.ok(station!.intentSlugs?.includes("dipstation"));
+  });
+
+  it("classifies vægtvest as tilbehoer + vaegtvest", () => {
+    const r = classifyProduct(
+      product({
+        title: "Odin Justerbar Vægtvest 20 kg",
+        brand: "Odin",
+        price: 899,
+      }),
+    );
+    assert.ok(r);
+    assert.equal(r!.categorySlug, "tilbehoer");
+    assert.ok(r!.intentSlugs?.includes("vaegtvest"));
+  });
+
+  it("classifies stepbænk and plyoboks as tilbehoer + stepbaenk", () => {
+    const step = classifyProduct(
+      product({
+        title: "Odin Aerobic Stepbænk Justerbar",
+        brand: "Odin",
+        price: 399,
+      }),
+    );
+    assert.ok(step);
+    assert.equal(step!.categorySlug, "tilbehoer");
+    assert.ok(step!.intentSlugs?.includes("stepbaenk"));
+
+    const plyo = classifyProduct(
+      product({
+        title: "Nordic Fighter Soft Plyoboks 3-i-1",
+        brand: "Nordic Fighter",
+        price: 1299,
+      }),
+    );
+    assert.ok(plyo);
+    assert.equal(plyo!.categorySlug, "tilbehoer");
+    assert.ok(plyo!.intentSlugs?.includes("stepbaenk"));
   });
 
   it("classifies hometrainer intent on trainer titles", () => {
@@ -853,10 +941,26 @@ describe("classifyProduct — Den Intelligente Krop", () => {
       "TRX Suspension Training Mat",
       "AYA&IDA Låg (Matte Black)",
       "TITAN LIFE PRO Rack til 10 sæt håndvægte",
-      "POWR.4 PRO Justerbar Vægtvest (30 kg)",
     ]) {
       assert.equal(classifyProduct(product({ ...dik, title })), null, title);
     }
+  });
+
+  it("keeps DIK vægtvest as tilbehoer", () => {
+    const r = classifyProduct(
+      product({
+        ...{
+          merchant: "Den Intelligente Krop",
+          brand: "POWR.4",
+          category: "Styrketræning",
+        },
+        title: "POWR.4 PRO Justerbar Vægtvest (30 kg)",
+        price: 1499,
+      }),
+    );
+    assert.ok(r);
+    assert.equal(r!.categorySlug, "tilbehoer");
+    assert.ok(r!.intentSlugs?.includes("vaegtvest"));
   });
 
   it("still classifies elastik from other merchants", () => {

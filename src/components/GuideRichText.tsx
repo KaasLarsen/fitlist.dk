@@ -92,6 +92,17 @@ const GUIDE_LINK_ALIASES: Record<string, string[]> = {
     "Bedste hometrainer 2026",
     "Bedste hometrainer 2026 — direct drive vs. wheel-on",
   ],
+  "bedste-ab-wheel-mavetraener-2026": [
+    "Bedste ab wheel / mavetræner 2026",
+    "Bedste ab wheel",
+  ],
+  "bedste-dip-station-parallettes-2026": [
+    "Bedste dip station og parallettes 2026",
+  ],
+  "bedste-vaegtvest-2026": ["Bedste vægtvest 2026"],
+  "bedste-stepbaenk-plyoboks-2026": [
+    "Bedste stepbænk og plyoboks 2026",
+  ],
 };
 
 function linkLabelsForGuide(guide: Guide): string[] {

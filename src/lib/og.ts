@@ -1,5 +1,5 @@
 /** Cache-bust when OG JPEGs are regenerated (Facebook caches by image URL). */
-export const OG_IMAGE_VERSION = "20261111";
+export const OG_IMAGE_VERSION = "20261111b";
 
 export function ogJpegUrl(path: string): string {
   const clean = path.startsWith("/") ? path : `/${path}`;
