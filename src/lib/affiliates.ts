@@ -37,6 +37,24 @@ export const affiliates: AffiliateLink[] = [
     label: "Se pris hos Apuls.dk",
     url: "https://www.partner-ads.com/dk/klikbanner.php?bannerid=46187&partnerid=57983&htmlurl=https://apuls.dk/odin-rb-800-comfort-siddecykel",
   },
+  {
+    id: "reebok-i-run-4-5-loebebaand",
+    partner: "Apuls.dk",
+    label: "Se pris hos Apuls.dk",
+    url: "https://www.partner-ads.com/dk/klikbanner.php?bannerid=46187&partnerid=57983&htmlurl=https://apuls.dk/reebok-i-run-4-5-lobeband",
+  },
+  {
+    id: "odin-r1800-vandromaskine",
+    partner: "Apuls.dk",
+    label: "Se pris hos Apuls.dk",
+    url: "https://www.partner-ads.com/dk/klikbanner.php?bannerid=46187&partnerid=57983&htmlurl=https://apuls.dk/odin-r1800-vand-romaskine",
+  },
+  {
+    id: "odin-a1000-airbike",
+    partner: "Apuls.dk",
+    label: "Se pris hos Apuls.dk",
+    url: "https://www.partner-ads.com/dk/klikbanner.php?bannerid=46187&partnerid=57983&htmlurl=https://apuls.dk/odin-a10-airbike-motionscykel",
+  },
 ];
 
 export function getAffiliate(id: string): AffiliateLink | undefined {

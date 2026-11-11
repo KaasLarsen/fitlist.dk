@@ -1132,7 +1132,7 @@ export const guides: Guide[] = [
       },
     ],
     howToChoose:
-      "Kun gang / under-desk? Stop — se Bedste gåbånd 2026 eller Gåbånd til kontoret. Både jogging og løb et par gange om ugen → Titan LIFE T56. Stramt budget men stadig ægte løbebånd → Ascendic 7021 (dyk ned i Ascendic 7021 Løbebånd — modelguide 2026). Foldbart budget med app/stigning? Se VeloraFit Foldbart Løbebånd — modelguide 2026. Skal maskinen væk under sofa/seng → Reebok i-Run 4.5. Primært løb og høj frekvens → T66. Prioritér derefter støj (måtte + realistisk aftenbrug). Skærm kommer sidst. Shop via “Se pris”.",
+      "Kun gang / under-desk? Stop — se Bedste gåbånd 2026 eller Gåbånd til kontoret. Både jogging og løb et par gange om ugen → Titan LIFE T56. Stramt budget men stadig ægte løbebånd → Ascendic 7021 (dyk ned i Ascendic 7021 Løbebånd — modelguide 2026). Foldbart budget med app/stigning? Se VeloraFit Foldbart Løbebånd — modelguide 2026. Skal maskinen væk under sofa/seng → Reebok i-Run 4.5 Løbebånd — modelguide 2026. Primært løb og høj frekvens → T66. Prioritér derefter støj (måtte + realistisk aftenbrug). Skærm kommer sidst. Shop via “Se pris”.",
     learningSections: [
       {
         heading: "Løbebånd vs. gåbånd",
@@ -1220,6 +1220,7 @@ export const guides: Guide[] = [
       },
     ],
     relatedSlugs: [
+      "reebok-i-run-4-5-loebebaand-2026",
       "ascendic-7021-loebebaand-2026",
       "velorafit-foldbart-loebebaand-2026",
       "ascendic-essential-walking-pad-2026",
@@ -1387,7 +1388,7 @@ export const guides: Guide[] = [
       },
     ],
     howToChoose:
-      "Usikker på roning? Start billigt med Titan LIFE R10 (magnet) og lær teknikken. Vil du have den ægte vand-stemning? Odin R1800. Vil du have luftens følelse og accepterer mere lyd? AirRow. Ved du, at maskinen skal bruges ofte og vil have et kendt midrange-valg? Reebok ZJET. Bekræft skinnelængde til din højde, mål brugslængde, og tjek om den kan rejses på højkant, hvis pladsen er trang. Shop via “Se pris” for aktuelle partnerpriser.",
+      "Usikker på roning? Start billigt med Titan LIFE R10 (magnet) og lær teknikken. Vil du have den ægte vand-stemning? Odin R1800 Vandromaskine — modelguide 2026. Vil du have luftens følelse og accepterer mere lyd? AirRow. Ved du, at maskinen skal bruges ofte og vil have et kendt midrange-valg? Reebok ZJET. Bekræft skinnelængde til din højde, mål brugslængde, og tjek om den kan rejses på højkant, hvis pladsen er trang. Shop via “Se pris” for aktuelle partnerpriser.",
     learningSections: [
       {
         heading: "Romaskine vs. løbebånd og cykel",
@@ -1463,6 +1464,7 @@ export const guides: Guide[] = [
       },
     ],
     relatedSlugs: [
+      "odin-r1800-vandromaskine-2026",
       "bedste-vandromaskine-2026",
       "romaskine-eller-crosstrainer-2026",
       "bedste-stoejsvag-romaskine-2026",
@@ -3158,7 +3160,7 @@ export const guides: Guide[] = [
       },
     ],
     howToChoose:
-      "Usikker og budgetbevidst? Start med Odin A800. Træner du HIIT flere gange om ugen? A1000 er det sikre allround-valg. Vil du have Assault-referencen? AssaultBike Classic. Er airbiken din hoved-finisher i årevis? The Beast eller tilsvarende premium. Har du naboer under dig? Overvej i stedet kondicykel eller spinning — airbike er ærligt støjende. Shop via “Se pris” for live partnerpriser.",
+      "Usikker og budgetbevidst? Start med Odin A800. Træner du HIIT flere gange om ugen? Odin A1000 Airbike — modelguide 2026 er det sikre allround-valg. Vil du have Assault-referencen? AssaultBike Classic. Er airbiken din hoved-finisher i årevis? The Beast eller tilsvarende premium. Har du naboer under dig? Overvej i stedet kondicykel eller spinning — airbike er ærligt støjende. Shop via “Se pris” for live partnerpriser.",
     learningSections: [
       {
         heading: "Hvorfor airbike er genial til HIIT",
@@ -3273,6 +3275,7 @@ export const guides: Guide[] = [
       },
     ],
     relatedSlugs: [
+      "odin-a1000-airbike-2026",
       "bedste-smartcykel-2026",
       "bedste-motionscykel-2026",
       "bedste-spinningcykel-2026",
@@ -6607,7 +6610,7 @@ export const guides: Guide[] = [
       },
     ],
     howToChoose:
-      "Skal du primært gå? Ascendic Essential eller Bedste gåbånd 2026 / Gåbånd til kontoret. Skal du kunne jogge og kan pakke væk? Reebok i-Run 4.5. Kompakt med hældning? Ascendic 7021. Vil have Titan-entry? T36. Til seriøst løb flere gange om ugen i hus/garage: Bedste løbebånd 2026 (T56/T66). Læs også Bedste støjsvage træningsmaskiner til lejligheden.",
+      "Skal du primært gå? Ascendic Essential eller Bedste gåbånd 2026 / Gåbånd til kontoret. Skal du kunne jogge og kan pakke væk? Reebok i-Run 4.5 Løbebånd — modelguide 2026. Kompakt med hældning? Ascendic 7021 Løbebånd — modelguide 2026. Vil have Titan-entry? T36. Til seriøst løb flere gange om ugen i hus/garage: Bedste løbebånd 2026 (T56/T66). Læs også Bedste støjsvage træningsmaskiner til lejligheden.",
     learningSections: [
       {
         heading: "Hvorfor “quiet treadmill” er misvisende",
@@ -6664,6 +6667,8 @@ export const guides: Guide[] = [
       },
     ],
     relatedSlugs: [
+      "reebok-i-run-4-5-loebebaand-2026",
+      "ascendic-7021-loebebaand-2026",
       "bedste-loebebaand-2026",
       "bedste-gaabaand-2026",
       "gaabaand-til-kontoret-2026",
@@ -10437,7 +10442,7 @@ export const guides: Guide[] = [
       },
     ],
     howToChoose:
-      "Allround vand uden møbel-premium? Odin R1800. Skal den leve i stuen og kunne foldes? Ascendic 6015 (ask) eller 6014 (eg). Stramt budget, men stadig vand? Odin R1000. Usikker på vand vs. magnet? Start i Bedste romaskine 2026 — og vælg magnet, hvis naboerne er dealbreakeren. Shop via “Se pris”.",
+      "Allround vand uden møbel-premium? Odin R1800 Vandromaskine — modelguide 2026. Skal den leve i stuen og kunne foldes? Ascendic 6015 (ask) eller 6014 (eg). Stramt budget, men stadig vand? Odin R1000. Usikker på vand vs. magnet? Start i Bedste romaskine 2026 — og vælg magnet, hvis naboerne er dealbreakeren. Shop via “Se pris”.",
     learningSections: [
       {
         heading: "Hvorfor vandromaskiner sælger lige nu",
@@ -10495,6 +10500,7 @@ export const guides: Guide[] = [
       },
     ],
     relatedSlugs: [
+      "odin-r1800-vandromaskine-2026",
       "bedste-romaskine-2026",
       "bedste-stoejsvag-romaskine-2026",
       "romaskine-eller-crosstrainer-2026",
@@ -11915,7 +11921,7 @@ export const guides: Guide[] = [
       {
         heading: "Hvornår du skal vælge noget andet",
         paragraphs: [
-          "Skal båndet forsvinde under sofaen efter hvert pas? Kig foldbare modeller (Reebok i-Run / VeloraFit). Vil du have mere maskine under fødderne til hård interval? Gå op i Bedste løbebånd 2026.",
+          "Skal båndet forsvinde under sofaen efter hvert pas? Kig Reebok i-Run 4.5 Løbebånd — modelguide 2026 eller VeloraFit Foldbart Løbebånd — modelguide 2026. Vil du have mere maskine under fødderne til hård interval? Gå op i Bedste løbebånd 2026.",
           "Kun skridt under arbejde? Gå tilbage til gåbånd — 7021 er overkill til desk walking.",
         ],
       },
@@ -11948,6 +11954,7 @@ export const guides: Guide[] = [
       },
     ],
     relatedSlugs: [
+      "reebok-i-run-4-5-loebebaand-2026",
       "ascendic-essential-walking-pad-2026",
       "velorafit-foldbart-loebebaand-2026",
       "bedste-loebebaand-2026",
@@ -12034,7 +12041,7 @@ export const guides: Guide[] = [
       },
     ],
     howToChoose:
-      "Vil du have VeloraFit? Køb den, hvis fold + budget + let jogging/stigning er jobbet, og tilbuddet frister. Ren under-desk gang? Ascendic Essential Walking Pad — modelguide 2026. Mere “rigtigt” Ascendic-løbebånd med auto-hældning? Ascendic 7021 Løbebånd — modelguide 2026. Flere foldbare/kendte brands: Bedste løbebånd 2026 (fx Reebok i-Run). Shop via “Se pris hos iHero”.",
+      "Vil du have VeloraFit? Køb den, hvis fold + budget + let jogging/stigning er jobbet, og tilbuddet frister. Ren under-desk gang? Ascendic Essential Walking Pad — modelguide 2026. Mere “rigtigt” Ascendic-løbebånd med auto-hældning? Ascendic 7021 Løbebånd — modelguide 2026. Kendt fold-brand til under sofa? Reebok i-Run 4.5 Løbebånd — modelguide 2026. Shop via “Se pris hos iHero”.",
     learningSections: [
       {
         heading: "Hvad VeloraFit egentlig er",
@@ -12060,7 +12067,7 @@ export const guides: Guide[] = [
       {
         heading: "Hvornår du skal vælge noget andet",
         paragraphs: [
-          "Vil du have Ascendic-brand og klassisk budget-løbebånd uden “app-first”? Se Ascendic 7021. Vil du have kendt fold-brand til under sofa? Reebok i-Run i Bedste løbebånd 2026.",
+          "Vil du have Ascendic-brand og klassisk budget-løbebånd uden “app-first”? Se Ascendic 7021. Vil du have kendt fold-brand til under sofa? Reebok i-Run 4.5 Løbebånd — modelguide 2026.",
           "Kun skridt under arbejde: gåbånd. Seriøst løb flere gange om ugen: op i kraftigere klasse.",
         ],
       },
@@ -12093,6 +12100,7 @@ export const guides: Guide[] = [
       },
     ],
     relatedSlugs: [
+      "reebok-i-run-4-5-loebebaand-2026",
       "ascendic-7021-loebebaand-2026",
       "ascendic-essential-walking-pad-2026",
       "bedste-loebebaand-2026",
@@ -12242,6 +12250,436 @@ export const guides: Guide[] = [
       "bedste-motionscykel-2026",
       "motionscykel-eller-spinningcykel-2026",
       "bedste-cardio-under-lavt-loft-2026",
+      "odin-a1000-airbike-2026",
+    ],
+  },
+  {
+    slug: "reebok-i-run-4-5-loebebaand-2026",
+    title: "Reebok i-Run 4.5 Løbebånd — modelguide 2026",
+    excerpt:
+      "Alt om Reebok i-Run 4.5: foldbart løbebånd der kan under sofa/seng — hvem den passer til, vs. VeloraFit/7021, støj/plads — og live pris hos Apuls.dk.",
+    metaDescription:
+      "Modelguide til Reebok i-Run 4.5 Løbebånd 2026. Foldbart hjemmeløbebånd med flad fold: fordele, ulemper, vs. budget-fold — live pris hos Apuls.",
+    categorySlug: "loebebaand",
+    intentSlug: "foldbar",
+    kind: "modelguide",
+    recommendationsHeading: "Modellen",
+    publishedAt: "2026-11-11",
+    updatedAt: "2026-11-11",
+    intro:
+      "Reebok i-Run 4.5 er det foldbare hjemmeløbebånd, vi oftest peget på, når maskinen skal kunne forsvinde under sofa eller seng — uden at være et walking pad. Denne modelguide handler kun om i-Run 4.5: hvem den er til, hvornår den slår billige fold-bånd som VeloraFit, og hvornår du hellere skal vælge Ascendic 7021 eller et tungere Titan-bånd. Vil du sammenligne flere løbebånd, se Bedste løbebånd 2026.",
+    criteria: [
+      {
+        title: "Ja — hvis fold under møbel er et hard requirement",
+        description:
+          "Du vil kunne jogge hjemme, men stuen må ikke eje et permanent løbebånd. i-Run 4.5 foldes fladt, har transporthjul, og leveres færdigsamlet hos partner — praktisk, når du faktisk pakker den væk efter pas.",
+      },
+      {
+        title: "Ja — hvis du vil have et kendt brand frem for ren tilbudslogik",
+        description:
+          "VeloraFit og lignende fold-budget kan være skarpere i pris. i-Run er valget, når Reebok-navn, flad fold og “færdigsamlet” betyder mere end den absolut laveste ticket.",
+      },
+      {
+        title: "Ja — hvis lejlighed + plads er vigtigere end peak-interval",
+        description:
+          "Vi bruger den som “Bedst til lejlighed (fold)” i støjsvag-guiden: ikke fordi løb er lydløst, men fordi du kan rulle maskinen væk og holde footprint midlertidigt.",
+      },
+      {
+        title: "Nej — hvis du primært skal gå under skrivebordet",
+        description:
+          "Så er et walking pad det ærligere køb. Se Ascendic Essential Walking Pad — modelguide 2026 eller Bedste gåbånd 2026.",
+      },
+      {
+        title: "Nej — hvis du vil have daglig hård interval i midrange-klassen",
+        description:
+          "i-Run er kompakt fold — ikke Titan T56/T66. Til seriøst løb flere gange om ugen: se Bedste løbebånd 2026.",
+      },
+    ],
+    products: [
+      {
+        id: "reebok-i-run-4-5-loebebaand",
+        name: "Reebok i-Run 4.5 Løbebånd",
+        badge: "Modelguide",
+        summary:
+          "Foldbart Reebok-hjemmeløbebånd hos Apuls — vores go-to, når ægte løbebånd skal kunne foldes fladt og rulles under sofa/seng. Kendt brand, færdigsamlet levering, og et ærligt plads-kompromis: godt til gang/jog og opbevaring, ikke et center-interval-bånd. Live pris hos Apuls.dk.",
+        pros: [
+          "Foldes fladt til opbevaring under mange møbler",
+          "Transporthjul til at rulle væk",
+          "Kendte Reebok-linjer til hjemmet",
+          "Færdigsamlet levering hos partner",
+          "Partner: Apuls.dk — direkte shop-link",
+        ],
+        cons: [
+          "Fold hjælper kun, hvis du faktisk pakker den væk",
+          "Ikke T56/T66 til daglig hård interval",
+          "Løb om aftenen kan stadig genere naboer",
+          "Tjek foldet højde under dit møbel før køb",
+        ],
+        specs: [
+          { label: "Type", value: "Foldbart løbebånd" },
+          { label: "Brand", value: "Reebok" },
+          { label: "Feature", value: "Flad fold / under møbel" },
+          { label: "Segment", value: "Kompakt mid" },
+          { label: "Levering", value: "Færdigsamlet (ifølge partner)" },
+          { label: "Partner", value: "Apuls.dk" },
+        ],
+        imageUrl: "https://m2.apuls.dk/media/catalog/product/2/0/20766_1.jpg",
+        feedProductId: "Apuls.dk:15828",
+        affiliateId: "reebok-i-run-4-5-loebebaand",
+      },
+    ],
+    howToChoose:
+      "Vil du have Reebok i-Run 4.5? Køb den, hvis fold under sofa/seng + kendt brand er jobbet. Billigere fold med app/stigning? VeloraFit Foldbart Løbebånd — modelguide 2026. Kompakt Ascendic med auto-hældning (mindre “under sofa”)? Ascendic 7021 Løbebånd — modelguide 2026. Kun gang under bord? Ascendic Essential Walking Pad — modelguide 2026. Flere modeller: Bedste løbebånd 2026. Shop via “Se pris hos Apuls.dk”.",
+    learningSections: [
+      {
+        heading: "Hvad i-Run 4.5 egentlig er",
+        paragraphs: [
+          "Et foldbart ægte løbebånd i den kompakte mid-klasse: nok til gang og jogging hjemme, designet omkring at kunne forsvinde efter træning — ikke omkring max-HK og center-dæk.",
+          "På Fitlist er det vores standard-svar, når nogen siger “jeg vil kunne løbe lidt, men det skal under sofaen”. Det er et plads-produkt først, et løbeprodukt dernæst.",
+        ],
+      },
+      {
+        heading: "i-Run vs. VeloraFit vs. Ascendic 7021",
+        paragraphs: [
+          "VeloraFit: ofte skarpere tilbud, app/stigning, mindre “kendt brand”. i-Run: Reebok + flad fold + færdigsamlet. 7021: Ascendic budget med automatisk hældning i en mere klassisk (mindre “under møbel”) form.",
+          "Tommelfingerregel: møbel-fold er dealbreakeren → i-Run (eller VeloraFit på pris). Hældning + Ascendic-budget uden fold-krav → 7021.",
+        ],
+      },
+      {
+        heading: "Støj, måtte og lejlighed",
+        paragraphs: [
+          "Fold løser footprint — ikke vibration gennem etagen. Løb om aftenen kan stadig genere naboer. Måtte, bløde skridt og realistiske tider er obligatorisk i etagebyggeri.",
+          "Mere om lejlighed: Bedste støjsvage løbebånd til lejlighed 2026. Primært gang? Gåbånd er ofte ærligere.",
+        ],
+      },
+      {
+        heading: "Hvornår du skal vælge noget andet",
+        paragraphs: [
+          "Fast træningsrum og hård interval flere gange om ugen → op i Titan-klassen i Bedste løbebånd 2026. Desk walking hele dagen → walking pad.",
+          "Vil du have den absolut billigste fold-historie på tilbud? Læs VeloraFit-modelguiden først — og vælg bevidst.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "Er Reebok i-Run 4.5 et walking pad?",
+        answer:
+          "Nej. Det er et foldbart ægte løbebånd. Til under-desk gang: se Ascendic Essential Walking Pad — modelguide 2026.",
+      },
+      {
+        question: "Kan den gemmes under sofaen?",
+        answer:
+          "Det er designintentionen — flad fold + hjul. Mål altid den foldede højde mod din sofa/seng. “Under sofa” er et møbelspørgsmål.",
+      },
+      {
+        question: "i-Run 4.5 eller VeloraFit?",
+        answer:
+          "i-Run, hvis Reebok + flad fold + færdigsamlet er vigtigst. VeloraFit, hvis tilbudspris + app/stigning er vigtigst. Læs begge modelguides.",
+      },
+      {
+        question: "Passer den til lejlighed?",
+        answer:
+          "Bedre end et permanent midt-i-stuen-bånd på plads — men løb larmer stadig. Brug måtte og fornuftige tider. Se støjsvag-lejlighedsguiden.",
+      },
+      {
+        question: "Hvor ser jeg den aktuelle pris?",
+        answer:
+          "Klik “Se pris hos Apuls.dk”. Pris og lager hentes live fra partner-feedet.",
+      },
+    ],
+    relatedSlugs: [
+      "velorafit-foldbart-loebebaand-2026",
+      "ascendic-7021-loebebaand-2026",
+      "ascendic-essential-walking-pad-2026",
+      "bedste-loebebaand-2026",
+      "bedste-stoejsvag-loebebaand-lejlighed-2026",
+      "bedste-foldbare-kompakte-traeningsmaskiner-2026",
+      "loebebaand-eller-gaabaand-2026",
+    ],
+  },
+  {
+    slug: "odin-r1800-vandromaskine-2026",
+    title: "Odin R1800 Vandromaskine — modelguide 2026",
+    excerpt:
+      "Alt om Odin R1800: vandromaskine med ægte splash — hvem den passer til, vs. magnet/luft, vedligehold og plads — live pris hos Apuls.dk.",
+    metaDescription:
+      "Modelguide til Odin R1800 Vandromaskine 2026. Midrange vandmodstand til hjemmet: fordele, ulemper, støj og vedligehold — live pris hos Apuls.",
+    categorySlug: "romaskine",
+    intentSlug: "vand",
+    kind: "modelguide",
+    recommendationsHeading: "Modellen",
+    publishedAt: "2026-11-11",
+    updatedAt: "2026-11-11",
+    intro:
+      "Odin R1800 er vores allround-vandromaskine: ægte splash, jævn trækfølelse og midrange-pris uden Fluid Rower-budget. Denne modelguide handler kun om R1800 — hvem den er til, hvornår vand slår magnet, og hvornår du hellere skal vælge stille magnet eller et dyrere træ-møbel. Vil du sammenligne flere vandmodeller, se Bedste vandromaskine 2026; blandede typer: Bedste romaskine 2026.",
+    criteria: [
+      {
+        title: "Ja — hvis du vil have den ægte vand-stemning",
+        description:
+          "Du vil høre splash og mærke den jævne vandmodstand — ikke kun en stille magnet-skive. R1800 er vores “Bedst samlet”-vandpick i den dedikerede vandguide.",
+      },
+      {
+        title: "Ja — hvis midrange-pris er nok, og du ikke jagter møbel-premium",
+        description:
+          "Du vil have vand uden at betale Ascendic-træ / Fluid-agtig stue-æstetik. R1800 er træning først, look dernæst.",
+      },
+      {
+        title: "Ja — hvis helkropsroning er din primære cardio",
+        description:
+          "Du vil have én maskine der træner ben, ryg, core og arme — og accepterer længde i brug + vandvedligehold.",
+      },
+      {
+        title: "Nej — hvis naboer / aftenstilhed er dealbreakeren",
+        description:
+          "Vand er mere lyd end magnet. I lejlighed om aftenen: se Bedste støjsvage romaskine 2026 i stedet.",
+      },
+      {
+        title: "Nej — hvis du egentlig vil have foldbart træ-møbel til stuen",
+        description:
+          "Så kig Ascendic foldbare vandmodeller i Bedste vandromaskine 2026. R1800 er allround-vand — ikke “skal stå pænt fremme”-pick.",
+      },
+    ],
+    products: [
+      {
+        id: "odin-r1800-vandromaskine",
+        name: "Odin R1800 Vandromaskine",
+        badge: "Modelguide",
+        summary:
+          "Odin R1800 fra Apuls — vores go-to vandromaskine, når du vil have autentisk splash og jævn trækfølelse til midrange-pris. Helkropspas der føles “rigtige”, uden Fluid-budget. Live pris hos Apuls.dk.",
+        pros: [
+          "Autentisk vandlyd og jævn trækfølelse",
+          "Klar midrange-pris for vandmodstand",
+          "Helkropspas der motiverer mange mere end magnet",
+          "Allround-anbefaling i vores vand- og romaskine-guides",
+          "Partner: Apuls.dk — direkte shop-link",
+        ],
+        cons: [
+          "Mere lyd end magnet — tænk på naboer",
+          "Kræver opmærksomhed på vandniveau/vedligehold",
+          "Fylder i brug — mål skinnen",
+          "Ikke det pæneste “stuemøbel” ift. foldbart træ",
+        ],
+        specs: [
+          { label: "Type", value: "Vandromaskine" },
+          { label: "Modstand", value: "Vand" },
+          { label: "Brand", value: "Odin" },
+          { label: "Segment", value: "Midrange" },
+          { label: "Partner", value: "Apuls.dk" },
+        ],
+        imageUrl:
+          "https://m2.apuls.dk/media/catalog/product/6/7/67d2d580346dbodinr1800romaskine1.jpg",
+        feedProductId: "Apuls.dk:15386",
+        affiliateId: "odin-r1800-vandromaskine",
+      },
+    ],
+    howToChoose:
+      "Vil du have Odin R1800? Køb den, hvis vand-stemning + midrange allround er jobbet. Stue + foldbart træ? Ascendic i Bedste vandromaskine 2026. Stramt budget men stadig vand? Odin R1000 i samme guide. Naboer først? Magnet i Bedste støjsvage romaskine 2026. Usikker på vand vs. luft vs. magnet? Bedste romaskine 2026. Shop via “Se pris hos Apuls.dk”.",
+    learningSections: [
+      {
+        heading: "Hvad R1800 egentlig er",
+        paragraphs: [
+          "En midrange vandromaskine: tank, splash, jævn modstand der stiger med dit træk. Den er bygget til at føles som roning — ikke til at være den stilleste maskine i lejligheden.",
+          "Vi anbefaler den ofte, fordi den rammer “ægte vand” uden at kræve premium-møbelpris. Det er den sikre default, når du allerede har valgt vand.",
+        ],
+      },
+      {
+        heading: "Vand vs. magnet (kort)",
+        paragraphs: [
+          "Magnet: støjsvagest, præcis, ofte billigere entry — mindre “båd”. Vand: stemning og følelse — mere lyd og lidt mere drift (vandniveau, rens).",
+          "Har du naboer under dig og træner sent, er magnet næsten altid det ærligere valg. Har du hus/træningsrum og vil have motivationen fra splash, vinder R1800.",
+        ],
+      },
+      {
+        heading: "Plads, skinne og vedligehold",
+        paragraphs: [
+          "Mål brugslængde (ofte over to meter) plus plads til fuldt benspark. Tjek brugerhøjde/-vægt. En romaskine, der ikke kan stå, hvor du ror, er et dyrt tøjstativ.",
+          "Vand kræver rent vand og jævnlig rens (tabletter/purif). Det er ikke svært — men det er mere end en magnetmaskine. Planlæg det.",
+        ],
+      },
+      {
+        heading: "Hvornår du skal vælge noget andet",
+        paragraphs: [
+          "Vil du have foldbart ask/eg til stuen? Se Ascendic i Bedste vandromaskine 2026. Vil du have luftens selvskalerende følelse? AirRow i Bedste romaskine 2026.",
+          "Kun stille aften-cardio: cykel eller magnet-romaskine. R1800 er ikke “quiet cardio”.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "Er Odin R1800 støjsvag?",
+        answer:
+          "Nej ift. magnet. Splash og tank fylder mere lydmæssigt. Til lejlighed om aftenen: se Bedste støjsvage romaskine 2026.",
+      },
+      {
+        question: "R1800 eller Ascendic foldbar træ-vand?",
+        answer:
+          "R1800 til allround vand til midrange-pris. Ascendic foldbar, hvis maskinen skal leve synligt i stuen og kunne klappes sammen. Se Bedste vandromaskine 2026.",
+      },
+      {
+        question: "Skal jeg vedligeholde vandet?",
+        answer:
+          "Ja — hold niveau og rens jævnligt efter producentens anvisning. Det er en del af vand-kategorien, ikke en R1800-fejl.",
+      },
+      {
+        question: "Passer den til begyndere?",
+        answer:
+          "Ja, hvis du lærer teknik (ben → core → arme) og starter roligt. Vand føles motiverende for mange begyndere — men teknik slår watt.",
+      },
+      {
+        question: "Hvor ser jeg den aktuelle pris?",
+        answer:
+          "Klik “Se pris hos Apuls.dk”. Pris og lager hentes live fra partner-feedet.",
+      },
+    ],
+    relatedSlugs: [
+      "bedste-vandromaskine-2026",
+      "bedste-romaskine-2026",
+      "bedste-stoejsvag-romaskine-2026",
+      "romaskine-eller-crosstrainer-2026",
+      "bedste-foldbare-kompakte-traeningsmaskiner-2026",
+      "odin-a1000-airbike-2026",
+    ],
+  },
+  {
+    slug: "odin-a1000-airbike-2026",
+    title: "Odin A1000 Airbike — modelguide 2026",
+    excerpt:
+      "Alt om Odin A1000: airbike til HIIT med vindmodstand — hvem den passer til, støj, vs. A800/Assault — og live pris hos Apuls.dk.",
+    metaDescription:
+      "Modelguide til Odin A1000 Airbike 2026. Allround hjemme-airbike til HIIT: fordele, ulemper, støj — live pris hos Apuls.",
+    categorySlug: "motionscykel",
+    intentSlug: "airbike",
+    kind: "modelguide",
+    recommendationsHeading: "Modellen",
+    publishedAt: "2026-11-11",
+    updatedAt: "2026-11-11",
+    intro:
+      "Odin A1000 er vores “Bedst samlet”-airbike: ægte vindmodstand til arme+ben, bygget til korte, hårde intervaller — uden at hoppe direkte i Assault-priser. Denne modelguide handler kun om A1000: hvem den er til, hvorfor den larmer, og hvornår A800 eller Assault er det bedre køb. Vil du sammenligne flere airbikes, se Bedste airbike 2026.",
+    criteria: [
+      {
+        title: "Ja — hvis HIIT med arme+ben er målet",
+        description:
+          "Du vil have selvskalerende vindmodstand og hele kroppen i korte blokke — ikke stille zone 2 på en magnetcykel. A1000 er det sikre allround-valg til jævnlig hård brug.",
+      },
+      {
+        title: "Ja — hvis du vil have midrange uden Assault-premium",
+        description:
+          "Du ved, at airbike er dig, men du behøver ikke boksens reference-brand. A1000 giver airbike-følelse til skarpere dansk partnerpris.",
+      },
+      {
+        title: "Ja — hvis du har hus, garage eller et rum der tåler vifte-lyd",
+        description:
+          "Airbike er ærligt støjende. A1000 er ikke lejligheds-first. Har du plads og accept af støj, er den et stærkt HIIT-værktøj.",
+      },
+      {
+        title: "Nej — hvis naboer / aftenstilhed er dealbreakeren",
+        description:
+          "Køb kondicykel, spinning med rem eller magnet-romaskine i stedet. Airbike er den forkerte kategori til “stille lejlighed”.",
+      },
+      {
+        title: "Nej — hvis du kun vil teste airbike 1–2 gange om måneden",
+        description:
+          "Så er Odin A800 ofte nok som entry. Opgrader til A1000, når vanen og intensiteten er beviselig.",
+      },
+    ],
+    products: [
+      {
+        id: "odin-a1000-airbike",
+        name: "Odin A1000 Airbike",
+        badge: "Modelguide",
+        summary:
+          "Odin A1000 fra Apuls — vores go-to airbike til hjemme-HIIT, når du vil have ægte vindmodstand uden Assault-priser. Solid midrange til jævnlig hård brug: arme+ben, ærlig intensitet, ærlig støj. Live pris hos Apuls.dk.",
+        pros: [
+          "Solid midrange airbike til hjemmet",
+          "Vindmodstand til ægte intervaller",
+          "Bedre end entry til jævnlig hård brug",
+          "Nem at finde hos dansk partner",
+          "Partner: Apuls.dk — direkte shop-link",
+        ],
+        cons: [
+          "Støjer — ikke lejligheds-first",
+          "Dyrere end A800",
+          "Ikke Assault-“center”-status",
+          "Kræver plads til arme foran dig",
+        ],
+        specs: [
+          { label: "Type", value: "Airbike / vindmodstand" },
+          { label: "Brand", value: "Odin" },
+          { label: "Segment", value: "Midrange" },
+          { label: "Brug", value: "HIIT / intervaller" },
+          { label: "Partner", value: "Apuls.dk" },
+        ],
+        imageUrl: "https://m2.apuls.dk/media/catalog/product/1/4/14403.jpg",
+        feedProductId: "Apuls.dk:12006",
+        affiliateId: "odin-a1000-airbike",
+      },
+    ],
+    howToChoose:
+      "Vil du have Odin A1000? Køb den, hvis HIIT flere gange om ugen er jobbet, og støj er acceptabelt. Stramt budget / “vil bare prøve”? A800 i Bedste airbike 2026. Assault-reference? AssaultBike Classic i samme guide. Stille cardio? Drop airbike — se Bedste motionscykel 2026 eller Odin RB-800 Comfort Siddecykel — modelguide 2026. Shop via “Se pris hos Apuls.dk”.",
+    learningSections: [
+      {
+        heading: "Hvad A1000 egentlig er",
+        paragraphs: [
+          "En airbike med vindmodstand: jo hårdere du træder og trækker, jo hårdere bliver det. Arme og ben samtidigt. Det er en finisher- og intervalmaskine — ikke en sofa-cykel.",
+          "På Fitlist er A1000 “Bedst samlet” i airbike-guiden, fordi den rammer den brug, de fleste hjemme-HIIT’ere faktisk har, uden Assault-premium.",
+        ],
+      },
+      {
+        heading: "A1000 vs. A800 vs. Assault",
+        paragraphs: [
+          "A800: billigere entry til at teste vanen. A1000: bedre allround til jævnlig hård brug. Assault Classic: reference-følelse og brand, højere pris.",
+          "Køb ikke Assault “fordi boksen har den”, hvis A1000 dækker dine WOD’er. Køb ikke A1000, hvis du egentlig vil have stille zone 2.",
+        ],
+      },
+      {
+        heading: "Støj er ikke en bi-detalje",
+        paragraphs: [
+          "Viften er den primære lydkilde og stiger med intensitet. I etagebyggeri er det ofte for meget — uanset måtte. Planlæg rum og tidspunkter, før du køber.",
+          "Mere kontekst: Bedste airbike 2026. Til skånsom siddende cardio i stedet: Odin RB-800 modelguide.",
+        ],
+      },
+      {
+        heading: "Hvornår du skal vælge noget andet",
+        paragraphs: [
+          "Zone 2, aften, lejlighed → kondicykel/spinning/siddecykel. Helkrop uden samme vifte-støj → romaskine (magnet) eller crosstrainer.",
+          "Vil du have vand-stemning i stedet for HIIT-vifte? Odin R1800 Vandromaskine — modelguide 2026.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "Er Odin A1000 det samme som en Assault Bike?",
+        answer:
+          "Funktionelt samme disciplin (airbike / vindmodstand med arme+ben). Assault er et specifikt brand. A1000 er Odins midrange-bud i samme kategori.",
+      },
+      {
+        question: "A1000 eller A800?",
+        answer:
+          "A1000, hvis du træner HIIT jævnligt og vil have det stærkere allround-valg. A800, hvis du tester vanen på budget. Se Bedste airbike 2026.",
+      },
+      {
+        question: "Kan jeg bruge den i lejlighed?",
+        answer:
+          "Teknisk ja — praktisk ofte nej, hvis du har naboer under dig. Airbike larmer mere end magnetcykel. Vælg en anden kategori, hvis stilhed er kravet.",
+      },
+      {
+        question: "Airbike eller spinning til HIIT?",
+        answer:
+          "Airbike, hvis arme med og maksimal ærlig intensitet er pointen. Spinning, hvis du vil have cykelposition og tungt svinghjul uden samme vifte-støj.",
+      },
+      {
+        question: "Hvor ser jeg den aktuelle pris?",
+        answer:
+          "Klik “Se pris hos Apuls.dk”. Pris og lager hentes live fra partner-feedet.",
+      },
+    ],
+    relatedSlugs: [
+      "bedste-airbike-2026",
+      "odin-rb-800-siddecykel-2026",
+      "odin-r1800-vandromaskine-2026",
+      "bedste-spinningcykel-2026",
+      "bedste-motionscykel-2026",
+      "bedste-romaskine-2026",
     ],
   },
 ];

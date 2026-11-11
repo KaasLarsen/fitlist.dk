@@ -20,9 +20,22 @@ const GUIDE_LINK_ALIASES: Record<string, string[]> = {
     "Odin RB-800 modelguide",
     "Odin RB-800 Comfort Siddecykel — modelguide 2026",
   ],
+  "reebok-i-run-4-5-loebebaand-2026": [
+    "Reebok i-Run modelguide",
+    "Reebok i-Run 4.5 Løbebånd — modelguide 2026",
+  ],
+  "odin-r1800-vandromaskine-2026": [
+    "Odin R1800 modelguide",
+    "Odin R1800 Vandromaskine — modelguide 2026",
+  ],
+  "odin-a1000-airbike-2026": [
+    "Odin A1000 modelguide",
+    "Odin A1000 Airbike — modelguide 2026",
+  ],
   "bedste-loebebaand-2026": ["Bedste løbebånd 2026"],
   "bedste-siddecykel-2026": ["Bedste siddecykel 2026"],
   "bedste-romaskine-2026": ["Bedste romaskine 2026"],
+  "bedste-airbike-2026": ["Bedste airbike 2026", "Bedste Airbike 2026"],
   "bedste-crosstrainer-2026": ["Bedste crosstrainer 2026"],
   "bedste-gaabaand-2026": ["Bedste gåbånd 2026"],
   "bedste-motionscykel-2026": ["Bedste motionscykel 2026"],
