@@ -4,6 +4,8 @@ import { ProductDealCard } from "@/components/ProductDealCard";
 import { getAllDiscountedDeals } from "@/lib/feeds/catalog";
 import { canonical } from "@/lib/site";
 
+export const revalidate = 21600;
+
 export const metadata: Metadata = {
   title: "Tilbud",
   description:

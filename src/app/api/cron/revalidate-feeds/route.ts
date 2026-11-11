@@ -1,3 +1,4 @@
+import { revalidatePath } from "next/cache";
 import { NextResponse } from "next/server";
 import { warmCatalog } from "@/lib/feeds/catalog";
 import { warmAllFeeds } from "@/lib/feeds/fetch";
@@ -44,6 +45,10 @@ export async function GET(request: Request) {
 
   try {
     const catalog = await warmCatalog();
+    // Frisk Full Route Cache så forsiden/tilbud/maskiner ikke bliver ved at vise tomt.
+    revalidatePath("/", "layout");
+    revalidatePath("/tilbud");
+    revalidatePath("/maskiner", "layout");
     return NextResponse.json({
       ok: true,
       feeds,

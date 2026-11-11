@@ -9,6 +9,9 @@ import { getFeaturedGuides } from "@/lib/guides";
 import { homeOgPath } from "@/lib/og";
 import { canonical } from "@/lib/site";
 
+/** Feed-katalog skifter via cron — undgå at en tom cold-start caches for evigt. */
+export const revalidate = 21600;
+
 const homeImage = homeOgPath();
 
 export const metadata: Metadata = {
