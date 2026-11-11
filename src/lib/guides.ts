@@ -1935,15 +1935,15 @@ export const guides: Guide[] = [
     slug: "bedste-smartcykel-2026",
     title: "Bedste smartcykler & interaktive motionscykler 2026",
     excerpt:
-      "Smart bike med Bluetooth, watt og app-styring: Zwift, Peloton-typen og budget-smart — plus fire modeller med live priser.",
+      "Smart bike med Bluetooth, watt og app-styring: Zwift, budget-spin og Wahoo KICKR Bike — plus fire modeller med live priser.",
     metaDescription:
-      "Find den bedste smartcykel til hjemmet i 2026. Guide til Bluetooth, watt, Zwift og apps — plus fire anbefalede interaktive motionscykler med live priser.",
+      "Find den bedste smartcykel til hjemmet i 2026. Guide til Bluetooth, watt, Zwift og apps — inkl. Wahoo KICKR Bike med live priser.",
     categorySlug: "motionscykel",
     intentSlug: "smart",
     publishedAt: "2026-11-04",
-    updatedAt: "2026-11-07",
+    updatedAt: "2026-11-11",
     intro:
-      "En smart motionscykel har indbygget Bluetooth (ofte også ANT+) og elektronik, der kan tale med en app. Magien er simpel: når du kører op ad en virtuel bakke i Zwift eller Kinomap, kan cyklen justere modstanden — og sende dine watt-tal tilbage, så træningen føles og måles som rigtig cykling. Denne guide forklarer, hvad “smart” egentlig betyder, de tre brugertyper (Peloton-typen, Zwift-nørden og budget-smart), hvad du skal kigge efter, og fire konkrete modeller du kan købe via vores danske partnere lige nu.",
+      "En smart motionscykel har indbygget Bluetooth (ofte også ANT+) og elektronik, der kan tale med en app. Magien er simpel: når du kører op ad en virtuel bakke i Zwift eller Kinomap, kan cyklen justere modstanden — og sende dine watt-tal tilbage, så træningen føles og måles som rigtig cykling. Denne guide forklarer, hvad “smart” egentlig betyder, de tre brugertyper (Peloton-typen, Zwift-nørden og budget-smart), hvad du skal kigge efter, og fire konkrete modeller med “Se pris”: Odin S1000 og Reebok i-Bike til spin-smart — plus Wahoo Kickr Bike Shift og KICKR Bike PRO til premium landevejs-realisme via Cykelpartner.",
     criteria: [
       {
         title: "Indbygget skærm vs. tablet-holder",
@@ -1985,9 +1985,9 @@ export const guides: Guide[] = [
       {
         id: "odin-s1000-zwift",
         name: "Odin S1000 Spinningcykel (Kinomap & Zwift)",
-        badge: "Bedst samlet",
+        badge: "Bedst samlet spin-smart",
         summary:
-          "Den stærkeste allround smart spin bike i vores test blandt modeller med live partnerpris: eksplicit Zwift- og Kinomap-kompatibilitet, seriøs svinghjul-følelse og tablet-frihed uden Peloton-lock-in.",
+          "Den stærkeste allround smart spin bike blandt modeller med live partnerpris i fitness-segmentet: eksplicit Zwift- og Kinomap-kompatibilitet, seriøs svinghjul-følelse og tablet-frihed uden Peloton-lock-in.",
         pros: [
           "Zwift- og Kinomap-klar",
           "Spinning-geometri til intervaller",
@@ -1995,7 +1995,7 @@ export const guides: Guide[] = [
           "God balance mellem pris og “smart”-features",
         ],
         cons: [
-          "Ikke samme bakke-realisme som Wahoo/Tacx-racercykler",
+          "Ikke samme bakke-realisme som Wahoo KICKR Bike",
           "Kræver egen tablet/skærm og typisk app-abonnement",
         ],
         specs: [
@@ -2010,14 +2010,14 @@ export const guides: Guide[] = [
         name: "Reebok i-Bike Spinningcykel (Zwift & Kinomap)",
         badge: "Bedste budget-smart",
         summary:
-          "Interaktiv træning uden 20.000+ kr. Reebok i-Bike er indgangen til Zwift/Kinomap-kompatibel spinning — ideel, hvis du vil teste “smart” før du opgraderer.",
+          "Interaktiv træning uden 20.000+ kr. Reebok i-Bike er indgangen til Zwift/Kinomap-kompatibel spinning — ideel, hvis du vil teste “smart” før du opgraderer til KICKR Bike.",
         pros: [
           "Laveste entry blandt vores Zwift-anbefalinger",
           "Zwift- og Kinomap-kompatibel",
           "Kendt mærke til hjemmetræning",
         ],
         cons: [
-          "Mindre “pro” følelse end S1000 / BH Xcalibur",
+          "Mindre “pro” følelse end S1000 / KICKR Bike",
           "Watt og finish matcher ikke premium-racercykler",
         ],
         specs: [
@@ -2028,52 +2028,52 @@ export const guides: Guide[] = [
         feedProductId: "Apuls.dk:15655",
       },
       {
-        id: "odin-s900-zwift",
-        name: "Odin S900 Spinningcykel (Kinomap & Zwift)",
-        badge: "Bedst allround spin+app",
+        id: "wahoo-kickr-bike-shift",
+        name: "Wahoo Kickr Bike Shift — Smart Bike",
+        badge: "Bedste premium smart bike",
         summary:
-          "Lillebror til S1000 med samme app-vinkel. Stærkt valg, hvis du vil have Zwift-kompatibilitet og solid spinning uden at gå helt til toppen af Odin-linjen.",
+          "Dedikeret indoor-racercykel fra Wahoo: landevejs-geometri, præcis watt og Zwift uden at spænde din udecykel op hver dag. Det er typen B — nu med “Se pris” via Cykelpartner.",
         pros: [
-          "Zwift- og Kinomap-klar",
-          "Ofte lidt billigere end S1000",
-          "God til hold-agtige pas + app",
-        ],
-        cons: [
-          "S1000 er det stærkere “all-in”-valg i samme familie",
-          "Stadig vibration i lejlighed ved stående arbejde",
-        ],
-        specs: [
-          { label: "Type", value: "Smart spinningcykel" },
-          { label: "Apps", value: "Zwift, Kinomap" },
-          { label: "Skærm", value: "Brug egen tablet" },
-        ],
-        feedProductId: "Apuls.dk:15029",
-      },
-      {
-        id: "bh-xcalibur-smart",
-        name: "BH Fitness Xcalibur Smart Bike",
-        badge: "Bedste premium i feed",
-        summary:
-          "Når du vil have magnetisk modstand, Bluetooth til Zwift/Kinomap/Exercycle og en mere “smart bike”-profil end en ren budget-spin. Dyreste anbefaling her — men stadig købbar via partner.",
-        pros: [
-          "Eksplicit smart bike med Bluetooth",
-          "Zwift, Kinomap og Exercycle Connect",
-          "Magnetisk modstand til støjsvagere træning",
+          "Rigtig smart bike — ikke “bare” en spin med Bluetooth",
+          "Wahoo-økosystem og Zwift-klar",
+          "Bekvemmelighed uden daglig montering",
         ],
         cons: [
           "Markant dyrere end Odin/Reebok",
-          "Ikke Peloton-skærm / ikke Wahoo-tilt",
+          "Ikke din udecykels pasform (overvej hometrainer, hvis det er vigtigere)",
         ],
         specs: [
-          { label: "Type", value: "Smart indoor bike" },
-          { label: "Modstand", value: "Magnetisk" },
-          { label: "Apps", value: "Zwift, Kinomap, Exercycle" },
+          { label: "Type", value: "Dedicated smart bike" },
+          { label: "Brand", value: "Wahoo" },
+          { label: "Max watt", value: "2200 W" },
         ],
-        feedProductId: "Fitnessengros.dk:BHH9340S",
+        feedProductId: "Cykelpartner.dk:850010131801",
+      },
+      {
+        id: "wahoo-kickr-bike-pro",
+        name: "Wahoo KICKR Bike PRO — Smart Bike",
+        badge: "Bedste flagship",
+        summary:
+          "Toptunet Wahoo indoor-racer til dem, der vil have maksimal realisme og features uden at eje en separat landvejs-cykel til Zwift. Flagship — kun hvis budgettet og vanen er der.",
+        pros: [
+          "Flagship smart bike med live partnerpris",
+          "Maksimal Wahoo/Zwift-oplevelse i én maskine",
+          "Ingen baghjuls-montering",
+        ],
+        cons: [
+          "Meget dyr — Shift dækker de fleste premium-behov",
+          "Overkill, hvis du kun kører 1–2 pas om ugen",
+        ],
+        specs: [
+          { label: "Type", value: "Dedicated smart bike" },
+          { label: "Brand", value: "Wahoo" },
+          { label: "Niveau", value: "Flagship" },
+        ],
+        feedProductId: "Cykelpartner.dk:850048106628",
       },
     ],
     howToChoose:
-      "Vil du have interaktiv træning uden at låse dig til ét studium? Start med Odin S1000 (eller S900, hvis budgettet er strammere). Ren pris først? Reebok i-Bike. Vil du op i mere “smart bike”-premium med magnet/Bluetooth? BH Xcalibur. Jagter du Peloton-hold eller Wahoo/Tacx-landeveisrealisme, så læs afsnittene om brugertyper — de modeller er referencepunkter, men vores shop-links er på det, vi faktisk kan spore via partnere. Til Zwift i dybden: se Bedste cykel til Zwift 2026.",
+      "Vil du have interaktiv træning uden at låse dig til ét studium? Start med Odin S1000 (eller Reebok i-Bike på budget). Jagter du landevejs-realisme uden montering? Wahoo Kickr Bike Shift — eller KICKR Bike PRO, hvis det er all-in. Har du allerede en racercykel? Så er en hometrainer ofte klogere — se Bedste hometrainer 2026. Til Zwift i dybden: Bedste cykel til Zwift 2026.",
     learningSections: [
       {
         heading: "Hvad gør en cykel “smart”?",
@@ -2086,22 +2086,22 @@ export const guides: Guide[] = [
         heading: "De 3 hovedkategorier af smart bikes",
         paragraphs: [
           "A. Peloton-typen (alt-i-én med stor skærm): Til dig, der vil have instruktører, musik, hold og plug-and-play i stuen. Reference: Peloton Bike / Bike+, Technogym Bike, Bowflex VeloCore. Du betaler for oplevelsen — og ofte et abonnement, der er bundet til skærmen.",
-          "B. Zwift-nørden (dedikerede indendørs racercykler): Til cykelryttere og triatleter, der vil have landevejsfølelse uden at spænde landvejs-cyklen på en hometrainer hver dag. Reference: Wahoo KICKR BIKE, Tacx NEO Bike Plus, Wattbike Atom. Her er geometri, watt og (på toppen) tilt i fokus.",
-          "C. Budget-smart (egen tablet/iPad): Til dig, der vil have det interaktive uden 20.000+ kr. Du køber en cykel uden stor skærm, sætter en tablet i holderen og forbinder via Bluetooth. Reference i markedet: Schwinn IC8, Keiser M3i — og i vores danske partnerfeeds modeller som Odin S900/S1000 og Reebok i-Bike, der eksplicit nævner Zwift og Kinomap.",
+          "B. Zwift-nørden (dedikerede indendørs racercykler): Til cykelryttere og triatleter, der vil have landevejsfølelse uden at spænde landvejs-cyklen på en hometrainer hver dag. Nu med live CTA: Wahoo Kickr Bike Shift og KICKR Bike PRO via Cykelpartner. Tacx NEO Bike Plus er stadig markedsreference, men ligger ikke stabilt på lager i feedet.",
+          "C. Budget-smart (egen tablet/iPad): Til dig, der vil have det interaktive uden 15–20.000+ kr. Du køber en cykel uden stor skærm, sætter en tablet i holderen og forbinder via Bluetooth. I vores feeds: Odin S1000 og Reebok i-Bike, der eksplicit nævner Zwift og Kinomap.",
         ],
       },
       {
         heading: "Bedste cykel til Zwift",
         paragraphs: [
           "Til Zwift er tablet-holder + stabil Bluetooth (gerne FTMS) + ærlig watt vigtigere end en indbygget underholdningsskærm. Du vil typisk undgå lukkede økosystemer, hvor modstand og indhold er låst.",
-          "Blandt modellerne med live pris hos vores partnere er Odin S1000 vores primære anbefaling til Zwift, med Reebok i-Bike som budgetvalg og BH Xcalibur som premium-smart. Går du i dybden på watt, kompatibilitet og race-setup, så læs vores dedikerede guide Bedste cykel til Zwift 2026.",
+          "Spin-smart: Odin S1000. Premium dedicated: Kickr Bike Shift. Har du egen racercykel: KICKR CORE / Tacx Neo i Bedste hometrainer 2026. Går du i dybden på watt og race-setup: Bedste cykel til Zwift 2026.",
         ],
       },
       {
         heading: "Hometrainer til din egen racercykel",
         paragraphs: [
-          "Har du allerede en race- eller gravelcykel, er en smart hometrainer ofte det rigtige køb: direct drive til watt og pasform, wheel-on hvis du sjældent kører inde. En dedikeret smartbike vinder kun, når bekvemmelighed betyder mere end at cyklen føles som din.",
-          "Hele valget — kassette, thru-axle, støj og hvad vi kan (og ikke kan) linke til — står i Bedste hometrainer 2026. Anbefalingerne med “Se pris” her er smartbikes. Til Zwift-cykler i dybden: Bedste cykel til Zwift 2026.",
+          "Har du allerede en race- eller gravelcykel, er en smart hometrainer ofte det rigtige køb: direct drive til watt og pasform, wheel-on hvis du sjældent kører inde. En dedikeret smartbike vinder, når bekvemmelighed betyder mere end at cyklen føles som din.",
+          "Hele valget — kassette, thru-axle, støj og live priser på KICKR CORE, Tacx Neo og Elite — står i Bedste hometrainer 2026. Anbefalingerne her er smartbikes, du sætter dig på uden montering.",
         ],
       },
       {
@@ -2131,7 +2131,7 @@ export const guides: Guide[] = [
                 "Gaming & e-sport",
                 "Virtuel 3D-verden (avatars, løb, clubs)",
                 "~150 kr.",
-                "Odin, Reebok, BH — ref: Wahoo/Tacx",
+                "Odin, Reebok, KICKR Bike",
               ],
             },
             {
@@ -2149,7 +2149,7 @@ export const guides: Guide[] = [
                 "Realistiske ruter",
                 "AR/video af rigtige veje (Alpe d’Huez, Mallorca…)",
                 "~120 kr.",
-                "Åbne smart bikes (Wahoo, Tacx, Wattbike…)",
+                "Åbne smart bikes (Wahoo, Tacx…)",
               ],
             },
             {
@@ -2196,12 +2196,12 @@ export const guides: Guide[] = [
       {
         question: "Hvornår er hometrainer + rigtig cykel bedre?",
         answer:
-          "Hvis du allerede har en race-/landevejscykel og vil have den mest realistiske watt og pasform, er en god smart hometrainer (fx Wahoo/Tacx-økosystemet) ofte klogere end en dedikeret indoor racer — især hvis du også cykler udenfor. Dedikeret smart bike vinder på bekvemmelighed: ingen daglig montering.",
+          "Hvis du allerede har en race-/landevejscykel og vil have den mest realistiske watt og pasform, er en god smart hometrainer (fx Wahoo KICKR CORE eller Tacx Neo) ofte klogere end en dedikeret indoor racer — især hvis du også cykler udenfor. Dedikeret smart bike vinder på bekvemmelighed: ingen daglig montering.",
       },
       {
         question: "Hvilken smartcykel er bedst til hjemmet lige nu?",
         answer:
-          "Blandt modeller med live partnerpris: Odin S1000 som allround, Reebok i-Bike som budget, BH Xcalibur som premium-smart. Peloton/Wahoo/Tacx er vigtige referencepunkter i markedet, men shop-CTA’erne her følger det, vi kan spore via Partner-Ads.",
+          "Spin-smart med live pris: Odin S1000 (allround) eller Reebok i-Bike (budget). Premium dedicated: Wahoo Kickr Bike Shift — eller KICKR Bike PRO som flagship. Har du egen racercykel, start i Bedste hometrainer 2026 i stedet.",
       },
       {
         question: "Hvordan ser jeg flere smart-/Zwift-tilbud?",
@@ -2221,60 +2221,126 @@ export const guides: Guide[] = [
     slug: "bedste-cykel-til-zwift-2026",
     title: "Bedste cykel til Zwift 2026",
     excerpt:
-      "Zwift hjemme uden hometrainer-ballade: Bluetooth, watt og fire Zwift-kompatible cykler med aktuelle priser.",
+      "Zwift hjemme: hometrainer til egen cykel, Wahoo smart bike eller budget spin — fire Zwift-setups med live priser.",
     metaDescription:
-      "Find den bedste cykel til Zwift i 2026. Guide til Bluetooth, watt og tablet-setup — plus fire Zwift-kompatible motionscykler med live priser fra danske partnere.",
+      "Find den bedste cykel til Zwift i 2026. KICKR CORE, Kickr Bike Shift og Zwift-spin med live priser fra danske partnere.",
     categorySlug: "motionscykel",
     publishedAt: "2026-11-04",
-    updatedAt: "2026-11-07",
+    updatedAt: "2026-11-11",
     intro:
-      "“Bedste cykel til Zwift” er en af de søgninger, der afgør, om du ender med en frustrerende spin bike uden signal — eller en cykel der faktisk spiller med i Watopia. Du behøver ikke en Wahoo KICKR BIKE til at komme i gang, men du skal vælge mellem tre setup: direct drive-hometrainer til din egen racercykel, en billigere wheel-on-rulle, eller en dedikeret smartbike du bare sætter dig på. Her får du det valg, kriterierne, og fire Zwift-kompatible cykler med shop-links. Hometrainere fra Wahoo og Tacx er markedsreferencer — de ligger ikke som købbare anbefalinger i vores partnerfeeds lige nu.",
+      "“Bedste cykel til Zwift” er en af de søgninger, der afgør, om du ender med en frustrerende spin bike uden signal — eller et setup der faktisk spiller med i Watopia. Du skal vælge mellem tre veje: direct drive-hometrainer til din egen racercykel, en dedikeret smartbike du bare sætter dig på, eller en billigere Zwift-kompatibel spin bike. Her får du valget, kriterierne og fire anbefalinger med “Se pris”: Wahoo KICKR CORE 2 og Tacx Neo 2T til egen cykel, Kickr Bike Shift som dedicated indoor-racer, og Odin S1000 som spin-smart indgang.",
     criteria: [
       {
         title: "Eksplicit Zwift-kompatibilitet",
         description:
-          "Prioritér cykler, der nævner Zwift (og gerne Kinomap) i produktteksten. “Har Bluetooth” er et svagt signal — det kan være til en ejer-app uden power til Zwift.",
+          "Prioritér cykler/trainers, der nævner Zwift (og gerne Kinomap) i produktteksten. “Har Bluetooth” er et svagt signal — det kan være til en ejer-app uden power til Zwift.",
       },
       {
         title: "Watt og kadence til races",
         description:
-          "I Zwift-løb er stabile watt vigtigere end blinkende displays. Tjek power-angivelser, og vær skeptisk over for urealistisk lave priser med “pro watt”. Til seriøs racing er dedikerede smart trainers/racercykler (Wahoo, Tacx, Wattbike) reference — vores anbefalinger her er det bedste, vi kan pege på via danske partnerfeeds.",
+          "I Zwift-løb er stabile watt vigtigere end blinkende displays. Tjek power-angivelser, og vær skeptisk over for urealistisk lave priser med “pro watt”. Til seriøs racing er direct drive (KICKR CORE / Tacx Neo) eller en dedikeret KICKR Bike det rigtige niveau — spin-smart er fin til at bygge vanen.",
       },
       {
         title: "Tablet-holder og skærm-setup",
         description:
-          "Zwift kører bedst på iPad, TV via Apple TV/gaming-PC, eller stor skærm. Cyklen skal have en stabil holder, så du ikke stirrer ned i en telefon mellem styret. Planlæg kabler/strøm, før cyklen står midt i stuen.",
+          "Zwift kører bedst på iPad, TV via Apple TV/gaming-PC, eller stor skærm. Cyklen skal have en stabil holder (eller et bord/stativ ved hometraineren), så du ikke stirrer ned i en telefon. Planlæg kabler/strøm, før setup’et står midt i stuen.",
       },
       {
         title: "Modstand der kan følge bakker",
         description:
-          "Jo tættere cyklen er på app-styret/elektronisk modstand, jo bedre bakkefølelse. Mange spin bikes kombinerer svinghjul med styret magnetniveau. Det er godt nok til de fleste — ikke identisk med NEO/KICKR.",
+          "Jo tættere setup’et er på app-styret/elektronisk modstand, jo bedre bakkefølelse. Direct drive og KICKR Bike er i top. Mange spin bikes kombinerer svinghjul med styret magnetniveau — godt nok til de fleste zone-2- og social rides.",
       },
       {
         title: "Pasform til lange Zwift-pas",
         description:
-          "Zwift-ture kan vare 45–90 minutter. Saddel, reach og mulighed for at rejse dig i bakker betyder mere end RGB-lys på computeren. Budgetér evt. til bedre saddel.",
+          "Zwift-ture kan vare 45–90 minutter. På hometrainer beholder du din egen saddel og fit. På smartbike/spin betyder saddel, reach og mulighed for at rejse dig i bakker mere end RGB-lys.",
       },
       {
         title: "Støj når du “sprinter” i spillet",
         description:
-          "Zwift frister til stående accelerations. Det er dér, lejligheden klager. Måtte, tidspunkt og realistiske forventninger — samme regler som spinning.",
+          "Zwift frister til stående accelerations. Det er dér, lejligheden klager. Direct drive er typisk mere stille end spin/wheel-on. Måtte, tidspunkt og realistiske forventninger gælder stadig.",
       },
     ],
     products: [
       {
+        id: "zwift-kickr-core-2",
+        name: "Wahoo KICKR CORE 2 — Hometrainer med 11-speed kassette",
+        badge: "Bedst til egen cykel",
+        summary:
+          "Har du allerede en race- eller gravelcykel, er CORE 2 den mest fornuftige Zwift-indgang: direct drive, live pris og Wahoo-økosystem uden flagship-prisen.",
+        pros: [
+          "Din pasform og saddel",
+          "Zwift-klar direct drive",
+          "Skarp pris ift. Neo / KICKR Bike",
+        ],
+        cons: [
+          "Kræver montering (hjul af + kassette-tjek)",
+          "Ikke “sæt dig og kør” for hele husstanden",
+        ],
+        specs: [
+          { label: "Type", value: "Direct drive hometrainer" },
+          { label: "Brand", value: "Wahoo" },
+          { label: "Path", value: "Egen cykel" },
+        ],
+        feedProductId: "Cykelpartner.dk:850048106611",
+      },
+      {
+        id: "zwift-tacx-neo-2t",
+        name: "Tacx Neo 2T T2875 — Smart hometrainer 2200 Watt",
+        badge: "Bedste premium trainer",
+        summary:
+          "Når Zwift-races og watt er alvor: Neo 2T giver mere realisme og stilhed end CORE-klassen — stadig på din egen cykel.",
+        pros: [
+          "Høj watt og præcis power",
+          "Meget stille direct drive",
+          "Reference-niveau til struktureret træning",
+        ],
+        cons: [
+          "Dyrere end CORE 2",
+          "Stadig montering hver gang du skifter mellem ude/inde",
+        ],
+        specs: [
+          { label: "Type", value: "Direct drive hometrainer" },
+          { label: "Brand", value: "Garmin Tacx" },
+          { label: "Max watt", value: "2200 W" },
+        ],
+        feedProductId: "Cykelpartner.dk:8714895058405",
+      },
+      {
+        id: "zwift-kickr-bike-shift",
+        name: "Wahoo Kickr Bike Shift — Smart Bike",
+        badge: "Bedste dedicated Zwift-cykel",
+        summary:
+          "Vil du have Zwift uden at montere noget? Kickr Bike Shift er den dedicated indoor-racer med live pris — landevejs-følelse og Wahoo-integration i én maskine.",
+        pros: [
+          "Ingen daglig montering",
+          "Dedikeret smart bike (ikke kun spin + Bluetooth)",
+          "Stærkt til husstande der deler Zwift-tid",
+        ],
+        cons: [
+          "Dyrere end hometrainer + egen cykel",
+          "Ikke din udecykels exact fit",
+        ],
+        specs: [
+          { label: "Type", value: "Dedicated smart bike" },
+          { label: "Brand", value: "Wahoo" },
+          { label: "Path", value: "Sæt dig og kør" },
+        ],
+        feedProductId: "Cykelpartner.dk:850010131801",
+      },
+      {
         id: "zwift-odin-s1000",
         name: "Odin S1000 Spinningcykel (Kinomap & Zwift)",
-        badge: "Bedst til Zwift",
+        badge: "Bedste spin-smart indgang",
         summary:
-          "Vores førstevalg blandt Zwift-kompatible cykler med live pris: tydelig Zwift/Kinomap-vinkel og nok cykel til både zone-2 og intervaller i spillet.",
+          "Zwift uden Wahoo-budget: tydelig Zwift/Kinomap-vinkel og nok cykel til zone-2 og intervaller, mens du bygger vanen — eller før du opgraderer til CORE/KICKR Bike.",
         pros: [
           "Zwift nævnt eksplicit",
-          "Solid spinning-base til bakker og sprint",
+          "Markant billigere end KICKR Bike",
           "Frihed til egen skærm/tablet",
         ],
         cons: [
-          "Ikke KICKR/NEO-niveau af bakke-simulation",
+          "Ikke KICKR/Neo-niveau af bakke-simulation",
           "Kræver Zwift-abonnement + egen enhed",
         ],
         specs: [
@@ -2284,87 +2350,21 @@ export const guides: Guide[] = [
         ],
         feedProductId: "Apuls.dk:15043",
       },
-      {
-        id: "zwift-reebok-i-bike",
-        name: "Reebok i-Bike Spinningcykel (Zwift & Kinomap)",
-        badge: "Bedste billige Zwift-cykel",
-        summary:
-          "Vil du ind i Zwift uden at brænde budgettet af på en racercykel? i-Bike er det skarpeste billige udgangspunkt i vores feed.",
-        pros: [
-          "Lav entry-pris til Zwift-kompatibilitet",
-          "Kinomap med i samme pakke",
-          "Fin til at teste, om Zwift er dig",
-        ],
-        cons: [
-          "Opgrader, hvis du kører mange races om ugen",
-          "Mindre premium finish end Odin S1000 / BH",
-        ],
-        specs: [
-          { label: "Type", value: "Budget Zwift spin bike" },
-          { label: "Apps", value: "Zwift, Kinomap" },
-          { label: "Setup", value: "Tablet / ekstern skærm" },
-        ],
-        feedProductId: "Apuls.dk:15655",
-      },
-      {
-        id: "zwift-odin-s900",
-        name: "Odin S900 Spinningcykel (Kinomap & Zwift)",
-        badge: "Bedste mellemklasse",
-        summary:
-          "Når S1000 er lige i overkanten, men du stadig vil have Odin-familiens Zwift/Kinomap-fokus. Stærkt midtervalg til jævnlig brug.",
-        pros: [
-          "Zwift- og Kinomap-klar",
-          "Ofte skarpere pris end S1000",
-          "God til 3–5 pas om ugen",
-        ],
-        cons: [
-          "S1000 er det stærkere “Zwift first”-valg",
-          "Stadig spin-vibration i lejlighed",
-        ],
-        specs: [
-          { label: "Type", value: "Zwift-kompatibel spin bike" },
-          { label: "Apps", value: "Zwift, Kinomap" },
-          { label: "Setup", value: "Tablet / ekstern skærm" },
-        ],
-        feedProductId: "Apuls.dk:15029",
-      },
-      {
-        id: "zwift-bh-xcalibur",
-        name: "BH Fitness Xcalibur Smart Bike",
-        badge: "Bedste premium Zwift-bike i feed",
-        summary:
-          "Smart bike med magnetisk modstand og Bluetooth til Zwift, Kinomap og Exercycle Connect — når du vil op i en mere “connected” maskine end budget-spin.",
-        pros: [
-          "Bluetooth til Zwift/Kinomap",
-          "Magnetisk modstand",
-          "Tydelig smart bike-positionering",
-        ],
-        cons: [
-          "Dyrere end Odin/Reebok",
-          "Stadig ikke Wahoo KICKR BIKE / Tacx NEO Bike",
-        ],
-        specs: [
-          { label: "Type", value: "Smart indoor bike" },
-          { label: "Modstand", value: "Magnetisk" },
-          { label: "Apps", value: "Zwift, Kinomap, Exercycle" },
-        ],
-        feedProductId: "Fitnessengros.dk:BHH9340S",
-      },
     ],
     howToChoose:
-      "Zwift først? Odin S1000. Budget først? Reebok i-Bike. Mellemklasse? Odin S900. Premium i det, vi kan linke til? BH Xcalibur. Kører du allerede race udenfor og vil have maksimal watt-realisme, så overvej smart hometrainer til din egen cykel — eller en dedikeret Wahoo/Tacx-bike, når den lander hos en partner. For hele smart-landskabet (Peloton-typen, apps, købsparametre): Bedste smartcykler 2026.",
+      "Har du race-/gravelcykel? Start med Wahoo KICKR CORE 2 (eller Tacx Neo 2T, hvis watt/stilhed er premium). Vil du bare sætte dig? Kickr Bike Shift. Budget først, mens vanen bygges? Odin S1000. Dybde på trainers: Bedste hometrainer 2026. Hele smart-landskabet: Bedste smartcykler 2026.",
     learningSections: [
       {
-        heading: "Hvad kræver Zwift af din cykel?",
+        heading: "Hvad kræver Zwift af dit setup?",
         paragraphs: [
           "Zwift skal kunne læse din kadence og dine watt (eller estimere power) og helst styre modstanden, når vejen stiger. Det kræver en kompatibel trainer/cykel — ikke bare en YouTube-video på en tablet over styret.",
-          "Derfor er “Zwift” i produkttitlen et stærkere købssignal end generisk “fitness-app”.",
+          "Derfor er “Zwift” i produkttitlen (eller en kendt smart trainer) et stærkere købssignal end generisk “fitness-app”.",
         ],
       },
       {
         heading: "Zwift-alternativ til hjemmet",
         paragraphs: [
-          "Hvis 3D-verdenen ikke er dig: Rouvy til video-realisme, Kinomap til ruter/apps på mange EU-cykler, eller studio-apps (Peloton m.fl.) til hold. En åben Bluetooth-cykel lader dig skifte platform uden at skifte maskine.",
+          "Hvis 3D-verdenen ikke er dig: Rouvy til video-realisme, Kinomap til ruter/apps på mange EU-cykler, eller studio-apps (Peloton m.fl.) til hold. En åben Bluetooth-cykel eller smart trainer lader dig skifte platform uden at skifte maskine.",
           "Se også app-tabellen i Bedste smartcykler & interaktive motionscykler 2026.",
         ],
       },
@@ -2372,8 +2372,8 @@ export const guides: Guide[] = [
         heading: "Smart hometrainer vs. dedikeret Zwift-cykel",
         paragraphs: [
           "Der er tre måder at komme ind i Watopia på. Direct drive: baghjulet af, kæden på trainerens kassette. Wheel-on: hjulet bliver på, og et dæk presses mod en rulle. Dedikeret smartbike: et stel, der aldrig skal udenfor. Pasformen vinder på de to første, hvis racercyklen allerede er tilpasset dig. Bekvemmeligheden vinder på den tredje, når flere i huset skal køre, eller du ikke orker at montere hver gang.",
-          "Direct drive kræver at kassetten matcher din (eller at traineren bruger en Zwift Cog / virtuel gearing, så du ikke skifter kassette). Thru-axle og quick release er ikke det samme beslag — tjek hvad din ramme har, før du køber. Wheel-on er ligeglad med kassette, men dæktryk og rullens tryk flytter watt-tallet, og dækket mod rullen larmer mere. En smartbike som Odin S1000 springer begge problemer over: du sætter dig, og Bluetooth klarer resten. Til gengæld er geometrien et kompromis, og bakkefølelsen er ikke en KICKR eller Tacx NEO.",
-          "Vores partnerfeeds har Zwift-cykler med live pris. Direct drive- og wheel-on-hometrainere er sjældne i samme feeds — Wahoo og Tacx er derfor reference her. Hele hometrainer-valget (kassette, thru-axle, støj) står i Bedste hometrainer 2026. Vælg hometrainer, hvis landevej er din identitet. Vælg en af cyklerne herunder, hvis Zwift er vanen uden montering.",
+          "Direct drive kræver at kassetten matcher din (eller at traineren bruger en Zwift Cog / virtuel gearing). Thru-axle og quick release er ikke det samme beslag — tjek hvad din ramme har, før du køber. En smartbike som Kickr Bike Shift springer monteringen over. Odin S1000 er den billigere spin-variant: godt nok til de fleste, ikke identisk med KICKR/Neo.",
+          "Vi linker nu direkte til både trainers og dedicated bikes via Cykelpartner — plus spin-smart via Apuls. Hele hometrainer-valget (kassette, thru-axle, støj, wheel-on) står i Bedste hometrainer 2026.",
         ],
         comparison: {
           caption: "Tre veje til Zwift — se også hometrainer-guiden",
@@ -2386,7 +2386,7 @@ export const guides: Guide[] = [
                 "Din egen cykel",
                 "Hjul af, kassette og aksel skal passe",
                 "Typisk den mest stabile",
-                "Lavere end wheel-on",
+                "Lavere end wheel-on/spin",
                 "Du cykler ude og vil have racercyklen",
               ],
             },
@@ -2405,8 +2405,8 @@ export const guides: Guide[] = [
               cells: [
                 "Stellet du køber",
                 "Sæt dig og kør",
-                "God til de fleste, ikke NEO/KICKR",
-                "Afhænger af svinghjul og sprint",
+                "God til dedikeret / top på KICKR Bike",
+                "Afhænger af model og sprint",
                 "Zwift er vanen, og flere skal dele",
               ],
             },
@@ -2417,7 +2417,7 @@ export const guides: Guide[] = [
         heading: "Typiske Zwift-fejl før køb",
         paragraphs: [
           "At købe en billig spin bike uden Bluetooth og tro, at en telefon-holder gør den “smart”. At glemme abonnement og tablet i budgettet. At ignorere støj, når du rejser dig i et race.",
-          "Omvendt: at vente på den ultimative Wahoo/Tacx-cykel i årevis, mens en Odin/Reebok kunne have bygget vanen i morgen.",
+          "Omvendt: at vente på den ultimative flagship i årevis, mens en CORE 2 eller Odin S1000 kunne have bygget vanen i morgen.",
         ],
       },
     ],
@@ -2425,7 +2425,7 @@ export const guides: Guide[] = [
       {
         question: "Hvilken cykel er bedst til Zwift?",
         answer:
-          "Blandt vores partnerudvalg: Odin S1000. Til budget: Reebok i-Bike. Til premium-smart i feed: BH Xcalibur. Dedikerede racercykler fra Wahoo/Tacx er markedsreferencer til maksimal realisme.",
+          "Har du egen racercykel: Wahoo KICKR CORE 2 (eller Tacx Neo 2T som premium). Dedicated uden montering: Kickr Bike Shift. Budget spin-smart: Odin S1000.",
       },
       {
         question: "Kan jeg køre Zwift på en almindelig spinningcykel?",
@@ -2435,7 +2435,7 @@ export const guides: Guide[] = [
       {
         question: "Hometrainer eller smartbike til Zwift?",
         answer:
-          "Hometrainer (direct drive) hvis du allerede har en racercykel og vil beholde pasform og watt. Smartbike hvis du vil sætte dig uden at montere noget, og hvis flere skal dele. Wheel-on er den billige mellemvej og larmer mere. Læs Bedste hometrainer 2026 for direct drive vs. wheel-on — vores shop-links her er smartbikes.",
+          "Hometrainer (direct drive) hvis du allerede har en racercykel og vil beholde pasform og watt. Smartbike hvis du vil sætte dig uden at montere noget, og hvis flere skal dele. Wheel-on er den billige mellemvej og larmer mere. Læs Bedste hometrainer 2026 for hele trainer-feltet.",
       },
       {
         question: "Skal jeg bruge computer, iPad eller Apple TV?",
@@ -2455,7 +2455,7 @@ export const guides: Guide[] = [
       {
         question: "Hvordan køber jeg via Fitlist?",
         answer:
-          "Klik “Se pris” på en anbefaling, eller filtrér Motionscykel → Smart / Zwift. Du handler hos partneren; Fitlist kan få provision uden merpris for dig.",
+          "Klik “Se pris” på en anbefaling, eller filtrér Motionscykel → Smart / Zwift (og Hometrainer til trainers). Du handler hos partneren; Fitlist kan få provision uden merpris for dig.",
       },
     ],
     relatedSlugs: [
@@ -10674,16 +10674,16 @@ export const guides: Guide[] = [
     slug: "bedste-hometrainer-2026",
     title: "Bedste hometrainer 2026 — direct drive vs. wheel-on",
     excerpt:
-      "Spænd din egen racercykel op: direct drive vs. wheel-on, kassette, thru-axle og Zwift — plus ærlig shop-vejledning, når Kickr/Tacx mangler i partnerfeeds.",
+      "Spænd din egen racercykel op: direct drive vs. wheel-on, kassette, thru-axle og Zwift — med Wahoo, Tacx og Elite med live priser.",
     metaDescription:
-      "Bedste hometrainer 2026: direct drive vs. wheel-on til egen cykel. Kassette, støj, Zwift — og smartbike-alternativer med live priser.",
+      "Bedste hometrainer 2026: direct drive vs. wheel-on til egen cykel. KICKR CORE, Tacx Neo, Elite Direto og wheel-on med live priser.",
     categorySlug: "motionscykel",
     intentSlug: "hometrainer",
-    recommendationsHeading: "Sådan køber du (og hvad vi kan linke til)",
+    recommendationsHeading: "Vores anbefalinger",
     publishedAt: "2026-11-11",
     updatedAt: "2026-11-11",
     intro:
-      "Har du allerede en race- eller gravelcykel, er en hometrainer ofte det rigtige indoor-køb: du beholder pasform, sadlen og watt-følelsen. Smartcykel-guides dækker dedikerede Zwift-bikes. Her er fokus direct drive vs. wheel-on — kassette, thru-axle, støj og Zwift. Vigtigt: Wahoo KICKR- og Tacx-hometrainere ligger typisk ikke som købbare varer i vores Partner-Ads-feeds lige nu. Du får derfor købsrammen + referencepunkter, og “Se pris” på de smartbikes, vi faktisk kan spore, hvis du hellere vil springe monteringen over.",
+      "Har du allerede en race- eller gravelcykel, er en hometrainer ofte det rigtige indoor-køb: du beholder pasform, sadlen og watt-følelsen. Smartcykel-guides dækker dedikerede Zwift-bikes. Her er fokus direct drive vs. wheel-on — kassette, thru-axle, støj og Zwift — plus fire konkrete trainers med “Se pris” via Cykelpartner: Wahoo KICKR CORE 2, Tacx Neo 2T, Elite Direto XR-T og en budget wheel-on.",
     criteria: [
       {
         title: "Direct drive vs. wheel-on",
@@ -10718,103 +10718,104 @@ export const guides: Guide[] = [
     ],
     products: [
       {
-        id: "ref-direct-drive",
-        name: "Direct drive-hometrainer (fx Wahoo KICKR / Tacx)",
-        badge: "Reference — bedst til egen cykel",
+        id: "wahoo-kickr-core-2",
+        name: "Wahoo KICKR CORE 2 — Hometrainer med 11-speed kassette",
+        badge: "Bedst samlet",
         summary:
-          "Markedets standard til seriøs indoor: baghjul af, præcis watt, Zwift-styring. KICKR- og Tacx-trainere er de navne, ryttere sammenligner med. Vi kan normalt ikke give “Se pris” på dem via Partner-Ads endnu — køb dem dér, din cykelshop eller stor webshop har dem på lager, og brug kriterierne ovenfor.",
+          "Direct drive-allrounderen til de fleste: Zwift-klar, solid watt og Wahoo-økosystemet uden at gå helt til flagship-prisen. Førstevalg, hvis du spænder din egen cykel op flere gange om ugen.",
         pros: [
-          "Bedste pasform (din egen cykel)",
-          "Stabile watt til race/zoner",
-          "Mindre dækslid end wheel-on",
-          "Økosystem (Wahoo/Tacx) er gennemtestet til Zwift",
+          "Direct drive med live partnerpris",
+          "Gennemtestet til Zwift og struktureret træning",
+          "11-speed kassette med i pakken",
+          "God balance mellem pris og “rigtig” trainer-følelse",
         ],
         cons: [
-          "Ikke i vores partnerfeed lige nu (ingen live CTA)",
-          "Kræver kassette/adapters",
-          "Daglig eller ugentlig montering",
+          "Kræver montering (hjul af)",
+          "Ikke samme top-watt / realistiske følelse som Neo 2T",
         ],
         specs: [
           { label: "Type", value: "Direct drive smart trainer" },
-          { label: "Reference", value: "Wahoo KICKR / Tacx Neo m.fl." },
-          { label: "Shop", value: "Ikke i Partner-Ads feed" },
+          { label: "Brand", value: "Wahoo" },
+          { label: "Kassette", value: "11-speed inkluderet" },
         ],
+        feedProductId: "Cykelpartner.dk:850048106611",
       },
       {
-        id: "ref-wheel-on",
-        name: "Wheel-on-hometrainer / cykelrulle",
-        badge: "Reference — billigste vej",
+        id: "tacx-neo-2t",
+        name: "Tacx Neo 2T T2875 — Smart hometrainer 2200 Watt",
+        badge: "Bedste premium",
         summary:
-          "Hjulet bliver på; en rulle driver modstand. Hurtig at sætte op, lavere pris, mere støj og mere usikker power. Fine til vedligeholdelsestræning — ikke førstevalg til seriøse Zwift-løb.",
+          "Når watt, bakkefølelse og støjsvag træning er vigtigere end den billigste billet ind. Neo 2T er referencepunktet for seriøs indoor — især hvis du kører races eller strukturerede zoner.",
         pros: [
-          "Billigere indgang",
-          "Ingen kassette-skift",
-          "Hurtig on/off",
+          "Høj max-watt og præcis power",
+          "Meget stille direct drive",
+          "Zwift-styring i eliteklassen",
         ],
         cons: [
-          "Dækslid og mere larm",
+          "Dyrere end CORE 2 / Direto",
+          "Stadig montering og kassette-tjek",
+        ],
+        specs: [
+          { label: "Type", value: "Direct drive smart trainer" },
+          { label: "Brand", value: "Garmin Tacx" },
+          { label: "Max watt", value: "2200 W" },
+        ],
+        feedProductId: "Cykelpartner.dk:8714895058405",
+      },
+      {
+        id: "elite-direto-xr-t",
+        name: "Elite Direto XR-T — Interaktiv hometrainer med riser block",
+        badge: "Bedste mid-range",
+        summary:
+          "Stærkt Elite-valg midt i feltet: interaktiv direct drive med riser block — mere trainer for pengene, hvis Wahoo/Tacx-premium er for dyrt, men wheel-on er for tyndt.",
+        pros: [
+          "Interaktiv direct drive under premium-prisen",
+          "Riser block med i pakken",
+          "God Zwift-indgang uden at gå budget-rulle-vejen",
+        ],
+        cons: [
+          "Økosystem og support føles mindre “Wahoo” for nogle",
+          "Tjek kassette/adapters før køb",
+        ],
+        specs: [
+          { label: "Type", value: "Direct drive smart trainer" },
+          { label: "Brand", value: "Elite" },
+          { label: "Inkl.", value: "Riser block" },
+        ],
+        feedProductId: "Cykelpartner.dk:8020775039281",
+      },
+      {
+        id: "pathtaker-wheel-on",
+        name: "Pathtaker Wheel-On hometrainer — manuel justering",
+        badge: "Bedste budget wheel-on",
+        summary:
+          "Hurtig on/off uden kassette-skift: hjulet bliver på. Til sjældne regnvejrs-pas og lavt budget — ikke førstevalg til seriøse Zwift-løb.",
+        pros: [
+          "Laveste entry blandt vores hometrainere",
+          "Ingen kassette-skift",
+          "Hurtig at sætte op",
+        ],
+        cons: [
+          "Dækslid og mere larm end direct drive",
+          "Manuel justering — ikke app-styret bakke som KICKR/Neo",
           "Watt mindre præcise",
-          "Sjældent i vores partnerfeeds",
         ],
         specs: [
           { label: "Type", value: "Wheel-on / rulle" },
-          { label: "Shop", value: "Ikke stabilt i Partner-Ads" },
+          { label: "Brand", value: "Pathtaker" },
+          { label: "Modstand", value: "Manuel" },
         ],
-      },
-      {
-        id: "odin-s1000-fallback",
-        name: "Odin S1000 Spinningcykel (Kinomap & Zwift)",
-        badge: "Bedste alternativ med live pris",
-        summary:
-          "Hvis du vil have Zwift uden at vente på en Kickr i feedet — eller uden daglig montering — er S1000 vores stærkeste smartbike med “Se pris”. Det er ikke en hometrainer. Det er den ærlige plan B.",
-        pros: [
-          "Zwift/Kinomap med live partnerpris",
-          "Ingen baghjuls-montering",
-          "God til husstande der deler",
-        ],
-        cons: [
-          "Ikke din racercykels pasform",
-          "Ikke KICKR/NEO-bakke-realisme",
-          "Kræver egen tablet/skærm",
-        ],
-        specs: [
-          { label: "Type", value: "Smart spinningcykel" },
-          { label: "Apps", value: "Zwift, Kinomap" },
-          { label: "Partner", value: "Apuls.dk" },
-        ],
-        feedProductId: "Apuls.dk:15043",
-      },
-      {
-        id: "reebok-i-bike-fallback",
-        name: "Reebok i-Bike Spinningcykel (Zwift & Kinomap)",
-        badge: "Billigste Zwift-alternativ",
-        summary:
-          "Budget-vejen ind i Zwift, mens du sparer op til en direct drive — eller hvis hometrainer slet ikke er praktisk hjemme hos dig.",
-        pros: [
-          "Lav entry med Zwift-kompatibilitet",
-          "Live “Se pris”",
-          "Fin til at teste vanen",
-        ],
-        cons: [
-          "Ikke en hometrainer",
-          "Mindre premium end S1000 / Wahoo",
-        ],
-        specs: [
-          { label: "Type", value: "Budget Zwift spin bike" },
-          { label: "Apps", value: "Zwift, Kinomap" },
-          { label: "Partner", value: "Apuls.dk" },
-        ],
-        feedProductId: "Apuls.dk:15655",
+        feedProductId: "Cykelpartner.dk:5712934017454",
       },
     ],
     howToChoose:
-      "Har du race-/gravelcykel og vil have maksimal realisme? Direct drive (KICKR/Tacx-klassen) — køb uden for vores feed, indtil den lander hos en partner. Kun lejlighedsvis indoor? Wheel-on kan række. Vil du bare køre Zwift i aften uden værktøj? Odin S1000 (eller Reebok i-Bike på budget). Dybde på smartbikes: Bedste cykel til Zwift 2026.",
+      "Regelmæssig Zwift på egen race-/gravelcykel? Start med Wahoo KICKR CORE 2. Vil have maksimal watt og stilhed? Tacx Neo 2T. Vil have solid direct drive under premium? Elite Direto XR-T. Kun lejlighedsvis indoor på budget? Pathtaker Wheel-On. Vil du springe monteringen over? Se Bedste cykel til Zwift 2026.",
     learningSections: [
       {
         heading: "Direct drive vs. wheel-on vs. smartbike",
         paragraphs: [
           "Tre setup, tre kompromiser. Direct drive vinder på watt og pasform. Wheel-on vinder på pris og hastighed. Smartbike vinder på bekvemmelighed.",
-          "Fitlists shop-links følger Partner-Ads. Derfor er Kickr/Tacx reference her, mens S1000/i-Bike har “Se pris”.",
+          "Via Cykelpartner kan vi nu linke direkte til KICKR CORE, Tacx Neo, Elite Direto og en budget wheel-on — mens dedikerede smartbikes stadig er plan B, hvis du ikke vil montere.",
         ],
         comparison: {
           caption: "Vælg setup efter din cykel-identitet",
@@ -10823,11 +10824,11 @@ export const guides: Guide[] = [
           rows: [
             {
               label: "Direct drive",
-              cells: ["Din cykel", "Hjul af", "Bedst", "Sjældent"],
+              cells: ["Din cykel", "Hjul af", "Bedst", "Ja"],
             },
             {
               label: "Wheel-on",
-              cells: ["Din cykel", "Hurtig", "Ok", "Sjældent"],
+              cells: ["Din cykel", "Hurtig", "Ok", "Ja"],
             },
             {
               label: "Smartbike",
@@ -10844,10 +10845,10 @@ export const guides: Guide[] = [
         ],
       },
       {
-        heading: "Når feedet får hometrainere",
+        heading: "Wahoo vs. Tacx vs. Elite",
         paragraphs: [
-          "Så snart danske partnere feeder Kickr/Tacx/andre smart trainers ind i Partner-Ads, opdaterer vi anbefalingerne med live “Se pris”. Indtil da er denne guide din købsramme — ikke et tomt løfte om knapper, vi ikke kan ære.",
-          "Relaterede tilbud under Motionscykel → Hometrainer viser det, klassifikationen finder. Er listen tom, er markedet stadig tyndt i feeds.",
+          "Wahoo KICKR CORE 2 er den praktiske allrounder: god pris, Zwift-klar og et økosystem de fleste ryttere kender. Tacx Neo 2T er premium-valget, når støj, watt og bakkefølelse skal være i top. Elite Direto XR-T sidder midt imellem — mere trainer for pengene, hvis du ikke er låst til ét brand.",
+          "Wheel-on (Pathtaker) er bevidst et andet job: billig og hurtig, ikke race-præcis. Relaterede tilbud under Motionscykel → Hometrainer viser flere feedede trainers, når lager og priser skifter.",
         ],
       },
     ],
@@ -10860,7 +10861,7 @@ export const guides: Guide[] = [
       {
         question: "Kan jeg købe Wahoo KICKR via Fitlist?",
         answer:
-          "Ikke via live partner-CTA lige nu — den ligger typisk ikke i vores feeds. Brug kriterierne her, køb hos en forhandler der har den, og brug vores smartbike-links hvis du vil have “Se pris” i dag.",
+          "Ja — KICKR CORE 2 har “Se pris” via Cykelpartner i anbefalingerne her. Til dedikeret KICKR Bike (uden egen racercykel) se Bedste smartcykler 2026.",
       },
       {
         question: "Hometrainer eller smartcykel?",
@@ -10870,7 +10871,7 @@ export const guides: Guide[] = [
       {
         question: "Hvordan ser jeg aktuelle priser?",
         answer:
-          "På smartbike-anbefalingerne: “Se pris”. På Motionscykel → Smart / Zwift for flere cykler. Hometrainer-filteret viser feedede trainers, når de findes.",
+          "Klik “Se pris” på anbefalingerne, eller gå til Motionscykel → Hometrainer. Priser opdateres via partnerfeeds.",
       },
     ],
     relatedSlugs: [
