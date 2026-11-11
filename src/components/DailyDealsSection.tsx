@@ -29,10 +29,10 @@ export function DailyDealsSection({ products }: Props) {
             </p>
           </div>
           <Link
-            href="/maskiner"
+            href="/tilbud"
             className="shrink-0 font-display text-sm font-medium uppercase tracking-[0.14em] text-foreground underline-offset-4 transition-colors hover:text-accent hover:underline"
           >
-            Se alle maskiner
+            Se flere tilbud →
           </Link>
         </div>
 

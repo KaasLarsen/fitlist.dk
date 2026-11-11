@@ -206,18 +206,9 @@ function shuffleSeeded<T>(items: T[], seed: number): T[] {
   return arr;
 }
 
-/**
- * Dagens tilbud: på lager, med billede og rabat.
- * Sorteret efter størst rabat, derefter dato-seedet mix blandt topkandidater
- * så udvalget er stabilt hele dagen og skifter ved midnat (Europe/Copenhagen).
- */
-export async function getDailyDeals(opts?: {
-  limit?: number;
-}): Promise<FeedProduct[]> {
-  const limit = opts?.limit ?? 8;
-  const catalog = await getMachineCatalog();
-
-  const discounted = catalog
+/** På lager, med billede, kategori og gyldig rabat — sorteret efter størst rabat. */
+function getDiscountedProducts(catalog: FeedProduct[]): FeedProduct[] {
+  return catalog
     .filter(
       (p) =>
         p.inStock &&
@@ -231,6 +222,31 @@ export async function getDailyDeals(opts?: {
       if (db !== da) return db - da;
       return a.title.localeCompare(b.title, "da");
     });
+}
+
+/**
+ * Alle aktuelle rabatter (browse): samme filter som dagens tilbud,
+ * sorteret efter størst rabat — uden daglig shuffle/merchant-cap.
+ */
+export async function getAllDiscountedDeals(opts?: {
+  limit?: number;
+}): Promise<FeedProduct[]> {
+  const limit = opts?.limit ?? 60;
+  const catalog = await getMachineCatalog();
+  return getDiscountedProducts(catalog).slice(0, limit);
+}
+
+/**
+ * Dagens tilbud: på lager, med billede og rabat.
+ * Sorteret efter størst rabat, derefter dato-seedet mix blandt topkandidater
+ * så udvalget er stabilt hele dagen og skifter ved midnat (Europe/Copenhagen).
+ */
+export async function getDailyDeals(opts?: {
+  limit?: number;
+}): Promise<FeedProduct[]> {
+  const limit = opts?.limit ?? 8;
+  const catalog = await getMachineCatalog();
+  const discounted = getDiscountedProducts(catalog);
 
   if (discounted.length === 0) return [];
 

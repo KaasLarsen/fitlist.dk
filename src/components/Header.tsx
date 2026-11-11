@@ -6,7 +6,7 @@ import { useCallback, useEffect, useId, useRef, useState } from "react";
 import { HeaderSearch } from "@/components/HeaderSearch";
 
 const nav = [
-  { href: "/#dagens-tilbud", label: "Tilbud" },
+  { href: "/tilbud", label: "Tilbud" },
   { href: "/maskiner", label: "Maskiner" },
   { href: "/guides", label: "Guides" },
   { href: "/om", label: "Om" },
