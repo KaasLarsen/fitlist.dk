@@ -24,17 +24,36 @@ async function buildMachineCatalog(): Promise<FeedProduct[]> {
 
 /**
  * Samlet maskinekatalog (kun klassificerede produkter).
- * Caches IKKE som ét blob — det samlede katalog er >2 MB og Next.js Data Cache
- * afviser det, hvilket tidligere efterlod sider uden produkter. Per-feed-cache
- * (slimmet + klassificeret) er kilden; merge er billigt ved cache-hit.
+ * Caches IKKE som ét blob i Next Data Cache — det samlede katalog er >2 MB.
+ * Per-feed-cache er kilden; in-process memo undgår at merge’e alle feeds
+ * på hvert /api/search-keystroke inden for samme serverless-instance.
  */
+const CATALOG_MEMO_TTL_MS = 60_000;
+let catalogMemo: { at: number; value: FeedProduct[] } | null = null;
+let catalogInflight: Promise<FeedProduct[]> | null = null;
+
 export async function getMachineCatalog(): Promise<FeedProduct[]> {
-  try {
-    return await buildMachineCatalog();
-  } catch (err) {
-    console.error("[catalog] failed:", err);
-    return [];
+  const now = Date.now();
+  if (catalogMemo && now - catalogMemo.at < CATALOG_MEMO_TTL_MS) {
+    return catalogMemo.value;
   }
+
+  if (catalogInflight) return catalogInflight;
+
+  catalogInflight = (async () => {
+    try {
+      const value = await buildMachineCatalog();
+      catalogMemo = { at: Date.now(), value };
+      return value;
+    } catch (err) {
+      console.error("[catalog] failed:", err);
+      return [];
+    } finally {
+      catalogInflight = null;
+    }
+  })();
+
+  return catalogInflight;
 }
 
 function sortOffers(a: FeedProduct, b: FeedProduct): number {

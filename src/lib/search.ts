@@ -51,9 +51,16 @@ export function normalizeQuery(value: string): string {
     .replace(/\p{M}/gu, "");
 }
 
+/**
+ * `needle` forventes allerede normaliseret (fx fra searchSite).
+ * Flere tokens matches med AND, så "odin t620" rammer "Odin T620 Løbebånd".
+ */
 export function matchesQuery(haystack: string, needle: string): boolean {
   if (!needle) return false;
-  return normalizeQuery(haystack).includes(needle);
+  const hay = normalizeQuery(haystack);
+  const tokens = needle.split(/\s+/).filter(Boolean);
+  if (tokens.length <= 1) return hay.includes(needle);
+  return tokens.every((token) => hay.includes(token));
 }
 
 function sortProducts(a: FeedProduct, b: FeedProduct): number {

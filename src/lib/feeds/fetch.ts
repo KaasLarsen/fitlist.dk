@@ -21,7 +21,7 @@ import {
 } from "@/lib/feeds/cykelpartner-guide-ids";
 import type { FeedProduct } from "@/lib/feeds/types";
 
-const FEED_CACHE_VERSION = "v12";
+const FEED_CACHE_VERSION = "v13";
 const FEED_REVALIDATE_SECONDS = 21_600; // 6 timer
 /** Partner-Ads XML er ofte langsom; for lav timeout tømmer hele kataloget. */
 const DEFAULT_TIMEOUT_MS = 90_000;
@@ -37,12 +37,15 @@ export { getCykelpartnerGuideFeedProductIds } from "@/lib/feeds/cykelpartner-gui
 const FEED_FETCH_CONCURRENCY = 2;
 /**
  * Hård cap pr. merchant-feed efter classify — Next.js Data Cache max 2 MB/entry.
- * Prioritér på lager + billede, derefter lavest pris.
- * Holdes lavt: lange Partner-Ads-URL’er gør 300 varer let >2 MB.
+ * Slimmet payload er ~0.5–1.2 KB/vare, så 300 ligger langt under 1.4 MB-budgettet
+ * (ældre 120-cap skar mid-range maskiner som Odin T620 væk fra Apuls).
+ * Selection: maskiner før tilbehør, per-kategori round-robin + pris-spredning.
  */
-const FEED_CACHE_PRODUCT_LIMIT = 120;
+const FEED_CACHE_PRODUCT_LIMIT = 300;
 /** Soft ceiling under Next.js’ 2 MB Data Cache-loft (UTF-8 JSON). */
 const FEED_CACHE_MAX_BYTES = 1_400_000;
+/** Andel af cache-slots reserveret til maskiner (resten til tilbehør). */
+const FEED_CACHE_MACHINE_RATIO = 0.85;
 
 /**
  * Springes over i warm + katalog:
@@ -133,29 +136,76 @@ function slimFeedProducts(products: FeedProduct[]): FeedProduct[] {
   }));
 }
 
-function sortFeedProductsForCache(a: FeedProduct, b: FeedProduct): number {
+/** Tilbehør må ikke fylde maskin-slots (slug er `tilbehoer`, ikke `must-haves`). */
+function isAccessoryProduct(product: FeedProduct): boolean {
+  const slug = product.categorySlug;
+  return !slug || slug === "tilbehoer" || slug === "must-haves";
+}
+
+function compareStockImagePrice(a: FeedProduct, b: FeedProduct): number {
   if (a.inStock !== b.inStock) return a.inStock ? -1 : 1;
   const aImg = Boolean(a.image);
   const bImg = Boolean(b.image);
   if (aImg !== bImg) return aImg ? -1 : 1;
-  // Bevar category-diversitet: maskiner før “must-haves”-tunge feeds
-  const aMachine = a.categorySlug && a.categorySlug !== "must-haves" ? 0 : 1;
-  const bMachine = b.categorySlug && b.categorySlug !== "must-haves" ? 0 : 1;
-  if (aMachine !== bMachine) return aMachine - bMachine;
   if (a.price == null && b.price == null) return 0;
   if (a.price == null) return 1;
   if (b.price == null) return -1;
   return a.price - b.price;
 }
 
+/**
+ * Vælg jævnt hen over en pris-sorteret liste, så mid-range (fx Odin T620)
+ * overlever cap’en — ikke kun de billigste.
+ */
+function pickPriceDiverse(
+  sorted: readonly FeedProduct[],
+  limit: number,
+): FeedProduct[] {
+  if (limit <= 0 || sorted.length === 0) return [];
+  if (sorted.length <= limit) return sorted.slice();
+
+  const out: FeedProduct[] = [];
+  const used = new Set<number>();
+  for (let i = 0; i < limit; i++) {
+    const target =
+      limit === 1
+        ? 0
+        : Math.round((i / (limit - 1)) * (sorted.length - 1));
+    let idx = target;
+    while (used.has(idx) && idx + 1 < sorted.length) idx += 1;
+    while (used.has(idx) && idx > 0) idx -= 1;
+    if (used.has(idx)) continue;
+    used.add(idx);
+    out.push(sorted[idx]!);
+  }
+  return out;
+}
+
 function utf8JsonBytes(value: unknown): number {
   return Buffer.byteLength(JSON.stringify(value), "utf8");
+}
+
+function pushWithinBudget(
+  out: FeedProduct[],
+  product: FeedProduct,
+  maxProducts: number,
+  maxBytes: number,
+  bytes: number,
+): number | null {
+  if (out.length >= maxProducts) return null;
+  const itemBytes = utf8JsonBytes(product) + (out.length > 0 ? 1 : 0);
+  if (bytes + itemBytes > maxBytes) return null;
+  out.push(product);
+  return bytes + itemBytes;
 }
 
 /**
  * Hold hver feed-cache under 2 MB: slim + cap + byte-budget.
  * Next.js afviser unstable_cache-entries >2 MB — uden cache bliver sider
  * ved med at cold-fetche og ender tomme efter deploy.
+ *
+ * Selection: maskiner før tilbehør; round-robin pr. kategori med pris-spredning
+ * (undgår at Apuls’ billige elastikker skubber T620 ud).
  */
 export function fitFeedProductsForCache(
   products: FeedProduct[],
@@ -163,21 +213,82 @@ export function fitFeedProductsForCache(
 ): FeedProduct[] {
   const maxProducts = opts?.maxProducts ?? FEED_CACHE_PRODUCT_LIMIT;
   const maxBytes = opts?.maxBytes ?? FEED_CACHE_MAX_BYTES;
-  const sorted = slimFeedProducts([...products].sort(sortFeedProductsForCache));
+  const slimmed = slimFeedProducts(products);
+
+  const machinesByCategory = new Map<string, FeedProduct[]>();
+  const accessories: FeedProduct[] = [];
+
+  for (const product of slimmed) {
+    if (isAccessoryProduct(product)) {
+      accessories.push(product);
+      continue;
+    }
+    const slug = product.categorySlug!;
+    const list = machinesByCategory.get(slug);
+    if (list) list.push(product);
+    else machinesByCategory.set(slug, [product]);
+  }
+
+  for (const list of machinesByCategory.values()) {
+    list.sort(compareStockImagePrice);
+  }
+  accessories.sort(compareStockImagePrice);
+
+  const machineBudget = Math.max(
+    1,
+    Math.min(maxProducts, Math.floor(maxProducts * FEED_CACHE_MACHINE_RATIO)),
+  );
+  const categoryCount = Math.max(1, machinesByCategory.size);
+  const perCategory = Math.max(1, Math.ceil(machineBudget / categoryCount));
+
+  const queues = [...machinesByCategory.values()].map((list) =>
+    pickPriceDiverse(list, Math.min(list.length, perCategory)),
+  );
+  const queueOffsets = queues.map(() => 0);
 
   const out: FeedProduct[] = [];
   let bytes = 2; // []
-  for (const product of sorted) {
-    if (out.length >= maxProducts) break;
-    const itemBytes = utf8JsonBytes(product) + (out.length > 0 ? 1 : 0);
-    if (bytes + itemBytes > maxBytes) break;
-    out.push(product);
-    bytes += itemBytes;
+
+  let added = true;
+  while (out.length < machineBudget && added) {
+    added = false;
+    for (let q = 0; q < queues.length; q++) {
+      if (out.length >= machineBudget) break;
+      const queue = queues[q]!;
+      const offset = queueOffsets[q]!;
+      if (offset >= queue.length) continue;
+      const nextBytes = pushWithinBudget(
+        out,
+        queue[offset]!,
+        maxProducts,
+        maxBytes,
+        bytes,
+      );
+      if (nextBytes == null) {
+        added = false;
+        break;
+      }
+      queueOffsets[q] = offset + 1;
+      bytes = nextBytes;
+      added = true;
+    }
   }
 
-  if (out.length < sorted.length) {
+  for (const product of accessories) {
+    const nextBytes = pushWithinBudget(
+      out,
+      product,
+      maxProducts,
+      maxBytes,
+      bytes,
+    );
+    if (nextBytes == null) break;
+    bytes = nextBytes;
+  }
+
+  if (out.length < slimmed.length) {
     console.warn(
-      `[feed] cache trim ${sorted.length} → ${out.length} products (~${bytes} bytes)`,
+      `[feed] cache trim ${slimmed.length} → ${out.length} products (~${bytes} bytes)`,
     );
   }
 

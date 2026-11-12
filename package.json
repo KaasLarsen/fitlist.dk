@@ -8,7 +8,7 @@
     "start": "next start",
     "lint": "eslint",
     "generate:og": "tsx scripts/generate-og-images.ts",
-    "test": "tsx --test src/lib/feeds/classify.test.ts src/lib/feeds/parse.test.ts src/lib/feeds/cykelpartner-guides.test.ts src/lib/feeds/cache-fit.test.ts"
+    "test": "tsx --test src/lib/feeds/classify.test.ts src/lib/feeds/parse.test.ts src/lib/feeds/cykelpartner-guides.test.ts src/lib/feeds/cache-fit.test.ts src/lib/search.test.ts"
   },
   "dependencies": {
     "next": "16.4.5",
