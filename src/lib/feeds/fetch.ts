@@ -21,7 +21,7 @@ import {
 } from "@/lib/feeds/cykelpartner-guide-ids";
 import type { FeedProduct } from "@/lib/feeds/types";
 
-const FEED_CACHE_VERSION = "v11";
+const FEED_CACHE_VERSION = "v12";
 const FEED_REVALIDATE_SECONDS = 21_600; // 6 timer
 /** Partner-Ads XML er ofte langsom; for lav timeout tømmer hele kataloget. */
 const DEFAULT_TIMEOUT_MS = 90_000;

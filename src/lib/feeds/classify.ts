@@ -493,6 +493,10 @@ const INTENT_RULES: { slug: string; test: (hay: string, price: number | null) =>
         /\bstøjsvag\b/.test(hay) ||
         /\bstille\b/.test(hay) ||
         /\bquiet\b/.test(hay) ||
+        /\blydloe?s\b/.test(hay) ||
+        /\blydløs\b/.test(hay) ||
+        // "magnetisk modstand" / magnetmodstand — ikke kun hele ordet "magnet"
+        /\bmagnetisk\b/.test(hay) ||
         /\bmagnet(?:modstand)?\b/.test(hay),
     },
     {

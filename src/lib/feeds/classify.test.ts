@@ -700,6 +700,20 @@ describe("classifyProduct — real machines kept", () => {
     assert.ok(r!.intentSlugs?.includes("spinning"));
   });
 
+  it("tags magnetisk/lydløs motionscykel as stoejsvag", () => {
+    const r = classifyProduct(
+      product({
+        title:
+          "Motionscykel Pro Lydløs træning derhjemme med magnetisk modstand",
+        category: "Motionscykel",
+        price: 1049,
+      }),
+    );
+    assert.ok(r);
+    assert.equal(r!.categorySlug, "motionscykel");
+    assert.ok(r!.intentSlugs?.includes("stoejsvag"));
+  });
+
   it("classifies Zwift/Kinomap spinningcykel as motionscykel + smart", () => {
     const r = classifyProduct(
       product({
