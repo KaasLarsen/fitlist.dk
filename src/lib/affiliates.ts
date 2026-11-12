@@ -73,6 +73,24 @@ export const affiliates: AffiliateLink[] = [
     label: "Se pris hos Ascendic.dk",
     url: "https://www.partner-ads.com/dk/klikbanner.php?bannerid=94094&partnerid=57983&htmlurl=https://ascendic.dk/products/ascendic-6004-romaskine?variant=55357722100056",
   },
+  {
+    id: "titan-life-b35-motionscykel",
+    partner: "HomeX.dk",
+    label: "Se pris hos HomeX.dk",
+    url: "https://www.partner-ads.com/dk/klikbanner.php?bannerid=92127&partnerid=57983&htmlurl=https://www.homex.dk/shop/68-motionscykler--kondicykler/2702-titan-life-b35---fri-fragt---stabil-motionscykel---her-faar-du-rigtig-meget-for-pengene-hurtig-levering/",
+  },
+  {
+    id: "ascendic-8001-foldbar-motionscykel",
+    partner: "Ascendic.dk",
+    label: "Se pris hos Ascendic.dk",
+    url: "https://www.partner-ads.com/dk/klikbanner.php?bannerid=94094&partnerid=57983&htmlurl=https://ascendic.dk/products/ascendic-8001-foldbar-motionscykel?variant=39480045797550",
+  },
+  {
+    id: "titan-life-s72-spinningcykel",
+    partner: "HomeX.dk",
+    label: "Se pris hos HomeX.dk",
+    url: "https://www.partner-ads.com/dk/klikbanner.php?bannerid=92127&partnerid=57983&htmlurl=https://www.homex.dk/shop/85-spinningcykler/2807-titan-life-spinning-cykel-s72---fri-fragt---spin-bike-i-god-kvalitet---hurtig-levering/",
+  },
 ];
 
 export function getAffiliate(id: string): AffiliateLink | undefined {

@@ -44,6 +44,18 @@ const GUIDE_LINK_ALIASES: Record<string, string[]> = {
     "Ascendic 6004 modelguide",
     "Ascendic 6004 Romaskine — modelguide 2026",
   ],
+  "titan-life-b35-motionscykel-2026": [
+    "Titan Life B35 modelguide",
+    "Titan Life B35 Motionscykel — modelguide 2026",
+  ],
+  "ascendic-8001-foldbar-motionscykel-2026": [
+    "Ascendic 8001 modelguide",
+    "Ascendic 8001 Foldbar Motionscykel — modelguide 2026",
+  ],
+  "titan-life-s72-spinningcykel-2026": [
+    "Titan LIFE S72 modelguide",
+    "Titan LIFE S72 Spinningcykel — modelguide 2026",
+  ],
   "bedste-loebebaand-2026": ["Bedste løbebånd 2026"],
   "bedste-siddecykel-2026": ["Bedste siddecykel 2026"],
   "bedste-romaskine-2026": ["Bedste romaskine 2026"],

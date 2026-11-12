@@ -1635,7 +1635,7 @@ export const guides: Guide[] = [
       },
     ],
     howToChoose:
-      "Vil du bare have skånsom cardio? Start med Titan Life B35 eller gå til B56, hvis du træner ofte. Elsker du hold/spinning? S11. Er cyklen din hovedmaskine i flere år? Tunturi E50. Prioritér pasform og støj før skærm. Brug “Se pris” for live partnerpriser, og sammenlign gerne med flere tilbud under kategorien Motionscykel.",
+      "Vil du bare have skånsom cardio? Start med Titan Life B35 Motionscykel — modelguide 2026 eller gå til B56, hvis du træner ofte. Elsker du hold/spinning? S11 — eller Titan LIFE S72 Spinningcykel — modelguide 2026 til allround spin. Lille bolig og skal kunne pakke væk? Ascendic 8001 Foldbar Motionscykel — modelguide 2026. Er cyklen din hovedmaskine i flere år? Tunturi E50. Prioritér pasform og støj før skærm. Brug “Se pris” for live partnerpriser.",
     learningSections: [
       {
         heading: "Kondicykel vs. spinningcykel",
@@ -1737,6 +1737,9 @@ export const guides: Guide[] = [
       "bedste-airbike-2026",
       "bedste-spinningcykel-2026",
       "bedste-crosstrainer-2026",
+      "titan-life-b35-motionscykel-2026",
+      "ascendic-8001-foldbar-motionscykel-2026",
+      "titan-life-s72-spinningcykel-2026",
     ],
   },
   {
@@ -1896,7 +1899,7 @@ export const guides: Guide[] = [
       },
     ],
     howToChoose:
-      "Usikker på spinning? Start S11. Træner du 3+ gange om ugen? S62 eller S72 (S72 er vores allround). All-in på spin hjemme? S96. Vil du egentlig bare have skånsom, stille cardio? Stop — vælg en kondicykel i Bedste motionscykel 2026 i stedet. Shop via “Se pris”, eller filtrér Motionscykel → Spinning.",
+      "Usikker på spinning? Start S11. Træner du 3+ gange om ugen? S62 eller Titan LIFE S72 Spinningcykel — modelguide 2026 (S72 er vores allround). All-in på spin hjemme? S96. Vil du egentlig bare have skånsom, stille cardio? Stop — vælg en kondicykel i Bedste motionscykel 2026 (fx Titan Life B35 Motionscykel — modelguide 2026) i stedet. Shop via “Se pris”, eller filtrér Motionscykel → Spinning.",
     learningSections: [
       {
         heading: "Hvad en spinningcykel er (og ikke er)",
@@ -1984,6 +1987,9 @@ export const guides: Guide[] = [
       "bedste-motionscykel-2026",
       "bedste-crosstrainer-2026",
       "bedste-loebebaand-2026",
+      "titan-life-s72-spinningcykel-2026",
+      "titan-life-b35-motionscykel-2026",
+      "odin-s1000-spinningcykel-2026",
     ],
   },
   {
@@ -6850,7 +6856,7 @@ export const guides: Guide[] = [
       },
     ],
     howToChoose:
-      "Allround stille kondicykel? Titan Athlete. Vil spinne? S72 (dagtimer til stående sprint). Budget? Titan entry. Lille bolig? Ascendic foldbar. Airbike? Kun hvis naboerne tillader det — se Bedste Airbike 2026. Bredere støj-guide: Bedste støjsvage træningsmaskiner til lejligheden.",
+      "Allround stille kondicykel? Titan Athlete. Vil spinne? Titan LIFE S72 Spinningcykel — modelguide 2026 (dagtimer til stående sprint). Budget? Titan Life B35 Motionscykel — modelguide 2026. Lille bolig? Ascendic 8001 Foldbar Motionscykel — modelguide 2026. Airbike? Kun hvis naboerne tillader det — se Bedste Airbike 2026. Bredere støj-guide: Bedste støjsvage træningsmaskiner til lejligheden.",
     learningSections: [
       {
         heading: "Hvorfor cykel vinder på støj",
@@ -6914,6 +6920,9 @@ export const guides: Guide[] = [
       "bedste-foldbare-kompakte-traeningsmaskiner-2026",
       "bedste-airbike-2026",
       "bedste-stoejsvag-loebebaand-lejlighed-2026",
+      "titan-life-s72-spinningcykel-2026",
+      "titan-life-b35-motionscykel-2026",
+      "ascendic-8001-foldbar-motionscykel-2026",
     ],
   },
   {
@@ -7055,7 +7064,7 @@ export const guides: Guide[] = [
       },
     ],
     howToChoose:
-      "Minimum viable 10 m²-gym: Ascendic Essential + justerbare håndvægte + foldbar bænk. Vil du have siddende cardio i stedet for/gåbånd? Ascendic foldcykel. Stramt budget? Se Det ultimative home gym på budget. Mere fold-inspiration: Bedste foldbare & kompakte træningsmaskiner. Undgå fuldt løbebånd og stort rack, indtil du har mere plads — eller se Bedste power rack & squat rack 2026 til garage.",
+      "Minimum viable 10 m²-gym: Ascendic Essential + justerbare håndvægte + foldbar bænk. Vil du have siddende cardio i stedet for/gåbånd? Ascendic 8001 Foldbar Motionscykel — modelguide 2026. Stramt budget? Se Det ultimative home gym på budget. Mere fold-inspiration: Bedste foldbare & kompakte træningsmaskiner. Undgå fuldt løbebånd og stort rack, indtil du har mere plads — eller se Bedste power rack & squat rack 2026 til garage.",
     learningSections: [
       {
         heading: "Reglen om to minutter",
@@ -12280,6 +12289,8 @@ export const guides: Guide[] = [
       "motionscykel-eller-spinningcykel-2026",
       "bedste-cardio-under-lavt-loft-2026",
       "odin-a1000-airbike-2026",
+      "ascendic-8001-foldbar-motionscykel-2026",
+      "titan-life-b35-motionscykel-2026",
     ],
   },
   {
@@ -12711,6 +12722,7 @@ export const guides: Guide[] = [
       "bedste-spinningcykel-2026",
       "bedste-motionscykel-2026",
       "bedste-romaskine-2026",
+      "titan-life-s72-spinningcykel-2026",
     ],
   },
   {
@@ -12856,6 +12868,7 @@ export const guides: Guide[] = [
       "odin-a1000-airbike-2026",
       "odin-rb-800-siddecykel-2026",
       "bedste-motionscykel-2026",
+      "titan-life-s72-spinningcykel-2026",
     ],
   },
   {
@@ -13143,6 +13156,440 @@ export const guides: Guide[] = [
       "bedste-stoejsvage-traeningsmaskiner-lejlighed-2026",
       "ascendic-essential-walking-pad-2026",
       "romaskine-eller-crosstrainer-2026",
+    ],
+  },
+  {
+    slug: "titan-life-b35-motionscykel-2026",
+    title: "Titan Life B35 Motionscykel — modelguide 2026",
+    excerpt:
+      "Alt om Titan Life B35: budget kondicykel til skånsom cardio hjemme — hvem den passer til, vs. B56/spinning, støj/plads — og live pris hos HomeX.dk.",
+    metaDescription:
+      "Modelguide til Titan Life B35 Motionscykel 2026. Billig opret kondicykel til vane og zone 2: fordele, ulemper — live pris hos HomeX.",
+    categorySlug: "motionscykel",
+    intentSlug: "billig",
+    kind: "modelguide",
+    recommendationsHeading: "Modellen",
+    publishedAt: "2026-11-12",
+    updatedAt: "2026-11-12",
+    intro:
+      "Titan Life B35 er vores “Bedste billige”-kondicykel: opret, stabil entry til skånsom cardio uden stor investering. Denne modelguide handler kun om B35 — hvem den er til, hvornår den slår mini-pedaler og fold-X-bikes, og hvornår du hellere skal op i B56 eller vælge spinning. Vil du sammenligne flere cykler, se Bedste motionscykel 2026.",
+    criteria: [
+      {
+        title: "Ja — hvis du vil i gang med skånsom cardio på budget",
+        description:
+          "Du vil bygge vane med rolige pas, podcast og lav knæbelastning — uden at købe midrange/premium “fordi det ligner fitnesscenter”.",
+      },
+      {
+        title: "Ja — hvis opret kondicykel er det rigtige job",
+        description:
+          "Du vil sidde oprejst (ikke ryglæn-siddecykel, ikke spinning-sadel). B35 er klassisk motionscykel: magnet/komfort-fokus frem for tung flywheel.",
+      },
+      {
+        title: "Ja — hvis vanen skal bevises, før du opgraderer",
+        description:
+          "1–3 pas om ugen, mens du finder ud af, om cykling hjemme er dig. Opgrader til B56/Tunturi, når udstyret begrænser dig — ikke på dag ét.",
+      },
+      {
+        title: "Nej — hvis du vil have spinning/HIIT-følelse",
+        description:
+          "B35 er ikke en spin bike. Til intervaller og stående sprint: se Titan LIFE S72 Spinningcykel — modelguide 2026 eller Bedste spinningcykel 2026.",
+      },
+      {
+        title: "Nej — hvis du har brug for ryglæn / lav indstigning",
+        description:
+          "Så er siddecykel det ærligere køb — Odin RB-800 Comfort Siddecykel — modelguide 2026 eller Bedste siddecykel 2026. B35 kræver, at du kan komme op på sadlen.",
+      },
+    ],
+    products: [
+      {
+        id: "titan-life-b35-motionscykel",
+        name: "Titan Life B35 Motionscykel",
+        badge: "Modelguide",
+        summary:
+          "Titan Life B35 fra HomeX — vores go-to budget kondicykel, når skånsom cardio og lav indgangspris er jobbet. Stabil entry til at bygge vane: fin til zone 2 og begyndere, ikke en erstatning for spinning eller premium Tunturi. Live pris hos HomeX.dk.",
+        pros: [
+          "Lav indgangspris ift. midrange kondicykler",
+          "Stabil opret motionscykel til begyndere",
+          "Skånsom cardio — typisk støjsvagere end airbike/spin",
+          "Fri fragt hos partner",
+          "Partner: HomeX.dk — direkte shop-link",
+        ],
+        cons: [
+          "Færre features end B56 / premium",
+          "Ikke ideel som eneste cykel til hård spinning",
+          "Pasform og justering er mere basale",
+          "Fylder et fast hjørne — ikke foldbar",
+        ],
+        specs: [
+          { label: "Type", value: "Kondicykel (opret)" },
+          { label: "Brand", value: "Titan Life" },
+          { label: "Model", value: "B35" },
+          { label: "Segment", value: "Budget" },
+          { label: "Partner", value: "HomeX.dk" },
+        ],
+        imageUrl:
+          "https://shop12835.sfstatic.io/upload_dir/shop/products/Legehjulet/img_5530-.jpg",
+        feedProductId: "HomeX.dk:2702",
+        affiliateId: "titan-life-b35-motionscykel",
+      },
+    ],
+    howToChoose:
+      "Vil du have Titan Life B35? Køb den, hvis budget + opret skånsom cardio er jobbet. Træner du ofte og vil have mere maskine? B56 i Bedste motionscykel 2026. Spinning? Titan LIFE S72 Spinningcykel — modelguide 2026. Lille bolig og fold? Ascendic 8001 Foldbar Motionscykel — modelguide 2026. Ryglæn? Odin RB-800 Comfort Siddecykel — modelguide 2026. Shop via “Se pris hos HomeX.dk”.",
+    learningSections: [
+      {
+        heading: "Hvad B35 egentlig er",
+        paragraphs: [
+          "En opret budget-kondicykel: sæt dig, tråd, hold tempo. Den er bygget til at fjerne barrieren “cykel er for dyrt”, ikke til at erstatte holdcykling eller en Tunturi Signature i ti år.",
+          "På Fitlist er B35 “Bedste billige” i Bedste motionscykel 2026 — fordi den rammer den købsbeslutning, de fleste begyndere faktisk står i.",
+        ],
+      },
+      {
+        heading: "B35 vs. B56 vs. spinning",
+        paragraphs: [
+          "B35: vane og budget. B56: allround, når du træner oftere. Spinning (S11/S72): tungere svinghjul, hårdere saddel, bedre til intervaller.",
+          "Tommelfingerregel: start B35, hvis du er usikker. Hop til S72, hvis du allerede ved, at du vil spinne hårdt. Gå B56, hvis kondicykel er din hovedcardio flere gange om ugen.",
+        ],
+      },
+      {
+        heading: "Støj, plads og hverdag",
+        paragraphs: [
+          "Magnetkondicykler er blandt de støjsvageste maskiner i hjemmet. Brug måtte, stil den i vater, og undgå at cyklen “vandrer” på laminat.",
+          "Den er ikke foldbar — planlæg et fast hjørne. Skal maskinen forsvinde efter pas? Se Ascendic 8001 Foldbar Motionscykel — modelguide 2026.",
+        ],
+      },
+      {
+        heading: "Hvornår du skal vælge noget andet",
+        paragraphs: [
+          "Usikker balance eller knæ/ryg der kræver ryglæn: siddecykel. Apps/Zwift: Odin S1000 Spinningcykel — modelguide 2026. HIIT med arme+ben: Odin A1000 Airbike — modelguide 2026.",
+          "Premium langtidscykling: Tunturi E50 i Bedste motionscykel 2026.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "Er Titan Life B35 en spinningcykel?",
+        answer:
+          "Nej. Det er en opret kondicykel. Til spinning: se Titan LIFE S72 Spinningcykel — modelguide 2026 eller Bedste spinningcykel 2026.",
+      },
+      {
+        question: "B35 eller B56?",
+        answer:
+          "B35, hvis prisen skal ned, mens vanen bygges. B56, hvis du allerede ved, at cyklen bliver brugt ofte, og du vil have mere allround-maskine. Se Bedste motionscykel 2026.",
+      },
+      {
+        question: "Passer den til lejlighed?",
+        answer:
+          "Ja — kondicykler med magnetmodstand er typisk stærke lejlighedsvalg. Brug måtte, og hold intensiteten realistisk om aftenen.",
+      },
+      {
+        question: "Skal jeg købe B35 som begynder?",
+        answer:
+          "Ofte ja, hvis målet er skånsom cardio uden stor investering. Opgrader, når sadlen, stabiliteten eller manglen på features begrænser dig — ikke før.",
+      },
+      {
+        question: "Hvor ser jeg den aktuelle pris?",
+        answer:
+          "Klik “Se pris hos HomeX.dk”. Pris og lager hentes live fra partner-feedet.",
+      },
+    ],
+    relatedSlugs: [
+      "bedste-motionscykel-2026",
+      "bedste-spinningcykel-2026",
+      "titan-life-s72-spinningcykel-2026",
+      "ascendic-8001-foldbar-motionscykel-2026",
+      "odin-rb-800-siddecykel-2026",
+      "motionscykel-eller-spinningcykel-2026",
+      "bedste-stoejsvag-motionscykel-lejlighed-2026",
+    ],
+  },
+  {
+    slug: "ascendic-8001-foldbar-motionscykel-2026",
+    title: "Ascendic 8001 Foldbar Motionscykel — modelguide 2026",
+    excerpt:
+      "Alt om Ascendic 8001: foldbar motionscykel med ryglæn til små hjem — hvem den passer til, let modstand, vs. B35/RB-800 — live pris hos Ascendic.dk.",
+    metaDescription:
+      "Modelguide til Ascendic 8001 Foldbar Motionscykel 2026. Fold + ryglæn til let cardio i lejlighed: fordele, ulemper — live pris hos Ascendic.",
+    categorySlug: "motionscykel",
+    kind: "modelguide",
+    recommendationsHeading: "Modellen",
+    publishedAt: "2026-11-12",
+    updatedAt: "2026-11-12",
+    intro:
+      "Ascendic 8001 er foldbar motionscykel med polstret ryglæn og magnetisk, blød modstand — bygget til let og skånsom motion, der kan rulles væk efter pas. Denne modelguide handler kun om 8001: hvem den er til, hvad det lille svinghjul betyder, og hvornår du hellere skal have en fast B35, en ægte siddecykel (RB-800) eller spinning. Vil du sammenligne flere fold-/lejlighedscykler, se Bedste støjsvage motionscykel til lejlighed 2026 eller Home gym til lille værelse.",
+    criteria: [
+      {
+        title: "Ja — hvis plads er dealbreakeren",
+        description:
+          "Du vil have siddende cardio, men cyklen skal kunne foldes og rulles væk. 8001 er til små værelser og stuer, hvor en fast midrange-cykel aldrig får lov at blive stående.",
+      },
+      {
+        title: "Ja — hvis du vil have ryglæn + fold i ét",
+        description:
+          "Anatomisk sadel og polstret ryglæn gør længere, rolige pas mere behagelige end en hård X-bike uden støtte — uden at det er en fuldsize RB-800-siddecykel.",
+      },
+      {
+        title: "Ja — hvis “let motion” er målet",
+        description:
+          "Magnetisk modstand med lille svinghjul (ca. 2,5 kg): god til skånsom kredsløbstræning og ældre/begyndere. Vil du køre tungt? Ascendic peger selv på tungere modeller (fx 8005) — og vi peger på spinning/B56-klassen.",
+      },
+      {
+        title: "Nej — hvis du vil have hård spinning eller tung kondi",
+        description:
+          "8001 er ikke S72 og ikke en kraftig opret midrange. Til intervaller: Titan LIFE S72 Spinningcykel — modelguide 2026. Til daglig “rigtig” kondicykel uden fold-kompromis: Titan Life B35 Motionscykel — modelguide 2026 eller B56.",
+      },
+      {
+        title: "Nej — hvis du egentlig vil have en fuldsize siddecykel",
+        description:
+          "8001 har ryglæn og lav indstigning-venlig geometri, men det er stadig en foldbar kompakt. Til “bedst samlet” siddecykel: Odin RB-800 Comfort Siddecykel — modelguide 2026.",
+      },
+    ],
+    products: [
+      {
+        id: "ascendic-8001-foldbar-motionscykel",
+        name: "Ascendic 8001 Foldbar Motionscykel",
+        badge: "Modelguide",
+        summary:
+          "Ascendic 8001 — vores go-to foldbare cykel, når plads og let, skånsom cardio er jobbet. Ryglæn + fold + magnet: god til små hjem og rolige pas, ikke til tung spinning. Live pris hos Ascendic.dk.",
+        pros: [
+          "Foldbar og kan rulles væk",
+          "Polstret ryglæn til længere, rolige pas",
+          "Magnetisk, stille modstand",
+          "Relevant i små lejligheder / 10 m²-setups",
+          "Partner: Ascendic.dk — direkte shop-link",
+        ],
+        cons: [
+          "Lille svinghjul — blød modstand, ikke “pro”-tråd",
+          "Mindre stabil end fuldstørrelse midrange",
+          "Ikke spinning-følelse",
+          "Fold hjælper kun, hvis du faktisk folder",
+        ],
+        specs: [
+          { label: "Type", value: "Foldbar motionscykel" },
+          { label: "Brand", value: "Ascendic" },
+          { label: "Model", value: "8001" },
+          { label: "Modstand", value: "Magnet (let / 2,5 kg svinghjul)" },
+          { label: "Fokus", value: "Plads + skånsom cardio" },
+          { label: "Partner", value: "Ascendic.dk" },
+        ],
+        imageUrl:
+          "https://cdn.shopify.com/s/files/1/0023/6840/5573/products/8001Grey.png?v=1637161419",
+        feedProductId: "Ascendic.dk:39480045797550",
+        affiliateId: "ascendic-8001-foldbar-motionscykel",
+      },
+    ],
+    howToChoose:
+      "Vil du have Ascendic 8001? Køb den, hvis fold + ryglæn + let cardio i lille bolig er jobbet. Fast budget-kondicykel uden fold? Titan Life B35 Motionscykel — modelguide 2026. Ægte siddecykel til daglig brug? Odin RB-800 Comfort Siddecykel — modelguide 2026. Spinning? Titan LIFE S72 Spinningcykel — modelguide 2026. Shop via “Se pris hos Ascendic.dk” — tjek lager, da foldmodeller kan være udsolgt midlertidigt.",
+    learningSections: [
+      {
+        heading: "Hvad 8001 egentlig er",
+        paragraphs: [
+          "En kompakt, foldbar cykel med ryglæn: ment til let motion, komfort og pladsbesparelse. LCD til tid/distance/kalorier, holder til tablet — men magien er, at den kan forsvinde efter træning.",
+          "I vores støjsvag- og 10 m²-guides er den “fold til lejlighed”-valget: når footprint er vigtigere end tung tråd-følelse.",
+        ],
+      },
+      {
+        heading: "8001 vs. B35 vs. RB-800",
+        paragraphs: [
+          "8001: fold + ryglæn + blød modstand. B35: fast opret budget uden fold-kompromis. RB-800: fuldsize siddecykel til tryghed og daglig comfort — fylder mere.",
+          "Tommelfingerregel: skal den væk efter pas → 8001. Skal den stå fremme og bruges ofte → B35 eller RB-800.",
+        ],
+      },
+      {
+        heading: "Fold vs. “jeg folder aldrig”",
+        paragraphs: [
+          "Fold er kun en feature, hvis du gør det. Mange køber foldcykel og lader den stå — så havde en stabil B35 været det bedre køb.",
+          "Mål både brugsmå og folded dimensions. Planlæg hjulene hen til skabet — ikke “et sted i stuen midlertidigt i tre år”.",
+        ],
+      },
+      {
+        heading: "Hvornår du skal vælge noget andet",
+        paragraphs: [
+          "Tung modstand og intervaller: spinning (S72). Senior/knæ med maksimal tryghed på fuldsize: RB-800. Mere allround opret uden fold: B56 i Bedste motionscykel 2026.",
+          "Bredere pladsguide: Home gym til lille værelse / ca. 10 m² og Bedste foldbare & kompakte træningsmaskiner.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "Er Ascendic 8001 en siddecykel?",
+        answer:
+          "Den har polstret ryglæn og er bygget til komfortabel, skånsom træning — men det er en foldbar kompakt, ikke en fuldsize recumbent som Odin RB-800. Se Odin RB-800 Comfort Siddecykel — modelguide 2026, hvis du vil have “rigtig” siddecykel.",
+      },
+      {
+        question: "Kan jeg spinne hårdt på 8001?",
+        answer:
+          "Nej — modstanden er blød med lille svinghjul. Til hård spinning: Titan LIFE S72 Spinningcykel — modelguide 2026.",
+      },
+      {
+        question: "Passer den til seniorer?",
+        answer:
+          "Ofte ja til let, skånsom motion med rygstøtte. Individuelle behov varierer; start roligt. Ved usikker balance/genoptræning: overvej også RB-800.",
+      },
+      {
+        question: "8001 eller B35?",
+        answer:
+          "8001, hvis fold/plads er hard requirement. B35, hvis cyklen må stå fremme, og du vil have en mere “klassisk” budget-kondicykel. Læs begge modelguides.",
+      },
+      {
+        question: "Hvor ser jeg den aktuelle pris?",
+        answer:
+          "Klik “Se pris hos Ascendic.dk”. Pris og lager hentes live fra partner-feedet.",
+      },
+    ],
+    relatedSlugs: [
+      "bedste-stoejsvag-motionscykel-lejlighed-2026",
+      "home-gym-til-lille-vaerelse-10m2-2026",
+      "bedste-foldbare-kompakte-traeningsmaskiner-2026",
+      "titan-life-b35-motionscykel-2026",
+      "odin-rb-800-siddecykel-2026",
+      "bedste-motionscykel-2026",
+      "bedste-siddecykel-2026",
+      "titan-life-s72-spinningcykel-2026",
+    ],
+  },
+  {
+    slug: "titan-life-s72-spinningcykel-2026",
+    title: "Titan LIFE S72 Spinningcykel — modelguide 2026",
+    excerpt:
+      "Alt om Titan LIFE S72: allround spinningcykel til hjemmet — hvem den passer til, vs. S11/S62/S96, støj/plads — og live pris hos HomeX.dk.",
+    metaDescription:
+      "Modelguide til Titan LIFE S72 Spinningcykel 2026. Allround spin bike til intervaller hjemme: fordele, ulemper — live pris hos HomeX.",
+    categorySlug: "motionscykel",
+    intentSlug: "spinning",
+    kind: "modelguide",
+    recommendationsHeading: "Modellen",
+    publishedAt: "2026-11-12",
+    updatedAt: "2026-11-12",
+    intro:
+      "Titan LIFE S72 er vores “Bedst samlet”-spinningcykel: nok cykel til intervaller flere gange om ugen uden at hoppe direkte i S96-prisen. Denne modelguide handler kun om S72 — hvem den er til, hvornår S11/S62 er nok, og hvornår du hellere skal have smart (S1000) eller en stille kondicykel. Vil du sammenligne flere spin bikes, se Bedste spinningcykel 2026.",
+    criteria: [
+      {
+        title: "Ja — hvis du vil spinne hjemme flere gange om ugen",
+        description:
+          "Du kender hold-/spin-følelsen (eller vil have den): tungere svinghjul, sporty position, mulighed for at rejse dig i pedalerne. S72 er midt/øvre mid i Titan LIFE S-serien til netop det.",
+      },
+      {
+        title: "Ja — hvis allround slår “billigst muligt”",
+        description:
+          "S11 er fin til at teste vanen. S72 er valget, når du allerede ved, at spinning er grejen, og du vil have mere cykel under dig uden S96-premium.",
+      },
+      {
+        title: "Ja — hvis rem/magnet-spinning i hjemmet er acceptabelt",
+        description:
+          "S72 er blandt vores stærkeste “rigtige træning der ikke larmer som airbike”-picks — især i dagtimer. Stående sprint kl. 22 i etagebyggeri er stadig en dårlig idé; planlæg tidspunkter og brug måtte.",
+      },
+      {
+        title: "Nej — hvis du egentlig vil have skånsom zone-2-kondicykel",
+        description:
+          "Hård saddel og aggressiv position er meningen med spinning — ikke en fejl. Til komfort: Titan Life B35 Motionscykel — modelguide 2026 eller Bedste motionscykel 2026.",
+      },
+      {
+        title: "Nej — hvis Zwift/app-styring er hovedårsagen til købet",
+        description:
+          "S72 er klassisk spinning. Til Zwift/Kinomap: Odin S1000 Spinningcykel — modelguide 2026 eller Bedste smartcykler 2026.",
+      },
+    ],
+    products: [
+      {
+        id: "titan-life-s72-spinningcykel",
+        name: "Titan LIFE Spinning Cykel S72",
+        badge: "Modelguide",
+        summary:
+          "Titan LIFE S72 fra HomeX — vores go-to allround spinningcykel, når intervaller og hold-følelse hjemme er jobbet. Mere cykel end S11/S62 til jævnlig brug, uden S96-pris. Live pris hos HomeX.dk.",
+        pros: [
+          "Solid mid/øvre mid i Titan LIFE S-serien",
+          "God til jævnlig spinning og intervaller",
+          "Klar anbefaling til de fleste “jeg vil spinne”-købere",
+          "Rem/magnet — stærkere lejlighedsvalg end airbike",
+          "Partner: HomeX.dk — direkte shop-link",
+        ],
+        cons: [
+          "Dyrere end S11/S62",
+          "Hårdere saddel end kondicykel — tilvænning kræves",
+          "Fylder — mål pladsen",
+          "Stående sprint sender vibration (måtte + tidspunkt)",
+        ],
+        specs: [
+          { label: "Type", value: "Spinningcykel" },
+          { label: "Brand", value: "Titan LIFE" },
+          { label: "Serie", value: "S72" },
+          { label: "Segment", value: "Allround" },
+          { label: "Partner", value: "HomeX.dk" },
+        ],
+        imageUrl:
+          "https://shop12835.sfstatic.io/upload_dir/shop/products/Legehjulet/img_3943.jpg",
+        feedProductId: "HomeX.dk:2807",
+        affiliateId: "titan-life-s72-spinningcykel",
+      },
+    ],
+    howToChoose:
+      "Vil du have Titan LIFE S72? Køb den, hvis allround spinning til jævnlig brug er jobbet. Usikker / budget? S11 i Bedste spinningcykel 2026. Midt imellem? S62. Premium i samme serie? S96. Smart/Zwift? Odin S1000 Spinningcykel — modelguide 2026. Rolig kondicykel? Titan Life B35 Motionscykel — modelguide 2026. Shop via “Se pris hos HomeX.dk”.",
+    learningSections: [
+      {
+        heading: "Hvad S72 egentlig er",
+        paragraphs: [
+          "En spin bike i Titan LIFE S-familien: bygget til sved, kadence og intervaller — ikke til at sidde oprejst og se nyheder i en time. Stabilitet, når du rejser dig, er en del af pointen.",
+          "I Bedste spinningcykel 2026 er S72 “Bedst samlet”, fordi den rammer den frekvens, de fleste “jeg vil spinne hjemme”-købere faktisk ender med.",
+        ],
+      },
+      {
+        heading: "S72 vs. S11 / S62 / S96",
+        paragraphs: [
+          "S11: billig indgang til at teste. S62: midrange-skridt op. S72: allround til jævnlig brug. S96: premium i samme linje, når spinning er hovedcardio i årevis.",
+          "Tommelfingerregel: bevis vanen på S11, hvis du er i tvivl. Gå direkte til S72, hvis du allerede spinner 3+ gange om ugen — eller ved, at du vil.",
+        ],
+      },
+      {
+        heading: "Sadel, støj og lejlighed",
+        paragraphs: [
+          "Spinning-sadler er hårde. Juster højde/frem-tilbage, giv det 8–10 sessioner, og budgetér evt. til shorts/sadel. Mange “dårlige cykler” er ujusterede cykler.",
+          "Rem + magnet kan være meget stille siddende. Stående sprint er det, der generer naboer. Måtte, gulvtype og tidspunkt betyder mere end marketing. Se også Bedste støjsvage motionscykel til lejlighed 2026.",
+        ],
+      },
+      {
+        heading: "Hvornår du skal vælge noget andet",
+        paragraphs: [
+          "Apps først: S1000. Komfort først: B35 eller siddecykel (RB-800). HIIT med arme: A1000. Fold/plads først: Ascendic 8001 Foldbar Motionscykel — modelguide 2026.",
+          "Usikker på type overhovedet? Motionscykel eller spinningcykel? Sådan vælger du i 2026.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "Er S72 en smartcykel / Zwift-cykel?",
+        answer:
+          "Nej — det er en klassisk spinningcykel. Til Zwift/Kinomap: se Odin S1000 Spinningcykel — modelguide 2026.",
+      },
+      {
+        question: "S72 eller S11?",
+        answer:
+          "S11, hvis du tester vanen på stramt budget. S72, hvis du vil have allround til jævnlig spinning. Se Bedste spinningcykel 2026 for hele serien.",
+      },
+      {
+        question: "Kan jeg have S72 i lejlighed?",
+        answer:
+          "Ja for mange — især siddende pas med måtte. Vær realistisk med stående sprint og aftentræning. Airbike er typisk værre på støj.",
+      },
+      {
+        question: "S72 eller kondicykel?",
+        answer:
+          "S72 til intervaller og hold-følelse. Kondicykel (fx B35) til længere, skånsomme pas. Læs Motionscykel eller spinningcykel? hvis du er i tvivl.",
+      },
+      {
+        question: "Hvor ser jeg den aktuelle pris?",
+        answer:
+          "Klik “Se pris hos HomeX.dk”. Pris og lager hentes live fra partner-feedet.",
+      },
+    ],
+    relatedSlugs: [
+      "bedste-spinningcykel-2026",
+      "bedste-motionscykel-2026",
+      "motionscykel-eller-spinningcykel-2026",
+      "titan-life-b35-motionscykel-2026",
+      "odin-s1000-spinningcykel-2026",
+      "bedste-stoejsvag-motionscykel-lejlighed-2026",
+      "odin-a1000-airbike-2026",
+      "ascendic-8001-foldbar-motionscykel-2026",
     ],
   },
 ];
