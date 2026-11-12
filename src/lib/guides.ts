@@ -78,6 +78,11 @@ export type Guide = {
   metaDescription: string;
   /** Matcher MachineCategory.slug */
   categorySlug: string;
+  /**
+   * Ekstra kategorier hvor købsguiden også skal listes
+   * (fx “romaskine eller crosstrainer” på begge maskinesider).
+   */
+  alsoCategorySlugs?: string[];
   /** Valgfri intent til “Relaterede tilbud” (fx gaabaand) */
   intentSlug?: string;
   /**
@@ -141,7 +146,11 @@ export function getModelGuidesByCategory(categorySlug: string): Guide[] {
 
 /** Købsguides i en maskinkategori (ekskluderer modelguides). */
 export function getGuidesByCategory(categorySlug: string): Guide[] {
-  return getBuyingGuides().filter((g) => g.categorySlug === categorySlug);
+  return getBuyingGuides().filter(
+    (g) =>
+      g.categorySlug === categorySlug ||
+      g.alsoCategorySlugs?.includes(categorySlug),
+  );
 }
 
 export function getRelatedGuides(guide: Guide): Guide[] {
@@ -711,7 +720,7 @@ export const guides: Guide[] = [
       {
         question: "Er crosstrainer et dårligt valg i små rum?",
         answer:
-          "Ikke nødvendigvis — men klassiske store modeller dominerer rummet. Vælg en kompakt hjemmemodel (fx Odin C200), mål armsving og dybde, og planlæg et fast hjørne. Den foldes sjældent fladt som et gåbånd.",
+          "Ikke nødvendigvis — men klassiske store modeller dominerer rummet. Vælg en kompakt hjemmemodel (fx Odin C200), mål armsving og dybde, og planlæg et fast hjørne. Den foldes sjældent fladt som et gåbånd. Se også Bedste kompakt crosstrainer 2026.",
       },
       {
         question: "Hvilken foldbar træningsbænk skal jeg vælge?",
@@ -731,6 +740,7 @@ export const guides: Guide[] = [
       "gaabaand-til-kontoret-2026",
       "bedste-romaskine-2026",
       "bedste-crosstrainer-2026",
+      "bedste-kompakt-crosstrainer-2026",
       "bedste-justerbar-traeningsbaenk-2026",
       "ultimative-home-gym-budget-2026",
       "bedste-cardio-under-lavt-loft-2026",
@@ -2766,6 +2776,8 @@ export const guides: Guide[] = [
     relatedSlugs: [
       "romaskine-eller-crosstrainer-2026",
       "bedste-stoejsvag-crosstrainer-2026",
+      "bedste-billig-crosstrainer-2026",
+      "bedste-kompakt-crosstrainer-2026",
       "bedste-traeningsudstyr-til-seniorer-2026",
       "bedste-knaevenlig-genoptraening-hjemme-2026",
       "bedste-loebebaand-2026",
@@ -5940,11 +5952,428 @@ export const guides: Guide[] = [
     ],
     relatedSlugs: [
       "bedste-crosstrainer-2026",
+      "bedste-billig-crosstrainer-2026",
+      "bedste-kompakt-crosstrainer-2026",
       "bedste-stoejsvage-traeningsmaskiner-lejlighed-2026",
       "bedste-stoejsvag-romaskine-2026",
       "bedste-traeningsudstyr-til-seniorer-2026",
       "bedste-knaevenlig-genoptraening-hjemme-2026",
       "bedste-foldbare-kompakte-traeningsmaskiner-2026",
+    ],
+  },
+  {
+    slug: "bedste-billig-crosstrainer-2026",
+    title: "Bedste billige crosstrainer 2026",
+    excerpt:
+      "Elliptisk træning uden premium-pris: hvad du må ofre, hvad du ikke skal, og fire budget-anbefalinger med live priser.",
+    metaDescription:
+      "Bedste billige crosstrainer 2026. Guide til budget, 2-i-1 vs. dedikeret entry og skridtlængde — plus fire anbefalinger med live priser.",
+    categorySlug: "crosstrainer",
+    intentSlug: "billig",
+    publishedAt: "2026-11-12",
+    updatedAt: "2026-11-12",
+    intro:
+      "En billig crosstrainer skal bygge vanen — ikke erstatte et center på dag ét. Entry-modeller sparer på svinghjul, skærm og “gym-følelse”, men kan stadig levere skånsom helkropscardio, hvis rammen er stabil og skridtet ikke er for kort. Her får du, hvad der er værd at betale for i den lave ende, fire konkrete modeller med shop-links, og hvornår du hellere skal vente og købe midrange.",
+    criteria: [
+      {
+        title: "Stabilitet før skærm",
+        description:
+          "En vaklende ramme dræber motivationen hurtigere end et lille display. Tjek egenvægt, fodplader og om maskinen står plant — ikke om der er Bluetooth.",
+      },
+      {
+        title: "Skridtlængde og højde",
+        description:
+          "Budgetmodeller har ofte kortere skridt. Er du over ca. 180 cm, så prioriter modeller med angivet stride/maks. brugerhøjde, eller gå et trin op i pris.",
+      },
+      {
+        title: "Magnetmodstand",
+        description:
+          "Magnet er standarden for støjsvag hjemmetræning. Undgå gamle rem-/friktionsløsninger, hvis du bor i lejlighed.",
+      },
+      {
+        title: "2-i-1 vs. dedikeret entry",
+        description:
+          "2-i-1 sparer plads og penge, men ofrer typisk jævnhed. Dedikeret entry (C35/C200-klassen) føles mere som “rigtig” elliptisk træning — stadig uden premium-pris.",
+      },
+      {
+        title: "Lav indstigning",
+        description:
+          "Nemmere at komme på uden at smække pedalerne i gulvet. Plus for knæ, ældre brugere og aftentræning.",
+      },
+      {
+        title: "Budget vs. brug",
+        description:
+          "1–2 rolige pas om ugen? Entry er fint. Træner du fire gange om ugen allerede? Stræk dig til C56-klassen — den billigste maskine er dyr, hvis den står ubrugt.",
+      },
+    ],
+    products: [
+      {
+        id: "odin-c200-billig",
+        name: "Odin C200 Crosstrainer",
+        badge: "Bedste billige",
+        summary:
+          "Kompakt Odin-entry med skarp pris — vores hovedanbefaling, når budgettet er det, der afgør, om elliptisk træning overhovedet kommer ind ad døren.",
+        pros: [
+          "Meget skarp indgangspris",
+          "Komprimeret ramme til små hjem",
+          "Enkel computer til vane-opbygning",
+          "Ledvenlig cardio uden løbestød",
+        ],
+        cons: [
+          "Ikke midrange-jævnhed til hård interval",
+          "Tjek skridtlængde hvis du er høj",
+          "Foldes typisk ikke fladt væk",
+        ],
+        specs: [
+          { label: "Segment", value: "Budget / kompakt" },
+          { label: "Brand", value: "Odin" },
+          { label: "Partner", value: "Apuls.dk" },
+        ],
+        feedProductId: "Apuls.dk:12748",
+      },
+      {
+        id: "titan-c35-billig",
+        name: "Titan Life C35 Crosstrainer",
+        badge: "Bedst samlet budget",
+        summary:
+          "Lav indstigning og magnetbelastning — den mest “komplette” billige crosstrainer, når du vil have stabil entry uden at hoppe til C56.",
+        pros: [
+          "Lav indstigning",
+          "Magnetisk og lejlighedsvenlig",
+          "Fri fragt hos partner",
+          "God balance mellem pris og brugbarhed",
+        ],
+        cons: [
+          "Færre premium-detaljer end C56/C60",
+          "Ikke ideel som eneste maskine til hård interval hvert pas",
+          "Tjek skridtlængde hvis du er høj",
+        ],
+        specs: [
+          { label: "Feature", value: "Lav indstigning" },
+          { label: "Modstand", value: "Magnet" },
+          { label: "Partner", value: "HomeX.dk" },
+        ],
+        feedProductId: "HomeX.dk:2792",
+      },
+      {
+        id: "crosstrainer-2i1-billig",
+        name: "Crosstrainer billig (2 i 1)",
+        badge: "Bedste 2-i-1",
+        summary:
+          "Når både pris og footprint skal ned, og du accepterer kompromis på gym-følelse for at komme i gang.",
+        pros: [
+          "Skarp pris",
+          "2-i-1-fleksibilitet",
+          "Relevant i små hjem",
+          "Nem indgang til elliptisk træning",
+        ],
+        cons: [
+          "Mindre stabilitet end dedikerede entry-modeller",
+          "Færre finjusteringer",
+          "Opgrader, når vanen er beviselig",
+        ],
+        specs: [
+          { label: "Type", value: "2-i-1 / kompakt" },
+          { label: "Segment", value: "Budget / plads" },
+          { label: "Partner", value: "Billig-fitness.dk" },
+        ],
+        feedProductId: "Billig-fitness.dk:42506598514859",
+      },
+      {
+        id: "titan-c56-billig",
+        name: "Titan Life Crosstrainer C56",
+        badge: "Bedste værdi opgradering",
+        summary:
+          "Når entry føles for tynd, men du stadig vil holde dig under premium: mere stabil midrange, der typisk stadig lander i den “fornuftige” prisklasse.",
+        pros: [
+          "Stabil Titan midrange",
+          "Jævnere følelse end C35/C200",
+          "God til hyppig brug",
+          "Fri fragt hos partner",
+        ],
+        cons: [
+          "Dyrere end ren entry",
+          "Fylder mere end 2-i-1",
+          "Overkill til 1 let pas om ugen",
+        ],
+        specs: [
+          { label: "Segment", value: "Midrange / værdi" },
+          { label: "Brand", value: "Titan Life" },
+          { label: "Partner", value: "HomeX.dk" },
+        ],
+        feedProductId: "HomeX.dk:3176",
+      },
+    ],
+    howToChoose:
+      "Stramt budget og småt rum? Odin C200 eller 2-i-1. Vil du have lav indstigning og mere “færdig” entry? Titan C35. Træner du allerede ofte, og entry vakler? Stræk dig til C56. Prioritér stabilitet og skridtlængde før skærm. Shop via “Se pris”, eller browse Crosstrainer → Billig.",
+    learningSections: [
+      {
+        heading: "Hvad sparer du egentlig på?",
+        paragraphs: [
+          "Billige crosstrainere sparer typisk på svinghjulsfølelse, build-kvalitet og finjustering — ikke nødvendigvis på, at du kan få pulsen op. En god entry er ærlig: den bygger vanen, den erstatter ikke et center-pas på dag ét.",
+          "Betal mere, når du allerede træner 3–4 gange om ugen, eller når skridtet føles for kort til din højde.",
+        ],
+      },
+      {
+        heading: "2-i-1 vs. dedikeret budget",
+        paragraphs: [
+          "2-i-1 vinder på pris og footprint. Dedikeret entry (C35/C200) vinder på følelse og stabilitet. Køb 2-i-1 for at teste disciplinen; vælg dedikeret, hvis du allerede ved, at ellipse er din grej.",
+        ],
+      },
+      {
+        heading: "Hvornår er “billig” for billigt?",
+        paragraphs: [
+          "Hvis rammen vakler, pedalerne klikker konstant, eller skridtet er så kort, at du hader hvert pas — så er den dyre midrange billigere i længden. Opgrader, når udstyret begrænser dig, ikke når annoncen frister.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "Hvilken billig crosstrainer skal jeg købe?",
+        answer:
+          "Start med Odin C200 for skarpest pris, Titan C35 for lav indstigning og mere komplet entry, eller 2-i-1 hvis plads er lige så vigtigt som pris. Gå C56, hvis du allerede træner ofte.",
+      },
+      {
+        question: "Er en billig crosstrainer god nok til hjemmet?",
+        answer:
+          "Ja til vane og zone 2, hvis den står stabilt. Nej som eneste maskine til hård interval hver dag i årevis — så spar op til midrange.",
+      },
+      {
+        question: "2-i-1 eller dedikeret entry?",
+        answer:
+          "2-i-1 til plads og laveste pris. Dedikeret entry til bedre følelse. Se også Bedste kompakt crosstrainer 2026, hvis footprint er hovedsagen.",
+      },
+      {
+        question: "Hvad med støj i lejlighed?",
+        answer:
+          "Vælg magnet, brug måtte, stil i vater. Se Bedste støjsvage crosstrainer 2026 for aften-fokus.",
+      },
+      {
+        question: "Skal jeg købe brugt i stedet?",
+        answer:
+          "Brugt kan være fint, hvis du kan tjekke lejer, pedaler og elektronik. Nye entry-modeller er ofte så skarpt prissat, at “brugt midrange” kun vinder, hvis standen er dokumenteret.",
+      },
+      {
+        question: "Hvordan ser jeg live priser?",
+        answer:
+          "Klik “Se pris” på anbefalingerne, eller browse Crosstrainer → Billig for flere feed-tilbud.",
+      },
+    ],
+    relatedSlugs: [
+      "bedste-crosstrainer-2026",
+      "bedste-kompakt-crosstrainer-2026",
+      "bedste-stoejsvag-crosstrainer-2026",
+      "romaskine-eller-crosstrainer-2026",
+      "ultimative-home-gym-budget-2026",
+      "bedste-foldbare-kompakte-traeningsmaskiner-2026",
+    ],
+  },
+  {
+    slug: "bedste-kompakt-crosstrainer-2026",
+    title: "Bedste kompakt crosstrainer 2026",
+    excerpt:
+      "Mindre footprint til lejlighed og små rum: kompakte rammer, 2-i-1 og fold — plus fire anbefalinger med live priser.",
+    metaDescription:
+      "Bedste kompakt crosstrainer 2026. Guide til footprint, arme i sving, 2-i-1 og fold — plus fire anbefalinger med live priser.",
+    categorySlug: "crosstrainer",
+    intentSlug: "plads",
+    publishedAt: "2026-11-12",
+    updatedAt: "2026-11-12",
+    intro:
+      "Crosstrainere fylder — især i højden og med arme i yderposition. “Kompakt” betyder sjældent sofa-under-gåbånd-niveau; det betyder en kortere ramme, en 2-i-1-løsning eller en model, der kan foldes væk efter brug. Denne guide er til lejlighed og små rum: hvad du skal måle, hvilke kompromiser der er ærlige, og fire modeller der matcher pladsbehovet.",
+    criteria: [
+      {
+        title: "Footprint i brug — ikke kun på papiret",
+        description:
+          "Mål dybde, bredde og loft med arme i top. Armenes radius kan slå ind i vægge, selv når maskinens fodaftryk ser “lille” ud.",
+      },
+      {
+        title: "Kompakt ramme vs. fold",
+        description:
+          "En kompakt baghjulsmodel (C200-klassen) står mindre permanent. En foldbar model (C800-klassen) kan give gulvet tilbage — hvis du faktisk folder den efter hvert pas.",
+      },
+      {
+        title: "2-i-1 som plads-hack",
+        description:
+          "2-i-1 sparer gulv, men ofrer typisk stabilitet. Relevant, når elliptisk træning skal ind i et hjørne uden at eje rummet.",
+      },
+      {
+        title: "Baghjul fylder mere i dybden",
+        description:
+          "Forhjulstrukne maskiner er ofte længere. Til små rum vinder baghjulstrukket hjemme-entry næsten altid på footprint.",
+      },
+      {
+        title: "Fast hjørne-strategi",
+        description:
+          "Mange crosstrainere foldes ikke fladt. Planlæg et fast hjørne, ryddeplads til armsving, og acceptér at maskinen “bor” der — ellers vælg cykel eller gåbånd.",
+      },
+      {
+        title: "Plads vs. træningskvalitet",
+        description:
+          "Den mindste maskine er ikke altid den, du bruger. Hvis skridtet er for kort, eller rammen vakler, ender den som tørrestativ. Match plads til den model, du realistisk træner på.",
+      },
+    ],
+    products: [
+      {
+        id: "odin-c200-plads",
+        name: "Odin C200 Crosstrainer",
+        badge: "Bedst kompakt",
+        summary:
+          "Komprimeret Odin-ramme til hjørnet — vores hovedanbefaling, når crosstraineren skal ind uden at dominere hele stuen.",
+        pros: [
+          "Komprimeret footprint til små rum",
+          "Skarp pris",
+          "Ledvenlig cardio uden løbestød",
+          "Passer til “fast hjørne”-strategien",
+        ],
+        cons: [
+          "Foldes typisk ikke fladt som et gåbånd",
+          "Arme/pedaler kræver stadig svingplads i brug",
+          "Tjek skridtlængde hvis du er høj",
+        ],
+        specs: [
+          { label: "Opbevaring", value: "Hjørne / kompakt footprint" },
+          { label: "Segment", value: "Budget / hjemme" },
+          { label: "Partner", value: "Apuls.dk" },
+        ],
+        feedProductId: "Apuls.dk:12748",
+      },
+      {
+        id: "crosstrainer-2i1-plads",
+        name: "Crosstrainer billig (2 i 1)",
+        badge: "Bedste 2-i-1",
+        summary:
+          "Når gulvpladsen er knap, og du vil have elliptisk træning uden en fuld midrange-ellipse midt i rummet.",
+        pros: [
+          "Sparet footprint",
+          "Skarp pris",
+          "Relevant i små hjem",
+          "Nem indgang til disciplinen",
+        ],
+        cons: [
+          "Mindre stabilitet end dedikerede modeller",
+          "Færre finjusteringer",
+          "Opgrader, når vanen er beviselig",
+        ],
+        specs: [
+          { label: "Type", value: "2-i-1 / kompakt" },
+          { label: "Segment", value: "Budget / plads" },
+          { label: "Partner", value: "Billig-fitness.dk" },
+        ],
+        feedProductId: "Billig-fitness.dk:42506598514859",
+      },
+      {
+        id: "odin-c800-plads",
+        name: "Odin C800 Foldbar Crosstrainer",
+        badge: "Bedste foldbar",
+        summary:
+          "Når du vil have mere maskine end C200, men gulvet skal kunne frigives efter træning. Fold er pointen — brug den.",
+        pros: [
+          "Foldbar til plads efter brug",
+          "Stabil Odin-hjemmelinje",
+          "Magnetisk træning",
+          "Match til små rum med “ryd op”-rutine",
+        ],
+        cons: [
+          "Markant højere pris",
+          "Fold skal bruges — ellers spild",
+          "Tungere at håndtere end et gåbånd",
+        ],
+        specs: [
+          { label: "Feature", value: "Foldbar" },
+          { label: "Segment", value: "Øvre mid" },
+          { label: "Partner", value: "Apuls.dk" },
+        ],
+        feedProductId: "Apuls.dk:12800",
+      },
+      {
+        id: "titan-c35-plads",
+        name: "Titan Life C35 Crosstrainer",
+        badge: "Kompakt entry",
+        summary:
+          "Lav indstigning og dedikeret entry-størrelse — mindre end midrange C56, mere “rigtig” maskine end mange 2-i-1’ere.",
+        pros: [
+          "Lav indstigning",
+          "Magnetisk entry",
+          "Fri fragt hos partner",
+          "God til lejlighed uden fold-krav",
+        ],
+        cons: [
+          "Står permanent — planlæg hjørne",
+          "Ikke C56-jævnhed",
+          "Mål armsving før køb",
+        ],
+        specs: [
+          { label: "Feature", value: "Lav indstigning" },
+          { label: "Segment", value: "Budget" },
+          { label: "Partner", value: "HomeX.dk" },
+        ],
+        feedProductId: "HomeX.dk:2792",
+      },
+    ],
+    howToChoose:
+      "Mindst permanente footprint? Odin C200 eller 2-i-1. Skal gulvet frigives efter brug? Odin C800 — og vær ærlig om, at du folder den. Vil have lav indstigning uden fold-budget? Titan C35. Er problemet loft mere end gulv? Se også Bedste cardio under lavt loft. Shop via “Se pris”, eller browse Crosstrainer → Kompakt.",
+    learningSections: [
+      {
+        heading: "Crosstrainer er sjældent “under sofaen”",
+        paragraphs: [
+          "Gåbånd vinder, når maskinen skal forsvinde helt. Crosstraineren vinder på skånsom helkrop — men kræver et fast hjem eller en fold-rutine. Vælg den, hvis du accepterer det kompromis.",
+          "Se Bedste foldbare & kompakte træningsmaskiner, hvis du stadig er åben for gåbånd eller romaskine på højkant.",
+        ],
+      },
+      {
+        heading: "Mål armsvinget",
+        paragraphs: [
+          "Det typiske fejltrin er at måle kun maskinens bund. Armene svinger ud — mål friplads til væg, reol og dør. Ellers får du dunk og nabo-støj.",
+        ],
+      },
+      {
+        heading: "Fold kun hvis du folder",
+        paragraphs: [
+          "En foldbar crosstrainer, der aldrig foldes, er bare en dyrere stationær maskine. Køb C800-klassen, når du har en rutine (fx efter aftenpas). Ellers vælg kompakt entry og et fast hjørne.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "Hvilken kompakt crosstrainer skal jeg købe?",
+        answer:
+          "Odin C200 til mindst permanente footprint i budget. 2-i-1 hvis plads og pris vejer lige. Odin C800 hvis fold er et must. Titan C35 hvis du vil have lav indstigning uden fold-budget.",
+      },
+      {
+        question: "Kan en crosstrainer stå i en lille lejlighed?",
+        answer:
+          "Ja, hvis du planlægger hjørne og armsving — eller vælger fold/2-i-1. Den er stadig større end et walking pad.",
+      },
+      {
+        question: "Crosstrainer eller gåbånd til små rum?",
+        answer:
+          "Gåbånd vinder på opbevaring. Crosstrainer vinder på helkrop uden stød. Vælg den bevægelse, du realistisk laver tre gange om ugen.",
+      },
+      {
+        question: "Hvad med støj?",
+        answer:
+          "Kompakt betyder ikke automatisk stille. Vælg magnet, måtte og fornuftig intensitet — se Bedste støjsvage crosstrainer 2026.",
+      },
+      {
+        question: "Er 2-i-1 godt nok?",
+        answer:
+          "Til at teste vanen i et lille hjem: ja. Til hyppig, langvarig træning: planlæg opgradering til dedikeret model.",
+      },
+      {
+        question: "Hvordan ser jeg live priser?",
+        answer:
+          "Klik “Se pris” på anbefalingerne, eller browse Crosstrainer → Kompakt for flere feed-tilbud.",
+      },
+    ],
+    relatedSlugs: [
+      "bedste-crosstrainer-2026",
+      "bedste-billig-crosstrainer-2026",
+      "bedste-stoejsvag-crosstrainer-2026",
+      "bedste-foldbare-kompakte-traeningsmaskiner-2026",
+      "home-gym-til-lille-vaerelse-10m2-2026",
+      "bedste-cardio-under-lavt-loft-2026",
+      "romaskine-eller-crosstrainer-2026",
     ],
   },
   {
@@ -7788,9 +8217,10 @@ export const guides: Guide[] = [
     metaDescription:
       "Romaskine eller crosstrainer i 2026? Sammenlign støj, led, plads og træning — med konkrete modeller og live priser fra danske partnere.",
     categorySlug: "romaskine",
+    alsoCategorySlugs: ["crosstrainer"],
     recommendationsHeading: "Én model til hvert valg",
     publishedAt: "2026-11-06",
-    updatedAt: "2026-11-06",
+    updatedAt: "2026-11-12",
     intro:
       "Begge er skånsom kondition uden løbestød. Der stopper ligheden. Romaskinen er et siddende træk, der tager ryg, ben og arme i samme tag. Crosstraineren er stående ellipse med fødderne på pedalerne. Denne side er valget imellem dem — ikke en fuld test af hver kategori.",
     criteria: [
@@ -8016,6 +8446,8 @@ export const guides: Guide[] = [
       "bedste-crosstrainer-2026",
       "bedste-stoejsvag-romaskine-2026",
       "bedste-stoejsvag-crosstrainer-2026",
+      "bedste-billig-crosstrainer-2026",
+      "bedste-kompakt-crosstrainer-2026",
       "bedste-siddecykel-2026",
     ],
   },

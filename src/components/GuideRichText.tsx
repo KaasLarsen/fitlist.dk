@@ -94,6 +94,15 @@ const GUIDE_LINK_ALIASES: Record<string, string[]> = {
   ],
   "bedste-stoejsvag-romaskine-2026": ["Bedste støjsvage romaskine 2026"],
   "bedste-stoejsvag-crosstrainer-2026": ["Bedste støjsvage crosstrainer 2026"],
+  "bedste-billig-crosstrainer-2026": ["Bedste billige crosstrainer 2026"],
+  "bedste-kompakt-crosstrainer-2026": [
+    "Bedste kompakt crosstrainer 2026",
+    "Bedste kompakte crosstrainer 2026",
+  ],
+  "romaskine-eller-crosstrainer-2026": [
+    "Romaskine eller crosstrainer",
+    "Romaskine eller crosstrainer? Sådan vælger du i 2026",
+  ],
   "bedste-power-rack-squat-rack-2026": [
     "Bedste power rack & squat rack 2026",
   ],

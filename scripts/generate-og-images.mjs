@@ -4,7 +4,7 @@
  *
  * Run: node scripts/generate-og-images.mjs
  */
-import { mkdir, writeFile, readFile } from "node:fs/promises";
+import { mkdir, writeFile, readFile, access } from "node:fs/promises";
 import path from "node:path";
 import { createRequire } from "node:module";
 import { pathToFileURL, fileURLToPath } from "node:url";
@@ -16,11 +16,31 @@ const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const OUT = path.join(ROOT, "public", "og");
 const WIDTH = 1200;
 const HEIGHT = 630;
+
+async function resolveFont(envKey, candidates) {
+  if (process.env[envKey]) return process.env[envKey];
+  for (const candidate of candidates) {
+    try {
+      await access(candidate);
+      return candidate;
+    } catch {
+      /* try next */
+    }
+  }
+  return candidates[0];
+}
+
 const FONT_BOLD = pathToFileURL(
-  "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf",
+  await resolveFont("OG_FONT_BOLD", [
+    "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf",
+    "/System/Library/Fonts/Supplemental/Arial Bold.ttf",
+  ]),
 ).href;
 const FONT_REG = pathToFileURL(
-  "/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf",
+  await resolveFont("OG_FONT_REG", [
+    "/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf",
+    "/System/Library/Fonts/Supplemental/Arial.ttf",
+  ]),
 ).href;
 
 function escapeXml(s) {
