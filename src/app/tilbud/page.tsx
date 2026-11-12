@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { connection } from "next/server";
 import { ProductDealCard } from "@/components/ProductDealCard";
 import { getAllDiscountedDeals } from "@/lib/feeds/catalog";
 import { canonical } from "@/lib/site";
@@ -14,6 +15,8 @@ export const metadata: Metadata = {
 };
 
 export default async function TilbudPage() {
+  // Undgå tom Full Route Cache efter deploy (feeds hentes først via cron/runtime).
+  await connection();
   const products = await getAllDiscountedDeals({ limit: 60 });
 
   return (

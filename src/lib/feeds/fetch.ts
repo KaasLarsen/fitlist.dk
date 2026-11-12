@@ -21,7 +21,7 @@ import {
 } from "@/lib/feeds/cykelpartner-guide-ids";
 import type { FeedProduct } from "@/lib/feeds/types";
 
-const FEED_CACHE_VERSION = "v10";
+const FEED_CACHE_VERSION = "v11";
 const FEED_REVALIDATE_SECONDS = 21_600; // 6 timer
 /** Partner-Ads XML er ofte langsom; for lav timeout tømmer hele kataloget. */
 const DEFAULT_TIMEOUT_MS = 90_000;
@@ -38,8 +38,11 @@ const FEED_FETCH_CONCURRENCY = 2;
 /**
  * Hård cap pr. merchant-feed efter classify — Next.js Data Cache max 2 MB/entry.
  * Prioritér på lager + billede, derefter lavest pris.
+ * Holdes lavt: lange Partner-Ads-URL’er gør 300 varer let >2 MB.
  */
-const FEED_CACHE_PRODUCT_LIMIT = 300;
+const FEED_CACHE_PRODUCT_LIMIT = 120;
+/** Soft ceiling under Next.js’ 2 MB Data Cache-loft (UTF-8 JSON). */
+const FEED_CACHE_MAX_BYTES = 1_400_000;
 
 /**
  * Springes over i warm + katalog:
@@ -70,7 +73,7 @@ async function fetchCykelpartnerGuideProductsInner(): Promise<FeedProduct[]> {
   const text = await fetchFeedText(url, feed.merchant, CYKELPARTNER_TIMEOUT_MS);
   const matched = parsePartnerAdsXml(text, feed.merchant, { onlyIds });
 
-  return slimFeedProducts(
+  return fitFeedProductsForCache(
     matched.map((product) => {
       const classified = classifyProduct(product);
       return classified ?? product;
@@ -115,7 +118,7 @@ function slimFeedProducts(products: FeedProduct[]): FeedProduct[] {
   return products.map((p) => ({
     id: p.id,
     merchant: p.merchant,
-    title: (p.title || "").slice(0, 140),
+    title: (p.title || "").slice(0, 120),
     desc: "",
     // category-tekst bruges kun til classify (allerede sket); drop for cache-størrelse
     category: "",
@@ -126,25 +129,59 @@ function slimFeedProducts(products: FeedProduct[]): FeedProduct[] {
     url: p.url || "",
     inStock: p.inStock,
     categorySlug: p.categorySlug,
-    intentSlugs: p.intentSlugs,
+    intentSlugs: p.intentSlugs?.slice(0, 12),
   }));
 }
 
-/** Hold hver feed-cache under 2 MB: cap + prioritering. */
-function limitFeedProducts(products: FeedProduct[]): FeedProduct[] {
-  if (products.length <= FEED_CACHE_PRODUCT_LIMIT) return products;
-  return [...products]
-    .sort((a, b) => {
-      if (a.inStock !== b.inStock) return a.inStock ? -1 : 1;
-      const aImg = Boolean(a.image);
-      const bImg = Boolean(b.image);
-      if (aImg !== bImg) return aImg ? -1 : 1;
-      if (a.price == null && b.price == null) return 0;
-      if (a.price == null) return 1;
-      if (b.price == null) return -1;
-      return a.price - b.price;
-    })
-    .slice(0, FEED_CACHE_PRODUCT_LIMIT);
+function sortFeedProductsForCache(a: FeedProduct, b: FeedProduct): number {
+  if (a.inStock !== b.inStock) return a.inStock ? -1 : 1;
+  const aImg = Boolean(a.image);
+  const bImg = Boolean(b.image);
+  if (aImg !== bImg) return aImg ? -1 : 1;
+  // Bevar category-diversitet: maskiner før “must-haves”-tunge feeds
+  const aMachine = a.categorySlug && a.categorySlug !== "must-haves" ? 0 : 1;
+  const bMachine = b.categorySlug && b.categorySlug !== "must-haves" ? 0 : 1;
+  if (aMachine !== bMachine) return aMachine - bMachine;
+  if (a.price == null && b.price == null) return 0;
+  if (a.price == null) return 1;
+  if (b.price == null) return -1;
+  return a.price - b.price;
+}
+
+function utf8JsonBytes(value: unknown): number {
+  return Buffer.byteLength(JSON.stringify(value), "utf8");
+}
+
+/**
+ * Hold hver feed-cache under 2 MB: slim + cap + byte-budget.
+ * Next.js afviser unstable_cache-entries >2 MB — uden cache bliver sider
+ * ved med at cold-fetche og ender tomme efter deploy.
+ */
+export function fitFeedProductsForCache(
+  products: FeedProduct[],
+  opts?: { maxProducts?: number; maxBytes?: number },
+): FeedProduct[] {
+  const maxProducts = opts?.maxProducts ?? FEED_CACHE_PRODUCT_LIMIT;
+  const maxBytes = opts?.maxBytes ?? FEED_CACHE_MAX_BYTES;
+  const sorted = slimFeedProducts([...products].sort(sortFeedProductsForCache));
+
+  const out: FeedProduct[] = [];
+  let bytes = 2; // []
+  for (const product of sorted) {
+    if (out.length >= maxProducts) break;
+    const itemBytes = utf8JsonBytes(product) + (out.length > 0 ? 1 : 0);
+    if (bytes + itemBytes > maxBytes) break;
+    out.push(product);
+    bytes += itemBytes;
+  }
+
+  if (out.length < sorted.length) {
+    console.warn(
+      `[feed] cache trim ${sorted.length} → ${out.length} products (~${bytes} bytes)`,
+    );
+  }
+
+  return out;
 }
 
 function sleep(ms: number): Promise<void> {
@@ -256,7 +293,7 @@ async function fetchFeedProductsForCache(
   feed: CatalogFeed,
 ): Promise<FeedProduct[]> {
   const products = await fetchCatalogFeedInner(feed);
-  return slimFeedProducts(limitFeedProducts(products));
+  return fitFeedProductsForCache(products);
 }
 
 function feedCacheKey(feed: CatalogFeed): string[] {

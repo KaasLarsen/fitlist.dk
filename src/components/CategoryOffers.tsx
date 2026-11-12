@@ -1,3 +1,4 @@
+import { connection } from "next/server";
 import { ProductOfferList } from "@/components/ProductOfferList";
 import { getProductsByCategory } from "@/lib/feeds/catalog";
 import type { MachineCategorySlug } from "@/lib/feeds/types";
@@ -17,10 +18,27 @@ export async function CategoryOffers({
   intentSlug,
   intentLabel,
 }: Props) {
-  const products = await getProductsByCategory(categorySlug, {
-    intentSlug,
-    limit: CATEGORY_OFFER_LIMIT,
-  });
+  // Undgå at build-time tomme tilbud låses i Full Route Cache efter deploy.
+  await connection();
+
+  const [products, categoryAll] = await Promise.all([
+    getProductsByCategory(categorySlug, {
+      intentSlug,
+      limit: CATEGORY_OFFER_LIMIT,
+    }),
+    intentSlug
+      ? getProductsByCategory(categorySlug, { limit: 1 })
+      : Promise.resolve(null),
+  ]);
+
+  const catalogEmpty = intentSlug
+    ? (categoryAll?.length ?? 0) === 0
+    : products.length === 0;
+
+  const emptyMessage =
+    intentLabel && !catalogEmpty
+      ? `Ingen tilbud matcher “${intentLabel}” lige nu. Prøv et andet filter.`
+      : `Vi har endnu ikke fundet ${categoryName.toLowerCase()} i partnerfeeds. Tjek igen snart.`;
 
   return (
     <section className="mt-16 border-t border-border pt-10">
@@ -35,14 +53,7 @@ export async function CategoryOffers({
           </p>
         ) : null}
       </div>
-      <ProductOfferList
-        products={products}
-        emptyMessage={
-          intentLabel
-            ? `Ingen tilbud matcher “${intentLabel}” lige nu. Prøv et andet filter.`
-            : `Vi har endnu ikke fundet ${categoryName.toLowerCase()} i partnerfeeds. Tjek igen snart.`
-        }
-      />
+      <ProductOfferList products={products} emptyMessage={emptyMessage} />
     </section>
   );
 }

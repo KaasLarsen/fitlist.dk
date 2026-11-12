@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { connection } from "next/server";
 import { CategorySection } from "@/components/CategorySection";
 import { DailyDealsSection } from "@/components/DailyDealsSection";
 import { FeaturedGuidesSection } from "@/components/FeaturedGuidesSection";
@@ -44,6 +45,8 @@ export const metadata: Metadata = {
 };
 
 export default async function Home() {
+  // Undgå tom Full Route Cache efter deploy (feeds hentes først via cron/runtime).
+  await connection();
   const deals = await getDailyDeals({ limit: 8 });
   const featuredGuides = getFeaturedGuides();
 

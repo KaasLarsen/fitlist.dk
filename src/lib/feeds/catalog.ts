@@ -1,17 +1,13 @@
-import { unstable_cache } from "next/cache";
 import { CATALOG_FEEDS } from "@/lib/feeds/config";
 import { refineBilligIntent } from "@/lib/feeds/classify";
 import { CYKELPARTNER_MERCHANT } from "@/lib/feeds/cykelpartner-guide-ids";
 import {
   FEED_FETCH_CONCURRENCY,
-  FEED_REVALIDATE_SECONDS,
   getCachedCykelpartnerGuideProducts,
   getCachedFeedProducts,
   mapWithConcurrency,
 } from "@/lib/feeds/fetch";
 import type { FeedProduct, MachineCategorySlug } from "@/lib/feeds/types";
-
-const CATALOG_CACHE_VERSION = "v18";
 
 async function buildMachineCatalog(): Promise<FeedProduct[]> {
   // getCachedFeedProducts springer tunge feeds (Cykelpartner) over automatisk.
@@ -115,22 +111,15 @@ export async function getProductsByCategory(
   const limit = opts?.limit ?? 0;
   const inStockOnly = opts?.inStockOnly ?? false;
 
-  const cached = unstable_cache(
-    () =>
-      buildCategoryProducts(categorySlug, intentSlug, limit, inStockOnly),
-    [
-      "fitlist-category-products",
-      CATALOG_CACHE_VERSION,
+  // Ikke unstable_cache her: build SSG’er med tomme feeds og cachede ellers
+  // [] i 6 timer — også efter cron har varmet per-feed-cachen. Merge er billigt.
+  try {
+    return await buildCategoryProducts(
       categorySlug,
       intentSlug,
-      String(limit),
-      String(inStockOnly),
-    ],
-    { revalidate: FEED_REVALIDATE_SECONDS, tags: ["fitlist-feeds"] },
-  );
-
-  try {
-    return await cached();
+      limit,
+      inStockOnly,
+    );
   } catch (err) {
     console.error(`[catalog] category slice failed (${categorySlug}):`, err);
     return [];
