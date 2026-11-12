@@ -225,13 +225,22 @@ function getDiscountedProducts(catalog: FeedProduct[]): FeedProduct[] {
 /**
  * Alle aktuelle rabatter (browse): samme filter som dagens tilbud,
  * sorteret efter størst rabat — uden daglig shuffle/merchant-cap.
+ * Valgfri categorySlug filtrerer før limit, så kategori-views ikke
+ * får næsten tomme lister (top 60 er ofte tilbehør).
  */
 export async function getAllDiscountedDeals(opts?: {
   limit?: number;
+  categorySlug?: string;
 }): Promise<FeedProduct[]> {
   const limit = opts?.limit ?? 60;
   const catalog = await getMachineCatalog();
-  return getDiscountedProducts(catalog).slice(0, limit);
+  let discounted = getDiscountedProducts(catalog);
+  if (opts?.categorySlug) {
+    discounted = discounted.filter(
+      (p) => p.categorySlug === opts.categorySlug,
+    );
+  }
+  return discounted.slice(0, limit);
 }
 
 /**

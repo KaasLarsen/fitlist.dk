@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { connection } from "next/server";
 import { ProductDealCard } from "@/components/ProductDealCard";
+import { getAllCategories, getCategory } from "@/lib/categories";
 import { getAllDiscountedDeals } from "@/lib/feeds/catalog";
 import { canonical } from "@/lib/site";
 
@@ -14,10 +15,27 @@ export const metadata: Metadata = {
   alternates: { canonical: canonical("/tilbud") },
 };
 
-export default async function TilbudPage() {
+type Props = {
+  searchParams: Promise<{ category?: string }>;
+};
+
+export default async function TilbudPage({ searchParams }: Props) {
   // Undgå tom Full Route Cache efter deploy (feeds hentes først via cron/runtime).
   await connection();
-  const products = await getAllDiscountedDeals({ limit: 60 });
+  const { category: categorySlug } = await searchParams;
+  const categories = getAllCategories();
+  const activeCategory = categorySlug ? getCategory(categorySlug) : undefined;
+  const products = await getAllDiscountedDeals({
+    limit: 60,
+    categorySlug: activeCategory?.slug,
+  });
+
+  const chipClass = (active: boolean) =>
+    `inline-flex border px-4 py-2 font-display text-xs font-semibold uppercase tracking-[0.14em] transition-colors ${
+      active
+        ? "border-accent bg-accent text-accent-fg"
+        : "border-border text-muted hover:border-foreground hover:text-foreground"
+    }`;
 
   return (
     <div className="noise hero-glow flex flex-1 flex-col">
@@ -33,10 +51,37 @@ export default async function TilbudPage() {
           rabatprocent.
         </p>
 
+        <section className="mt-12">
+          <p className="font-display text-sm font-medium uppercase tracking-[0.16em] text-muted">
+            Filtrer efter kategori
+          </p>
+          <ul className="mt-4 flex flex-wrap gap-3">
+            <li>
+              <Link href="/tilbud" className={chipClass(!activeCategory)}>
+                Alle
+              </Link>
+            </li>
+            {categories.map((category) => {
+              const active = activeCategory?.slug === category.slug;
+              return (
+                <li key={category.slug}>
+                  <Link
+                    href={`/tilbud?category=${category.slug}`}
+                    className={chipClass(active)}
+                  >
+                    {category.shortName}
+                  </Link>
+                </li>
+              );
+            })}
+          </ul>
+        </section>
+
         {products.length === 0 ? (
           <p className="mt-16 border-t border-border pt-8 text-muted">
-            Ingen aktuelle tilbud lige nu. Prøv igen senere, eller se alle
-            maskiner.
+            {activeCategory
+              ? `Ingen aktuelle tilbud i ${activeCategory.shortName.toLowerCase()} lige nu. Prøv en anden kategori, eller se alle maskiner.`
+              : "Ingen aktuelle tilbud lige nu. Prøv igen senere, eller se alle maskiner."}
           </p>
         ) : (
           <ul className="mt-16 grid grid-cols-2 gap-3 sm:gap-5 lg:grid-cols-4">
