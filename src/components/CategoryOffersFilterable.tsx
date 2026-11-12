@@ -54,6 +54,7 @@ export function CategoryOffersFilterable({
   const bounds = useMemo(() => priceBounds(products), [products]);
 
   const [selectedBrands, setSelectedBrands] = useState<string[]>([]);
+  const [brandsOpen, setBrandsOpen] = useState(false);
   const [priceMin, setPriceMin] = useState(bounds?.min ?? 0);
   const [priceMax, setPriceMax] = useState(bounds?.max ?? 0);
 
@@ -160,30 +161,50 @@ export function CategoryOffersFilterable({
 
           {brands.length > 0 ? (
             <div>
-              <p className="font-display text-sm font-medium uppercase tracking-[0.16em] text-muted">
-                Mærke
-              </p>
-              <ul className="mt-4 flex flex-wrap gap-3">
-                {brands.map((brand) => {
-                  const active = selectedBrandKeys.has(brandKey(brand));
-                  return (
-                    <li key={brandKey(brand)}>
-                      <button
-                        type="button"
-                        onClick={() => toggleBrand(brand)}
-                        aria-pressed={active}
-                        className={`inline-flex border px-4 py-2 font-display text-xs font-semibold uppercase tracking-[0.14em] transition-colors ${
-                          active
-                            ? "border-accent bg-accent text-accent-fg"
-                            : "border-border text-muted hover:border-foreground hover:text-foreground"
-                        }`}
-                      >
-                        {brand}
-                      </button>
-                    </li>
-                  );
-                })}
-              </ul>
+              <button
+                type="button"
+                onClick={() => setBrandsOpen((open) => !open)}
+                aria-expanded={brandsOpen}
+                className="flex w-full items-center justify-between gap-3 text-left transition-colors hover:text-foreground"
+              >
+                <span className="font-display text-sm font-medium uppercase tracking-[0.16em] text-muted">
+                  Mærke
+                  {brandFilterActive
+                    ? ` · ${selectedBrands.length} valgt`
+                    : ""}
+                </span>
+                <span
+                  aria-hidden
+                  className={`font-display text-sm text-muted transition-transform ${
+                    brandsOpen ? "rotate-180" : ""
+                  }`}
+                >
+                  ▾
+                </span>
+              </button>
+              {brandsOpen ? (
+                <ul className="mt-4 flex flex-wrap gap-3">
+                  {brands.map((brand) => {
+                    const active = selectedBrandKeys.has(brandKey(brand));
+                    return (
+                      <li key={brandKey(brand)}>
+                        <button
+                          type="button"
+                          onClick={() => toggleBrand(brand)}
+                          aria-pressed={active}
+                          className={`inline-flex border px-4 py-2 font-display text-xs font-semibold uppercase tracking-[0.14em] transition-colors ${
+                            active
+                              ? "border-accent bg-accent text-accent-fg"
+                              : "border-border text-muted hover:border-foreground hover:text-foreground"
+                          }`}
+                        >
+                          {brand}
+                        </button>
+                      </li>
+                    );
+                  })}
+                </ul>
+              ) : null}
             </div>
           ) : null}
 
