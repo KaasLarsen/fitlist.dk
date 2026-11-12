@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { connection } from "next/server";
 import { GuideAffiliateBanner } from "@/components/GuideAffiliateBanner";
 import { GuideRichText } from "@/components/GuideRichText";
 import { ProductOfferList } from "@/components/ProductOfferList";
@@ -47,6 +48,10 @@ async function resolveGuideOffers(
 }
 
 export async function GuideArticle({ guide }: { guide: Guide }) {
+  // Samme trick som CategoryOffers: undgå at build-time tomme feeds
+  // låses i Full Route Cache efter deploy (guides viste “Se tilbud i kategorien”).
+  await connection();
+
   const category = getCategory(guide.categorySlug);
   const related = getRelatedGuides(guide);
   const modelGuide = isModelGuide(guide);
