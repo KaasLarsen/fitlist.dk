@@ -715,7 +715,7 @@ export const guides: Guide[] = [
       {
         question: "Hvordan gemmer jeg en romaskine væk?",
         answer:
-          "Vælg en model, der kan foldes eller rejses lodret (som Masterfit 170). Løsn låsen, vip skinnen op, og stil den i et hjørne eller skab. Tjek greb/hjul, så du faktisk orker det efter hvert pas.",
+          "Vælg en model, der kan foldes eller rejses lodret (som Masterfit 170). Løsn låsen, vip skinnen op, og stil den i et hjørne eller skab. Tjek greb/hjul, så du faktisk orker det efter hvert pas. Se også Bedste foldbare romaskine 2026.",
       },
       {
         question: "Er crosstrainer et dårligt valg i små rum?",
@@ -739,6 +739,8 @@ export const guides: Guide[] = [
       "bedste-gaabaand-2026",
       "gaabaand-til-kontoret-2026",
       "bedste-romaskine-2026",
+      "bedste-foldbar-romaskine-2026",
+      "bedste-kompakt-romaskine-2026",
       "bedste-crosstrainer-2026",
       "bedste-kompakt-crosstrainer-2026",
       "bedste-justerbar-traeningsbaenk-2026",
@@ -1485,6 +1487,8 @@ export const guides: Guide[] = [
       "bedste-vandromaskine-2026",
       "romaskine-eller-crosstrainer-2026",
       "bedste-stoejsvag-romaskine-2026",
+      "bedste-foldbar-romaskine-2026",
+      "bedste-kompakt-romaskine-2026",
       "bedste-loebebaand-2026",
       "bedste-crosstrainer-2026",
       "bedste-stoejsvage-traeningsmaskiner-lejlighed-2026",
@@ -5743,11 +5747,433 @@ export const guides: Guide[] = [
       "odin-r1800-vandromaskine-2026",
       "bedste-vandromaskine-2026",
       "bedste-romaskine-2026",
+      "bedste-foldbar-romaskine-2026",
+      "bedste-kompakt-romaskine-2026",
       "bedste-stoejsvage-traeningsmaskiner-lejlighed-2026",
       "bedste-stoejsvag-crosstrainer-2026",
       "bedste-foldbare-kompakte-traeningsmaskiner-2026",
       "bedste-crosstrainer-2026",
       "bedste-motionscykel-2026",
+    ],
+  },
+  {
+    slug: "bedste-foldbar-romaskine-2026",
+    title: "Bedste foldbare romaskine 2026",
+    excerpt:
+      "Romaskine der kan rejses eller klappes væk: lodret stuvning, greb/hjul og fire foldbare anbefalinger med live priser.",
+    metaDescription:
+      "Bedste foldbare romaskine 2026. Guide til lodret stuvning, brugslængde vs. opbevaring og magnet vs. vand — plus fire anbefalinger med live priser.",
+    categorySlug: "romaskine",
+    intentSlug: "foldbar",
+    publishedAt: "2026-11-12",
+    updatedAt: "2026-11-12",
+    intro:
+      "En romaskine er lang i brug — ofte over to meter. Pointen med fold er ikke at gøre træningen kortere, men at give stuen tilbage bagefter: skinne på højkant, klapmekanisme eller træ-vandmodel der må stå fremme og alligevel kan pakkes. Denne guide er til dig, der vil have helkrop uden en permanent “gym-bane” midt i rummet — med fire konkrete modeller og ærlig snak om, hvornår fold faktisk bliver brugt.",
+    criteria: [
+      {
+        title: "Lodret stuvning vs. klap",
+        description:
+          "Nogle modeller rejses på højkant (skinne lodret). Andre klappes mere “sammen” som møbel. Tjek opbevaringsfootprint og loftshøjde — ikke kun ordet “foldbar” i overskriften.",
+      },
+      {
+        title: "Greb, hjul og vægt",
+        description:
+          "Fold er værdiløs, hvis du ikke orker den efter træning. Én person skal kunne vippe og rulle. Tjek greb, hjul og realistisk vægt på dit gulv (tæppe vs. hårdt).",
+      },
+      {
+        title: "Brugslængde er stadig brugslængde",
+        description:
+          "Fold løser opbevaring — ikke pladsen under pas. Mål længden i brug, plus plads til at stige af sikkert.",
+      },
+      {
+        title: "Magnet først i lejlighed",
+        description:
+          "Når fold er kravet i etagebyggeri, vælg magnet (eller vand med forbehold). Luftvifte + fold hjælper ikke naboerne.",
+      },
+      {
+        title: "Skinnelængde til din højde",
+        description:
+          "Kompakte/foldbare modeller kan have kortere skinne. Er du høj, prioriter maks. brugerhøjde før den billigste fold.",
+      },
+      {
+        title: "Fold-rutine eller ej",
+        description:
+          "Køb kun fold, hvis du realistisk folder efter pas. Ellers er en kompakt magnet der står i et fast hjørne ærligere — se Bedste kompakt romaskine 2026.",
+      },
+    ],
+    products: [
+      {
+        id: "masterfit-170-fold",
+        name: "Masterfit 170 Rower",
+        badge: "Bedst foldbar",
+        summary:
+          "Magnet-romaskine der rejses lodret efter brug — vores hovedanbefaling, når fold skal være simpel, støjsvag og til en skarp pris.",
+        pros: [
+          "Lodret stuvning — halverer footprint",
+          "Magnet — lejlighedsvenlig",
+          "Skarp pris i fold-segmentet",
+          "Helkrop uden permanent lang skinne",
+        ],
+        cons: [
+          "Brugslængde kræver stadig plads under pas",
+          "Tjek skinnelængde hvis du er høj",
+          "Lodret stuvning kræver greb og lidt loft",
+        ],
+        specs: [
+          { label: "Opbevaring", value: "Lodret / fold" },
+          { label: "Modstand", value: "Magnet" },
+          { label: "Partner", value: "Træningspartner" },
+        ],
+        feedProductId: "Træningspartner:01904a5eaad7714fb5635179812010a9",
+      },
+      {
+        id: "ascendic-6015-fold",
+        name: "Ascendic 6015 Foldbar Vandromaskine i Asketræ",
+        badge: "Bedste fold + finish",
+        summary:
+          "Når fold skal føles som møbel: asketræ, vandmodstand og klap efter pas — til stuen, hvor maskinen gerne må ses.",
+        pros: [
+          "Asketræ-look til stuen",
+          "Foldbar efter træning",
+          "Vandets båd-følelse",
+          "Stærkt match til æstetik-købere",
+        ],
+        cons: [
+          "Dyrere end magnet-entry",
+          "Splash er hørbar — ikke støjsvagest",
+          "Træ kræver fornuftig placering",
+        ],
+        specs: [
+          { label: "Modstand", value: "Vand" },
+          { label: "Materiale", value: "Asketræ" },
+          { label: "Fold", value: "Ja" },
+          { label: "Partner", value: "Ascendic.dk" },
+        ],
+        feedProductId: "Ascendic.dk:47720712569176",
+      },
+      {
+        id: "titan-r36-fold",
+        name: "Titan Life Rower R36",
+        badge: "Kompakt mid",
+        summary:
+          "Kompakt magnet midrange, når du vil have mere “færdig” maskine end entry-fold — og stadig kunne stuve fornuftigt i små hjem.",
+        pros: [
+          "Magnetisk og lejlighedsvenlig",
+          "Kompakt footprint",
+          "God til regelmæssig brug",
+          "Live partnerpris",
+        ],
+        cons: [
+          "Ikke samme lodrette “wow” som Masterfit 170",
+          "Dyrere end ren budget-fold",
+          "Tjek skinne hvis du er høj",
+        ],
+        specs: [
+          { label: "Modstand", value: "Magnet" },
+          { label: "Segment", value: "Kompakt mid" },
+          { label: "Partner", value: "Apuls.dk" },
+        ],
+        feedProductId: "Apuls.dk:15652",
+      },
+      {
+        id: "titan-r10-fold",
+        name: "Titan LIFE Rower R10",
+        badge: "Bedste budget-entry",
+        summary:
+          "Billig magnet-indgang, når fold/plads vejer tungt, og du vil teste roning før midrange-penge — ærlig starter, ikke livslang premium.",
+        pros: [
+          "Lav indgangspris",
+          "Magnet — ofte roligere end luft",
+          "Fin til begyndere",
+          "Fri fragt hos partner",
+        ],
+        cons: [
+          "Mindre raffineret til hård, hyppig brug",
+          "Høje brugere bør tjekke skinnen",
+          "Fold/opbevaring er mere “kompakt entry” end møbel-fold",
+        ],
+        specs: [
+          { label: "Modstand", value: "Magnet" },
+          { label: "Segment", value: "Budget" },
+          { label: "Partner", value: "HomeX.dk" },
+        ],
+        feedProductId: "HomeX.dk:2801",
+      },
+    ],
+    howToChoose:
+      "Simpel lodret fold + magnet? Masterfit 170. Skal den leve i stuen med look? Ascendic 6015. Vil have mere midrange uden vand-premium? Titan R36. Tester disciplinen på budget? R10. Usikker på fold vs. fast kompakt hjørne? Læs også Bedste kompakt romaskine 2026. Shop via “Se pris”, eller browse Romaskine → Foldbar.",
+    learningSections: [
+      {
+        heading: "Fold løser stuen — ikke pas-længden",
+        paragraphs: [
+          "Under træning fylder skinnen stadig. Fold er en opbevaringsstrategi: efter pas rejses eller klappes maskinen, så sofaen og gulvet kan bruges igen.",
+          "Hvis du aldrig folder, har du købt en dyrere stationær maskine. Vær ærlig om rutinen, før du betaler for hængsler.",
+        ],
+      },
+      {
+        heading: "Magnet vs. vand når fold er kravet",
+        paragraphs: [
+          "Magnet vinder på stilhed og pris. Vand vinder på stemning og møbelæstetik — især Ascendic-træ. Luft er sjældent det rigtige fold-valg i lejlighed.",
+          "Se Bedste støjsvage romaskine 2026 og Bedste vandromaskine 2026, hvis støj eller splash er hovedsagen mere end fold.",
+        ],
+      },
+      {
+        heading: "Mål loft og greb",
+        paragraphs: [
+          "Lodret stuvning kræver loftshøjde og et greb, du faktisk kan bruge svedig. Prøv flowet én gang, når maskinen er ny — tager det mere end et par minutter, bliver den stående.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "Hvilken foldbar romaskine skal jeg købe?",
+        answer:
+          "Masterfit 170 til lodret magnet-fold. Ascendic 6015 til fold + stue-look. Titan R36 til kompakt mid. R10 til budget-test.",
+      },
+      {
+        question: "Fylder en foldbar romaskine stadig meget?",
+        answer:
+          "I brug: ja. Efter fold: typisk langt mindre footprint. Mål begge tilstande.",
+      },
+      {
+        question: "Er foldbar det samme som kompakt?",
+        answer:
+          "Nej. Kompakt kan betyde kortere skinne uden god fold. Fold betyder opbevaring efter pas. Se Bedste kompakt romaskine 2026 for footprint-fokus.",
+      },
+      {
+        question: "Magnet eller vand til fold i lejlighed?",
+        answer:
+          "Magnet til naboer. Vand til stemning, hvis splash er OK i dagtimerne.",
+      },
+      {
+        question: "Hvad med Ascendic 6015 vs. Masterfit 170?",
+        answer:
+          "6015 er træ + vand + møbel. 170 er magnet + skarp pris + lodret stuvning. Vælg efter støjbudget og æstetik.",
+      },
+      {
+        question: "Hvordan ser jeg live priser?",
+        answer:
+          "Klik “Se pris” på anbefalingerne, eller browse Romaskine → Foldbar.",
+      },
+    ],
+    relatedSlugs: [
+      "bedste-romaskine-2026",
+      "bedste-kompakt-romaskine-2026",
+      "bedste-stoejsvag-romaskine-2026",
+      "bedste-vandromaskine-2026",
+      "bedste-foldbare-kompakte-traeningsmaskiner-2026",
+      "romaskine-eller-crosstrainer-2026",
+      "ascendic-6004-romaskine-2026",
+    ],
+  },
+  {
+    slug: "bedste-kompakt-romaskine-2026",
+    title: "Bedste kompakt romaskine 2026",
+    excerpt:
+      "Når skinnelængde og opbevaring er afgørende: kompakte magnet-modeller, lodret fold og fire anbefalinger med live priser.",
+    metaDescription:
+      "Bedste kompakt romaskine 2026. Guide til skinnelængde, footprint efter stuvning og høje brugere — plus fire anbefalinger med live priser.",
+    categorySlug: "romaskine",
+    intentSlug: "plads",
+    publishedAt: "2026-11-12",
+    updatedAt: "2026-11-12",
+    intro:
+      "“Kompakt romaskine” betyder ikke mini-cirkulationslegetøj. Det betyder en maskine, der kan leve i et lille hjem: kortere eller smartere footprint, lodret stuvning, eller en model der er designet til at fylde mindre end klassiske luft-langskinner. Her får du, hvad du skal måle, hvor kompakthed kolliderer med skridtlængde for høje brugere, og fire modeller der matcher pladsbehovet.",
+    criteria: [
+      {
+        title: "Footprint efter træning",
+        description:
+          "Mål det, der står fremme 23 timer i døgnet. Lodret fold eller kompakt midrange slår en lang skinne, der aldrig pakkes væk.",
+      },
+      {
+        title: "Skinnelængde i brug",
+        description:
+          "Du skal stadig kunne tage fulde slag. For kort skinne ødelægger teknik for høje brugere. Tjek maks. brugerhøjde — ikke kun “kompakt” i annoncen.",
+      },
+      {
+        title: "Kompakt ≠ fold",
+        description:
+          "Nogle kompakte modeller er bare smallere/kortere. Andre foldes. Vælg fold, hvis gulvet skal frigives; vælg kompakt fast, hvis du har et fast hjørne.",
+      },
+      {
+        title: "Magnet til små boliger",
+        description:
+          "I lejlighed er magnet det mest fornuftige kompakte valg. Vand kan være kompakt i look, men splash fylder lydmæssigt.",
+      },
+      {
+        title: "Hjul og greb",
+        description:
+          "Selv uden fuld fold hjælper hjul, når du skal flytte maskinen til støvsugning eller gæster.",
+      },
+      {
+        title: "Plads vs. træningskvalitet",
+        description:
+          "Den mindste maskine er ikke automatisk den, du bruger. Hvis skinnen er for kort, eller rammen vakler, ender den som tørrestativ.",
+      },
+    ],
+    products: [
+      {
+        id: "maxxus-rx10-plads",
+        name: "MAXXUS RX 1.0 Kompakt Romaskine",
+        badge: "Bedst kompakt",
+        summary:
+          "Markedsført som støjsvag og kompakt magnet — vores hovedpick, når footprint og lejligheds-søgning er det, der bragte dig hertil.",
+        pros: [
+          "Kompakt magnet-profil",
+          "Mange modstandsniveauer",
+          "God match til “kompakt romaskine”-søgning",
+          "Bluetooth til motivation",
+        ],
+        cons: [
+          "Ikke Titan/Reebok midrange-build",
+          "Læs anmeldelser om sæderumlen",
+          "Tjek skinnelængde hvis du er høj",
+        ],
+        specs: [
+          { label: "Modstand", value: "Magnet" },
+          { label: "Feature", value: "Støjsvag / kompakt" },
+          { label: "Partner", value: "Billig-fitness.dk" },
+        ],
+        feedProductId: "Billig-fitness.dk:56853161935234",
+      },
+      {
+        id: "titan-r36-plads",
+        name: "Titan Life Rower R36",
+        badge: "Bedst samlet kompakt",
+        summary:
+          "Kompakt magnet midrange med fri fragt hos partner — den mest “komplette” lille-hjem-romaskine, når entry føles for tynd.",
+        pros: [
+          "Magnetisk og lejlighedsvenlig",
+          "Kompakt footprint",
+          "God til daglig brug",
+          "Live partnerpris",
+        ],
+        cons: [
+          "Dyrere end ren budget",
+          "Ikke vand-stemning",
+          "Tjek skinne hvis du er høj",
+        ],
+        specs: [
+          { label: "Modstand", value: "Magnet" },
+          { label: "Segment", value: "Kompakt mid" },
+          { label: "Partner", value: "Apuls.dk" },
+        ],
+        feedProductId: "Apuls.dk:15652",
+      },
+      {
+        id: "masterfit-170-plads",
+        name: "Masterfit 170 Rower",
+        badge: "Bedste plads efter brug",
+        summary:
+          "Når “kompakt” egentlig betyder “skal kunne forsvinde”: lodret fold efter pas, magnetmodstand og skarp pris.",
+        pros: [
+          "Lodret stuvning",
+          "Magnet — praktisk i lejlighed",
+          "Skarp pris",
+          "Helkrop uden permanent lang skinne",
+        ],
+        cons: [
+          "I brug er den stadig lang",
+          "Kræver fold-rutine",
+          "Tjek loft/greb til stuvning",
+        ],
+        specs: [
+          { label: "Opbevaring", value: "Lodret / fold" },
+          { label: "Modstand", value: "Magnet" },
+          { label: "Partner", value: "Træningspartner" },
+        ],
+        feedProductId: "Træningspartner:01904a5eaad7714fb5635179812010a9",
+      },
+      {
+        id: "ascendic-6004-plads",
+        name: "Ascendic 6004 Romaskine",
+        badge: "Kompakt magnet-entry",
+        summary:
+          "Støjsvag magnet-entry til små hjem — solid start, når du vil have roning uden stor investering eller tung fold-mekanik.",
+        pros: [
+          "Magnetisk og meget støjsvag",
+          "Skarp pris",
+          "Enkel computer",
+          "God til teknik og zone 2",
+        ],
+        cons: [
+          "Entry-build ved meget hyppig tung brug",
+          "Høje brugere bør tjekke skinne",
+          "Mindre “fold-wow” end Masterfit 170",
+        ],
+        specs: [
+          { label: "Modstand", value: "Magnet" },
+          { label: "Segment", value: "Budget / stille" },
+          { label: "Partner", value: "Ascendic.dk" },
+        ],
+        feedProductId: "Ascendic.dk:55357722100056",
+      },
+    ],
+    howToChoose:
+      "Kompakt + featured “stille”? MAXXUS RX 1.0. Bedste allround lille-hjem? Titan R36. Skal gulvet frigives? Masterfit 170 (se også Bedste foldbare romaskine 2026). Budget magnet-entry? Ascendic 6004. Er loft mere end gulv problemet? Se Bedste cardio under lavt loft. Shop via “Se pris”, eller browse Romaskine → Kompakt.",
+    learningSections: [
+      {
+        heading: "Kompakt er to mål",
+        paragraphs: [
+          "1) Længde i brug. 2) Footprint efter stuvning. De fleste skuffer dig på det ene, hvis du kun læser det andet.",
+          "En “kompakt” model uden fold kan stadig være det rigtige, hvis du har et fast hjørne og aldrig gider rejse skinnen.",
+        ],
+      },
+      {
+        heading: "Høje brugere og korte skinner",
+        paragraphs: [
+          "Kompakthed frister shops til kortere skinner. Er du over ca. 185–190 cm, så prioriter maks. brugerhøjde og anmeldelser om slaglængde — ellers bliver teknikken hakket.",
+        ],
+      },
+      {
+        heading: "Romaskine vs. crosstrainer i små rum",
+        paragraphs: [
+          "Romaskine vinder, når den kan stå på højkant. Crosstrainer vinder på træd-og-kør uden teknik — men fylder mere permanent. Se Romaskine eller crosstrainer? og Bedste kompakt crosstrainer 2026, hvis du stadig vælger mellem dem.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "Hvilken kompakt romaskine skal jeg købe?",
+        answer:
+          "MAXXUS RX 1.0 til kompakt featured pick. Titan R36 til samlet lille-hjem. Masterfit 170 når fold er plads-strategien. Ascendic 6004 til budget magnet.",
+      },
+      {
+        question: "Hvor meget plads kræver en romaskine?",
+        answer:
+          "Ofte 2+ meter i brug. Efter lodret fold langt mindre. Mål begge.",
+      },
+      {
+        question: "Kompakt eller foldbar?",
+        answer:
+          "Foldbar hvis gulvet skal frigives. Kompakt fast hvis du har et hjørne. Mange gode valg er begge dele — se Bedste foldbare romaskine 2026.",
+      },
+      {
+        question: "Er den billigste “kompakte” romaskine god nok?",
+        answer:
+          "Sjældent som eneste helkropsmaskine i årevis. Start ærligt på 6004/R10-niveau, og opgrader når vanen er beviselig.",
+      },
+      {
+        question: "Hvad med støj i lejlighed?",
+        answer:
+          "Vælg magnet og måtte. Se Bedste støjsvage romaskine 2026.",
+      },
+      {
+        question: "Hvordan ser jeg live priser?",
+        answer:
+          "Klik “Se pris” på anbefalingerne, eller browse Romaskine → Kompakt.",
+      },
+    ],
+    relatedSlugs: [
+      "bedste-romaskine-2026",
+      "bedste-foldbar-romaskine-2026",
+      "bedste-stoejsvag-romaskine-2026",
+      "bedste-vandromaskine-2026",
+      "bedste-kompakt-crosstrainer-2026",
+      "bedste-foldbare-kompakte-traeningsmaskiner-2026",
+      "romaskine-eller-crosstrainer-2026",
+      "home-gym-til-lille-vaerelse-10m2-2026",
+      "ascendic-6004-romaskine-2026",
     ],
   },
   {
@@ -6371,6 +6797,8 @@ export const guides: Guide[] = [
       "bedste-billig-crosstrainer-2026",
       "bedste-stoejsvag-crosstrainer-2026",
       "bedste-foldbare-kompakte-traeningsmaskiner-2026",
+      "bedste-kompakt-romaskine-2026",
+      "bedste-foldbar-romaskine-2026",
       "home-gym-til-lille-vaerelse-10m2-2026",
       "bedste-cardio-under-lavt-loft-2026",
       "romaskine-eller-crosstrainer-2026",
@@ -8445,6 +8873,8 @@ export const guides: Guide[] = [
       "bedste-romaskine-2026",
       "bedste-crosstrainer-2026",
       "bedste-stoejsvag-romaskine-2026",
+      "bedste-foldbar-romaskine-2026",
+      "bedste-kompakt-romaskine-2026",
       "bedste-stoejsvag-crosstrainer-2026",
       "bedste-billig-crosstrainer-2026",
       "bedste-kompakt-crosstrainer-2026",
@@ -10973,6 +11403,8 @@ export const guides: Guide[] = [
       "odin-r1800-vandromaskine-2026",
       "bedste-romaskine-2026",
       "bedste-stoejsvag-romaskine-2026",
+      "bedste-foldbar-romaskine-2026",
+      "bedste-kompakt-romaskine-2026",
       "romaskine-eller-crosstrainer-2026",
       "bedste-foldbare-kompakte-traeningsmaskiner-2026",
       "bedste-stoejsvage-traeningsmaskiner-lejlighed-2026",
