@@ -1,5 +1,5 @@
 import { categories } from "@/lib/categories";
-import { formatPriceDkk } from "@/lib/feeds/catalog";
+import { formatPriceDkk } from "@/lib/format-price";
 import type { FeedProduct } from "@/lib/feeds/types";
 import { getAllGuides, guidePath } from "@/lib/guides";
 

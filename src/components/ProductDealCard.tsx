@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { discountPercent, formatPriceDkk } from "@/lib/feeds/catalog";
+import { discountPercent, formatPriceDkk } from "@/lib/format-price";
 import type { FeedProduct } from "@/lib/feeds/types";
 
 type Props = {

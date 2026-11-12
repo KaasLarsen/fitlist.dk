@@ -1,9 +1,7 @@
 import { connection } from "next/server";
-import { ProductOfferList } from "@/components/ProductOfferList";
+import { CategoryOffersFilterable } from "@/components/CategoryOffersFilterable";
 import { getProductsByCategory } from "@/lib/feeds/catalog";
 import type { MachineCategorySlug } from "@/lib/feeds/types";
-
-const CATEGORY_OFFER_LIMIT = 24;
 
 type Props = {
   categorySlug: MachineCategorySlug;
@@ -24,7 +22,6 @@ export async function CategoryOffers({
   const [products, categoryAll] = await Promise.all([
     getProductsByCategory(categorySlug, {
       intentSlug,
-      limit: CATEGORY_OFFER_LIMIT,
     }),
     intentSlug
       ? getProductsByCategory(categorySlug, { limit: 1 })
@@ -41,19 +38,10 @@ export async function CategoryOffers({
       : `Vi har endnu ikke fundet ${categoryName.toLowerCase()} i partnerfeeds. Tjek igen snart.`;
 
   return (
-    <section className="mt-16 border-t border-border pt-10">
-      <div className="flex flex-col gap-2 sm:flex-row sm:items-baseline sm:justify-between">
-        <h2 className="font-display text-2xl font-semibold uppercase tracking-wide text-foreground">
-          Tilbud
-        </h2>
-        {products.length > 0 ? (
-          <p className="font-display text-xs uppercase tracking-[0.14em] text-muted">
-            {products.length} produkt{products.length === 1 ? "" : "er"}
-            {intentLabel ? ` · ${intentLabel}` : ""}
-          </p>
-        ) : null}
-      </div>
-      <ProductOfferList products={products} emptyMessage={emptyMessage} />
-    </section>
+    <CategoryOffersFilterable
+      products={products}
+      emptyMessage={emptyMessage}
+      intentLabel={intentLabel}
+    />
   );
 }
