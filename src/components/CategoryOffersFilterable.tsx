@@ -3,12 +3,13 @@
 import { useEffect, useMemo, useState } from "react";
 import { PriceRangeSlider } from "@/components/PriceRangeSlider";
 import { ProductOfferList } from "@/components/ProductOfferList";
-import type { FeedProduct } from "@/lib/feeds/types";
+import type { FeedProduct, MachineCategorySlug } from "@/lib/feeds/types";
 
 type Props = {
   products: FeedProduct[];
   emptyMessage: string;
   intentLabel?: string;
+  categorySlug?: MachineCategorySlug;
 };
 
 function brandKey(brand: string): string {
@@ -45,18 +46,51 @@ function priceBounds(
   };
 }
 
+function speedBounds(
+  products: FeedProduct[],
+): { min: number; max: number } | null {
+  let min = Number.POSITIVE_INFINITY;
+  let max = Number.NEGATIVE_INFINITY;
+  for (const product of products) {
+    if (product.maxSpeedKmh == null || !Number.isFinite(product.maxSpeedKmh)) {
+      continue;
+    }
+    min = Math.min(min, product.maxSpeedKmh);
+    max = Math.max(max, product.maxSpeedKmh);
+  }
+  if (!Number.isFinite(min) || !Number.isFinite(max)) return null;
+  const roundedMin = Math.floor(min);
+  const roundedMax = Math.ceil(max);
+  return {
+    min: roundedMin,
+    max: Math.max(roundedMax, roundedMin + 1),
+  };
+}
+
+function formatSpeedKmh(value: number): string {
+  return `${value} km/t`;
+}
+
 export function CategoryOffersFilterable({
   products,
   emptyMessage,
   intentLabel,
+  categorySlug,
 }: Props) {
   const brands = useMemo(() => collectBrands(products), [products]);
   const bounds = useMemo(() => priceBounds(products), [products]);
+  const showSpeedFilter = categorySlug === "loebebaand";
+  const speed = useMemo(
+    () => (showSpeedFilter ? speedBounds(products) : null),
+    [products, showSpeedFilter],
+  );
 
   const [selectedBrands, setSelectedBrands] = useState<string[]>([]);
   const [brandsOpen, setBrandsOpen] = useState(false);
   const [priceMin, setPriceMin] = useState(bounds?.min ?? 0);
   const [priceMax, setPriceMax] = useState(bounds?.max ?? 0);
+  const [speedMin, setSpeedMin] = useState(speed?.min ?? 0);
+  const [speedMax, setSpeedMax] = useState(speed?.max ?? 0);
 
   // Soft-nav kan genbruge denne client-komponent med nye products/bounds.
   // Reset filtre så et gammelt prisinterval ikke tømmer den nye liste.
@@ -70,7 +104,14 @@ export function CategoryOffersFilterable({
       setPriceMin(0);
       setPriceMax(0);
     }
-  }, [bounds]);
+    if (speed) {
+      setSpeedMin(speed.min);
+      setSpeedMax(speed.max);
+    } else {
+      setSpeedMin(0);
+      setSpeedMax(0);
+    }
+  }, [bounds, speed]);
 
   const selectedBrandKeys = useMemo(
     () => new Set(selectedBrands.map(brandKey)),
@@ -79,8 +120,11 @@ export function CategoryOffersFilterable({
 
   const priceFilterActive =
     bounds != null && (priceMin > bounds.min || priceMax < bounds.max);
+  const speedFilterActive =
+    speed != null && (speedMin > speed.min || speedMax < speed.max);
   const brandFilterActive = selectedBrands.length > 0;
-  const filtersActive = brandFilterActive || priceFilterActive;
+  const filtersActive =
+    brandFilterActive || priceFilterActive || speedFilterActive;
 
   const filtered = useMemo(() => {
     return products.filter((product) => {
@@ -96,6 +140,21 @@ export function CategoryOffersFilterable({
         if (product.price < priceMin || product.price > priceMax) return false;
       }
 
+      if (speedFilterActive) {
+        if (
+          product.maxSpeedKmh == null ||
+          !Number.isFinite(product.maxSpeedKmh)
+        ) {
+          return false;
+        }
+        if (
+          product.maxSpeedKmh < speedMin ||
+          product.maxSpeedKmh > speedMax
+        ) {
+          return false;
+        }
+      }
+
       return true;
     });
   }, [
@@ -105,6 +164,9 @@ export function CategoryOffersFilterable({
     priceFilterActive,
     priceMin,
     priceMax,
+    speedFilterActive,
+    speedMin,
+    speedMax,
   ]);
 
   function toggleBrand(brand: string) {
@@ -122,10 +184,14 @@ export function CategoryOffersFilterable({
       setPriceMin(bounds.min);
       setPriceMax(bounds.max);
     }
+    if (speed) {
+      setSpeedMin(speed.min);
+      setSpeedMax(speed.max);
+    }
   }
 
   const filterEmptyMessage = filtersActive
-    ? "Ingen tilbud matcher dine filtre. Prøv at justere mærke eller pris."
+    ? "Ingen tilbud matcher dine filtre. Prøv at justere mærke, pris eller km/t."
     : emptyMessage;
 
   if (products.length === 0) {
@@ -139,7 +205,7 @@ export function CategoryOffersFilterable({
     );
   }
 
-  const showFilters = brands.length > 0 || bounds != null;
+  const showFilters = brands.length > 0 || bounds != null || speed != null;
 
   return (
     <section className="mt-16 border-t border-border pt-10">
@@ -231,6 +297,24 @@ export function CategoryOffersFilterable({
               onChange={({ min, max }) => {
                 setPriceMin(min);
                 setPriceMax(max);
+              }}
+            />
+          ) : null}
+
+          {speed ? (
+            <PriceRangeSlider
+              label="Max hastighed"
+              step={1}
+              formatValue={formatSpeedKmh}
+              minAriaLabel="Minimum max-hastighed"
+              maxAriaLabel="Maksimum max-hastighed"
+              min={speed.min}
+              max={speed.max}
+              valueMin={speedMin}
+              valueMax={speedMax}
+              onChange={({ min, max }) => {
+                setSpeedMin(min);
+                setSpeedMax(max);
               }}
             />
           ) : null}

@@ -639,6 +639,30 @@ describe("classifyProduct — real machines kept", () => {
     assert.ok(r!.intentSlugs?.includes("gaabaand"));
   });
 
+  it("parses maxSpeedKmh from title/desc on løbebånd", () => {
+    const fromTitle = classifyProduct(
+      product({
+        title: "VeloraFit Foldbart Løbebånd 1–12 km/t",
+        price: 2499,
+      }),
+    );
+    assert.ok(fromTitle);
+    assert.equal(fromTitle!.categorySlug, "loebebaand");
+    assert.equal(fromTitle!.maxSpeedKmh, 12);
+
+    const fromDesc = classifyProduct(
+      product({
+        title: "Ascendic Essential Walking Pad",
+        desc: "Gåbånd med max omkring 6 km/t til kontorbrug",
+        price: 1999,
+      }),
+    );
+    assert.ok(fromDesc);
+    assert.equal(fromDesc!.categorySlug, "loebebaand");
+    assert.ok(fromDesc!.intentSlugs?.includes("gaabaand"));
+    assert.equal(fromDesc!.maxSpeedKmh, 6);
+  });
+
   it("classifies Titan Life Treadmill as loebebaand", () => {
     const r = classifyProduct(
       product({

@@ -8,6 +8,11 @@ type Props = {
   valueMin: number;
   valueMax: number;
   onChange: (next: { min: number; max: number }) => void;
+  label?: string;
+  step?: number;
+  formatValue?: (value: number) => string;
+  minAriaLabel?: string;
+  maxAriaLabel?: string;
 };
 
 export function PriceRangeSlider({
@@ -16,6 +21,11 @@ export function PriceRangeSlider({
   valueMin,
   valueMax,
   onChange,
+  label = "Pris",
+  step = 100,
+  formatValue = formatPriceDkk,
+  minAriaLabel = "Minimumspris",
+  maxAriaLabel = "Maksimumspris",
 }: Props) {
   const span = Math.max(max - min, 1);
   const leftPct = ((valueMin - min) / span) * 100;
@@ -27,10 +37,10 @@ export function PriceRangeSlider({
     <div className="w-full max-w-md">
       <div className="flex items-baseline justify-between gap-3">
         <p className="font-display text-sm font-medium uppercase tracking-[0.16em] text-muted">
-          Pris
+          {label}
         </p>
         <p className="font-display text-xs tabular-nums uppercase tracking-[0.12em] text-foreground">
-          {formatPriceDkk(valueMin)} – {formatPriceDkk(valueMax)}
+          {formatValue(valueMin)} – {formatValue(valueMax)}
         </p>
       </div>
 
@@ -45,10 +55,10 @@ export function PriceRangeSlider({
         />
         <input
           type="range"
-          aria-label="Minimumspris"
+          aria-label={minAriaLabel}
           min={min}
           max={max}
-          step={100}
+          step={step}
           value={valueMin}
           onChange={(e) => {
             const next = Math.min(Number(e.target.value), valueMax);
@@ -59,10 +69,10 @@ export function PriceRangeSlider({
         />
         <input
           type="range"
-          aria-label="Maksimumspris"
+          aria-label={maxAriaLabel}
           min={min}
           max={max}
-          step={100}
+          step={step}
           value={valueMax}
           onChange={(e) => {
             const next = Math.max(Number(e.target.value), valueMin);

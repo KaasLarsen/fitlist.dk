@@ -43,6 +43,7 @@ export async function CategoryOffers({
       products={products}
       emptyMessage={emptyMessage}
       intentLabel={intentLabel}
+      categorySlug={categorySlug}
     />
   );
 }

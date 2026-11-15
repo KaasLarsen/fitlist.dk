@@ -18,4 +18,6 @@ export type FeedProduct = {
   categorySlug?: MachineCategorySlug;
   /** Intent-slugs fra categories.ts der matcher produktet */
   intentSlugs?: string[];
+  /** Max hastighed i km/t (løbebånd) — parsed fra titel/beskrivelse */
+  maxSpeedKmh?: number;
 };

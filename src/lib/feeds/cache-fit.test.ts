@@ -39,6 +39,22 @@ describe("fitFeedProductsForCache", () => {
     assert.equal(fitted[0]?.category, "");
   });
 
+  it("keeps maxSpeedKmh through slim for løbebånd", () => {
+    const products = [
+      makeProduct(1, {
+        categorySlug: "loebebaand",
+        title: "Foldbart løbebånd 1-12 km/t",
+        maxSpeedKmh: 12,
+        inStock: true,
+      }),
+    ];
+    const fitted = fitFeedProductsForCache(products, {
+      maxProducts: 10,
+      maxBytes: 1_400_000,
+    });
+    assert.equal(fitted[0]?.maxSpeedKmh, 12);
+  });
+
   it("prefers in-stock machine products over tilbehoer", () => {
     const products = [
       makeProduct(1, {

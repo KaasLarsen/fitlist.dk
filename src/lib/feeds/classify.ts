@@ -1,4 +1,5 @@
 import type { FeedProduct, MachineCategorySlug } from "@/lib/feeds/types";
+import { parseMaxSpeedKmh } from "@/lib/feeds/speed";
 
 type CategoryRule = {
   slug: MachineCategorySlug;
@@ -1108,10 +1109,16 @@ export function classifyProduct(
     );
   }
 
+  const maxSpeedKmh =
+    matched === "loebebaand"
+      ? (parseMaxSpeedKmh(`${product.title} ${product.desc}`) ?? undefined)
+      : undefined;
+
   return {
     ...product,
     categorySlug: matched,
     intentSlugs: filteredIntents,
+    ...(maxSpeedKmh != null ? { maxSpeedKmh } : {}),
   };
 }
 

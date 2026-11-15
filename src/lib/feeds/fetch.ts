@@ -133,6 +133,7 @@ function slimFeedProducts(products: FeedProduct[]): FeedProduct[] {
     inStock: p.inStock,
     categorySlug: p.categorySlug,
     intentSlugs: p.intentSlugs?.slice(0, 12),
+    ...(p.maxSpeedKmh != null ? { maxSpeedKmh: p.maxSpeedKmh } : {}),
   }));
 }
 
