@@ -1,9 +1,10 @@
+import { IntersportBanner } from "@/components/IntersportBanner";
 import { getGuideBanner } from "@/lib/guideBanners";
 import type { Guide } from "@/lib/guides";
 
 export function GuideAffiliateBanner({ guide }: { guide: Guide }) {
   const banner = getGuideBanner(guide);
-  if (!banner) return null;
+  if (!banner) return <IntersportBanner className="mt-14" />;
 
   return (
     <aside aria-label="Annonce" className="mt-14">

@@ -4,6 +4,7 @@ import { CategorySection } from "@/components/CategorySection";
 import { DailyDealsSection } from "@/components/DailyDealsSection";
 import { FeaturedGuidesSection } from "@/components/FeaturedGuidesSection";
 import { Hero } from "@/components/Hero";
+import { IntersportBanner } from "@/components/IntersportBanner";
 import { SituationsSection } from "@/components/SituationsSection";
 import { getDailyDeals } from "@/lib/feeds/catalog";
 import { getFeaturedGuides } from "@/lib/guides";
@@ -54,6 +55,11 @@ export default async function Home() {
     <>
       <Hero />
       <DailyDealsSection products={deals} />
+      <section className="border-t border-border bg-background">
+        <div className="mx-auto w-full max-w-6xl px-5 py-10 sm:px-8 sm:py-12">
+          <IntersportBanner className="items-center" />
+        </div>
+      </section>
       <SituationsSection />
       <FeaturedGuidesSection guides={featuredGuides} />
       <CategorySection />
