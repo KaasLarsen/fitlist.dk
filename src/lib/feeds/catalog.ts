@@ -1,8 +1,9 @@
-import { CATALOG_FEEDS } from "@/lib/feeds/config";
+import { CATALOG_FEEDS, isAdtractionFeed } from "@/lib/feeds/config";
 import { refineBilligIntent } from "@/lib/feeds/classify";
 import { CYKELPARTNER_MERCHANT } from "@/lib/feeds/cykelpartner-guide-ids";
 import {
   FEED_FETCH_CONCURRENCY,
+  getAdtractionCatalogProducts,
   getCachedCykelpartnerGuideProducts,
   getCachedFeedProducts,
   mapWithConcurrency,
@@ -15,17 +16,28 @@ import {
 
 export { discountPercent, formatPriceDkk };
 
-async function buildMachineCatalog(): Promise<FeedProduct[]> {
-  // getCachedFeedProducts springer tunge feeds (Cykelpartner) over automatisk.
-  const batches = await mapWithConcurrency(
-    CATALOG_FEEDS,
+async function buildMachineCatalog(): Promise<{
+  products: FeedProduct[];
+  complete: boolean;
+}> {
+  // Partner-Ads først. Cykelpartner springes over i getCachedFeedProducts.
+  // Adtraction er ikke i samme kø: et 429 dér må ikke forsinke de andre shops.
+  const partnerFeeds = CATALOG_FEEDS.filter((feed) => !isAdtractionFeed(feed));
+  const partnerBatches = await mapWithConcurrency(
+    partnerFeeds,
     FEED_FETCH_CONCURRENCY,
     (feed) => getCachedFeedProducts(feed),
   );
+  const adtraction = await getAdtractionCatalogProducts();
   // Feeds caches allerede klassificerede varer (categorySlug sat).
   // classifyProducts igen ville mangle feed-category-tekst (slimmet væk).
-  const classified = batches.flat().filter((p) => p.categorySlug != null);
-  return refineBilligIntent(classified);
+  const classified = [...partnerBatches.flat(), ...adtraction.products].filter(
+    (p) => p.categorySlug != null,
+  );
+  return {
+    products: refineBilligIntent(classified),
+    complete: adtraction.complete,
+  };
 }
 
 /**
@@ -35,24 +47,37 @@ async function buildMachineCatalog(): Promise<FeedProduct[]> {
  * på hvert /api/search-keystroke inden for samme serverless-instance.
  */
 const CATALOG_MEMO_TTL_MS = 60_000;
-let catalogMemo: { at: number; value: FeedProduct[] } | null = null;
+/** Kort memo når Adtraction ikke nåede med — næste request samler de færdige feeds op. */
+const CATALOG_PARTIAL_MEMO_TTL_MS = 5_000;
+let catalogMemo: {
+  at: number;
+  value: FeedProduct[];
+  complete: boolean;
+} | null = null;
 let catalogInflight: Promise<FeedProduct[]> | null = null;
 
 export async function getMachineCatalog(): Promise<FeedProduct[]> {
   const now = Date.now();
-  if (catalogMemo && now - catalogMemo.at < CATALOG_MEMO_TTL_MS) {
-    return catalogMemo.value;
+  if (catalogMemo) {
+    const ttl = catalogMemo.complete
+      ? CATALOG_MEMO_TTL_MS
+      : CATALOG_PARTIAL_MEMO_TTL_MS;
+    if (now - catalogMemo.at < ttl) return catalogMemo.value;
   }
 
   if (catalogInflight) return catalogInflight;
 
   catalogInflight = (async () => {
     try {
-      const value = await buildMachineCatalog();
-      catalogMemo = { at: Date.now(), value };
-      return value;
+      const { products, complete } = await buildMachineCatalog();
+      catalogMemo = { at: Date.now(), value: products, complete };
+      return products;
     } catch (err) {
       console.error("[catalog] failed:", err);
+      if (catalogMemo) {
+        catalogMemo = { ...catalogMemo, at: Date.now(), complete: false };
+        return catalogMemo.value;
+      }
       return [];
     } finally {
       catalogInflight = null;

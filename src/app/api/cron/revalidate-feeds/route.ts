@@ -33,8 +33,9 @@ export async function GET(request: Request) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
 
-  // Cykelpartner-guide-subset (~46 MB XML) kører efter øvrige feeds, så
-  // maskinekataloget ikke konkurrerer om hukommelse under parallel fetch.
+  // Partner-Ads først, Adtraction én ad gangen bagefter. Et Adtraction-429
+  // tømmer ikke de andre shops. Cykelpartner-guide-subset (~46 MB) kører
+  // til sidst, så det ikke konkurrerer om hukommelse under parallel fetch.
   const feeds = await warmAllFeeds();
   const cykelpartnerGuides = await warmCykelpartnerGuideProducts();
   const okFeeds = feeds.filter((f) => f.ok && f.count > 0);

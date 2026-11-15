@@ -1,5 +1,6 @@
 import { unstable_cache } from "next/cache";
 import {
+  ADTRACTION_FEEDS,
   CATALOG_FEEDS,
   isAdtractionFeed,
   PARTNER_ADS_FEEDS,
@@ -30,11 +31,18 @@ const CYKELPARTNER_TIMEOUT_MS = 120_000;
 
 export { getCykelpartnerGuideFeedProductIds } from "@/lib/feeds/cykelpartner-guide-ids";
 /**
- * Max samtidige feed-hentninger (cron + katalog-build).
- * 2 er kompromis: Adtraction 429’er ved høj parallelitet, men 1 er for langsomt
- * til cold catalog-build inden for serverless-timeout.
+ * Max samtidige Partner-Ads-hentninger (cron + katalog).
+ * Adtraction kører altid bagefter, én shop ad gangen.
  */
 const FEED_FETCH_CONCURRENCY = 2;
+/**
+ * Sidevisninger venter højst så længe på Adtraction. Feeds der ikke er
+ * færdige, hentes færdigt i baggrunden — Partner-Ads er allerede med.
+ */
+const ADTRACTION_CATALOG_BUDGET_MS = 4_000;
+/** Pause efter et rigtigt Adtraction-download, så næste shop ikke rammer 429. */
+const ADTRACTION_GAP_MS = 1_500;
+const ADTRACTION_RATE_LIMIT_BACKOFF_MS = [10_000, 25_000] as const;
 /**
  * Hård cap pr. merchant-feed efter classify — Next.js Data Cache max 2 MB/entry.
  * Slimmet payload er ~0.5–1.2 KB/vare, så 300 ligger langt under 1.4 MB-budgettet
@@ -48,13 +56,11 @@ const FEED_CACHE_MAX_BYTES = 1_400_000;
 const FEED_CACHE_MACHINE_RATIO = 0.85;
 
 /**
- * Springes over i warm + katalog:
- * - Cykelpartner: ~46 MB XML (guides hentes targeteret via getCachedCykelpartnerGuideProducts)
- * - Adtraction: hyppige HTTP 429 der trækker hele katalog-build ned
- * Guides bruger imageUrl/affiliate-fallback når feed mangler.
+ * Cykelpartner (~46 MB) springes over i warm + katalog.
+ * Guides henter et lille subset via getCachedCykelpartnerGuideProducts.
  */
 function isSkippedHeavyFeed(feed: CatalogFeed): boolean {
-  return feed.merchant === CYKELPARTNER_MERCHANT || isAdtractionFeed(feed);
+  return feed.merchant === CYKELPARTNER_MERCHANT;
 }
 
 function cykelpartnerFeed(): PartnerAdsFeed | undefined {
@@ -304,11 +310,13 @@ async function fetchFeedText(
   url: string,
   merchant: string,
   timeoutMs: number,
+  rateLimitBackoffMs: readonly number[] = [2_500, 5_000],
 ): Promise<string> {
-  // 429: op til 3 forsøg. Timeout: max 1 retry — ellers æder Cykelpartner cron-budgettet.
+  // 429: ét forsøg pr. backoff-trin. Timeout: max 1 retry — ellers æder cron-budgettet.
   let lastError: Error | null = null;
+  const maxAttempts = rateLimitBackoffMs.length + 1;
 
-  for (let attempt = 1; attempt <= 3; attempt++) {
+  for (let attempt = 1; attempt <= maxAttempts; attempt++) {
     try {
       const res = await fetch(url, {
         headers: {
@@ -320,13 +328,15 @@ async function fetchFeedText(
         signal: AbortSignal.timeout(timeoutMs),
       });
 
-      if (res.status === 429 && attempt < 3) {
-        const backoffMs = attempt * 2_500;
-        console.warn(
-          `[feed] ${merchant} HTTP 429 — retry ${attempt}/2 in ${backoffMs}ms`,
-        );
-        await sleep(backoffMs);
-        continue;
+      if (res.status === 429) {
+        const backoffMs = rateLimitBackoffMs[attempt - 1];
+        if (backoffMs != null) {
+          console.warn(
+            `[feed] ${merchant} HTTP 429 — retry ${attempt}/${rateLimitBackoffMs.length} in ${backoffMs}ms`,
+          );
+          await sleep(backoffMs);
+          continue;
+        }
       }
 
       if (!res.ok) {
@@ -387,7 +397,12 @@ export async function fetchAdtractionProductsInner(
   opts?: { timeoutMs?: number },
 ): Promise<FeedProduct[]> {
   const timeoutMs = opts?.timeoutMs ?? DEFAULT_TIMEOUT_MS;
-  const text = await fetchFeedText(feed.feedUrl, feed.merchant, timeoutMs);
+  const text = await fetchFeedText(
+    feed.feedUrl,
+    feed.merchant,
+    timeoutMs,
+    ADTRACTION_RATE_LIMIT_BACKOFF_MS,
+  );
   return parseAdtractionGoogleRss(text, feed.merchant)
     .map((product) => classifyProduct(product))
     .filter((product): product is FeedProduct => product != null);
@@ -526,7 +541,87 @@ export async function warmCykelpartnerGuideProducts(): Promise<{
   }
 }
 
-/** Opvarm Data Cache (cron). Kun Partner-Ads (uden Cykelpartner/Adtraction). */
+/**
+ * Én Adtraction-shop ad gangen. Delt af katalog og cron, så to requests
+ * ikke downloader de samme feeds parallelt og udløser 429.
+ */
+let adtractionChain: Promise<void> | null = null;
+const adtractionReady = new Map<string, FeedProduct[]>();
+
+function runAdtractionChain(): Promise<void> {
+  if (!adtractionChain) {
+    adtractionChain = (async () => {
+      for (const feed of ADTRACTION_FEEDS) {
+        const started = Date.now();
+        try {
+          const products = await getCachedFeedProducts(feed);
+          adtractionReady.set(feed.id, products);
+        } catch (err) {
+          console.error(`[feed] Adtraction failed ${feed.merchant}:`, err);
+          adtractionReady.set(feed.id, []);
+        }
+        // Cache-hit er hurtigt og skal ikke pauses. Et rigtigt download
+        // får et hul, før næste shop starter.
+        if (Date.now() - started > 2_000) await sleep(ADTRACTION_GAP_MS);
+      }
+    })().finally(() => {
+      adtractionChain = null;
+    });
+  }
+  return adtractionChain;
+}
+
+function adtractionMemoryIsComplete(): boolean {
+  return ADTRACTION_FEEDS.every((feed) => adtractionReady.has(feed.id));
+}
+
+function adtractionProductsFromMemory(): FeedProduct[] {
+  return ADTRACTION_FEEDS.flatMap((feed) => adtractionReady.get(feed.id) ?? []);
+}
+
+/**
+ * Adtraction-varer til kataloget.
+ * Har denne instans allerede alle shops, returneres de med det samme.
+ * Ellers ventes højst et par sekunder. Resten af kæden kører videre efter
+ * response, så en 429 eller et tungt feed ikke holder Partner-Ads tilbage.
+ */
+export async function getAdtractionCatalogProducts(): Promise<{
+  products: FeedProduct[];
+  complete: boolean;
+}> {
+  if (isProductionBuild()) return { products: [], complete: true };
+
+  const chain = runAdtractionChain();
+  if (adtractionMemoryIsComplete()) {
+    return { products: adtractionProductsFromMemory(), complete: true };
+  }
+
+  let timer: ReturnType<typeof setTimeout> | undefined;
+  const budget = new Promise<"budget">((resolve) => {
+    timer = setTimeout(() => resolve("budget"), ADTRACTION_CATALOG_BUDGET_MS);
+  });
+  const winner = await Promise.race([
+    chain.then(() => "done" as const),
+    budget,
+  ]);
+  if (timer) clearTimeout(timer);
+
+  if (winner !== "done") {
+    try {
+      const { after } = await import("next/server");
+      after(() => chain);
+    } catch (err) {
+      console.warn("[feed] Adtraction fortsætter uden after():", err);
+    }
+  }
+
+  return {
+    products: adtractionProductsFromMemory(),
+    complete: winner === "done" || adtractionMemoryIsComplete(),
+  };
+}
+
+/** Opvarm Data Cache (cron). Partner-Ads først, derefter Adtraction én ad gangen. */
 export async function warmAllFeeds(): Promise<{
   merchant: string;
   count: number;
@@ -534,7 +629,9 @@ export async function warmAllFeeds(): Promise<{
   error?: string;
   skipped?: boolean;
 }[]> {
-  const active = CATALOG_FEEDS.filter((f) => !isSkippedHeavyFeed(f));
+  const active = CATALOG_FEEDS.filter(
+    (feed) => !isSkippedHeavyFeed(feed) && !isAdtractionFeed(feed),
+  );
 
   const warmed = await mapWithConcurrency(
     active,
@@ -560,6 +657,17 @@ export async function warmAllFeeds(): Promise<{
     },
   );
 
+  await runAdtractionChain();
+  const adtraction = ADTRACTION_FEEDS.map((feed) => {
+    const count = adtractionReady.get(feed.id)?.length ?? 0;
+    return {
+      merchant: feed.merchant,
+      count,
+      ok: count > 0,
+      ...(count === 0 ? { error: "no products" } : {}),
+    };
+  });
+
   const skipped = CATALOG_FEEDS.filter(isSkippedHeavyFeed).map((feed) => ({
     merchant: feed.merchant,
     count: 0,
@@ -567,7 +675,7 @@ export async function warmAllFeeds(): Promise<{
     skipped: true as const,
   }));
 
-  return [...warmed, ...skipped];
+  return [...warmed, ...adtraction, ...skipped];
 }
 
 export { FEED_REVALIDATE_SECONDS, mapWithConcurrency, FEED_FETCH_CONCURRENCY };

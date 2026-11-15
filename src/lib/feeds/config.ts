@@ -198,6 +198,18 @@ export const ADTRACTION_FEEDS: readonly AdtractionFeed[] = [
     feedUrl:
       "https://secure.adtraction.com/productfeed.htm?type=feed&format=XML&encoding=UTF8&epi=0&zip=0&cdelim=tab&tdelim=singlequote&sd=0&sn=0&flat=0&apid=1980284366&asid=2127168443&gsh=1&pfid=2971&gt=0",
   },
+  {
+    id: "bodystore",
+    merchant: "Bodystore",
+    feedUrl:
+      "https://secure.adtraction.com/productfeed.htm?type=feed&format=XML&encoding=UTF8&epi=0&zip=0&cdelim=tab&tdelim=singlequote&sd=0&sn=0&flat=0&apid=1466242317&asid=2127168443&gsh=1&pfid=518&gt=0",
+  },
+  {
+    id: "bokseshoppen",
+    merchant: "Bokseshoppen",
+    feedUrl:
+      "https://secure.adtraction.com/productfeed.htm?type=feed&format=XML&encoding=UTF8&epi=0&zip=0&cdelim=tab&tdelim=singlequote&sd=0&sn=0&flat=0&apid=1876545376&asid=2127168443&gsh=1&pfid=2032&gt=0",
+  },
 ] as const;
 
 export type CatalogFeed = PartnerAdsFeed | AdtractionFeed;
