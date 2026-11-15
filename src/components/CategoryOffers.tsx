@@ -39,6 +39,7 @@ export async function CategoryOffers({
 
   return (
     <CategoryOffersFilterable
+      key={`${categorySlug}:${intentSlug ?? "alle"}`}
       products={products}
       emptyMessage={emptyMessage}
       intentLabel={intentLabel}

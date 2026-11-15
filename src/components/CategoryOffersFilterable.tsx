@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { PriceRangeSlider } from "@/components/PriceRangeSlider";
 import { ProductOfferList } from "@/components/ProductOfferList";
 import type { FeedProduct } from "@/lib/feeds/types";
@@ -57,6 +57,20 @@ export function CategoryOffersFilterable({
   const [brandsOpen, setBrandsOpen] = useState(false);
   const [priceMin, setPriceMin] = useState(bounds?.min ?? 0);
   const [priceMax, setPriceMax] = useState(bounds?.max ?? 0);
+
+  // Soft-nav kan genbruge denne client-komponent med nye products/bounds.
+  // Reset filtre så et gammelt prisinterval ikke tømmer den nye liste.
+  useEffect(() => {
+    setSelectedBrands([]);
+    setBrandsOpen(false);
+    if (bounds) {
+      setPriceMin(bounds.min);
+      setPriceMax(bounds.max);
+    } else {
+      setPriceMin(0);
+      setPriceMax(0);
+    }
+  }, [bounds]);
 
   const selectedBrandKeys = useMemo(
     () => new Set(selectedBrands.map(brandKey)),
