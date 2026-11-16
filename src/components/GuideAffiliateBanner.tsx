@@ -1,8 +1,15 @@
+import { IheroBanner } from "@/components/IheroBanner";
 import { IntersportBanner } from "@/components/IntersportBanner";
 import { getGuideBanner } from "@/lib/guideBanners";
 import type { Guide } from "@/lib/guides";
 
+const iheroBannerSlugs = new Set(["velorafit-foldbart-loebebaand-2026"]);
+
 export function GuideAffiliateBanner({ guide }: { guide: Guide }) {
+  if (iheroBannerSlugs.has(guide.slug)) {
+    return <IheroBanner className="mt-14" />;
+  }
+
   const banner = getGuideBanner(guide);
   if (!banner) return <IntersportBanner className="mt-14" />;
 
