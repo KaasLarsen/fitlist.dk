@@ -32,6 +32,27 @@ describe("classifyProduct — hard excludes", () => {
     assert.equal(r, null);
   });
 
+  it("drops T-LUBE smøremiddel mentioning løbebånd", () => {
+    const r = classifyProduct(
+      product({
+        title: "TUNTURI T-LUBE SMØREMIDDEL TIL LØBEBÅND - 200ML",
+        brand: "Tunturi",
+      }),
+    );
+    assert.equal(r, null);
+  });
+
+  it("drops smøremiddel even with løbebånd feed category", () => {
+    const r = classifyProduct(
+      product({
+        title: "Smøremiddel til løbebånd 200 ml",
+        category: "Løbebånd",
+        price: 229,
+      }),
+    );
+    assert.equal(r, null);
+  });
+
   it("drops English silicone product even with løbebånd feed category", () => {
     const r = classifyProduct(
       product({
