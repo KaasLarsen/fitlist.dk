@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { connection } from "next/server";
 import { CategorySection } from "@/components/CategorySection";
 import { DailyDealsSection } from "@/components/DailyDealsSection";
+import { ComparisonsSection } from "@/components/ComparisonsSection";
 import { FeaturedGuidesSection } from "@/components/FeaturedGuidesSection";
 import { Hero } from "@/components/Hero";
 import { IntersportBanner } from "@/components/IntersportBanner";
@@ -61,6 +62,7 @@ export default async function Home() {
         </div>
       </section>
       <SituationsSection />
+      <ComparisonsSection />
       <FeaturedGuidesSection guides={featuredGuides} />
       <CategorySection />
     </>

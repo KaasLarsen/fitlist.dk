@@ -21,8 +21,8 @@ export function FeaturedGuidesSection({ guides }: Props) {
               Købsguides
             </h2>
             <p className="mt-4 max-w-lg text-muted">
-              Detaljerede guides med anbefalinger og live priser — fra løbebånd,
-              romaskine og crosstrainer til kontor-gåbånd, budget-pakker og styrke.
+              Detaljerede guides med anbefalinger og live priser — fra løbebånd
+              og spinning til airbike, multistation, kettlebells og vs-valg.
             </p>
           </div>
           <Link
@@ -59,7 +59,12 @@ export function FeaturedGuidesSection({ guides }: Props) {
                                 ? " · Løb hjemme"
                                 : guide.slug === "bedste-romaskine-2026"
                                   ? " · Luft / magnet / vand"
-                                  : guide.intentSlug === "gaabaand"
+                                  : guide.slug === "loebebaand-eller-crosstrainer-2026"
+                                    ? " · Vs. / led & støj"
+                                    : guide.slug ===
+                                        "spinningcykel-motionscykel-eller-hometrainer-2026"
+                                      ? " · Vs. / cykel-setup"
+                                      : guide.intentSlug === "gaabaand"
                                     ? " · Gåbånd"
                                     : guide.intentSlug === "siddecykel"
                                       ? " · Senior / siddecykel"
@@ -77,7 +82,9 @@ export function FeaturedGuidesSection({ guides }: Props) {
                                                   ? " · Træningsbænk"
                                                   : guide.intentSlug === "haandvaegte"
                                                     ? " · Håndvægte"
-                                                    : guide.intentSlug === "kabeltaarn"
+                                                    : guide.intentSlug === "kettlebells"
+                                                      ? " · Kettlebells"
+                                                      : guide.intentSlug === "kabeltaarn"
                                                       ? " · Kabeltårn"
                                                       : guide.intentSlug === "begynder"
                                                         ? " · Begynder"

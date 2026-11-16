@@ -164,19 +164,20 @@ export function getProductAffiliate(product: GuideProduct) {
   return getAffiliate(product.affiliateId);
 }
 
-/** Featured homepage-rækkefølge (intent-guides + kernemaskiner). */
+/** Featured homepage-rækkefølge (intent-guides + kernemaskiner + vs-guides). */
 const FEATURED_GUIDE_SLUGS = [
   "bedste-loebebaand-2026",
   "bedste-romaskine-2026",
   "bedste-crosstrainer-2026",
+  "bedste-spinningcykel-2026",
+  "bedste-airbike-2026",
+  "bedste-multistation-2026",
+  "bedste-kettlebells-hjemmetraening-2026",
+  "loebebaand-eller-crosstrainer-2026",
+  "spinningcykel-motionscykel-eller-hometrainer-2026",
   "gaabaand-til-kontoret-2026",
   "bedste-stoejsvage-traeningsmaskiner-lejlighed-2026",
   "ultimative-home-gym-budget-2026",
-  "bedste-justerbare-haandvaegte-2026",
-  "bedste-justerbar-traeningsbaenk-2026",
-  "bedste-traeningsudstyr-til-seniorer-2026",
-  "bedste-foldbare-kompakte-traeningsmaskiner-2026",
-  "bedste-cardio-under-lavt-loft-2026",
 ] as const;
 
 export function getFeaturedGuides(): Guide[] {
@@ -1245,6 +1246,7 @@ export const guides: Guide[] = [
       "ascendic-essential-walking-pad-2026",
       "incline-loebebaand-eller-klassisk-2026",
       "loebebaand-eller-gaabaand-2026",
+      "loebebaand-eller-crosstrainer-2026",
       "bedste-gaabaand-2026",
       "gaabaand-til-kontoret-2026",
       "bedste-romaskine-2026",
@@ -1742,6 +1744,7 @@ export const guides: Guide[] = [
       },
     ],
     relatedSlugs: [
+      "spinningcykel-motionscykel-eller-hometrainer-2026",
       "motionscykel-eller-spinningcykel-2026",
       "bedste-siddecykel-2026",
       "bedste-traeningsudstyr-til-seniorer-2026",
@@ -1995,9 +1998,11 @@ export const guides: Guide[] = [
       },
     ],
     relatedSlugs: [
+      "spinningcykel-motionscykel-eller-hometrainer-2026",
       "motionscykel-eller-spinningcykel-2026",
       "bedste-smartcykel-2026",
       "bedste-cykel-til-zwift-2026",
+      "bedste-hometrainer-2026",
       "bedste-motionscykel-2026",
       "bedste-crosstrainer-2026",
       "bedste-loebebaand-2026",
@@ -2285,6 +2290,7 @@ export const guides: Guide[] = [
       },
     ],
     relatedSlugs: [
+      "spinningcykel-motionscykel-eller-hometrainer-2026",
       "odin-s1000-spinningcykel-2026",
       "bedste-hometrainer-2026",
       "bedste-cykel-til-zwift-2026",
@@ -2535,6 +2541,7 @@ export const guides: Guide[] = [
       },
     ],
     relatedSlugs: [
+      "spinningcykel-motionscykel-eller-hometrainer-2026",
       "odin-s1000-spinningcykel-2026",
       "bedste-hometrainer-2026",
       "bedste-smartcykel-2026",
@@ -2778,6 +2785,7 @@ export const guides: Guide[] = [
       },
     ],
     relatedSlugs: [
+      "loebebaand-eller-crosstrainer-2026",
       "romaskine-eller-crosstrainer-2026",
       "bedste-stoejsvag-crosstrainer-2026",
       "bedste-billig-crosstrainer-2026",
@@ -8631,6 +8639,7 @@ export const guides: Guide[] = [
     ],
     relatedSlugs: [
       "incline-loebebaand-eller-klassisk-2026",
+      "loebebaand-eller-crosstrainer-2026",
       "bedste-loebebaand-2026",
       "gaabaand-til-kontoret-2026",
       "bedste-gaabaand-2026",
@@ -8870,6 +8879,7 @@ export const guides: Guide[] = [
       },
     ],
     relatedSlugs: [
+      "loebebaand-eller-crosstrainer-2026",
       "bedste-romaskine-2026",
       "bedste-crosstrainer-2026",
       "bedste-stoejsvag-romaskine-2026",
@@ -9108,10 +9118,500 @@ export const guides: Guide[] = [
       },
     ],
     relatedSlugs: [
+      "spinningcykel-motionscykel-eller-hometrainer-2026",
       "bedste-motionscykel-2026",
       "bedste-spinningcykel-2026",
+      "bedste-hometrainer-2026",
       "bedste-siddecykel-2026",
       "bedste-stoejsvag-motionscykel-lejlighed-2026",
+    ],
+  },
+  {
+    slug: "loebebaand-eller-crosstrainer-2026",
+    title: "Løbebånd eller crosstrainer? Sådan vælger du i 2026",
+    excerpt:
+      "Kalorieforbrænding, støj og led: hvornår løbebåndet vinder, og hvornår crosstraineren er det skånsomme valg.",
+    metaDescription:
+      "Løbebånd eller crosstrainer i 2026? Sammenlign kalorier, støj og led-belastning — med konkrete modeller og live priser fra danske partnere.",
+    categorySlug: "loebebaand",
+    alsoCategorySlugs: ["crosstrainer"],
+    recommendationsHeading: "Én model til hvert valg",
+    publishedAt: "2026-11-16",
+    updatedAt: "2026-11-16",
+    intro:
+      "Begge er cardio derhjemme. Det er også dér, ligheden stopper. Løbebåndet er løb og gang med stød gennem gulvet. Crosstraineren er stående ellipse uden landing — knæene mærker forskellen. Denne side er valget imellem dem: kalorier, støj, led og hvilke modeller der repræsenterer hvert spor.",
+    criteria: [
+      {
+        title: "Skal du kunne løbe?",
+        description:
+          "Hvis ja — jog, intervaller, 10 km/t — er crosstraineren det forkerte køb. Den ligner gang uden stød, ikke løb. Et rigtigt løbebånd har dæk og motor til tempo.",
+      },
+      {
+        title: "Led og restitution",
+        description:
+          "Crosstraineren vinder, når knæ, hofter eller underboen skal skånes for løbestød. Fødderne forlader aldrig pedalerne. Løbebåndet er hårdere for led, men det er også det, der gør dig til en bedre løber.",
+      },
+      {
+        title: "Kalorieforbrænding",
+        description:
+          "Begge kan brænde meget, hvis intensiteten er høj. Løb på båndet er ofte nemmest at presse op i tempo. Crosstraineren kan matche, hvis du bruger arme og modstand — men “højere kalorier” i marketing er ligegyldigt, hvis du hader maskinen efter tre uger.",
+      },
+      {
+        title: "Støj i lejlighed",
+        description:
+          "Løb larmer gennem gulvet. Crosstrainer med magnet er typisk mere nabovenlig, især med måtte. Aftenløb kræver dæmpning og realisme — ellers vælg ellipse.",
+      },
+      {
+        title: "Plads",
+        description:
+          "Løbebånd kan ofte foldes, men fylder i længden. Crosstraineren er en fast ellipse, der sjældent forsvinder. Mål gulvet, før prisen afgør det.",
+      },
+      {
+        title: "Hvad du faktisk vil lave",
+        description:
+          "Løbespecifik kondition? Løbebånd. Skånsom helkropscardio uden teknik? Crosstrainer. Usikker balance? Overvej cykel i stedet for begge.",
+      },
+    ],
+    products: [
+      {
+        id: "valg-t56-vs-cross",
+        name: "Titan LIFE Treadmill T56",
+        badge: "Vælg løbebånd",
+        summary:
+          "Allround-hjemmeløbebånd, når du vil jogge og løbe. Det rigtige svar, hvis crosstrainerens ellipse ikke erstatter løbetræning.",
+        pros: [
+          "Bygget til gang, jogging og løb",
+          "Mere maskine end en ellipse til løbemål",
+          "Fri fragt hos partner",
+          "God til jævnlig brug",
+        ],
+        cons: [
+          "Mere stød end crosstrainer",
+          "Støjere for naboer ved løb",
+          "Overkill, hvis du kun vil gå skånsomt",
+        ],
+        specs: [
+          { label: "Type", value: "Løbebånd" },
+          { label: "Job", value: "Løb hjemme" },
+          { label: "Partner", value: "HomeX.dk" },
+        ],
+        feedProductId: "HomeX.dk:3179",
+      },
+      {
+        id: "valg-ascendic-7021-vs-cross",
+        name: "Ascendic 7021 Løbebånd",
+        badge: "Løbebånd på budget",
+        summary:
+          "Kompakt ægte løbebånd med hældning, når du vil løbe uden midrange-pris — og ellipse stadig ikke er nok.",
+        pros: [
+          "Ægte løbebånd under midrange",
+          "Automatisk hældning",
+          "Mindre end store hjemmebaner",
+          "Klar opgradering fra “kun gang”-tænkning",
+        ],
+        cons: [
+          "Stadig stød ved løb",
+          "Tjek dæk og motor til dit tempo",
+          "Ikke en crosstrainer",
+        ],
+        specs: [
+          { label: "Type", value: "Løbebånd" },
+          { label: "Job", value: "Budget-løb" },
+          { label: "Partner", value: "Ascendic.dk" },
+        ],
+        feedProductId: "Ascendic.dk:56336394781016",
+      },
+      {
+        id: "valg-c56-vs-loebe",
+        name: "Titan Life Crosstrainer C56",
+        badge: "Vælg crosstrainer",
+        summary:
+          "Stabil ellipse til jævnlig cardio, når knæene skal skånes, og du vil stå op uden løbestød.",
+        pros: [
+          "Lavt stød — fødderne bliver på pedalerne",
+          "Træd-og-kør uden løbeteknik",
+          "God til daglig brug",
+          "Fri fragt hos partner",
+        ],
+        cons: [
+          "Erstatter ikke løbetræning",
+          "Fylder fast på gulvet",
+          "Kræver balance",
+        ],
+        specs: [
+          { label: "Type", value: "Crosstrainer" },
+          { label: "Job", value: "Skånsom cardio" },
+          { label: "Partner", value: "HomeX.dk" },
+        ],
+        feedProductId: "HomeX.dk:3176",
+      },
+      {
+        id: "valg-c35-vs-loebe",
+        name: "Titan Life C35 Crosstrainer",
+        badge: "Crosstrainer på budget",
+        summary:
+          "Lav indstigning og lav pris, når ellipse er valget, men C56 er for meget maskine til at starte.",
+        pros: [
+          "Lav indgangspris",
+          "Lav indstigning",
+          "Magnetisk modstand",
+          "Fri fragt hos partner",
+        ],
+        cons: [
+          "Færre detaljer end C56",
+          "Tjek skridtlængde hvis du er høj",
+          "Ikke til løbespecifik træning",
+        ],
+        specs: [
+          { label: "Type", value: "Crosstrainer" },
+          { label: "Job", value: "Budget-ellipse" },
+          { label: "Partner", value: "HomeX.dk" },
+        ],
+        feedProductId: "HomeX.dk:2792",
+      },
+    ],
+    howToChoose:
+      "Du vil løbe: Titan LIFE T56, eller Ascendic 7021 hvis budgettet er stramt. Du vil skåne led og have stående cardio uden stød: C56, eller C35 på budget. Derefter: Bedste løbebånd 2026 hvis løb vandt, og Bedste crosstrainer 2026 hvis ellipse vandt. Shop via “Se pris”.",
+    learningSections: [
+      {
+        heading: "To maskiner, to jobs",
+        paragraphs: [
+          "Løbebåndet er din udebane indendørs: tempo, intervaller, løbespecifik kondition. Crosstraineren er “gå uden stød” med arme — skånsom, men ikke et løbeprogram.",
+          "Tommelfingerregel: hvis du aldrig løber ude, og knæene brokker sig, køb crosstrainer. Hvis du vil kunne løbe, køb løbebånd. Et kompromis midt imellem skuffer ofte begge dele.",
+        ],
+        comparison: {
+          caption: "Løbebånd vs. crosstrainer",
+          rowHeaderLabel: "Behov",
+          columns: ["Løbebånd", "Crosstrainer"],
+          rows: [
+            {
+              label: "Løbespecifik træning",
+              cells: ["Ja", "Nej"],
+            },
+            {
+              label: "Led-belastning",
+              cells: ["Højere (stød)", "Lav — ingen landing"],
+            },
+            {
+              label: "Kalorier ved høj intensitet",
+              cells: ["Meget — især ved løb", "Høj, hvis arme + modstand bruges"],
+            },
+            {
+              label: "Støj i lejlighed",
+              cells: ["Skridt gennem gulvet", "Typisk roligere med magnet + måtte"],
+            },
+            {
+              label: "Plads",
+              cells: ["Lang, ofte foldbar", "Ellipse-footprint, bliver stående"],
+            },
+          ],
+        },
+      },
+      {
+        heading: "Vælg løbebånd når",
+        paragraphs: [
+          "Du jogger allerede, eller du vil kunne. Dækket skal være langt nok, og motoren skal holde tempoet. Stigning giver intensitet uden kun at jage km/t.",
+          "I lejlighed: løb om aftenen er et nabospørgsmål. Vælg båndet bevidst — eller crosstrainer, hvis hensynet vejer tungere end tempoet.",
+        ],
+      },
+      {
+        heading: "Vælg crosstrainer når",
+        paragraphs: [
+          "Knæ eller hofter skal skånes, og du vil stadig have stående cardio. Lav indstigning betyder noget, hvis hofterne er stive. Høje brugere skal tjekke skridtlængde.",
+          "Crosstraineren er også det mere stilfærdige valg til vægttab, når løb ikke er realistisk tre gange om ugen.",
+        ],
+      },
+      {
+        heading: "Den typiske fejl",
+        paragraphs: [
+          "At købe crosstrainer “så jeg også kan løbetræne”. Den erstatter ikke løb. Frustrationen kommer, når 5K-tempoet ude ikke følger med.",
+          "Eller at købe løbebånd til ømme knæ uden plan for dæmpning, tempo og restitution. Så bliver maskinen stående.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "Hvad er bedst, løbebånd eller crosstrainer?",
+        answer:
+          "Løbebånd, hvis du vil løbe. Crosstrainer, hvis du vil skåne led og have stående cardio uden stød. Ingen af dem er “bedst” for alle.",
+      },
+      {
+        question: "Hvad brænder flest kalorier?",
+        answer:
+          "Den, du bruger hårdt og ofte. Løb på båndet er nemt at presse op. Crosstrainer kan matche med arme og modstand. Vælg den, du faktisk tænder for.",
+      },
+      {
+        question: "Hvad er mest skånsomt for knæene?",
+        answer:
+          "Crosstraineren. Fødderne lander ikke. Løbebåndet belaster mere — start roligt, brug stigning frem for kun fart, hvis knæene er ømme.",
+      },
+      {
+        question: "Hvad larmer mindst i en lejlighed?",
+        answer:
+          "Crosstrainer med magnet og måtte vinder typisk over løb. Løbets stød gennem gulvet er det, underboen hører.",
+      },
+      {
+        question: "Kan crosstrainer erstatte løbebånd til vægttab?",
+        answer:
+          "Ja, hvis du træner jævnligt med god intensitet. Nej, hvis målet er at blive bedre til at løbe. Vægttab handler om vanen — ikke kun maskintypen.",
+      },
+      {
+        question: "Hvilken guide skal jeg læse bagefter?",
+        answer:
+          "Løb: Bedste løbebånd 2026. Ellipse: Bedste crosstrainer 2026. Gang under bordet: Løbebånd eller gåbånd? Sådan vælger du i 2026.",
+      },
+    ],
+    relatedSlugs: [
+      "bedste-loebebaand-2026",
+      "bedste-crosstrainer-2026",
+      "loebebaand-eller-gaabaand-2026",
+      "romaskine-eller-crosstrainer-2026",
+      "bedste-stoejsvag-loebebaand-lejlighed-2026",
+      "bedste-stoejsvag-crosstrainer-2026",
+      "bedste-knaevenlig-genoptraening-hjemme-2026",
+    ],
+  },
+  {
+    slug: "spinningcykel-motionscykel-eller-hometrainer-2026",
+    title:
+      "Spinningcykel, motionscykel eller hometrainer? Sådan vælger du i 2026",
+    excerpt:
+      "Kondicykel, spin bike eller Zwift på din egen racercykel? Tre setup — og hvornår det ene er det forkerte køb.",
+    metaDescription:
+      "Spinningcykel, motionscykel eller hometrainer i 2026? Vælg mellem kondicykel, spin og Zwift-trainer — med konkrete modeller og live priser.",
+    categorySlug: "motionscykel",
+    recommendationsHeading: "Én model til hvert valg",
+    publishedAt: "2026-11-16",
+    updatedAt: "2026-11-16",
+    intro:
+      "Tre cykelspor, tre jobs. En motionscykel (kondicykel) er oprejst cardio til længere pas. En spinningcykel er intervaller og sved. En hometrainer spænder din egen race-/gravelcykel op til Zwift. Køber du den forkerte, hader du sadlen — eller monteringen — i uge ét. Denne side er valget imellem dem, før du dykker ned i en fuld købsguide.",
+    criteria: [
+      {
+        title: "Har du allerede en racercykel?",
+        description:
+          "Ja, og du vil beholde pasform og sadlen indoor: hometrainer (helst direct drive). Nej, eller du gider ikke montere hver dag: kondicykel, spinning eller en dedikeret smartbike.",
+      },
+      {
+        title: "Session-type",
+        description:
+          "Lange, rolige pas med podcast: motionscykel. Korte, hårde blokke: spinning. Struktureret watt/Zwift på din egen cykel: hometrainer.",
+      },
+      {
+        title: "Sadel og position",
+        description:
+          "Kondicyklen er mere oprejst og tilgivende. Spin er fremad og hårdere. Hometraineren er din udecykels position — præcis derfor mange ryttere elsker den.",
+      },
+      {
+        title: "Zwift og apps",
+        description:
+          "Hometrainer (smart) og dedikerede smartbikes er bygget til app-styring. En almindelig kondicykel uden Bluetooth er ikke et Zwift-setup. Nogle spinningcykler er “smart” — tjek FTMS, ikke kun “Bluetooth til app”.",
+      },
+      {
+        title: "Støj og montering",
+        description:
+          "Magnet-kondicykel er ofte det stille valg. Spin kan være fin med måtte. Hometrainer: direct drive er typisk roligere end wheel-on, men kræver hjul af og kassette-tjek.",
+      },
+      {
+        title: "Budget mod brug",
+        description:
+          "Betal for det job, du har 80 % af tiden. En dyr trainer til tre pas om vinteren kan være rigtig. En billig spin-cykel til “jeg vil bare cykle lidt” kan være forkert, hvis du egentlig ville have en stille kondicykel.",
+      },
+    ],
+    products: [
+      {
+        id: "valg-b56-3vejs",
+        name: "Titan Life Athlete B56",
+        badge: "Vælg motionscykel",
+        summary:
+          "Oprejst kondicykel til rolige, længere pas. Det rigtige svar, når spin-sadlen og trainer-montering lyder som overkill.",
+        pros: [
+          "Allround kondicykel",
+          "Bedre til lange pas end spin",
+          "Ingen montering af udecykel",
+          "Fri fragt hos partner",
+        ],
+        cons: [
+          "Ikke et tungt svinghjul",
+          "Ikke et Zwift-setup i sig selv",
+          "Tjek pasform til din højde",
+        ],
+        specs: [
+          { label: "Type", value: "Kondicykel" },
+          { label: "Job", value: "Rolig cardio" },
+          { label: "Partner", value: "HomeX.dk" },
+        ],
+        feedProductId: "HomeX.dk:3237",
+      },
+      {
+        id: "valg-s72-3vejs",
+        name: "Titan LIFE Spinning Cykel S72",
+        badge: "Vælg spinningcykel",
+        summary:
+          "Spin bike til intervaller derhjemme. Vælg den, når du vil svede — ikke når du vil spænde racercyklen op.",
+        pros: [
+          "Tungt nok til jævnlig spinning",
+          "Allround i S-serien",
+          "Klar “jeg vil spinne”-cykel",
+          "Fri fragt hos partner",
+        ],
+        cons: [
+          "Hårdere sadel",
+          "Mere aggressiv position",
+          "Ikke din udecykels pasform",
+        ],
+        specs: [
+          { label: "Type", value: "Spinningcykel" },
+          { label: "Job", value: "Intervaller" },
+          { label: "Partner", value: "HomeX.dk" },
+        ],
+        feedProductId: "HomeX.dk:2807",
+      },
+      {
+        id: "valg-kickr-core-3vejs",
+        name: "Wahoo KICKR CORE 2 — Hometrainer",
+        badge: "Vælg hometrainer",
+        summary:
+          "Direct drive til din egen race-/gravelcykel. Det rigtige svar, når Zwift og watt betyder mere end en dedikeret stue-cykel.",
+        pros: [
+          "Din pasform og sadel indoor",
+          "Zwift-klar direct drive",
+          "11-speed kassette med i pakken",
+          "Live pris via Cykelpartner",
+        ],
+        cons: [
+          "Kræver montering (hjul af)",
+          "Tjek thru-axle / adapters",
+          "Overkill uden egen racercykel",
+        ],
+        specs: [
+          { label: "Type", value: "Direct drive trainer" },
+          { label: "Job", value: "Zwift / egen cykel" },
+          { label: "Partner", value: "Cykelpartner.dk" },
+        ],
+        feedProductId: "Cykelpartner.dk:850048106611",
+      },
+      {
+        id: "valg-odin-s1000-3vejs",
+        name: "Odin S1000 Spinningcykel (Kinomap & Zwift)",
+        badge: "Smart spin uden udecykel",
+        summary:
+          "Zwift-/Kinomap-klar spin bike, når du vil have app-træning uden at montere en racercykel hver gang.",
+        pros: [
+          "Zwift- og Kinomap-klar",
+          "Ingen daglig montering",
+          "Spinning-geometri",
+          "Frihed til at skifte app",
+        ],
+        cons: [
+          "Ikke din udecykels pasform",
+          "Kræver egen tablet og typisk abonnement",
+          "Dyrere end “dum” S72",
+        ],
+        specs: [
+          { label: "Type", value: "Smart spinningcykel" },
+          { label: "Job", value: "Zwift uden udecykel" },
+          { label: "Partner", value: "Apuls.dk" },
+        ],
+        feedProductId: "Apuls.dk:15043",
+      },
+    ],
+    howToChoose:
+      "Lange, rolige pas uden Zwift: B56. Intervaller og sved uden app-krav: S72. Egen racercykel + Zwift: KICKR CORE 2. App-træning uden montering: Odin S1000. Derefter de fulde guides til motionscykel, spinning, hometrainer og smartcykel.",
+    learningSections: [
+      {
+        heading: "Tre setup, tre kompromiser",
+        paragraphs: [
+          "Kondicykel vinder på enkelthed og lange pas. Spinning vinder på intensitet uden at eje en racercykel. Hometrainer vinder på pasform og watt — hvis du allerede har cyklen og orker monteringen.",
+          "“Smart” er ikke en fjerde maskintype alene: det er en egenskab. Du kan få smart som spin bike, som dedikeret indoor-racer eller som trainer under din udecykel.",
+        ],
+        comparison: {
+          caption: "Motionscykel vs. spinning vs. hometrainer",
+          rowHeaderLabel: "Behov",
+          columns: ["Motionscykel", "Spinningcykel", "Hometrainer"],
+          rows: [
+            {
+              label: "Typisk session",
+              cells: ["Længere, rolig cardio", "Korte intervaller", "Zwift / watt-pas"],
+            },
+            {
+              label: "Kræver udecykel",
+              cells: ["Nej", "Nej", "Ja"],
+            },
+            {
+              label: "Position",
+              cells: ["Mere oprejst", "Fremad, sporty", "Din racercykels"],
+            },
+            {
+              label: "Zwift-klar",
+              cells: ["Kun hvis smart/Bluetooth", "Nogle modeller", "Ja (smart trainer)"],
+            },
+            {
+              label: "Montering",
+              cells: ["Sæt dig", "Sæt dig", "Hjul af (direct drive)"],
+            },
+          ],
+        },
+      },
+      {
+        heading: "Vælg motionscykel når",
+        paragraphs: [
+          "Du vil træne, mens du hører noget, og du ikke skal stå i pedalerne. Kondicyklen er også det normale kompromis, når to personer med forskellig lyst skal dele én cykel — medmindre den ene kun vil spinne eller Zwifte.",
+        ],
+      },
+      {
+        heading: "Vælg spinningcykel når",
+        paragraphs: [
+          "Du keder dig på en oprejst cykel, og du vil have hold-følelsen uden at eje en race-setup. Vil du også have Zwift uden montering, så kig på smart spin (fx Odin S1000) frem for en “dum” S-serie alene.",
+        ],
+      },
+      {
+        heading: "Vælg hometrainer når",
+        paragraphs: [
+          "Racercyklen er din pasform, og vinteren skal bruges på watt og Zwift. Direct drive først. Wheel-on kun til sjældne pas. Vil flere dele, eller cyklen skal udenfor uden slid: overvej dedikeret smartbike i stedet — se Bedste cykel til Zwift 2026.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "Hvad er forskellen på motionscykel, spinningcykel og hometrainer?",
+        answer:
+          "Motionscykel (kondicykel) er oprejst cardio til længere pas. Spinningcykel er intervaller med tungt svinghjul. Hometrainer spænder din egen cykel op til indoor/Zwift.",
+      },
+      {
+        question: "Skal jeg købe hometrainer eller spinningcykel til Zwift?",
+        answer:
+          "Hometrainer, hvis du har en race-/gravelcykel og vil beholde pasformen. Smart spinning eller smartbike, hvis du ikke vil montere. Se Bedste hometrainer 2026 og Bedste cykel til Zwift 2026.",
+      },
+      {
+        question: "Hvilken er bedst for begyndere?",
+        answer:
+          "Kondicyklen, hvis du vil i gang uden hård sadel og uden montering. Spinning, hvis du specifikt vil træne intervaller. Hometrainer, kun hvis du allerede cykler ude og forstår thru-axle/kassette.",
+      },
+      {
+        question: "Er spinningcykel det samme som smartcykel?",
+        answer:
+          "Nej. En spinningcykel kan være “dum” (kun svinghjul) eller smart (app-styring). En smartcykel/smart bike er bygget til apps — nogle gange som spin, nogle gange som landevejs-geometri.",
+      },
+      {
+        question: "Hvad hvis min lænd ikke kan lide oprejst cykling?",
+        answer:
+          "Se på en siddecykel med ryglæn. Hverken B56, S72 eller en hometrainer løser et ryglæns-behov, medmindre din udecykel allerede er sat op til det.",
+      },
+      {
+        question: "Hvilken guide skal jeg læse bagefter?",
+        answer:
+          "Kondicykel: Bedste motionscykel 2026. Spin: Bedste spinningcykel 2026. Trainer: Bedste hometrainer 2026. Smart/Zwift uden udecykel: Bedste smartcykler 2026 og Bedste cykel til Zwift 2026. Kun kondi vs. spin: Motionscykel eller spinningcykel?",
+      },
+    ],
+    relatedSlugs: [
+      "motionscykel-eller-spinningcykel-2026",
+      "bedste-motionscykel-2026",
+      "bedste-spinningcykel-2026",
+      "bedste-hometrainer-2026",
+      "bedste-smartcykel-2026",
+      "bedste-cykel-til-zwift-2026",
+      "bedste-siddecykel-2026",
+      "bedste-airbike-2026",
     ],
   },
   {
@@ -11831,6 +12331,7 @@ export const guides: Guide[] = [
       },
     ],
     relatedSlugs: [
+      "spinningcykel-motionscykel-eller-hometrainer-2026",
       "bedste-cykel-til-zwift-2026",
       "bedste-smartcykel-2026",
       "bedste-spinningcykel-2026",
