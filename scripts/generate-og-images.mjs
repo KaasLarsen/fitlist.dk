@@ -148,6 +148,27 @@ async function main() {
 
   await mkdir(OUT, { recursive: true });
 
+  const only = process.env.OG_ONLY;
+  if (only) {
+    const guide = data.guides.find((g) => g.slug === only);
+    if (!guide) {
+      throw new Error(`OG_ONLY slug not in data: ${only}`);
+    }
+    const category = data.categories.find((c) => c.slug === guide.categorySlug);
+    const heroFallback = path.join(ROOT, "public", "images", "hero-home.webp");
+    const bg = category
+      ? path.join(ROOT, "public", category.image.replace(/^\//, ""))
+      : heroFallback;
+    const outPath = await renderCard({
+      outName: `guide-${guide.slug}.jpg`,
+      title: guide.title,
+      eyebrow: category?.name,
+      backgroundPath: bg,
+    });
+    console.log(`Wrote ${outPath}`);
+    return;
+  }
+
   const hero = path.join(ROOT, "public", "images", "hero-home.webp");
   await renderCard({
     outName: "home.jpg",

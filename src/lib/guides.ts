@@ -190,6 +190,7 @@ const FEATURED_GUIDE_SLUGS = [
   "gaabaand-til-kontoret-2026",
   "bedste-stoejsvage-traeningsmaskiner-lejlighed-2026",
   "ultimative-home-gym-budget-2026",
+  "ultimative-cardio-corner-under-7500-2026",
 ] as const;
 
 export function getFeaturedGuides(): Guide[] {
@@ -1272,6 +1273,7 @@ export const guides: Guide[] = [
       "bedste-foldbare-kompakte-traeningsmaskiner-2026",
       "bedste-knaevenlig-genoptraening-hjemme-2026",
       "bedste-cardio-under-lavt-loft-2026",
+      "ultimative-cardio-corner-under-7500-2026",
     ],
   },
   {
@@ -1516,6 +1518,7 @@ export const guides: Guide[] = [
       "bedste-airbike-2026",
       "bedste-knaevenlig-genoptraening-hjemme-2026",
       "komplet-hjemmegym-under-10000-kr-2026",
+      "ultimative-cardio-corner-under-7500-2026",
     ],
   },
   {
@@ -3339,6 +3342,7 @@ export const guides: Guide[] = [
       "bedste-motionscykel-2026",
       "bedste-spinningcykel-2026",
       "bedste-romaskine-2026",
+      "ultimative-cardio-corner-under-7500-2026",
     ],
   },
   {
@@ -4403,6 +4407,211 @@ export const guides: Guide[] = [
       "bedste-gaabaand-2026",
       "bedste-styrkemaskiner-2026",
       "bedste-loebebaand-2026",
+      "ultimative-cardio-corner-under-7500-2026",
+    ],
+  },
+  {
+    slug: "ultimative-cardio-corner-under-7500-2026",
+    title: "Det ultimative Cardio-Corner til under 7.500 kr. (2026)",
+    excerpt:
+      "Vælg én kompakt cardiomaskine under 7.500 kr.: magnetisk romaskine eller foldbart løbebånd til kondition og vægttab hjemme.",
+    metaDescription:
+      "Cardio-corner under 7.500 kr. 2026. Sammenlign magnetromaskine, foldbart løbebånd og airbike — vælg Masterfit 170 eller Reebok i-Run 4.5 med live priser.",
+    categorySlug: "romaskine",
+    alsoCategorySlugs: ["loebebaand"],
+    recommendationsHeading: "Vælg én maskine",
+    publishedAt: "2026-11-17",
+    updatedAt: "2026-11-17",
+    intro:
+      "Ikke alle vil løfte jern. Mange leder efter én maskine, der kan løfte konditionen eller hjælpe et vægttab, når det er koldt ude, eller når EM-aftenen alligevel er foran skærmen. Et cardio-corner under 7.500 kr. er én solid maskine, du faktisk bruger, og som kan pakkes væk bagefter. Her sammenligner vi magnetisk romaskine, foldbart løbebånd og airbike — og lander på to modeller, der begge holder sig under loftet.",
+    criteria: [
+      {
+        title: "Én maskine er hjørnet",
+        description:
+          "Hjørnet er den maskine, du stiller frem tre gange om ugen. En romaskine og et løbebånd i samme kurv hører kun med, når begge “Se pris” stadig summerer under 7.500 kr. Start med den ene, vanen sidder på.",
+      },
+      {
+        title: "Kalorier pr. krone",
+        description:
+          "Helkrop på en magnetromaskine giver meget arbejde pr. minut. Et foldbart løbebånd vinder, når du vil gå og løbe. Airbike brænder hårdt på kort tid, når rummet kan tåle viften. Den bevægelse, du gennemfører, er den, der giver forbrænding pr. krone.",
+      },
+      {
+        title: "Plads efter brug",
+        description:
+          "Mål længden, mens du træner, og footprint, når maskinen er pakket væk. En romaskine der rejses lodret, og et løbebånd der kører under sofaen, giver stuen tilbage. En maskine der bliver stående, fylder hjørnet hele ugen.",
+      },
+      {
+        title: "Støj under kamp og aften",
+        description:
+          "Magnet er det stille spor til stuen. Et foldbart løbebånd høres i skridt og motor, især i etagebyggeri. Airbike er vifte-lyd, der stiger med indsatsen. Træner du, mens andre ser med, er magnet det spor, naboerne også kan leve med. Se støjsvag-lejlighedsguiden, hvis etagen er tynd.",
+      },
+      {
+        title: "Loftet inkluderer måtten",
+        description:
+          "7.500 kr. er maskine plus det underlag, der beskytter gulvet. En måtte er billig forsikring under både skinne og løbebånd. Tag den med i regnestykket, før du lægger en anden maskine i kurven.",
+      },
+      {
+        title: "Skærmen må ikke æde budgettet",
+        description:
+          "Tid, distance og et simpelt display er nok. Tablet og telefon ligger allerede i stuen under EM. Betal for ramme, modstand og fold — den store touch-skærm kan vente.",
+      },
+    ],
+    products: [
+      {
+        id: "cardio-masterfit-170",
+        name: "Masterfit 170 Rower",
+        badge: "Bedst samlet",
+        summary:
+          "Stabil magnetromaskine, der rejses lodret efter brug. Helkrop, stille nok til stuen, og den model der giver mest træning pr. krone i det her hjørne. Shoppen kalder den designet til det skandinaviske hjem, og den ligger under 7.500 kr. med god margin.",
+        pros: [
+          "Magnetmodstand — stille nok til aften og stue",
+          "Rejses lodret, så skinnen kan stå i et hjørne",
+          "Helkrop: ben, ryg, core og arme i samme træk",
+          "Under budgetloftet med plads til en måtte",
+        ],
+        cons: [
+          "Brugslængden kræver stadig plads, mens du ror",
+          "Høje brugere bør tjekke skinnen, før de køber",
+          "Lodret stuvning kræver greb og lidt loft",
+        ],
+        specs: [
+          { label: "Type", value: "Romaskine" },
+          { label: "Modstand", value: "Magnet" },
+          { label: "Opbevaring", value: "Lodret" },
+          { label: "Partner", value: "Træningspartner" },
+        ],
+        imageUrl:
+          "https://www.traeningspartner.dk/media/4e/76/3d/1727766734/0d6412ef1e55618eea1866a6c90b1cf7.jpg?ts=1793712001",
+        feedProductId: "Træningspartner:01904a5eaad7714fb5635179812010a9",
+      },
+      {
+        id: "cardio-reebok-irun-45",
+        name: "Reebok i-Run 4.5 Løbebånd",
+        badge: "Foldbart løbebånd",
+        summary:
+          "Til dig der vil gå og løbe, og have stuen tilbage bagefter. i-Run 4.5 leveres færdigsamlet, foldes fladt og kan med transporthjul køres under mange senge og sofaer. Den holder sig under 7.500 kr. i partnerfeedet.",
+        pros: [
+          "Flad fold og transporthjul",
+          "Færdigsamlet levering hos Apuls",
+          "Gang og løb i samme maskine",
+          "Under loftet, så der er plads til en måtte",
+        ],
+        cons: [
+          "Skridt og motor høres mere end magnetroning",
+          "Folden er kun noget værd, hvis du pakker den væk",
+          "Tjek frihøjden under sofaen, før du regner med “under”",
+        ],
+        specs: [
+          { label: "Type", value: "Foldbart løbebånd" },
+          { label: "Opbevaring", value: "Flad fold / under møbel" },
+          { label: "Levering", value: "Færdigsamlet" },
+          { label: "Partner", value: "Apuls.dk" },
+        ],
+        imageUrl:
+          "https://m2.apuls.dk/media/catalog/product/2/0/20766_1.jpg",
+        feedProductId: "Apuls.dk:15828",
+      },
+    ],
+    howToChoose:
+      "Vil du have helkrop og pakke skinnen væk? Masterfit 170. Vil du gå og løbe og rulle båndet under sofaen? Reebok i-Run 4.5 Løbebånd. Begge ligger under 7.500 kr. Læg kun begge i kurven, hvis de to “Se pris” stadig summerer under loftet. Airbike hører til i Bedste airbike 2026, når rummet kan tåle viften. Find din næste cardiomaskine på tilbud hos Træningspartner eller Apuls her.",
+    learningSections: [
+      {
+        heading: "Vinter, EM og den korte vane",
+        paragraphs: [
+          "De kolde måneder og en slutrunde er der, de fleste lover sig selv et hjemme-pas. Den maskine, der vinder, er den der står klar på ti minutter: sko på, eller sæt dig på skinnen, mens kampen kører. Korte pas tre gange om ugen slår et langt pas, du springer over, fordi maskinen fylder for meget til at stille frem.",
+          "En romaskine giver helkrop uden løbestød. Et foldbart løbebånd giver de skridt og det løb, du savner, når fortovet er mørkt. Vælg den, du kan stille frem uden at rydde stuen først. Kost og søvn gør resten af vægttabet — se Bedste træningsudstyr til vægttab hjemme 2026, hvis styrke også skal med.",
+        ],
+      },
+      {
+        heading: "Romaskine, løbebånd eller airbike",
+        paragraphs: [
+          "Magnetromaskinen er hjørnets stærkeste kalorie-køb, når plads og støj tæller: meget muskelarbejde, og skinnen kan rejses. Det foldbare løbebånd er valget, når målet er gang og løb, og båndet skal væk under møblet. Airbiken giver de hårdeste korte intervaller, og den bliver stående med en vifte, der fylder rummet. I en stue under EM er magnet eller fold det spor, der giver stuen tilbage.",
+          "Vil du sammenligne flere modeller inden for én type, så læs Bedste romaskine 2026, Bedste foldbare romaskine 2026 og Bedste løbebånd 2026. Hele hjemmet på et lavere loft: Det ultimative home gym på budget.",
+        ],
+        comparison: {
+          caption: "Tre cardiotyper til et hjørne under 7.500 kr.",
+          rowHeaderLabel: "Type",
+          columns: ["Kalorier", "Plads efter brug", "Støj", "Vælg den når"],
+          rows: [
+            {
+              label: "Magnetisk romaskine",
+              cells: [
+                "Helkrop pr. minut",
+                "Rejses lodret",
+                "Lav",
+                "Du vil have én stille maskine",
+              ],
+            },
+            {
+              label: "Foldbart løbebånd",
+              cells: [
+                "Gang og løb du gennemfører",
+                "Flad fold under møbel",
+                "Skridt og motor",
+                "Du vil løbe inde om vinteren",
+              ],
+            },
+            {
+              label: "Airbike",
+              cells: [
+                "Korte hårde intervaller",
+                "Står fremme",
+                "Vifte",
+                "Du har hus eller kælder",
+              ],
+            },
+          ],
+        },
+      },
+      {
+        heading: "Det, loftet skal bruges på",
+        paragraphs: [
+          "Stabil ramme og en skinne eller løbeflade, der passer til din krop, er det, du mærker i uge otte. En vakkel model bliver et genkøb. Underlaget er den billige del: det skåner gulv og dæmper det, etagen sender videre.",
+          "Skærm, Wi-Fi og en ekstra maskine “fordi tilbuddet er godt” er der, 7.500 kr. forsvinder. Køb den ene, brug den i otte uger, og opgrader det led, der faktisk begrænser dig.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "Skal jeg købe én eller to cardiomaskiner?",
+        answer:
+          "Én. Læg den anden i kurven kun, hvis begge “Se pris” stadig summerer under 7.500 kr. Masterfit 170 og Reebok i-Run 4.5 kan det i det aktuelle feed — tjek summen, før du betaler.",
+      },
+      {
+        question: "Holder cardio-corneret sig under 7.500 kr.?",
+        answer:
+          "Ja, når du vælger én af de to. Masterfit 170 er magnetromaskinen. Reebok i-Run 4.5 er det foldbare løbebånd. Prisen på siden er live. En måtte skal stadig være med i dit eget loft.",
+      },
+      {
+        question: "Kan det stå i en lejlighed?",
+        answer:
+          "Magnetromaskinen er det stille spor og kan rejses lodret. Løbebåndet kan foldes fladt, og skridtene høres mere. I etagebyggeri: måtte, realistisk tempo og støjsvag-lejlighedsguiden.",
+      },
+      {
+        question: "Er det nok til at tabe sig?",
+        answer:
+          "Maskinen gør det nemmere at træne ofte. Vægttabet sidder i vanen og i kosten. Se Bedste træningsudstyr til vægttab hjemme 2026, hvis du også vil bevare muskel.",
+      },
+      {
+        question: "Hvorfor er airbike ikke et af kortene?",
+        answer:
+          "Airbike giver hård forbrænding på kort tid, og den larmer og bliver stående. Det passer dårligt til et hjørne, der skal give stuen tilbage. Har du hus eller kælder, så se Bedste airbike 2026.",
+      },
+      {
+        question: "Hvordan ser jeg prisen?",
+        answer:
+          "Klik “Se pris hos Træningspartner” eller “Se pris hos Apuls.dk”. Lager og tilbud ændrer sig. Fitlist kan få provision via linket, og det ændrer ikke prisen for dig.",
+      },
+    ],
+    relatedSlugs: [
+      "bedste-romaskine-2026",
+      "bedste-foldbar-romaskine-2026",
+      "bedste-loebebaand-2026",
+      "reebok-i-run-4-5-loebebaand-2026",
+      "bedste-airbike-2026",
+      "bedste-traeningsudstyr-til-vaegttab-hjemme-2026",
+      "ultimative-home-gym-budget-2026",
+      "bedste-stoejsvage-traeningsmaskiner-lejlighed-2026",
     ],
   },
   {
@@ -6043,6 +6252,7 @@ export const guides: Guide[] = [
       "bedste-foldbare-kompakte-traeningsmaskiner-2026",
       "romaskine-eller-crosstrainer-2026",
       "ascendic-6004-romaskine-2026",
+      "ultimative-cardio-corner-under-7500-2026",
     ],
   },
   {
@@ -8270,6 +8480,7 @@ export const guides: Guide[] = [
       "ultimative-home-gym-budget-2026",
       "hjemmetraening-for-begyndere-foerste-90-dage",
       "bedste-knaevenlig-genoptraening-hjemme-2026",
+      "ultimative-cardio-corner-under-7500-2026",
     ],
   },
   {

@@ -123,6 +123,10 @@ const GUIDE_LINK_ALIASES: Record<string, string[]> = {
     "Bedste romaskine under 5.000 kr.",
     "Bedste romaskine under 5.000 kr",
   ],
+  "ultimative-cardio-corner-under-7500-2026": [
+    "Det ultimative Cardio-Corner",
+    "Cardio-Corner til under 7.500 kr.",
+  ],
   "bedste-stoejsvage-traeningsmaskiner-lejlighed-2026": [
     "støjsvag-lejlighedsguiden",
     "Bedste støjsvage træningsmaskiner til lejligheden",

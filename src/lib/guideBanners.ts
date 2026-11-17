@@ -44,6 +44,7 @@ const skipSlugs = new Set([
   "hjemmetraening-under-1000-kr-2026",
   "komplet-hjemmegym-under-10000-kr-2026",
   "komplet-hjemmegym-under-15000-kr-2026",
+  "ultimative-cardio-corner-under-7500-2026",
 ]);
 
 export function getGuideBanner(

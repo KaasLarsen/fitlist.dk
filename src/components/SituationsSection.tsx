@@ -33,6 +33,11 @@ const SITUATIONS = [
     slug: "komplet-hjemmegym-under-10000-kr-2026",
   },
   {
+    label: "Cardio-corner",
+    short: "Under 7.500 kr.",
+    slug: "ultimative-cardio-corner-under-7500-2026",
+  },
+  {
     label: "Lille værelse",
     short: "Ca. 10 m² setup",
     slug: "home-gym-til-lille-vaerelse-10m2-2026",

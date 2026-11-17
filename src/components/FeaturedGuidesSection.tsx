@@ -65,6 +65,8 @@ export function FeaturedGuidesSection({ guides }: Props) {
                             ? " · Cykel / under 3.000"
                           : guide.slug === "bedste-romaskine-under-5000-kr-2026"
                             ? " · Romaskine / under 5.000"
+                            : guide.slug === "ultimative-cardio-corner-under-7500-2026"
+                              ? " · Cardio / under 7.500"
                         : guide.slug === "bedste-foldbare-kompakte-traeningsmaskiner-2026"
                           ? " · Foldbar / kompakt"
                           : guide.slug === "bedste-cardio-under-lavt-loft-2026"
