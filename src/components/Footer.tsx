@@ -43,6 +43,9 @@ export function Footer() {
           <Link href="/maskiner" className="transition-colors hover:text-foreground">
             Maskiner
           </Link>
+          <Link href="/hjemme-gym" className="transition-colors hover:text-foreground">
+            Hjemme-gym
+          </Link>
           <Link href="/guides" className="transition-colors hover:text-foreground">
             Guides
           </Link>

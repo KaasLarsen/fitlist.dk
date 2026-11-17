@@ -8,6 +8,7 @@ import { HeaderSearch } from "@/components/HeaderSearch";
 const nav = [
   { href: "/tilbud", label: "Tilbud" },
   { href: "/maskiner", label: "Maskiner" },
+  { href: "/hjemme-gym", label: "Hjemme-gym" },
   { href: "/guides", label: "Guides" },
   { href: "/om", label: "Om" },
 ];

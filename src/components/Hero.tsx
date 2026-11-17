@@ -47,6 +47,12 @@ export function Hero() {
           >
             Se guides
           </Link>
+          <Link
+            href="/hjemme-gym"
+            className="inline-flex items-center border border-white/40 bg-transparent px-7 py-3.5 font-display text-sm font-semibold uppercase tracking-[0.14em] text-white transition-all duration-200 hover:border-white hover:bg-white/10"
+          >
+            Byg hjemme-gym
+          </Link>
         </div>
       </div>
     </section>
