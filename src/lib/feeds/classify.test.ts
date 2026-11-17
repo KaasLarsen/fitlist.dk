@@ -617,6 +617,60 @@ describe("classifyProduct — tilbehoer (must-haves)", () => {
     assert.ok(r!.intentSlugs?.includes("slyngetraener"));
   });
 
+  it("classifies isbad as tilbehoer + isbad", () => {
+    const r = classifyProduct(
+      product({
+        title: "VirtuFit Isbad XXL - 375 liter",
+        brand: "VirtuFit",
+        merchant: "SportGym",
+        price: 495,
+      }),
+    );
+    assert.equal(r!.categorySlug, "tilbehoer");
+    assert.ok(r!.intentSlugs?.includes("isbad"));
+  });
+
+  it("classifies massagepistol as tilbehoer + massagepistol", () => {
+    const r = classifyProduct(
+      product({
+        title: "Hyperice Hypervolt Go 2 Massagepistol",
+        brand: "Hyperice",
+        merchant: "Fitnessengros.dk",
+        price: 1195,
+      }),
+    );
+    assert.equal(r!.categorySlug, "tilbehoer");
+    assert.ok(r!.intentSlugs?.includes("massagepistol"));
+    assert.ok(!r!.intentSlugs?.includes("foamroller"));
+  });
+
+  it("classifies foam roller as tilbehoer + foamroller (not abwheel)", () => {
+    const r = classifyProduct(
+      product({
+        title: "Trigger Point The Grid Foam Roller Sort",
+        brand: "Trigger Point",
+        merchant: "Apuls.dk",
+        price: 275,
+      }),
+    );
+    assert.equal(r!.categorySlug, "tilbehoer");
+    assert.ok(r!.intentSlugs?.includes("foamroller"));
+    assert.ok(!r!.intentSlugs?.includes("abwheel"));
+  });
+
+  it("classifies recovery boots as tilbehoer + recoveryboots", () => {
+    const r = classifyProduct(
+      product({
+        title: "REECOVER Recovery Boots Pro6 (Standard)",
+        brand: "REECOVER",
+        merchant: "Den Intelligente Krop",
+        price: 3599,
+      }),
+    );
+    assert.equal(r!.categorySlug, "tilbehoer");
+    assert.ok(r!.intentSlugs?.includes("recoveryboots"));
+  });
+
   it("classifies cover til løbebånd as tilbehoer, not loebebaand", () => {
     const r = classifyProduct(
       product({
@@ -1020,6 +1074,48 @@ describe("classifyProduct — Den Intelligente Krop", () => {
     assert.ok(r);
     assert.equal(r!.categorySlug, "tilbehoer");
     assert.ok(r!.intentSlugs?.includes("vaegtvest"));
+  });
+
+  it("keeps DIK isbad, foam roller, massage gun and recovery boots", () => {
+    const isbad = classifyProduct(
+      product({
+        ...dik,
+        title: "Hanki kuldebad / isbad (Komplet sæt)",
+        price: 41000,
+      }),
+    );
+    assert.equal(isbad?.categorySlug, "tilbehoer");
+    assert.ok(isbad?.intentSlugs?.includes("isbad"));
+
+    const roller = classifyProduct(
+      product({
+        ...dik,
+        title: "Blackroll foamroller (Sort - Medium hård)",
+        price: 299,
+      }),
+    );
+    assert.equal(roller?.categorySlug, "tilbehoer");
+    assert.ok(roller?.intentSlugs?.includes("foamroller"));
+
+    const gun = classifyProduct(
+      product({
+        ...dik,
+        title: "Blackroll Fascia Gun",
+        price: 1299,
+      }),
+    );
+    assert.equal(gun?.categorySlug, "tilbehoer");
+    assert.ok(gun?.intentSlugs?.includes("massagepistol"));
+
+    const boots = classifyProduct(
+      product({
+        ...dik,
+        title: "REECOVER Elite Recovery Boots (Standard)",
+        price: 5299,
+      }),
+    );
+    assert.equal(boots?.categorySlug, "tilbehoer");
+    assert.ok(boots?.intentSlugs?.includes("recoveryboots"));
   });
 
   it("still classifies elastik from other merchants", () => {

@@ -248,7 +248,7 @@ export const categories: MachineCategory[] = [
     name: "Must-haves",
     shortName: "Tilbehør",
     description:
-      "Håndvægte, kettlebells, underlagsmåtter, elastikker og slyngetræner — det lille tilbehør, der følger med ethvert maskinkøb.",
+      "Håndvægte, kettlebells, restitution, underlagsmåtter, elastikker og slyngetræner — tilbehøret der følger med ethvert maskinkøb.",
     image: "/images/categories/tilbehoer.webp",
     intents: [
       {
@@ -305,6 +305,30 @@ export const categories: MachineCategory[] = [
         slug: "slyngetraener",
         label: "Slyngetræner",
         description: "TRX-alternativer og suspension trainers.",
+      },
+      {
+        slug: "isbad",
+        label: "Isbad",
+        description:
+          "Isbadekar, cold plunge og kuldebade til restitution derhjemme.",
+      },
+      {
+        slug: "massagepistol",
+        label: "Massagepistol",
+        description:
+          "Percussion massage guns til selvmassage før og efter træning.",
+      },
+      {
+        slug: "foamroller",
+        label: "Foam roller",
+        description:
+          "Foam rollers og fasciaruller til mobilisering og restitution.",
+      },
+      {
+        slug: "recoveryboots",
+        label: "Recovery boots",
+        description:
+          "Kompressionstøvler og luftkompression til ben-restitution.",
       },
       {
         slug: "begynder",

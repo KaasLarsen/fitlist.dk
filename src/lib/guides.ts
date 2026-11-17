@@ -1,5 +1,6 @@
 import { getAffiliate } from "@/lib/affiliates";
 import { priceTierGuides } from "@/lib/price-tier-guides";
+import { recoveryGuides } from "@/lib/recovery-guides";
 
 export type GuideCriterion = {
   title: string;
@@ -198,6 +199,8 @@ const FEATURED_GUIDE_SLUGS = [
   "bedste-stoejsvage-traeningsmaskiner-lejlighed-2026",
   "ultimative-home-gym-budget-2026",
   "ultimative-cardio-corner-under-7500-2026",
+  "restitution-efter-hjemmetraening-2026",
+  "den-store-guide-til-isbad-derhjemme-2026",
 ] as const;
 
 export function getFeaturedGuides(): Guide[] {
@@ -15658,4 +15661,5 @@ export const guides: Guide[] = [
     ],
   },
   ...priceTierGuides,
+  ...recoveryGuides,
 ];

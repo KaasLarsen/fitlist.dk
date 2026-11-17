@@ -229,6 +229,23 @@ const GUIDE_LINK_ALIASES: Record<string, string[]> = {
   "bedste-stepbaenk-plyoboks-2026": [
     "Bedste stepbænk og plyoboks 2026",
   ],
+  "den-store-guide-til-isbad-derhjemme-2026": [
+    "Den store guide til isbad derhjemme",
+  ],
+  "isbad-efter-styrketraening-eller-loeb-2026": [
+    "Isbad efter styrketræning eller løb",
+  ],
+  "restitution-efter-hjemmetraening-2026": [
+    "Restitution efter hjemmetræning",
+  ],
+  "massagepistol-vs-foam-roller-2026": [
+    "Massagepistol vs. foam roller",
+    "Massagepistol vs foam roller",
+  ],
+  "er-recovery-boots-pengene-vaerd-2026": [
+    "Er recovery boots pengene værd?",
+    "Er recovery boots pengene værd",
+  ],
 };
 
 function linkLabelsForGuide(guide: Guide): string[] {

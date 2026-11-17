@@ -383,6 +383,31 @@ const ACCESSORY_PRIORITY: RegExp[] = [
   /overtræk\s*(?:til|til\s+roma|til\s+løbe|til\s+cykel)/,
   /cover\s*til/,
   /(?:overtraek|overtræk|cover).{0,24}(?:roma|loebe|løbe|cykel|maskine|rower|treadmill|crosstrainer)/,
+  // Recovery / restitution
+  /\bisbad\b/,
+  /kuldebad/,
+  /ice\s*bath/,
+  /cold\s*plunge/,
+  /ice\s*barrel/,
+  /isbadekar/,
+  /massagepistol/,
+  /massage\s*gun/,
+  /massagegun/,
+  /fascia\s*gun/,
+  /hypervolt/,
+  /theragun/,
+  /foam\s*roller/,
+  /foamroller/,
+  /fasciarulle/,
+  /fascia\s*rulle/,
+  /massagerulle/,
+  /skumrulle/,
+  /recovery\s*boots?/,
+  /kompressionst[øo]vl/,
+  /compression\s*boots?/,
+  /\bnormatec\b/,
+  /luftkompression/,
+  /kompressionsmassage/,
 ];
 
 /** Must-haves / accessories — only if no machine rule matched (or accessory-priority). */
@@ -442,6 +467,33 @@ const TILBEHOER_RULE: CategoryRule = {
     /cover\s*til/,
     /(?:roma|loebe|løbe|cykel|maskine|rower|treadmill|crosstrainer).{0,24}(?:overtraek|overtræk|cover)/,
     /(?:overtraek|overtræk|cover).{0,24}(?:roma|loebe|løbe|cykel|maskine|rower|treadmill|crosstrainer)/,
+    // Recovery
+    /\bisbad\b/,
+    /kuldebad/,
+    /ice\s*bath/,
+    /cold\s*plunge/,
+    /ice\s*barrel/,
+    /isbadekar/,
+    /massagepistol/,
+    /massage\s*gun/,
+    /massagegun/,
+    /fascia\s*gun/,
+    /hypervolt/,
+    /theragun/,
+    /muskelpistol/,
+    /foam\s*roller/,
+    /foamroller/,
+    /fasciarulle/,
+    /fascia\s*rulle/,
+    /massagerulle/,
+    /skumrulle/,
+    /recovery\s*boots?/,
+    /kompressionst[øo]vl/,
+    /compression\s*boots?/,
+    /\bnormatec\b/,
+    /luftkompression/,
+    /kompressionsmassage/,
+    /\breecover\b/,
   ],
   exclude: [
     /\bsilikone/,
@@ -463,6 +515,16 @@ const TILBEHOER_RULE: CategoryRule = {
     // Presse-/træningsbænk uden step/plyo
     /\b(?:justerbar(?:e)?|flad|incline)\s*(?:traenings|trænings)?baenk\b/,
     /\b(?:justerbar(?:e)?|flad|incline)\s*(?:traenings|trænings)?bænk\b/,
+    // Recovery-støj: sokker, cremer, bøger, opladere
+    /kompressionssok/,
+    /compression\s*sock/,
+    /cold\s*roll[\s-]*on/,
+    /hot[\s/&-]*cold\s*pack/,
+    /varme[\s/]*kulde\s*pakning/,
+    /workbook/,
+    /techniques\s+for\s+massage/,
+    /\boplader\b/,
+    /\bbatteri\b/,
   ],
 };
 
@@ -828,12 +890,25 @@ const INTENT_RULES: { slug: string; test: (hay: string, price: number | null) =>
     },
     {
       slug: "abwheel",
-      test: (hay) =>
-        /ab[\s-]*wheel/.test(hay) ||
-        /abwheel/.test(hay) ||
-        /abs?\s*roller/.test(hay) ||
-        /mavehjul/.test(hay) ||
-        /(?:mave|abs?)\s*(?:hjul|wheel|roller)/.test(hay),
+      test: (hay) => {
+        // Foam rollers er ikke ab wheels
+        if (
+          /foam\s*roller/.test(hay) ||
+          /foamroller/.test(hay) ||
+          /fasciarulle/.test(hay) ||
+          /massagerulle/.test(hay) ||
+          /skumrulle/.test(hay)
+        ) {
+          return false;
+        }
+        return (
+          /ab[\s-]*wheel/.test(hay) ||
+          /abwheel/.test(hay) ||
+          /abs?\s*roller/.test(hay) ||
+          /mavehjul/.test(hay) ||
+          /(?:mave|abs?)\s*(?:hjul|wheel|roller)/.test(hay)
+        );
+      },
     },
     {
       slug: "vaegtvest",
@@ -902,6 +977,105 @@ const INTENT_RULES: { slug: string; test: (hay: string, price: number | null) =>
             /\bbars?\b/.test(hay))),
     },
     {
+      slug: "isbad",
+      test: (hay) => {
+        if (
+          /cold\s*roll[\s-]*on/.test(hay) ||
+          /hot[\s/&-]*cold\s*(?:pack|attachment)/.test(hay) ||
+          /varme[\s/]*kulde/.test(hay) ||
+          /alkalin/.test(hay) ||
+          /desinfektion/.test(hay) ||
+          /termometer/.test(hay)
+        ) {
+          return false;
+        }
+        return (
+          /\bisbad\b/.test(hay) ||
+          /isbadekar/.test(hay) ||
+          /kuldebad/.test(hay) ||
+          /ice\s*bath/.test(hay) ||
+          /cold\s*plunge/.test(hay) ||
+          /ice\s*barrel/.test(hay) ||
+          /cold\s*tub/.test(hay)
+        );
+      },
+    },
+    {
+      slug: "massagepistol",
+      test: (hay) => {
+        if (
+          /\boplader\b/.test(hay) ||
+          /\bbatteri\b/.test(hay) ||
+          /anti\s*cellulite/.test(hay) ||
+          /cupping/.test(hay) ||
+          /krop\s*sculpt/.test(hay) ||
+          /elektrostim/.test(hay)
+        ) {
+          return false;
+        }
+        return (
+          /massagepistol/.test(hay) ||
+          /massage\s*gun/.test(hay) ||
+          /massagegun/.test(hay) ||
+          /fascia\s*gun/.test(hay) ||
+          /hypervolt/.test(hay) ||
+          /theragun/.test(hay) ||
+          /muskelpistol/.test(hay)
+        );
+      },
+    },
+    {
+      slug: "foamroller",
+      test: (hay) => {
+        if (/workbook/.test(hay) || /techniques\s+for\s+massage/.test(hay)) {
+          return false;
+        }
+        return (
+          /foam\s*roller/.test(hay) ||
+          /foamroller/.test(hay) ||
+          /fasciarulle/.test(hay) ||
+          /fascia\s*rulle/.test(hay) ||
+          /massagerulle/.test(hay) ||
+          /skumrulle/.test(hay) ||
+          (/trigger\s*point/.test(hay) && /grid/.test(hay)) ||
+          (/\bblackroll\b/.test(hay) &&
+            !/massage\s*gun/.test(hay) &&
+            !/fascia\s*gun/.test(hay))
+        );
+      },
+    },
+    {
+      slug: "recoveryboots",
+      test: (hay) => {
+        if (
+          /kompressionssok/.test(hay) ||
+          /compression\s*sock/.test(hay) ||
+          /vaegttaeppe/.test(hay) ||
+          /vægttæppe/.test(hay) ||
+          /massage\s*gun/.test(hay) ||
+          /massagepistol/.test(hay) ||
+          /portball/.test(hay)
+        ) {
+          return false;
+        }
+        return (
+          /recovery\s*boots?/.test(hay) ||
+          /kompressionst[øo]vl/.test(hay) ||
+          /compression\s*boots?/.test(hay) ||
+          /\bnormatec\b/.test(hay) ||
+          /luftkompression/.test(hay) ||
+          /kompressionsmassage/.test(hay) ||
+          (/\breecover\b/.test(hay) &&
+            (/boot/.test(hay) ||
+              /cuff/.test(hay) ||
+              /shorts/.test(hay) ||
+              /hipster/.test(hay) ||
+              /odem/.test(hay) ||
+              /ødem/.test(hay)))
+        );
+      },
+    },
+    {
       slug: "elastikker",
       test: (hay) =>
         /elastik/.test(hay) ||
@@ -953,7 +1127,7 @@ const CYKELPARTNER_MERCHANT = "Cykelpartner.dk";
 
 /**
  * Den Intelligente Krop er mest yoga, pilates og massage.
- * Kun romaskiner, siddecykel, håndvægte, kettlebells, vægtveste og TRX-sæt.
+ * Behold: maskiner, vægte, TRX-sæt + recovery (isbad, massagepistol, foam roller, boots).
  */
 function denIntelligenteKropKeep(product: FeedProduct): boolean {
   const hay = normalize(`${product.title} ${product.category}`);
@@ -977,6 +1151,44 @@ function denIntelligenteKropKeep(product: FeedProduct): boolean {
   }
 
   if (/vaegtvest|vægtvest|weighted\s*vest/.test(text)) return true;
+
+  // Recovery — spring over cremer, sokker, bøger og reservedelsstøj
+  if (
+    /kompressionssok|compression\s*sock|cold\s*roll[\s-]*on|hot[\s/&-]*cold\s*pack|varme[\s/]*kulde\s*pakning|workbook|techniques\s+for\s+massage|vaegttaeppe|vægttæppe/.test(
+      text,
+    )
+  ) {
+    return false;
+  }
+  if (
+    /\bisbad\b|isbadekar|kuldebad|ice\s*bath|cold\s*plunge|ice\s*barrel/.test(
+      text,
+    )
+  ) {
+    return true;
+  }
+  if (
+    /massagepistol|massage\s*gun|massagegun|fascia\s*gun|hypervolt|theragun|muskelpistol/.test(
+      text,
+    )
+  ) {
+    return true;
+  }
+  if (
+    /foam\s*roller|foamroller|fasciarulle|fascia\s*rulle|massagerulle|skumrulle|\bblackroll\b|the\s*grid/.test(
+      text,
+    )
+  ) {
+    return true;
+  }
+  if (
+    /recovery\s*boots?|kompressionst[øo]vl|compression\s*boots?|\bnormatec\b|luftkompression|kompressionsmassage|\breecover\b/.test(
+      text,
+    )
+  ) {
+    return true;
+  }
+
   if (/\brack\b|\bstativ\b/.test(text)) return false;
   return /haandvaegt|håndvægt|dumbbell|kettlebell|\bybell\b/.test(text);
 }
@@ -1093,7 +1305,11 @@ export function classifyProduct(
         s !== "pullup" &&
         s !== "abwheel" &&
         s !== "vaegtvest" &&
-        s !== "stepbaenk",
+        s !== "stepbaenk" &&
+        s !== "isbad" &&
+        s !== "massagepistol" &&
+        s !== "foamroller" &&
+        s !== "recoveryboots",
     );
   }
 
