@@ -19,6 +19,8 @@ export type GuideBundleItem = {
   role?: string;
   /** Fast produktbillede når feed mangler/er koldt */
   imageUrl?: string;
+  /** Partner-URL når feed-cachen ikke har varen (fx skivesæt) */
+  url?: string;
 };
 
 export type GuideProduct = {
@@ -41,6 +43,11 @@ export type GuideProduct = {
   bundleItems?: GuideBundleItem[];
   /** Id fra lib/affiliates.ts — valgfri fallback */
   affiliateId?: string;
+  /**
+   * Knaptekst. `{partner}` erstattes med shopnavn.
+   * Uden feltet bruges "Se pris hos {shop}".
+   */
+  ctaLabel?: string;
 };
 
 export type GuideComparisonRow = {
@@ -4251,7 +4258,7 @@ export const guides: Guide[] = [
       {
         heading: "Har du et mindre eller større budget?",
         paragraphs: [
-          "Denne guide er sweet spot under 5.000 kr. Under 1.000 kr. (studerende / minimalistisk)? Se Hjemmetræning under 1.000 kr. for elastik-, dørribbe- og kettlebell-pakker uden maskin-fælden.",
+          "Denne guide er sweet spot under 5.000 kr. Under 1.000 kr. (studerende / minimalistisk)? Se Hjemmetræning under 1.000 kr. for elastik-, dørribbe- og kettlebell-pakker uden maskin-fælden. Har du ikke 5.000 kr. her og nu, men vil starte styrken og købe mere når lønnen kommer? Fase-byggeren deler det i håndvægte og bænk først, squat-stativ i måned 3.",
           "Har du garage, kælder eller et dedikeret rum og op til 10.000 kr.? Komplet hjemmegym under 10.000 kr. fordeler cardio-anker, styrke og gulv i Cardio-fokus, Styrke-fokus og Allround. Op til 15.000 kr.? Komplet hjemmegym under 15.000 kr. lægger bedre cardio og tungere styrke i samme setup.",
         ],
         comparison: {
@@ -4396,6 +4403,7 @@ export const guides: Guide[] = [
       },
     ],
     relatedSlugs: [
+      "fase-byggeren-start-for-3000-kr-2026",
       "hjemmetraening-under-1000-kr-2026",
       "komplet-hjemmegym-under-10000-kr-2026",
       "komplet-hjemmegym-under-15000-kr-2026",
@@ -5229,7 +5237,7 @@ export const guides: Guide[] = [
       },
     ],
     howToChoose:
-      "Køb håndvægte + elastik + måtte først. Brug dem 90 dage. Mangler du cardio? Se gåbånd/motionscykel. Mangler du bænk? Se justerbar bænk. Mangler du kabel? Se vægmonteret kabeltårn. Shop must-haves via “Se pris” — og lad være med at “færdiggøre” gymmet på dag 1.",
+      "Køb håndvægte + elastik + måtte først. Brug dem 90 dage. Mangler du cardio? Se gåbånd/motionscykel. Mangler du bænk og vil købe videre i bidder? Følg Fase-byggeren. Mangler du kabel med det samme? Se vægmonteret kabeltårn. Shop must-haves via “Se pris” — og lad være med at “færdiggøre” gymmet på dag 1.",
     learningSections: [
       {
         heading: "Hvorfor ikke en maskine til 15.000 kr.?",
@@ -5309,6 +5317,7 @@ export const guides: Guide[] = [
       },
     ],
     relatedSlugs: [
+      "fase-byggeren-start-for-3000-kr-2026",
       "hjemmetraening-under-1000-kr-2026",
       "bedste-traeningselastikker-slyngetraener-2026",
       "bedste-justerbare-haandvaegte-2026",

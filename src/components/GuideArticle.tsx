@@ -208,9 +208,15 @@ export async function GuideArticle({ guide }: { guide: Guide }) {
                   : undefined;
                 const affiliate = getProductAffiliate(product);
                 const shopHref = offer?.url ?? affiliate?.url;
-                const shopLabel = offer
-                  ? `Se pris hos ${offer.merchant}`
-                  : affiliate?.label;
+                const partnerName = offer?.merchant ?? affiliate?.partner;
+                const shopLabel = product.ctaLabel
+                  ? product.ctaLabel.replaceAll(
+                      "{partner}",
+                      partnerName ?? "partneren",
+                    )
+                  : offer
+                    ? `Se pris hos ${offer.merchant}`
+                    : affiliate?.label;
                 const hasDiscount =
                   offer?.oldPrice != null &&
                   offer.price != null &&
@@ -359,7 +365,7 @@ export async function GuideArticle({ guide }: { guide: Guide }) {
                         <ul className="mt-4 space-y-4">
                           {bundleItems.map((item) => {
                             const itemOffer = offerMap.get(item.feedProductId);
-                            const itemHref = itemOffer?.url;
+                            const itemHref = itemOffer?.url ?? item.url;
                             const itemImage =
                               itemOffer?.image || item.imageUrl;
                             return (

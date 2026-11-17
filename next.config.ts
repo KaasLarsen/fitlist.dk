@@ -98,6 +98,8 @@ const nextConfig: NextConfig = {
         hostname: "fitnessshoppen.dk",
         pathname: "/**",
       },
+      { protocol: "https", hostname: "www.bodystore.dk", pathname: "/**" },
+      { protocol: "https", hostname: "bodystore.dk", pathname: "/**" },
     ],
   },
 };

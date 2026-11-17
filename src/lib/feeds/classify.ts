@@ -261,6 +261,8 @@ const MACHINE_RULES: CategoryRule[] = [
       /\bpower\s*rack\b/,
       /\bsquat\s*rack\b/,
       /\bsquatrack\b/,
+      /\bvaegtstangssaet\b/,
+      /\bvægtstangssæt\b/,
       // Kræv machine-type — bare "cable" matcher sjippetov / handles
       /\bcable\s*(?:cross|machine|station|tower)\b/,
       /\bcablecross\b/,

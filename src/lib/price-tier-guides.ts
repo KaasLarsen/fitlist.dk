@@ -1,7 +1,8 @@
 import type { Guide } from "./guides";
 
 /**
- * Prisloft-guides (under 1k / 10k / 15k + billig maskin-intent).
+ * Prisloft-guides (under 1k / 10k / 15k + billig maskin-intent)
+ * og fase-byggeren (start for ca. 3.000 kr., udbyg i måned 3 og 6).
  * Kobles til Partner-Ads via feedProductId (live pris + “Se pris”).
  */
 export const priceTierGuides: Guide[] = [
@@ -188,7 +189,7 @@ export const priceTierGuides: Guide[] = [
         heading: "Næste skridt, når vanen sidder",
         paragraphs: [
           "Efter 8–12 uger: mangler du load? Tilføj justerbare håndvægte eller en bedre kettlebell — se Bedste kettlebells til hjemmetræning og Bedste justerbare håndvægte. Mangler du pull-up-kvalitet? Opgrader fra dørribbe til vægbar, når du må bore — Bedste pull-up bar og dørribbe.",
-          "Vil du erstatte centret helt? Spring ikke direkte til dyrt rack. Læs Det ultimative home gym på budget (max 5.000 kr.) og derefter Komplet hjemmegym under 10.000 kr.",
+          "Vil du erstatte centret helt, men ikke lægge 10.000 kr. på én gang? Fase-byggeren starter med håndvægte og bænk for omkring 3.000 kr. og udbygger i måned 3 og 6. Har du beløbet samlet, så læs Det ultimative home gym på budget (max 5.000 kr.) og derefter Komplet hjemmegym under 10.000 kr.",
         ],
       },
     ],
@@ -230,6 +231,7 @@ export const priceTierGuides: Guide[] = [
       },
     ],
     relatedSlugs: [
+      "fase-byggeren-start-for-3000-kr-2026",
       "ultimative-home-gym-budget-2026",
       "komplet-hjemmegym-under-10000-kr-2026",
       "hjemmetraening-for-begyndere-foerste-90-dage",
@@ -1745,6 +1747,320 @@ export const priceTierGuides: Guide[] = [
       "bedste-kompakt-romaskine-2026",
       "ascendic-6004-romaskine-2026",
       "komplet-hjemmegym-under-10000-kr-2026",
+    ],
+  },
+  {
+    slug: "fase-byggeren-start-for-3000-kr-2026",
+    title:
+      "Fase-byggeren: Sådan starter du for 3.000 kr. (og udbygger løbende)",
+    excerpt:
+      "Tre indkøb, ikke ét stort: håndvægte og bænk i måned 1, squat-stativ og stang i måned 3, skiver eller kabel i måned 6.",
+    metaDescription:
+      "Start hjemmegym for ca. 3.000 kr. Fase 1 er justerbare håndvægte og bænk. Fase 2 er squat-stativ og vægtstang. Fase 3 er skiver eller kabel — uden fejlkøb.",
+    categorySlug: "styrkemaskiner",
+    recommendationsHeading: "Tre faser — køb i rækkefølge",
+    publishedAt: "2026-11-17",
+    updatedAt: "2026-11-17",
+    intro:
+      "Mange har ikke 10.000–20.000 kr. klar. De vil starte, og købe mere når lønnen kommer. Problemet er rækkefølgen. En stang uden skiver, et 30 mm-sæt til et olympisk rack, eller et kabeltårn før bænken er brugt, er penge der skal købes om. Denne guide er indkøbsplanen: tre faser, med noget du kan træne på imens. Fase 1 er justerbare håndvægte og en træningsbænk, typisk omkring 3.000 kr. Fase 2 i måned 3 er et squat-stativ med safety og en olympisk stang med skiver. Fase 3 i måned 6 er enten flere 50 mm-skiver eller et plate-loadet kabeltårn — ikke begge dele i samme lønning.",
+    criteria: [
+      {
+        title: "Fase 1 færdig, før rack og kabel",
+        description:
+          "Måned 1 er håndvægte og bænk. Multistation, Smith og “50 øvelser” er ikke starten. Du skal kunne presse, rowe og squatte med håndvægte i to måneder, før stativet giver mening.",
+      },
+      {
+        title: "24 kg, så sættet ikke er for let i måned 4",
+        description:
+          "Odin 2×24 kg og den foldbare bænk lander typisk omkring 3.000 kr. Et 20 kg-sæt er billigere og er den nødløsning, du bruger, hvis live-summen ryger klart over ca. 3.500 kr. Det er det sæt, mange fortryder, når presset bliver let.",
+      },
+      {
+        title: "Bænken skal kunne stå i stativet senere",
+        description:
+          "Mål bredden på Odin Multi, før du køber squat-stativ i fase 2. En bænk, der ikke kan ind under stangen, er et fint gulvmøbel og et dårligt rack-setup.",
+      },
+      {
+        title: "50 mm hele vejen",
+        description:
+          "Fase 2 er olympisk: 50 mm stang og bumper plates. Et 30 mm-jernsæt kan ikke “bare opgraderes” med OL-skiver. Vælg diameteren, før den første skive lander i kurven.",
+      },
+      {
+        title: "Safety bars, når du træner alene",
+        description:
+          "Squat og bænkpres uden safety er det forkerte sted at spare. Odin Squat Rack med safetybars ligger ofte i samme prisklasse som et simpelt stativ. Køb safety med det samme.",
+      },
+      {
+        title: "Fase 3 er ét køb",
+        description:
+          "Enten flere skiver i samme 50 mm, eller et kabeltårn der bruger de skiver, du har. Ikke begge dele, den måned lønnen lige akkurat rækker.",
+      },
+    ],
+    products: [
+      {
+        id: "fase-1-baenk-haandvaegte",
+        name: "Fase 1: Justerbare håndvægte og træningsbænk",
+        badge: "Måned 1 · ca. 3.000 kr.",
+        summary:
+          "Odin Multi foldbar bænk plus Odin justerbare håndvægte 2×24 kg. Bænken er den billige del. Håndvægtene er det, der skal holde i flere år: 3–24 kg, 12 trin, et par fra start. Samlet typisk omkring 3.000 kr. Summer live-priserne, før du betaler. Ryger de klart over ca. 3.500 kr., så er 20 kg-sættet i Bedste justerbare håndvægte 2026 nødløsningen — og kun den.",
+        pros: [
+          "Helkrop med press, rows og squat-varianter fra uge 1",
+          "24 kg pr. hånd, så du ikke skifter sæt i måned 4",
+          "Bænken kan foldes væk i en stue",
+          "Samme bænk kan ind i squat-stativet senere",
+        ],
+        cons: [
+          "Ingen tung squat eller bænkpres med stang endnu",
+          "Dial skal klikke, før du løfter",
+          "20 kg-nødløsningen bliver for let for mange inden for et år",
+        ],
+        specs: [
+          { label: "Hvornår", value: "Måned 1" },
+          { label: "Budget", value: "Typisk ca. 3.000 kr." },
+          { label: "Håndvægte", value: "2×24 kg dial" },
+          { label: "Bænk", value: "Justerbar, foldbar" },
+          { label: "Partner", value: "Apuls.dk" },
+        ],
+        imageUrl:
+          "https://m2.apuls.dk/media/catalog/product/6/8/68a5aa023c8c6odinmultijusterbarfoldbartrarningsbarnk1.jpg",
+        feedProductId: "Apuls.dk:15421",
+        affiliateId: "odin-multi-foldbar-baenk",
+        ctaLabel:
+          "Start på Fase 1 i dag – Se basisudstyret hos {partner} →",
+        bundleItems: [
+          {
+            name: "Odin Justerbare Håndvægte Sæt 2×24 kg (12-i-én)",
+            feedProductId: "Apuls.dk:15047",
+            role: "Håndvægte",
+            imageUrl:
+              "https://m2.apuls.dk/media/catalog/product/6/6/6659afab0e703661518ec91659odinjusterbardumbbell24kg12stk.jpg",
+            url: "https://www.partner-ads.com/dk/klikbanner.php?bannerid=46187&partnerid=57983&uid=fitlist&htmlurl=https://apuls.dk/odin-justerbar-handvaegte-2-stk-24kg",
+          },
+        ],
+      },
+      {
+        id: "fase-2-squat-stang",
+        name: "Fase 2: Squat-stativ og vægtstang",
+        badge: "Måned 3",
+        summary:
+          "Odin Squat Rack med safetybars, plus Odin Olympic Bumper-sæt 50 kg: 220 cm stang og bumper plates i 50 mm. En nøgen stang uden skiver træner ingenting. Et 30 mm-jernsæt passer ikke på det her rack. Samlet typisk omkring 3.500–4.000 kr. oven i fase 1. Mål bænken ind i stativet og loftshøjden, før kasserne kommer.",
+        pros: [
+          "Safety bars til squat og bænk alene",
+          "Stang og skiver i samme ordre — 50 mm",
+          "Bumper plates i stedet for klingende jern",
+          "Bænken fra fase 1 bliver bænkpres-bænk",
+        ],
+        cons: [
+          "50 kg sæt er en start, ikke et loft for evigt",
+          "220 cm stang kræver plads i rummet og i racket",
+          "Stativ uden at du har trænet fase 1 er stadig for tidligt",
+        ],
+        specs: [
+          { label: "Hvornår", value: "Måned 3" },
+          { label: "Stativ", value: "Squat rack med safety" },
+          { label: "Stang", value: "220 cm, 50 mm, i sættet" },
+          { label: "Skiver", value: "Bumper, 50 kg sæt" },
+          { label: "Partner", value: "Apuls.dk" },
+        ],
+        imageUrl:
+          "https://m2.apuls.dk/media/catalog/product/6/2/62da7ff214812odinsquatrackmedsafetybars01.jpg",
+        feedProductId: "Apuls.dk:12872",
+        affiliateId: "odin-squat-rack-safety",
+        bundleItems: [
+          {
+            name: "Odin Olympic Bumper Plates-sæt 50 kg",
+            feedProductId: "Apuls.dk:13639",
+            role: "Stang og skiver",
+            imageUrl:
+              "https://m2.apuls.dk/media/catalog/product/1/6/16417_odin_olympic_bumper_plates_v_gtstangss_t_270kg_5.jpg",
+            url: "https://www.partner-ads.com/dk/klikbanner.php?bannerid=46187&partnerid=57983&uid=fitlist&htmlurl=https://apuls.dk/odin-olympic-bumper-plates-vaegtstangssaet-50kg",
+          },
+        ],
+      },
+      {
+        id: "fase-3-skiver",
+        name: "Fase 3: Ekstra vægtskiver",
+        badge: "Måned 6 · vælg dette eller kabel",
+        summary:
+          "Odin Olympic Bumper 10 kg, 50 mm, solgt som 1 stk. Køb to, så der er lige meget på hver side — typisk omkring 300 kr. pr. skive. Det er samme hul som stangen fra fase 2. Køb ikke et nyt vægtstangssæt: det er en stang mere, du allerede har. Er 10 kg allerede let på dine tungeste sæt, så tag 15 eller 20 kg i samme Odin Olympic-linje. Stadig to stk., stadig uden ny stang.",
+        pros: [
+          "Samme 50 mm som fase 2-stangen",
+          "Bumper, så skiven må sættes ned",
+          "Lille indkøb ift. et helt nyt sæt",
+          "Du kan blive ved med at lægge par på",
+        ],
+        cons: [
+          "1 stk. i ordren — læg to i kurven",
+          "10 kg-parret er for lidt, hvis squatten allerede er tung",
+          "Ikke et kabel. Vælg kun én af måned 6-kortene",
+        ],
+        specs: [
+          { label: "Hvornår", value: "Måned 6" },
+          { label: "Køb", value: "2 stk. af samme vægt" },
+          { label: "Diameter", value: "50 mm" },
+          { label: "Startpar", value: "2×10 kg" },
+          { label: "Partner", value: "Apuls.dk" },
+        ],
+        imageUrl:
+          "https://m2.apuls.dk/media/catalog/product/6/3/638707a7a3b1d101.jpg",
+        feedProductId: "Apuls.dk:6878",
+        affiliateId: "odin-olympic-bumper-10kg",
+      },
+      {
+        id: "fase-3-kabel",
+        name: "Fase 3: Kabeltræk",
+        badge: "Måned 6 · vælg dette eller skiver",
+        summary:
+          "Odin Valhalla Kabeltårn PL er vægmonteret og plate loaded: du hænger fase 2-skiverne på, i stedet for at købe en ny vægtstak. Lat pulldown, rows og face pulls, som håndvægtene ikke rammer lige så godt. Typisk omkring 3.000 kr. for tårnet. Væggen skal kunne bære det. Er tårnet for stort, så se den mindre vægstation i Bedste kabeltårne og funktionelle trænere (2026).",
+        pros: [
+          "Bruger skiverne, du allerede har",
+          "Ingen vægtstak, der dublerer jernet",
+          "Vægmonteret — gulvet er stadig til bænk og stativ",
+          "Det træk, fase 1 og 2 ikke dækker godt",
+        ],
+        cons: [
+          "Kræver en væg, der må bores i",
+          "Langsommere vægtskift end en stak",
+          "For stort et køb, hvis du også vil have nye skiver samme måned",
+        ],
+        specs: [
+          { label: "Hvornår", value: "Måned 6" },
+          { label: "Type", value: "Kabeltårn, plate load" },
+          { label: "Belastning", value: "Egne 50 mm-skiver" },
+          { label: "Montering", value: "Væg" },
+          { label: "Partner", value: "Apuls.dk" },
+        ],
+        imageUrl:
+          "https://m2.apuls.dk/media/catalog/product/o/d/odin-valhalla-kabeltaarn-pl-1.jpg",
+        feedProductId: "Apuls.dk:15961",
+        affiliateId: "odin-valhalla-kabeltaarn-pl",
+      },
+    ],
+    howToChoose:
+      "Måned 1: bænken og 2×24 kg. Måned 3: safety-racket og OL-sættet, ikke en nøgen stang og ikke 30 mm. Måned 6: enten to ens 50 mm-skiver, eller Valhalla PL — ikke begge. Vil du sammenligne modellerne hver for sig, så læs Bedste justerbare håndvægte 2026, Bedste justerbare træningsbænk 2026, Bedste power rack & squat rack 2026, Bedste vægtstangssæt og bumper plates 2026 og Bedste kabeltårne og funktionelle trænere (2026). Har du 5.000 kr. med det samme og også vil have cardio, se Det ultimative home gym på budget.",
+    learningSections: [
+      {
+        heading: "Hvorfor rækkefølgen er hele pointen",
+        paragraphs: [
+          "Et hjemmegym til 15.000 kr. købt på én gang er fint, hvis pengene og pladsen er der. De fleste, der skriver til os, har lønnen i bidder. Så er den dyre fejl ikke “for lidt udstyr”. Det er udstyr, der ikke passer sammen, når næste løn kommer.",
+          "Fase 1 kan stå alene i to måneder. Fase 2 bygger oven på bænken. Fase 3 bruger stangen eller skiverne, du allerede har. Ingen fase kræver, at du smider den forrige ud.",
+        ],
+      },
+      {
+        heading: "Fejlkøbene, planen er sat op for at undgå",
+        paragraphs: [
+          "Måned 1: én enkelt håndvægt, et 40 kg-sæt “fordi det ser sejt ud”, eller en multistation før du ved, om du træner hjemme. Måned 3: en stang uden skiver, eller et 30 mm-sæt til et rack, der skal have 50 mm. Måned 6: et nyt vægtstangssæt, når du allerede har stangen — eller kabel og en stak skiver i samme indkøb.",
+          "Et squat-stativ uden safetybars er den samme type spareøvelse. Safety-racket og de simple stativer ligger ofte i samme prisklasse. Køb det, du kan falde ned i, når du er alene.",
+        ],
+        comparison: {
+          caption: "Køb det, der stadig dur i næste fase",
+          rowHeaderLabel: "Fristelse",
+          columns: ["Hvorfor det føles rigtigt", "Hvad du gør i stedet"],
+          rows: [
+            {
+              label: "20 kg-sæt for at spare",
+              cells: [
+                "Lavere pris i måned 1",
+                "2×24 kg, medmindre summen er over ca. 3.500 kr.",
+              ],
+            },
+            {
+              label: "Stang uden skiver",
+              cells: [
+                "“Stativet er det dyre”",
+                "OL-sættet: stang og bumper plates sammen",
+              ],
+            },
+            {
+              label: "30 mm-jernsæt",
+              cells: [
+                "Flere kilo på tilbud",
+                "50 mm, samme hul som racket",
+              ],
+            },
+            {
+              label: "Nyt sæt i måned 6",
+              cells: [
+                "Kassen siger 50 kg",
+                "To løse 50 mm-skiver, eller kabel der bruger dem du har",
+              ],
+            },
+          ],
+        },
+      },
+      {
+        heading: "50 mm og bænken, der skal ind i stativet",
+        paragraphs: [
+          "Hullet i skiven er enten ca. 30 mm eller 50 mm. Fase 2-sættet er 220 cm og 50 mm. Alle senere skiver skal være det samme. Adaptere er et plaster, ikke en plan.",
+          "Før du bestiller racket: mål Odin Multi i den vinkel, du bænkpresser i, og tjek at den kan stå mellem stolperne med stangen i J-hooks. Mål også loft. 220 cm skal kunne ligge i rummet, ikke kun på produktbilledet. Detaljerne står i Bedste power rack & squat rack 2026 og Bedste vægtstangssæt og bumper plates 2026.",
+        ],
+      },
+      {
+        heading: "Måned 6: skiver eller kabel, ikke begge",
+        paragraphs: [
+          "Mangler du kilo på squat, bænk og dødløft, så køb to ens Odin Olympic-skiver. 10 kg er det første par. 15 eller 20 kg, hvis sættet fra fase 2 allerede føles let. Én skive i kurven er en halv opgradering.",
+          "Mangler du ryg og isolationsarbejde, så er Valhalla PL det kabel, der passer til planen: plate load, dine egne skiver, væggen i stedet for en ny stak. Den mindre vægstation ligger i Bedste kabeltårne og funktionelle trænere (2026), hvis PL-tårnet er for stort til boligen.",
+        ],
+      },
+      {
+        heading: "Når faserne er brugt op",
+        paragraphs: [
+          "Har du 5.000 kr. på én gang og vil have cardio med i første køb, er Det ultimative home gym på budget en anden pakke — ikke en erstatning for den her rækkefølge, hvis styrke er det, du bygger. Under 1.000 kr. og stadig i tvivl om vanen: Hjemmetræning under 1.000 kr. og Hjemmetræning for begyndere.",
+          "Når stativ, stang og kabel sidder, og du vil samle cardio og gulv i ét loft, så se Komplet hjemmegym under 10.000 kr.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "Hvad køber jeg for ca. 3.000 kr. i måned 1?",
+        answer:
+          "Odin Multi foldbar bænk og Odin justerbare håndvægte 2×24 kg. Summer de to live-priser. Ligger de klart over ca. 3.500 kr., så er 20 kg-sættet nødløsningen — se Bedste justerbare håndvægte 2026.",
+      },
+      {
+        question: "Kan jeg nøjes med håndvægtene og købe bænken senere?",
+        answer:
+          "Du kan træne på gulvet. Planen siger begge dele i måned 1, fordi bænken er den billige del, og fordi incline og bænkpres er det, folk savner først. Se også Bedste justerbare træningsbænk 2026.",
+      },
+      {
+        question: "Hvorfor ikke bare en stang i måned 3?",
+        answer:
+          "En stang uden skiver er et rør. OL-sættet på 50 kg er stang og bumper plates i 50 mm. Et 30 mm-sæt passer ikke på et olympisk rack.",
+      },
+      {
+        question: "Skal squat-stativet have safety bars?",
+        answer:
+          "Ja, hvis du træner alene. Squat og bænkpres uden noget at dumpe stangen på er det forkerte sted at spare. Sammenligning af racks: Bedste power rack & squat rack 2026.",
+      },
+      {
+        question: "Skiver eller kabel i måned 6?",
+        answer:
+          "Ét af dem. Skiver, hvis stangen er blevet let. Kabeltårn PL, hvis du mangler træk og vil bruge de skiver, du har. Ikke begge i samme lønning.",
+      },
+      {
+        question: "Hvorfor står der, at jeg skal købe to 10 kg-skiver?",
+        answer:
+          "Den sælges som 1 stk. Én skive giver skæv stang. To 10 kg er det første par i samme 50 mm som fase 2. Køb ikke et nyt sæt med endnu en stang.",
+      },
+      {
+        question: "Hvad hvis jeg har 5.000 eller 10.000 kr. nu?",
+        answer:
+          "Så er den her plan ikke det eneste spor. Det ultimative home gym på budget samler cardio og styrke under 5.000 kr. Komplet hjemmegym under 10.000 kr. er næste loft, når du vil have anker-maskine, styrke og gulv på én gang.",
+      },
+      {
+        question: "Tjener Fitlist penge, når jeg køber?",
+        answer:
+          "Ja, vi kan få provision via affiliate-links. Det påvirker ikke prisen for dig. Vi vælger rækkefølgen ud fra, hvad der ikke skal købes om — ikke kun provision. Læs mere under “Sådan tjener vi penge”.",
+      },
+    ],
+    relatedSlugs: [
+      "bedste-justerbare-haandvaegte-2026",
+      "bedste-justerbar-traeningsbaenk-2026",
+      "bedste-power-rack-squat-rack-2026",
+      "bedste-vaegtstangssaet-bumper-plates-2026",
+      "bedste-vaegmonteret-kabeltaarn-2026",
+      "ultimative-home-gym-budget-2026",
+      "komplet-hjemmegym-under-10000-kr-2026",
+      "hjemmetraening-under-1000-kr-2026",
+      "hjemmetraening-for-begyndere-foerste-90-dage",
     ],
   },
 ];

@@ -23,6 +23,11 @@ const SITUATIONS = [
     slug: "hjemmetraening-under-1000-kr-2026",
   },
   {
+    label: "Start for 3.000",
+    short: "Udbyg løbende",
+    slug: "fase-byggeren-start-for-3000-kr-2026",
+  },
+  {
     label: "Budget under 5.000",
     short: "Home gym Best Value",
     slug: "ultimative-home-gym-budget-2026",

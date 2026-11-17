@@ -93,6 +93,9 @@ const GUIDE_LINK_ALIASES: Record<string, string[]> = {
     "Det ultimative home gym på budget",
     "home gym på budget",
   ],
+  "fase-byggeren-start-for-3000-kr-2026": [
+    "Fase-byggeren",
+  ],
   "hjemmetraening-under-1000-kr-2026": [
     "Hjemmetræning under 1.000 kr.",
     "Hjemmetræning under 1.000 kr",

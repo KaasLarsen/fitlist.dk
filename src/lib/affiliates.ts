@@ -86,6 +86,30 @@ export const affiliates: AffiliateLink[] = [
     url: "https://www.partner-ads.com/dk/klikbanner.php?bannerid=94094&partnerid=57983&htmlurl=https://ascendic.dk/products/ascendic-8001-foldbar-motionscykel?variant=39480045797550",
   },
   {
+    id: "odin-multi-foldbar-baenk",
+    partner: "Apuls.dk",
+    label: "Se pris hos Apuls.dk",
+    url: "https://www.partner-ads.com/dk/klikbanner.php?bannerid=46187&partnerid=57983&uid=fitlist&htmlurl=https://apuls.dk/odin-multi-justerbar-og-foldbar-traeningsbaenk",
+  },
+  {
+    id: "odin-squat-rack-safety",
+    partner: "Apuls.dk",
+    label: "Se pris hos Apuls.dk",
+    url: "https://www.partner-ads.com/dk/klikbanner.php?bannerid=46187&partnerid=57983&uid=fitlist&htmlurl=https://apuls.dk/odin-squat-rack-med-safetybars",
+  },
+  {
+    id: "odin-valhalla-kabeltaarn-pl",
+    partner: "Apuls.dk",
+    label: "Se pris hos Apuls.dk",
+    url: "https://www.partner-ads.com/dk/klikbanner.php?bannerid=46187&partnerid=57983&uid=fitlist&htmlurl=https://apuls.dk/odin-valhalla-kabeltarn-pl",
+  },
+  {
+    id: "odin-olympic-bumper-10kg",
+    partner: "Apuls.dk",
+    label: "Se pris hos Apuls.dk",
+    url: "https://www.partner-ads.com/dk/klikbanner.php?bannerid=46187&partnerid=57983&uid=fitlist&htmlurl=https://apuls.dk/cpro9-bumper-vaegtskive-10kg",
+  },
+  {
     id: "titan-life-s72-spinningcykel",
     partner: "HomeX.dk",
     label: "Se pris hos HomeX.dk",

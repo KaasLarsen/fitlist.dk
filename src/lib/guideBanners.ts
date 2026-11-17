@@ -42,6 +42,7 @@ const skipSlugs = new Set([
   "ultimative-home-gym-budget-2026",
   "ultimative-udendoers-home-gym-2026",
   "hjemmetraening-under-1000-kr-2026",
+  "fase-byggeren-start-for-3000-kr-2026",
   "komplet-hjemmegym-under-10000-kr-2026",
   "komplet-hjemmegym-under-15000-kr-2026",
   "ultimative-cardio-corner-under-7500-2026",

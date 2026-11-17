@@ -19,10 +19,11 @@ import {
 import {
   CYKELPARTNER_MERCHANT,
   getCykelpartnerGuideFeedProductIds,
+  getGuideFeedProductIds,
 } from "@/lib/feeds/cykelpartner-guide-ids";
 import type { FeedProduct } from "@/lib/feeds/types";
 
-const FEED_CACHE_VERSION = "v13";
+const FEED_CACHE_VERSION = "v14";
 const FEED_REVALIDATE_SECONDS = 21_600; // 6 timer
 /** Partner-Ads XML er ofte langsom; for lav timeout tømmer hele kataloget. */
 const DEFAULT_TIMEOUT_MS = 90_000;
@@ -221,11 +222,18 @@ export function fitFeedProductsForCache(
   const maxProducts = opts?.maxProducts ?? FEED_CACHE_PRODUCT_LIMIT;
   const maxBytes = opts?.maxBytes ?? FEED_CACHE_MAX_BYTES;
   const slimmed = slimFeedProducts(products);
+  const pinnedIds = new Set(getGuideFeedProductIds());
+  const pinned: FeedProduct[] = [];
+  const rest: FeedProduct[] = [];
+  for (const product of slimmed) {
+    if (pinnedIds.has(product.id)) pinned.push(product);
+    else rest.push(product);
+  }
 
   const machinesByCategory = new Map<string, FeedProduct[]>();
   const accessories: FeedProduct[] = [];
 
-  for (const product of slimmed) {
+  for (const product of rest) {
     if (isAccessoryProduct(product)) {
       accessories.push(product);
       continue;
@@ -255,6 +263,18 @@ export function fitFeedProductsForCache(
 
   const out: FeedProduct[] = [];
   let bytes = 2; // []
+
+  for (const product of pinned) {
+    const nextBytes = pushWithinBudget(
+      out,
+      product,
+      maxProducts,
+      maxBytes,
+      bytes,
+    );
+    if (nextBytes == null) break;
+    bytes = nextBytes;
+  }
 
   let added = true;
   while (out.length < machineBudget && added) {
