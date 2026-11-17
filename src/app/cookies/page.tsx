@@ -19,7 +19,7 @@ export default function CookiesPage() {
         <h1 className="mt-3 font-display text-4xl font-semibold uppercase tracking-wide text-foreground sm:text-5xl">
           Cookiepolitik
         </h1>
-        <p className="mt-3 text-sm text-muted">Senest opdateret: 4. november 2026</p>
+        <p className="mt-3 text-sm text-muted">Senest opdateret: 17. november 2026</p>
 
         <div className="mt-8 space-y-5 text-base leading-relaxed text-muted">
           <p>
@@ -35,20 +35,15 @@ export default function CookiesPage() {
           </h2>
           <div className="mt-4 space-y-4 text-muted leading-relaxed">
             <p>
-              Fitlist har ikke et cookie-banner endnu, fordi vi ikke indlæser
-              valgfrie tredjeparts-scripts til statistik eller annoncering i
-              selve kodebasen på nuværende tidspunkt.
+              Fitlist indlæser Google Tag Manager. Statistik- og marketingtags i
+              den container, herunder Google-tags, må først sætte cookies, når
+              du har trykket Accepter i samtykkebanneret. Indtil da er de afvist
+              som standard.
             </p>
             <p>
               Der kan være tekniske cookies eller lignende teknologier fra vores
               hosting/platform, som er nødvendige for at levere siden sikkert og
-              stabilt.
-            </p>
-            <p>
-              Vi har forberedt Google AdSense-kontometa i sidens metadata. Hvis
-              vi senere aktiverer AdSense, analyse eller andre tracking-scripts,
-              opdaterer vi denne side og indfører et samtykkebanner, før
-              valgfrie cookies sættes.
+              stabilt. De kræver ikke samtykke.
             </p>
           </div>
         </section>
@@ -65,8 +60,8 @@ export default function CookiesPage() {
             </li>
             <li className="border-l-2 border-accent/40 pl-5">
               <strong className="text-foreground">Statistik og marketing.</strong>{" "}
-              Bruges til at forstå brug eller vise annoncer. Sættes kun med
-              samtykke, hvis/når vi aktiverer dem.
+              Bruges til at forstå brug eller vise annoncer. Sættes kun, når du
+              har accepteret i samtykkebanneret.
             </li>
           </ul>
         </section>
@@ -97,7 +92,10 @@ export default function CookiesPage() {
           <p className="mt-4 text-muted leading-relaxed">
             Du kan altid slette eller blokere cookies i din browsers
             indstillinger. Bemærk, at nogle funktioner på websites kan virke
-            dårligere, hvis nødvendige cookies blokeres.
+            dårligere, hvis nødvendige cookies blokeres. Vil du ændre et
+            tidligere valg i samtykkebanneret, skal du slette data for
+            fitlist.dk i browseren og indlæse siden igen. Så vises banneret på
+            ny.
           </p>
         </section>
 

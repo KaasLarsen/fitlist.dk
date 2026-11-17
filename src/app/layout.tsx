@@ -1,9 +1,12 @@
 import type { Metadata } from "next";
 import { DM_Sans, Oswald } from "next/font/google";
+import Script from "next/script";
 import { CampaignBanner } from "@/components/CampaignBanner";
+import { ConsentBanner } from "@/components/ConsentBanner";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { getActiveCampaignBanner } from "@/lib/campaigns";
+import { GTM_ID, gtmBootstrapScript } from "@/lib/consent";
 import { homeOgPath } from "@/lib/og";
 import "./globals.css";
 
@@ -63,10 +66,23 @@ export default function RootLayout({
       className={`${dmSans.variable} ${oswald.variable} h-full antialiased${campaign ? " has-campaign-banner" : ""}`}
     >
       <body className="flex min-h-full flex-col bg-background text-foreground">
+        <noscript>
+          <iframe
+            src={`https://www.googletagmanager.com/ns.html?id=${GTM_ID}`}
+            height="0"
+            width="0"
+            style={{ display: "none", visibility: "hidden" }}
+            title="Google Tag Manager"
+          />
+        </noscript>
+        <Script id="gtm-consent" strategy="beforeInteractive">
+          {gtmBootstrapScript()}
+        </Script>
         <CampaignBanner />
         <Header />
         <main className="flex flex-1 flex-col">{children}</main>
         <Footer />
+        <ConsentBanner />
       </body>
     </html>
   );

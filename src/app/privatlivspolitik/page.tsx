@@ -19,7 +19,7 @@ export default function PrivatlivspolitikPage() {
         <h1 className="mt-3 font-display text-4xl font-semibold uppercase tracking-wide text-foreground sm:text-5xl">
           Privatlivspolitik
         </h1>
-        <p className="mt-3 text-sm text-muted">Senest opdateret: 4. november 2026</p>
+        <p className="mt-3 text-sm text-muted">Senest opdateret: 17. november 2026</p>
 
         <div className="mt-8 space-y-5 text-base leading-relaxed text-muted">
           <p>
@@ -59,7 +59,9 @@ export default function PrivatlivspolitikPage() {
               at levere og sikre siden.
             </li>
             <li className="border-l-2 border-accent/40 pl-5">
-              <strong className="text-foreground">Cookies.</strong> Se vores{" "}
+              <strong className="text-foreground">Cookies.</strong> Google Tag
+              Manager indlæses på siden. Statistik- og marketingcookies sættes
+              kun efter samtykke. Se vores{" "}
               <Link
                 href="/cookies"
                 className="text-accent transition-colors hover:text-accent-dim"
@@ -95,9 +97,9 @@ export default function PrivatlivspolitikPage() {
               levere siden og drive vores forretning.
             </p>
             <p>
-              Hvis vi senere aktiverer valgfrie tracking- eller
-              annoncecookies, sker det kun med dit samtykke (GDPR art. 6, stk.
-              1, litra a), medmindre andet er lovpligtigt.
+              Statistik- og marketingcookies via Google Tag Manager sættes kun
+              med dit samtykke (GDPR art. 6, stk. 1, litra a). Uden samtykke er
+              de afvist.
             </p>
           </div>
         </section>
@@ -109,9 +111,9 @@ export default function PrivatlivspolitikPage() {
           <p className="mt-4 text-muted leading-relaxed">
             Vi deler ikke dine oplysninger til salg. Oplysninger kan behandles af
             leverandører, der hjælper os med hosting og drift, af
-            affiliate-partnere når du klikker videre, og — hvis aktiveret — af
-            annonce- eller analyseudbydere (fx Google). Leverandører behandler
-            data efter aftale og gældende lov.
+            affiliate-partnere når du klikker videre, og — når du har givet
+            samtykke — af Google via Google Tag Manager til statistik og
+            marketing. Leverandører behandler data efter aftale og gældende lov.
           </p>
         </section>
 
