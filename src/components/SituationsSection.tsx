@@ -18,19 +18,24 @@ const SITUATIONS = [
     slug: "gaabaand-til-kontoret-2026",
   },
   {
-    label: "Budget",
-    short: "Home gym under 5.000",
+    label: "Budget under 1.000",
+    short: "Studievenligt setup",
+    slug: "hjemmetraening-under-1000-kr-2026",
+  },
+  {
+    label: "Budget under 5.000",
+    short: "Home gym Best Value",
     slug: "ultimative-home-gym-budget-2026",
+  },
+  {
+    label: "Budget under 10.000",
+    short: "Komplet hjemmegym",
+    slug: "komplet-hjemmegym-under-10000-kr-2026",
   },
   {
     label: "Lille værelse",
     short: "Ca. 10 m² setup",
     slug: "home-gym-til-lille-vaerelse-10m2-2026",
-  },
-  {
-    label: "Seniorer",
-    short: "Skånsomt og stabilt",
-    slug: "bedste-traeningsudstyr-til-seniorer-2026",
   },
 ] as const;
 

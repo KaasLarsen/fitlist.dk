@@ -93,6 +93,36 @@ const GUIDE_LINK_ALIASES: Record<string, string[]> = {
     "Det ultimative home gym på budget",
     "home gym på budget",
   ],
+  "hjemmetraening-under-1000-kr-2026": [
+    "Hjemmetræning under 1.000 kr.",
+    "Hjemmetræning under 1.000 kr",
+    "hjemmetræning under 1000 kr",
+  ],
+  "komplet-hjemmegym-under-10000-kr-2026": [
+    "Komplet hjemmegym under 10.000 kr.",
+    "Komplet hjemmegym under 10.000 kr",
+    "hjemmegym under 10000 kr",
+  ],
+  "komplet-hjemmegym-under-15000-kr-2026": [
+    "Komplet hjemmegym under 15.000 kr.",
+    "Komplet hjemmegym under 15.000 kr",
+  ],
+  "bedste-loebebaand-under-4000-kr-2026": [
+    "Bedste løbebånd under 4.000 kr.",
+    "Bedste løbebånd under 4.000 kr",
+  ],
+  "bedste-gaabaand-under-2500-kr-2026": [
+    "Bedste gåbånd under 2.500 kr.",
+    "Bedste gåbånd under 2.500 kr",
+  ],
+  "bedste-motionscykel-under-3000-kr-2026": [
+    "Bedste motionscykel under 3.000 kr.",
+    "Bedste motionscykel under 3.000 kr",
+  ],
+  "bedste-romaskine-under-5000-kr-2026": [
+    "Bedste romaskine under 5.000 kr.",
+    "Bedste romaskine under 5.000 kr",
+  ],
   "bedste-stoejsvage-traeningsmaskiner-lejlighed-2026": [
     "støjsvag-lejlighedsguiden",
     "Bedste støjsvage træningsmaskiner til lejligheden",

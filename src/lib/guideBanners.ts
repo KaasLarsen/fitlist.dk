@@ -41,6 +41,9 @@ const skipSlugs = new Set([
   "bedste-cardio-under-lavt-loft-2026",
   "ultimative-home-gym-budget-2026",
   "ultimative-udendoers-home-gym-2026",
+  "hjemmetraening-under-1000-kr-2026",
+  "komplet-hjemmegym-under-10000-kr-2026",
+  "komplet-hjemmegym-under-15000-kr-2026",
 ]);
 
 export function getGuideBanner(

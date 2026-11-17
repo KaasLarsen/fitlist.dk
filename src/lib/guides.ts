@@ -1,4 +1,5 @@
 import { getAffiliate } from "@/lib/affiliates";
+import { priceTierGuides } from "@/lib/price-tier-guides";
 
 export type GuideCriterion = {
   title: string;
@@ -1003,11 +1004,13 @@ export const guides: Guide[] = [
       },
     ],
     relatedSlugs: [
+      "bedste-gaabaand-under-2500-kr-2026",
       "ascendic-essential-walking-pad-2026",
       "incline-loebebaand-eller-klassisk-2026",
       "loebebaand-eller-gaabaand-2026",
       "gaabaand-til-kontoret-2026",
       "bedste-loebebaand-2026",
+      "bedste-loebebaand-under-4000-kr-2026",
       "bedste-motionscykel-2026",
       "bedste-crosstrainer-2026",
     ],
@@ -1252,6 +1255,7 @@ export const guides: Guide[] = [
       },
     ],
     relatedSlugs: [
+      "bedste-loebebaand-under-4000-kr-2026",
       "reebok-i-run-4-5-loebebaand-2026",
       "ascendic-7021-loebebaand-2026",
       "velorafit-foldbart-loebebaand-2026",
@@ -1260,6 +1264,7 @@ export const guides: Guide[] = [
       "loebebaand-eller-gaabaand-2026",
       "loebebaand-eller-crosstrainer-2026",
       "bedste-gaabaand-2026",
+      "bedste-gaabaand-under-2500-kr-2026",
       "gaabaand-til-kontoret-2026",
       "bedste-romaskine-2026",
       "bedste-crosstrainer-2026",
@@ -1497,6 +1502,7 @@ export const guides: Guide[] = [
       },
     ],
     relatedSlugs: [
+      "bedste-romaskine-under-5000-kr-2026",
       "odin-r1800-vandromaskine-2026",
       "bedste-vandromaskine-2026",
       "romaskine-eller-crosstrainer-2026",
@@ -1509,6 +1515,7 @@ export const guides: Guide[] = [
       "bedste-foldbare-kompakte-traeningsmaskiner-2026",
       "bedste-airbike-2026",
       "bedste-knaevenlig-genoptraening-hjemme-2026",
+      "komplet-hjemmegym-under-10000-kr-2026",
     ],
   },
   {
@@ -1756,6 +1763,7 @@ export const guides: Guide[] = [
       },
     ],
     relatedSlugs: [
+      "bedste-motionscykel-under-3000-kr-2026",
       "spinningcykel-motionscykel-eller-hometrainer-2026",
       "motionscykel-eller-spinningcykel-2026",
       "bedste-siddecykel-2026",
@@ -4075,7 +4083,7 @@ export const guides: Guide[] = [
     publishedAt: "2026-11-04",
     updatedAt: "2026-11-05",
     intro:
-      "Marked for hjemmetræning er overvældende: hundredvis af maskiner, “smart”-skærme og tilbehør, der spiser budgettet, før du har en reel træningsvane. Denne guide giver dig det, de fleste egentlig leder efter — færdige pakkeløsninger. Tre niveauer, der dækker både cardio og styrke, bygget af udstyr du kan købe via vores partnere med live priser. Pakke B under 5.000 kr. er vores Best Value og det, de fleste skal sigte efter, hvis du vil droppe fitnesscentret uden at indrette en garage.",
+      "Marked for hjemmetræning er overvældende: hundredvis af maskiner, “smart”-skærme og tilbehør, der spiser budgettet, før du har en reel træningsvane. Denne guide giver dig det, de fleste egentlig leder efter — færdige pakkeløsninger. Tre niveauer, der dækker både cardio og styrke, bygget af udstyr du kan købe via vores partnere med live priser. Pakke B under 5.000 kr. er vores Best Value og det, de fleste skal sigte efter, hvis du vil droppe fitnesscentret uden at indrette en garage. Har du et mindre eller større budget? Se også Hjemmetræning under 1.000 kr. og Komplet hjemmegym under 10.000 kr. — eller Komplet hjemmegym under 15.000 kr., hvis garage-setup’et skal have både tung styrke og solid cardio.",
     criteria: [
       {
         title: "Cardio vs. Styrke – sådan fordeler du dit budget",
@@ -4198,25 +4206,25 @@ export const guides: Guide[] = [
       },
       {
         id: "pakke-c-garage",
-        name: "Pakke C: Det tunge garage-gym på budget",
-        badge: "Under 10.000 kr.",
+        name: "Pakke C: Teaser til seriøs styrke (gå til 10.000-guiden)",
+        badge: "Se 10.000-guiden",
         summary:
-          "Til den seriøse løfter med garage, kælder eller ekstra værelse. Odin Valhalla Home Gym 100 kg som multifunktionel styrkecentrale plus Valhalla justerbar bænk. Samlet typisk omkring 6.900 kr. — plads til måtter og småting inden for 8–10.000 kr. Fokus: progressiv overload og muskelopbygning.",
+          "Vil du have Valhalla-styrke, cardio-anker og gulv i samme budget? Pakke C her er kun et kort pegepind: det fulde Cardio-fokus / Styrke-fokus / Allround-setup under 10.000 kr. ligger i Komplet hjemmegym under 10.000 kr. — med Floor Guards og live bundle-priser. Nedenfor beholder vi Valhalla + bænk som hurtig “styrke først”-reference.",
         pros: [
           "100 kg vægtstak — mange øvelser uden at læsse skiver",
           "Dedikeret justerbar bænk til press og variation",
-          "Seriøst hjemmegym uden center-pris",
+          "Pegepind til den dedikerede 10.000 kr.-guide",
           "Skalerbart fundament til år frem",
         ],
         cons: [
           "Kræver loftshøjde og fast plads",
           "Tungt at flytte — ikke lejlighedsvenligt",
-          "Cardio er ikke inkluderet (tilføj cykel/romaskine senere)",
+          "Cardio og gulv er detaljeret i 10.000-guiden — ikke her",
         ],
         specs: [
-          { label: "Budgetloft", value: "Under 10.000 kr." },
+          { label: "Budgetloft", value: "Under 10.000 kr. (fuld guide)" },
           { label: "Plads", value: "Garage / kælder / ekstra rum" },
-          { label: "Cardio", value: "Tilføj senere" },
+          { label: "Cardio", value: "Se 10.000-guiden" },
           { label: "Styrke", value: "Multistation 100 kg + bænk" },
         ],
         imageUrl:
@@ -4234,8 +4242,54 @@ export const guides: Guide[] = [
       },
     ],
     howToChoose:
-      "Lille plads og stramt budget? Pakke A. Vil du erstatte fitnesscentret uden garage? Pakke B — vores Best Value under 5.000 kr. Seriøs styrke og har du rummet? Pakke C med Valhalla 100 kg. Brug “Se pris” på hver del af pakken for live partnerpriser. Opgrader først, når vanen sidder — ikke før.",
+      "Lille plads og stramt budget? Pakke A — eller Hjemmetræning under 1.000 kr., hvis du er under 1.000. Vil du erstatte fitnesscentret uden garage? Pakke B — vores Best Value under 5.000 kr. Seriøs styrke + cardio i samme loft? Gå til Komplet hjemmegym under 10.000 kr. (eller Komplet hjemmegym under 15.000 kr.). Brug “Se pris” på hver del af pakken for live partnerpriser. Opgrader først, når vanen sidder — ikke før.",
     learningSections: [
+      {
+        heading: "Har du et mindre eller større budget?",
+        paragraphs: [
+          "Denne guide er sweet spot under 5.000 kr. Under 1.000 kr. (studerende / minimalistisk)? Se Hjemmetræning under 1.000 kr. for elastik-, dørribbe- og kettlebell-pakker uden maskin-fælden.",
+          "Har du garage, kælder eller et dedikeret rum og op til 10.000 kr.? Komplet hjemmegym under 10.000 kr. fordeler cardio-anker, styrke og gulv i Cardio-fokus, Styrke-fokus og Allround. Op til 15.000 kr.? Komplet hjemmegym under 15.000 kr. lægger bedre cardio og tungere styrke i samme setup.",
+        ],
+        comparison: {
+          caption: "Prisklasse-guides side om side",
+          rowHeaderLabel: "Guide",
+          columns: ["Loft", "Typisk køber", "Hvad du får"],
+          rows: [
+            {
+              label: "Under 1.000 kr.",
+              cells: [
+                "1.000 kr.",
+                "Studerende / lille lejlighed",
+                "Elastik, dørribbe, sjip, kettlebell",
+              ],
+            },
+            {
+              label: "Denne guide",
+              cells: [
+                "5.000 kr.",
+                "Drop center uden garage",
+                "Gåbånd / crosstrainer + bænk",
+              ],
+            },
+            {
+              label: "Under 10.000 kr.",
+              cells: [
+                "10.000 kr.",
+                "Hus / kælder / ekstra rum",
+                "Cardio-anker + styrke + gulv",
+              ],
+            },
+            {
+              label: "Under 15.000 kr.",
+              cells: [
+                "15.000 kr.",
+                "Seriøst home gym",
+                "Bedre cardio + tung styrke",
+              ],
+            },
+          ],
+        },
+      },
       {
         heading: "Hjemmetræning på budget: Hvor lidt kan du slippe med?",
         paragraphs: [
@@ -4319,7 +4373,7 @@ export const guides: Guide[] = [
       {
         question: "Valhalla multistation eller squat rack til garage-gym?",
         answer:
-          "Valhalla (Pakke C) er bedst, hvis du vil have mange kabel- og maskinøvelser uden at læsse skiver. Vil du primært squat/bænke med stang og skiver, se i stedet vores styrkemaskine-guide (hjemmetræningssæt eller half-rack). Mål loftshøjde, før du køber multistation.",
+          "Valhalla er bedst, hvis du vil have mange kabel- og maskinøvelser uden at læsse skiver — se den fulde Styrke-fokus-pakke i Komplet hjemmegym under 10.000 kr. Vil du primært squat/bænke med stang og skiver, se i stedet vores styrkemaskine-guide (hjemmetræningssæt eller half-rack). Mål loftshøjde, før du køber multistation.",
       },
       {
         question: "Hvorfor anbefaler I simple computere på budget?",
@@ -4338,6 +4392,9 @@ export const guides: Guide[] = [
       },
     ],
     relatedSlugs: [
+      "hjemmetraening-under-1000-kr-2026",
+      "komplet-hjemmegym-under-10000-kr-2026",
+      "komplet-hjemmegym-under-15000-kr-2026",
       "hjemmetraening-for-begyndere-foerste-90-dage",
       "bedste-justerbare-haandvaegte-2026",
       "bedste-justerbar-traeningsbaenk-2026",
@@ -5043,9 +5100,11 @@ export const guides: Guide[] = [
       },
     ],
     relatedSlugs: [
+      "hjemmetraening-under-1000-kr-2026",
       "bedste-traeningselastikker-slyngetraener-2026",
       "bedste-justerbare-haandvaegte-2026",
       "ultimative-home-gym-budget-2026",
+      "komplet-hjemmegym-under-10000-kr-2026",
       "bedste-stoejsvage-traeningsmaskiner-lejlighed-2026",
       "bedste-justerbar-traeningsbaenk-2026",
       "bedste-vaegmonteret-kabeltaarn-2026",
@@ -15378,4 +15437,5 @@ export const guides: Guide[] = [
       "titan-life-s72-spinningcykel-2026",
     ],
   },
+  ...priceTierGuides,
 ];
