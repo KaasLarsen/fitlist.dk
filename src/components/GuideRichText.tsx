@@ -56,6 +56,18 @@ const GUIDE_LINK_ALIASES: Record<string, string[]> = {
     "Titan LIFE S72 modelguide",
     "Titan LIFE S72 Spinningcykel — modelguide 2026",
   ],
+  "ascendic-7021-vs-reebok-i-run-4-5-2026": [
+    "Ascendic 7021 vs. Reebok i-Run 4.5",
+    "Ascendic 7021 vs Reebok i-Run 4.5",
+  ],
+  "ascendic-6004-vs-odin-r1800-2026": [
+    "Ascendic 6004 vs. Odin R1800",
+    "Ascendic 6004 vs Odin R1800",
+  ],
+  "titan-life-b35-vs-ascendic-8001-2026": [
+    "Titan Life B35 vs. Ascendic 8001",
+    "Titan Life B35 vs Ascendic 8001",
+  ],
   "bedste-loebebaand-2026": ["Bedste løbebånd 2026"],
   "bedste-siddecykel-2026": ["Bedste siddecykel 2026"],
   "bedste-romaskine-2026": ["Bedste romaskine 2026"],

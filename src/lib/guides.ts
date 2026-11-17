@@ -68,7 +68,7 @@ export type GuideFaq = {
   answer: string;
 };
 
-export type GuideKind = "modelguide";
+export type GuideKind = "modelguide" | "modelvs";
 
 export type Guide = {
   slug: string;
@@ -87,6 +87,7 @@ export type Guide = {
   intentSlug?: string;
   /**
    * modelguide = én maskine pr. side.
+   * modelvs = to modeller head-to-head (/guides/vs/).
    * Udeladt = almindelig købs-/beslutningsguide.
    */
   kind?: GuideKind;
@@ -107,9 +108,14 @@ export function isModelGuide(guide: Pick<Guide, "kind">): boolean {
   return guide.kind === "modelguide";
 }
 
-/** Sti til guide-artikel (modelguides ligger under /guides/modelguides/). */
+export function isModelVs(guide: Pick<Guide, "kind">): boolean {
+  return guide.kind === "modelvs";
+}
+
+/** Sti til guide-artikel (modelguides / vs har egne hubs). */
 export function guidePath(guide: Pick<Guide, "slug" | "kind">): string {
   if (isModelGuide(guide)) return `/guides/modelguides/${guide.slug}`;
+  if (isModelVs(guide)) return `/guides/vs/${guide.slug}`;
   return `/guides/${guide.slug}`;
 }
 
@@ -129,14 +135,19 @@ export function getAllGuides(): Guide[] {
   );
 }
 
-/** Købs-/beslutningsguides — uden modelguides. */
+/** Købs-/beslutningsguides — uden modelguides og model-vs. */
 export function getBuyingGuides(): Guide[] {
-  return getAllGuides().filter((g) => !isModelGuide(g));
+  return getAllGuides().filter((g) => !isModelGuide(g) && !isModelVs(g));
 }
 
 /** Én maskine pr. side. */
 export function getModelGuides(): Guide[] {
   return getAllGuides().filter(isModelGuide);
+}
+
+/** To modeller head-to-head. */
+export function getModelVsGuides(): Guide[] {
+  return getAllGuides().filter(isModelVs);
 }
 
 /** Modelguides i en maskinkategori. */
@@ -194,7 +205,8 @@ export function getGuideByCategoryAndIntent(
     (g) =>
       g.categorySlug === categorySlug &&
       g.intentSlug === intentSlug &&
-      !isModelGuide(g),
+      !isModelGuide(g) &&
+      !isModelVs(g),
   );
 }
 
@@ -13357,6 +13369,7 @@ export const guides: Guide[] = [
       },
     ],
     relatedSlugs: [
+      "ascendic-7021-vs-reebok-i-run-4-5-2026",
       "reebok-i-run-4-5-loebebaand-2026",
       "ascendic-essential-walking-pad-2026",
       "velorafit-foldbart-loebebaand-2026",
@@ -13793,6 +13806,7 @@ export const guides: Guide[] = [
       },
     ],
     relatedSlugs: [
+      "ascendic-7021-vs-reebok-i-run-4-5-2026",
       "velorafit-foldbart-loebebaand-2026",
       "ascendic-7021-loebebaand-2026",
       "ascendic-essential-walking-pad-2026",
@@ -13937,6 +13951,7 @@ export const guides: Guide[] = [
       },
     ],
     relatedSlugs: [
+      "ascendic-6004-vs-odin-r1800-2026",
       "ascendic-6004-romaskine-2026",
       "bedste-vandromaskine-2026",
       "bedste-romaskine-2026",
@@ -14514,6 +14529,7 @@ export const guides: Guide[] = [
       },
     ],
     relatedSlugs: [
+      "ascendic-6004-vs-odin-r1800-2026",
       "odin-r1800-vandromaskine-2026",
       "bedste-stoejsvag-romaskine-2026",
       "bedste-romaskine-2026",
@@ -14658,6 +14674,7 @@ export const guides: Guide[] = [
       },
     ],
     relatedSlugs: [
+      "titan-life-b35-vs-ascendic-8001-2026",
       "bedste-motionscykel-2026",
       "bedste-spinningcykel-2026",
       "titan-life-s72-spinningcykel-2026",
@@ -14802,6 +14819,7 @@ export const guides: Guide[] = [
       },
     ],
     relatedSlugs: [
+      "titan-life-b35-vs-ascendic-8001-2026",
       "bedste-stoejsvag-motionscykel-lejlighed-2026",
       "home-gym-til-lille-vaerelse-10m2-2026",
       "bedste-foldbare-kompakte-traeningsmaskiner-2026",
@@ -14955,6 +14973,409 @@ export const guides: Guide[] = [
       "bedste-stoejsvag-motionscykel-lejlighed-2026",
       "odin-a1000-airbike-2026",
       "ascendic-8001-foldbar-motionscykel-2026",
+    ],
+  },
+  {
+    slug: "ascendic-7021-vs-reebok-i-run-4-5-2026",
+    title: "Ascendic 7021 vs. Reebok i-Run 4.5 — 2026",
+    excerpt:
+      "7021 til automatisk hældning på budget; i-Run 4.5 til flad fold under sofa/seng. Live priser fra Ascendic og Apuls.",
+    metaDescription:
+      "Ascendic 7021 vs Reebok i-Run 4.5 2026: hældning på budget eller fold under møbel? Spec-tabel, verdict og live priser.",
+    categorySlug: "loebebaand",
+    intentSlug: "foldbar",
+    kind: "modelvs",
+    recommendationsHeading: "De to modeller",
+    publishedAt: "2026-11-17",
+    updatedAt: "2026-11-17",
+    intro:
+      "To kompakte hjemmeløbebånd, to forskellige jobs: Ascendic 7021 prioriterer automatisk hældning og budget; Reebok i-Run 4.5 prioriterer flad fold og opbevaring under møbler. Her får du et hurtigt verdict, live priser og en spec-tabel — uden at blande walking pads ind.",
+    criteria: [
+      {
+        title: "Hældning vs. fold",
+        description:
+          "Skal intensiteten komme fra stigning uden at sprinte, eller skal maskinen forsvinde under sofaen efter pas? Det er det egentlige valg mellem 7021 og i-Run.",
+      },
+      {
+        title: "Budget vs. brand/praktisk levering",
+        description:
+          "7021 rammer typisk skarpere indgangspris. i-Run koster ofte mere, men kommer som Reebok med flad fold og færdigsamlet levering hos partner.",
+      },
+      {
+        title: "Ingen af dem er center-interval",
+        description:
+          "Begge er kompakte hjemmebånd. Til daglig hård interval: se Bedste løbebånd 2026 (Titan T56/T66-klassen).",
+      },
+    ],
+    products: [
+      {
+        id: "ascendic-7021-loebebaand",
+        name: "Ascendic 7021",
+        badge: "Bedst til hældning på budget",
+        summary: "Automatisk hældning i et kompakt ægte løbebånd.",
+        pros: [
+          "Automatisk hældning",
+          "Skarp budget-pris",
+          "Ægte løb/jogging — ikke walking pad",
+        ],
+        cons: [
+          "Mindre “under sofa”-fokus end i-Run",
+          "Ikke midrange interval-maskine",
+        ],
+        specs: [
+          { label: "Type", value: "Løbebånd (hjemme)" },
+          { label: "Brand", value: "Ascendic" },
+          { label: "Plads", value: "Kompakt footprint — mål brugslængde" },
+          { label: "Feature", value: "Automatisk hældning" },
+          { label: "Segment", value: "Budget / kompakt" },
+          { label: "Fold", value: "Kompakt — ikke flad under-møbel-specialist" },
+          { label: "Brug", value: "Gang, jogging, løb" },
+          { label: "Partner", value: "Ascendic.dk" },
+        ],
+        imageUrl:
+          "https://cdn.shopify.com/s/files/1/0023/6840/5573/files/black-month-7021_68ae3874-57dd-4766-8e09-a77dda884139.png?v=1793365078",
+        feedProductId: "Ascendic.dk:56336394781016",
+        affiliateId: "ascendic-7021-loebebaand",
+      },
+      {
+        id: "reebok-i-run-4-5-loebebaand",
+        name: "Reebok i-Run 4.5",
+        badge: "Bedst til fold under møbel",
+        summary: "Flad fold med hjul — ægte løbebånd der kan gemmes væk.",
+        pros: [
+          "Foldes fladt under mange sofaer/senge",
+          "Transporthjul",
+          "Færdigsamlet levering hos partner",
+        ],
+        cons: [
+          "Ofte dyrere end 7021",
+          "Fold hjælper kun, hvis du pakker den væk",
+        ],
+        specs: [
+          { label: "Type", value: "Foldbart løbebånd" },
+          { label: "Brand", value: "Reebok" },
+          { label: "Plads", value: "Flad fold — mål under sofa/seng" },
+          { label: "Feature", value: "Flad fold / under møbel" },
+          { label: "Segment", value: "Kompakt mid" },
+          { label: "Fold", value: "Flad fold + hjul" },
+          { label: "Brug", value: "Gang og jogging hjemme" },
+          { label: "Partner", value: "Apuls.dk" },
+        ],
+        imageUrl: "https://m2.apuls.dk/media/catalog/product/2/0/20766_1.jpg",
+        feedProductId: "Apuls.dk:15828",
+        affiliateId: "reebok-i-run-4-5-loebebaand",
+      },
+    ],
+    howToChoose:
+      "Vælg Ascendic 7021, hvis automatisk hældning og budget er jobbet, og båndet gerne må fylde et hjørne. Vælg Reebok i-Run 4.5, hvis flad fold under sofa/seng er hard requirement. Kun gang under bord? Se Ascendic Essential Walking Pad — modelguide 2026. Flere modeller: Bedste løbebånd 2026.",
+    learningSections: [
+      {
+        heading: "Hvornår vælg hvilken",
+        paragraphs: [
+          "Vælg Ascendic 7021, hvis du vil have et ægte løbebånd med automatisk hældning til under midrange-pris, og du kan undvære “skub under sofaen”-ritualet. Den er Fitlist-valget, når træningsværktøjet (stigning + tempo) er vigtigere end midlertidig footprint.",
+          "Vælg Reebok i-Run 4.5, hvis stuen kun må eje et løbebånd, mens du træner. Flad fold, hjul og færdigsamlet levering gør den til det praktiske lejlighedsvalg — også når den koster lidt mere end 7021.",
+          "Ingen af dem erstatter et tungt interval-bånd. Og ingen af dem er walking pads: skal du primært gå under skrivebordet, er Ascendic Essential det ærligere køb.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "Ascendic 7021 eller Reebok i-Run 4.5 — hvad skal jeg købe?",
+        answer:
+          "7021 til hældning på budget. i-Run 4.5 til flad fold under møbel. Prioritér det krav, der faktisk afgør, om maskinen bliver brugt.",
+      },
+      {
+        question: "Kan 7021 også foldes?",
+        answer:
+          "Den er kompakt, men ikke vores “under sofa”-specialist. Hvis fold under møbel er hard requirement, er i-Run 4.5 det klarere valg. Læs Reebok i-Run 4.5 Løbebånd — modelguide 2026.",
+      },
+      {
+        question: "Er nogen af dem et gåbånd?",
+        answer:
+          "Nej — begge er ægte løbebånd til gang/jogging. Til under-desk gang: Ascendic Essential Walking Pad — modelguide 2026.",
+      },
+      {
+        question: "Hvor ser jeg aktuelle priser?",
+        answer:
+          "Brug “Se pris”-knapperne ovenfor. 7021 hentes fra Ascendic.dk; i-Run 4.5 fra Apuls.dk.",
+      },
+    ],
+    relatedSlugs: [
+      "ascendic-7021-loebebaand-2026",
+      "reebok-i-run-4-5-loebebaand-2026",
+      "bedste-loebebaand-2026",
+      "loebebaand-eller-gaabaand-2026",
+      "bedste-foldbare-kompakte-traeningsmaskiner-2026",
+      "ascendic-essential-walking-pad-2026",
+    ],
+  },
+  {
+    slug: "ascendic-6004-vs-odin-r1800-2026",
+    title: "Ascendic 6004 vs. Odin R1800 — 2026",
+    excerpt:
+      "6004 til stille magnet-roning i lejlighed; R1800 til ægte vand-splash og midrange-stemning. Live priser fra Ascendic og Apuls.",
+    metaDescription:
+      "Ascendic 6004 vs Odin R1800 2026: magnet eller vandromaskine? Spec-tabel, støj/plads-verdict og live priser.",
+    categorySlug: "romaskine",
+    intentSlug: "stoejsvag",
+    kind: "modelvs",
+    recommendationsHeading: "De to modeller",
+    publishedAt: "2026-11-17",
+    updatedAt: "2026-11-17",
+    intro:
+      "Magnet eller vand? Ascendic 6004 er den støjsvage lejligheds-magnet; Odin R1800 er midrange-vand med splash og båd-følelse. Sammenligningen her er til dig, der allerede ved, at romaskine er disciplinen — og nu skal vælge lyd vs. stemning.",
+    criteria: [
+      {
+        title: "Støj er dealbreakeren",
+        description:
+          "Naboer under dig og aftenpas? Magnet vinder næsten altid. Hus/træningsrum og lyst til splash? Vand er det motiverende valg.",
+      },
+      {
+        title: "Vedligehold",
+        description:
+          "6004: næsten ingen drift. R1800: vandniveau og lejlighedsvis rens — til gengæld den følelse mange jagter.",
+      },
+      {
+        title: "Segment",
+        description:
+          "6004 er budget/stille entry. R1800 er midrange vand — ikke Fluid-møbel-premium.",
+      },
+    ],
+    products: [
+      {
+        id: "ascendic-6004-romaskine",
+        name: "Ascendic 6004",
+        badge: "Bedst til stille lejlighed",
+        summary: "Magnetisk entry med 15 niveauer — næsten lydløs helkrop.",
+        pros: [
+          "Meget støjsvag magnet",
+          "Skarp lejlighedspris",
+          "Enkel computer uden tech-ballast",
+        ],
+        cons: [
+          "Ingen vand-splash",
+          "Entry-build ved meget tung daglig brug",
+        ],
+        specs: [
+          { label: "Type", value: "Magnet-romaskine" },
+          { label: "Modstand", value: "Magnet (15 niveauer)" },
+          { label: "Brand", value: "Ascendic" },
+          { label: "Plads", value: "Fuld skinne i brug — mål længde" },
+          { label: "Støj", value: "Støjsvagest af de to" },
+          { label: "Segment", value: "Budget / stille" },
+          { label: "Partner", value: "Ascendic.dk" },
+        ],
+        imageUrl:
+          "https://cdn.shopify.com/s/files/1/0023/6840/5573/files/black-month-6004_526d8dac-8388-47d0-a5e2-f9b05fe6f862.png?v=1793364773",
+        feedProductId: "Ascendic.dk:55357722100056",
+        affiliateId: "ascendic-6004-romaskine",
+      },
+      {
+        id: "odin-r1800-vandromaskine",
+        name: "Odin R1800",
+        badge: "Bedst til vand-stemning",
+        summary: "Autentisk splash og jævn trækfølelse til midrange-pris.",
+        pros: [
+          "Ægte vandlyd og jævn træk",
+          "Klar midrange uden Fluid-budget",
+          "Helkropspas der motiverer",
+        ],
+        cons: [
+          "Mere lyd end magnet",
+          "Kræver vandniveau/vedligehold",
+        ],
+        specs: [
+          { label: "Type", value: "Vandromaskine" },
+          { label: "Modstand", value: "Vand" },
+          { label: "Brand", value: "Odin" },
+          { label: "Plads", value: "Fuld skinne i brug — mål længde" },
+          { label: "Støj", value: "Splash — mere end magnet" },
+          { label: "Segment", value: "Midrange" },
+          { label: "Partner", value: "Apuls.dk" },
+        ],
+        imageUrl:
+          "https://m2.apuls.dk/media/catalog/product/6/7/67d2d580346dbodinr1800romaskine1.jpg",
+        feedProductId: "Apuls.dk:15386",
+        affiliateId: "odin-r1800-vandromaskine",
+      },
+    ],
+    howToChoose:
+      "Vælg Ascendic 6004, hvis stilhed i lejlighed er jobbet. Vælg Odin R1800, hvis du vil have splash og midrange vand-følelse, og rummet tåler lyden. Flere stille modeller: Bedste støjsvage romaskine 2026. Flere vandmodeller: Bedste vandromaskine 2026. Usikker på disciplin? Bedste romaskine 2026.",
+    learningSections: [
+      {
+        heading: "Hvornår vælg hvilken",
+        paragraphs: [
+          "Vælg Ascendic 6004, hvis naboer, aftenpas eller “maskinen skal være usynlig i lyd” er det vigtigste. Det er Fitlist-valget til lejlighedsroning: magnet, 15 niveauer, skarp pris.",
+          "Vælg Odin R1800, hvis motivationen ligger i den ægte vand-stemning, og du har hus, kælder eller et rum, hvor splash er en feature — ikke et problem. Midrange-vand uden Fluid-møbelpris.",
+          "Begge fylder i brug: mål skinnen. Høje brugere skal tjekke max-højde. Teknik (ben → core → arme) betyder mere for knæ/lænd end brandvalget.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "Ascendic 6004 eller Odin R1800?",
+        answer:
+          "6004 til stilhed. R1800 til vand-stemning. Hvis du er i tvivl, og bor i etagebyggeri: start med 6004.",
+      },
+      {
+        question: "Er vand altid bedre end magnet?",
+        answer:
+          "Nej. Vand føles ofte “rigtigere”, men magnet er støjsvagere og simplere i drift. Læs Ascendic 6004 Romaskine — modelguide 2026 og Odin R1800 Vandromaskine — modelguide 2026 for dybden.",
+      },
+      {
+        question: "Hvilken fylder mindst?",
+        answer:
+          "Begge kræver fuld skinne i brug. Forskellen er lyd og vedligehold — ikke et dramatisk footprint-gap. Mål dit rum før køb.",
+      },
+      {
+        question: "Hvor ser jeg priserne?",
+        answer:
+          "“Se pris”-knapperne ovenfor: 6004 via Ascendic.dk, R1800 via Apuls.dk.",
+      },
+    ],
+    relatedSlugs: [
+      "ascendic-6004-romaskine-2026",
+      "odin-r1800-vandromaskine-2026",
+      "bedste-stoejsvag-romaskine-2026",
+      "bedste-vandromaskine-2026",
+      "bedste-romaskine-2026",
+      "bedste-stoejsvage-traeningsmaskiner-lejlighed-2026",
+    ],
+  },
+  {
+    slug: "titan-life-b35-vs-ascendic-8001-2026",
+    title: "Titan Life B35 vs. Ascendic 8001 — 2026",
+    excerpt:
+      "B35 til fast budget-kondicykel der skal bruges ofte; 8001 til fold + ryglæn i små hjem. Live priser fra HomeX og Ascendic.",
+    metaDescription:
+      "Titan Life B35 vs Ascendic 8001 2026: fast kondicykel eller foldbar med ryglæn? Spec-tabel, verdict og live priser.",
+    categorySlug: "motionscykel",
+    intentSlug: "billig",
+    kind: "modelvs",
+    recommendationsHeading: "De to modeller",
+    publishedAt: "2026-11-17",
+    updatedAt: "2026-11-17",
+    intro:
+      "To budget-venlige cykler med forskellige kompromiser: Titan Life B35 er en fast opret kondicykel til at bygge vane; Ascendic 8001 er foldbar med ryglæn til små rum, hvor maskinen skal kunne rulles væk. Her er det ærlige valg — uden at blande spinning ind.",
+    criteria: [
+      {
+        title: "Skal den stå fremme eller forsvinde?",
+        description:
+          "Bruger du cyklen ofte, er et fast hjørne (B35) næsten altid bedre. Skal stuen ryddes efter hvert pas, er fold (8001) pointen.",
+      },
+      {
+        title: "Opret vs. ryglæn",
+        description:
+          "B35 er klassisk opret. 8001 har polstret ryglæn og blødere, lettere modstand — tættere på “let motion” end tung kondi.",
+      },
+      {
+        title: "Ingen af dem er spinning",
+        description:
+          "Til intervaller og tungt svinghjul: se Titan LIFE S72 Spinningcykel — modelguide 2026.",
+      },
+    ],
+    products: [
+      {
+        id: "titan-life-b35-motionscykel",
+        name: "Titan Life B35",
+        badge: "Bedst til fast budget-kondi",
+        summary: "Stabil opret kondicykel til vane og zone 2.",
+        pros: [
+          "Lav indgangspris",
+          "Stabil opret motionscykel",
+          "Typisk støjsvag magnet-cardio",
+        ],
+        cons: [
+          "Fylder et fast hjørne",
+          "Ikke foldbar",
+        ],
+        specs: [
+          { label: "Type", value: "Kondicykel (opret)" },
+          { label: "Brand", value: "Titan Life" },
+          { label: "Plads", value: "Fast hjørne — ikke foldbar" },
+          { label: "Modstand", value: "Magnet (budget)" },
+          { label: "Segment", value: "Budget" },
+          { label: "Fold", value: "Nej" },
+          { label: "Ryglæn", value: "Nej" },
+          { label: "Partner", value: "HomeX.dk" },
+        ],
+        imageUrl:
+          "https://shop12835.sfstatic.io/upload_dir/shop/products/Legehjulet/img_5530-.jpg",
+        feedProductId: "HomeX.dk:2702",
+        affiliateId: "titan-life-b35-motionscykel",
+      },
+      {
+        id: "ascendic-8001-foldbar-motionscykel",
+        name: "Ascendic 8001",
+        badge: "Bedst til fold i små hjem",
+        summary: "Fold + ryglæn + let magnet — cardio der kan rulles væk.",
+        pros: [
+          "Foldbar og kan rulles væk",
+          "Polstret ryglæn",
+          "Magnetisk, stille modstand",
+        ],
+        cons: [
+          "Lille svinghjul — blød modstand",
+          "Mindre stabil end fast midrange",
+        ],
+        specs: [
+          { label: "Type", value: "Foldbar motionscykel" },
+          { label: "Brand", value: "Ascendic" },
+          { label: "Plads", value: "Foldes og rulles væk efter pas" },
+          { label: "Modstand", value: "Magnet (let / 2,5 kg svinghjul)" },
+          { label: "Segment", value: "Kompakt / plads" },
+          { label: "Fold", value: "Ja" },
+          { label: "Ryglæn", value: "Ja (polstret)" },
+          { label: "Partner", value: "Ascendic.dk" },
+        ],
+        imageUrl:
+          "https://cdn.shopify.com/s/files/1/0023/6840/5573/products/8001Grey.png?v=1637161419",
+        feedProductId: "Ascendic.dk:39480045797550",
+        affiliateId: "ascendic-8001-foldbar-motionscykel",
+      },
+    ],
+    howToChoose:
+      "Vælg Titan Life B35, hvis cyklen skal stå fremme og bruges ofte som opret budget-kondi. Vælg Ascendic 8001, hvis fold + ryglæn i lille bolig er hard requirement — og du accepterer blødere modstand. Ægte siddecykel? Odin RB-800 Comfort Siddecykel — modelguide 2026. Spinning? Titan LIFE S72 Spinningcykel — modelguide 2026. Flere cykler: Bedste motionscykel 2026.",
+    learningSections: [
+      {
+        heading: "Hvornår vælg hvilken",
+        paragraphs: [
+          "Vælg Titan Life B35, hvis du vil have en ærlig opret kondicykel til at bygge vane: podcast, zone 2, skånsom cardio. Det er Fitlist-valget, når maskinen må fylde et hjørne, fordi den faktisk bliver brugt.",
+          "Vælg Ascendic 8001, hvis plads er dealbreakeren, og du vil have ryglæn + fold i ét. Den er til let motion i små hjem — ikke til tung tråd eller spinning-intervaller.",
+          "Fold er kun en feature, hvis du folder. Mange ender med en “foldcykel” der står fremme alligevel — så havde B35 været det bedre køb.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "Titan Life B35 eller Ascendic 8001?",
+        answer:
+          "B35 til fast budget-kondi. 8001 til fold + ryglæn i små rum. Vælg ud fra, om maskinen skal stå eller forsvinde.",
+      },
+      {
+        question: "Er 8001 en siddecykel?",
+        answer:
+          "Den har ryglæn og er bygget til komfortabel let motion, men det er en foldbar kompakt — ikke en fuldsize recumbent. Se Odin RB-800 Comfort Siddecykel — modelguide 2026.",
+      },
+      {
+        question: "Kan jeg spinne på B35 eller 8001?",
+        answer:
+          "Nej. Til spinning: Titan LIFE S72 Spinningcykel — modelguide 2026. Læs også Motionscykel eller spinningcykel?",
+      },
+      {
+        question: "Hvor ser jeg priserne?",
+        answer:
+          "B35 via HomeX.dk og 8001 via Ascendic.dk — brug knapperne øverst på siden.",
+      },
+    ],
+    relatedSlugs: [
+      "titan-life-b35-motionscykel-2026",
+      "ascendic-8001-foldbar-motionscykel-2026",
+      "bedste-motionscykel-2026",
+      "motionscykel-eller-spinningcykel-2026",
+      "bedste-stoejsvag-motionscykel-lejlighed-2026",
+      "odin-rb-800-siddecykel-2026",
+      "titan-life-s72-spinningcykel-2026",
     ],
   },
 ];

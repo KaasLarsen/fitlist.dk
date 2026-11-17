@@ -34,14 +34,37 @@ const COMPARISONS = [
   },
 ] as const;
 
-export function ComparisonsSection() {
-  const items = COMPARISONS.flatMap((comparison) => {
-    const guide = getGuide(comparison.slug);
-    if (!guide) return [];
-    return [{ ...comparison, href: guidePath(guide) }];
-  });
+const MODEL_VS = [
+  {
+    label: "Ascendic 7021 vs. Reebok i-Run 4.5",
+    short: "Hældning på budget eller fold under møbel",
+    slug: "ascendic-7021-vs-reebok-i-run-4-5-2026",
+  },
+  {
+    label: "Ascendic 6004 vs. Odin R1800",
+    short: "Stille magnet eller vand-splash",
+    slug: "ascendic-6004-vs-odin-r1800-2026",
+  },
+  {
+    label: "Titan Life B35 vs. Ascendic 8001",
+    short: "Fast kondicykel eller fold + ryglæn",
+    slug: "titan-life-b35-vs-ascendic-8001-2026",
+  },
+] as const;
 
-  if (items.length === 0) return null;
+function resolveLinks<T extends { slug: string }>(items: readonly T[]) {
+  return items.flatMap((item) => {
+    const guide = getGuide(item.slug);
+    if (!guide) return [];
+    return [{ ...item, href: guidePath(guide) }];
+  });
+}
+
+export function ComparisonsSection() {
+  const typeItems = resolveLinks(COMPARISONS);
+  const modelItems = resolveLinks(MODEL_VS);
+
+  if (typeItems.length === 0 && modelItems.length === 0) return null;
 
   return (
     <section className="border-t border-border bg-surface/40">
@@ -57,26 +80,63 @@ export function ComparisonsSection() {
           forkerte køb.
         </p>
 
-        <ul className="mt-12 grid grid-cols-1 gap-3 sm:grid-cols-2 sm:gap-5 lg:grid-cols-3">
-          {items.map((item) => (
-            <li key={item.slug}>
-              <Link
-                href={item.href}
-                className="group flex h-full flex-col justify-between gap-4 border border-border bg-background px-4 py-6 transition-colors hover:border-accent/40 sm:gap-6 sm:px-6 sm:py-10"
-              >
-                <div>
-                  <p className="font-display text-xl font-medium uppercase tracking-wide text-foreground transition-colors group-hover:text-accent sm:text-2xl">
-                    {item.label}
-                  </p>
-                  <p className="mt-2 text-sm text-muted">{item.short}</p>
-                </div>
-                <span className="font-display text-xs uppercase tracking-[0.16em] text-accent opacity-0 transition-opacity group-hover:opacity-100">
-                  Sammenlign →
-                </span>
-              </Link>
-            </li>
-          ))}
-        </ul>
+        {typeItems.length > 0 ? (
+          <ul className="mt-12 grid grid-cols-1 gap-3 sm:grid-cols-2 sm:gap-5 lg:grid-cols-3">
+            {typeItems.map((item) => (
+              <li key={item.slug}>
+                <Link
+                  href={item.href}
+                  className="group flex h-full flex-col justify-between gap-4 border border-border bg-background px-4 py-6 transition-colors hover:border-accent/40 sm:gap-6 sm:px-6 sm:py-10"
+                >
+                  <div>
+                    <p className="font-display text-xl font-medium uppercase tracking-wide text-foreground transition-colors group-hover:text-accent sm:text-2xl">
+                      {item.label}
+                    </p>
+                    <p className="mt-2 text-sm text-muted">{item.short}</p>
+                  </div>
+                  <span className="font-display text-xs uppercase tracking-[0.16em] text-accent opacity-0 transition-opacity group-hover:opacity-100">
+                    Sammenlign →
+                  </span>
+                </Link>
+              </li>
+            ))}
+          </ul>
+        ) : null}
+
+        {modelItems.length > 0 ? (
+          <div className="mt-16 border-t border-border pt-12">
+            <p className="font-display text-sm font-medium uppercase tracking-[0.2em] text-accent">
+              Model mod model
+            </p>
+            <h3 className="mt-3 max-w-xl font-display text-2xl font-semibold uppercase tracking-wide text-foreground sm:text-3xl">
+              To konkrete maskiner — side om side
+            </h3>
+            <p className="mt-4 max-w-lg text-muted">
+              Klar på typen, men i tvivl mellem to modeller? Spec-tabel, verdict
+              og live priser.
+            </p>
+            <ul className="mt-10 grid grid-cols-1 gap-3 sm:grid-cols-2 sm:gap-5 lg:grid-cols-3">
+              {modelItems.map((item) => (
+                <li key={item.slug}>
+                  <Link
+                    href={item.href}
+                    className="group flex h-full flex-col justify-between gap-4 border border-border bg-background px-4 py-6 transition-colors hover:border-accent/40 sm:gap-6 sm:px-6 sm:py-8"
+                  >
+                    <div>
+                      <p className="font-display text-lg font-medium uppercase tracking-wide text-foreground transition-colors group-hover:text-accent sm:text-xl">
+                        {item.label}
+                      </p>
+                      <p className="mt-2 text-sm text-muted">{item.short}</p>
+                    </div>
+                    <span className="font-display text-xs uppercase tracking-[0.16em] text-accent opacity-0 transition-opacity group-hover:opacity-100">
+                      Se sammenligning →
+                    </span>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ) : null}
       </div>
     </section>
   );

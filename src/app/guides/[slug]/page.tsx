@@ -6,6 +6,7 @@ import {
   getGuide,
   guidePath,
   isModelGuide,
+  isModelVs,
 } from "@/lib/guides";
 import { guideOgPath } from "@/lib/og";
 import { canonical, SITE } from "@/lib/site";
@@ -24,7 +25,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const guide = getGuide(slug);
   if (!guide) return { title: "Guide ikke fundet" };
-  if (isModelGuide(guide)) {
+  if (isModelGuide(guide) || isModelVs(guide)) {
     return {
       title: guide.title,
       alternates: { canonical: canonical(guidePath(guide)) },
@@ -133,7 +134,7 @@ export default async function GuidePage({ params }: Props) {
   const { slug } = await params;
   const guide = getGuide(slug);
   if (!guide) notFound();
-  if (isModelGuide(guide)) permanentRedirect(guidePath(guide));
+  if (isModelGuide(guide) || isModelVs(guide)) permanentRedirect(guidePath(guide));
 
   return (
     <>
