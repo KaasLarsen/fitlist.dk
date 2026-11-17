@@ -23,7 +23,8 @@ import {
 } from "@/lib/feeds/cykelpartner-guide-ids";
 import type { FeedProduct } from "@/lib/feeds/types";
 
-const FEED_CACHE_VERSION = "v14";
+/** Bump når classify/intent-regler ændrer hvilke varer der skal caches. */
+const FEED_CACHE_VERSION = "v15";
 const FEED_REVALIDATE_SECONDS = 21_600; // 6 timer
 /** Partner-Ads XML er ofte langsom; for lav timeout tømmer hele kataloget. */
 const DEFAULT_TIMEOUT_MS = 90_000;
@@ -150,6 +151,36 @@ function isAccessoryProduct(product: FeedProduct): boolean {
   return !slug || slug === "tilbehoer" || slug === "must-haves";
 }
 
+/**
+ * Primær tilbehør-intent til cache-diversitet.
+ * Recovery-intents først, så isbad/massage/foam/boots ikke drukner i elastikker.
+ */
+const ACCESSORY_INTENT_PRIORITY = [
+  "isbad",
+  "massagepistol",
+  "foamroller",
+  "recoveryboots",
+  "haandvaegte",
+  "kettlebells",
+  "gulvmaatter",
+  "fitnessgulv",
+  "pullup",
+  "abwheel",
+  "vaegtvest",
+  "stepbaenk",
+  "elastikker",
+  "slyngetraener",
+  "begynder",
+] as const;
+
+function primaryAccessoryIntent(product: FeedProduct): string {
+  const intents = product.intentSlugs ?? [];
+  for (const slug of ACCESSORY_INTENT_PRIORITY) {
+    if (intents.includes(slug)) return slug;
+  }
+  return intents[0] ?? "other";
+}
+
 function compareStockImagePrice(a: FeedProduct, b: FeedProduct): number {
   if (a.inStock !== b.inStock) return a.inStock ? -1 : 1;
   const aImg = Boolean(a.image);
@@ -212,8 +243,8 @@ function pushWithinBudget(
  * Next.js afviser unstable_cache-entries >2 MB — uden cache bliver sider
  * ved med at cold-fetche og ender tomme efter deploy.
  *
- * Selection: maskiner før tilbehør; round-robin pr. kategori med pris-spredning
- * (undgår at Apuls’ billige elastikker skubber T620 ud).
+ * Selection: maskiner før tilbehør; round-robin pr. kategori/intent med
+ * pris-spredning (undgår at billige elastikker skubber T620 eller isbad ud).
  */
 export function fitFeedProductsForCache(
   products: FeedProduct[],
@@ -231,11 +262,14 @@ export function fitFeedProductsForCache(
   }
 
   const machinesByCategory = new Map<string, FeedProduct[]>();
-  const accessories: FeedProduct[] = [];
+  const accessoriesByIntent = new Map<string, FeedProduct[]>();
 
   for (const product of rest) {
     if (isAccessoryProduct(product)) {
-      accessories.push(product);
+      const intent = primaryAccessoryIntent(product);
+      const list = accessoriesByIntent.get(intent);
+      if (list) list.push(product);
+      else accessoriesByIntent.set(intent, [product]);
       continue;
     }
     const slug = product.categorySlug!;
@@ -247,7 +281,9 @@ export function fitFeedProductsForCache(
   for (const list of machinesByCategory.values()) {
     list.sort(compareStockImagePrice);
   }
-  accessories.sort(compareStockImagePrice);
+  for (const list of accessoriesByIntent.values()) {
+    list.sort(compareStockImagePrice);
+  }
 
   const machineBudget = Math.max(
     1,
@@ -301,16 +337,37 @@ export function fitFeedProductsForCache(
     }
   }
 
-  for (const product of accessories) {
-    const nextBytes = pushWithinBudget(
-      out,
-      product,
-      maxProducts,
-      maxBytes,
-      bytes,
-    );
-    if (nextBytes == null) break;
-    bytes = nextBytes;
+  const accessoryBudget = maxProducts - out.length;
+  const intentCount = Math.max(1, accessoriesByIntent.size);
+  const perIntent = Math.max(1, Math.ceil(accessoryBudget / intentCount));
+  const accessoryQueues = [...accessoriesByIntent.values()].map((list) =>
+    pickPriceDiverse(list, Math.min(list.length, perIntent)),
+  );
+  const accessoryOffsets = accessoryQueues.map(() => 0);
+
+  let accessoryAdded = true;
+  while (out.length < maxProducts && accessoryAdded) {
+    accessoryAdded = false;
+    for (let q = 0; q < accessoryQueues.length; q++) {
+      if (out.length >= maxProducts) break;
+      const queue = accessoryQueues[q]!;
+      const offset = accessoryOffsets[q]!;
+      if (offset >= queue.length) continue;
+      const nextBytes = pushWithinBudget(
+        out,
+        queue[offset]!,
+        maxProducts,
+        maxBytes,
+        bytes,
+      );
+      if (nextBytes == null) {
+        accessoryAdded = false;
+        break;
+      }
+      accessoryOffsets[q] = offset + 1;
+      bytes = nextBytes;
+      accessoryAdded = true;
+    }
   }
 
   if (out.length < slimmed.length) {

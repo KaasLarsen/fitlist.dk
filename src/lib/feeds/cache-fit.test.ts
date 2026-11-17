@@ -133,4 +133,48 @@ describe("fitFeedProductsForCache", () => {
       "machines should outnumber accessories in the trimmed cache",
     );
   });
+
+  it("keeps isbad accessories when cheap elastikker would otherwise dominate", () => {
+    const cheapBands = Array.from({ length: 60 }, (_, i) =>
+      makeProduct(i, {
+        id: `Apuls.dk:band-${i}`,
+        merchant: "Apuls.dk",
+        title: `Odin Elastik ${i}`,
+        categorySlug: "tilbehoer",
+        intentSlugs: ["elastikker"],
+        price: 9 + i,
+        inStock: true,
+      }),
+    );
+
+    const isbad = makeProduct(900, {
+      id: "SportGym:52737086194001",
+      merchant: "SportGym",
+      title: "VirtuFit Isbad XXL - 375 liter",
+      categorySlug: "tilbehoer",
+      intentSlugs: ["isbad"],
+      price: 495,
+      inStock: true,
+    });
+
+    const machine = makeProduct(901, {
+      id: "HomeX.dk:bike-1",
+      merchant: "HomeX.dk",
+      title: "Test motionscykel",
+      categorySlug: "motionscykel",
+      intentSlugs: ["billig"],
+      price: 2999,
+      inStock: true,
+    });
+
+    const fitted = fitFeedProductsForCache([...cheapBands, isbad, machine], {
+      maxProducts: 20,
+      maxBytes: 1_400_000,
+    });
+
+    assert.ok(
+      fitted.some((p) => p.id === "SportGym:52737086194001"),
+      "isbad should survive via intent round-robin among accessories",
+    );
+  });
 });
