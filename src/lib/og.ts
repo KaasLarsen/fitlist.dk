@@ -1,5 +1,5 @@
 /** Cache-bust when OG JPEGs are regenerated (Facebook caches by image URL). */
-export const OG_IMAGE_VERSION = "20261118a";
+export const OG_IMAGE_VERSION = "20261118b";
 
 export function ogJpegUrl(path: string): string {
   const clean = path.startsWith("/") ? path : `/${path}`;
@@ -23,4 +23,8 @@ export function categoryIntentOgPath(
 
 export function homeOgPath(): string {
   return ogJpegUrl("/og/home.jpg");
+}
+
+export function tilbudOgPath(): string {
+  return ogJpegUrl("/og/tilbud.jpg");
 }

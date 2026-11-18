@@ -177,6 +177,13 @@ async function main() {
     backgroundPath: hero,
   });
 
+  await renderCard({
+    outName: "tilbud.jpg",
+    title: "Aktuelle tilbud på hjemmetræning",
+    eyebrow: "Tilbud",
+    backgroundPath: hero,
+  });
+
   for (const category of data.categories) {
     const bg = path.join(ROOT, "public", category.image.replace(/^\//, ""));
     await renderCard({
@@ -209,7 +216,7 @@ async function main() {
   }
 
   console.log(
-    `Wrote OG JPEGs to public/og/ (${1 + data.guides.length + data.categories.reduce((n, c) => n + 1 + c.intents.length, 0)} files)`,
+    `Wrote OG JPEGs to public/og/ (${2 + data.guides.length + data.categories.reduce((n, c) => n + 1 + c.intents.length, 0)} files)`,
   );
 }
 

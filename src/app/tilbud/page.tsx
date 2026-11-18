@@ -4,15 +4,42 @@ import { connection } from "next/server";
 import { ProductDealCard } from "@/components/ProductDealCard";
 import { getAllCategories, getCategory } from "@/lib/categories";
 import { getAllDiscountedDeals } from "@/lib/feeds/catalog";
+import { tilbudOgPath } from "@/lib/og";
 import { canonical } from "@/lib/site";
 
 export const revalidate = 21600;
 
+const tilbudDescription =
+  "Aktuelle rabatter på hjemmetræningsmaskiner — se de største tilbud på løbebånd, romaskiner, motionscykler, crosstrainere og mere fra danske partnere.";
+const tilbudImage = tilbudOgPath();
+
 export const metadata: Metadata = {
   title: "Tilbud",
-  description:
-    "Aktuelle rabatter på hjemmetræningsmaskiner — se de største tilbud på løbebånd, romaskiner, motionscykler, crosstrainere og mere fra danske partnere.",
+  description: tilbudDescription,
   alternates: { canonical: canonical("/tilbud") },
+  openGraph: {
+    title: "Tilbud | Fitlist",
+    description: tilbudDescription,
+    url: canonical("/tilbud"),
+    type: "website",
+    locale: "da_DK",
+    siteName: "Fitlist",
+    images: [
+      {
+        url: tilbudImage,
+        width: 1200,
+        height: 630,
+        alt: "Aktuelle tilbud på hjemmetræning — Fitlist",
+        type: "image/jpeg",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Tilbud | Fitlist",
+    description: tilbudDescription,
+    images: [tilbudImage],
+  },
 };
 
 type Props = {
