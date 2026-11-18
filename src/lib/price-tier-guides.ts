@@ -1,8 +1,8 @@
 import type { Guide } from "./guides";
 
 /**
- * Prisloft-guides (under 1k / 10k / 15k + billig maskin-intent)
- * og fase-byggeren (start for ca. 3.000 kr., udbyg i måned 3 og 6).
+ * Prisloft-guides (under 1k / 10k / 15k / Heavy Lifter under 25k + billig
+ * maskin-intent) og fase-byggeren (start for ca. 3.000 kr., udbyg i måned 3 og 6).
  * Kobles til Partner-Ads via feedProductId (live pris + “Se pris”).
  */
 export const priceTierGuides: Guide[] = [
@@ -512,6 +512,8 @@ export const priceTierGuides: Guide[] = [
       "ultimative-home-gym-budget-2026",
       "hjemmetraening-under-1000-kr-2026",
       "komplet-hjemmegym-under-15000-kr-2026",
+      "heavy-lifter-pakken-under-25000-kr-2026",
+      "fase-byggeren-start-for-3000-kr-2026",
       "bedste-romaskine-2026",
       "bedste-spinningcykel-2026",
       "bedste-justerbare-haandvaegte-2026",
@@ -703,7 +705,7 @@ export const priceTierGuides: Guide[] = [
       },
     ],
     howToChoose:
-      "Vil du løbe hjemme + have bænk/håndvægte? Cardio-premium (T56). Er styrke #1, og vil du have smart spin med det samme? Styrke-premium (Valhalla + S1000) — tjek “Se pris”. Garage og allround uden multistation endnu? Allround garage (ZJET + 2×24 kg). Strammere budget: Komplet hjemmegym under 10.000 kr. eller Det ultimative home gym på budget.",
+      "Vil du løbe hjemme + have bænk/håndvægte? Cardio-premium (T56). Er styrke #1, og vil du have smart spin med det samme? Styrke-premium (Valhalla + S1000) — tjek “Se pris”. Garage og allround uden multistation endnu? Allround garage (ZJET + 2×24 kg). Strammere budget: Komplet hjemmegym under 10.000 kr. eller Det ultimative home gym på budget. Vil du op i fuldt power rack, lat og bumper under 25.000 kr.? Heavy Lifter-Pakken.",
     learningSections: [
       {
         heading: "Hvad 15.000 kr. køber, som 10.000 kr. ikke gør",
@@ -792,8 +794,10 @@ export const priceTierGuides: Guide[] = [
     ],
     relatedSlugs: [
       "komplet-hjemmegym-under-10000-kr-2026",
+      "heavy-lifter-pakken-under-25000-kr-2026",
       "ultimative-home-gym-budget-2026",
       "hjemmetraening-under-1000-kr-2026",
+      "fase-byggeren-start-for-3000-kr-2026",
       "bedste-power-rack-squat-rack-2026",
       "bedste-multistation-2026",
       "bedste-loebebaand-2026",
@@ -2059,8 +2063,212 @@ export const priceTierGuides: Guide[] = [
       "bedste-vaegmonteret-kabeltaarn-2026",
       "ultimative-home-gym-budget-2026",
       "komplet-hjemmegym-under-10000-kr-2026",
+      "heavy-lifter-pakken-under-25000-kr-2026",
       "hjemmetraening-under-1000-kr-2026",
       "hjemmetraening-for-begyndere-foerste-90-dage",
+    ],
+  },
+  {
+    slug: "heavy-lifter-pakken-under-25000-kr-2026",
+    title: "Heavy Lifter-Pakken: Professionel kvalitet til under 25.000 kr.",
+    excerpt:
+      "Én semi-pro barbell-pakke under 25.000 kr.: fuldt power rack, lat/kabel-tilføjelse, seriøs bænk og High Impact bumper-sæt — til dig, der ikke vil nøjes med billigt fitnessudstyr.",
+    metaDescription:
+      "Heavy Lifter-Pakken under 25.000 kr. 2026: Odin Power Rack, Valhalla kabeltårn, Valhalla-bænk og High Impact bumper 180 kg. Live priser fra Apuls.",
+    categorySlug: "styrkemaskiner",
+    recommendationsHeading: "Heavy Lifter-Pakken under 25.000 kr.",
+    publishedAt: "2026-11-18",
+    updatedAt: "2026-11-18",
+    intro:
+      "Du er vokset fra “godt nok”-fitnessudstyr. Du vil have et bur, der føles som et center, en bænk der ikke vipper under tung bænkpres, og bumper plates der må ramme gulvet — uden at betale center-priser for hvert tilbehør. Heavy Lifter-Pakken er til den semiprofessionelle eller meget seriøse løfter, der stadig optimerer budgettet: under 25.000 kr. for et fuldt power rack, lat/kabel-tilføjelse, justerbar bænk og et 180 kg High Impact bumper-sæt. Kommer du fra Komplet hjemmegym under 15.000 kr., er det her skiftet fra multistation/cardio-kombi til stang + bur. Live priser afgør — summer “Se pris”, før du bestiller.",
+    criteria: [
+      {
+        title: "Fuldt bur før billigt stativ",
+        description:
+          "Et power rack med fire stolper giver safety, J-hooks og plads til tilbehør. Shopteksten på Odin Power Rack peger på semi-professionel brug — det er klassen under 25k, ikke det billigste squat-stativ. Vil du kun have rack uden lat i samme budget, se Bedste power rack & squat rack 2026.",
+      },
+      {
+        title: "Lat som tilføjelse — ikke et nyt center",
+        description:
+          "Valhalla Kabeltårn PL er vægmonteret og plate loaded: du hænger dine 50 mm-skiver på. Lat pulldown, rows og face pulls uden en anden vægtstak. Væggen skal kunne bære det. Er tårnet for stort, se Bedste kabeltårne og funktionelle trænere.",
+      },
+      {
+        title: "Bænk der kan ind i racket",
+        description:
+          "Valhalla justerbar bænk er rack-kompatibel allround — ikke en freestanding PRO-bænkpres-station med egne stolper. Mål bredden, før du køber. Egne “konkurrence-bænke” med oprejste stolper dobler footprint og æder loftet.",
+      },
+      {
+        title: "50 mm og bumper der må tabes",
+        description:
+          "High Impact 180 kg er olympisk retning med gummiklædte skiver bygget til stød. Et 30 mm-jernsæt passer ikke her. 180 kg er træningsvægt til seriøs progression — ikke et 50 kg “prøvesæt”.",
+      },
+      {
+        title: "Kapacitet: margin på stang og safety",
+        description:
+          "Odin Olympic 220 cm (hvis du opgraderer stangen senere) er oplyst til 450 kg. Nordic Fighter Half Rack Black i rack-guiden er oplyst til 450 kg. Dynamisk load på safety er hårdere end et tal på rammen — køb margin, ikke ego.",
+      },
+      {
+        title: "Live priser kan tippe 25k-loftet",
+        description:
+          "Racket, kabeltårnet og 180 kg-sættet er alle “rigtige” linjer. Tjek “Se pris” og fragt. Tipper summeringen: byt 180 kg til 120 kg High Impact, eller udskyd kabeltårnet — ærlighed før tvangspakke. Elite Power Rack og Ragnarok 4000 alene ligger typisk tæt på eller over hele loftet.",
+      },
+    ],
+    products: [
+      {
+        id: "heavy-lifter-pakke-25k",
+        name: "Heavy Lifter: Power Rack + lat + bænk + 180 kg bumper",
+        badge: "Semi-pro · under 25.000 kr.",
+        summary:
+          "Odin Power Rack som bur-anker, Odin Valhalla Kabeltårn PL til lat/rows, Odin Valhalla justerbar bænk til press i racket, og Odin High Impact Bumper Plates-sæt 180 kg (50 mm, gummi der tåler drop). Samlet typisk under 25.000 kr. ved aktuelle Apuls-priser — summer live, før du betaler. Til dig, der vil squat, bænk og trække tungt hjemme uden billigt “fitnesslegetøj”.",
+        pros: [
+          "Fuldt power rack til semi-pro / mindre center-brug",
+          "Lat og kabel uden ekstra vægtstak (plate load)",
+          "180 kg High Impact — vægt du faktisk kan vokse i",
+          "Bænk + bur + skiver som ét 50 mm-system",
+        ],
+        cons: [
+          "Kræver garage, kælder eller dedikeret rum — ikke stue-legetøj",
+          "Kabeltårn kræver væg, der må bores i",
+          "Live priser kan tippe over 25k — hav 120 kg-sæt som plan B",
+          "Ikke Ragnarok 4000 med alt tilbehør i kassen (det æder typisk hele loftet alene)",
+        ],
+        specs: [
+          { label: "Budgetloft", value: "Under 25.000 kr." },
+          { label: "Rack", value: "Odin Power Rack" },
+          { label: "Lat / kabel", value: "Valhalla Kabeltårn PL" },
+          { label: "Bænk", value: "Valhalla justerbar" },
+          { label: "Stang & skiver", value: "High Impact 180 kg (50 mm)" },
+          { label: "Partner", value: "Apuls.dk" },
+        ],
+        imageUrl:
+          "https://m2.apuls.dk/media/catalog/product/o/d/odin_power_rack_1.jpg",
+        feedProductId: "Apuls.dk:11438",
+        ctaLabel:
+          "Invester i professionelt udstyr – Se finansierings- og leveringsmuligheder hos {partner} →",
+        bundleItems: [
+          {
+            name: "Odin Valhalla Kabeltårn PL",
+            feedProductId: "Apuls.dk:15961",
+            role: "Lat / kabel",
+            imageUrl:
+              "https://m2.apuls.dk/media/catalog/product/o/d/odin-valhalla-kabeltaarn-pl-1.jpg",
+            url: "https://www.partner-ads.com/dk/klikbanner.php?bannerid=46187&partnerid=57983&uid=fitlist&htmlurl=https://apuls.dk/odin-valhalla-kabeltarn-pl",
+          },
+          {
+            name: "Odin Valhalla Justerbar Træningsbænk",
+            feedProductId: "Apuls.dk:16031",
+            role: "Bænk",
+            imageUrl:
+              "https://m2.apuls.dk/media/catalog/product/o/d/odin-valhalla-benhpres-1.jpg",
+          },
+          {
+            name: "Odin High Impact Bumper Plates-sæt 180 kg",
+            feedProductId: "Apuls.dk:13647",
+            role: "Stang & skiver",
+            imageUrl:
+              "https://m2.apuls.dk/media/catalog/product/o/d/odin_high_impact_bumper_plates_v_gtstangss_t_1_5.jpg",
+          },
+        ],
+      },
+    ],
+    howToChoose:
+      "Vil du have stang, bur, lat og bumper under 25.000 kr. i ét hug? Heavy Lifter-Pakken. Er budgettet strammere, eller vil du bygge i faser? Fase-byggeren (start for ca. 3.000 kr.). Stadig cardio + Valhalla-multistation? Komplet hjemmegym under 15.000 kr. Kun rack-sammenligning? Bedste power rack & squat rack 2026. Kun stang og skiver? Bedste vægtstangssæt og bumper plates 2026. Shop via CTA og “Se pris” — tjek finansiering og levering hos partneren.",
+    learningSections: [
+      {
+        heading: "Hvad 25.000 kr. køber, som 15.000 kr. ikke gør",
+        paragraphs: [
+          "Under 15k er sweet spot ofte Valhalla-multistation, bedre cardio eller allround garage med håndvægte. Under 25k kan du skifte til fri vægt som hovedsag: et rigtigt power rack, lat via kabeltårn, og bumper-vægt i tresifret kilo — ikke et 50 kg prøvesæt.",
+          "Du får stadig ikke alt på én gang: Odin Elite Power Rack og Odin Pro Ragnarok 4000 (med lat, multi arms, dips m.m. i kassen) ligger typisk så højt alene, at bænk og skiver ikke er med under samme loft. Heavy Lifter prioriterer komplet system frem for ét overpriset bur.",
+        ],
+      },
+      {
+        heading: "Power rack + lat vs. “alt-i-ét”-bur",
+        paragraphs: [
+          "Ragnarok 4000 er drømmeburet med lat, row, dips og landmine inkluderet — og typisk tæt på hele 25k-budgettet før bænk og skiver. Odin Power Rack + Valhalla PL splitter købet: bur til squat/bænk, vægmontering til kabel. Det er mere montage, men det er sådan, loftet holder til et helt løftesystem.",
+          "Har du kun plads eller budget til ét stort køb, og skiver/bænk venter? Så læs rack-guiden og overvej Elite/Ragnarok som solo-investering — ikke som denne pakke.",
+        ],
+        comparison: {
+          caption: "Tre veje under eller omkring 25k",
+          rowHeaderLabel: "Vej",
+          columns: ["Hvad du får", "Lat", "Skiver i samme loft"],
+          rows: [
+            {
+              label: "Heavy Lifter",
+              cells: ["Rack + bænk + 180 kg", "Valhalla PL", "Ja"],
+            },
+            {
+              label: "Ragnarok 4000 alene",
+              cells: ["Bur med tilbehør", "Inkluderet", "Sjældent"],
+            },
+            {
+              label: "15k-styrke",
+              cells: ["Valhalla-multistation", "I stakken", "Nej (frivægt)"],
+            },
+          ],
+        },
+      },
+      {
+        heading: "Stang, bumper og 450 kg-tallet",
+        paragraphs: [
+          "High Impact-sættet er stang og gummiskiver i 50 mm — bygget til at blive sat ned. Det er derfor, det står i pakken til heavy lifting, ikke et klingende jernsæt.",
+          "Feedet oplyser maks. 450 kg på Odin Olympic Vægtstang 220 cm. Det tal er stangens loft, ikke det kilo, der ligger i 180 kg-sættet. Opgrader stangen senere, hvis du vil have den eksplicitte 450 kg-spec — diameteren skal stadig være 50 mm. Se Bedste vægtstangssæt og bumper plates 2026.",
+        ],
+      },
+      {
+        heading: "Garage, kælder og bolte",
+        paragraphs: [
+          "Pakken hører hjemme på beton med gummi under fødder og plader. I lejet lejlighed er bolte i gulv ofte et no-go, og drop af bumper er et naboproblem. Så er 15k-guiden eller Fase-byggeren det ærligere køb.",
+          "Kabeltårnet skal i væg. Mål loft til pull-ups på racket, og mål bænken ind mellem stolperne, før kasserne kommer.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "Passer hele pakken realistisk under 25.000 kr.?",
+        answer:
+          "Ved aktuelle Apuls-listerpriser på Power Rack, Valhalla PL, Valhalla-bænk og High Impact 180 kg lander summen typisk under loftet. Feeds ændrer sig — klik “Se pris” på alle linjer, læg fragt på, og byt til High Impact 120 kg hvis summeringen tipper.",
+      },
+      {
+        question: "Hvorfor ikke Odin Elite eller Ragnarok 4000?",
+        answer:
+          "Fordi de typisk æder næsten hele (eller mere end) 25k alene. Heavy Lifter er et komplet løftesystem: bur + lat + bænk + vægt. Vil du have ét premium-bur først og vente med skiver, så se Bedste power rack & squat rack 2026.",
+      },
+      {
+        question: "Er Valhalla-bænken “konkurrence-godkendt”?",
+        answer:
+          "Nej — og vi påstår det ikke. Den er den justerbare bænk, der passer i racket under dette loft. Odin PRO Olympic-bænke i feedet er ofte egne stationer med stolper; de fylder som et ekstra rack og spiser budgettet.",
+      },
+      {
+        question: "Får jeg en stang med nålelejer?",
+        answer:
+          "Ikke som et claim vi kan dokumentere i partnerfeedet lige nu. Du får et High Impact olympisk sæt til drop og tung træning. Vil du senere have en stang med oplyst 450 kg maks., så ligger Odin Olympic 220 cm i bumper-guiden.",
+      },
+      {
+        question: "Valhalla-multistation eller Heavy Lifter?",
+        answer:
+          "Multistation (15k-styrke): kabler og maskinøvelser uden at læsse skiver. Heavy Lifter: squat, bænk og dødløft med stang er #1. Mange har Valhalla først og bygger bur senere — eller omvendt.",
+      },
+      {
+        question: "Kan jeg få finansiering og levering?",
+        answer:
+          "Det afgør partneren (typisk Apuls). Brug CTA’en “Invester i professionelt udstyr – Se finansierings- og leveringsmuligheder hos …” og tjek betingelser, fragt og eventuel afhentning på produktsiden.",
+      },
+      {
+        question: "Skal jeg starte med Fase-byggeren i stedet?",
+        answer:
+          "Hvis pengene kommer i bidder: ja. Fase-byggeren starter omkring 3.000 kr. og bygger olympisk rack + bumper over måneder. Har du ~25.000 kr. klar og pladsen, er Heavy Lifter det samlede køb.",
+      },
+    ],
+    relatedSlugs: [
+      "komplet-hjemmegym-under-15000-kr-2026",
+      "komplet-hjemmegym-under-10000-kr-2026",
+      "fase-byggeren-start-for-3000-kr-2026",
+      "bedste-power-rack-squat-rack-2026",
+      "bedste-vaegtstangssaet-bumper-plates-2026",
+      "bedste-justerbar-traeningsbaenk-2026",
+      "bedste-vaegmonteret-kabeltaarn-2026",
+      "ultimative-home-gym-budget-2026",
+      "bedste-multistation-2026",
     ],
   },
 ];

@@ -7427,6 +7427,7 @@ export const guides: Guide[] = [
       "bedste-traeningsmaatte-gulvbeskyttelse-home-gym-2026",
       "bedste-styrkemaskiner-2026",
       "bedste-multistation-2026",
+      "heavy-lifter-pakken-under-25000-kr-2026",
       "ultimative-home-gym-budget-2026",
       "ultimative-udendoers-home-gym-2026",
     ],
@@ -11064,6 +11065,7 @@ export const guides: Guide[] = [
       "bedste-traeningsmaatte-gulvbeskyttelse-home-gym-2026",
       "bedste-sjippetov-traeningsmaatte-lejlighed-2026",
       "bedste-styrkemaskiner-2026",
+      "heavy-lifter-pakken-under-25000-kr-2026",
     ],
   },
   {
