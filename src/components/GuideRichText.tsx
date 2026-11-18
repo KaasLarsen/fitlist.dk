@@ -162,6 +162,21 @@ const GUIDE_LINK_ALIASES: Record<string, string[]> = {
   ],
   "bedste-power-rack-squat-rack-2026": [
     "Bedste power rack & squat rack 2026",
+    "bedste squat racks til hjemmetræning",
+    "oversigten over bedste squat racks til hjemmetræning",
+    "power rack guide",
+  ],
+  "squat-rack-til-lavt-loft-2026": [
+    "Bedste squat rack til lavt loft 2026",
+    "Bedste squat rack til lavt loft",
+    "squat rack til lavt loft",
+    "rack til lav loftshøjde",
+  ],
+  "loftshoejde-til-squat-rack-2026": [
+    "Hvor højt loft skal der være til squat rack?",
+    "Hvor højt loft skal der være til squat rack",
+    "loftshøjde til squat rack",
+    "hvor højt loft til power cage",
   ],
   "bedste-knaevenlig-genoptraening-hjemme-2026": [
     "knæ-/genoptræningsguide",

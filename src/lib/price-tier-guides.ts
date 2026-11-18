@@ -256,7 +256,7 @@ export const priceTierGuides: Guide[] = [
     publishedAt: "2026-11-17",
     updatedAt: "2026-11-17",
     intro:
-      "Under 10.000 kr. kan du bygge et hjemmegym, der faktisk erstatter fitnesscentret — hvis du fordeler pengene rigtigt. Tommelfingerregel: ca. 5–6.000 kr. til cardio-ankeren, 3–3.500 kr. til styrke (bænk, håndvægte eller multistation), og 500–1.000 kr. til gulvbeskyttelse. Tre setups: Cardio-fokus med Reebok ZJET-romaskine, Styrke-fokus med Valhalla 100 kg, og Allround med spinning + bænk + håndvægte. Har du kun 5.000 kr., start med Det ultimative home gym på budget. Har du knap 1.000 kr., se Hjemmetræning under 1.000 kr.",
+      "Under 10.000 kr. kan du bygge et hjemmegym, der faktisk erstatter fitnesscentret — hvis du fordeler pengene rigtigt. Tommelfingerregel: ca. 5–6.000 kr. til cardio-ankeren, 3–3.500 kr. til styrke (bænk, håndvægte eller multistation), og 500–1.000 kr. til gulvbeskyttelse. Tre setups: Cardio-fokus med Reebok ZJET-romaskine, Styrke-fokus med Valhalla 100 kg, og Allround med spinning + bænk + håndvægte. Vil du hellere squat med stang i et rack, start med Bedste power rack & squat rack 2026 — og mål først med Hvor højt loft skal der være til squat rack. Gulvet under det hele: Bedste træningsmåtte til gulvbeskyttelse / home gym 2026. Har du kun 5.000 kr., start med Det ultimative home gym på budget. Har du knap 1.000 kr., se Hjemmetræning under 1.000 kr.",
     criteria: [
       {
         title: "Budget-split: cardio / styrke / gulv",
@@ -271,7 +271,7 @@ export const priceTierGuides: Guide[] = [
       {
         title: "Plads og loft før køb",
         description:
-          "Romaskine kræver skinnelængde i brug. Valhalla kræver loft og fast footprint. Spinning fylder mindre end bånd, men svinghjul + stående sprint vibrerer. Mål rummet — ikke drømmen.",
+          "Romaskine kræver skinnelængde i brug. Valhalla kræver loft og fast footprint. Spinning fylder mindre end bånd, men svinghjul + stående sprint vibrerer. Mål rummet — ikke drømmen. Planlægger du squat rack i stedet for Valhalla, læs Hvor højt loft skal der være til squat rack (eller Bedste squat rack til lavt loft 2026).",
       },
       {
         title: "Simple computere sparer budget til stål",
@@ -514,6 +514,10 @@ export const priceTierGuides: Guide[] = [
       },
     ],
     relatedSlugs: [
+      "bedste-power-rack-squat-rack-2026",
+      "loftshoejde-til-squat-rack-2026",
+      "squat-rack-til-lavt-loft-2026",
+      "bedste-traeningsmaatte-gulvbeskyttelse-home-gym-2026",
       "ultimative-home-gym-budget-2026",
       "hjemmetraening-under-1000-kr-2026",
       "komplet-hjemmegym-under-15000-kr-2026",
@@ -523,7 +527,6 @@ export const priceTierGuides: Guide[] = [
       "bedste-spinningcykel-2026",
       "bedste-justerbare-haandvaegte-2026",
       "bedste-justerbar-traeningsbaenk-2026",
-      "bedste-traeningsmaatte-gulvbeskyttelse-home-gym-2026",
       "bedste-multistation-2026",
     ],
   },

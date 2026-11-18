@@ -55,6 +55,14 @@ export default async function GuidesPage({ searchParams }: Props) {
           >
             Se vores modelguides →
           </Link>
+          {" · "}
+          Emner i dybden:{" "}
+          <Link
+            href="/emner"
+            className="text-accent transition-colors hover:text-accent-dim"
+          >
+            Emneklynger →
+          </Link>
         </p>
 
         <section className="mt-12">

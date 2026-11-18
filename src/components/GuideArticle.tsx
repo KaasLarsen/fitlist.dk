@@ -5,6 +5,7 @@ import { FitlistRating } from "@/components/FitlistRating";
 import { GuideAffiliateBanner } from "@/components/GuideAffiliateBanner";
 import { GuideRichText } from "@/components/GuideRichText";
 import { ProductOfferList } from "@/components/ProductOfferList";
+import { TopicClusterSection } from "@/components/TopicClusterSection";
 import { categoryIntentHref, getCategory } from "@/lib/categories";
 import {
   formatPriceDkk,
@@ -95,6 +96,8 @@ export async function GuideArticle({
         <p className="mt-6 text-base leading-relaxed text-foreground/90">
           <GuideRichText text={guide.intro} currentSlug={guide.slug} />
         </p>
+
+        <TopicClusterSection guide={guide} />
 
         <nav
           aria-label="Indhold i guiden"

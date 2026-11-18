@@ -1,6 +1,7 @@
 import { getAffiliate } from "@/lib/affiliates";
 import { priceTierGuides } from "@/lib/price-tier-guides";
 import { recoveryGuides } from "@/lib/recovery-guides";
+import { strengthClusterGuides } from "@/lib/strength-cluster-guides";
 
 export type GuideCriterion = {
   title: string;
@@ -2899,7 +2900,7 @@ export const guides: Guide[] = [
     publishedAt: "2026-11-04",
     updatedAt: "2026-11-04",
     intro:
-      "Styrketræning hjemme behøver ikke et fuldt center: en solid bænk, et sikkert rack og vægte dækker 80 % af det, de fleste har brug for. Markedet er dog fyldt med tilbehør (benlås, curlpult, små add-ons), der ser vigtige ud — men ikke skal være dit første køb. Denne guide hjælper dig med at starte rigtigt, med fire konkrete anbefalinger og shop-links til vores partnere. Vi anbefaler bevidst kerneudstyr — ikke smårtilbehør.",
+      "Styrketræning hjemme behøver ikke et fuldt center: en solid bænk, et sikkert rack og vægte dækker 80 % af det, de fleste har brug for. Markedet er dog fyldt med tilbehør (benlås, curlpult, små add-ons), der ser vigtige ud — men ikke skal være dit første køb. Denne guide hjælper dig med at starte rigtigt, med fire konkrete anbefalinger og shop-links til vores partnere. Til rack-dybde se Bedste power rack & squat rack 2026 — og mål først med Hvor højt loft skal der være til squat rack, hvis du er i tvivl om kælderen. Vi anbefaler bevidst kerneudstyr — ikke smårtilbehør.",
     criteria: [
       {
         title: "Mål: styrke, hypertrofi eller “bare komme i gang”?",
@@ -2909,7 +2910,7 @@ export const guides: Guide[] = [
       {
         title: "Plads, loftshøjde og gulv",
         description:
-          "Racks kræver loftshøjde til pull-ups og stangen i top. Gulvet skal kunne bære vægt og eventuelle drop (helst ikke over kære naboers soveværelse). Mål rummet, inden du forelsker dig i et halvt center.",
+          "Racks kræver loftshøjde til pull-ups og stangen i top. Gulvet skal kunne bære vægt og eventuelle drop (helst ikke over kære naboers soveværelse). Mål rummet, inden du forelsker dig i et halvt center — se Hvor højt loft skal der være til squat rack, og ved knapt loft Bedste squat rack til lavt loft 2026.",
       },
       {
         title: "Bænk først — eller sæt?",
@@ -3132,6 +3133,9 @@ export const guides: Guide[] = [
       },
     ],
     relatedSlugs: [
+      "bedste-power-rack-squat-rack-2026",
+      "loftshoejde-til-squat-rack-2026",
+      "squat-rack-til-lavt-loft-2026",
       "bedste-multistation-2026",
       "bedste-justerbar-traeningsbaenk-2026",
       "bedste-vaegmonteret-kabeltaarn-2026",
@@ -3665,7 +3669,7 @@ export const guides: Guide[] = [
     publishedAt: "2026-11-04",
     updatedAt: "2026-11-05",
     intro:
-      "Træningsbænken er fundamentet i næsten ethvert styrkerum: bænkpres, skulderpres, rows, hip thrust og mere. En dårlig bænk vipper, knirker eller mangler den vinkel, du faktisk bruger. Her får du fokus på max belastning (dig + vægte), stabilitet, om den har hjul til at flytte, og om decline (negativ hældning) er nødvendigt — plus fire konkrete modeller med shop-links.",
+      "Træningsbænken er fundamentet i næsten ethvert styrkerum: bænkpres, skulderpres, rows, hip thrust og mere. En dårlig bænk vipper, knirker eller mangler den vinkel, du faktisk bruger. Her får du fokus på max belastning (dig + vægte), stabilitet, om den har hjul til at flytte, og om decline (negativ hældning) er nødvendigt — plus fire konkrete modeller med shop-links. Skal bænken stå i et rack, start med Bedste power rack & squat rack 2026, og tjek Hvor højt loft skal der være til squat rack, før du køber et bur til kælderen.",
     criteria: [
       {
         title: "Max belastning (bruger + vægte)",
@@ -3885,6 +3889,8 @@ export const guides: Guide[] = [
       "bedste-justerbare-haandvaegte-2026",
       "bedste-styrkemaskiner-2026",
       "bedste-power-rack-squat-rack-2026",
+      "loftshoejde-til-squat-rack-2026",
+      "squat-rack-til-lavt-loft-2026",
       "bedste-multistation-2026",
       "ultimative-home-gym-budget-2026",
       "bedste-foldbare-kompakte-traeningsmaskiner-2026",
@@ -4173,7 +4179,7 @@ export const guides: Guide[] = [
     publishedAt: "2026-11-04",
     updatedAt: "2026-11-05",
     intro:
-      "Marked for hjemmetræning er overvældende: hundredvis af maskiner, “smart”-skærme og tilbehør, der spiser budgettet, før du har en reel træningsvane. Denne guide giver dig det, de fleste egentlig leder efter — færdige pakkeløsninger. Tre niveauer, der dækker både cardio og styrke, bygget af udstyr du kan købe via vores partnere med live priser. Pakke B under 5.000 kr. er vores Best Value og det, de fleste skal sigte efter, hvis du vil droppe fitnesscentret uden at indrette en garage. Har du et mindre eller større budget? Se også Hjemmetræning under 1.000 kr. og Komplet hjemmegym under 10.000 kr. — eller Komplet hjemmegym under 15.000 kr., hvis garage-setup’et skal have både tung styrke og solid cardio.",
+      "Marked for hjemmetræning er overvældende: hundredvis af maskiner, “smart”-skærme og tilbehør, der spiser budgettet, før du har en reel træningsvane. Denne guide giver dig det, de fleste egentlig leder efter — færdige pakkeløsninger. Tre niveauer, der dækker både cardio og styrke, bygget af udstyr du kan købe via vores partnere med live priser. Pakke B under 5.000 kr. er vores Best Value og det, de fleste skal sigte efter, hvis du vil droppe fitnesscentret uden at indrette en garage. Vil du op i squat rack med safety, se Bedste power rack & squat rack 2026 — og mål loft først med Hvor højt loft skal der være til squat rack (eller Bedste squat rack til lavt loft 2026 i kælder). Har du et mindre eller større budget? Se også Hjemmetræning under 1.000 kr. og Komplet hjemmegym under 10.000 kr. — eller Komplet hjemmegym under 15.000 kr., hvis garage-setup’et skal have både tung styrke og solid cardio.",
     criteria: [
       {
         title: "Cardio vs. Styrke – sådan fordeler du dit budget",
@@ -4493,6 +4499,8 @@ export const guides: Guide[] = [
       "bedste-justerbare-haandvaegte-2026",
       "bedste-justerbar-traeningsbaenk-2026",
       "bedste-power-rack-squat-rack-2026",
+      "loftshoejde-til-squat-rack-2026",
+      "squat-rack-til-lavt-loft-2026",
       "bedste-foldbare-kompakte-traeningsmaskiner-2026",
       "bedste-gaabaand-2026",
       "bedste-styrkemaskiner-2026",
@@ -7242,7 +7250,7 @@ export const guides: Guide[] = [
     publishedAt: "2026-11-05",
     updatedAt: "2026-11-18",
     intro:
-      "Justerbare håndvægte og en bænk får dig langt. Squats, bænkpres med stang og tunge pulls kræver et rack med safety — især når du træner alene i garage eller kælder. Denne guide er den tungere søskende til Det ultimative home gym på budget: hvornår et squat-stativ er nok, hvornår du skal op i 70×70 eller 75×75 mm, og hvad hulmønster og tilbehør betyder, når belastningen bliver seriøs.",
+      "Justerbare håndvægte og en bænk får dig langt. Squats, bænkpres med stang og tunge pulls kræver et rack med safety — især når du træner alene i garage eller kælder. Denne guide er oversigten over bedste squat racks til hjemmetræning: hvornår et squat-stativ er nok, hvornår du skal op i 70×70 eller 75×75 mm, og hvad hulmønster og tilbehør betyder, når belastningen bliver seriøs. Usikker på centimetertallet? Start med Hvor højt loft skal der være til squat rack. Har du lavt loft i kælder eller lejlighed, se Bedste squat rack til lavt loft 2026. Vil du bygge hele rummet billigt, læs Komplet hjemmegym under 10.000 kr. — og stil racket ovenpå den rigtige zone fra Bedste træningsmåtte til gulvbeskyttelse / home gym 2026.",
     criteria: [
       {
         title: "Safety bars / spotter arms",
@@ -7511,6 +7519,13 @@ export const guides: Guide[] = [
           "Bolte i gulv er ofte et no-go i lejede boliger — vælg fritstående med nok stabilitet.",
         ],
       },
+      {
+        heading: "Emneklynge: byg garage-gymmet rigtigt",
+        paragraphs: [
+          "Denne side er navet. Egerne dækker det, folk faktisk googler, før de køber: Hvor højt loft skal der være til squat rack giver dig centimetertallet. Bedste squat rack til lavt loft 2026 er til kælder og knapt loft. Komplet hjemmegym under 10.000 kr. samler budgettet, når pladsen er godkendt. Bedste træningsmåtte til gulvbeskyttelse / home gym 2026 er zonen under racket — før du stiller stål på parket.",
+          "Læs den ege, der matcher dit næste spørgsmål, og kom tilbage hertil, når du skal vælge model, profil og safety.",
+        ],
+      },
     ],
     faqs: [
       {
@@ -7536,12 +7551,12 @@ export const guides: Guide[] = [
       {
         question: "Kan jeg have rack i lejlighed?",
         answer:
-          "Ja, hvis loft, naboer og gulv tillader det. Prioritér controlled lowering, måtter/dækken og undgå at dumpe plader.",
+          "Ja, hvis loft, naboer og gulv tillader det. Prioritér controlled lowering, måtter/dækken og undgå at dumpe plader. Ved lavt loft: se Bedste squat rack til lavt loft 2026.",
       },
       {
         question: "Hvad skal jeg købe sammen med racket?",
         answer:
-          "Justerbar bænk, vægtstang og plader — eller justerbare håndvægte som supplement. Se vores bænk- og håndvægt-guides, og Bedste vægtstangssæt og bumper plates 2026 til stang og skiver.",
+          "Justerbar bænk, vægtstang og plader — eller justerbare håndvægte som supplement. Se vores bænk- og håndvægt-guides, og Bedste vægtstangssæt og bumper plates 2026 til stang og skiver. Gulv: Bedste træningsmåtte til gulvbeskyttelse / home gym 2026.",
       },
       {
         question: "Hvordan ser jeg aktuelle priser?",
@@ -7550,13 +7565,16 @@ export const guides: Guide[] = [
       },
     ],
     relatedSlugs: [
+      "squat-rack-til-lavt-loft-2026",
+      "loftshoejde-til-squat-rack-2026",
+      "komplet-hjemmegym-under-10000-kr-2026",
+      "bedste-traeningsmaatte-gulvbeskyttelse-home-gym-2026",
       "bedste-pull-up-bar-doerribbe-2026",
       "bedste-dip-station-parallettes-2026",
       "bedste-vaegtstangssaet-bumper-plates-2026",
       "bedste-justerbar-traeningsbaenk-2026",
       "bedste-justerbare-haandvaegte-2026",
       "bedste-kettlebells-hjemmetraening-2026",
-      "bedste-traeningsmaatte-gulvbeskyttelse-home-gym-2026",
       "bedste-styrkemaskiner-2026",
       "bedste-multistation-2026",
       "heavy-lifter-pakken-under-25000-kr-2026",
@@ -11988,7 +12006,7 @@ export const guides: Guide[] = [
     publishedAt: "2026-11-11",
     updatedAt: "2026-11-11",
     intro:
-      "En tynd PVC-måtte under et gåbånd beskytter lakken. Den redder ikke fliser eller parket, når en 24 kg håndvægt eller en vægtstang lander. Til et rigtigt home gym skal du tænke i gummigulv: puslespilsfliser, Floor Guards og tykkelse i millimeter — ikke yogamåtte-logik. Denne guide er til tung styrke og drop. Til støj + sjip i lejlighed: se Bedste sjippetov og træningsmåtte til lejligheden.",
+      "En tynd PVC-måtte under et gåbånd beskytter lakken. Den redder ikke fliser eller parket, når en 24 kg håndvægt eller en vægtstang lander. Til et rigtigt home gym skal du tænke i gummigulv: puslespilsfliser, Floor Guards og tykkelse i millimeter — ikke yogamåtte-logik. Denne guide er til tung styrke og drop — inkl. zonen under dit squat rack fra Bedste power rack & squat rack 2026. Bygger du hele setuppet under budgetloftet, se Komplet hjemmegym under 10.000 kr. Til støj + sjip i lejlighed: se Bedste sjippetov og træningsmåtte til lejligheden.",
     criteria: [
       {
         title: "Tykkelse matcher belastningen",
@@ -12193,11 +12211,14 @@ export const guides: Guide[] = [
       },
     ],
     relatedSlugs: [
+      "bedste-power-rack-squat-rack-2026",
+      "komplet-hjemmegym-under-10000-kr-2026",
+      "squat-rack-til-lavt-loft-2026",
+      "loftshoejde-til-squat-rack-2026",
       "bedste-sjippetov-traeningsmaatte-lejlighed-2026",
       "bedste-stepbaenk-plyoboks-2026",
       "bedste-kettlebells-hjemmetraening-2026",
       "bedste-vaegtstangssaet-bumper-plates-2026",
-      "bedste-power-rack-squat-rack-2026",
       "ultimative-udendoers-home-gym-2026",
       "bedste-stoejsvage-traeningsmaskiner-lejlighed-2026",
     ],
@@ -15923,4 +15944,5 @@ export const guides: Guide[] = [
   },
   ...priceTierGuides,
   ...recoveryGuides,
+  ...strengthClusterGuides,
 ];

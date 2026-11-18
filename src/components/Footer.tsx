@@ -49,6 +49,9 @@ export function Footer() {
           <Link href="/guides" className="transition-colors hover:text-foreground">
             Guides
           </Link>
+          <Link href="/emner" className="transition-colors hover:text-foreground">
+            Emneklynger
+          </Link>
           <Link href="/om" className="transition-colors hover:text-foreground">
             Om
           </Link>
