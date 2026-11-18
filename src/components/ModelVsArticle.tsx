@@ -1,17 +1,15 @@
 import Image from "next/image";
 import Link from "next/link";
 import { connection } from "next/server";
+import { FitlistRating } from "@/components/FitlistRating";
 import { GuideAffiliateBanner } from "@/components/GuideAffiliateBanner";
 import { GuideRichText } from "@/components/GuideRichText";
 import { ProductOfferList } from "@/components/ProductOfferList";
 import { categoryIntentHref, getCategory } from "@/lib/categories";
 import {
   formatPriceDkk,
-  getFeedProductById,
   getProductsByCategory,
 } from "@/lib/feeds/catalog";
-import { CYKELPARTNER_MERCHANT } from "@/lib/feeds/cykelpartner-guide-ids";
-import { getCachedCykelpartnerGuideProducts } from "@/lib/feeds/fetch";
 import type { FeedProduct, MachineCategorySlug } from "@/lib/feeds/types";
 import {
   getProductAffiliate,
@@ -21,27 +19,7 @@ import {
   type Guide,
   type GuideProduct,
 } from "@/lib/guides";
-
-async function resolveGuideOffers(
-  products: GuideProduct[],
-): Promise<Map<string, FeedProduct | undefined>> {
-  const ids = new Set<string>();
-  for (const product of products) {
-    if (product.feedProductId) ids.add(product.feedProductId);
-  }
-
-  if ([...ids].some((id) => id.startsWith(`${CYKELPARTNER_MERCHANT}:`))) {
-    await getCachedCykelpartnerGuideProducts();
-  }
-
-  const entries = await Promise.all(
-    [...ids].map(async (id) => {
-      const offer = await getFeedProductById(id);
-      return [id, offer] as const;
-    }),
-  );
-  return new Map(entries);
-}
+import { resolveGuideOffers } from "@/lib/guides/offers";
 
 function isPladsLabel(label: string): boolean {
   const lower = label.toLowerCase();
@@ -101,7 +79,14 @@ function buildSpecRows(products: GuideProduct[]): {
   return rows;
 }
 
-export async function ModelVsArticle({ guide }: { guide: Guide }) {
+export async function ModelVsArticle({
+  guide,
+  offerMap: offerMapProp,
+}: {
+  guide: Guide;
+  /** Pre-resolved offers (from page JSON-LD). Resolved here if omitted. */
+  offerMap?: Map<string, FeedProduct | undefined>;
+}) {
   await connection();
 
   const products = guide.products.slice(0, 2);
@@ -115,7 +100,9 @@ export async function ModelVsArticle({ guide }: { guide: Guide }) {
       limit: 3,
       inStockOnly: true,
     }),
-    resolveGuideOffers(products),
+    offerMapProp
+      ? Promise.resolve(offerMapProp)
+      : resolveGuideOffers(products),
   ]);
 
   const categoryHref = category
@@ -220,6 +207,9 @@ export async function ModelVsArticle({ guide }: { guide: Guide }) {
                   <p className="mt-2 font-display text-xs uppercase tracking-[0.14em] text-accent">
                     {product.badge}
                   </p>
+                ) : null}
+                {product.rating != null ? (
+                  <FitlistRating rating={product.rating} />
                 ) : null}
                 <p className="mt-3 text-sm leading-relaxed text-muted">
                   {product.summary}

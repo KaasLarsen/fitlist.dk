@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { connection } from "next/server";
 import { notFound } from "next/navigation";
 import { ModelVsArticle } from "@/components/ModelVsArticle";
 import {
@@ -7,8 +8,10 @@ import {
   guidePath,
   isModelVs,
 } from "@/lib/guides";
+import { resolveGuideOffers } from "@/lib/guides/offers";
 import { guideOgPath } from "@/lib/og";
-import { canonical, SITE } from "@/lib/site";
+import { buildGuideJsonLd } from "@/lib/schema/guide-jsonld";
+import { canonical } from "@/lib/site";
 
 export const revalidate = 21600;
 
@@ -62,81 +65,24 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
-function guideJsonLd(guide: NonNullable<ReturnType<typeof getGuide>>) {
-  const url = canonical(guidePath(guide));
-  const image = `${SITE}/og/guide-${guide.slug}.jpg`;
-
-  const article = {
-    "@type": "Article",
-    headline: guide.title,
-    description: guide.metaDescription || guide.excerpt,
-    image,
-    datePublished: guide.publishedAt,
-    dateModified: guide.updatedAt,
-    mainEntityOfPage: url,
-    author: {
-      "@type": "Organization",
-      name: "Fitlist",
-      url: SITE,
-    },
-    publisher: {
-      "@type": "Organization",
-      name: "Fitlist",
-      url: SITE,
-    },
-    inLanguage: "da-DK",
-  };
-
-  const faq =
-    guide.faqs.length > 0
-      ? {
-          "@type": "FAQPage",
-          mainEntity: guide.faqs.map((f) => ({
-            "@type": "Question",
-            name: f.question,
-            acceptedAnswer: {
-              "@type": "Answer",
-              text: f.answer,
-            },
-          })),
-        }
-      : null;
-
-  const itemList =
-    guide.products.length > 0
-      ? {
-          "@type": "ItemList",
-          name: `Sammenligning — ${guide.title}`,
-          itemListElement: guide.products.map((product, index) => ({
-            "@type": "ListItem",
-            position: index + 1,
-            name: product.name,
-            description: product.summary,
-            url: `${url}#produkt-${product.id}`,
-          })),
-        }
-      : null;
-
-  return {
-    "@context": "https://schema.org",
-    "@graph": [article, faq, itemList].filter(Boolean),
-  };
-}
-
 export default async function ModelVsPage({ params }: Props) {
   const { slug } = await params;
   const guide = getGuide(slug);
   if (!guide || !isModelVs(guide)) notFound();
+
+  await connection();
+  const offerMap = await resolveGuideOffers(guide.products);
+  const jsonLd = buildGuideJsonLd(guide, offerMap);
 
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify(guideJsonLd(guide)),
+          __html: JSON.stringify(jsonLd),
         }}
       />
-      <ModelVsArticle guide={guide} />
+      <ModelVsArticle guide={guide} offerMap={offerMap} />
     </>
   );
 }

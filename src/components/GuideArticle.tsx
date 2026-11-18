@@ -1,17 +1,15 @@
 import Image from "next/image";
 import Link from "next/link";
 import { connection } from "next/server";
+import { FitlistRating } from "@/components/FitlistRating";
 import { GuideAffiliateBanner } from "@/components/GuideAffiliateBanner";
 import { GuideRichText } from "@/components/GuideRichText";
 import { ProductOfferList } from "@/components/ProductOfferList";
 import { categoryIntentHref, getCategory } from "@/lib/categories";
 import {
   formatPriceDkk,
-  getFeedProductById,
   getProductsByCategory,
 } from "@/lib/feeds/catalog";
-import { CYKELPARTNER_MERCHANT } from "@/lib/feeds/cykelpartner-guide-ids";
-import { getCachedCykelpartnerGuideProducts } from "@/lib/feeds/fetch";
 import type { FeedProduct, MachineCategorySlug } from "@/lib/feeds/types";
 import {
   getProductAffiliate,
@@ -19,35 +17,17 @@ import {
   guidePath,
   isModelGuide,
   type Guide,
-  type GuideProduct,
 } from "@/lib/guides";
+import { resolveGuideOffers } from "@/lib/guides/offers";
 
-async function resolveGuideOffers(
-  products: GuideProduct[],
-): Promise<Map<string, FeedProduct | undefined>> {
-  const ids = new Set<string>();
-  for (const product of products) {
-    if (product.feedProductId) ids.add(product.feedProductId);
-    for (const item of product.bundleItems ?? []) {
-      ids.add(item.feedProductId);
-    }
-  }
-
-  // Én Cykelpartner-hentning før parallelle id-opslag (46 MB feed).
-  if ([...ids].some((id) => id.startsWith(`${CYKELPARTNER_MERCHANT}:`))) {
-    await getCachedCykelpartnerGuideProducts();
-  }
-
-  const entries = await Promise.all(
-    [...ids].map(async (id) => {
-      const offer = await getFeedProductById(id);
-      return [id, offer] as const;
-    }),
-  );
-  return new Map(entries);
-}
-
-export async function GuideArticle({ guide }: { guide: Guide }) {
+export async function GuideArticle({
+  guide,
+  offerMap: offerMapProp,
+}: {
+  guide: Guide;
+  /** Pre-resolved offers (from page JSON-LD). Resolved here if omitted. */
+  offerMap?: Map<string, FeedProduct | undefined>;
+}) {
   // Samme trick som CategoryOffers: undgå at build-time tomme feeds
   // låses i Full Route Cache efter deploy (guides viste “Se tilbud i kategorien”).
   await connection();
@@ -64,7 +44,9 @@ export async function GuideArticle({ guide }: { guide: Guide }) {
       limit: 3,
       inStockOnly: true,
     }),
-    resolveGuideOffers(guide.products),
+    offerMapProp
+      ? Promise.resolve(offerMapProp)
+      : resolveGuideOffers(guide.products),
   ]);
 
   const categoryHref = category
@@ -238,6 +220,9 @@ export async function GuideArticle({ guide }: { guide: Guide }) {
                     <h3 className="mt-2 font-display text-2xl font-medium uppercase tracking-wide text-foreground">
                       {product.name}
                     </h3>
+                    {product.rating != null ? (
+                      <FitlistRating rating={product.rating} />
+                    ) : null}
                     <p className="mt-3 text-muted leading-relaxed">
                       {product.summary}
                     </p>

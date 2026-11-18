@@ -57,6 +57,7 @@ export const recoveryGuides: Guide[] = [
         badge: "Bedste entry",
         summary:
           "Lav indgangspris til at teste vanen: et simpelt isbadekar til hjemmet, når du vil starte med kulde uden at binde dig til premium. Ideelt til “prøv 2–4 uger”, før du opgraderer til isoleret XXL.",
+        rating: 4.7,
         pros: [
           "Meget lav pris — lav risiko at prøve",
           "Nem at stille op og flytte",
@@ -81,6 +82,7 @@ export const recoveryGuides: Guide[] = [
         badge: "Bedst billig",
         summary:
           "Det stærkeste pris/volumen-valg til de fleste haver og terrasser: 375 liter XXL, så du typisk kan sidde med skuldrene under. Klar anbefaling, når søgningen er “isbad til hjemmet” uden køleenhed.",
+        rating: 4.3,
         pros: [
           "375 L — plads til voksen krop",
           "Lav pris ift. volumen",
@@ -106,6 +108,7 @@ export const recoveryGuides: Guide[] = [
         badge: "Bedst samlet",
         summary:
           "Mere plads til lange ben og en mere behagelig siddestilling: 500 liter oval er vores allround-valg, når isbad skal bruges ofte, og du vil undgå at sidde “sammenklemt” i et rundt kar.",
+        rating: 4.8,
         pros: [
           "500 L oval — mere benplads",
           "Bedre komfort til regelmæssig brug",
@@ -131,6 +134,7 @@ export const recoveryGuides: Guide[] = [
         badge: "Bedste premium",
         summary:
           "Til dig, der vil have cold plunge med køleenhed — ikke isposer tre gange om ugen. Komplet Hanki-sæt er det dyre, men ærlige valg, når kulde er en fast del af restitutionsrutinen året rundt.",
+        rating: 4.9,
         pros: [
           "Komplet sæt med køling",
           "Stabil temperatur uden daglig is",
@@ -284,6 +288,7 @@ export const recoveryGuides: Guide[] = [
         badge: "Bedst til vane",
         summary:
           "Nok volumen til at du faktisk sidder korrekt efter et pas — uden at du behøver et premium cold plunge-setup for at teste timing-strategien.",
+        rating: 4.7,
         pros: [
           "375 L til voksen krop",
           "Pris der tillader at eksperimentere",
@@ -306,6 +311,7 @@ export const recoveryGuides: Guide[] = [
         badge: "Bedst til ofte brug",
         summary:
           "Når isbad er en fast del af løbe- eller cardio-ugen: mere plads, mere komfort, færre undskyldninger for at springe over.",
+        rating: 4.6,
         pros: [
           "500 L oval komfort",
           "Bedre til regelmæssige pas",
@@ -328,6 +334,7 @@ export const recoveryGuides: Guide[] = [
         badge: "Når timing er seriøs",
         summary:
           "Til dig, der vil styre temperaturen præcist flere gange om ugen — typisk løbere/cyklister med fast restitutionsrutine, ikke “én gang om måneden”.",
+        rating: 4.4,
         pros: [
           "Stabil temperatur med køling",
           "Passende til frekvent brug",
@@ -463,6 +470,7 @@ export const recoveryGuides: Guide[] = [
         badge: "Aktiv restitution",
         summary:
           "Let gang under podcast eller arbejde: walking pad er det mest “snyde-agtige” restitutionsværktøj til hjemmet, fordi det ikke føles som træning — men stadig får blodet rundt.",
+        rating: 4.7,
         pros: [
           "Lav intensitet, høj konsistens",
           "Kompakt til lejlighed",
@@ -486,6 +494,7 @@ export const recoveryGuides: Guide[] = [
         badge: "Bedst foam roller",
         summary:
           "Klassisk grid-roller til lår, balder og ryg — det mest brugte “jeg er øm”-grej i hjemmegymmet. Kort session efter pas eller om morgenen dagen efter.",
+        rating: 4.6,
         pros: [
           "Gennemtestet grid-design",
           "God til store muskelgrupper",
@@ -508,6 +517,7 @@ export const recoveryGuides: Guide[] = [
         badge: "Lokal massage",
         summary:
           "Kompakt percussion til lægge, balder og nakke, når foam roller ikke rammer rigtigt. God “spot treatment” efter tung styrke eller lange løbeture.",
+        rating: 4.4,
         pros: [
           "Præcis på lokale områder",
           "Kompakt og nem at bruge",
@@ -530,6 +540,7 @@ export const recoveryGuides: Guide[] = [
         badge: "Budget roller",
         summary:
           "Når du vil have en grid-roller uden at betale premium: Odin Grid er et ærligt entry-point til daglig mobilisering og let restitution derhjemme.",
+        rating: 4.3,
         pros: [
           "Lav pris",
           "Grid-overflade til bedre greb",
@@ -658,6 +669,7 @@ export const recoveryGuides: Guide[] = [
         badge: "Bedst massagepistol",
         summary:
           "Kompakt Hyperice-pistol til dig, der vil have mærkevare-kvalitet uden fuld Pro-pris. Stærkt valg, når beslutningen er “jeg vil have en rigtig massagepistol”.",
+        rating: 4.7,
         pros: [
           "Kompakt og nem at styre",
           "Hyperice-økosystem og kvalitet",
@@ -681,6 +693,7 @@ export const recoveryGuides: Guide[] = [
         badge: "Bedst pris/kvalitet pistol",
         summary:
           "Solid allround-pistol til hjemmet, når du vil have percussion uden Hyperice-premium. God “første rigtige pistol” til styrke- og løbeømhed.",
+        rating: 4.3,
         pros: [
           "Skarp pris ift. funktion",
           "Klar til daglig hjemmebrug",
@@ -703,6 +716,7 @@ export const recoveryGuides: Guide[] = [
         badge: "Bedste billige pistol",
         summary:
           "Mini-pistol til at teste, om percussion overhovedet er dig — uden at sprænge budgettet. Ideel, hvis du allerede har en roller og vil supplere.",
+        rating: 4.3,
         pros: [
           "Lav indgangspris",
           "Kompakt til taske/skuffe",
@@ -725,6 +739,7 @@ export const recoveryGuides: Guide[] = [
         badge: "Bedst foam roller",
         summary:
           "Standardreferencen blandt grid-rollers: god balance mellem hårdhed, greb og holdbarhed til lår, balder og ryg.",
+        rating: 4.3,
         pros: [
           "Gennemtestet design",
           "Bedre greb end glatte budget-ruller",
@@ -747,6 +762,7 @@ export const recoveryGuides: Guide[] = [
         badge: "Premium roller",
         summary:
           "Blackroll er favoritten hos mange fys/trænere: ærlig densitet, god finish og et brand, der signalerer “jeg ruller ordentligt” — uden elektronik.",
+        rating: 4.9,
         pros: [
           "Kendt kvalitet",
           "God medium hårdhed til de fleste",
@@ -769,6 +785,7 @@ export const recoveryGuides: Guide[] = [
         badge: "Bedste billige roller",
         summary:
           "Når svaret er foam roller, og budgettet er stramt: Odin Grid giver dig grid-overflade til under 100–150 kr.-klassen hos partneren.",
+        rating: 4.3,
         pros: [
           "Meget lav pris",
           "Grid-mønster",
@@ -922,6 +939,7 @@ export const recoveryGuides: Guide[] = [
         badge: "Bedst samlet",
         summary:
           "Vores default-anbefaling til løbere og cyklister, der vil have ægte 6-kammer kompression derhjemme uden at hoppe direkte til elite-prisen. Standard-størrelse til de fleste ben.",
+        rating: 4.8,
         pros: [
           "6 kamre — ordentlig kompressionsbølge",
           "Stærk pris/ydelse i klassen",
@@ -945,6 +963,7 @@ export const recoveryGuides: Guide[] = [
         badge: "Bedst til lange ben",
         summary:
           "Samme Pro6-system i Large — vælg den, når Standard ikke dækker læg/lår korrekt. Pasform er vigtigere end “nyere model”.",
+        rating: 4.6,
         pros: [
           "Samme 6-kammer setup",
           "Bedre pasform til længere ben",
@@ -968,6 +987,7 @@ export const recoveryGuides: Guide[] = [
         badge: "Bedst mobil",
         summary:
           "Når støvlerne skal kunne følge med til sommerhus, klubhus eller sofa uden fast stikkontakt ved sædet. Portable er værdien, hvis frihed er grunden til, at du overhovedet bruger dem.",
+        rating: 4.4,
         pros: [
           "Batteri / portabilitet",
           "Samme Pro6-tænkning",
@@ -991,6 +1011,7 @@ export const recoveryGuides: Guide[] = [
         badge: "Bedste premium",
         summary:
           "Til dig med høj volumen, der vil have det bedste i REECOVER-linjen. Elite2 er pengene værd, når Pro6 allerede giver mening — og du mærker begrænsningen.",
+        rating: 4.9,
         pros: [
           "Premium finish og trykoplevelse",
           "Til den købestærke, frekvente bruger",

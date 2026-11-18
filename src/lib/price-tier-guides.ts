@@ -58,6 +58,7 @@ export const priceTierGuides: Guide[] = [
         badge: "Ca. 600–800 kr.",
         summary:
           "Ascendic elastiksæt med håndtag som kernestyrke, plus Odin yogamåtte, ab wheel og dørribbe Pro. Helkrop uden vægtstak — press, rows, hangs, core og gulvarbejde i et hjørne. Typisk samlet omkring 600–800 kr. før fragt.",
+        rating: 4.7,
         pros: [
           "Helkropsstyrke uden tungt grej",
           "Fylder minimalt i kollegieværelse/lejlighed",
@@ -104,6 +105,7 @@ export const priceTierGuides: Guide[] = [
         badge: "Ca. 800–950 kr.",
         summary:
           "Ascendic sjippetov til korte, hårde puls-pas, Odin justerbar kettlebell op til 12 kg til swings/goblets, og yogamåtte til gulv og core. Til løberen, der vil supplere — eller den, der vil have cardio uden maskine. Typisk omkring 800–950 kr.",
+        rating: 4.6,
         pros: [
           "Hurtig cardio uden maskine",
           "Kettlebell giver ægte styrke/conditioning",
@@ -299,6 +301,7 @@ export const priceTierGuides: Guide[] = [
         badge: "Cardio-anker",
         summary:
           "Reebok ZJET Rower som helkrops-cardio-anker, Odin Floor Guards 8 stk. under maskinen, og Odin Multi foldbar bænk til press/rows på styrkedage. Typisk den pakke, der erstatter “jeg skal bare have pulsen op” uden at droppe al styrke.",
+        rating: 4.7,
         pros: [
           "Helkropscardio med kendt brand-romaskine",
           "Foldbar bænk til styrke uden ekstra rum",
@@ -338,6 +341,7 @@ export const priceTierGuides: Guide[] = [
         badge: "Styrke-anker",
         summary:
           "Odin Valhalla Home Gym 100 kg som multifunktionel styrkecentrale plus Valhalla justerbar bænk og Floor Guards 8 stk. Cardio tilføjes senere (cykel/romaskine) — her går pengene til progressiv styrke uden at læsse skiver hver øvelse.",
+        rating: 4.6,
         pros: [
           "100 kg vægtstak — mange øvelser",
           "Dedikeret Valhalla-bænk",
@@ -379,6 +383,7 @@ export const priceTierGuides: Guide[] = [
         badge: "Best Value allround",
         summary:
           "Titan LIFE Spinning S11 til intervaller og zone-2, Odin Multi foldbar bænk, Odin justerbare håndvægte 20 kg (2×10) og Floor Guards 8 stk. Den pakke, der minder mest om “lidt af det hele”, når du hverken vil all-in på Valhalla eller kun ro.",
+        rating: 4.4,
         pros: [
           "Cardio + traditionel styrke i ét køb",
           "Spinning-følelse til intervaller",
@@ -574,6 +579,7 @@ export const priceTierGuides: Guide[] = [
         badge: "Løbebånd-anker",
         summary:
           "Titan LIFE T56 som seriøst hjemmeløbebånd, Floor Guards 8 stk., Odin Multi foldbar bænk og Odin justerbare håndvægte 20 kg. Til dig, der vil kunne løbe/jogge hjemme og stadig lave press/rows — uden Valhalla-footprint.",
+        rating: 4.7,
         pros: [
           "Ægte løbebånd i midrange-klassen",
           "Styrke med bænk + håndvægte inkluderet",
@@ -620,6 +626,7 @@ export const priceTierGuides: Guide[] = [
         badge: "Styrke + smart spin",
         summary:
           "Odin Valhalla Home Gym 100 kg og Valhalla-bænk som styrkekerne, plus Odin S1000 spinning (Kinomap & Zwift) som cardio-add. Når styrke er hovedsagen, men du vil have rigtig interval-cykel uden at vente på “fase 2”. Tjek live priser — pakken kan ligge tæt på loftet.",
+        rating: 4.6,
         pros: [
           "100 kg multistation + dedikeret bænk",
           "S1000 til spin/Zwift uden Peloton-lock-in",
@@ -663,6 +670,7 @@ export const priceTierGuides: Guide[] = [
         badge: "Garage allround",
         summary:
           "Reebok ZJET Rower, Odin Valhalla justerbar bænk, Odin Justerbare Håndvægte Sæt 2×24 kg og Floor Guards 20 stk. Helkropscardio, seriøs fri vægt og et gulv, der faktisk dækker zonen — sweet spot til garage/kælder under 15k.",
+        rating: 4.4,
         pros: [
           "ZJET som cardio-anker",
           "2×24 kg dækker de fleste i flere år",
@@ -859,6 +867,7 @@ export const priceTierGuides: Guide[] = [
         badge: "Bedst under 4.000",
         summary:
           "Kompakt ægte budget-løbebånd med automatisk hældning — vores hovedanbefaling under 4.000 kr., når du vil kunne jogge/løbe let hjemme uden midrange-pris. Ikke et walking pad. Dyk ned i Ascendic 7021 Løbebånd — modelguide 2026 for dybden.",
+        rating: 4.3,
         pros: [
           "Ægte løbebånd under midrange-pris",
           "Automatisk hældning",
@@ -886,6 +895,7 @@ export const priceTierGuides: Guide[] = [
         badge: "Bedste fold-budget",
         summary:
           "Foldbart iHero/VeloraFit-bånd med app/stigning-vinkel — skarp, når tilbuddet frister, og gulvet skal frigives efter pas. Ærlig entry: fin til gang/let jog, ikke center-ambitioner. Se VeloraFit Foldbart Løbebånd — modelguide 2026.",
+        rating: 4.3,
         pros: [
           "Fold sparer plads",
           "Ofte skarp tilbudspris",
@@ -913,6 +923,7 @@ export const priceTierGuides: Guide[] = [
         badge: "Titan-entry",
         summary:
           "Titan-entry, når du vil have et mere “klassisk” hjemmebånd end app-fold-segmentet, og prisen stadig lander under loftet. Tjek max-hastighed, dæk og bruger vægt — og sammenlign med 7021 på “Se pris”.",
+        rating: 4.4,
         pros: [
           "Titan Life-linjer med fri fragt hos partner",
           "Mere “løbebånd” end walking pad",
@@ -938,6 +949,7 @@ export const priceTierGuides: Guide[] = [
         badge: "Bedste fold (tjek pris)",
         summary:
           "Når båndet skal kunne forsvinde under sofa/seng: Reebok-fold med kendt brand. Ofte nær eller over 4.000 kr. — badge gælder kun, hvis live pris er under loftet. Ellers: spar op, eller vælg VeloraFit. Se Reebok i-Run 4.5 Løbebånd — modelguide 2026.",
+        rating: 4.3,
         pros: [
           "Flad fold under møbel",
           "Kendt brand",
@@ -1108,6 +1120,7 @@ export const priceTierGuides: Guide[] = [
         badge: "Bedste billige",
         summary:
           "Skarp indgang til walking pad-vanen. Kompakt, prisbevidst og fin til skridt under arbejde, når du ikke behøver stigning endnu. Til dig, der skal teste desk walking uden at bruge næsten hele loftet.",
+        rating: 4.3,
         pros: [
           "Lav indgangspris",
           "Kompakt footprint",
@@ -1133,6 +1146,7 @@ export const priceTierGuides: Guide[] = [
         badge: "Bedst samlet under 2.500",
         summary:
           "Fitlist-favoritten til lejlighed og hjemmekontor: gangtempo, kompakt footprint, og en mere “færdig” pad-oplevelse end den absolut billigste no-name. Se Ascendic Essential Walking Pad — modelguide 2026.",
+        rating: 4.8,
         pros: [
           "Stærkt lejlighedsvalg",
           "Kompakt og desk-venlig",
@@ -1161,6 +1175,7 @@ export const priceTierGuides: Guide[] = [
         badge: "Tæt på loftet",
         summary:
           "Titan-opgradering, når Essential/Classic føles for spinkel, og prisen stadig lander under (eller lige omkring) 2.500 kr. Tjek “Se pris” — W10 er “opgrader hvis under loftet”, ikke en garanti hver uge.",
+        rating: 4.4,
         pros: [
           "Titan Life-linjer",
           "Mere “færdig” end ren no-name entry",
@@ -1186,6 +1201,7 @@ export const priceTierGuides: Guide[] = [
         badge: "Bedste med stigning",
         summary:
           "Når flad gang er blevet vane, og du vil have mere træning uden at hæve farten: 15 % hældning og fokus på støjsvag motor. God til dem, der allerede går dagligt. Tjek at live pris stadig er under 2.500 kr.",
+        rating: 4.3,
         pros: [
           "15 % stigning = mere intensitet",
           "Støjsvag motor i fokus",
@@ -1346,6 +1362,7 @@ export const priceTierGuides: Guide[] = [
         badge: "Bedste billige",
         summary:
           "Prisbevidst opret kondicykel til skånsom cardio uden stor investering. Den mest ærilige “kom i gang”-cykel under 3.000 kr., når fold ikke er hard requirement. Se Titan Life B35 Motionscykel — modelguide 2026.",
+        rating: 4.3,
         pros: [
           "Lav indgangspris",
           "Stabil motionscykel til begynder-vane",
@@ -1371,6 +1388,7 @@ export const priceTierGuides: Guide[] = [
         badge: "Bedste fold",
         summary:
           "Når gulvet skal tilbage efter pas: foldbar Ascendic med ryglæn til skånsom, kompakt motion i små boliger. Kompromis på “fuldsize”-følelse — gevinst på plads. Se Ascendic 8001 Foldbar Motionscykel — modelguide 2026.",
+        rating: 4.5,
         pros: [
           "Fold sparer plads",
           "Ryglæn til mere komfortabel let motion",
@@ -1398,6 +1416,7 @@ export const priceTierGuides: Guide[] = [
         badge: "Budget spin (tjek pris)",
         summary:
           "Når du vil have spinning-følelse og intervaller derhjemme til skarp pris. Medtag kun, hvis “Se pris” lander under 3.000 kr. — ellers er det Bedste spinningcykel 2026-territorium, ikke denne loft-guide. Hårdere saddel/position end B35.",
+        rating: 4.3,
         pros: [
           "Spinning-orienteret træning",
           "God til intervaller",
@@ -1564,6 +1583,7 @@ export const priceTierGuides: Guide[] = [
         badge: "Bedste billige",
         summary:
           "Prisvenlig magnet-indgang til roning hjemme. Til dig, der vil prøve disciplinen eller træne lettere uden midrange fra dag ét — ærlig starter, ikke livslang premium.",
+        rating: 4.3,
         pros: [
           "Lav indgangspris",
           "Magnet — ofte roligere end luft",
@@ -1589,6 +1609,7 @@ export const priceTierGuides: Guide[] = [
         badge: "Bedst stille entry",
         summary:
           "Magnet-entry med Ascendic-fokus på stilhed og hjemmebrug — stærkt lejlighedsvalg, når du vil lære roning uden luftvifte. Se Ascendic 6004 Romaskine — modelguide 2026.",
+        rating: 4.6,
         pros: [
           "Magnetisk og lejlighedsvenlig",
           "Skarp entry-pris",
@@ -1616,6 +1637,7 @@ export const priceTierGuides: Guide[] = [
         badge: "Bedste kompakt mid",
         summary:
           "Kompakt magnet midrange, når R10/6004 føles for “entry”, og du vil have en mere færdig daglig maskine under 5k-loftet. God balance mellem stilhed, plads og brugbarhed.",
+        rating: 4.5,
         pros: [
           "Magnetisk og lejlighedsvenlig",
           "Kompakt footprint ift. mange mid",
@@ -1641,6 +1663,7 @@ export const priceTierGuides: Guide[] = [
         badge: "Bedste værdi (tjek pris)",
         summary:
           "Stærkt allround-valg med kendt brand — ofte nær eller over 5.000 kr. Medtag kun, hvis live pris er under loftet; ellers er det Komplet hjemmegym under 10.000 kr. / Bedste romaskine 2026-territorium. God, når du vil have mere maskine end ren entry.",
+        rating: 4.3,
         pros: [
           "Stærkt allround-valg til hjemmet",
           "Kendte Reebok-linjer",
@@ -1764,7 +1787,7 @@ export const priceTierGuides: Guide[] = [
     categorySlug: "styrkemaskiner",
     recommendationsHeading: "Tre faser — køb i rækkefølge",
     publishedAt: "2026-11-17",
-    updatedAt: "2026-11-17",
+    updatedAt: "2026-11-18",
     intro:
       "Mange har ikke 10.000–20.000 kr. klar. De vil starte, og købe mere når lønnen kommer. Problemet er rækkefølgen. En stang uden skiver, et 30 mm-sæt til et olympisk rack, eller et kabeltårn før bænken er brugt, er penge der skal købes om. Denne guide er indkøbsplanen: tre faser, med noget du kan træne på imens. Fase 1 er justerbare håndvægte og en træningsbænk, typisk omkring 3.000 kr. Fase 2 i måned 3 er et squat-stativ med safety og en olympisk stang med skiver. Fase 3 i måned 6 er enten flere 50 mm-skiver eller et plate-loadet kabeltårn — ikke begge dele i samme lønning.",
     criteria: [
@@ -1806,6 +1829,7 @@ export const priceTierGuides: Guide[] = [
         badge: "Måned 1 · ca. 3.000 kr.",
         summary:
           "Odin Multi foldbar bænk plus Odin justerbare håndvægte 2×24 kg. Bænken er den billige del. Håndvægtene er det, der skal holde i flere år: 3–24 kg, 12 trin, et par fra start. Samlet typisk omkring 3.000 kr. Summer live-priserne, før du betaler. Ryger de klart over ca. 3.500 kr., så er 20 kg-sættet i Bedste justerbare håndvægte 2026 nødløsningen — og kun den.",
+        rating: 4.6,
         pros: [
           "Helkrop med press, rows og squat-varianter fra uge 1",
           "24 kg pr. hånd, så du ikke skifter sæt i måned 4",
@@ -1847,6 +1871,7 @@ export const priceTierGuides: Guide[] = [
         badge: "Måned 3",
         summary:
           "Odin Squat Rack med safetybars, plus Odin Olympic Bumper-sæt 50 kg: 220 cm stang og bumper plates i 50 mm. En nøgen stang uden skiver træner ingenting. Et 30 mm-jernsæt passer ikke på det her rack. Samlet typisk omkring 3.500–4.000 kr. oven i fase 1. Mål bænken ind i stativet og loftshøjden, før kasserne kommer.",
+        rating: 4.7,
         pros: [
           "Safety bars til squat og bænk alene",
           "Stang og skiver i samme ordre — 50 mm",
@@ -1886,6 +1911,7 @@ export const priceTierGuides: Guide[] = [
         badge: "Måned 6 · vælg dette eller kabel",
         summary:
           "Odin Olympic Bumper 10 kg, 50 mm, solgt som 1 stk. Køb to, så der er lige meget på hver side — typisk omkring 300 kr. pr. skive. Det er samme hul som stangen fra fase 2. Køb ikke et nyt vægtstangssæt: det er en stang mere, du allerede har. Er 10 kg allerede let på dine tungeste sæt, så tag 15 eller 20 kg i samme Odin Olympic-linje. Stadig to stk., stadig uden ny stang.",
+        rating: 4.4,
         pros: [
           "Samme 50 mm som fase 2-stangen",
           "Bumper, så skiven må sættes ned",
@@ -1915,6 +1941,7 @@ export const priceTierGuides: Guide[] = [
         badge: "Måned 6 · vælg dette eller skiver",
         summary:
           "Odin Valhalla Kabeltårn PL er vægmonteret og plate loaded: du hænger fase 2-skiverne på, i stedet for at købe en ny vægtstak. Lat pulldown, rows og face pulls, som håndvægtene ikke rammer lige så godt. Typisk omkring 3.000 kr. for tårnet. Væggen skal kunne bære det. Er tårnet for stort, så se den mindre vægstation i Bedste kabeltårne og funktionelle trænere (2026).",
+        rating: 4.4,
         pros: [
           "Bruger skiverne, du allerede har",
           "Ingen vægtstak, der dublerer jernet",
@@ -1941,11 +1968,29 @@ export const priceTierGuides: Guide[] = [
     ],
     howToChoose:
       "Måned 1: bænken og 2×24 kg. Måned 3: safety-racket og OL-sættet, ikke en nøgen stang og ikke 30 mm. Måned 6: enten to ens 50 mm-skiver, eller Valhalla PL — ikke begge. Vil du sammenligne modellerne hver for sig, så læs Bedste justerbare håndvægte 2026, Bedste justerbare træningsbænk 2026, Bedste power rack & squat rack 2026, Bedste vægtstangssæt og bumper plates 2026 og Bedste kabeltårne og funktionelle trænere (2026). Har du 5.000 kr. med det samme og også vil have cardio, se Det ultimative home gym på budget.",
+    howToSteps: [
+      {
+        name: "Måned 1 — håndvægte og bænk",
+        text: "Køb Odin Multi foldbar bænk og justerbare håndvægte 2×24 kg (typisk ca. 3.000 kr. samlet). Træn press, rows og squat-varianter i mindst to måneder, før du køber rack. Summer live-priserne; ryger de klart over ca. 3.500 kr., er 20 kg-sættet nødløsningen.",
+      },
+      {
+        name: "Måned 3 — squat-stativ og olympisk sæt",
+        text: "Køb squat-stativ med safety bars plus olympisk bumper-sæt (50 mm stang og skiver). Mål at bænken fra fase 1 kan stå i stativet, og tjek loftshøjde til 220 cm stang. Undgå nøgen stang uden skiver og undgå 30 mm-jern.",
+      },
+      {
+        name: "Måned 6 — vælg skiver eller kabel",
+        text: "Vælg ét: enten to ens 50 mm bumper-skiver (start med 2×10 kg), eller et plate-loadet kabeltårn der bruger skiverne du har. Køb ikke begge i samme lønning, og køb ikke et nyt vægtstangssæt med ekstra stang.",
+      },
+      {
+        name: "Hold 50 mm hele vejen",
+        text: "Alle skiver og stænger i planen er 50 mm. Adaptere er et plaster. Når stativ, stang og evt. kabel sidder, kan du udvide med cardio eller flere skiver uden at smide fase 1–2 ud.",
+      },
+    ],
     learningSections: [
       {
         heading: "Hvorfor rækkefølgen er hele pointen",
         paragraphs: [
-          "Et hjemmegym til 15.000 kr. købt på én gang er fint, hvis pengene og pladsen er der. De fleste, der skriver til os, har lønnen i bidder. Så er den dyre fejl ikke “for lidt udstyr”. Det er udstyr, der ikke passer sammen, når næste løn kommer.",
+          "Start med det direkte svar: køb i tre faser — håndvægte og bænk i måned 1 (ca. 3.000 kr.), squat-stativ med safety og olympisk sæt i måned 3, og enten ekstra 50 mm-skiver eller kabeltårn i måned 6. Et hjemmegym til 15.000 kr. på én gang er fint, hvis pengene er der; de fleste har lønnen i bidder, og den dyre fejl er udstyr der ikke passer sammen.",
           "Fase 1 kan stå alene i to måneder. Fase 2 bygger oven på bænken. Fase 3 bruger stangen eller skiverne, du allerede har. Ingen fase kræver, at du smider den forrige ud.",
         ],
       },
@@ -2120,6 +2165,7 @@ export const priceTierGuides: Guide[] = [
         badge: "Semi-pro · under 25.000 kr.",
         summary:
           "Odin Power Rack som bur-anker, Odin Valhalla Kabeltårn PL til lat/rows, Odin Valhalla justerbar bænk til press i racket, og Odin High Impact Bumper Plates-sæt 180 kg (50 mm, gummi der tåler drop). Samlet typisk under 25.000 kr. ved aktuelle Apuls-priser — summer live, før du betaler. Til dig, der vil squat, bænk og trække tungt hjemme uden billigt “fitnesslegetøj”.",
+        rating: 4.9,
         pros: [
           "Fuldt power rack til semi-pro / mindre center-brug",
           "Lat og kabel uden ekstra vægtstak (plate load)",

@@ -30,6 +30,11 @@ export type GuideProduct = {
   /** Fx "Bedst samlet", "Bedste billige" */
   badge?: string;
   summary: string;
+  /**
+   * Fitlists redaktionelle score 1.0–5.0 (ét decimal).
+   * Synlig i UI og i Product/Review JSON-LD.
+   */
+  rating?: number;
   pros: string[];
   cons: string[];
   specs: GuideSpec[];
@@ -49,6 +54,11 @@ export type GuideProduct = {
    * Uden feltet bruges "Se pris hos {shop}".
    */
   ctaLabel?: string;
+};
+
+export type GuideHowToStep = {
+  name: string;
+  text: string;
 };
 
 export type GuideComparisonRow = {
@@ -110,6 +120,11 @@ export type Guide = {
   howToChoose: string;
   learningSections: GuideSection[];
   faqs: GuideFaq[];
+  /**
+   * Strukturerede trin til HowTo JSON-LD (fx fase-bygger / pladsguides).
+   * Når sat, emits HowTo i schema ud over Article/FAQ.
+   */
+  howToSteps?: GuideHowToStep[];
   relatedSlugs?: string[];
 };
 
@@ -281,6 +296,7 @@ export const guides: Guide[] = [
         badge: "Bedst til lejlighed (gå)",
         summary:
           "Gåbånd er den realistiske vej til cardio i lejlighed, når du frygter støj fra et rigtigt løbebånd. Ascendic Essential Walking Pad kører i gangtempo (typisk op til ca. 6 km/t), så skridtene — og vibrationerne — forbliver milde. Et støjsvagt gåbånd til lejlighed, når målet er skridt og zone 2, ikke sprint.",
+        rating: 4.5,
         pros: [
           "Lav hastighed = markant mindre strukturel støj end løbebånd",
           "Kompakt footprint til små hjem",
@@ -307,6 +323,7 @@ export const guides: Guide[] = [
         badge: "Stillest (cykel)",
         summary:
           "Motionscykler er den nemmeste kategori i lejlighed: remtræk og magnetisk modstand betyder, at en high-end spinningcykel som Titan LIFE S72 typisk høres overhovedet ikke — selv ved aftentræning. Det er svaret på “motionscykel der ikke larmer”, når du vil have rigtig træning uden airbike-larm.",
+        rating: 4.6,
         pros: [
           "Magnet/spinning-setup bygget til hjemmet",
           "Remtræk uden kæderaslen",
@@ -333,6 +350,7 @@ export const guides: Guide[] = [
         badge: "Kompakt & stille (roning)",
         summary:
           "Romaskine med magnetmodstand er den mest kompakte helkropsløsning til lejlighed — især når den kan rejses lodret efter brug. Masterfit 170 Rower er et støjsvagt alternativ til kæde- og luftromaskiner: mindre “rumlen” end mange entry-modeller, og uden ventilator-lyden fra Concept2-style luft.",
+        rating: 4.5,
         pros: [
           "Magnetmodstand — langt stillere end luft",
           "Helkrop uden løbestød i gulvet",
@@ -359,6 +377,7 @@ export const guides: Guide[] = [
         badge: "Obligatorisk underlag",
         summary:
           "Brugere, der søger støjsvag træningsmaskine til lejlighed, køber næsten altid også beskyttelse. En gulvmåtte til crosstrainer/motionscykel som Titan Life Floor Guard Mat tager vibrationer, beskytter laminat og er det billigste “upgrade”, der faktisk mærkes nedenunder.",
+        rating: 4.3,
         pros: [
           "Dæmper strukturel støj til etageadskillelsen",
           "Beskytter gulv mod slid og sved",
@@ -384,6 +403,7 @@ export const guides: Guide[] = [
         badge: "Tilbehør til gåbånd",
         summary:
           "Til Ascendic Essential og andre gåbånd: en dedikeret underlagsmåtte (ca. walking pad-format) er obligatorisk i lejlighed. Den fanger motorvibration og skridt, før de når betonen — og beskytter gulvet under daglig gang.",
+        rating: 4.1,
         pros: [
           "Match til walking pad-footprint",
           "Absorberer skridt og motorvibration",
@@ -552,6 +572,7 @@ export const guides: Guide[] = [
         badge: "Under sofaen",
         summary:
           "Det ultimative kompromis til lejligheden eller det lille kontor. Med sit ultra-flade design kan Ascendic Essential Walking Pad skubbes direkte under de fleste sofaer eller senge, når arbejdsdagen eller filmen er slut. Fylder minimalt i højden, vejer utrolig lidt og leveres med fjernbetjening — perfekt til skridt uden et kæmpe skrummel af et løbebånd. Aktuelt stærkt nedsat hos partner.",
+        rating: 4.3,
         pros: [
           "Ultra-fladt footprint — under sofa/seng hos mange",
           "Lav vægt, nem at vippe og rulle for én person",
@@ -578,6 +599,7 @@ export const guides: Guide[] = [
         badge: "Lodret opbevaring",
         summary:
           "Romaskiner er kendt for at være meget lange, hvilket skræmmer mange med mindre stuer. Masterfit 170 Rower løser det elegant ved at være fuldstændig foldbar: løsner du splitten, vippes skinnen lodret op. Den optager under det halve af gulvpladsen og kan stå i et hjørne eller et skab. Helkropstræning uden at ofre stuen — aktuelt stærkt nedsat hos partner.",
+        rating: 4.6,
         pros: [
           "Foldes/rejses lodret — halverer footprint",
           "Helkrop uden løbebåndets længde i brug",
@@ -604,6 +626,7 @@ export const guides: Guide[] = [
         badge: "Kompakt til hjørnet",
         summary:
           "Crosstrainere er traditionelt de mest pladskrævende maskiner, fordi arme og pedaler svinger bredt ud. Odin C200 er designet som en kompakt model til hjemmebrug: kortere, mere komprimeret ramme, der kan stå i hjørnet af soveværelse eller stue uden at dominere hele rummet — samtidig med effektiv kredsløbstræning. Aktuelt stærkt nedsat hos partner.",
+        rating: 4.5,
         pros: [
           "Komprimeret ramme til små rum",
           "Kan bo i et hjørne uden fuld “gym-zone”",
@@ -630,6 +653,7 @@ export const guides: Guide[] = [
         badge: "Foldbar bænk",
         summary:
           "Vil du træne med håndvægte, er bænken uundværlig — men en fastmonteret bænk midt i rummet er irriterende. Odin Multi er justerbar, og benene kan klappes ind under sædet. Når den er foldet fladt, fylder den kun omkring 15–20 cm i højden og kan skubbes ind under sengen ved siden af dit gåbånd. Styrke uden rod.",
+        rating: 4.5,
         pros: [
           "Folder fladt — under seng/sofa hos mange",
           "Justerbar til flere øvelser",
@@ -830,6 +854,7 @@ export const guides: Guide[] = [
         badge: "Bedst samlet",
         summary:
           "Dedikeret walking pad til kontor og hjem — vores allround-valg, når du vil have et seriøst gåbånd uden at blande løbebånds-features ind. Klar anbefaling til daglig gang.",
+        rating: 4.8,
         pros: [
           "Lavet til gang / walking pad-brug",
           "Stærkt match til kontor og hjem",
@@ -856,6 +881,7 @@ export const guides: Guide[] = [
         badge: "Bedste billige",
         summary:
           "Skarp indgang til walking pad-vanen. Kompakt, prisbevidst og fin til skridt under arbejde, når du ikke behøver avanceret stigning endnu.",
+        rating: 4.3,
         pros: [
           "Lav indgangspris",
           "Kompakt footprint",
@@ -881,6 +907,7 @@ export const guides: Guide[] = [
         badge: "Bedste med stigning",
         summary:
           "Når du vil have mere træning ud af gang uden at hæve farten — 15 % hældning, vibration og fokus på støjsvag motor. God til dem, der allerede går dagligt og mangler intensitet.",
+        rating: 4.4,
         pros: [
           "15 % stigning til højere intensitet",
           "Støjsvag motor i fokus",
@@ -906,6 +933,7 @@ export const guides: Guide[] = [
         badge: "Bedste foldbare + bjerg",
         summary:
           "Foldbart pad til dig, der skal kunne pakke væk — og vil have mulighed for stejl hældning til korte, hårde gangpas. Maksimal fleksibilitet i små hjem.",
+        rating: 4.5,
         pros: [
           "Foldbart til små boliger",
           "Ekstrem stigning til bjerggang",
@@ -1035,7 +1063,7 @@ export const guides: Guide[] = [
       "Bedste løbebånd 2026 til rigtigt løb hjemme. Guide til motor, løbeflade, støj og fold — plus fire anbefalede hjemmeløbebånd med live priser. Gåbånd? Se separat guide.",
     categorySlug: "loebebaand",
     publishedAt: "2026-11-04",
-    updatedAt: "2026-11-05",
+    updatedAt: "2026-11-18",
     intro:
       "Denne guide er til dig, der skal kunne løbe hjemme — intervaller, tempo og jævnlig kilometervis — ikke kun gå under skrivebordet. Walking pads og under-desk gåbånd har deres egne guides; her får du kun ægte hjemmeløbebånd. Du får kriterierne først (motor, løbeflade, støj, fold), fire konkrete modeller med shop-links til vores partnere, og klare svar på, hvornår du i stedet skal vælge gåbånd.",
     criteria: [
@@ -1082,6 +1110,7 @@ export const guides: Guide[] = [
         badge: "Bedst samlet",
         summary:
           "Solidt allround-hjemmeløbebånd, når du både vil jogge og løbe uden at gå all-in på premium. God balance mellem build, løbeflade og daglig brug — vores hovedanbefaling til de fleste, der træner flere gange om ugen.",
+        rating: 4.8,
         pros: [
           "Allround til gang, jogging og løb",
           "Opdateret Titan LIFE-hjemmelinje med fri fragt",
@@ -1107,6 +1136,7 @@ export const guides: Guide[] = [
         badge: "Bedste budget-løbebånd",
         summary:
           "Kompakt ægte løbebånd med automatisk hældning — til dig, der vil jogge og løbe hjemme uden midrange-pris. Skarp indgang, når walking pad ikke er nok, og pladsen stadig tæller.",
+        rating: 4.3,
         pros: [
           "Ægte løbebånd til under midrange-pris",
           "Automatisk hældning til variation",
@@ -1132,6 +1162,7 @@ export const guides: Guide[] = [
         badge: "Bedste foldbare løbebånd",
         summary:
           "Foldes fladt og kan rulles ind under mange senge og sofaer — uden at være et walking pad. Leveres færdigsamlet hos partner: praktisk hjemmeløbebånd, når stuen også er træningsrum.",
+        rating: 4.5,
         pros: [
           "Foldes fladt til opbevaring",
           "Transporthjul til at rulle væk",
@@ -1157,6 +1188,7 @@ export const guides: Guide[] = [
         badge: "Bedste til seriøst løb",
         summary:
           "Når løb er hovedformålet, og du vil have et stærkere hjemmebånd end midrange-indgangen. Mere maskine under fødderne til dem, der træner ofte og med højere intensitet.",
+        rating: 4.3,
         pros: [
           "Stærkere valg til løbetræning",
           "Solid Titan LIFE-kvalitet i højere lag",
@@ -1183,8 +1215,8 @@ export const guides: Guide[] = [
       {
         heading: "Løbebånd vs. gåbånd",
         paragraphs: [
-          "Et klassisk løbebånd har højere max-hastighed, typisk længere løbeflade og stærkere motor — bygget til at du kan løbe. Et gåbånd (walking pad) er lavere, ofte smallere og designet til gang under eller ved siden af et skrivebord.",
-          "Vælger du forkert her, bliver du enten frustreret over manglende fart — eller har betalt for en stor maskine, du aldrig løber på. Match maskintypen til 80 % af din træning. Denne guide anbefaler kun ægte løbebånd i top-listen.",
+          "Vælg et ægte løbebånd, hvis du skal kunne jogge og løbe hjemme; vælg gåbånd (walking pad), hvis 80 % af brugen er gang under eller ved skrivebordet. Løbebånd har højere max-hastighed, længere løbeflade og stærkere motor. Gåbånd er lavere, smallere og bygget til 4–6 km/t — ikke intervaller.",
+          "Vælger du forkert, bliver du frustreret over manglende fart — eller har betalt for en stor maskine, du aldrig løber på. Denne guide anbefaler kun ægte løbebånd i top-listen.",
         ],
       },
       {
@@ -1342,6 +1374,7 @@ export const guides: Guide[] = [
         badge: "Bedst samlet",
         summary:
           "Et stærkt allround-valg, når du vil have en kendt brand-romaskine til hjemmet med god træningsfølelse uden at hoppe direkte i pro-priser.",
+        rating: 4.8,
         pros: [
           "Stærkt allround-valg til hjemmet",
           "Kendte Reebok-linjer",
@@ -1367,6 +1400,7 @@ export const guides: Guide[] = [
         badge: "Bedste billige",
         summary:
           "Prisvenlig magnet-indgang til roning hjemme. Til dig, der vil prøve disciplinen eller træne lettere uden at investere i midrange fra dag ét — og ofte med mulighed for at pakke maskinen væk efter brug.",
+        rating: 4.3,
         pros: [
           "Lav indgangspris",
           "Fin til begyndere og let brug",
@@ -1392,6 +1426,7 @@ export const guides: Guide[] = [
         badge: "Bedste vandmodstand",
         summary:
           "Til dig, der vil have den ægte, bådlignende lyd og jævne vandmodstand — uden at gå all-in på en dyr træ-Fluid Rower. Stemning og følelse, der motiverer mange mere end ren magnet.",
+        rating: 4.4,
         pros: [
           "Autentisk vandlyd og jævn trækfølelse",
           "Klar differentiering fra magnet-entry",
@@ -1417,6 +1452,7 @@ export const guides: Guide[] = [
         badge: "Bedste luftmodstand",
         summary:
           "Til dig, der vil have luftmodstandens realistiske følelse, hvor intensiteten stiger, når du trækker hårdere. Mere “roning”, mere lyd — mere engagement for mange.",
+        rating: 4.3,
         pros: [
           "Luftmodstand med naturlig progression",
           "God træningsfølelse for erfarne",
@@ -1587,6 +1623,7 @@ export const guides: Guide[] = [
         badge: "Bedst samlet",
         summary:
           "Allround kondicykel til hjemmet, når du vil have et solidt dagligt redskab uden at gå direkte i premium-Tunturi-laget. God balance mellem pris, stabilitet og brug.",
+        rating: 4.8,
         pros: [
           "Stærkt allround-valg",
           "Bedre end ren entry til jævnlig brug",
@@ -1612,6 +1649,7 @@ export const guides: Guide[] = [
         badge: "Bedste billige",
         summary:
           "Prisbevidst kondicykel til dig, der vil i gang med skånsom cardio hjemme uden stor investering. Fin starter, når vanen skal bygges først.",
+        rating: 4.3,
         pros: [
           "Lav indgangspris",
           "Stabil motionscykel til begyndere",
@@ -1637,6 +1675,7 @@ export const guides: Guide[] = [
         badge: "Bedste spinning",
         summary:
           "Når du vil have spinning-følelse derhjemme: svinghjul, mere aggressiv position og intervaller. Et logisk valg, hvis holdcykling er din reference.",
+        rating: 4.4,
         pros: [
           "Spinning-orienteret træning",
           "God til intervaller",
@@ -1662,6 +1701,7 @@ export const guides: Guide[] = [
         badge: "Bedste premium",
         summary:
           "Når kondicyklen er din primære maskine i årevis, og du vil op i Tunturi-kvalitet. Mere maskine, mere finish — til dig, der allerede ved, at cykling hjemme virker.",
+        rating: 4.9,
         pros: [
           "Premium Tunturi Signature-linje",
           "Bedre til langvarig, hyppig brug",
@@ -1849,6 +1889,7 @@ export const guides: Guide[] = [
         badge: "Bedst samlet",
         summary:
           "Det stærkeste allround-valg i S-serien til hjemmet: nok cykel til intervaller flere gange om ugen uden at hoppe direkte i S96-prisen.",
+        rating: 4.8,
         pros: [
           "Solid mid/øvre mid i Titan LIFE-serien",
           "God til jævnlig spinning hjemme",
@@ -1875,6 +1916,7 @@ export const guides: Guide[] = [
         badge: "Bedste billige",
         summary:
           "Prisbevidst indgang til spin bike. Fin til at teste, om spinning-hjemme er dig — uden stor investering.",
+        rating: 4.3,
         pros: [
           "Lavest pris i S-serien her",
           "God til at bygge vanen",
@@ -1901,6 +1943,7 @@ export const guides: Guide[] = [
         badge: "Bedste midrange",
         summary:
           "Et skridt op fra S11, når du ved, at cyklen bliver brugt. God balance mellem pris og daglig spin-kvalitet.",
+        rating: 4.4,
         pros: [
           "Bedre end ren entry til hyppig brug",
           "Logisk midrange i serien",
@@ -1927,6 +1970,7 @@ export const guides: Guide[] = [
         badge: "Bedste premium",
         summary:
           "Når spinning er din primære cardio, og du vil have toppen af Titan LIFE S-linjen til hjemmet. Mere cykel til dem, der allerede spinner ofte.",
+        rating: 4.9,
         pros: [
           "Premium i samme produktfamilie",
           "Til dig med høj træningsfrekvens",
@@ -2101,6 +2145,7 @@ export const guides: Guide[] = [
         badge: "Bedst samlet spin-smart",
         summary:
           "Den stærkeste allround smart spin bike blandt modeller med live partnerpris i fitness-segmentet: eksplicit Zwift- og Kinomap-kompatibilitet, seriøs svinghjul-følelse og tablet-frihed uden Peloton-lock-in.",
+        rating: 4.8,
         pros: [
           "Zwift- og Kinomap-klar",
           "Spinning-geometri til intervaller",
@@ -2124,6 +2169,7 @@ export const guides: Guide[] = [
         badge: "Bedste budget-smart",
         summary:
           "Interaktiv træning uden 20.000+ kr. Reebok i-Bike er indgangen til Zwift/Kinomap-kompatibel spinning — ideel, hvis du vil teste “smart” før du opgraderer til KICKR Bike.",
+        rating: 4.3,
         pros: [
           "Laveste entry blandt vores Zwift-anbefalinger",
           "Zwift- og Kinomap-kompatibel",
@@ -2146,6 +2192,7 @@ export const guides: Guide[] = [
         badge: "Bedste premium smart bike",
         summary:
           "Dedikeret indoor-racercykel fra Wahoo: landevejs-geometri, præcis watt og Zwift uden at spænde din udecykel op hver dag. Det er typen B — nu med “Se pris” via Cykelpartner.",
+        rating: 4.9,
         pros: [
           "Rigtig smart bike — ikke “bare” en spin med Bluetooth",
           "Wahoo-økosystem og Zwift-klar",
@@ -2168,6 +2215,7 @@ export const guides: Guide[] = [
         badge: "Bedste flagship",
         summary:
           "Toptunet Wahoo indoor-racer til dem, der vil have maksimal realisme og features uden at eje en separat landvejs-cykel til Zwift. Flagship — kun hvis budgettet og vanen er der.",
+        rating: 4.3,
         pros: [
           "Flagship smart bike med live partnerpris",
           "Maksimal Wahoo/Zwift-oplevelse i én maskine",
@@ -2383,6 +2431,7 @@ export const guides: Guide[] = [
         badge: "Bedst til egen cykel",
         summary:
           "Har du allerede en race- eller gravelcykel, er CORE 2 den mest fornuftige Zwift-indgang: direct drive, live pris og Wahoo-økosystem uden flagship-prisen.",
+        rating: 4.7,
         pros: [
           "Din pasform og saddel",
           "Zwift-klar direct drive",
@@ -2405,6 +2454,7 @@ export const guides: Guide[] = [
         badge: "Bedste premium trainer",
         summary:
           "Når Zwift-races og watt er alvor: Neo 2T giver mere realisme og stilhed end CORE-klassen — stadig på din egen cykel.",
+        rating: 4.9,
         pros: [
           "Høj watt og præcis power",
           "Meget stille direct drive",
@@ -2427,6 +2477,7 @@ export const guides: Guide[] = [
         badge: "Bedste dedicated Zwift-cykel",
         summary:
           "Vil du have Zwift uden at montere noget? Kickr Bike Shift er den dedicated indoor-racer med live pris — landevejs-følelse og Wahoo-integration i én maskine.",
+        rating: 4.4,
         pros: [
           "Ingen daglig montering",
           "Dedikeret smart bike (ikke kun spin + Bluetooth)",
@@ -2449,6 +2500,7 @@ export const guides: Guide[] = [
         badge: "Bedste spin-smart indgang",
         summary:
           "Zwift uden Wahoo-budget: tydelig Zwift/Kinomap-vinkel og nok cykel til zone-2 og intervaller, mens du bygger vanen — eller før du opgraderer til CORE/KICKR Bike.",
+        rating: 4.3,
         pros: [
           "Zwift nævnt eksplicit",
           "Markant billigere end KICKR Bike",
@@ -2639,6 +2691,7 @@ export const guides: Guide[] = [
         badge: "Bedst samlet",
         summary:
           "Solid allround-crosstrainer til hjemmet, når du vil have stabilitet og jævn træning uden at hoppe direkte i premium-Tunturi. God balance mellem pris og daglig brugbarhed.",
+        rating: 4.8,
         pros: [
           "Stabil Titan Life midrange",
           "God til jævnlig helkropscardio",
@@ -2664,6 +2717,7 @@ export const guides: Guide[] = [
         badge: "Bedste billige",
         summary:
           "Prisvenlig baghjulstrukket indgang med lav indstigning — til dig, der vil i gang med skånsom cardio uden stor investering. Fin starter, når vanen skal bygges først.",
+        rating: 4.3,
         pros: [
           "Lav indgangspris",
           "Lav indstigning — nemmere at komme på",
@@ -2690,6 +2744,7 @@ export const guides: Guide[] = [
         badge: "Bedste 2-i-1",
         summary:
           "Når plads og pris vejer tungt, og du vil have en kompakt 2-i-1-løsning. Kompromis på “ren” gym-følelse — gevinst på footprint og budget.",
+        rating: 4.4,
         pros: [
           "Skarp pris",
           "2-i-1-fleksibilitet",
@@ -2714,6 +2769,7 @@ export const guides: Guide[] = [
         badge: "Bedste premium",
         summary:
           "Når crosstraineren er din primære cardio i årevis, og du vil op i Tunturi-kvalitet. Mere maskine, mere jævn følelse — til dig, der allerede ved, at elliptisk træning virker.",
+        rating: 4.9,
         pros: [
           "Premium Tunturi Signature-linje",
           "Kraftig kvalitets-crosstrainer",
@@ -2888,6 +2944,7 @@ export const guides: Guide[] = [
         badge: "Bedst samlet",
         summary:
           "Klar-til-brug hjemmegym: bænk, racket og vægte i én pakke. Bedste allround-valg, når du vil træne tungere end “kun kropsvægt” uden at samle indkøbslisten selv.",
+        rating: 4.8,
         pros: [
           "Komplet startpakke (bænk + rack + vægte)",
           "Spar research og mismatch mellem dele",
@@ -2913,6 +2970,7 @@ export const guides: Guide[] = [
         badge: "Bedste billige",
         summary:
           "Solid flad bænk med høj vægtkapacitet — den mest fornuftige single-piece start, når budgettet er stramt, og du allerede har håndvægte eller planlægger rack senere.",
+        rating: 4.3,
         pros: [
           "Lav indgangspris",
           "Høj angivet kapacitet (300 kg)",
@@ -2938,6 +2996,7 @@ export const guides: Guide[] = [
         badge: "Bedste rack",
         summary:
           "Når sikker squat/bænk og pull-ups er målet. Half-rack med pull-up og dip giver alvorlig hjemmetræning — til dig, der er vokset ud over “kun bænk”.",
+        rating: 4.4,
         pros: [
           "Sikkerhed til squat/bænk alene",
           "Pull-up og dip indbygget",
@@ -2963,6 +3022,7 @@ export const guides: Guide[] = [
         badge: "Bedste multibænk",
         summary:
           "Justerbar multibænk til flere vinkler og øvelser — det logiske opgraderingsvalg, når flad bænk ikke længere dækker incline press, support og variation.",
+        rating: 4.3,
         pros: [
           "Flere træningsvinkler",
           "Høj alsidighed pr. kvadratmeter",
@@ -3136,6 +3196,7 @@ export const guides: Guide[] = [
         badge: "Bedst samlet",
         summary:
           "Det stærkeste allround-valg til hjemme-HIIT, når du vil have ægte vindmodstand uden at hoppe direkte i Assault-priser. God balance mellem intensitet, build og dansk tilgængelighed.",
+        rating: 4.8,
         pros: [
           "Solid midrange airbike til hjemmet",
           "Vindmodstand til ægte intervaller",
@@ -3161,6 +3222,7 @@ export const guides: Guide[] = [
         badge: "Bedste billige",
         summary:
           "Prisvenlig indgang til airbike-universet. Til dig, der vil teste HIIT med arme+ben, før du investerer i Assault-niveau — eller kun træner intervaller 1–2 gange om ugen.",
+        rating: 4.3,
         pros: [
           "Laveste seriøse airbike-indgang i vores picks",
           "Fuld vindmodstand-oplevelse",
@@ -3186,6 +3248,7 @@ export const guides: Guide[] = [
         badge: "Bedste Assault",
         summary:
           "Referencen for mange CrossFit- og HIIT-brugere. Når du vil have den klassiske Assault-følelse og et brand, der matcher bokse og WOD’er — ikke bare “en airbike”.",
+        rating: 4.4,
         pros: [
           "Assault-DNA og genkendelig træningsfølelse",
           "Bygget til hårde intervaller",
@@ -3211,6 +3274,7 @@ export const guides: Guide[] = [
         badge: "Bedste premium",
         summary:
           "Når airbiken er din primære kondi-finisher, og du vil op i tungere, mere “beast”-agtig build. Til dig, der allerede ved, at vindmodstand er din grej.",
+        rating: 4.9,
         pros: [
           "Premium airbike-positionering",
           "Lavet til hård, gentagen intervalbrug",
@@ -3412,6 +3476,7 @@ export const guides: Guide[] = [
         badge: "Bedst samlet",
         summary:
           "Sweet spot for de fleste hjem: 100 kg vægtstak, bred øvelsespalette og Odin Valhalla-platformen uden at hoppe helt op i Smith 145 kg. Det valg, vi peaker til “én maskine, mange øvelser”.",
+        rating: 4.8,
         pros: [
           "100 kg stak — holder længere end 67 kg",
           "Klassisk home gym-setup",
@@ -3437,6 +3502,7 @@ export const guides: Guide[] = [
         badge: "Bedste billige",
         summary:
           "Den skarpeste indgang til Valhalla-universet. 67 kg er nok til at lære kabler og opbygge vane — og ærligt nok til mange isolation-øvelser. Opgrader stak/station, når du vokser fra den.",
+        rating: 4.3,
         pros: [
           "Laveste Valhalla-multistation-pris",
           "Samme øvelsesidé som større søskende",
@@ -3462,6 +3528,7 @@ export const guides: Guide[] = [
         badge: "Bedste midrange-alternativ",
         summary:
           "Når du vil have home gym med vægtstak, men ikke nødvendigvis Odin-navnet. 75 kg, fri fragt hos partner og et solidt “én station”-valg til jævnlig brug.",
+        rating: 4.4,
         pros: [
           "75 kg stak — midt mellem 67 og 100",
           "TITAN LIFE med fri fragt",
@@ -3487,6 +3554,7 @@ export const guides: Guide[] = [
         badge: "Bedste Smith / tung stak",
         summary:
           "Når du vil have multistation + Smith-rack og en stak der rækker: 144 kg. Til dig, der træner seriøst hjemme og har loftshøjden (og budgettet) til det.",
+        rating: 4.3,
         pros: [
           "144 kg vægtstak — lang levetid",
           "Smith + kabel i én station",
@@ -3642,6 +3710,7 @@ export const guides: Guide[] = [
         badge: "Bedst samlet",
         summary:
           "Justerbar Valhalla-bænk til dig, der vil have et solidt allround-fundament uden at gå all-in på 6-i-1-kompleksitet. God balance mellem stabilitet, vinkler og pris til jævnlig styrketræning.",
+        rating: 4.8,
         pros: [
           "Justerbar til flere presse-vinkler",
           "Valhalla-linje — matcher øvrigt Odin-setup",
@@ -3667,6 +3736,7 @@ export const guides: Guide[] = [
         badge: "Bedste billige",
         summary:
           "Prisvenlig justerbar bænk med fold — til dig, der træner i stuen og skal kunne pakke væk. Fin starter, når vanen skal bygges før en tung “for evigt”-bænk.",
+        rating: 4.3,
         pros: [
           "Lav indgangspris",
           "Justerbar + foldbar",
@@ -3692,6 +3762,7 @@ export const guides: Guide[] = [
         badge: "Bedste med hjul",
         summary:
           "Når flytbarhed er hovedsagen: flad bænk med hjul og sammenklap, så du kan trække den frem til bænkpres og væk igen. Kompromis på justerbare vinkler — gevinst på logistik.",
+        rating: 4.4,
         pros: [
           "Transporthjul — nem at flytte",
           "Sammenklappelig til små hjem",
@@ -3717,6 +3788,7 @@ export const guides: Guide[] = [
         badge: "Bedste alsidige / decline-agtig",
         summary:
           "Når du vil have flere stationer i én bænk — inkl. hyperextension og flere vinkler. Til dig, der vil dække mave/ryg/press uden at købe tre separate bænke. Tjek decline/negative vinkler i specifikationen.",
+        rating: 4.3,
         pros: [
           "6-i-1-alsidighed",
           "Hyperextension indbygget",
@@ -3875,6 +3947,7 @@ export const guides: Guide[] = [
         badge: "Bedst samlet",
         summary:
           "Det stærkeste allround-valg til hjemmet i 2026: to dial-håndvægte med typisk 3–24 kg og 12 vægttrin. Ét sæt erstatter en hel række faste vægte, dækker press, row, squat-varianter og lunges — og matcher den mest søgte “24 kg”-intention uden at fylde stuen.",
+        rating: 4.8,
         pros: [
           "Komplet par (2 stk.) — klar til træning dag 1",
           "24 kg pr. håndvægt dækker de fleste i flere år",
@@ -3901,6 +3974,7 @@ export const guides: Guide[] = [
         badge: "Bedste billige",
         summary:
           "Prisvenligt skivesæt til dig, der skal i gang uden dial-premium. To håndvægte op til 10 kg hver (samlet 20 kg-sæt) — nok til begynderstyrke, home gym på budget og de første 90 dage, før du opgraderer til 24 kg dial.",
+        rating: 4.3,
         pros: [
           "Lav indgangspris ift. dial-sæt",
           "Komplet par i én ordre",
@@ -3927,6 +4001,7 @@ export const guides: Guide[] = [
         badge: "Bedste 24 kg",
         summary:
           "Dial-håndvægt med 2 kg-stigninger fra 2 til 24 kg — præcis den “drej på skiven”-oplevelse, folk søger. Købes typisk som enkeltstyk: planlæg to, hvis du vil have et par. Ideel, når SEO-søgningen er “justerbare håndvægte 24 kg”, og du vil have selector frem for skiver.",
+        rating: 4.4,
         pros: [
           "Ægte dial fra 2–24 kg",
           "2 kg-trin passer til de fleste compound-løft",
@@ -3953,6 +4028,7 @@ export const guides: Guide[] = [
         badge: "Bedste til progression",
         summary:
           "Når 24 kg ikke længere er nok: to håndvægte op til 40 kg med 16 vægttrin. Til dig, der træner ofte, vil progressiv overload hjemme, og hellere betaler for loft end at bygge en vægreol med faste hex.",
+        rating: 4.9,
         pros: [
           "Højt loft til år frem (op til 40 kg)",
           "Komplet par — ikke “køb nr. 2 senere”",
@@ -4137,6 +4213,7 @@ export const guides: Guide[] = [
         badge: "Under 2.500 kr.",
         summary:
           "Til dig med mindst plads og mindst budget. Ascendic Essential Walking Pad til skånsom cardio under arbejde/TV, plus elastiksæt med håndtag og yogamåtte til funktionel styrke og gulvarbejde. Samlet typisk omkring 1.200 kr. — langt under loftet.",
+        rating: 4.3,
         pros: [
           "Passer i lejlighed uden at fylde stuen",
           "Lav indgangspris — hele pakken under 2.500 kr.",
@@ -4181,6 +4258,7 @@ export const guides: Guide[] = [
         badge: "Best Value",
         summary:
           "Guidens anbefaling, hvis du vil droppe centret uden et stort rum. Odin C200 crosstrainer til effektiv cardio, Odin Multi justerbar/foldbar bænk til hele kroppen, og et sæt justerbare håndvægte til 20 kg. Samlet typisk omkring 2.700 kr. — solidt under 5.000 kr.",
+        rating: 4.6,
         pros: [
           "Cardio + traditionel styrke i ét køb",
           "Foldbar bænk sparer plads mellem sessioner",
@@ -4224,6 +4302,7 @@ export const guides: Guide[] = [
         badge: "Se 10.000-guiden",
         summary:
           "Vil du have Valhalla-styrke, cardio-anker og gulv i samme budget? Pakke C her er kun et kort pegepind: det fulde Cardio-fokus / Styrke-fokus / Allround-setup under 10.000 kr. ligger i Komplet hjemmegym under 10.000 kr. — med Floor Guards og live bundle-priser. Nedenfor beholder vi Valhalla + bænk som hurtig “styrke først”-reference.",
+        rating: 4.4,
         pros: [
           "100 kg vægtstak — mange øvelser uden at læsse skiver",
           "Dedikeret justerbar bænk til press og variation",
@@ -4474,6 +4553,7 @@ export const guides: Guide[] = [
         badge: "Bedst samlet",
         summary:
           "Stabil magnetromaskine, der rejses lodret efter brug. Helkrop, stille nok til stuen, og den model der giver mest træning pr. krone i det her hjørne. Shoppen kalder den designet til det skandinaviske hjem, og den ligger under 7.500 kr. med god margin.",
+        rating: 4.8,
         pros: [
           "Magnetmodstand — stille nok til aften og stue",
           "Rejses lodret, så skinnen kan stå i et hjørne",
@@ -4501,6 +4581,7 @@ export const guides: Guide[] = [
         badge: "Foldbart løbebånd",
         summary:
           "Til dig der vil gå og løbe, og have stuen tilbage bagefter. i-Run 4.5 leveres færdigsamlet, foldes fladt og kan med transporthjul køres under mange senge og sofaer. Den holder sig under 7.500 kr. i partnerfeedet.",
+        rating: 4.5,
         pros: [
           "Flad fold og transporthjul",
           "Færdigsamlet levering hos Apuls",
@@ -4672,6 +4753,7 @@ export const guides: Guide[] = [
         badge: "Kernen i udendørs-gymmet",
         summary:
           "Et kompakt half-rack til squat, bænk og pull-ups. Under overdækket terrasse eller carport er det det mest “rigtige” styrkesetup, du kan stille uden at bygge et center. Kombinér med fitnessgulv og regelmæssig aftørring efter regnvejr.",
+        rating: 4.7,
         pros: [
           "Seriøs squat/bænk uden fuld multistation",
           "Pull-up mulighed i samme footprint",
@@ -4696,6 +4778,7 @@ export const guides: Guide[] = [
         badge: "Vægmonteret pull-up",
         summary:
           "Når du vil have pull-ups uden et helt rack: en tung vægbar til solid mur. Ideel på ydervæg under udhæng — fylder minimalt, når du ikke træner. Kræver korrekt montage i bæredygtigt underlag.",
+        rating: 4.6,
         pros: [
           "Minimal footprint",
           "Tung konstruktion til voksne brugere",
@@ -4720,6 +4803,7 @@ export const guides: Guide[] = [
         badge: "Underlag til terrasse",
         summary:
           "Puslespils-fitnessgulv (ca. 2,9 m² i 8-pak) er det praktiske “must” under rack eller vægtzonen ude. Det beskytter fliser/træ, giver greb, og kan skilles ad hvis sæsonen skifter. Start her — udvid med flere fliser efter behov.",
+        rating: 4.3,
         pros: [
           "Beskytter terrasse og dæmper stød",
           "Kan udvides flise for flise",
@@ -4744,6 +4828,7 @@ export const guides: Guide[] = [
         badge: "Mobil styrke uden jern",
         summary:
           "Slyngetræneren er genial på terrassen: spænd i pull-up bar, bjælke eller solidt anker, træne core og overkrop, og pak den væk når det regner. Det er den billigste måde at gøre et udendørs hjørne til funktionel træning.",
+        rating: 4.3,
         pros: [
           "Fylder intet mellem sessioner",
           "Virker med egen kropsvægt",
@@ -4903,6 +4988,7 @@ export const guides: Guide[] = [
         badge: "Bedst samlet til hjemmet",
         summary:
           "Kompakt kabeltårn med 71 kg vægtstak — sweet spot for de fleste, der vil have lat pulldown, rows og kabeløvelser uden en kæmpe dual-station. Hurtige vægtskift, minimal indlæringskurve, og en pris der stadig er hjemme-venlig.",
+        rating: 4.8,
         pros: [
           "Vægtstak — nem progression i hverdagen",
           "Kompakt ift. fulde cable cross-stationer",
@@ -4927,6 +5013,7 @@ export const guides: Guide[] = [
         badge: "Bedst til plate load",
         summary:
           "Samme Valhalla-idé, men plate load: du sætter egne vægtskiver på. Billigere indgang, hvis du allerede har skiver — og intet kunstigt loft fra en lille stak. Til dig, der vil spare på maskinen og bruge jernet, du har.",
+        rating: 4.6,
         pros: [
           "Ingen stak-loft — progression med egne skiver",
           "Ofte lavere maskinpris end stak-version",
@@ -4951,6 +5038,7 @@ export const guides: Guide[] = [
         badge: "Bedste vægmonterede budget",
         summary:
           "Egentlig vægmontering til dem, der vil have trækstation uden gulvtårn midt i rummet. Ca. den kategori, folk søger, når de siger “15–20 cm fra væggen”. Ideal som første kabel-opgradering i lejlighed eller lille værelse — forudsat væggen kan bære det.",
+        rating: 4.3,
         pros: [
           "Designet til væg — sparer gulvplads",
           "Lavere pris end fulde Valhalla-tårne",
@@ -4975,6 +5063,7 @@ export const guides: Guide[] = [
         badge: "Premium vægmontering",
         summary:
           "Når du vil have en rigtig wall-mounted single pulley / functional trainer-følelse — ikke et kompromis. Dyrere, men bygget til væg og seriøs brug. Til dig, der ved, at kabelarbejde er en fast del af træningen, og som har væggen (og budgettet) til det.",
+        rating: 4.9,
         pros: [
           "Egentlig wall-mounted functional trainer",
           "Seriøs build til hyppig brug",
@@ -5000,6 +5089,7 @@ export const guides: Guide[] = [
         badge: "Bedste fritstående functional trainer",
         summary:
           "Gulvstående kabeltårn med to vægtstakke à 59 kg. Det er functional trainer-valget, når du ikke vil bore i væggen, og når én trisse ikke rækker til to uafhængige træk. Shopteksten placerer den til hjemmetræning — ikke kun til et center.",
+        rating: 4.1,
         pros: [
           "To stakke (2 × 59 kg) — dual cable",
           "Fritstående — ingen krav til betonvæg",
@@ -5148,6 +5238,7 @@ export const guides: Guide[] = [
         badge: "Must-have #1",
         summary:
           "Det absolut vigtigste styrkeværktøj til hjemmet. Ét sæt erstatter en hel række faste håndvægte: drej/skift vægt i stedet for at eje 10 par. Til begyndere er 2×10 kg (samlet 20 kg-sæt) en fornuftig start — opgrader senere til tungere justerbare, når du er klar.",
+        rating: 4.7,
         pros: [
           "Minimal plads vs. faste håndvægte",
           "Nem progression uge for uge",
@@ -5172,6 +5263,7 @@ export const guides: Guide[] = [
         badge: "Must-have #2",
         summary:
           "Fylder intet, koster lidt, og kan bruges til over 100 øvelser: opvarmning, pull-aparts, glute work, rejsetræning. Perfekt til at fylde “hullerne”, håndvægtene ikke dækker — og til sommerhus/hotel.",
+        rating: 4.6,
         pros: [
           "Under 200 kr.-klassen",
           "Ideel til opvarmning og genoptræning",
@@ -5196,6 +5288,7 @@ export const guides: Guide[] = [
         badge: "Must-have #3",
         summary:
           "Gulvarbejde, core, mobilitet — og et underlag der skåner knæ og gulv. Det er også den nemmeste “add-on”, når du senere køber en maskine: samme logik som puslespils-gulvmåtter under cykel og gåbånd.",
+        rating: 4.4,
         pros: [
           "Beskytter gulv og led",
           "Signalerer “nu træner jeg” — vanetrigger",
@@ -5220,6 +5313,7 @@ export const guides: Guide[] = [
         badge: "Næste skridt (valgfri)",
         summary:
           "Når de tre basics sidder, og du vil have mere core og overkrop uden maskiner: en slyngetræner over døren eller i loftet. Det er stadig “must-have-territorie” — ikke et 15.000 kr.-køb — og appellerer til dig, der hader store jernmaskiner.",
+        rating: 4.3,
         pros: [
           "Egen kropsvægt = skalerbart",
           "Funktionel core og træk",
@@ -5385,6 +5479,7 @@ export const guides: Guide[] = [
         badge: "Premium / pro kontor",
         summary:
           "Når du vil have et mere seriøst under-desk-setup til lange arbejdsdage: slankt, sammenfoldeligt walking pad i den tungere ende af hjemmemarkedet. LifeSpan TR1200-klassen (dedikeret kontor-pro) er sjælden i danske affiliate-feeds — Gymstick Pro er vores nærmeste premium-pick til daglig desk walking med fokus på opbevaring og flytbarhed.",
+        rating: 4.9,
         pros: [
           "Pro-orienteret walking pad (ikke “lege-løbebånd”)",
           "Sammenfoldeligt og nemt at flytte til TV/skab",
@@ -5410,6 +5505,7 @@ export const guides: Guide[] = [
         badge: "Bedst samlet til kontor",
         summary:
           "Dedikeret gåbånd, der i partnerteksten rammer kontor og hjem direkte. Vores allround-valg, når du vil have et færdigt under-desk-redskab uden at betale premium-Pro-pris — og uden at blande løbebånds-features ind.",
+        rating: 4.8,
         pros: [
           "Markedsført til kontor + hjem",
           "Klar allround til daglig desk walking",
@@ -5435,6 +5531,7 @@ export const guides: Guide[] = [
         badge: "Bedst styring (app + remote)",
         summary:
           "Kompakt, foldbart gåbånd med hastighed fra helt lavt tempo — styret automatisk, via fjernbetjening eller app. Ideelt, når du vil justere tempo midt i et møde uden at bøje dig under bordet. Foldes sammen efter brug.",
+        rating: 4.4,
         pros: [
           "Fjernbetjening + app-styring",
           "Meget lav start-hastighed til skrivetempo",
@@ -5460,6 +5557,7 @@ export const guides: Guide[] = [
         badge: "Budget- og pladsvinderen",
         summary:
           "Ultra-lavt pad uden håndtag — designet til at sidde under et hæve-sænkebord. Den nemmeste indgang til desk walking, når du vil gemme båndet under sofaen efter fyraften. Perfekt “Top Sport-agtig” kompaktprofil: lav højde, lav pris, fokus på skridt mens du arbejder.",
+        rating: 4.8,
         pros: [
           "Lavt footprint under desk",
           "Skarp pris til at bygge vanen",
@@ -5629,6 +5727,7 @@ export const guides: Guide[] = [
         badge: "Bedst i test (siddecykel)",
         summary:
           "Den vigtigste maskine i senior-setuppet: siddecykel med komfortfokus. Lav indstigning, bredt støttende sæde med ryglæn og skånsom, siddende cardio. RB-800 Comfort er vores topvalg, når tryghed og ledvenlig bevægelse betyder mere end “sporty” spinning-følelse. (Toorx BRX-R65 Comfort findes ikke stabilt i vores feeds lige nu — D10 nedenfor er budget-alternativet.)",
+        rating: 4.7,
         pros: [
           "Dedikeret Comfort-siddecykel",
           "Skånsom for ryg og knæ ift. oprejst cykel",
@@ -5654,6 +5753,7 @@ export const guides: Guide[] = [
         badge: "Bedste prisvenlige siddecykel",
         summary:
           "Stabil siddecykel med fri fragt hos partner — til dig, der vil have ryglæn og tryg indstigning uden at gå i den dyre Comfort/PRO-klasse. God indgang, når budgettet er stramt, men opretstående sadelcykel føles forkert.",
+        rating: 4.3,
         pros: [
           "Lavere pris end RB-800 / E60-R",
           "Ægte siddecykel (ikke mini pedaltræner)",
@@ -5679,6 +5779,7 @@ export const guides: Guide[] = [
         badge: "Skånsom crosstrainer (lav indstigning)",
         summary:
           "Elliptisk træning uden stød gennem knæ, hofter og ryg — fødderne forbliver på pedalerne. C35 fremhæves med lav indstigning og magnetisk modstand: stabil entry til helkropscardio, når du vil stå op, men stadig have noget at holde i.",
+        rating: 4.4,
         pros: [
           "Lav indstigning — nemmere at komme på",
           "Ingen løbe-stød",
@@ -5704,6 +5805,7 @@ export const guides: Guide[] = [
         badge: "Genoptræning & mobilitet",
         summary:
           "Mild, progressiv elastikmodstand til genoptræning og mobilitet. Jo mere du strækker, jo hårdere bliver det — uden de pludselige ryk, frie vægte kan give. Gul Level 1 er det trygge udgangspunkt; gå op i niveau senere.",
+        rating: 4.3,
         pros: [
           "Anerkendt til sportsterapi / genoptræning",
           "Meget skånsom startbelastning",
@@ -5875,6 +5977,7 @@ export const guides: Guide[] = [
         badge: "Bedst støjsvag (magnet)",
         summary:
           "Magnetisk, næsten lydløs entry med 15 niveauer — vores topvalg, når stilhed er hovedkravet, og du vil have skånsom helkrop uden luftvifte.",
+        rating: 4.7,
         pros: [
           "Magnetisk og meget støjsvag",
           "Skarp pris til lejlighedsbrug",
@@ -5899,6 +6002,7 @@ export const guides: Guide[] = [
         badge: "Bedste kompakt magnet",
         summary:
           "Kompakt magnet-romaskine med fri fragt hos partner — god balance mellem stilhed, plads og daglig brugbarhed, når Ascendic 6004 føles for “entry”.",
+        rating: 4.5,
         pros: [
           "Magnetisk og lejlighedsvenlig",
           "Kompakt footprint",
@@ -5923,6 +6027,7 @@ export const guides: Guide[] = [
         badge: "Bedste “støjsvag” featured",
         summary:
           "Partnerteksten fremhæver trådløs, støjsvag og kompakt — magnet med mange niveauer. Relevant pick, når du specifikt søger “støjsvag romaskine” og vil have moderne features.",
+        rating: 4.4,
         pros: [
           "Markedsført som støjsvag/kompakt",
           "Mange magnetniveauer",
@@ -5947,6 +6052,7 @@ export const guides: Guide[] = [
         badge: "Bedste stille-ish vand",
         summary:
           "Når du vil have vandets følelse og accepterer mere lyd end magnet — men stadig undgår luftvifte. Bedste vandpick i støj-hierarkiet til hjemmet.",
+        rating: 4.3,
         pros: [
           "Autentisk vandfølelse",
           "Mildere end luft for mange naboer",
@@ -6108,6 +6214,7 @@ export const guides: Guide[] = [
         badge: "Bedst foldbar",
         summary:
           "Magnet-romaskine der rejses lodret efter brug — vores hovedanbefaling, når fold skal være simpel, støjsvag og til en skarp pris.",
+        rating: 4.5,
         pros: [
           "Lodret stuvning — halverer footprint",
           "Magnet — lejlighedsvenlig",
@@ -6132,6 +6239,7 @@ export const guides: Guide[] = [
         badge: "Bedste fold + finish",
         summary:
           "Når fold skal føles som møbel: asketræ, vandmodstand og klap efter pas — til stuen, hvor maskinen gerne må ses.",
+        rating: 4.5,
         pros: [
           "Asketræ-look til stuen",
           "Foldbar efter træning",
@@ -6157,6 +6265,7 @@ export const guides: Guide[] = [
         badge: "Kompakt mid",
         summary:
           "Kompakt magnet midrange, når du vil have mere “færdig” maskine end entry-fold — og stadig kunne stuve fornuftigt i små hjem.",
+        rating: 4.5,
         pros: [
           "Magnetisk og lejlighedsvenlig",
           "Kompakt footprint",
@@ -6181,6 +6290,7 @@ export const guides: Guide[] = [
         badge: "Bedste budget-entry",
         summary:
           "Billig magnet-indgang, når fold/plads vejer tungt, og du vil teste roning før midrange-penge — ærlig starter, ikke livslang premium.",
+        rating: 4.3,
         pros: [
           "Lav indgangspris",
           "Magnet — ofte roligere end luft",
@@ -6319,6 +6429,7 @@ export const guides: Guide[] = [
         badge: "Bedst kompakt",
         summary:
           "Markedsført som støjsvag og kompakt magnet — vores hovedpick, når footprint og lejligheds-søgning er det, der bragte dig hertil.",
+        rating: 4.5,
         pros: [
           "Kompakt magnet-profil",
           "Mange modstandsniveauer",
@@ -6343,6 +6454,7 @@ export const guides: Guide[] = [
         badge: "Bedst samlet kompakt",
         summary:
           "Kompakt magnet midrange med fri fragt hos partner — den mest “komplette” lille-hjem-romaskine, når entry føles for tynd.",
+        rating: 4.8,
         pros: [
           "Magnetisk og lejlighedsvenlig",
           "Kompakt footprint",
@@ -6367,6 +6479,7 @@ export const guides: Guide[] = [
         badge: "Bedste plads efter brug",
         summary:
           "Når “kompakt” egentlig betyder “skal kunne forsvinde”: lodret fold efter pas, magnetmodstand og skarp pris.",
+        rating: 4.5,
         pros: [
           "Lodret stuvning",
           "Magnet — praktisk i lejlighed",
@@ -6391,6 +6504,7 @@ export const guides: Guide[] = [
         badge: "Kompakt magnet-entry",
         summary:
           "Støjsvag magnet-entry til små hjem — solid start, når du vil have roning uden stor investering eller tung fold-mekanik.",
+        rating: 4.5,
         pros: [
           "Magnetisk og meget støjsvag",
           "Skarp pris",
@@ -6529,6 +6643,7 @@ export const guides: Guide[] = [
         badge: "Bedst støjsvag entry",
         summary:
           "Magnetbelastning, lav indstigning og solid entry-pris — vores hovedanbefaling, når du vil have støjsvag elliptisk træning uden midrange-budget.",
+        rating: 4.7,
         pros: [
           "Magnetisk og lejlighedsvenlig",
           "Lav indstigning",
@@ -6553,6 +6668,7 @@ export const guides: Guide[] = [
         badge: "Bedst samlet stille",
         summary:
           "Mere stabil midrange, når C35 ikke føles “nok”, og du træner flere gange om ugen. Stadig magnet — stadig lejlighedsrelevant med måtte.",
+        rating: 4.8,
         pros: [
           "Stabil Titan midrange",
           "Jævnere følelse end entry",
@@ -6577,6 +6693,7 @@ export const guides: Guide[] = [
         badge: "Bedste mid magnet",
         summary:
           "15 kg svinghjul og brugervenlig computer — solid magnet-crosstrainer, når du vil have mere “flyd” uden at gå premium-Tunturi.",
+        rating: 4.4,
         pros: [
           "Solid build til hjemmet",
           "Jævn svinghjulsfølelse",
@@ -6601,6 +6718,7 @@ export const guides: Guide[] = [
         badge: "Bedste fold + stille",
         summary:
           "Når du både skal have magnetisk elliptisk træning og kunne folde maskinen væk. Dyrere — men relevant i små lejligheder med støjkrav.",
+        rating: 4.5,
         pros: [
           "Foldbar til plads",
           "Stabil Odin-hjemmelinje",
@@ -6740,6 +6858,7 @@ export const guides: Guide[] = [
         badge: "Bedste billige",
         summary:
           "Kompakt Odin-entry med skarp pris — vores hovedanbefaling, når budgettet er det, der afgør, om elliptisk træning overhovedet kommer ind ad døren.",
+        rating: 4.3,
         pros: [
           "Meget skarp indgangspris",
           "Komprimeret ramme til små hjem",
@@ -6764,6 +6883,7 @@ export const guides: Guide[] = [
         badge: "Bedst samlet budget",
         summary:
           "Lav indstigning og magnetbelastning — den mest “komplette” billige crosstrainer, når du vil have stabil entry uden at hoppe til C56.",
+        rating: 4.8,
         pros: [
           "Lav indstigning",
           "Magnetisk og lejlighedsvenlig",
@@ -6788,6 +6908,7 @@ export const guides: Guide[] = [
         badge: "Bedste 2-i-1",
         summary:
           "Når både pris og footprint skal ned, og du accepterer kompromis på gym-følelse for at komme i gang.",
+        rating: 4.4,
         pros: [
           "Skarp pris",
           "2-i-1-fleksibilitet",
@@ -6812,6 +6933,7 @@ export const guides: Guide[] = [
         badge: "Bedste værdi opgradering",
         summary:
           "Når entry føles for tynd, men du stadig vil holde dig under premium: mere stabil midrange, der typisk stadig lander i den “fornuftige” prisklasse.",
+        rating: 4.3,
         pros: [
           "Stabil Titan midrange",
           "Jævnere følelse end C35/C200",
@@ -6947,6 +7069,7 @@ export const guides: Guide[] = [
         badge: "Bedst kompakt",
         summary:
           "Komprimeret Odin-ramme til hjørnet — vores hovedanbefaling, når crosstraineren skal ind uden at dominere hele stuen.",
+        rating: 4.5,
         pros: [
           "Komprimeret footprint til små rum",
           "Skarp pris",
@@ -6971,6 +7094,7 @@ export const guides: Guide[] = [
         badge: "Bedste 2-i-1",
         summary:
           "Når gulvpladsen er knap, og du vil have elliptisk træning uden en fuld midrange-ellipse midt i rummet.",
+        rating: 4.6,
         pros: [
           "Sparet footprint",
           "Skarp pris",
@@ -6995,6 +7119,7 @@ export const guides: Guide[] = [
         badge: "Bedste foldbar",
         summary:
           "Når du vil have mere maskine end C200, men gulvet skal kunne frigives efter træning. Fold er pointen — brug den.",
+        rating: 4.5,
         pros: [
           "Foldbar til plads efter brug",
           "Stabil Odin-hjemmelinje",
@@ -7019,6 +7144,7 @@ export const guides: Guide[] = [
         badge: "Kompakt entry",
         summary:
           "Lav indstigning og dedikeret entry-størrelse — mindre end midrange C56, mere “rigtig” maskine end mange 2-i-1’ere.",
+        rating: 4.5,
         pros: [
           "Lav indstigning",
           "Magnetisk entry",
@@ -7114,7 +7240,7 @@ export const guides: Guide[] = [
       "Bedste power rack og squat rack 2026 til garage og kælder. Safety, stålprofil, hulafstand og tilbehør — med live priser fra danske partnere.",
     categorySlug: "styrkemaskiner",
     publishedAt: "2026-11-05",
-    updatedAt: "2026-11-07",
+    updatedAt: "2026-11-18",
     intro:
       "Justerbare håndvægte og en bænk får dig langt. Squats, bænkpres med stang og tunge pulls kræver et rack med safety — især når du træner alene i garage eller kælder. Denne guide er den tungere søskende til Det ultimative home gym på budget: hvornår et squat-stativ er nok, hvornår du skal op i 70×70 eller 75×75 mm, og hvad hulmønster og tilbehør betyder, når belastningen bliver seriøs.",
     criteria: [
@@ -7171,6 +7297,7 @@ export const guides: Guide[] = [
         badge: "Bedst samlet home",
         summary:
           "Kraftigt fritstående rack med safety arms — vores hovedanbefaling til de fleste home gyms, der skal kunne squatte og bænkpresse sikkert uden at købe et fuldt bur.",
+        rating: 4.8,
         pros: [
           "Safety bars inkluderet",
           "Stabil Odin-hjemmekvalitet",
@@ -7195,6 +7322,7 @@ export const guides: Guide[] = [
         badge: "Bedste budget-rack",
         summary:
           "Stilrent, stabilt squat stativ i Semi Pro-linjen — skarp indgang, når du vil have rack-følelse uden half rack-pris. Kombinér med separat safety, hvis modellen kræver det (tjek produkttekst).",
+        rating: 4.3,
         pros: [
           "Lav indgangspris",
           "Stabilitet i fokus",
@@ -7219,6 +7347,7 @@ export const guides: Guide[] = [
         badge: "Bedste half rack",
         summary:
           "Half rack med mange J-hook-positioner og safety bars — til dig, der vil have mere stivhed og “gym”-følelse end et simpelt stativ, uden at gå fuldt bur.",
+        rating: 4.4,
         pros: [
           "Safety bars indbygget",
           "Mange højdepositioner",
@@ -7244,6 +7373,7 @@ export const guides: Guide[] = [
         badge: "Bedste PRO / tung brug",
         summary:
           "Når home gym’et er seriøst, og du vil have PRO-ramme der tåler tung, hyppig brug. Overkill til begyndere — rigtigt valg til dem, der allerede løfter tungt hver uge.",
+        rating: 4.9,
         pros: [
           "PRO-rammekonstruktion",
           "Bygget til hård brug",
@@ -7268,6 +7398,7 @@ export const guides: Guide[] = [
         badge: "75×75 mm til garagen",
         summary:
           "Half rack med 75×75 mm ramme og opbevaring til 50 mm vægtskiver. Det er det konkrete svar, når du vil op fra et let hjemmestativ til et profil, tilbehør faktisk er bygget til — uden at købe et kommercielt bur.",
+        rating: 4.1,
         pros: [
           "75×75 mm oplyst i shopteksten",
           "Pladeopbevaring til 50 mm skiver",
@@ -7292,6 +7423,7 @@ export const guides: Guide[] = [
         badge: "70×70 mm bur",
         summary:
           "Power rack med 70×70 mm profiler og J-hooks, beskrevet som kommerciel kvalitet til center og firmagym. Det er buret, når garagen skal tåle tung, hyppig brug — ikke det første stativ til en nybegynder.",
+        rating: 4,
         pros: [
           "70×70 mm oplyst i shopteksten",
           "Lukket power rack med J-hooks",
@@ -7316,14 +7448,14 @@ export const guides: Guide[] = [
       {
         heading: "Hvorfor safety ikke er “nice to have”",
         paragraphs: [
-          "Alene-træning uden safety bars er en klassisk home gym-fejl. Sæt barrene, så du kan smide stangen sikkert i bund.",
-          "Det gælder både squat og bænkpres. Ego-løft uden exit-plan hører ikke hjemme i kælderen.",
+          "Køb aldrig et rack uden safety bars, hvis du træner alene: sæt barrene, så du kan dumpe stangen sikkert i bund på squat og bænkpres. Alene-træning uden exit-plan er den klassiske home gym-fejl — og det forkerte sted at spare, fordi simple stativer og safety-racks ofte ligger i samme prisklasse.",
+          "Ego-løft uden exit-plan hører ikke hjemme i kælderen.",
         ],
       },
       {
         heading: "Squat-stativ, half rack eller bur",
         paragraphs: [
-          "Et fritstående squat-stativ er to stolper og en safety, hvis den følger med. Det er nok til squat og bænk, når pladsen er smal. Et half rack er stivere og har oftere pull-up og et sted at hænge skiver. Et power rack er fire stolper: sværere at misse safety, og flere steder at bolte tilbehør på.",
+          "Til pull-ups i et standard squat rack skal du typisk have mindst 230–240 cm til loftet (mål dig selv med arme strakt + lidt margin). Et fritstående squat-stativ er to stolper og safety — nok til squat/bænk i smalle rum. Half rack er stivere med oftere pull-up og pladeholdere. Power rack er fire stolper, sværere at misse safety, og flere tilbehørsfæster.",
           "Vælg efter den øvelse, du ikke kan droppe sikkert — ikke efter hvor “komplet” billedet ser ud.",
         ],
         comparison: {
@@ -7483,6 +7615,7 @@ export const guides: Guide[] = [
         badge: "Bedst til knæ (siddecykel)",
         summary:
           "Siddende cardio med ryglæn og lav indstigning — vores #1, når knæene skal bevæges uden stød, og balancen skal være tryg.",
+        rating: 4.7,
         pros: [
           "Skånsom siddende bevægelse",
           "Ryglæn og Comfort-fokus",
@@ -7507,6 +7640,7 @@ export const guides: Guide[] = [
         badge: "Bedste budget siddecykel",
         summary:
           "Ægte siddecykel til skarpere pris — når RB-800 er for dyrt, men opretstående sadelcykel stadig føles forkert for knæ/hofter.",
+        rating: 4.3,
         pros: [
           "Lavere pris",
           "Ryglæn / siddecykel-geometri",
@@ -7531,6 +7665,7 @@ export const guides: Guide[] = [
         badge: "Skånsom stående (lav indstigning)",
         summary:
           "Elliptisk bevægelse uden løbestød — når balancen er OK, og du vil stå op. Lav indstigning og magnetmodstand passer til forsigtig progression.",
+        rating: 4.4,
         pros: [
           "Ingen hæl-stød som ved løb",
           "Lav indstigning",
@@ -7555,6 +7690,7 @@ export const guides: Guide[] = [
         badge: "Helkrop uden stød",
         summary:
           "Magnet-romaskine til skånsom helkrop, når knæene tåler den siddende trækbevægelse, og du vil have mere end cykel. Hold slaglængde og intensitet konservativ i starten.",
+        rating: 4.3,
         pros: [
           "Lav stødbelastning",
           "Magnetisk og jævn",
@@ -7712,6 +7848,7 @@ export const guides: Guide[] = [
         badge: "Bedst til lejlighed (fold)",
         summary:
           "Foldes fladt og kan rulles under sofa/seng — ægte løbebånd uden permanent footprint. Bedste kompromis, når du skal kunne jogge, men stadig pakke maskinen væk.",
+        rating: 4.5,
         pros: [
           "Flad fold til opbevaring",
           "Transporthjul",
@@ -7736,6 +7873,7 @@ export const guides: Guide[] = [
         badge: "Bedste kompakt med hældning",
         summary:
           "Kompakt hjemmeløbebånd med automatisk hældning — til jogging og løb uden midrange-pris. Brug hældning til intensitet i stedet for sprint, når naboerne er tæt på.",
+        rating: 4.5,
         pros: [
           "Kompakt footprint",
           "Automatisk hældning",
@@ -7760,6 +7898,7 @@ export const guides: Guide[] = [
         badge: "Bedste Titan entry",
         summary:
           "Titan-entry til ægte løbebånd, når du vil have kendt linje og fri fragt — stadig med måtte og fornuftige træningstider i lejlighed.",
+        rating: 4.4,
         pros: [
           "Titan Life-kvalitet i entry",
           "Fri fragt hos partner",
@@ -7784,6 +7923,7 @@ export const guides: Guide[] = [
         badge: "Ærligt alternativ (gå)",
         summary:
           "Når “støjsvagt løbebånd” egentlig betyder “jeg vil bevæge mig uden sure naboer”: gåbånd i gangtempo er næsten altid det rigtige lejlighedsvalg. Se også Bedste gåbånd 2026.",
+        rating: 4.3,
         pros: [
           "Markant mindre strukturel støj end løb",
           "Kan gemmes under sofa",
@@ -7924,6 +8064,7 @@ export const guides: Guide[] = [
         badge: "Bedst samlet stille",
         summary:
           "Allround kondicykel til jævnlig, støjsvag hjemmebrug — vores hovedvalg, når du vil have magnetisk cardio uden spinning-aggressivitet.",
+        rating: 4.8,
         pros: [
           "Solid midrange til hjemmet",
           "Lejlighedsvenlig ift. airbike",
@@ -7948,6 +8089,7 @@ export const guides: Guide[] = [
         badge: "Bedste stille-ish spin",
         summary:
           "Når du vil spinne hjemme: rem/magnet-setup der typisk er langt mere lejlighedsvenligt end airbike. Hold stående sprint i dagtimerne.",
+        rating: 4.6,
         pros: [
           "Remtræk uden kæderaslen",
           "Allround S72 til hjemmet",
@@ -7972,6 +8114,7 @@ export const guides: Guide[] = [
         badge: "Bedste budget stille",
         summary:
           "Prisvenlig kondicykel til at bygge vanen stille — fin starter i lejlighed, før du opgraderer til midrange.",
+        rating: 4.3,
         pros: [
           "Lav indgangspris",
           "Stille ift. luftmodstand",
@@ -7996,6 +8139,7 @@ export const guides: Guide[] = [
         badge: "Bedste fold til lejlighed",
         summary:
           "Foldbar cykel til små hjem — når støjkrav møder pladskrav, og maskinen skal kunne forsvinde efter træning.",
+        rating: 4.5,
         pros: [
           "Foldbar",
           "Skarp pris",
@@ -8093,7 +8237,7 @@ export const guides: Guide[] = [
       "Home gym til lille værelse (ca. 10 m²) 2026. Pladsbesparende setup: walking pad, foldbar cykel, justerbare håndvægte og foldbar bænk med live priser.",
     categorySlug: "styrkemaskiner",
     publishedAt: "2026-11-05",
-    updatedAt: "2026-11-05",
+    updatedAt: "2026-11-18",
     intro:
       "Du behøver ikke 20 m² garagegym. På ca. 10 m² (eller et lille sove-/kontor-/gæsteværelse) kan du få både cardio og styrke — hvis hver ting kan foldes, stables eller rulles væk. Denne guide er situationsbestemt: fire pladsoptimale anbefalinger, der spiller sammen, plus regler for footprint, loftshøjde og “kan det væk på to minutter?”. Er problemet skråvæg og trædehøjde frem for gulvplads, så læs Bedste cardio under lavt loft.",
     criteria: [
@@ -8135,6 +8279,7 @@ export const guides: Guide[] = [
         badge: "Cardio der kan gemmes",
         summary:
           "Ultra-fladt gåbånd til skridt og zone 2 — kan typisk skubbes under sofa/seng. Cardio-fundamentet i det lille værelse.",
+        rating: 4.7,
         pros: [
           "Minimal højde",
           "Gemmes væk efter brug",
@@ -8158,6 +8303,7 @@ export const guides: Guide[] = [
         badge: "Siddende cardio på fold",
         summary:
           "Når du vil have siddende kondition uden permanent cykel midt i rummet. Fold sammen efter pas.",
+        rating: 4.5,
         pros: [
           "Foldbar",
           "Siddende cardio",
@@ -8181,6 +8327,7 @@ export const guides: Guide[] = [
         badge: "Styrke uden pladestabel",
         summary:
           "Dial/selector-håndvægte er plads-hack’et i små hjem. Ét sæt dækker de fleste øvelser — se Bedste justerbare håndvægte 2026 for modelvalg.",
+        rating: 4.4,
         pros: [
           "Erstatter mange faste vægte",
           "Hurtigt skift i kilo",
@@ -8204,6 +8351,7 @@ export const guides: Guide[] = [
         badge: "Bænk der kan pakkes",
         summary:
           "Justerbar bænk med fold, så den kan ligge fladt efter træning — nødvendig partner til håndvægtene i det lille rum.",
+        rating: 4.3,
         pros: [
           "Foldbar",
           "Flere vinkler",
@@ -8228,7 +8376,7 @@ export const guides: Guide[] = [
       {
         heading: "Reglen om to minutter",
         paragraphs: [
-          "Hvis det tager mere end to minutter at gøre rummet beboeligt igen, bruger du det ikke. Prioritér hjul, fold og faste “hjem” til hvert redskab.",
+          "På ca. 10 m² skal alt kunne væk på under to minutter — ellers bruger du det ikke. Prioritér walking pad eller foldbar cykel, justerbare håndvægte (ét par i stedet for en vægreol) og en foldbar bænk med hjul eller et fast “hjem” til hvert redskab.",
           "Et pænt lille setup, du bruger, slår et halvfærdigt center-gym, der spærrer døren.",
         ],
       },
@@ -8341,6 +8489,7 @@ export const guides: Guide[] = [
         badge: "Bedst til daglige skridt",
         summary:
           "Flere skridt i hverdagen er den mest undervurderede vægttabsvaner. Et gåbånd gør zone 2 til noget, du kan gøre mens du ser noget — eller arbejder.",
+        rating: 4.7,
         pros: [
           "Lav barriere",
           "Nem at bruge ofte",
@@ -8364,6 +8513,7 @@ export const guides: Guide[] = [
         badge: "Bedst til gang + løb",
         summary:
           "Når du vil kunne både gå og løbe hjemme til fedttab og kondition. Allround-løbebånd til dem, der faktisk vil bruge fart — se også Bedste løbebånd 2026.",
+        rating: 4.6,
         pros: [
           "Allround til gang og løb",
           "Højere loft for progression",
@@ -8387,6 +8537,7 @@ export const guides: Guide[] = [
         badge: "Bedst helkrop pr. minut",
         summary:
           "Magnet-romaskine til effektiv helkropscardio, når tiden er knap. God kalorie-motor — lær teknikken først.",
+        rating: 4.4,
         pros: [
           "Helkrop",
           "Lav stødbelastning",
@@ -8410,6 +8561,7 @@ export const guides: Guide[] = [
         badge: "Styrke under cut",
         summary:
           "Behold muskel mens du taber fedt: fuldkropsstyrke 2–3×/uge med dial-håndvægte. Se Bedste justerbare håndvægte 2026 for konkrete sæt.",
+        rating: 4.3,
         pros: [
           "Pladsbesparende styrke",
           "Progression i kilo",
@@ -8547,6 +8699,7 @@ export const guides: Guide[] = [
         badge: "Bedst til to styrkeniveauer",
         summary:
           "Ét sæt dial-håndvægte med nok loft til begge. Hurtigt skift i kilo mellem sæt — se Bedste justerbare håndvægte 2026 for 20–40 kg-valg.",
+        rating: 4.7,
         pros: [
           "Dækker to brugere",
           "Pladsbesparende",
@@ -8570,6 +8723,7 @@ export const guides: Guide[] = [
         badge: "Delt styrkestation",
         summary:
           "Stabil justerbar bænk til press, rows og core for begge. Vælg model med hurtige vinkler — se Bedste justerbare træningsbænk 2026.",
+        rating: 4.6,
         pros: [
           "Mange øvelser",
           "Hurtig justering mellem brugere",
@@ -8593,6 +8747,7 @@ export const guides: Guide[] = [
         badge: "Sikker squat/bænk for begge",
         summary:
           "Når I løfter stang: safety bars er non-negotiable til alene-pas. Juster højder til begge — se Bedste power rack & squat rack 2026 for half/PRO.",
+        rating: 4.4,
         pros: [
           "Safety til alene-træning",
           "Justerbar højde til to brugere",
@@ -8616,6 +8771,7 @@ export const guides: Guide[] = [
         badge: "Delt cardio begge kan lide",
         summary:
           "Romaskine som fælles cardio: helkrop, skånsom, og nem at skiftes til. Alternativer: støjsvag cykel hvis I bor i lejlighed — se Bedste støjsvage motionscykel til lejlighed 2026.",
+        rating: 4.3,
         pros: [
           "Helkrop for begge",
           "Lav stødbelastning",
@@ -8754,6 +8910,7 @@ export const guides: Guide[] = [
         badge: "Vælg løbebånd",
         summary:
           "Allround-hjemmeløbebånd, når du vil jogge og løbe flere gange om ugen. Det rigtige svar, hvis gåbåndets tophastighed er for lav.",
+        rating: 4.7,
         pros: [
           "Bygget til gang, jogging og løb",
           "Mere maskine end et walking pad",
@@ -8778,6 +8935,7 @@ export const guides: Guide[] = [
         badge: "Løbebånd på budget",
         summary:
           "Kompakt ægte løbebånd med hældning, når du vil løbe uden midrange-pris — og walking pad stadig ikke er nok.",
+        rating: 4.3,
         pros: [
           "Ægte løbebånd under midrange",
           "Automatisk hældning",
@@ -8802,6 +8960,7 @@ export const guides: Guide[] = [
         badge: "Vælg gåbånd",
         summary:
           "Dedikeret walking pad til kontor og hjem. Det rigtige svar, når du går — og aldrig har tænkt dig at løbe på det.",
+        rating: 4.4,
         pros: [
           "Lavet til gang",
           "Passer til kontor og hverdag",
@@ -8826,6 +8985,7 @@ export const guides: Guide[] = [
         badge: "Gåbånd på budget",
         summary:
           "Lav indgang, hvis du vil teste skridt under arbejde, før du bruger penge på stigning eller et rigtigt løbebånd.",
+        rating: 4.3,
         pros: [
           "Lav pris",
           "Kompakt",
@@ -8994,6 +9154,7 @@ export const guides: Guide[] = [
         badge: "Vælg romaskine",
         summary:
           "Allround-romaskine til hjemmet, når du vil have helkropstræk og er klar til at lære taget.",
+        rating: 4.7,
         pros: [
           "Stærkt hjemmevalg",
           "Helkrop i ét træk",
@@ -9018,6 +9179,7 @@ export const guides: Guide[] = [
         badge: "Romaskine på budget",
         summary:
           "Billig magnet-indgang, hvis du vil teste roning, før du bruger midrange-penge.",
+        rating: 4.3,
         pros: [
           "Lav pris",
           "Magnet — ofte roligere end luft",
@@ -9042,6 +9204,7 @@ export const guides: Guide[] = [
         badge: "Vælg crosstrainer",
         summary:
           "Stabil ellipse til jævnlig cardio, når du vil stå op, holde i håndtagene og undgå løbestød.",
+        rating: 4.4,
         pros: [
           "Træd-og-kør",
           "Lavt stød",
@@ -9066,6 +9229,7 @@ export const guides: Guide[] = [
         badge: "Crosstrainer på budget",
         summary:
           "Lav indstigning og lav pris, når ellipse er valget, men C56 er for meget maskine til at starte.",
+        rating: 4.3,
         pros: [
           "Lav indgangspris",
           "Lav indstigning",
@@ -9238,6 +9402,7 @@ export const guides: Guide[] = [
         badge: "Vælg motionscykel",
         summary:
           "Oprejst kondicykel til rolige, længere pas. Det rigtige svar, når spinning-positionen lyder anstrengende.",
+        rating: 4.7,
         pros: [
           "Allround kondicykel",
           "Bedre til lange pas end spin",
@@ -9262,6 +9427,7 @@ export const guides: Guide[] = [
         badge: "Motionscykel på budget",
         summary:
           "Billig kondicykel, når vanen skal bygges, og spin-cyklens saddel ikke er det, du mangler.",
+        rating: 4.3,
         pros: [
           "Lav pris",
           "Til begyndere og rolige pas",
@@ -9286,6 +9452,7 @@ export const guides: Guide[] = [
         badge: "Vælg spinningcykel",
         summary:
           "Spin bike til intervaller derhjemme. Vælg den, når du vil svede, ikke når du vil se nyheder.",
+        rating: 4.4,
         pros: [
           "Tungt nok til jævnlig spinning",
           "Allround i S-serien",
@@ -9310,6 +9477,7 @@ export const guides: Guide[] = [
         badge: "Spinning på budget",
         summary:
           "Billig indgang, hvis du vil mærke spin-formatet, før du køber S72.",
+        rating: 4.3,
         pros: [
           "Laveste pris i S-serien her",
           "Spinning fra start",
@@ -9474,6 +9642,7 @@ export const guides: Guide[] = [
         badge: "Vælg løbebånd",
         summary:
           "Allround-hjemmeløbebånd, når du vil jogge og løbe. Det rigtige svar, hvis crosstrainerens ellipse ikke erstatter løbetræning.",
+        rating: 4.7,
         pros: [
           "Bygget til gang, jogging og løb",
           "Mere maskine end en ellipse til løbemål",
@@ -9498,6 +9667,7 @@ export const guides: Guide[] = [
         badge: "Løbebånd på budget",
         summary:
           "Kompakt ægte løbebånd med hældning, når du vil løbe uden midrange-pris — og ellipse stadig ikke er nok.",
+        rating: 4.3,
         pros: [
           "Ægte løbebånd under midrange",
           "Automatisk hældning",
@@ -9522,6 +9692,7 @@ export const guides: Guide[] = [
         badge: "Vælg crosstrainer",
         summary:
           "Stabil ellipse til jævnlig cardio, når knæene skal skånes, og du vil stå op uden løbestød.",
+        rating: 4.4,
         pros: [
           "Lavt stød — fødderne bliver på pedalerne",
           "Træd-og-kør uden løbeteknik",
@@ -9546,6 +9717,7 @@ export const guides: Guide[] = [
         badge: "Crosstrainer på budget",
         summary:
           "Lav indstigning og lav pris, når ellipse er valget, men C56 er for meget maskine til at starte.",
+        rating: 4.3,
         pros: [
           "Lav indgangspris",
           "Lav indstigning",
@@ -9719,6 +9891,7 @@ export const guides: Guide[] = [
         badge: "Vælg motionscykel",
         summary:
           "Oprejst kondicykel til rolige, længere pas. Det rigtige svar, når spin-sadlen og trainer-montering lyder som overkill.",
+        rating: 4.7,
         pros: [
           "Allround kondicykel",
           "Bedre til lange pas end spin",
@@ -9743,6 +9916,7 @@ export const guides: Guide[] = [
         badge: "Vælg spinningcykel",
         summary:
           "Spin bike til intervaller derhjemme. Vælg den, når du vil svede — ikke når du vil spænde racercyklen op.",
+        rating: 4.6,
         pros: [
           "Tungt nok til jævnlig spinning",
           "Allround i S-serien",
@@ -9767,6 +9941,7 @@ export const guides: Guide[] = [
         badge: "Vælg hometrainer",
         summary:
           "Direct drive til din egen race-/gravelcykel. Det rigtige svar, når Zwift og watt betyder mere end en dedikeret stue-cykel.",
+        rating: 4.4,
         pros: [
           "Din pasform og sadel indoor",
           "Zwift-klar direct drive",
@@ -9791,6 +9966,7 @@ export const guides: Guide[] = [
         badge: "Smart spin uden udecykel",
         summary:
           "Zwift-/Kinomap-klar spin bike, når du vil have app-træning uden at montere en racercykel hver gang.",
+        rating: 4.3,
         pros: [
           "Zwift- og Kinomap-klar",
           "Ingen daglig montering",
@@ -9962,6 +10138,7 @@ export const guides: Guide[] = [
         badge: "Bedst samlet",
         summary:
           "Comfort-siddecykel til de fleste hjem: ryglæn, lav indstigning og en pris, der stadig er hjemmeudstyr — ikke center-maskine.",
+        rating: 4.8,
         pros: [
           "Ægte siddecykel med ryglæn",
           "Lav indstigning",
@@ -9986,6 +10163,7 @@ export const guides: Guide[] = [
         badge: "Bedste kraftigere",
         summary:
           "Når RB-800 føles for spinkel, og cyklen skal være den daglige maskine i årevis. Tungere hjemmesiddecykel med fri fragt hos partner.",
+        rating: 4.6,
         pros: [
           "Kraftigere og mere stabil klasse",
           "Tunturi Signature",
@@ -10010,6 +10188,7 @@ export const guides: Guide[] = [
         badge: "Bedste billige",
         summary:
           "Ægte siddecykel til den lave pris. Rigtig, når budgettet er stramt, og en opret sadel stadig er forkert.",
+        rating: 4.3,
         pros: [
           "Lavest pris blandt de rigtige siddecykler her",
           "Ryglæn og siddecykel-geometri",
@@ -10034,6 +10213,7 @@ export const guides: Guide[] = [
         badge: "Alternativ i comfort-klassen",
         summary:
           "Endnu en rigtig comfort-siddecykel, hvis Odin og Tunturi ikke er på lager, eller du vil sammenligne ryglæn i den øvre hjemmeklasse.",
+        rating: 4.3,
         pros: [
           "Comfort-siddecykel, ikke pedaltræner",
           "Et alternativ til RB-800 / E60-R",
@@ -10195,6 +10375,7 @@ export const guides: Guide[] = [
         badge: "Tættest på gulvet",
         summary:
           "Shopteksten kalder den lav og uden håndtag. Du går, du løber ikke, så der er ikke et hop over et dæk og ingen konsol i øjenhøjde. Det er det sikreste cardio-valg under en skråvæg, når målet er skridt og rolig puls.",
+        rating: 4.7,
         pros: [
           "Lav og uden håndtag ifølge shoppen",
           "Gang i stedet for løb",
@@ -10219,6 +10400,7 @@ export const guides: Guide[] = [
         badge: "Sæde 36 cm",
         summary:
           "Du sidder og ror, du står ikke. På den høje Model D oplyser Concept2 sædehøjde 51 cm og skriver, at standardmodellen er 36 cm. Standard Model D er derfor et af de få cardio-valg, hvor vi kan sige et tal for, hvor højt kroppen starter — og hovedet løfter sig i trækket, så mål stadig til loft i toppen af bevægelsen.",
+        rating: 4.6,
         pros: [
           "Sædehøjde 36 cm oplyst via Concept2s egen sammenligning",
           "Siddende — intet pedalhop",
@@ -10242,6 +10424,7 @@ export const guides: Guide[] = [
         badge: "Siddende under skråvæggen",
         summary:
           "Ryglæn og lav indstigning holder dig i sædet i stedet for at løfte dig op på pedaler. Det er cardio, hvor hovedet bliver i nogenlunde samme højde hele pasningen. Feedet oplyser ikke sædehøjden i centimeter — mål den med sædet, hvor du faktisk sidder.",
+        rating: 4.3,
         pros: [
           "Siddende med ryglæn",
           "Ingen stående pedalposition",
@@ -10265,6 +10448,7 @@ export const guides: Guide[] = [
         badge: "Siddende, lav indstigning",
         summary:
           "Opret motionscykel med lav indstigning: nemt af og på, og du bliver i sadlen. Det slår en crosstrainer under en skråvæg, fordi pedalerne ikke løfter hele kroppen. Sadlen kan stadig sættes så højt, at hovedet rammer — sæt den, og mål, før du køber et løbebånd i stedet.",
+        rating: 4.3,
         pros: [
           "Lav indstigning ifølge shoppen",
           "Siddende træning",
@@ -10441,6 +10625,7 @@ export const guides: Guide[] = [
         badge: "Bedst samlet",
         summary:
           "Den stabile rygtræner til hjemmet: 70×50 mm profilrør og oplyst brugervægt op til 200 kg. Vælg den, når bænken skal stå fast og bære en tung bruger.",
+        rating: 4.8,
         pros: [
           "70×50 mm profilrør",
           "Brugervægt op til 200 kg",
@@ -10466,6 +10651,7 @@ export const guides: Guide[] = [
         badge: "Bedste foldbare",
         summary:
           "Rygtræner der kan foldes og stilles væk. 50 mm profilrør og fokus på core og ryg. Det praktiske valg, når stuen skal være stue bagefter.",
+        rating: 4.5,
         pros: [
           "Kan foldes sammen",
           "50 mm profilrør",
@@ -10491,6 +10677,7 @@ export const guides: Guide[] = [
         badge: "Bedste pasform",
         summary:
           "45-graders rygbænk, hvor både lændestøttens længde og ankelstøtten kan justeres. Til husstande, hvor I ikke er lige høje.",
+        rating: 4.4,
         pros: [
           "45 graders vinkel",
           "Justerbar lændestøtte",
@@ -10516,6 +10703,7 @@ export const guides: Guide[] = [
         badge: "Bedste mavebænk",
         summary:
           "Sit-up-bænk med 50 mm profilrør og oplyst brugervægt op til 150 kg. Til dig, der vil træne mave — ikke lænd i hyperextension.",
+        rating: 4.3,
         pros: [
           "Lavet til sit-ups",
           "Brugervægt op til 150 kg",
@@ -10673,6 +10861,7 @@ export const guides: Guide[] = [
         badge: "Bedste støjdæmpning",
         summary:
           "1×1 meter pusleflise i 25 mm gummi. Den tykke løsning under hop, vægte og maskinfødder. Du samler flere, og de kan skæres til.",
+        rating: 4.7,
         pros: [
           "25 mm gummi",
           "Puzzle — kan bygges ud",
@@ -10698,6 +10887,7 @@ export const guides: Guide[] = [
         badge: "Bedste under gåbånd",
         summary:
           "Tynd PVC-måtte i ét stykke til walking pad og løbebånd. Shoppen skriver, at den dæmper statisk elektricitet fra båndet og beskytter gulvet. Den er ikke et støjdæmpende gulv.",
+        rating: 4.3,
         pros: [
           "200×90 cm i ét stykke",
           "Passer under et walking pad",
@@ -10723,6 +10913,7 @@ export const guides: Guide[] = [
         badge: "Bedste til lejlighed",
         summary:
           "Medium tungt sjippetov på 700 gram. Vægten gør svinget langsommere end et speed rope, så linen ikke pisker i samme tempo. Det er lejlighedstovet.",
+        rating: 4.5,
         pros: [
           "700 g — medium heavy",
           "Langsommere kadence end et let tov",
@@ -10748,6 +10939,7 @@ export const guides: Guide[] = [
         badge: "Bedste almindelige",
         summary:
           "Almindeligt tov med kuglelejer, så linen ikke vrider, og aftagelige vægte i håndtagene. Til korte pas og opvarmning — ikke til sen aften over underboen.",
+        rating: 4.3,
         pros: [
           "Kuglelejer i håndtagene",
           "Aftagelige vægte",
@@ -10898,6 +11090,7 @@ export const guides: Guide[] = [
         badge: "Bedst samlet",
         summary:
           "50 kg-sæt med bumper plates, shoppen beskriver som slidstærke og med gummioverflade. Det er hjemmesættet, når skiverne må sættes ned uden at klinge som jern.",
+        rating: 4.8,
         pros: [
           "Bumper plates med gummi",
           "50 kg sæt — ikke løse skiver",
@@ -10923,6 +11116,7 @@ export const guides: Guide[] = [
         badge: "Bedste billige bumper",
         summary:
           "Olympisk sæt på 50 kg med en 220 cm stang, nubret greb og bumper plates. Den billigere indgang, når du vil have OL-mål og gummi frem for jern.",
+        rating: 4.3,
         pros: [
           "220 cm OL-stang",
           "Nubret greb",
@@ -10948,6 +11142,7 @@ export const guides: Guide[] = [
         badge: "Bedste stang",
         summary:
           "Selve stangen: 220 cm, 20 kg, 50 mm og oplyst maks. belastning på 450 kg. Køb den, når du allerede har skiver — eller vil købe dem bagefter.",
+        rating: 4.4,
         pros: [
           "20 kg og 220 cm",
           "50 mm OL-skiver",
@@ -10974,6 +11169,7 @@ export const guides: Guide[] = [
         badge: "Bedste 30 mm",
         summary:
           "Jernsæt solgt som 100 kg. Beskrivelsen nævner en 170 cm stang, to fjederluk og 90 kg sorte jernskiver. Mest kilo for pengene — og den højlydte løsning.",
+        rating: 4.3,
         pros: [
           "30 mm hjemmestandard",
           "170 cm stang — kortere end 220 cm",
@@ -11124,6 +11320,7 @@ export const guides: Guide[] = [
         badge: "Bedste billige",
         summary:
           "Fem elastikker fra 4,5 til 22,5 kg, som kan kombineres. Håndtag, ankelremme og døranker følger med. Den komplette indgang, uden at du skal købe ankeret bagefter.",
+        rating: 4.3,
         pros: [
           "Fem niveauer, 4,5–22,5 kg",
           "Kan kombineres",
@@ -11149,6 +11346,7 @@ export const guides: Guide[] = [
         badge: "Bedste modstand",
         summary:
           "Fem exertubes med håndtag. Shoppen oplyser en samlet modstand på 150 lbs, cirka 68,5 kg. Til dig, der allerede synes, et let sæt er for spinkelt.",
+        rating: 4.6,
         pros: [
           "Fem tuber",
           "Samlet modstand oplyst til ca. 68,5 kg",
@@ -11174,6 +11372,7 @@ export const guides: Guide[] = [
         badge: "Bedste billige slynge",
         summary:
           "Slynge til hele kroppen, som kan hænges i loft eller sættes i en dør med den medfølgende klemme. Den billige måde at få suspension derhjemme.",
+        rating: 4.3,
         pros: [
           "Dørklemme følger med",
           "Kan også hænges i loft",
@@ -11199,6 +11398,7 @@ export const guides: Guide[] = [
         badge: "Bedste med døranker",
         summary:
           "TRX til hjemmet. Pakken indeholder slyngen, pose, døranker, suspension anchor, seks digitale workouts og en plakat. Køb den, når ophænget og et program skal følge med.",
+        rating: 4.3,
         pros: [
           "Døranker i pakken",
           "Pose og ophæng",
@@ -11351,6 +11551,7 @@ export const guides: Guide[] = [
         badge: "Vælg stejl stigning",
         summary:
           "Walking pad til bjerggang, ikke til løb. Op til 40 % og foldbart. Levering fra fjernlager i Tyskland, op til seks hverdage. Det er den stejle ende af det, shoppen faktisk sælger.",
+        rating: 4.7,
         pros: [
           "Op til 40 % stigning",
           "Foldbart",
@@ -11376,6 +11577,7 @@ export const guides: Guide[] = [
         badge: "Vælg stigning og let løb",
         summary:
           "Det tætteste på en incline-løbebånd i feedet: op til 20 % automatisk stigning, ca. 14 km/t, og shoppen skriver gang, rask gang og let løb. Foldbart.",
+        rating: 4.6,
         pros: [
           "Op til 20 % automatisk",
           "Ca. 14 km/t — let løb er med",
@@ -11401,6 +11603,7 @@ export const guides: Guide[] = [
         badge: "Vælg klassisk løbebånd",
         summary:
           "Hjemmeløbebånd til familien, med fri fragt og hurtig levering hos HomeX. Vælg det, når jobbet er at løbe — ikke at gå på 40 %.",
+        rating: 4.4,
         pros: [
           "Klassisk hjemmeløbebånd",
           "Fri fragt hos partner",
@@ -11425,6 +11628,7 @@ export const guides: Guide[] = [
         badge: "Klassisk til seriøst løb",
         summary:
           "Den stærkere Titan LIFE-model hos HomeX, også med fri fragt og hurtig levering. Til dig, der løber ofte og ikke er på udkig efter et bjerg-pad.",
+        rating: 4.3,
         pros: [
           "Sælges som stærkere kvalitet end indgangsbånd",
           "Fri fragt",
@@ -11592,6 +11796,7 @@ export const guides: Guide[] = [
         badge: "Bedst samlet",
         summary:
           "Fire klassiske støbejernsklokker i det interval, de fleste hjemmetrænere faktisk bruger. Progression uden at købe én for tung klokke først — og ægte swing-følelse, vinyl ikke kan matche.",
+        rating: 4.8,
         pros: [
           "Dækker begynder → mellemprogression",
           "Klassisk støbejern til swings og presses",
@@ -11617,6 +11822,7 @@ export const guides: Guide[] = [
         badge: "Bedste billige / stuen",
         summary:
           "Vinylbelagte klokker til stuen, lejligheden og dem, der vil skåne gulv og møbler. Ideel indgang, hvis du er ny — eller vil have lette klokker til mobility, goblet og teknik.",
+        rating: 4.3,
         pros: [
           "Gulvvenlig overflade",
           "Lav entry-pris for fire vægte",
@@ -11642,6 +11848,7 @@ export const guides: Guide[] = [
         badge: "Bedste konkurrencegreb",
         summary:
           "Steel competition-klokke med ens ydre mål — grebet ændrer sig ikke, når du senere køber 16 eller 24 kg i samme serie. Til dig, der vil have ensartet snatch/jerk-følelse hjemme.",
+        rating: 4.4,
         pros: [
           "Ens greb på tværs af vægte i serien",
           "Seriøs træningsfølelse",
@@ -11667,6 +11874,7 @@ export const guides: Guide[] = [
         badge: "Bedste pladsbesparende",
         summary:
           "Én justerbar klokke erstatter en række lette kettlebells. Stærkt, når kvadratmeterne er få — og presses/squats skifter vægt ofte. Swings føles stadig bedst på en massiv klokke.",
+        rating: 4.5,
         pros: [
           "Minimalt footprint",
           "Hurtigt vægtskift",
@@ -11820,6 +12028,7 @@ export const guides: Guide[] = [
         badge: "Bedst til tung styrke",
         summary:
           "25 mm hård gummi er sweet spot under kettlebells, håndvægte og kontrollerede nedsætninger. Tykkere end 10 mm-pakkerne — uden at gå all-in på 40 mm blød skum.",
+        rating: 4.7,
         pros: [
           "25 mm til rigtig vægtzone",
           "Hård gummi under jern",
@@ -11845,6 +12054,7 @@ export const guides: Guide[] = [
         badge: "Bedste startpakke",
         summary:
           "8 × 60×60×10 mm giver dig næsten 3 m² med det samme. Det er den mest ærlige “jeg starter et home gym”-pakke: nok til bænk + vægtzone, før du udvider.",
+        rating: 4.6,
         pros: [
           "2,88 m² fra dag 1",
           "Udvidbar med samme serie (12/16/20-pak)",
@@ -11870,6 +12080,7 @@ export const guides: Guide[] = [
         badge: "Bedste til fuldt home gym",
         summary:
           "Når zonen skal dække rack, bænk og landingsfelt, er 7+ m² det, der faktisk føles som et gulv — ikke en måtte-ø midt i rummet.",
+        rating: 4.4,
         pros: [
           "Dækker et lille styrkerum",
           "Samme 10 mm-system som 8-pakken",
@@ -11895,6 +12106,7 @@ export const guides: Guide[] = [
         badge: "Bedste til gulvarbejde + vægte",
         summary:
           "25 mm medium-blød flise: mere komfort til core og mobilitet end hård gummi, stadig tyk nok til at skåne gulvet under moderate vægte. Kompromis mellem “måtte” og “gulv”.",
+        rating: 4.3,
         pros: [
           "Behagelige til gulvøvelser",
           "25 mm beskyttelse",
@@ -12042,6 +12254,7 @@ export const guides: Guide[] = [
         badge: "Bedst samlet",
         summary:
           "Den vandromaskine, vi allerede anbefaler i den generelle romaskine-guide: ægte splash og jævn trækfølelse til midrange-pris — uden at kræve Fluid Rower-budget.",
+        rating: 4.8,
         pros: [
           "Autentisk vandmodstand",
           "Stærk midrange-pris",
@@ -12067,6 +12280,7 @@ export const guides: Guide[] = [
         badge: "Bedste til stuen",
         summary:
           "Foldbar vandromaskine i asketræ — typen, der får lov at stå fremme. Splash + møbelæstetik + mulighed for at klappe sammen efter pas.",
+        rating: 4.6,
         pros: [
           "Asketræ-look til stuen",
           "Foldbar efter træning",
@@ -12092,6 +12306,7 @@ export const guides: Guide[] = [
         badge: "Bedste træ-premium",
         summary:
           "Samme foldbare vand-koncept i eg — varmere look, typisk lidt højere pris. Til dig, der prioriterer design i stuen og stadig vil have ægte vandmodstand.",
+        rating: 4.9,
         pros: [
           "Egetræ-finish",
           "Foldbar",
@@ -12117,6 +12332,7 @@ export const guides: Guide[] = [
         badge: "Bedste billige vand",
         summary:
           "Indgangen til vandmodstand uden træ-premium. Til dig, der vil teste splash-følelsen, før du investerer i ask/eg-modeller.",
+        rating: 4.3,
         pros: [
           "Laveste entry blandt vores vand-anbefalinger",
           "Ægte vandmodstand",
@@ -12258,6 +12474,7 @@ export const guides: Guide[] = [
         badge: "Bedste dørribbe",
         summary:
           "Skruefri dørribbe til dig, der vil i gang uden boremaskine. Vælg den kun, hvis karmen er solid — og hold dig til kontrollerede reps.",
+        rating: 4.7,
         pros: [
           "Ingen skruer",
           "Hurtig at sætte op/tage ned",
@@ -12282,6 +12499,7 @@ export const guides: Guide[] = [
         badge: "Bedste billige",
         summary:
           "Budget-dørribbe til at teste vanen. Samme karm-advarsel som alle skruefri modeller: monteringsflade først, ego bagefter.",
+        rating: 4.3,
         pros: [
           "Lav pris",
           "Skruefri",
@@ -12305,6 +12523,7 @@ export const guides: Guide[] = [
         badge: "Bedst vægmonteret",
         summary:
           "Tung vægmonteret bar til solid mur. Den vi også peget på i udendørs-guiden — minimal footprint, når du ikke træner, og langt mere tillid end en tvivlsom karm.",
+        rating: 4.4,
         pros: [
           "Stabil ved korrekt montage",
           "Tung konstruktion",
@@ -12329,6 +12548,7 @@ export const guides: Guide[] = [
         badge: "Bedste grebsvariation",
         summary:
           "Multi-grip vægbar til wide, narrow og neutrale greb. Til dig, der vil variere skulderbelastning uden at eje et helt rack.",
+        rating: 4.3,
         pros: [
           "Flere grebspositioner",
           "Alsidig hjemmetræning",
@@ -12475,6 +12695,7 @@ export const guides: Guide[] = [
         badge: "Bedst samlet",
         summary:
           "Direct drive-allrounderen til de fleste: Zwift-klar, solid watt og Wahoo-økosystemet uden at gå helt til flagship-prisen. Førstevalg, hvis du spænder din egen cykel op flere gange om ugen.",
+        rating: 4.8,
         pros: [
           "Direct drive med live partnerpris",
           "Gennemtestet til Zwift og struktureret træning",
@@ -12498,6 +12719,7 @@ export const guides: Guide[] = [
         badge: "Bedste premium",
         summary:
           "Når watt, bakkefølelse og støjsvag træning er vigtigere end den billigste billet ind. Neo 2T er referencepunktet for seriøs indoor — især hvis du kører races eller strukturerede zoner.",
+        rating: 4.9,
         pros: [
           "Høj max-watt og præcis power",
           "Meget stille direct drive",
@@ -12520,6 +12742,7 @@ export const guides: Guide[] = [
         badge: "Bedste mid-range",
         summary:
           "Stærkt Elite-valg midt i feltet: interaktiv direct drive med riser block — mere trainer for pengene, hvis Wahoo/Tacx-premium er for dyrt, men wheel-on er for tyndt.",
+        rating: 4.4,
         pros: [
           "Interaktiv direct drive under premium-prisen",
           "Riser block med i pakken",
@@ -12542,6 +12765,7 @@ export const guides: Guide[] = [
         badge: "Bedste budget wheel-on",
         summary:
           "Hurtig on/off uden kassette-skift: hjulet bliver på. Til sjældne regnvejrs-pas og lavt budget — ikke førstevalg til seriøse Zwift-løb.",
+        rating: 4.3,
         pros: [
           "Laveste entry blandt vores hometrainere",
           "Ingen kassette-skift",
@@ -12682,6 +12906,7 @@ export const guides: Guide[] = [
         badge: "Bedst samlet",
         summary:
           "Kendte Adidas-kvalitet til et klassisk enkelt-hjul. God allround-mavetræner, når du vil have et solidt greb og et mærke, der føles mere “færdigt” end no-name entry.",
+        rating: 4.8,
         pros: [
           "Stærkt allround-valg",
           "Kendt brand",
@@ -12704,6 +12929,7 @@ export const guides: Guide[] = [
         badge: "Bedste billige",
         summary:
           "Gummi-hjul til lav pris — det mest ærlige “kom i gang”-køb. Brug måtte under knæene, og rul kort, indtil core kan holde længere udrulninger.",
+        rating: 4.3,
         pros: [
           "Lav entry-pris",
           "Gummi skåner gulv bedre end hård plast",
@@ -12726,6 +12952,7 @@ export const guides: Guide[] = [
         badge: "Bedste stabile",
         summary:
           "Dobbelt hjul giver mere sideværts stabilitet end klassisk single. Til dig, der vælter på smalle hjul, eller vil have en mere tilgivende indlæring.",
+        rating: 4.4,
         pros: [
           "Mere stabilt end single",
           "Lav pris",
@@ -12748,6 +12975,7 @@ export const guides: Guide[] = [
         badge: "Bedste til begyndere",
         summary:
           "Support-udgave til dem, der vil have mere vejledning i bevægelsen end et nøgent hjul. Typisk det rigtige valg, hvis enkelt-hjul føles umuligt dag 1.",
+        rating: 4.3,
         pros: [
           "Mere support end basis-hjul",
           "Bedre indlæring",
@@ -12854,6 +13082,7 @@ export const guides: Guide[] = [
         badge: "Bedst samlet",
         summary:
           "Power tower til dips, pull-ups og mere i ét footprint. Til dig, der vil have stationær kropsvægt uden et fuldt rack — og stadig have plads til progression.",
+        rating: 4.8,
         pros: [
           "Dips + pull-ups i én station",
           "Stærkere allround end rene parallettes",
@@ -12876,6 +13105,7 @@ export const guides: Guide[] = [
         badge: "Bedste dedikerede dip-station",
         summary:
           "Fritstående dip-fokus uden tower-prisen. Til dig, der primært vil dippe — og allerede har pull-ups et andet sted (dørribbe/vægbar).",
+        rating: 4.6,
         pros: [
           "Dedikeret til dips",
           "Lavere pris end mange towers",
@@ -12897,6 +13127,7 @@ export const guides: Guide[] = [
         badge: "Bedste kompakte / alsidige",
         summary:
           "Equalizer-bars til dips, rows, push-ups og L-sit. Fylder mindre end en tower og kan flyttes. Stærkt lejlighedsvalg.",
+        rating: 4.5,
         pros: [
           "Kompakt footprint",
           "Flere øvelser end “kun dips”",
@@ -12919,6 +13150,7 @@ export const guides: Guide[] = [
         badge: "Bedste parallettes",
         summary:
           "Mellemstore træ-parallettes til L-sit, tuck-planche-progressions og dybe push-ups. Det lille setup, der stadig føles seriøst.",
+        rating: 4.3,
         pros: [
           "Lavt og stabilt til gulvarbejde",
           "Trægreb med godt “grip”",
@@ -13045,6 +13277,7 @@ export const guides: Guide[] = [
         badge: "Bedst samlet",
         summary:
           "Justerbar 30 kg-vest med udtagelige klodser — det mest fleksible allround-valg til styrke, rucking-progression og husstande, der deler udstyr.",
+        rating: 4.8,
         pros: [
           "Op til 30 kg progression",
           "Udtagelige klodser",
@@ -13068,6 +13301,7 @@ export const guides: Guide[] = [
         badge: "Bedste billige",
         summary:
           "Fast 8 kg til dem, der vil have vægt på gåture og kropsvægt uden at fumle med klodser. Lav entry, klar til brug.",
+        rating: 4.3,
         pros: [
           "Lav pris",
           "Simpel — ingen klodser at miste",
@@ -13091,6 +13325,7 @@ export const guides: Guide[] = [
         badge: "Bedste til gang / komfort",
         summary:
           "Soft-vest på 10 kg — mere behagelig fordeling til længere gangture end hårde plader. Sweet spot til kondition med ekstra load.",
+        rating: 4.4,
         pros: [
           "Blødere komfort",
           "10 kg er realistisk til gang",
@@ -13114,6 +13349,7 @@ export const guides: Guide[] = [
         badge: "Bedste lette indgang",
         summary:
           "5 kg Reebok-vest til dem, der er nye i weighted walking, eller vil have let load på løb/gang uden at overbelaste led dag 1.",
+        rating: 4.3,
         pros: [
           "Let startvægt",
           "Kendt brand",
@@ -13222,6 +13458,7 @@ export const guides: Guide[] = [
         badge: "Bedst samlet step",
         summary:
           "Klassisk aerobic-step til step-ups, cardio og elevation. Det mest alsidige “lille” ben-/konditionsværktøj til stuen — uden box jump-støj.",
+        rating: 4.8,
         pros: [
           "Kompakt og alsidigt",
           "Lav støj ift. jumps",
@@ -13244,6 +13481,7 @@ export const guides: Guide[] = [
         badge: "Bedste billige step",
         summary:
           "Justerbar medium-step til budget. Fin, når du vil have højdejustering uden at betale maxi-priser.",
+        rating: 4.3,
         pros: [
           "Justerbar højde",
           "Lav pris",
@@ -13265,6 +13503,7 @@ export const guides: Guide[] = [
         badge: "Bedste soft plyo",
         summary:
           "Polstret 3-i-1 soft plyoboks — det lejlighedsvenlige valg til box jumps og step-ups med tre højder. Skåner skinneben ved miss bedre end træ.",
+        rating: 4.4,
         pros: [
           "Tre højder i én",
           "Blødere ved fejl-landing",
@@ -13287,6 +13526,7 @@ export const guides: Guide[] = [
         badge: "Bedste til højere jumps",
         summary:
           "Større soft plyo til dig, der allerede jumper 50+ cm rent og vil have 70 cm-option uden at skifte til hård træboks.",
+        rating: 4.3,
         pros: [
           "Højere progression",
           "Stadig soft ved miss",
@@ -13415,6 +13655,7 @@ export const guides: Guide[] = [
         badge: "Modelguide",
         summary:
           "Ultra-lavt walking pad uden håndtag fra Ascendic — vores go-to når målet er skridt under arbejde eller TV, minimal højde og en skarp indgangspris. Det er et ærligt entry-/plads-valg: godt til gang og vaner, ikke til løb eller “pro”-kontorbrug hele dagen. Live pris og lagerstatus hentes direkte fra Ascendic.dk.",
+        rating: 4.7,
         pros: [
           "Meget lav profil — velegnet under hæve-sænkebord",
           "Ingen stang der spærrer under bordpladen",
@@ -13529,7 +13770,7 @@ export const guides: Guide[] = [
     kind: "modelguide",
     recommendationsHeading: "Modellen",
     publishedAt: "2026-11-11",
-    updatedAt: "2026-11-11",
+    updatedAt: "2026-11-18",
     intro:
       "Ascendic 7021 er et kompakt ægte løbebånd — ikke et walking pad. Den er bygget til gang, jogging og løb hjemme, med automatisk hældning, når du vil have mere intensitet uden at skrue farten op. Denne modelguide handler kun om 7021: hvem den er til, hvornår den slår Essential-gåbåndet, og hvornår du hellere skal op i Titan-/Reebok-klassen. Vil du sammenligne flere løbebånd, se Bedste løbebånd 2026.",
     criteria: [
@@ -13566,6 +13807,7 @@ export const guides: Guide[] = [
         badge: "Modelguide",
         summary:
           "Kompakt ægte løbebånd fra Ascendic med automatisk hældning — vores go-to, når budgettet er stramt, men walking pad ikke dækker jogging og løb. Ærlig entry til hjemmeløbebånd: godt til variation og pladsbevidste hjem, ikke et erstatning for et tungt interval-bånd. Live pris og lagerstatus hos Ascendic.dk.",
+        rating: 4.7,
         pros: [
           "Ægte løbebånd til under midrange-pris",
           "Automatisk hældning til variation",
@@ -13599,8 +13841,8 @@ export const guides: Guide[] = [
       {
         heading: "Hvad 7021 egentlig er",
         paragraphs: [
-          "7021 er Ascendics kompakte indgang til ægte løbebånd: højere tempo-zone end et walking pad, automatisk hældning, og en pris der rammer “jeg vil løbe hjemme uden at købe center-maskine”.",
-          "I vores guides bruger vi den som budget-pick netop fordi den løser ét klart job: løb/jogging derhjemme, når plads og penge begrænser — uden at love Elite-dæk eller peak-interval hver dag.",
+          "Ascendic 7021 er et kompakt budget-løbebånd til gang, jogging og løb hjemme — ikke et walking pad. Du får højere tempo-zone end Essential-gåbåndet, automatisk hældning til mere intensitet uden sprint, og en pris der sigter efter “løb hjemme uden center-maskine”.",
+          "I vores guides er den budget-pick, fordi den løser ét klart job: løb/jogging derhjemme, når plads og penge begrænser — uden at love Elite-dæk eller peak-interval hver dag.",
         ],
       },
       {
@@ -13712,6 +13954,7 @@ export const guides: Guide[] = [
         badge: "Modelguide",
         summary:
           "Foldbart hjemmeløbebånd fra iHero/VeloraFit med 1–12 km/t, op til 6 % stigning, LED-display og Bluetooth til FitShow. Skarp indgang, når du vil have fold + lidt mere end et walking pad — til tilbudspris, ikke til center-ambitioner. Live pris hos iHero.",
+        rating: 4.7,
         pros: [
           "Foldbart — nemmere at gemme under sofa/væg",
           "1–12 km/t dækker gang og let jogging",
@@ -13858,6 +14101,7 @@ export const guides: Guide[] = [
         badge: "Modelguide",
         summary:
           "Odin RB-800 Comfort fra Apuls — vores go-to siddecykel til hjemmet, når skånsom cardio med ryglæn og lav indstigning er jobbet. Comfort frem for spin: god til seniorer, genoptræning og alle, der vil sætte sig trygt og træde. Live pris hos Apuls.dk.",
+        rating: 4.7,
         pros: [
           "Ægte siddecykel med ryglæn",
           "Lav indstigning — nem at komme på",
@@ -14004,6 +14248,7 @@ export const guides: Guide[] = [
         badge: "Modelguide",
         summary:
           "Foldbart Reebok-hjemmeløbebånd hos Apuls — vores go-to, når ægte løbebånd skal kunne foldes fladt og rulles under sofa/seng. Kendt brand, færdigsamlet levering, og et ærligt plads-kompromis: godt til gang/jog og opbevaring, ikke et center-interval-bånd. Live pris hos Apuls.dk.",
+        rating: 4.7,
         pros: [
           "Foldes fladt til opbevaring under mange møbler",
           "Transporthjul til at rulle væk",
@@ -14149,6 +14394,7 @@ export const guides: Guide[] = [
         badge: "Modelguide",
         summary:
           "Odin R1800 fra Apuls — vores go-to vandromaskine, når du vil have autentisk splash og jævn trækfølelse til midrange-pris. Helkropspas der føles “rigtige”, uden Fluid-budget. Live pris hos Apuls.dk.",
+        rating: 4.7,
         pros: [
           "Autentisk vandlyd og jævn trækfølelse",
           "Klar midrange-pris for vandmodstand",
@@ -14294,6 +14540,7 @@ export const guides: Guide[] = [
         badge: "Modelguide",
         summary:
           "Odin A1000 fra Apuls — vores go-to airbike til hjemme-HIIT, når du vil have ægte vindmodstand uden Assault-priser. Solid midrange til jævnlig hård brug: arme+ben, ærlig intensitet, ærlig støj. Live pris hos Apuls.dk.",
+        rating: 4.7,
         pros: [
           "Solid midrange airbike til hjemmet",
           "Vindmodstand til ægte intervaller",
@@ -14438,6 +14685,7 @@ export const guides: Guide[] = [
         badge: "Modelguide",
         summary:
           "Odin S1000 fra Apuls — vores go-to smart spinningcykel, når Zwift/Kinomap uden Peloton-lock-in er jobbet. Spin-geometri, egen tablet, midrange-smart: godt til at bygge vanen og køre seriøst hjemme, ikke en erstatning for KICKR Bike. Live pris hos Apuls.dk.",
+        rating: 4.7,
         pros: [
           "Zwift- og Kinomap-klar",
           "Spinning-geometri til intervaller",
@@ -14584,6 +14832,7 @@ export const guides: Guide[] = [
         badge: "Modelguide",
         summary:
           "Odin 2×24 kg dial-sæt fra Apuls — vores go-to justerbare håndvægte til hjemmet. Komplet par, 12-i-én, pladsbesparende allround til press/row/squat-varianter i flere år. Live pris hos Apuls.dk.",
+        rating: 4.7,
         pros: [
           "Komplet par (2 stk.) — klar til træning dag 1",
           "24 kg pr. hånd dækker de fleste i flere år",
@@ -14727,6 +14976,7 @@ export const guides: Guide[] = [
         badge: "Modelguide",
         summary:
           "Ascendic 6004 — vores go-to støjsvage magnet-romaskine, når lejlighed og aftenbrug er jobbet. Næsten lydløs entry med 15 niveauer: skånsom helkrop uden luftvifte. Live pris hos Ascendic.dk.",
+        rating: 4.7,
         pros: [
           "Magnetisk og meget støjsvag",
           "Skarp pris til lejlighedsbrug",
@@ -14872,6 +15122,7 @@ export const guides: Guide[] = [
         badge: "Modelguide",
         summary:
           "Titan Life B35 fra HomeX — vores go-to budget kondicykel, når skånsom cardio og lav indgangspris er jobbet. Stabil entry til at bygge vane: fin til zone 2 og begyndere, ikke en erstatning for spinning eller premium Tunturi. Live pris hos HomeX.dk.",
+        rating: 4.7,
         pros: [
           "Lav indgangspris ift. midrange kondicykler",
           "Stabil opret motionscykel til begyndere",
@@ -15016,6 +15267,7 @@ export const guides: Guide[] = [
         badge: "Modelguide",
         summary:
           "Ascendic 8001 — vores go-to foldbare cykel, når plads og let, skånsom cardio er jobbet. Ryglæn + fold + magnet: god til små hjem og rolige pas, ikke til tung spinning. Live pris hos Ascendic.dk.",
+        rating: 4.7,
         pros: [
           "Foldbar og kan rulles væk",
           "Polstret ryglæn til længere, rolige pas",
@@ -15163,6 +15415,7 @@ export const guides: Guide[] = [
         badge: "Modelguide",
         summary:
           "Titan LIFE S72 fra HomeX — vores go-to allround spinningcykel, når intervaller og hold-følelse hjemme er jobbet. Mere cykel end S11/S62 til jævnlig brug, uden S96-pris. Live pris hos HomeX.dk.",
+        rating: 4.7,
         pros: [
           "Solid mid/øvre mid i Titan LIFE S-serien",
           "God til jævnlig spinning og intervaller",
@@ -15297,6 +15550,7 @@ export const guides: Guide[] = [
         name: "Ascendic 7021",
         badge: "Bedst til hældning på budget",
         summary: "Automatisk hældning i et kompakt ægte løbebånd.",
+        rating: 4.3,
         pros: [
           "Automatisk hældning",
           "Skarp budget-pris",
@@ -15326,6 +15580,7 @@ export const guides: Guide[] = [
         name: "Reebok i-Run 4.5",
         badge: "Bedst til fold under møbel",
         summary: "Flad fold med hjul — ægte løbebånd der kan gemmes væk.",
+        rating: 4.3,
         pros: [
           "Foldes fladt under mange sofaer/senge",
           "Transporthjul",
@@ -15431,6 +15686,7 @@ export const guides: Guide[] = [
         name: "Ascendic 6004",
         badge: "Bedst til stille lejlighed",
         summary: "Magnetisk entry med 15 niveauer — næsten lydløs helkrop.",
+        rating: 4.5,
         pros: [
           "Meget støjsvag magnet",
           "Skarp lejlighedspris",
@@ -15459,6 +15715,7 @@ export const guides: Guide[] = [
         name: "Odin R1800",
         badge: "Bedst til vand-stemning",
         summary: "Autentisk splash og jævn trækfølelse til midrange-pris.",
+        rating: 4.6,
         pros: [
           "Ægte vandlyd og jævn træk",
           "Klar midrange uden Fluid-budget",
@@ -15564,6 +15821,7 @@ export const guides: Guide[] = [
         name: "Titan Life B35",
         badge: "Bedst til fast budget-kondi",
         summary: "Stabil opret kondicykel til vane og zone 2.",
+        rating: 4.3,
         pros: [
           "Lav indgangspris",
           "Stabil opret motionscykel",
@@ -15593,6 +15851,7 @@ export const guides: Guide[] = [
         name: "Ascendic 8001",
         badge: "Bedst til fold i små hjem",
         summary: "Fold + ryglæn + let magnet — cardio der kan rulles væk.",
+        rating: 4.5,
         pros: [
           "Foldbar og kan rulles væk",
           "Polstret ryglæn",
