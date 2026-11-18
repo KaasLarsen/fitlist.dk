@@ -18,9 +18,24 @@ const SITUATIONS = [
     slug: "gaabaand-til-kontoret-2026",
   },
   {
-    label: "Budget under 1.000",
-    short: "Studievenligt setup",
-    slug: "hjemmetraening-under-1000-kr-2026",
+    label: "Travle børnefamilier",
+    short: "Mest på 20 minutter",
+    slug: "hjemmetraening-for-travle-boernefamilier-2026",
+  },
+  {
+    label: "Dårlig ryg / knæ",
+    short: "Skånsom cardio",
+    slug: "traeningsmaskiner-til-daarlig-ryg-eller-knae-2026",
+  },
+  {
+    label: "Vintertræning hjemme",
+    short: "Form i mørke måneder",
+    slug: "vintertraening-derhjemme-bedste-maskiner-2026",
+  },
+  {
+    label: "Hjemme vs. fitness",
+    short: "Hvornår er det tjent hjem?",
+    slug: "hjemmegym-vs-fitnesscenter-regnestykke-2026",
   },
   {
     label: "Start for 3.000",
@@ -36,11 +51,6 @@ const SITUATIONS = [
     label: "Budget under 10.000",
     short: "Komplet hjemmegym",
     slug: "komplet-hjemmegym-under-10000-kr-2026",
-  },
-  {
-    label: "Cardio-corner",
-    short: "Under 7.500 kr.",
-    slug: "ultimative-cardio-corner-under-7500-2026",
   },
   {
     label: "Lille værelse",
@@ -73,8 +83,8 @@ export function SituationsSection() {
           Find udstyr efter din situation
         </h2>
         <p className="mt-4 max-w-lg text-muted">
-          Støj, plads, budget eller kontor — start med det, der begrænser dig
-          mest.
+          Støj, plads, knæ, vinter eller budget — start med det, der begrænser
+          dig mest.
         </p>
 
         <ul className="mt-12 grid grid-cols-2 gap-3 sm:gap-5 lg:grid-cols-3">
@@ -82,17 +92,12 @@ export function SituationsSection() {
             <li key={item.slug}>
               <Link
                 href={item.href}
-                className="group flex h-full flex-col justify-between gap-4 border border-border bg-surface px-4 py-6 transition-colors hover:border-accent/40 sm:gap-6 sm:px-6 sm:py-10"
+                className="group flex h-full flex-col border border-border bg-surface/40 p-4 transition-colors hover:border-accent/40 hover:bg-surface sm:p-5"
               >
-                <div>
-                  <p className="font-display text-xl font-medium uppercase tracking-wide text-foreground transition-colors group-hover:text-accent sm:text-2xl">
-                    {item.label}
-                  </p>
-                  <p className="mt-2 text-sm text-muted">{item.short}</p>
-                </div>
-                <span className="font-display text-xs uppercase tracking-[0.16em] text-accent opacity-0 transition-opacity group-hover:opacity-100">
-                  Læs guide →
+                <span className="font-display text-sm font-semibold uppercase tracking-wide text-foreground transition-colors group-hover:text-accent sm:text-base">
+                  {item.label}
                 </span>
+                <span className="mt-1 text-sm text-muted">{item.short}</span>
               </Link>
             </li>
           ))}

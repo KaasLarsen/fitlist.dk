@@ -1,6 +1,7 @@
 import { getAffiliate } from "@/lib/affiliates";
 import { longTailGuides } from "@/lib/long-tail-guides";
 import { priceTierGuides } from "@/lib/price-tier-guides";
+import { problemSolverGuides } from "@/lib/problem-solver-guides";
 import { recoveryGuides } from "@/lib/recovery-guides";
 import { strengthClusterGuides } from "@/lib/strength-cluster-guides";
 
@@ -231,18 +232,18 @@ const FEATURED_GUIDE_SLUGS = [
   "bedste-spinningcykel-2026",
   "bedste-airbike-2026",
   "bedste-multistation-2026",
-  "bedste-kettlebells-hjemmetraening-2026",
-  "loebebaand-eller-crosstrainer-2026",
-  "airbike-eller-romaskine-vaegttab-2026",
-  "spinningcykel-motionscykel-eller-hometrainer-2026",
+  "black-friday-januar-udsalg-traeningsmaskiner-2026",
+  "vintertraening-derhjemme-bedste-maskiner-2026",
+  "hjemmegym-vs-fitnesscenter-regnestykke-2026",
+  "hjemmetraening-for-travle-boernefamilier-2026",
+  "traeningsmaskiner-til-daarlig-ryg-eller-knae-2026",
+  "nytaarsforsat-undgaa-fejlkob-hjemmetraening-2026",
   "gaabaand-til-kontoret-2026",
   "bedste-stoejsvage-traeningsmaskiner-lejlighed-2026",
   "multistation-til-garage-kaelder-2026",
   "bedste-crosstrainer-til-daarlige-knae-2026",
   "ultimative-home-gym-budget-2026",
-  "ultimative-cardio-corner-under-7500-2026",
   "restitution-efter-hjemmetraening-2026",
-  "den-store-guide-til-isbad-derhjemme-2026",
 ] as const;
 
 export function getFeaturedGuides(): Guide[] {
@@ -5237,14 +5238,14 @@ export const guides: Guide[] = [
     excerpt:
       "Start med tre simple ting — ikke en maskine til 15.000 kr. Sådan bygger du vanen de første tre måneder.",
     metaDescription:
-      "Hjemmetræning for begyndere: de 3 must-haves til de første 90 dage (justerbare håndvægte, elastikker, måtte). Undgå dyre fejl — live priser.",
+      "Hjemmetræning for begyndere: de 3 must-haves til de første 90 dage (justerbare håndvægte, elastikker, måtte). Undgå dyre nytårsfejlkøb — live priser.",
     categorySlug: "tilbehoer",
     intentSlug: "begynder",
     recommendationsHeading: "De 3 ting du skal starte med",
     publishedAt: "2026-11-04",
-    updatedAt: "2026-11-04",
+    updatedAt: "2026-11-18",
     intro:
-      "Du er motiveret — måske efter nytår, en pause eller en ny bolig — og bange for at købe det forkerte. Godt. De fleste begynderfejl handler ikke om at vælge den “forkerte” maskine, men om at købe for stort, for tidligt. De første 90 dage handler om vane, ikke om at indrette et center. Her er de tre ting, der faktisk rækker — og hvornår du først skal kigge på dyrere grej.",
+      "Du er motiveret — måske efter nytår, en pause eller en ny bolig — og bange for at købe det forkerte. Godt. De fleste begynderfejl handler ikke om at vælge den “forkerte” maskine, men om at købe for stort, for tidligt (klassisk nytårsforsæt-fælde). De første 90 dage handler om vane, ikke om at indrette et center. Her er de tre ting, der faktisk rækker — og hvornår du først skal kigge på dyrere grej. Ren fejlkøbs-checkliste til januar: Nytårsforsæt-guiden.",
     criteria: [
       {
         title: "Vane før gear",
@@ -5455,17 +5456,21 @@ export const guides: Guide[] = [
       },
     ],
     relatedSlugs: [
+      "nytaarsforsat-undgaa-fejlkob-hjemmetraening-2026",
       "fase-byggeren-start-for-3000-kr-2026",
       "hjemmetraening-under-1000-kr-2026",
       "bedste-traeningselastikker-slyngetraener-2026",
       "bedste-justerbare-haandvaegte-2026",
       "ultimative-home-gym-budget-2026",
       "komplet-hjemmegym-under-10000-kr-2026",
+      "hjemmegym-vs-fitnesscenter-regnestykke-2026",
+      "black-friday-januar-udsalg-traeningsmaskiner-2026",
       "bedste-stoejsvage-traeningsmaskiner-lejlighed-2026",
       "bedste-justerbar-traeningsbaenk-2026",
       "bedste-vaegmonteret-kabeltaarn-2026",
       "gaabaand-til-kontoret-2026",
       "bedste-traeningsudstyr-til-seniorer-2026",
+      "hjemmetraening-for-travle-boernefamilier-2026",
     ],
   },
   {
@@ -5719,16 +5724,18 @@ export const guides: Guide[] = [
   {
     slug: "bedste-traeningsudstyr-til-seniorer-2026",
     title: "Bedste træningsudstyr til seniorer & skånsom motion (2026)",
+    metaTitle:
+      "Bedste træningsmaskiner til seniorer 2026 – Skånsom & sikker hjemme",
     excerpt:
-      "Tryghed, stabilitet og ledskånsom træning hjemme: siddecykel, crosstrainer med lav indstigning og milde elastikker — uden kompliceret tech.",
+      "Tryghed, stabilitet og ledskånsom træning hjemme: siddecykel med lav indstigning, stabile crosstrainere og milde elastikker — uden kompliceret tech.",
     metaDescription:
-      "Bedste træningsudstyr til seniorer & genoptræning 2026. Lav indstigning, siddecykel og skånsom cardio — med live priser.",
+      "Bedste træningsmaskiner til seniorer 2026. Siddecykel (recumbent), lav indstigning og skånsom cardio hjemme — guide med live priser.",
     categorySlug: "motionscykel",
     recommendationsHeading: "Anbefalet skånsomt udstyr",
     publishedAt: "2026-11-04",
-    updatedAt: "2026-11-05",
+    updatedAt: "2026-11-18",
     intro:
-      "Denne guide er til dig, der leder efter tryghed, stabilitet, smertelindring og vedligeholdelse af mobilitet — ikke efter kompliceret tech, store vægtstakke eller ure, der råber. Sproget er bevidst roligt: vi vægter ledskånsomhed, sikker indstigning og simple knapper højest. Du får de tre udstyrstyper, der oftest giver mening hjemme (siddecykel, crosstrainer, milde elastikker), tre “gyldne krav” til senior-maskiner, og konkrete modeller med aktuelle priser fra vores partnere.",
+      "Denne guide er til dig, der leder efter tryghed, stabilitet, smertelindring og vedligeholdelse af mobilitet — ikke efter kompliceret tech, store vægtstakke eller ure, der råber. Fokus er træningsmaskiner til seniorer: siddecykler (recumbent) med lav indstigning, stabile crosstrainere der skåner led og balance, og milde elastikker. Sproget er bevidst roligt. Du får de tre udstyrstyper, der oftest giver mening hjemme, tre “gyldne krav” til senior-maskiner, og konkrete modeller med aktuelle priser. Dårlig ryg eller knæ mere end alder? Se også Træningsmaskiner til dig med dårlig ryg eller dårlige knæ.",
     criteria: [
       {
         title: "Lav, tryg indstigning",
@@ -5955,13 +5962,16 @@ export const guides: Guide[] = [
       },
     ],
     relatedSlugs: [
+      "traeningsmaskiner-til-daarlig-ryg-eller-knae-2026",
       "bedste-traeningselastikker-slyngetraener-2026",
       "bedste-siddecykel-2026",
       "bedste-knaevenlig-genoptraening-hjemme-2026",
+      "bedste-crosstrainer-til-daarlige-knae-2026",
       "bedste-motionscykel-2026",
       "bedste-crosstrainer-2026",
       "bedste-stoejsvag-crosstrainer-2026",
       "hjemmetraening-for-begyndere-foerste-90-dage",
+      "vintertraening-derhjemme-bedste-maskiner-2026",
       "bedste-stoejsvage-traeningsmaskiner-lejlighed-2026",
       "bedste-romaskine-2026",
     ],
@@ -7625,9 +7635,9 @@ export const guides: Guide[] = [
       "Knævenlig genoptræning hjemme 2026. Siddecykel, lav-indstigning crosstrainer og skånsomt udstyr — guide med live priser. Ikke erstatning for fysioterapi.",
     categorySlug: "motionscykel",
     publishedAt: "2026-11-05",
-    updatedAt: "2026-11-05",
+    updatedAt: "2026-11-18",
     intro:
-      "Denne guide er til dig, der skal træne hjemme med respekt for knæ og hofter — efter overbelastning, operation (i dialog med fagperson) eller bare fordi løb gør ondt. Fokus er lav stødbelastning, kontrolleret bevægelse og stabil indstigning. Det er ikke en medicinsk behandlingsplan: følg altid råd fra læge/fysioterapeut ved akut skade. Du får fire konkrete redskaber med shop-links, der ofte indgår i skånsomme hjemmeopsætninger.",
+      "Denne guide er til dig, der skal træne hjemme med respekt for knæ og hofter — efter overbelastning, operation (i dialog med fagperson) eller bare fordi løb gør ondt. Fokus er lav stødbelastning, kontrolleret bevægelse og stabil indstigning. Det er ikke en medicinsk behandlingsplan: følg altid råd fra læge/fysioterapeut ved akut skade. Du får fire konkrete redskaber med shop-links, der ofte indgår i skånsomme hjemmeopsætninger. Bredere stød-/ergonomi-overblik (ryg + knæ): Træningsmaskiner til dig med dårlig ryg eller dårlige knæ. Crosstrainer-only: Bedste crosstrainer til dårlige knæ.",
     criteria: [
       {
         title: "Lav stødbelastning",
@@ -7838,6 +7848,7 @@ export const guides: Guide[] = [
       },
     ],
     relatedSlugs: [
+      "traeningsmaskiner-til-daarlig-ryg-eller-knae-2026",
       "bedste-crosstrainer-til-daarlige-knae-2026",
       "bedste-traeningselastikker-slyngetraener-2026",
       "bedste-traeningsudstyr-til-seniorer-2026",
@@ -7846,6 +7857,7 @@ export const guides: Guide[] = [
       "bedste-romaskine-2026",
       "bedste-motionscykel-2026",
       "bedste-loebebaand-2026",
+      "loebebaand-glider-eller-hakker-fejlfinding-2026",
       "hjemmetraening-for-begyndere-foerste-90-dage",
     ],
   },
@@ -15981,4 +15993,5 @@ export const guides: Guide[] = [
   ...recoveryGuides,
   ...strengthClusterGuides,
   ...longTailGuides,
+  ...problemSolverGuides,
 ];

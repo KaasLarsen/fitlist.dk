@@ -671,6 +671,7 @@ export const longTailGuides: Guide[] = [
       },
     ],
     relatedSlugs: [
+      "traeningsmaskiner-til-daarlig-ryg-eller-knae-2026",
       "bedste-crosstrainer-2026",
       "bedste-knaevenlig-genoptraening-hjemme-2026",
       "bedste-motionscykel-2026",

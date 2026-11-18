@@ -28,6 +28,48 @@ export const topicClusters: TopicCluster[] = [
     ],
     categorySlug: "styrkemaskiner",
   },
+  {
+    slug: "skaansom-hjemmetraening",
+    title: "Skånsom hjemmetræning",
+    description:
+      "Dårlig ryg, knæ eller behov for tryg indstigning: stødabsorbering, siddecykel, crosstrainer og senior-venligt grej — bundet sammen omkring skånsom cardio hjemme.",
+    pillarSlug: "traeningsmaskiner-til-daarlig-ryg-eller-knae-2026",
+    clusterSlugs: [
+      "bedste-traeningsudstyr-til-seniorer-2026",
+      "bedste-knaevenlig-genoptraening-hjemme-2026",
+      "bedste-crosstrainer-til-daarlige-knae-2026",
+      "bedste-siddecykel-2026",
+    ],
+    categorySlug: "crosstrainer",
+  },
+  {
+    slug: "saeson-og-start",
+    title: "Sæson & opstart",
+    description:
+      "Vintertræning, nytårsforsæt og udsalg: hold formen i mørke måneder, undgå fejlkøb i januar, og shop Black Friday / januar-tilbud med åbne øjne.",
+    pillarSlug: "vintertraening-derhjemme-bedste-maskiner-2026",
+    clusterSlugs: [
+      "nytaarsforsat-undgaa-fejlkob-hjemmetraening-2026",
+      "black-friday-januar-udsalg-traeningsmaskiner-2026",
+      "hjemmetraening-for-begyndere-foerste-90-dage",
+      "hjemmetraening-for-travle-boernefamilier-2026",
+    ],
+    categorySlug: "motionscykel",
+  },
+  {
+    slug: "oekonomi-og-ejerskab",
+    title: "Økonomi & ejerskab",
+    description:
+      "Kan det betale sig? Hjemmegym vs. fitnesscenter, strømforbrug, brugt vs. ny — plus fejlfinding når løbebåndet hakker, før du køber igen.",
+    pillarSlug: "hjemmegym-vs-fitnesscenter-regnestykke-2026",
+    clusterSlugs: [
+      "stroemforbrug-loebabaand-crosstrainer-2026",
+      "brugt-vs-ny-traeningsmaskine-garanti-2026",
+      "loebebaand-glider-eller-hakker-fejlfinding-2026",
+      "ultimative-home-gym-budget-2026",
+    ],
+    categorySlug: "styrkemaskiner",
+  },
 ];
 
 export function getAllTopicClusters(): TopicCluster[] {

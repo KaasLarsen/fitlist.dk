@@ -12,7 +12,7 @@ import { canonical } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Emneklynger",
   description:
-    "Fitlists emneklynger: dybe guides bundet sammen omkring squat racks, hjemmegym og træningsmaskiner — så du finder det rigtige svar hurtigt.",
+    "Fitlists emneklynger: skånsom hjemmetræning, sæson & opstart, økonomi & ejerskab, squat racks og hjemmegym — dybe guides bundet sammen, så du finder det rigtige svar hurtigt.",
   alternates: { canonical: canonical("/emner") },
 };
 
@@ -29,9 +29,9 @@ export default function EmnerPage() {
           Emner vi dækker i dybden
         </h1>
         <p className="mt-4 text-lg text-muted">
-          Hver klynge har én hovedguide (pillar) og flere specialiserede guides,
-          der linker logisk sammen — så du kan gå fra overblik til det præcise
-          svar.
+          Hver klynge har én hovedguide (pillar) og flere specialiserede guides
+          — fra skånsom træning og vinter/opstart til økonomi, fejlfinding og
+          squat racks — så du kan gå fra overblik til det præcise svar.
         </p>
 
         <ul className="mt-14 space-y-14">
