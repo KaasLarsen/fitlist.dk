@@ -39,7 +39,7 @@ export const sharedIntents: MachineIntent[] = [
 ];
 
 /**
- * Maskiner + Must-haves (tilbehør).
+ * Maskiner + Must-haves + restitution + isbad.
  * Intent-undersider: /maskiner/[slug]/[intent]
  */
 
@@ -248,7 +248,7 @@ export const categories: MachineCategory[] = [
     name: "Must-haves",
     shortName: "Tilbehør",
     description:
-      "Håndvægte, kettlebells, restitution, underlagsmåtter, elastikker og slyngetræner — tilbehøret der følger med ethvert maskinkøb.",
+      "Håndvægte, kettlebells, underlagsmåtter, elastikker, mini stepper og slyngetræner — tilbehøret der følger med ethvert maskinkøb.",
     image: "/images/categories/tilbehoer.webp",
     intents: [
       {
@@ -297,6 +297,12 @@ export const categories: MachineCategory[] = [
           "Aerobic-stepbænke og plyobokse til kondition og eksplosiv træning.",
       },
       {
+        slug: "ministepper",
+        label: "Mini stepper",
+        description:
+          "Kompakte steppere til lavintensiv cardio — populært hos ældre og til ledvenlig bevægelse hjemme.",
+      },
+      {
         slug: "elastikker",
         label: "Elastikker",
         description: "Booty bands, power bands og elastiksæt.",
@@ -307,11 +313,20 @@ export const categories: MachineCategory[] = [
         description: "TRX-alternativer og suspension trainers.",
       },
       {
-        slug: "isbad",
-        label: "Isbad",
-        description:
-          "Isbadekar, cold plunge og kuldebade til restitution derhjemme.",
+        slug: "begynder",
+        label: "Begynder",
+        description: "De simple ting, der er nok de første 90 dage.",
       },
+    ],
+  },
+  {
+    slug: "restitution",
+    name: "Restitution",
+    shortName: "Restitution",
+    description:
+      "Massagepistol, foam roller og recovery boots — grej der hjælper kroppen med at komme sig mellem pas.",
+    image: "/images/categories/restitution.webp",
+    intents: [
       {
         slug: "massagepistol",
         label: "Massagepistol",
@@ -330,10 +345,25 @@ export const categories: MachineCategory[] = [
         description:
           "Kompressionstøvler og luftkompression til ben-restitution.",
       },
+    ],
+  },
+  {
+    slug: "isbad",
+    name: "Isbad",
+    shortName: "Isbad",
+    description:
+      "Isbadekar, cold plunge og kuldebade til restitution derhjemme — fra simple kar til modeller med køleenhed.",
+    image: "/images/categories/isbad.webp",
+    intents: [
       {
-        slug: "begynder",
-        label: "Begynder",
-        description: "De simple ting, der er nok de første 90 dage.",
+        slug: "billig",
+        label: "Billig",
+        description: "Entry-isbad og kar uden dyrt køleudstyr.",
+      },
+      {
+        slug: "koeling",
+        label: "Med køling",
+        description: "Cold plunge med køleenhed til fast temperatur året rundt.",
       },
     ],
   },

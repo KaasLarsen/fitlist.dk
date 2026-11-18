@@ -9,6 +9,30 @@ const nextConfig: NextConfig = {
       },
     },
   },
+  async redirects() {
+    return [
+      {
+        source: "/maskiner/tilbehoer/isbad",
+        destination: "/maskiner/isbad",
+        permanent: true,
+      },
+      {
+        source: "/maskiner/tilbehoer/massagepistol",
+        destination: "/maskiner/restitution/massagepistol",
+        permanent: true,
+      },
+      {
+        source: "/maskiner/tilbehoer/foamroller",
+        destination: "/maskiner/restitution/foamroller",
+        permanent: true,
+      },
+      {
+        source: "/maskiner/tilbehoer/recoveryboots",
+        destination: "/maskiner/restitution/recoveryboots",
+        permanent: true,
+      },
+    ];
+  },
   images: {
     remotePatterns: [
       { protocol: "https", hostname: "cdn.shopify.com", pathname: "/**" },

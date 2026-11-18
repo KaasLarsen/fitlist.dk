@@ -145,21 +145,28 @@ function slimFeedProducts(products: FeedProduct[]): FeedProduct[] {
   }));
 }
 
-/** Tilbehør må ikke fylde maskin-slots (slug er `tilbehoer`, ikke `must-haves`). */
+/** Tilbehør/restitution/isbad må ikke fylde maskin-slots. */
 function isAccessoryProduct(product: FeedProduct): boolean {
   const slug = product.categorySlug;
-  return !slug || slug === "tilbehoer" || slug === "must-haves";
+  return (
+    !slug ||
+    slug === "tilbehoer" ||
+    slug === "must-haves" ||
+    slug === "restitution" ||
+    slug === "isbad"
+  );
 }
 
 /**
  * Primær tilbehør-intent til cache-diversitet.
- * Recovery-intents først, så isbad/massage/foam/boots ikke drukner i elastikker.
+ * Recovery-intents først, så massage/foam/boots/mini stepper ikke drukner i elastikker.
  */
 const ACCESSORY_INTENT_PRIORITY = [
   "isbad",
   "massagepistol",
   "foamroller",
   "recoveryboots",
+  "koeling",
   "haandvaegte",
   "kettlebells",
   "gulvmaatter",
@@ -168,15 +175,20 @@ const ACCESSORY_INTENT_PRIORITY = [
   "abwheel",
   "vaegtvest",
   "stepbaenk",
+  "ministepper",
   "elastikker",
   "slyngetraener",
   "begynder",
 ] as const;
 
 function primaryAccessoryIntent(product: FeedProduct): string {
+  if (product.categorySlug === "isbad") return "isbad";
   const intents = product.intentSlugs ?? [];
   for (const slug of ACCESSORY_INTENT_PRIORITY) {
     if (intents.includes(slug)) return slug;
+  }
+  if (product.categorySlug === "restitution") {
+    return intents[0] ?? "restitution";
   }
   return intents[0] ?? "other";
 }

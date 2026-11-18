@@ -24,6 +24,8 @@ const bannersByCategory: Record<string, GuideBanner> = {
   loebebaand: banner("38771", "Løbebånd — se aktuelle tilbud"),
   romaskine: banner("38778", "Romaskiner — se aktuelle tilbud"),
   tilbehoer: banner("38757", "Træningstilbehør — se aktuelle tilbud"),
+  restitution: banner("38757", "Restitution og træningstilbehør — se aktuelle tilbud"),
+  isbad: banner("38757", "Isbad og restitution — se aktuelle tilbud"),
 };
 
 /**

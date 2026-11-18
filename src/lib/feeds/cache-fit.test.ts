@@ -151,8 +151,8 @@ describe("fitFeedProductsForCache", () => {
       id: "SportGym:52737086194001",
       merchant: "SportGym",
       title: "VirtuFit Isbad XXL - 375 liter",
-      categorySlug: "tilbehoer",
-      intentSlugs: ["isbad"],
+      categorySlug: "isbad",
+      intentSlugs: ["billig"],
       price: 495,
       inStock: true,
     });

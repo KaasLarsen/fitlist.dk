@@ -379,11 +379,13 @@ const ACCESSORY_PRIORITY: RegExp[] = [
   /plyo[\s-]*box/,
   /jump\s*box/,
   /springboks/,
+  /mini[\s-]*stepper/,
+  /ministepper/,
   /overtraek\s*(?:til|til\s+roma|til\s+loebe|til\s+cykel)/,
   /overtræk\s*(?:til|til\s+roma|til\s+løbe|til\s+cykel)/,
   /cover\s*til/,
   /(?:overtraek|overtræk|cover).{0,24}(?:roma|loebe|løbe|cykel|maskine|rower|treadmill|crosstrainer)/,
-  // Recovery / restitution
+  // Recovery / restitution / isbad
   /\bisbad\b/,
   /kuldebad/,
   /ice\s*bath/,
@@ -467,13 +469,56 @@ const TILBEHOER_RULE: CategoryRule = {
     /cover\s*til/,
     /(?:roma|loebe|løbe|cykel|maskine|rower|treadmill|crosstrainer).{0,24}(?:overtraek|overtræk|cover)/,
     /(?:overtraek|overtræk|cover).{0,24}(?:roma|loebe|løbe|cykel|maskine|rower|treadmill|crosstrainer)/,
-    // Recovery
+    /mini[\s-]*stepper/,
+    /ministepper/,
+  ],
+  exclude: [
+    /\bsilikone/,
+    /\bolie\b/,
+    /\breservedel/,
+    /\bgaranti/,
+    /\bwarranty/,
+    // Tøj-/sikkerhedsveste — ikke vægtveste
+    /refleksvest/,
+    /loebevest/,
+    /løbevest/,
+    /safety\s*vest/,
+    /hi[\s-]*viz/,
+    /\bshorts?\b/,
+    /\btaske\b/,
+    /\bsko\b/,
+    /\bsadel\b/,
+    /\bbind\b/,
+    // Presse-/træningsbænk uden step/plyo
+    /\b(?:justerbar(?:e)?|flad|incline)\s*(?:traenings|trænings)?baenk\b/,
+    /\b(?:justerbar(?:e)?|flad|incline)\s*(?:traenings|trænings)?bænk\b/,
+  ],
+};
+
+const ISBAD_RULE: CategoryRule = {
+  slug: "isbad",
+  include: [
     /\bisbad\b/,
     /kuldebad/,
     /ice\s*bath/,
     /cold\s*plunge/,
     /ice\s*barrel/,
     /isbadekar/,
+    /cold\s*tub/,
+  ],
+  exclude: [
+    /cold\s*roll[\s-]*on/,
+    /hot[\s/&-]*cold\s*(?:pack|attachment)/,
+    /varme[\s/]*kulde/,
+    /alkalin/,
+    /desinfektion/,
+    /termometer/,
+  ],
+};
+
+const RESTITUTION_RULE: CategoryRule = {
+  slug: "restitution",
+  include: [
     /massagepistol/,
     /massage\s*gun/,
     /massagegun/,
@@ -496,26 +541,6 @@ const TILBEHOER_RULE: CategoryRule = {
     /\breecover\b/,
   ],
   exclude: [
-    /\bsilikone/,
-    /\bolie\b/,
-    /\breservedel/,
-    /\bgaranti/,
-    /\bwarranty/,
-    // Tøj-/sikkerhedsveste — ikke vægtveste
-    /refleksvest/,
-    /loebevest/,
-    /løbevest/,
-    /safety\s*vest/,
-    /hi[\s-]*viz/,
-    /\bshorts?\b/,
-    /\btaske\b/,
-    /\bsko\b/,
-    /\bsadel\b/,
-    /\bbind\b/,
-    // Presse-/træningsbænk uden step/plyo
-    /\b(?:justerbar(?:e)?|flad|incline)\s*(?:traenings|trænings)?baenk\b/,
-    /\b(?:justerbar(?:e)?|flad|incline)\s*(?:traenings|trænings)?bænk\b/,
-    // Recovery-støj: sokker, cremer, bøger, opladere
     /kompressionssok/,
     /compression\s*sock/,
     /cold\s*roll[\s-]*on/,
@@ -925,7 +950,7 @@ const INTENT_RULES: { slug: string; test: (hay: string, price: number | null) =>
     {
       slug: "stepbaenk",
       test: (hay) => {
-        // Undgå squat-/læggblokke og stair steppers
+        // Undgå squat-/læggblokke, mini steppers og stair steppers
         if (
           /squat\s*(?:stand\s*)?block/.test(hay) ||
           /knaeboejning/.test(hay) ||
@@ -933,6 +958,8 @@ const INTENT_RULES: { slug: string; test: (hay: string, price: number | null) =>
           /calf\s*block/.test(hay) ||
           /laeg\s*blok/.test(hay) ||
           /læg\s*blok/.test(hay) ||
+          /mini[\s-]*stepper/.test(hay) ||
+          /ministepper/.test(hay) ||
           /stair\s*stepper/.test(hay) ||
           /trappemaskine/.test(hay)
         ) {
@@ -957,6 +984,32 @@ const INTENT_RULES: { slug: string; test: (hay: string, price: number | null) =>
       },
     },
     {
+      slug: "ministepper",
+      test: (hay) => {
+        if (
+          /stair\s*stepper/.test(hay) ||
+          /trappemaskine/.test(hay) ||
+          /aerobic\s*step/.test(hay) ||
+          /stepbaenk/.test(hay) ||
+          /stepbænk/.test(hay) ||
+          /plyo/.test(hay) ||
+          /jump\s*box/.test(hay)
+        ) {
+          return false;
+        }
+        return (
+          /mini[\s-]*stepper/.test(hay) ||
+          /ministepper/.test(hay) ||
+          (/\bstepper\b/.test(hay) &&
+            (/\bmini\b/.test(hay) ||
+              /\bkompakt\b/.test(hay) ||
+              /\bsenior\b/.test(hay) ||
+              /\baeldre\b/.test(hay) ||
+              /\bældre\b/.test(hay)))
+        );
+      },
+    },
+    {
       slug: "dipstation",
       test: (hay) =>
         /\bdip\s*station\b/.test(hay) ||
@@ -977,28 +1030,17 @@ const INTENT_RULES: { slug: string; test: (hay: string, price: number | null) =>
             /\bbars?\b/.test(hay))),
     },
     {
-      slug: "isbad",
-      test: (hay) => {
-        if (
-          /cold\s*roll[\s-]*on/.test(hay) ||
-          /hot[\s/&-]*cold\s*(?:pack|attachment)/.test(hay) ||
-          /varme[\s/]*kulde/.test(hay) ||
-          /alkalin/.test(hay) ||
-          /desinfektion/.test(hay) ||
-          /termometer/.test(hay)
-        ) {
-          return false;
-        }
-        return (
-          /\bisbad\b/.test(hay) ||
-          /isbadekar/.test(hay) ||
-          /kuldebad/.test(hay) ||
-          /ice\s*bath/.test(hay) ||
-          /cold\s*plunge/.test(hay) ||
-          /ice\s*barrel/.test(hay) ||
-          /cold\s*tub/.test(hay)
-        );
-      },
+      slug: "koeling",
+      test: (hay) =>
+        /koeleenhed/.test(hay) ||
+        /køleenhed/.test(hay) ||
+        /chiller/.test(hay) ||
+        /med\s*koel/.test(hay) ||
+        /med\s*køl/.test(hay) ||
+        /komplet\s*saet/.test(hay) ||
+        /komplet\s*sæt/.test(hay) ||
+        (/cold\s*plunge/.test(hay) &&
+          (/koel/.test(hay) || /køl/.test(hay) || /chiller/.test(hay))),
     },
     {
       slug: "massagepistol",
@@ -1276,6 +1318,14 @@ export function classifyProduct(
     }
   }
 
+  if (!matched && matchRule(ISBAD_RULE, combined)) {
+    matched = "isbad";
+  }
+
+  if (!matched && matchRule(RESTITUTION_RULE, combined)) {
+    matched = "restitution";
+  }
+
   if (!matched && matchRule(TILBEHOER_RULE, combined)) {
     matched = "tilbehoer";
   }
@@ -1292,25 +1342,36 @@ export function classifyProduct(
       ? intentSlugs
       : intentSlugs.filter((s) => s !== "gaabaand");
 
-  // Accessory intents only on tilbehoer
+  const tilbehoerIntents = new Set([
+    "haandvaegte",
+    "kettlebells",
+    "gulvmaatter",
+    "fitnessgulv",
+    "elastikker",
+    "slyngetraener",
+    "pullup",
+    "abwheel",
+    "vaegtvest",
+    "stepbaenk",
+    "ministepper",
+  ]);
+  const restitutionIntents = new Set([
+    "massagepistol",
+    "foamroller",
+    "recoveryboots",
+  ]);
+  const isbadIntents = new Set(["koeling"]);
+
   if (matched !== "tilbehoer") {
+    filteredIntents = filteredIntents.filter((s) => !tilbehoerIntents.has(s));
+  }
+  if (matched !== "restitution") {
     filteredIntents = filteredIntents.filter(
-      (s) =>
-        s !== "haandvaegte" &&
-        s !== "kettlebells" &&
-        s !== "gulvmaatter" &&
-        s !== "fitnessgulv" &&
-        s !== "elastikker" &&
-        s !== "slyngetraener" &&
-        s !== "pullup" &&
-        s !== "abwheel" &&
-        s !== "vaegtvest" &&
-        s !== "stepbaenk" &&
-        s !== "isbad" &&
-        s !== "massagepistol" &&
-        s !== "foamroller" &&
-        s !== "recoveryboots",
+      (s) => !restitutionIntents.has(s),
     );
+  }
+  if (matched !== "isbad") {
+    filteredIntents = filteredIntents.filter((s) => !isbadIntents.has(s));
   }
 
   // vand only on romaskine

@@ -617,7 +617,7 @@ describe("classifyProduct — tilbehoer (must-haves)", () => {
     assert.ok(r!.intentSlugs?.includes("slyngetraener"));
   });
 
-  it("classifies isbad as tilbehoer + isbad", () => {
+  it("classifies isbad as isbad category", () => {
     const r = classifyProduct(
       product({
         title: "VirtuFit Isbad XXL - 375 liter",
@@ -626,11 +626,23 @@ describe("classifyProduct — tilbehoer (must-haves)", () => {
         price: 495,
       }),
     );
-    assert.equal(r!.categorySlug, "tilbehoer");
-    assert.ok(r!.intentSlugs?.includes("isbad"));
+    assert.equal(r!.categorySlug, "isbad");
   });
 
-  it("classifies massagepistol as tilbehoer + massagepistol", () => {
+  it("classifies Hanki kuldebad as isbad + koeling", () => {
+    const r = classifyProduct(
+      product({
+        title: "Hanki kuldebad / isbad (Komplet sæt)",
+        brand: "Hanki",
+        merchant: "Den Intelligente Krop",
+        price: 14995,
+      }),
+    );
+    assert.equal(r!.categorySlug, "isbad");
+    assert.ok(r!.intentSlugs?.includes("koeling"));
+  });
+
+  it("classifies massagepistol as restitution + massagepistol", () => {
     const r = classifyProduct(
       product({
         title: "Hyperice Hypervolt Go 2 Massagepistol",
@@ -639,12 +651,12 @@ describe("classifyProduct — tilbehoer (must-haves)", () => {
         price: 1195,
       }),
     );
-    assert.equal(r!.categorySlug, "tilbehoer");
+    assert.equal(r!.categorySlug, "restitution");
     assert.ok(r!.intentSlugs?.includes("massagepistol"));
     assert.ok(!r!.intentSlugs?.includes("foamroller"));
   });
 
-  it("classifies foam roller as tilbehoer + foamroller (not abwheel)", () => {
+  it("classifies foam roller as restitution + foamroller (not abwheel)", () => {
     const r = classifyProduct(
       product({
         title: "Trigger Point The Grid Foam Roller Sort",
@@ -653,12 +665,12 @@ describe("classifyProduct — tilbehoer (must-haves)", () => {
         price: 275,
       }),
     );
-    assert.equal(r!.categorySlug, "tilbehoer");
+    assert.equal(r!.categorySlug, "restitution");
     assert.ok(r!.intentSlugs?.includes("foamroller"));
     assert.ok(!r!.intentSlugs?.includes("abwheel"));
   });
 
-  it("classifies recovery boots as tilbehoer + recoveryboots", () => {
+  it("classifies recovery boots as restitution + recoveryboots", () => {
     const r = classifyProduct(
       product({
         title: "REECOVER Recovery Boots Pro6 (Standard)",
@@ -667,8 +679,22 @@ describe("classifyProduct — tilbehoer (must-haves)", () => {
         price: 3599,
       }),
     );
-    assert.equal(r!.categorySlug, "tilbehoer");
+    assert.equal(r!.categorySlug, "restitution");
     assert.ok(r!.intentSlugs?.includes("recoveryboots"));
+  });
+
+  it("classifies mini stepper as tilbehoer + ministepper", () => {
+    const r = classifyProduct(
+      product({
+        title: "Mini Stepper med display — sort",
+        brand: "Odin",
+        merchant: "Apuls.dk",
+        price: 499,
+      }),
+    );
+    assert.equal(r!.categorySlug, "tilbehoer");
+    assert.ok(r!.intentSlugs?.includes("ministepper"));
+    assert.ok(!r!.intentSlugs?.includes("stepbaenk"));
   });
 
   it("classifies cover til løbebånd as tilbehoer, not loebebaand", () => {
@@ -1084,8 +1110,8 @@ describe("classifyProduct — Den Intelligente Krop", () => {
         price: 41000,
       }),
     );
-    assert.equal(isbad?.categorySlug, "tilbehoer");
-    assert.ok(isbad?.intentSlugs?.includes("isbad"));
+    assert.equal(isbad?.categorySlug, "isbad");
+    assert.ok(isbad?.intentSlugs?.includes("koeling"));
 
     const roller = classifyProduct(
       product({
@@ -1094,7 +1120,7 @@ describe("classifyProduct — Den Intelligente Krop", () => {
         price: 299,
       }),
     );
-    assert.equal(roller?.categorySlug, "tilbehoer");
+    assert.equal(roller?.categorySlug, "restitution");
     assert.ok(roller?.intentSlugs?.includes("foamroller"));
 
     const gun = classifyProduct(
@@ -1104,7 +1130,7 @@ describe("classifyProduct — Den Intelligente Krop", () => {
         price: 1299,
       }),
     );
-    assert.equal(gun?.categorySlug, "tilbehoer");
+    assert.equal(gun?.categorySlug, "restitution");
     assert.ok(gun?.intentSlugs?.includes("massagepistol"));
 
     const boots = classifyProduct(
@@ -1114,7 +1140,7 @@ describe("classifyProduct — Den Intelligente Krop", () => {
         price: 5299,
       }),
     );
-    assert.equal(boots?.categorySlug, "tilbehoer");
+    assert.equal(boots?.categorySlug, "restitution");
     assert.ok(boots?.intentSlugs?.includes("recoveryboots"));
   });
 

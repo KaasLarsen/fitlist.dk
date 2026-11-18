@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
+import { IntersportBanner } from "@/components/IntersportBanner";
 import { categoryIntentHref, getAllCategories } from "@/lib/categories";
 import { getGuidesByCategory } from "@/lib/guides";
 import { canonical } from "@/lib/site";
@@ -7,7 +9,7 @@ import { canonical } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Træningsmaskiner",
   description:
-    "Løbebånd, motionscykel, romaskine, crosstrainer, styrkemaskiner og Must-haves til hjemmet — vælg efter type og behov.",
+    "Løbebånd, motionscykel, romaskine, crosstrainer, styrkemaskiner, Must-haves, restitution og isbad til hjemmet — vælg efter type og behov.",
   alternates: { canonical: canonical("/maskiner") },
 };
 
@@ -24,51 +26,71 @@ export default function MaskinerPage() {
           Træningsmaskiner til hjemmet
         </h1>
         <p className="mt-4 max-w-xl text-muted">
-          Vælg maskintype eller Must-haves — og zoom ind på foldbar, billig,
-          støjsvag, kabeltårn eller begynder-udstyr.
+          Vælg maskintype, Must-haves, restitution eller isbad — og zoom ind på
+          foldbar, billig, støjsvag, kabeltårn eller begynder-udstyr.
         </p>
 
-        <ul className="mt-16 divide-y divide-border border-t border-border">
-          {categories.map((category) => {
+        <ul className="mt-16 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {categories.flatMap((category, index) => {
             const guideCount = getGuidesByCategory(category.slug).length;
-            return (
-              <li
-                key={category.slug}
-                className="group relative py-8 transition-colors hover:bg-accent/5"
-              >
+            const card = (
+              <li key={category.slug}>
                 <Link
                   href={`/maskiner/${category.slug}`}
-                  className="absolute inset-0"
-                  aria-label={category.name}
-                />
-                <div className="pointer-events-none relative z-10 flex flex-col gap-2 sm:flex-row sm:items-baseline sm:justify-between">
-                  <h2 className="font-display text-2xl font-medium uppercase tracking-wide text-foreground transition-colors group-hover:text-accent sm:text-3xl">
-                    {category.name}
-                  </h2>
-                  <span className="font-display text-xs uppercase tracking-[0.16em] text-muted">
-                    {guideCount > 0
-                      ? `${guideCount} guide${guideCount > 1 ? "s" : ""}`
-                      : "Guides kommer"}
-                  </span>
-                </div>
-                <p className="pointer-events-none relative z-10 mt-2 max-w-2xl text-sm text-muted">
-                  {category.description}
-                </p>
-                <p className="pointer-events-none relative z-10 mt-3 text-xs uppercase tracking-[0.14em] text-accent/80">
-                  {category.intents.map((intent, index) => (
-                    <span key={intent.slug}>
-                      {index > 0 ? " · " : null}
-                      <Link
-                        href={categoryIntentHref(category.slug, intent.slug)}
-                        className="pointer-events-auto inline-block py-1 transition-colors hover:text-accent hover:underline focus-visible:text-accent focus-visible:underline focus-visible:outline-none"
-                      >
-                        {intent.label}
-                      </Link>
-                    </span>
-                  ))}
-                </p>
+                  className="group relative block aspect-[16/10] overflow-hidden border border-border bg-surface"
+                >
+                  <Image
+                    src={category.image}
+                    alt=""
+                    fill
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    className="object-cover transition-transform duration-500 group-hover:scale-[1.04]"
+                  />
+                  <div
+                    aria-hidden
+                    className="absolute inset-0 bg-gradient-to-t from-foreground/80 via-foreground/25 to-transparent"
+                  />
+                  <div className="absolute inset-x-0 bottom-0 p-5 sm:p-6">
+                    <p className="font-display text-xl font-medium uppercase tracking-wide text-white transition-colors group-hover:text-accent sm:text-2xl">
+                      {category.name}
+                    </p>
+                    <p className="mt-1 font-display text-xs uppercase tracking-[0.16em] text-white/70">
+                      {guideCount > 0
+                        ? `${guideCount} guide${guideCount > 1 ? "s" : ""}`
+                        : "Guides kommer"}
+                    </p>
+                  </div>
+                </Link>
+                <p className="mt-3 text-sm text-muted">{category.description}</p>
+                {category.intents.length > 0 ? (
+                  <p className="mt-3 text-xs uppercase tracking-[0.14em] text-muted">
+                    {category.intents.map((intent, intentIndex) => (
+                      <span key={intent.slug}>
+                        {intentIndex > 0 ? " · " : null}
+                        <Link
+                          href={categoryIntentHref(category.slug, intent.slug)}
+                          className="inline-block py-1 transition-colors hover:text-accent hover:underline focus-visible:text-accent focus-visible:underline focus-visible:outline-none"
+                        >
+                          {intent.label}
+                        </Link>
+                      </span>
+                    ))}
+                  </p>
+                ) : null}
               </li>
             );
+
+            if (index !== 3) return [card];
+
+            return [
+              <li
+                key="intersport-annonce"
+                className="col-span-full flex justify-center py-4 sm:py-6"
+              >
+                <IntersportBanner className="items-center" />
+              </li>,
+              card,
+            ];
           })}
         </ul>
       </div>

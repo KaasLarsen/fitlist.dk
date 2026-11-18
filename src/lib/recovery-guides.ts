@@ -12,8 +12,7 @@ export const recoveryGuides: Guide[] = [
       "Køb, temperatur og sikkerhed: sådan vælger du isbad til have eller altan — plus konkrete anbefalinger med live priser.",
     metaDescription:
       "Isbad derhjemme 2026: guide til køb (isolering, størrelse, køling), optimal vandtemperatur, tid i vandet og sikkerhed for begyndere. Med anbefalinger og priser.",
-    categorySlug: "tilbehoer",
-    intentSlug: "isbad",
+    categorySlug: "isbad",
     recommendationsHeading: "Anbefalede isbad",
     publishedAt: "2026-11-17",
     updatedAt: "2026-11-17",
@@ -250,7 +249,7 @@ export const recoveryGuides: Guide[] = [
       "Kulde efter kondition vs. tung styrke: timing, muskelvækst og konkrete anbefalinger — uden hype.",
     metaDescription:
       "Isbad efter træning: forskellen på kulde efter løb/kondition og tung styrketræning, hvor timing kan påvirke muskelvækst. Praktiske anbefalinger til hjemmetrænere.",
-    categorySlug: "tilbehoer",
+    categorySlug: "isbad",
     recommendationsHeading: "Isbad til din rutine",
     publishedAt: "2026-11-17",
     updatedAt: "2026-11-17",
@@ -428,7 +427,7 @@ export const recoveryGuides: Guide[] = [
       "Søvn, udstrækning, aktiv restitution og grej: den samlende begynderguide med naturlige broer til gåbånd, foam roller og massagepistol.",
     metaDescription:
       "Restitution efter hjemmetræning 2026: søvn, aktiv restitution, udstrækning og udstyr (gåbånd, foam roller, massagepistol). Praktisk guide til mindre ømhed.",
-    categorySlug: "tilbehoer",
+    categorySlug: "restitution",
     alsoCategorySlugs: ["loebebaand"],
     recommendationsHeading: "Restitutions-grej der virker",
     publishedAt: "2026-11-17",
@@ -618,7 +617,7 @@ export const recoveryGuides: Guide[] = [
       "Fordele, ulemper og pris: sådan vælger du mellem massagepistol og foam roller ud fra behov og budget.",
     metaDescription:
       "Massagepistol vs foam roller 2026: sammenligning af fordele, ulemper og priser. Hvad du skal vælge til selvmassage derhjemme — med anbefalinger og live priser.",
-    categorySlug: "tilbehoer",
+    categorySlug: "restitution",
     intentSlug: "massagepistol",
     recommendationsHeading: "Anbefalinger: pistol og roller",
     publishedAt: "2026-11-17",
@@ -882,7 +881,7 @@ export const recoveryGuides: Guide[] = [
       "Sådan virker kompressionstøvler, hvem får mest ud af dem, og hvad du skal tjekke om tryk, batteri og størrelse før køb.",
     metaDescription:
       "Recovery boots 2026: er kompressionstøvler pengene værd? Guide til blodcirkulation, løbere/cyklister, trykniveauer, batteritid og størrelser — med anbefalinger.",
-    categorySlug: "tilbehoer",
+    categorySlug: "restitution",
     intentSlug: "recoveryboots",
     recommendationsHeading: "Anbefalede recovery boots",
     publishedAt: "2026-11-17",

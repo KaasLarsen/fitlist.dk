@@ -12,7 +12,7 @@ export const priceTierGuides: Guide[] = [
     excerpt:
       "To færdige pakker under 1.000 kr.: helkrops-styrke med elastik, eller puls + core med sjippetov og kettlebell. Ærligt om, hvad du ikke får.",
     metaDescription:
-      "Hjemmetræning under 1000 kr 2026: billigt træningsudstyr til hjemmet og træningsudstyr til studerende — to pakker, live priser, uden mini-stepper-fælde.",
+      "Hjemmetræning under 1000 kr 2026: billigt træningsudstyr til hjemmet og træningsudstyr til studerende — to pakker, live priser. Mini stepper kun hvis lavintensiv gang er målet.",
     categorySlug: "tilbehoer",
     recommendationsHeading: "2 pakker under 1.000 kr.",
     publishedAt: "2026-11-17",
@@ -36,9 +36,9 @@ export const priceTierGuides: Guide[] = [
           "Du får ikke olympisk squat for 800 kr. Du får elastik-spænding, ab wheel-progression og kettlebell-volumen. Det er nok til 3–6 måneder — derefter opgrader bevidst (se Det ultimative home gym på budget).",
       },
       {
-        title: "Undgå “billig maskine”-fælden",
+        title: "Pas på “billig maskine”-fælden",
         description:
-          "Mini-steppere og skrøbelige foldbare motionscykler i denne prisklasse føles som træning i en uge og som skrammel i tre. Spar dem. Køb grej med ærlige materialer i stedet.",
+          "Ultrabilige foldbare motionscykler i denne prisklasse føles ofte som træning i en uge og som skrammel i tre. Mini steppere kan give mening til ældre eller meget lavintensiv bevægelse — vælg solidt grej, ikke det billigste plastic. Til styrke og puls under 1.000 kr. er elastik, sjip og kettlebell stadig det mest ærlige valg.",
       },
       {
         title: "Samlet pakkepris — ikke bare hovedproduktet",
@@ -149,10 +149,10 @@ export const priceTierGuides: Guide[] = [
         ],
       },
       {
-        heading: "Advarsel: mini-stepper og skrøbelig fold-cykel",
+        heading: "Mini stepper vs. skrøbelig fold-cykel",
         paragraphs: [
-          "I denne prisklasse ser du ofte mini-steppere og ultra-billige foldbare motionscykler. De markedsføres som “komplet hjemmetræning”. I praksis er de typisk: ustabile, med dårlige pedaler/sæder, og med en levetid, der matcher garantiteksten mere end din træningsplan.",
-          "En elastikpakke eller et sjippetov + kettlebell giver mere ærlig træning pr. krone. Vil du have ægte cykel senere, spar op til Bedste motionscykel under 3.000 kr. eller Bedste motionscykel 2026 — ikke til en 600-kroners fold-fælde.",
+          "I denne prisklasse ser du ofte mini-steppere og ultra-billige foldbare motionscykler markedsført som “komplet hjemmetræning”. Fold-cyklerne er typisk ustabile, med dårlige pedaler/sæder, og med kort levetid.",
+          "Mini steppere kan være et fair valg til ældre eller til meget lavintensiv gang derhjemme — især hvis balance og ledvenlig bevægelse er målet. Til studie-styrke og ægte puls under 1.000 kr. giver elastik, sjip og kettlebell stadig mere træning pr. krone. Vil du have ægte cykel senere, spar op til Bedste motionscykel under 3.000 kr. eller Bedste motionscykel 2026.",
         ],
         comparison: {
           caption: "Under 1.000 kr.: hvad der typisk virker",
@@ -169,7 +169,7 @@ export const priceTierGuides: Guide[] = [
             },
             {
               label: "Mini-stepper",
-              cells: ["Lavt–middel", "Ofte tynd", "OK, men kedeligt"],
+              cells: ["Lav–middel (ældre/lav intensitet)", "Varierer", "Godt og stille"],
             },
             {
               label: "Ultra-billig fold-cykel",
@@ -210,9 +210,9 @@ export const priceTierGuides: Guide[] = [
           "Kun i en solid karm og med kontrollerede reps — ingen kipping. Er karmen tynd eller lejet forbyder det, spring dørribben over og brug elastik-rows indtil du kan montere en vægbar. Se Bedste pull-up bar og dørribbe.",
       },
       {
-        question: "Hvorfor fraråder I mini-steppere her?",
+        question: "Er mini-stepper værd at købe under 1.000 kr.?",
         answer:
-          "Fordi de i denne prisklasse ofte leverer dårlig bevægelseskvalitet og kort levetid ift. elastik, sjip og kettlebell. De føles som “maskine”, men træner dig sjældent lige så effektivt pr. krone.",
+          "Ja, hvis målet er lavintensiv bevægelse — fx for ældre eller genoptræning med fokus på balance og let cardio. Til studie-styrke og højere intensitet under 1.000 kr. giver elastik, sjip og kettlebell typisk mere træning pr. krone. Se også Must-haves → Mini stepper for aktuelle modeller.",
       },
       {
         question: "Kan jeg bruge Pakke 2 i lejlighed?",
