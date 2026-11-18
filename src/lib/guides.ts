@@ -1,4 +1,5 @@
 import { getAffiliate } from "@/lib/affiliates";
+import { longTailGuides } from "@/lib/long-tail-guides";
 import { priceTierGuides } from "@/lib/price-tier-guides";
 import { recoveryGuides } from "@/lib/recovery-guides";
 import { strengthClusterGuides } from "@/lib/strength-cluster-guides";
@@ -88,12 +89,24 @@ export type GuideFaq = {
   answer: string;
 };
 
+export type GuideTldrPick = {
+  /** Matcher GuideProduct.id */
+  productId: string;
+  /** Kort label i TL;DR-boksen, fx "Bedst i test" */
+  label: string;
+};
+
 export type GuideKind = "modelguide" | "modelvs";
 
 export type Guide = {
   slug: string;
   title: string;
   excerpt: string;
+  /**
+   * SEO-/OG-titel. Når sat, bruges den i document title og social meta
+   * i stedet for H1 (`title`) — typisk med årstal + fordel.
+   */
+  metaTitle?: string;
   /** Meta description — lidt længere end excerpt når det er relevant */
   metaDescription: string;
   /** Matcher MachineCategory.slug */
@@ -113,6 +126,11 @@ export type Guide = {
   kind?: GuideKind;
   /** Overskrift over produkt-/pakke-anbefalinger (default: Anbefalede modeller) */
   recommendationsHeading?: string;
+  /**
+   * Eksplicit Top 3 til TL;DR-boksen øverst i købsguides.
+   * Uden feltet: de første 3 produkter med deres badge (eller “Top N”).
+   */
+  tldrPicks?: GuideTldrPick[];
   publishedAt: string;
   updatedAt: string;
   intro: string;
@@ -128,6 +146,11 @@ export type Guide = {
   howToSteps?: GuideHowToStep[];
   relatedSlugs?: string[];
 };
+
+/** Titel til document title / OG / Twitter (H1 forbliver `guide.title`). */
+export function guideSeoTitle(guide: Pick<Guide, "title" | "metaTitle">): string {
+  return guide.metaTitle?.trim() || guide.title;
+}
 
 export function isModelGuide(guide: Pick<Guide, "kind">): boolean {
   return guide.kind === "modelguide";
@@ -210,9 +233,12 @@ const FEATURED_GUIDE_SLUGS = [
   "bedste-multistation-2026",
   "bedste-kettlebells-hjemmetraening-2026",
   "loebebaand-eller-crosstrainer-2026",
+  "airbike-eller-romaskine-vaegttab-2026",
   "spinningcykel-motionscykel-eller-hometrainer-2026",
   "gaabaand-til-kontoret-2026",
   "bedste-stoejsvage-traeningsmaskiner-lejlighed-2026",
+  "multistation-til-garage-kaelder-2026",
+  "bedste-crosstrainer-til-daarlige-knae-2026",
   "ultimative-home-gym-budget-2026",
   "ultimative-cardio-corner-under-7500-2026",
   "restitution-efter-hjemmetraening-2026",
@@ -1551,6 +1577,8 @@ export const guides: Guide[] = [
       },
     ],
     relatedSlugs: [
+      "airbike-eller-romaskine-vaegttab-2026",
+      "masterfit-170-romaskine-2026",
       "bedste-romaskine-under-5000-kr-2026",
       "odin-r1800-vandromaskine-2026",
       "bedste-vandromaskine-2026",
@@ -2875,6 +2903,7 @@ export const guides: Guide[] = [
       },
     ],
     relatedSlugs: [
+      "bedste-crosstrainer-til-daarlige-knae-2026",
       "loebebaand-eller-crosstrainer-2026",
       "romaskine-eller-crosstrainer-2026",
       "bedste-stoejsvag-crosstrainer-2026",
@@ -3415,6 +3444,7 @@ export const guides: Guide[] = [
       },
     ],
     relatedSlugs: [
+      "airbike-eller-romaskine-vaegttab-2026",
       "odin-a1000-airbike-2026",
       "bedste-smartcykel-2026",
       "bedste-motionscykel-2026",
@@ -3651,10 +3681,13 @@ export const guides: Guide[] = [
       },
     ],
     relatedSlugs: [
+      "multistation-til-garage-kaelder-2026",
       "bedste-justerbar-traeningsbaenk-2026",
       "bedste-styrkemaskiner-2026",
       "bedste-vaegmonteret-kabeltaarn-2026",
       "bedste-airbike-2026",
+      "squat-rack-til-lavt-loft-2026",
+      "komplet-hjemmegym-under-15000-kr-2026",
     ],
   },
   {
@@ -6375,6 +6408,7 @@ export const guides: Guide[] = [
       },
     ],
     relatedSlugs: [
+      "masterfit-170-romaskine-2026",
       "bedste-romaskine-2026",
       "bedste-kompakt-romaskine-2026",
       "bedste-stoejsvag-romaskine-2026",
@@ -7804,6 +7838,7 @@ export const guides: Guide[] = [
       },
     ],
     relatedSlugs: [
+      "bedste-crosstrainer-til-daarlige-knae-2026",
       "bedste-traeningselastikker-slyngetraener-2026",
       "bedste-traeningsudstyr-til-seniorer-2026",
       "bedste-crosstrainer-2026",
@@ -15945,4 +15980,5 @@ export const guides: Guide[] = [
   ...priceTierGuides,
   ...recoveryGuides,
   ...strengthClusterGuides,
+  ...longTailGuides,
 ];

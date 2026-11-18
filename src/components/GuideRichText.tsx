@@ -181,6 +181,7 @@ const GUIDE_LINK_ALIASES: Record<string, string[]> = {
   "bedste-knaevenlig-genoptraening-hjemme-2026": [
     "knæ-/genoptræningsguide",
     "knævenlig genoptræning",
+    "Bedste knævenlig genoptræning hjemme",
   ],
   "bedste-stoejsvag-loebebaand-lejlighed-2026": [
     "Bedste støjsvage løbebånd til lejlighed 2026",
@@ -260,6 +261,31 @@ const GUIDE_LINK_ALIASES: Record<string, string[]> = {
   "er-recovery-boots-pengene-vaerd-2026": [
     "Er recovery boots pengene værd?",
     "Er recovery boots pengene værd",
+  ],
+  "multistation-til-garage-kaelder-2026": [
+    "Multistation til garage og kælder",
+    "multistation til garage",
+  ],
+  "airbike-eller-romaskine-vaegttab-2026": [
+    "Airbike eller romaskine til vægttab",
+    "Airbike vs. romaskine til vægttab",
+    "airbike eller romaskine",
+  ],
+  "bedste-crosstrainer-til-daarlige-knae-2026": [
+    "Bedste crosstrainer til dårlige knæ",
+    "crosstrainer til dårlige knæ",
+  ],
+  "masterfit-170-romaskine-2026": [
+    "Masterfit 170 romaskine",
+    "Masterfit 170 anmeldelse",
+    "Masterfit 170 Rower — modelguide",
+  ],
+  "bedste-multistation-2026": [
+    "Bedste multistation / Home Gym 2026",
+    "Bedste multistation",
+  ],
+  "ultimative-udendoers-home-gym-2026": [
+    "Det ultimative udendørs home gym",
   ],
 };
 

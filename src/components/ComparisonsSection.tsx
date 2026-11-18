@@ -32,6 +32,11 @@ const COMPARISONS = [
     short: "Stigning eller fart",
     slug: "incline-loebebaand-eller-klassisk-2026",
   },
+  {
+    label: "Airbike vs. romaskine",
+    short: "HIIT eller helkrop til vægttab",
+    slug: "airbike-eller-romaskine-vaegttab-2026",
+  },
 ] as const;
 
 const MODEL_VS = [

@@ -4,6 +4,7 @@ import { connection } from "next/server";
 import { FitlistRating } from "@/components/FitlistRating";
 import { GuideAffiliateBanner } from "@/components/GuideAffiliateBanner";
 import { GuideRichText } from "@/components/GuideRichText";
+import { GuideTldrPicks } from "@/components/GuideTldrPicks";
 import { ProductOfferList } from "@/components/ProductOfferList";
 import { TopicClusterSection } from "@/components/TopicClusterSection";
 import { categoryIntentHref, getCategory } from "@/lib/categories";
@@ -99,6 +100,14 @@ export async function GuideArticle({
 
         <TopicClusterSection guide={guide} />
 
+        {!modelGuide && guide.products.length > 0 ? (
+          <GuideTldrPicks
+            guide={guide}
+            offerMap={offerMap}
+            categoryHref={categoryHref}
+          />
+        ) : null}
+
         <nav
           aria-label="Indhold i guiden"
           className="mt-12 border-t border-border pt-8"
@@ -107,6 +116,26 @@ export async function GuideArticle({
             I denne guide
           </p>
           <ul className="mt-4 space-y-2 text-foreground/90">
+            {!modelGuide && guide.products.length > 0 ? (
+              <li>
+                <a
+                  href="#top-valg"
+                  className="transition-colors hover:text-accent"
+                >
+                  Top valg
+                </a>
+              </li>
+            ) : null}
+            {!modelGuide ? (
+              <li>
+                <a
+                  href="#saadan-vaelger-du"
+                  className="transition-colors hover:text-accent"
+                >
+                  {criteriaHeading}
+                </a>
+              </li>
+            ) : null}
             {guide.products.length > 0 ? (
               <li>
                 <a
@@ -117,14 +146,16 @@ export async function GuideArticle({
                 </a>
               </li>
             ) : null}
-            <li>
-              <a
-                href="#saadan-vaelger-du"
-                className="transition-colors hover:text-accent"
-              >
-                {criteriaHeading}
-              </a>
-            </li>
+            {modelGuide ? (
+              <li>
+                <a
+                  href="#saadan-vaelger-du"
+                  className="transition-colors hover:text-accent"
+                >
+                  {criteriaHeading}
+                </a>
+              </li>
+            ) : null}
             <li>
               <a
                 href="#opsummering"
@@ -175,6 +206,32 @@ export async function GuideArticle({
             </div>
           ) : null}
         </nav>
+
+        {!modelGuide ? (
+          <section id="saadan-vaelger-du" className="mt-14 scroll-mt-28">
+            <h2 className="font-display text-2xl font-semibold uppercase tracking-wide text-foreground">
+              {criteriaHeading}
+            </h2>
+            <ul className="mt-6 space-y-6">
+              {guide.criteria.map((criterion) => (
+                <li
+                  key={criterion.title}
+                  className="border-l-2 border-accent/40 pl-5"
+                >
+                  <h3 className="font-display text-lg font-medium uppercase tracking-wide text-foreground">
+                    {criterion.title}
+                  </h3>
+                  <p className="mt-2 text-muted leading-relaxed">
+                    <GuideRichText
+                      text={criterion.description}
+                      currentSlug={guide.slug}
+                    />
+                  </p>
+                </li>
+              ))}
+            </ul>
+          </section>
+        ) : null}
 
         <section id="anbefalinger" className="mt-14 scroll-mt-28">
           <h2 className="font-display text-2xl font-semibold uppercase tracking-wide text-foreground">
@@ -463,29 +520,31 @@ export async function GuideArticle({
 
         <GuideAffiliateBanner guide={guide} />
 
-        <section id="saadan-vaelger-du" className="mt-14 scroll-mt-28">
-          <h2 className="font-display text-2xl font-semibold uppercase tracking-wide text-foreground">
-            {criteriaHeading}
-          </h2>
-          <ul className="mt-6 space-y-6">
-            {guide.criteria.map((criterion) => (
-              <li
-                key={criterion.title}
-                className="border-l-2 border-accent/40 pl-5"
-              >
-                <h3 className="font-display text-lg font-medium uppercase tracking-wide text-foreground">
-                  {criterion.title}
-                </h3>
-                <p className="mt-2 text-muted leading-relaxed">
-                  <GuideRichText
-                    text={criterion.description}
-                    currentSlug={guide.slug}
-                  />
-                </p>
-              </li>
-            ))}
-          </ul>
-        </section>
+        {modelGuide ? (
+          <section id="saadan-vaelger-du" className="mt-14 scroll-mt-28">
+            <h2 className="font-display text-2xl font-semibold uppercase tracking-wide text-foreground">
+              {criteriaHeading}
+            </h2>
+            <ul className="mt-6 space-y-6">
+              {guide.criteria.map((criterion) => (
+                <li
+                  key={criterion.title}
+                  className="border-l-2 border-accent/40 pl-5"
+                >
+                  <h3 className="font-display text-lg font-medium uppercase tracking-wide text-foreground">
+                    {criterion.title}
+                  </h3>
+                  <p className="mt-2 text-muted leading-relaxed">
+                    <GuideRichText
+                      text={criterion.description}
+                      currentSlug={guide.slug}
+                    />
+                  </p>
+                </li>
+              ))}
+            </ul>
+          </section>
+        ) : null}
 
         <section
           id="opsummering"

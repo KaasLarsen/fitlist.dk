@@ -47,6 +47,11 @@ const SITUATIONS = [
     short: "Ca. 10 m² setup",
     slug: "home-gym-til-lille-vaerelse-10m2-2026",
   },
+  {
+    label: "Garage / kælder",
+    short: "Multistation under tag",
+    slug: "multistation-til-garage-kaelder-2026",
+  },
 ] as const;
 
 export function SituationsSection() {

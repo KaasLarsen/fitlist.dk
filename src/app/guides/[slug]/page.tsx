@@ -6,6 +6,7 @@ import {
   getBuyingGuides,
   getGuide,
   guidePath,
+  guideSeoTitle,
   isModelGuide,
   isModelVs,
 } from "@/lib/guides";
@@ -30,22 +31,23 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!guide) return { title: "Guide ikke fundet" };
   if (isModelGuide(guide) || isModelVs(guide)) {
     return {
-      title: guide.title,
+      title: guideSeoTitle(guide),
       alternates: { canonical: canonical(guidePath(guide)) },
     };
   }
 
+  const seoTitle = guideSeoTitle(guide);
   const description = guide.metaDescription || guide.excerpt;
   const url = canonical(guidePath(guide));
   const imageUrl = guideOgPath(guide.slug);
   const imageAlt = guide.title;
 
   return {
-    title: guide.title,
+    title: seoTitle,
     description,
     alternates: { canonical: url },
     openGraph: {
-      title: guide.title,
+      title: seoTitle,
       description,
       url,
       type: "article",
@@ -65,7 +67,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     },
     twitter: {
       card: "summary_large_image",
-      title: guide.title,
+      title: seoTitle,
       description,
       images: [imageUrl],
     },
